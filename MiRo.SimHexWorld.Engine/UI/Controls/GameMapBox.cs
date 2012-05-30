@@ -255,6 +255,11 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                 Vector3 groundIntersection = _camera.Position + direction * intersection.Value;
                 HexPoint pt = MapData.GetMapPosition(groundIntersection);
 
+
+                foreach( HexPoint neighbor in pt.Neighbors )
+                    if (Vector3.Distance(MapData.GetWorldPosition(pt), groundIntersection) > Vector3.Distance(MapData.GetWorldPosition(neighbor), groundIntersection))
+                        pt = neighbor;
+
                 if (FocusChanged != null)
                     FocusChanged(new MapChangeArgs(Map, pt));
 
@@ -380,8 +385,8 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         {
             switch ((GameNotification)System.Enum.Parse(typeof(GameNotification), notification.Name))
             {
-                default:
-                    throw new System.Exception(notification.Name + " notification handled");
+                //default:
+                //    throw new System.Exception(notification.Name + " notification handled");
             }
         }
     }
