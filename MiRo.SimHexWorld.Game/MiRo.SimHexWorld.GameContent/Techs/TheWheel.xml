@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>TheWheel</Name>
+    <Description>The wheel is a round object with a hole or an axle through its center. Taken alone it's of little use, but when part of a transportation system including roads and draft animals, it is of extraordinary value to human civilization. The earliest depiction of a vehicle with wheels is found in ancient Sumeria, from approximately 3500 BC. The first wheels were of solid wood; spoked wheels first appear around 2000 BC in Asia Minor, where they were used on horse-drawn chariots. Later improvements included iron hubs which turned on greased axels, and the addition of springs or some other sort of shock absorber.</Description>
+    <ImageName>TheWheel</ImageName>
+    <Quote>"Wisdom and virtue are like the two wheels of a cart." - Japanese Proverb</Quote>
+    <Cost>55</Cost>
+    <Notes>Allows you to build the Chariot Archer, a fast and powerful ranged unit which requires     Horses. Also allows Workers to construct Roads, which allow units to move across the map faster and provide extra     Gold when connecting cities to your capital.</Notes>
+    <Required>
+      <Item>AnimalHusbandry</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Ancient</EraName>
+    <Flavours>
+      <Item>
+        <Name>Mobile</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Growth</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Ranged</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Infrastructure</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Gold</Name>
+        <Amount>6</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

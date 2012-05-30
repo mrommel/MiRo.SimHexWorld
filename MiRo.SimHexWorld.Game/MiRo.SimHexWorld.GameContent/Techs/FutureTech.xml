@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>FutureTech</Name>
+    <Description>It's difficult to write a "history" for technology that hasn't actually been discovered yet. But here are some possible big breakthroughs that might dramatically alter the human condition. Sooner or later, medicine will figure out how to cure cancer and other diseases, dramatically increase human life, and directly interface the human brain with machines. Cheap, clean forms of energy will be discovered. Computers will get faster and smaller. Games will get more immersive and realistic. Nasty new weapons will be invented. And a giant killer death robot will be created to destroy all life on the planet, but we will be saved by an army of mutant kung fu cyborgs. The future will indeed be interesting! </Description>
+    <ImageName>FutureTech</ImageName>
+    <Quote>"I think we agree, the past is over." - George W. Bush</Quote>
+    <Cost>4000</Cost>
+    <Notes>Who knows what the future holds?</Notes>
+    <Required>
+      <Item>Nanotechnology</Item>
+      <Item>NuclearFusion</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Future</EraName>
+    <Flavours>
+      <Item>
+        <Name>Science</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Terrain">
+    <Name>Mountains</Name>
+    <Title>Mountains</Title>
+    <Description>
+      Mountains
+    </Description>
+    <ImageName>Mountains</ImageName>
+    <Civ5Name></Civ5Name>
+    <AtlasName>TerrainAtlas</AtlasName>
+    <AtlasIdentifier>Mountains</AtlasIdentifier>
+    <TileType>Snow</TileType>
+    <TileHeight>Peak</TileHeight>
+    <Bonus>
+      <Food>0</Food>
+      <Production>1</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <CombatModifiers>1.25</CombatModifiers>
+    <MovementCost>2</MovementCost>
+    <PossibleFeatures>
+    </PossibleFeatures>
+    <PossibleRessources>
+    </PossibleRessources>
+    <CanFound>false</CanFound>
+    <InfluenceCost>0</InfluenceCost>
+    <BuildModifier>0</BuildModifier>
+    <MoveRateTypes>
+      <Item>BiPed</Item>
+      <Item>Wheeled</Item>
+    </MoveRateTypes>
+  </Asset>
+</XnaContent>

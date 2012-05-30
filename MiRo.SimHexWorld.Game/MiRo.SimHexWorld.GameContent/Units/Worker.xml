@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Worker</Name>
+    <Title>TXT_KEY_UNITS_WORKER_TITLE</Title>
+    <Description>TXT_KEY_UNITS_WORKER_DESCRIPTION</Description>
+    <ImageName>Worker</ImageName>
+    <Notes>
+      May create improvements
+    </Notes>
+    <EraName>Ancient</EraName>
+    <UnitType>Civilian</UnitType>
+    <IsSpecial>false</IsSpecial>
+    <Cost>70</Cost>
+    <CombatStrength>-1</CombatStrength>
+    <RangedCombatStrength>-1</RangedCombatStrength>
+    <Range>-1</Range>
+    <Sight>2</Sight>
+    <Movement>2</Movement>
+    <Domain>Land</Domain>
+    <UnitAIs>
+      <Item>Work</Item>
+    </UnitAIs>
+    <DefaultUnitAI>Work</DefaultUnitAI>
+    <NoBadGoodies>false</NoBadGoodies>
+    <MilitarySupport>false</MilitarySupport>
+    <MilitaryProduction>false</MilitaryProduction>
+    <Pillage>false</Pillage>
+    <IgnoreBuildingDefense>false</IgnoreBuildingDefense>
+    <Mechanized>false</Mechanized>
+    <RequiredRessourceNames>
+    </RequiredRessourceNames>
+    <RequiredTechName></RequiredTechName>
+    <ObsoleteTechName></ObsoleteTechName>
+    <UpgradesTo></UpgradesTo>
+    <Flavours>
+      <Item>
+        <Name>TileImprovement</Name>
+        <Amount>15</Amount>
+      </Item>
+    </Flavours>
+    <Actions>
+      <Item>
+        <Name>Road</Name>
+      </Item>
+      <Item>
+        <Name>RailRoad</Name>
+      </Item>
+      <Item>
+        <Name>Farm</Name>
+      </Item>
+      <Item>
+        <Name>Mine</Name>
+      </Item>
+      <Item>
+        <Name>TradingPost</Name>
+      </Item>
+      <Item>
+        <Name>LumberMill</Name>
+      </Item>
+      <Item>
+        <Name>Camp</Name>
+      </Item>
+      <Item>
+        <Name>Plantation</Name>
+      </Item>
+      <Item>
+        <Name>Quarry</Name>
+      </Item>
+      <Item>
+        <Name>OilWell</Name>
+      </Item>
+      <Item>
+        <Name>Fort</Name>      
+      </Item>
+      <!-- remove marsh, forest, jungle -->
+      <!-- repair -->
+      <!-- scrub fallout -->
+    </Actions>
+    <PromotionNames></PromotionNames>
+    <ModelName>Worker</ModelName>
+    <ModelScale>0.05</ModelScale>
+    <ModelScript>Worker</ModelScript>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Stealth</Name>
+    <Description>The concept or practice of stealth is not a new one in the progress of human development, but modern stealth technology takes the idea of "not being seen" to a whole new level. Stealth technology is really a combination of multiple military disciplines and tactics expanding beyond what the human eye can see, trying to both hide and detect objects by radar, acoustics, thermal readings, or other less readily visible methods.</Description>
+    <ImageName>Stealth</ImageName>
+    <Quote>Be extremely subtle, even to the point of formlessness. Be extremely mysterious, even to the point of soundlessness. Thereby you can be the director of the opponent's fate." - Sun Tzu</Quote>
+    <Cost>3350</Cost>
+    <Notes>Allows you to build the Stealth Bomber, the most powerful Ranged Unit in the game.</Notes>
+    <Required>
+      <Item>Lasers</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Modern</EraName>
+    <Flavours>
+      <Item>
+        <Name>Air</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

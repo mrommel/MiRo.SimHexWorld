@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>NuclearFission</Name>
+	<Description>Nuclear fission is a nuclear reaction in which the nuclei of radioactive atoms break down (undergo fission), releasing neutrons which then crash into other atoms, causing them to break down and release even more neutrons. If there is enough radioactive material the fission may become self-sustaining, releasing a lot of energy at a controlled rate - say, in a nuclear reactor - or in a wildly uncontrolled rate - say, in a nuclear weapon.</Description>
+	<ImageName>NuclearFission</ImageName>
+	<Quote>"I am become Death, the destroyer of worlds." - J. Robert Oppenheimer</Quote>
+	<Cost>3000</Cost>
+	<Notes>Allows you to build Atomic Bombs, the first nuclear weapon in the game (note: you must first have completed the Manhattan Project and have     Uranium available). Also allows you to build the Nuclear Plant, a building which requires     Uranium and increases the     Production of a City.</Notes>
+	<Required>
+    <Item>AtomicTheory</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Modern</EraName>
+	<Flavours>
+	</Flavours>
+	</Asset>
+</XnaContent>

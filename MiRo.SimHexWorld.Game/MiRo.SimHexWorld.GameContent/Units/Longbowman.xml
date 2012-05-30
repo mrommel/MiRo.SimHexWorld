@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Longbowman</Name>
+    <Title>TXT_KEY_UNITS_LONGBOWMAN_TITLE</Title>
+    <Description>TXT_KEY_UNITS_LONGBOWMAN_DESCRIPTION</Description>
+    <ImageName>Longbowman</ImageName>
+    <Notes>
+      May not melee attack
+      +1 Range
+    </Notes>
+    <EraName>Medieval</EraName>     
+    <UnitType>Archery</UnitType>
+    <IsSpecial>true</IsSpecial>
+    <UniqueUnitOfTribe>English</UniqueUnitOfTribe>
+    <Replaces>Crossbowman</Replaces>
+    <Cost>150</Cost>
+    <CombatStrength>6</CombatStrength>
+    <RangedCombatStrength>12</RangedCombatStrength>
+    <Range>3</Range>
+    <Movement>2</Movement>
+    <Domain>Land</Domain>
+    <RequiredResources>
+    </RequiredResources>
+    <RequiredTechnology>Machinery</RequiredTechnology>
+    <UpgradesTo>Rifleman</UpgradesTo>
+  </Asset>
+</XnaContent>

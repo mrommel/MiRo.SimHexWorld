@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>PrintingPress</Name>
+	<Description>While movable type was invented in China, as far as can be determined, the first mechanized printing press was invented in the mid-fifteenth century by German printer Johannes Gutenberg. The earliest printing presses were wooden machines, very similar in design to the wine and olive oil presses which had been used around the Mediterranean for centuries.</Description>
+	<ImageName>PrintingPress</ImageName>
+	<Quote>"It is a newspaper's duty to print the news and raise hell." - The Chicago Times</Quote>
+	<Cost>650</Cost>
+	<Notes>Allows you to build the Theatre, a building which increases     Happiness in the empire and makes     Golden Ages more likely.</Notes>
+	<Required>
+    <Item>Machinery</Item>
+    <Item>Physics</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Renaissance</EraName>
+	<Flavours>
+    <Item>
+      <Name>Happiness</Name>
+      <Amount>12</Amount>
+    </Item>
+    <Item>
+      <Name>Wonder</Name>
+      <Amount>2</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

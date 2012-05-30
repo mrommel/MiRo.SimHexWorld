@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Building">
+    <Name>Granary</Name>
+    <Title>TXT_KEY_BUILDING_GRANARY_TITLE</Title>
+    <Description>TXT_KEY_BUILDING_GRANARY_DESC</Description>
+    <ImageName>Granary</ImageName>
+    <Cost>100</Cost>
+    <Maintenance>1</Maintenance>
+    <RequiredTechName>Pottery</RequiredTechName>
+    <ConquestProb>0.66</ConquestProb>
+    <HurryCostModifier>0.25</HurryCostModifier>
+    <Flavours>
+      <Item>
+        <Name>Growth</Name>
+        <Amount>18</Amount>
+      </Item>
+    </Flavours>
+    <Yields>
+      <Item>
+        <Type>Food</Type>
+        <Amount>2</Amount>
+      </Item>
+    </Yields>
+  </Asset>
+</XnaContent>

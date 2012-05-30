@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1000]C:\Dokumente und Einstellungen\mrommel.JAMES\Eigene Dateien\Dropbox\Prog\MiRo.SimHexWorld\MiRoSimHexWorld.Engine\MiRo.SimHexWorld.Engine.csproj</TopNode>
+  <SelectedNode>[0-1016]MiRoSimHexWorld.Engine.World.IntRangeTest</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1000]C:\Dokumente und Einstellungen\mrommel.JAMES\Eigene Dateien\Dropbox\Prog\MiRo.SimHexWorld\MiRoSimHexWorld.Engine\MiRo.SimHexWorld.Engine.csproj" Expanded="true" />
+    <Node UniqueName="[0-1025]C:\Dokumente und Einstellungen\mrommel.JAMES\Eigene Dateien\Dropbox\Prog\MiRo.SimHexWorld\MiRoSimHexWorld.Engine\bin\x86\Debug\MiRoSimHexWorld.Engine.dll" Expanded="true" />
+    <Node UniqueName="[0-1026]MiRo" Expanded="true" />
+    <Node UniqueName="[0-1027]MiRo.SimHexWorld" Expanded="true" />
+    <Node UniqueName="[0-1028]MiRo.SimHexWorld.Engine" Expanded="true" />
+    <Node UniqueName="[0-1029]MiRo.SimHexWorld.Engine.Instance" Expanded="true" />
+    <Node UniqueName="[0-1001]MiRo.SimHexWorld.Engine.Instance.GameData" Expanded="true" />
+    <Node UniqueName="[0-1012]MiRo.SimHexWorld.Engine.Instance.GameYear" Expanded="true" />
+    <Node UniqueName="[0-1030]MiRoSimHexWorld" Expanded="true" />
+    <Node UniqueName="[0-1031]MiRoSimHexWorld.Engine" Expanded="true" />
+    <Node UniqueName="[0-1032]MiRoSimHexWorld.Engine.World" Expanded="true" />
+    <Node UniqueName="[0-1016]MiRoSimHexWorld.Engine.World.IntRangeTest" Expanded="true" />
+  </Nodes>
+</VisualState>

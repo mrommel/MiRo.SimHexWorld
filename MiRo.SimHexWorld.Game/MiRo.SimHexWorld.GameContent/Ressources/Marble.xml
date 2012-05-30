@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Ressource">
+    <Name>Marble</Name>
+    <Description>
+      Marble is a beautiful rock highly prized as a building material and by artists for sculpting. Marble comes in a variety of colors and shades, sometimes mono-colored and sometimes with veins and pockets of many different colors within. Many of the most beautiful structures in the world - including the Taj Mahal, for one - are constructed of marble, as are the greatest sculptures of antiquity.
+    </Description>
+    <ImageName>Marble</ImageName>
+    <RessourceType>Luxury</RessourceType>
+    <Bonus>
+      <Food>0</Food>
+      <Production>0</Production>
+      <Commercial>2</Commercial>
+    </Bonus>
+    <Improvements>
+      <Item>Quarry</Item>
+    </Improvements>
+    <RequiredTechName></RequiredTechName>
+  </Asset>
+</XnaContent>

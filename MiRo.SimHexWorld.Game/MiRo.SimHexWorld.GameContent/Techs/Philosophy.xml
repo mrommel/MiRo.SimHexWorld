@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Philosophy</Name>
+    <Description>Philosophy is the study of reality and man's place in it. The word comes from the Greek/Latin "philosophia," or love of wisdom. It is somewhat separate from religion, which seeks to define and understand some supernatural system - philosophy takes a step back and asks if that supernatural system even exists. Philosophy deals with logic, morality, observation, realism, happiness, life, death, and all of the other big questions.</Description>
+    <ImageName>Philosophy</ImageName>
+    <Quote>"There is only one good, knowledge, and one evil, ignorance." - Socrates</Quote>
+    <Cost>100</Cost>
+    <Notes>Allows you to build the Temple, which increases the     Culture output of a city. Also provides new     Science-related abilities, like the Research Agreement, which is a special deal that may be made with other players in the game.</Notes>
+    <Required>
+      <Item>Writing</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Classical</EraName>
+    <Flavours>
+      <Item>
+        <Name>Science</Name>
+        <Amount>3</Amount>
+      </Item>
+      <Item>
+        <Name>Culture</Name>
+        <Amount>6</Amount>
+      </Item>
+      <Item>
+        <Name>GreatPeople</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>2</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Terrain">
+    <Name>Plains</Name>
+    <Title>Plains</Title>
+    <Description>
+      Plains
+    </Description>
+    <ImageName>Plains</ImageName>
+    <Civ5Name>TERRAIN_PLAINS</Civ5Name>
+    <AtlasName>TerrainAtlas</AtlasName>
+    <AtlasIdentifier>Plains</AtlasIdentifier>
+    <TileType>Sand</TileType>
+    <TileHeight>Zero</TileHeight>
+    <Bonus>
+      <Food>1</Food>
+      <Production>1</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <CombatModifiers>0.66</CombatModifiers>
+    <MovementCost>1</MovementCost>
+    <PossibleFeatures>
+      <Item>Forest</Item>
+      <Item>Jungle</Item>
+      <Item>Rivers</Item>
+    </PossibleFeatures>
+    <PossibleRessources>
+      <Item>Iron</Item>
+      <Item>Horses</Item>
+      <Item>Coal</Item>
+      <Item>Aluminum</Item>
+      <Item>Uranium</Item>    
+      <Item>Wheat</Item>
+      <Item>Gold</Item>
+      <Item>Gems</Item>
+      <Item>Marble</Item>
+      <Item>Ivory</Item>
+      <Item>Cotton</Item>
+      <Item>Wine</Item>
+    </PossibleRessources>
+    <CanFound>true</CanFound>
+    <InfluenceCost>1</InfluenceCost>
+    <BuildModifier>0</BuildModifier>
+    <MoveRateTypes>
+      <Item>BiPed</Item>
+      <Item>Wheeled</Item>
+    </MoveRateTypes>
+  </Asset>
+</XnaContent>

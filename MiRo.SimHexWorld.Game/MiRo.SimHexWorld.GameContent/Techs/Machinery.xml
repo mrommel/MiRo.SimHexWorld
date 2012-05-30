@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Machinery</Name>
+    <Description>A machine is a device with moving parts (this is true during the pre-Electronics Age, anyway) that uses energy to perform tasks. A printing press is a machine, as is a loom, a clock and a watermill. Mastery of machinery requires design and engineering skill, of course, but also the ability to manufacture machine parts to precise measurements. A steam engine will leak if it's constructed poorly - that is, if it doesn't explode. The early Machine Age was a hugely dangerous time to work around the devices - if the fumes didn't kill you then you stood a fair chance of getting scalded, sucked into the works or blown to pieces.</Description>
+    <ImageName>Machinery</ImageName>
+    <Quote>"The press is the best instrument for enlightening the mind of man, and improving him as a rational, moral and social being." - Thomas Jefferson</Quote>
+    <Cost>440</Cost>
+    <Notes>Allows you to build the Crossbowman, a strong medieval ranged unit. Also increases the movement rate of units traveling along Roads.</Notes>
+    <Required>
+      <Item>Engineering</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Medieval</EraName>
+    <Flavours>
+      <Item>
+        <Name>Ranged</Name>
+        <Amount>8</Amount>
+      </Item>
+      <Item>
+        <Name>Infrastruktur</Name>
+        <Amount>4</Amount>
+      </Item>
+      <Item>
+        <Name>Production</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>MilitaryTraining</Name>
+        <Amount>3</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

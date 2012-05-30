@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.LeaderData">
+    <Name>Alexander</Name>   
+    <Description>
+      Alexander the Macedonian is unquestionably one of the great warlords of all time. In 17 short years he marched his army to victory after victory across Europe, Asia, Africa and the Middle East, conquering every civilization he could reach.
+      
+      - Early Life
+      Alexander was the son of King Phillip II, an extremely successful king and warlord who had restored his kingdom from the verge of extinction and then led his people to triumph by conquering Athens, Illyria, and Thrace - the three powers who, a few short years before, had been on the verge of conquering Macedonia. As the son of the most powerful monarch in the "civilized" world, Alexander got the best of everything, including education - the scholar Aristotle, the great thinker of Western Civilization, was his tutor.
+      Taught by his mother Olympias that he was descended from Hercules and Achilles, Alexander did not lack for self-confidence, even at a very young age. At the age of 14 Phillip left him in charge of Macedonia while he was away attacking Byzantium; Alexander crushed a Thracian rebellion during his father's absence. Two years later he commanded the left wing of his father's army during the battle in which Phillip's forces defeated the allied Greek states and conquered all of Greece.
+      The next year Alexander's good fortune disserted him, for a while, at least. Kin Phillip divorced Alexander's mother for a woman named "Cleopatra Eurydice, and mother and son fled Macedonia. Alexander and his father were reconciled some time thereafter, but Alexander's position as Phillip's heir would have been in grave jeopardy had Phillip not conveniently died before producing another son.
+      
+      - Rise to Power
+      Following the conquest of Greece and the Balkans, King Phillip had been working on building an army to invade and conquer Persia. In 336 Phillip was assassinated by the captain of his bodyguard, Pausanias, while attending his daughter's wedding. (Some believe that Alexander's mother, Olympias − or indeed Alexander himself − was behind the assassination, but as Pausanias conveniently died during the murder there was no actual proof.) At the age of twenty Alexander was proclaimed king by the Macedonian army and nobility. He celebrated his victory by murdering all potential rivals to the throne, then resumed planning his father's interrupted invasion of Persia.
+      
+      - The Creation of An Empire
+      Alexander's force consisted of 30,000 foot soldiers and 5,000 cavalrymen, a huge army for the day, and was accompanied by engineers, surveyors, scientists, and even historians.
+      In battle Alexander had amazing success against the Persians. He repeatedly beat their best soldiers, routinely fighting against odds of 10-to-1. His success can be attributed to his military genius, his force's superb training and equipment, and their magnificent esprit de corps, largely engendered by their faith in Alexander's invincibility.
+      Alexander appeared to be without fear. He commonly led the elite Macedonian Companion Cavalry into the thick of battle personally, and he received a number of dangerous wounds during his military career, none of which dampened his military ardor.
+      Having secured Persia's surrender, Alexander then moved south, conquering Syria, Palestine, much of modern Iraq, and eventually Egypt herself. He returned to Persia, destroyed the last of the Persian forces and took over the entire country. He continued east, eventually coming into contact with the great Indian King Porus, who fought him to a standstill. Alexander eventually won the conflict, but at such a heavy cost that his men begged him to end the campaign and let them return to their families. Alexander himself returned to rule his empire from the captured city of Babylon.
+      
+      - The Fall of Alexander
+      In eight short years of fighting, Alexander had conquered more territory than any other living being. He successfully led his forces into battle against all of the great nations of the day, but none could stand against him. He was the absolute ruler of the largest empire the world had ever seen. Apparently he found this boring.
+      Once in Babylon, Alexander began an inexorable decline. He began drinking heavily and engaging in all kinds of available debauchery (and there was much debauchery to be found in Babylon). He became subject to fits of anger and bouts of paranoid delusion. One night, in a state of blind rage and under the influence of alcohol, Alexander murdered Clitus, his closest associate. This barbaric act was to haunt Alexander for the rest of his life - which wasn't very long. In June of 332 BC, his body weakened by his excesses, Alexander died of malaria. He was 32 years old.
+      
+      - Judgment of History
+      "When Alexander saw the breadth of his domain, he wept for there were no more worlds to conquer." This extraordinary man (and his father before him) conquered Greece, the Balkans, Asia Minor, Syria, Egypt, Persia, and Asia as far east as Afghanistan. His empire did not long survive Alexander's death − it was simply too large for any mere mortal to hold − and it was divided between a number of Alexander's generals. But Alexander's conquests allowed Hellenic culture to spread across most of the known world, and Greek would become the language of culture, art and science for centuries to come.
+      With the exception perhaps of one or two religious leaders, no single man has had such a great effect upon western civilization as did Alexander the Great.
+    </Description>
+    <ImageName>Alexander</ImageName>
+    <CivilizationName>Greek</CivilizationName>
+    <SpecialAbilityName>HellenicLeague</SpecialAbilityName>
+    <Lived>356 - 323 BC</Lived>
+    <Titles>
+      <Item>Alexander the Great</Item>
+    </Titles>
+  </Asset>
+</XnaContent>

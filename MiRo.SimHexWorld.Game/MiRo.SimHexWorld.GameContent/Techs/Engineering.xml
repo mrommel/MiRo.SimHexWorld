@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Engineering</Name>
+    <Description>Engineering is the science (or art perhaps) of designing complex materials, structures, devices, and systems. In modern parlance it has a fairly wide reach - bioengineers design cells, software engineers create computer programs, and so forth - but historically the term was applied to the construction of physical stuff, like machines, bridges, railroads, factories, and so forth. (Originally the term "engineer" referred specifically to those who created military engines.)</Description>
+    <ImageName>Engineering</ImageName>
+    <Quote>"Instrumental or mechanical science is the noblest and, above all others, the most useful." - Leonardo da Vinci</Quote>
+    <Cost>250</Cost>
+    <Notes>Allows Workers to construct Lumbermills on forested map tiles, increasing their     Production. Also allows Workers to construct Forts on map tiles, increasing the defense of units stationed there.</Notes>
+    <Required>
+      <Item>Mathematics</Item>
+      <Item>Construction</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Medieval</EraName>
+    <Flavours>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Production</Name>
+        <Amount>5</Amount>
+      </Item>
+      <Item>
+        <Name>TileImprovement</Name>
+        <Amount>5</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

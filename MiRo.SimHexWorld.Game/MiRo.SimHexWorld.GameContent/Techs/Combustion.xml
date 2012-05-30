@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Combustion</Name>
+    <Description>"Combustion" means burning. It's a chemical reaction between substances, one of which is usually oxygen, which often results in the generation of light and heat energy. Here we're speaking specifically about the use of combustion inside of an engine (hence, "internal combustion") to create energy to turn a crank or move a piston.</Description>
+    <ImageName>Combustion</ImageName>
+    <Quote>"Any man who can drive safely while kissing a pretty girl is simply not giving the kiss the attention it deserves." - Albert Einstein</Quote>
+    <Cost>2200</Cost>
+    <Notes>Allows you to build the Tank, an incredibly fast and powerful armored unit.</Notes>
+    <Required>
+      <Item>ReplaceableParts</Item>
+      <Item>Railroad</Item>
+      <Item>Dynamite</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Industrial</EraName>
+    <Flavours>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>5</Amount>
+      </Item>
+      <Item>
+        <Name>Mobile</Name>
+        <Amount>5</Amount>
+    </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.GrandStrategyData">
+    <Name>Conquest</Name>
+    <Description></Description>
+    <ImageName></ImageName>
+    <Flavours>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>9</Amount>
+      </Item>
+    </Flavours>
+    <Yields>
+      <Item>
+        <Type>Production</Type>
+        <Amount>200</Amount>
+      </Item>
+    </Yields>
+  </Asset>
+</XnaContent>

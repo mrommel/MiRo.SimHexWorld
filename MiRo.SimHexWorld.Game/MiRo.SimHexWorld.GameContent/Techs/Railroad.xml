@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Railroad</Name>
+	<Description>The earliest railroads were constructed in European mines in the 16th century. These consisted of wheeled carts that rode upon tracks. They were pulled by men or animals (usually horses or donkeys). The first aboveground steam-powered railroad was constructed in England in 1825, and once the technology proved successful, construction took off around the world. Construction of the first American road, the Baltimore and Ohio, began in 1828. Within a century every continent in the world had a significant rail network.</Description>
+	<ImageName>Railroad</ImageName>
+	<Quote>"The introduction of so powerful an agent as steam to a carriage on wheels will make a great change in the situation of man." - Thomas Jefferson</Quote>
+	<Cost>1900</Cost>
+	<Notes>Allows Workers to build Railroads on map tiles. Connecting Cities with them will increase     Production, and Units traveling along them will move more quickly.</Notes>
+	<Required>
+    <Item>SteamPower</Item>
+    <Item>Dynamite</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Industrial</EraName>
+	<Flavours>
+    <Item>
+      <Name>Infrastructure</Name>
+      <Amount>12</Amount>
+    </Item>
+    <Item>
+      <Name>Production</Name>
+      <Amount>2</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Fertilizer</Name>
+    <Description>Fertilizer is a substance that feeds and speeds the growth of plants. Fertilizer has been around for as long as human civilization, dating back to the time when the first farmer realized that grass grew taller where the oxen had pooped. From that point on farmers have been collecting animal by-products and applying them to the soil, increasing the crop yield, especially from fields that have been farmed continuously for generations and thus have been stripped of most nutrients.</Description>
+    <ImageName>Fertilizer</ImageName>
+    <Quote>"The nation that destroys its soil destroys itself." - Franklin Delano Roosevelt</Quote>
+    <Cost>1300</Cost>
+    <Notes>Increases the     Food from Farmed tiles without Fresh Water, providing a massive boost to growth.</Notes>
+    <Required>
+      <Item>Chemistry</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Renaissance</EraName>
+    <Flavours>
+      <Item>
+        <Name>Growth</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

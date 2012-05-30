@@ -1,0 +1,342 @@
+
+newmtl Material.000001
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.000011
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.000099
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.000143
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.000153
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.000163
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.00026d
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.000324
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.000334
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.00043e
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.00044e
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.0004cc
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.0004dc
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.000604
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.000614
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.0006e2
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.0006f2
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.0007a3
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.0007b3
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.0008f9
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.000909
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.0009fd
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.000a0d
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.000b1f
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.000b2f
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.000c9d
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.000cad
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.000e2d
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.000e3d
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.000e4d
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.001027
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.0011ce
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.0011de
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.0011ee
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.00143c
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.00144c
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+
+
+newmtl Material.00161f
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd greco_rome_shadow.png
+
+
+newmtl Material.00162f
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_west_european_buildings.png
+

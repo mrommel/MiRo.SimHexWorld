@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.CultureLevel">
+    <Name>Fledgling</Name>
+    <Description>TXT_KEY_CULTURELEVEL_FLEDGLING</Description>
+    <ImageName></ImageName>
+    <CityDefenseModifier>20</CityDefenseModifier>
+    <Threshold>10</Threshold>
+  </Asset>
+</XnaContent>

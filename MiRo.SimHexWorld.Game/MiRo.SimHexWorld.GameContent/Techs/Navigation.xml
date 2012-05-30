@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Navigation</Name>
+	<Description>Navigation is the science of finding one's way across the ocean. Early vessels rarely left sight of the coastline, which made navigation fairly simple but limited the places one could go, and also made the ships vulnerable to being driven ashore or onto dangerous rocks by contrary winds. There are few things more terrifying to a sailing vessel's captain (pre-steam engine) than being on a "lee shore" - that is, being blown directly towards a nearby shore by strong wind.</Description>
+	<ImageName>Navigation</ImageName>
+	<Quote>"The winds and the waves are always on the side of the ablest navigators." - Edward Gibbon</Quote>
+	<Cost>900</Cost>
+	<Notes>Allows you to build the Frigate, a powerful Renaissance-era warship. Also allows coastal cities to build the Seaport, which provides     Production from sea resources.</Notes>
+	<Required>
+    <Item>Astronomy</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Renaissance</EraName>
+	<Flavours>
+	</Flavours>
+	</Asset>
+</XnaContent>

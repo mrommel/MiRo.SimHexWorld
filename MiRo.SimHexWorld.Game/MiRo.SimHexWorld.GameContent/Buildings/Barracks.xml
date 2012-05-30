@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Building">
+    <Name>Barracks</Name>
+    <Title></Title>
+    <Description></Description>
+    <ImageName>Barracks</ImageName>
+    <Cost>80</Cost>
+    <Maintenance>1</Maintenance>
+    <RequiredTechName>BronzeWorking</RequiredTechName>
+    <NeverCapture>true</NeverCapture>
+    <Flavours>
+      <Item>
+        <Name>MilitaryTraining</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours> 
+  </Asset>
+</XnaContent>

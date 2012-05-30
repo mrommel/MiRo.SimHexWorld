@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Terrain">
+    <Name>Tundra</Name>
+    <Title>Tundra</Title>
+    <Description>
+      Tundra
+    </Description>
+    <ImageName>Tundra</ImageName>
+    <Civ5Name>TERRAIN_TUNDRA</Civ5Name>
+    <AtlasName>TerrainAtlas</AtlasName>
+    <AtlasIdentifier>Tundra</AtlasIdentifier>
+    <TileType>Rock</TileType>
+    <TileHeight>Zero</TileHeight>
+    <Bonus>
+      <Food>1</Food>
+      <Production>0</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <CombatModifiers>0.66</CombatModifiers>
+    <MovementCost>1</MovementCost>
+    <PossibleFeatures>
+      <Item>Forest</Item>
+      <Item>Rivers</Item>
+    </PossibleFeatures>
+    <PossibleRessources>
+      <Item>Iron</Item>
+      <Item>Horses</Item>
+      <Item>Oil</Item>
+      <Item>Aluminum</Item>
+      <Item>Uranium</Item>
+      <Item>Deer</Item>
+      <Item>Silver</Item>
+      <Item>Gems</Item>
+      <Item>Marble</Item>
+      <Item>Furs</Item>
+    </PossibleRessources>
+    <CanFound>true</CanFound>
+    <InfluenceCost>2</InfluenceCost>
+    <BuildModifier>25</BuildModifier>
+    <MoveRateTypes>
+      <Item>BiPed</Item>
+      <Item>Wheeled</Item>
+    </MoveRateTypes>
+  </Asset>
+</XnaContent>

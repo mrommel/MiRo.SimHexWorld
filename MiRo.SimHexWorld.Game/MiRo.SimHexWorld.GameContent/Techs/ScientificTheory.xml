@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>ScientificTheory</Name>
+    <Description>Scientific theory is a way to view the world, in which the viewer uses the "scientific method" to learn about the universe. Through careful observation and experiments a scientist creates a theory to explain some phenomenon. If other scientists can through experimentation confirm the scientist's theory, it is then accepted as "empirical" (experimental) law (at least until some new observation or experimentation successfully challenges it). If a scientist's experiments cannot be duplicated by others, then his or her theories must be regarded with deep skepticism.</Description>
+    <ImageName>ScientificTheory</ImageName>
+    <Quote>"Every great advance in science has issued from a new audacity of imagination." - John Dewey</Quote>
+    <Cost>1300</Cost>
+    <Notes>Reveals     Coal, an important industrial resource. Also allows you to build the Public School, which increases     Science in Cities.</Notes>
+    <Required>
+      <Item>Economics</Item>
+      <Item>Navigation</Item>
+      <Item>Acoustics</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Renaissance</EraName>
+    <Flavours>
+      <Item>
+        <Name>Science</Name>
+        <Amount>15</Amount>
+      </Item>
+      <Item>
+        <Name>Production</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

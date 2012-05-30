@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Feature">
+    <Name>Fallout</Name>
+    <Description>Fallout is the residual radiation left over following a nuclear explosion. The fallout "falls out" of the air as a layer of radioactive particles which are highly dangerous to plants and animals, killing them immediately or damaging their DNA, giving them cancer, other diseases, or unfortunate mutations. Depending upon the type of nuclear explosion, the land may remain poisoned for decades, possibly centuries. Cleanup requires the replacement of the contaminated buildings, soil and vegetation.</Description>
+    <ImageName>Fallout</ImageName>
+    <Civ5Name>FEATURE_FALLOUT</Civ5Name>
+    <AtlasName>FeatureAtlas</AtlasName>
+    <AtlasIdentifier>Fallout</AtlasIdentifier>
+    <Bonus>
+      <Food>-3</Food>
+      <Production>-3</Production>
+      <Commercial>-3</Commercial>
+    </Bonus>
+    <CombatModifiers>0.66</CombatModifiers>
+    <MovementCost>2</MovementCost>
+    <ImprovesTerrains></ImprovesTerrains>
+    <PossibleRessources></PossibleRessources>
+  </Asset>
+</XnaContent>

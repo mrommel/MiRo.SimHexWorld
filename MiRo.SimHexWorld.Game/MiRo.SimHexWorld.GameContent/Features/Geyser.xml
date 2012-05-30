@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Feature">
+    <Name>Geyser</Name>
+    <Description>
+      Old Faithful is a geyser found in Yellowstone National Park, in Wyoming, US. First seen by Europeans in 1870 (and by natives some 10,000 years before that), Old Faithful was thus named because of the regularity of its eruption. The geyser shoots a column of boiling water to a height of some 100-175 feet every 60-90 minutes (the interval determined by the ferocity of the previous eruption. Geysers occur when subterranean water hits magma (molten rock). The water is instantly turned to steam, which rushes out the nearest available opening at tremendously high pressure. Old Faithful and the other 250 geysers in Yellowstone are enjoyed by some three million visitors each year.
+    </Description>
+    <ImageName>OldFaithful</ImageName>
+    <Civ5Name></Civ5Name>
+    <AtlasName>FeatureAtlas</AtlasName>
+    <AtlasIdentifier>OldFaithful</AtlasIdentifier>
+    <Bonus>
+      <Food>0</Food>
+      <Production>2</Production>
+      <Commercial>3</Commercial>
+    </Bonus>
+    <CombatModifiers>1.00</CombatModifiers>
+    <MovementCost>-1</MovementCost>
+    <ImprovesTerrains>
+    </ImprovesTerrains>
+    <PossibleRessources>
+    </PossibleRessources>
+    <IsForest>false</IsForest>
+  </Asset>
+</XnaContent>

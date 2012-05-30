@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Scout</Name>
+    <Title>Scout</Title>
+    <Description>TXT_KEY_UNITS_SCOUT_DESCRIPTION</Description>
+    <ImageName>Scout</ImageName>
+    <Notes>
+      Ignores terrain cost
+    </Notes>
+    <EraName>Ancient</EraName>
+    <UnitType>Recon</UnitType>
+    <IsSpecial>false</IsSpecial>
+    <Cost>25</Cost>
+    <CombatStrength>4</CombatStrength>
+    <RangedCombatStrength>0</RangedCombatStrength>
+    <Range>0</Range>
+    <Sight>3</Sight>
+    <Movement>2</Movement>
+    <Domain>Land</Domain>
+    <UnitAIs>
+      <Item>Attack</Item>
+      <Item>Defense</Item>
+      <Item>Explore</Item>
+    </UnitAIs>
+    <DefaultUnitAI>Explore</DefaultUnitAI>
+    <NoBadGoodies>true</NoBadGoodies>
+    <MilitarySupport>true</MilitarySupport>
+    <MilitaryProduction>true</MilitaryProduction>
+    <Pillage>true</Pillage>
+    <IgnoreBuildingDefense>false</IgnoreBuildingDefense>   
+    <Mechanized>false</Mechanized>
+    <RequiredRessourceNames>
+    </RequiredRessourceNames>
+    <RequiredTechName></RequiredTechName>
+    <ObsoleteTechName>ScientificTheory</ObsoleteTechName>
+    <UpgradesTo>Archer</UpgradesTo>
+    <Flavours>
+      <Item>
+        <Name>Recon</Name>
+        <Amount>7</Amount>
+      </Item>
+    </Flavours>
+    <PromotionNames>
+      <Item>IgnoreTerrainCost</Item>
+    </PromotionNames>
+    <ModelName>PlayerMarine_mdla</ModelName>
+    <ModelScale>0.2</ModelScale>
+    <ModelScript>Scout</ModelScript>
+  </Asset>
+</XnaContent>

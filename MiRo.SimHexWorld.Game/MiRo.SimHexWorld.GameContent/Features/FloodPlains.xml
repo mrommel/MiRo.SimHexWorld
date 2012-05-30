@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Feature">
+    <Name>FloodPlains</Name>
+    <Description>
+      Flood plains are low-lying areas adjacent to rivers. Every year the river floods, providing natural irrigation and rich nutrients to the land, making flood plains incredibly fertile and the most productive farmland in the world. Ancient Egypt owed most of its wealth and power to the annual flood of the mighty Nile river.
+    </Description>
+    <ImageName>FloodPlains</ImageName>
+    <Civ5Name>FEATURE_FLOOD_PLAINS</Civ5Name>
+    <AtlasName>FeatureAtlas</AtlasName>
+    <AtlasIdentifier>FloodPlains</AtlasIdentifier>
+    <Bonus>
+      <Food>2</Food>
+      <Production>0</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <CombatModifiers>0.66</CombatModifiers>
+    <MovementCost>1</MovementCost>
+    <ImprovesTerrains></ImprovesTerrains>
+    <PossibleRessources>
+      <Item>Wheat</Item>
+      <Item>Sugar</Item>
+    </PossibleRessources>
+  </Asset>
+</XnaContent>

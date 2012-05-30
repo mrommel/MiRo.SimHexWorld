@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>ModernArmor</Name>
+    <Title>TXT_KEY_UNITS_MODERNARMOR_TITLE</Title>
+    <Description>TXT_KEY_UNITS_MODERNARMOR_DESCRIPTION</Description>
+    <ImageName>ModernArmor</ImageName>
+    <Notes>
+      Penalty attacking cities
+      No defensive bonuses
+      Limited visibility
+      Can move after attacking
+    </Notes>
+    <EraName>Modern</EraName>     
+    <UnitType>Armored</UnitType>
+    <IsSpecial>false</IsSpecial>
+    <Cost>700</Cost>
+    <CombatStrength>80</CombatStrength>
+    <RangedCombatStrength>-1</RangedCombatStrength>
+    <Range>-1</Range>
+    <Movement>5</Movement>
+    <MoveRate>Wheeled</MoveRate>
+    <Domain>Land</Domain>
+    <RequiredResources>
+      <Item>Aluminum</Item>
+    </RequiredResources>
+    <RequiredTechnology>Lasers</RequiredTechnology>
+    <UpgradesTo></UpgradesTo>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.MilitayStrategyData">
+    <Name>WarMobilization</Name>
+    <Description></Description>
+    <ImageName></ImageName>
+    <CheckTriggerTurnCount>1</CheckTriggerTurnCount>
+    <MinimumNumTurnsExecuted>5</MinimumNumTurnsExecuted>
+    <UpdateCitySpecializations>true</UpdateCitySpecializations>
+    <NoMinorCivs>true</NoMinorCivs>
+    <Flavours>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>Ranged</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>MilitaryTraining</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>-10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

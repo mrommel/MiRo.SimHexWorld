@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Steel</Name>
+	<Description>Steel is an alloy (mixture) of iron and carbon. Depending upon the ratio of iron to carbon, the resulting metal may be far stronger, more flexible, and possess a greater ability to resist corrosion. Iron was first worked as early as 2000 BC, and from the very beginning small quantities of steel were also produced. Generally iron was produced in two forms: wrought iron and cast iron, the former being more flexible, the latter harder and more brittle, but far cheaper to make.</Description>
+	<ImageName>Steel</ImageName>
+	<Quote>John Henry said to his Captain,"'A man ain't nothin' but a man, And before I'll let your steam drill beat me down, I'll die with the hammer in my hand.'" - Anonymous: The Ballad of John Henry, the Steel-Drivin' Man</Quote>
+	<Cost>440</Cost>
+	<Notes>Allows you to build the Longswordsman, a deadly medieval melee unit.</Notes>
+	<Required>
+    <Item>MetalCasting</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Medieval</EraName>
+	<Flavours>
+    <Item>
+      <Name>Offense</Name>
+      <Amount>20</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

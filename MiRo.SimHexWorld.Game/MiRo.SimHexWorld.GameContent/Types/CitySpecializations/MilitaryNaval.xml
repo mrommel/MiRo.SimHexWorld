@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.CitySpecialization">
+    <Name>MilitaryNaval</Name>
+    <Description></Description>
+    <ImageName></ImageName>
+    <Yield>Production</Yield>
+    <Flavours>
+      <Item>
+        <Name>Expansion</Name>
+        <Amount>-4</Amount>
+      </Item>
+      <Item>
+        <Name>Growth</Name>
+        <Amount>-4</Amount>
+      </Item>
+      <Item>
+        <Name>Production</Name>
+        <Amount>-4</Amount>
+      </Item>
+      <Item>
+        <Name>Gold</Name>
+        <Amount>-4</Amount>
+      </Item>
+      <Item>
+        <Name>Science</Name>
+        <Amount>-4</Amount>
+      </Item>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>-25</Amount>
+      </Item>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>-25</Amount>
+      </Item>
+      <Item>
+        <Name>Ranged</Name>
+        <Amount>-25</Amount>
+      </Item>
+      <Item>
+        <Name>Naval</Name>
+        <Amount>200</Amount>
+      </Item>
+      <Item>
+        <Name>NavalRecon</Name>
+        <Amount>100</Amount>
+      </Item>
+    </Flavours>
+    <MustBeCoastal>true</MustBeCoastal>
+  </Asset>
+</XnaContent>

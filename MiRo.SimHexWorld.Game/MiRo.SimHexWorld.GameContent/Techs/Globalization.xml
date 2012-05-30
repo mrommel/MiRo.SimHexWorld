@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Globalization</Name>
+    <Description>Not a technology or field of study, globalization describes a process by which different regional economies, cultures, languages, information, and whole societies become integrated into a larger, consolidated network. While often used just to describe economic tendencies in the world market, globalization does take into account everything from migration patterns to the spread of technology and information. While not recognized as a concept until much later, globalization has been around as early as the first trade routes that were created between distant cities.</Description>
+    <ImageName>Globalization</ImageName>
+    <Quote>"The new electronic interdependence recreates the world in the image of a global village." - Marshall McLuhan</Quote>
+    <Cost>3350</Cost>
+    <Notes>A key technology, Globalization allows you to build the United Nations, a wonder necessary to win a Diplomatic Victory. Also allows you to build the Sydney Opera House, a wonder very useful when pursuing a Cultural Victory.</Notes>
+    <Required>
+      <Item>Ecology</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Modern</EraName>
+    <Flavours>
+      <Item>
+        <Name>Diplomacy</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

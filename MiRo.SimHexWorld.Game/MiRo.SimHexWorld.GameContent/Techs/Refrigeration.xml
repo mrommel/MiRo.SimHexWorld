@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Refrigeration</Name>
+	<Description>Refrigeration is the process of removing heat from an enclosed space or from a substance. The primary purpose for refrigeration has always been to preserve food, with air conditioning a strong second in developed nations in the latter decades of the 20th century.</Description>
+	<ImageName>Refrigeration</ImageName>
+	<Quote>"And homeless near a thousand homes I stood, and near a thousand tables pined and wanted food." - William Wordsworth</Quote>
+	<Cost>2200</Cost>
+	<Notes>Allows you to build the Submarine, a ship invisible to all units except Destroyers and other Submarines.</Notes>
+	<Required>
+    <Item>Electricity</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Industrial</EraName>
+	<Flavours>
+    <Item>
+      <Name>Naval</Name>
+      <Amount>8</Amount>
+    </Item>
+    <Item>
+      <Name>Production</Name>
+      <Amount>2</Amount>
+    </Item>
+    <Item>
+      <Name>Offense</Name>
+      <Amount>2</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

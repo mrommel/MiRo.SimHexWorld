@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.GrandStrategyData">
+    <Name>UnitedNations</Name>
+    <Description></Description>
+    <ImageName></ImageName>
+    <Flavours>
+      <Item>
+        <Name>Diplomacy</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+    <Yields>
+      <Item>
+        <Type>Gold</Type>
+        <Amount>100</Amount>
+      </Item>
+    </Yields>
+  </Asset>
+</XnaContent>

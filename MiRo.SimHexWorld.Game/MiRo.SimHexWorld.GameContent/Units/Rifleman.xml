@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Rifleman</Name>
+    <Title>TXT_KEY_UNITS_RIFLEMAN_TITLE</Title>
+    <Description>TXT_KEY_UNITS_RIFLEMAN_DESCRIPTION</Description>
+    <ImageName>Rifleman</ImageName>
+    <Notes></Notes>
+    <EraName>Renaissance</EraName>  
+    <UnitType>Gunpowder</UnitType>
+    <IsSpecial>false</IsSpecial>
+    <Cost>200</Cost>
+    <CombatStrength>25</CombatStrength>
+    <RangedCombatStrength>-1</RangedCombatStrength>
+    <Range>-1</Range>
+    <Movement>2</Movement>
+    <Domain>Land</Domain>
+    <RequiredResources>
+    </RequiredResources>
+    <RequiredTechnology>Rifling</RequiredTechnology>
+    <UpgradesTo>Infantry</UpgradesTo>
+  </Asset>
+</XnaContent>

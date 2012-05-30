@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Ressource">
+    <Name>Horses</Name>
+    <Description>
+      Used by Mounted Units.
+      As transport, implement of war, companion and (occasionally) foodstuff, horses are among the most important domesticated animals in human history. Horses were originally domesticated in Central Asia around 4000 BC, and over the next several thousand years the practice spread across Europe, Asia, the Middle East and Africa. Horses were transported to the New World by the Spanish in the 16th century, where their use was quickly and enthusiastically picked up by the native population in the following centuries. Remember that horses are strategic resources, and thus they are consumed as you construct the associated units and buildings.
+    </Description>
+    <ImageName>Horses</ImageName>
+    <RessourceType>Strategic</RessourceType>
+    <Bonus>
+      <Food>0</Food>
+      <Production>1</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <Improvements>
+      <Item>Pasture</Item>
+    </Improvements>
+    <RequiredTechName>AnimalHusbandry</RequiredTechName>
+    <!--Units Requiring this Resource: Helicopter Gunship, Jet Fighter, Missile Cruiser, Mobile SAM, Modern Armor, Rocket Artillery, Stealth Bomber, Battleship, Carrier, Fighter, Panzer, Submarine, Tank, Zero, B-17 Bomber, Bomber-->
+    <!--BuildingsRequiring this Resource: None-->
+  </Asset>
+</XnaContent>
+

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.MapType">
+    <Name>Archipelago</Name>
+    <Title>TXT_KEY_MAP_TYPE_ARCHIPELAGO_TITLE</Title>
+    <Description>TXT_KEY_MAP_TYPE_ARCHIPELAGO_DESCRIPTION</Description>
+    <ImageName>Archipelago</ImageName>
+    <Order>3</Order>
+    <OceanRatio>0.3</OceanRatio>
+  </Asset>
+</XnaContent>

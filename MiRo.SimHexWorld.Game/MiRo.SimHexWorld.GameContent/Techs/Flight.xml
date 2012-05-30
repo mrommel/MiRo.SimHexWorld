@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Flight</Name>
+    <Description>Throughout history, man has dreamed of conquering the skies. Leonardo da Vinci's visions of flight are well-known, of course, and there were many other lesser visionaries as well. The early theorists looked at the natural masters of the air, birds, and they proposed machines that emulated their wing shape and flapping motions (ornithopters). But the early designers lacked the materials, engines, and knowledge of aerodynamics to bring their visions to life.</Description>
+    <ImageName>Flight</ImageName>
+    <Quote>"Aeronautics was neither an industry nor a science. It was a miracle." - Igor Sikorsky</Quote>
+    <Cost>2200</Cost>
+    <Notes>Allows you to build the Fighter, an Air Unit designed to gain control of the skies, and the Carrier, a ship capable of carrying aircraft.</Notes>
+    <Required>
+      <Item>ReplaceableParts</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Industrial</EraName>
+    <Flavours>
+      <Item>
+        <Name>Air</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Radar</Name>
+	<Description>Radar is an object detection system that uses electromagnetic waves to identify faraway objects like ships or airplanes. Coined in 1941, the term "RADAR" is an acronym for "Radio Detection And Ranging."</Description>
+	<ImageName>Radar</ImageName>
+	<Quote>"Vision is the art of seeing things invisible." - Jonathan Swift</Quote>
+	<Cost>2600</Cost>
+	<Notes>Allows you to build the Bomber, a deadly air unit capable of delivering death from afar. Also allows you to build the Paratrooper, a late-game infantry unit capable of paradropping behind enemy lines.</Notes>
+	<Required>
+    <Item>Radio</Item>
+    <Item>Combustion</Item>
+    <Item>Flight</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Modern</EraName>
+	<Flavours>
+    <Item>
+      <Name>Air</Name>
+      <Amount>12</Amount>
+    </Item>
+    <Item>
+      <Name>Offense</Name>
+      <Amount>5</Amount>
+    </Item>
+    <Item>
+      <Name>Wonder</Name>
+      <Amount>2</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

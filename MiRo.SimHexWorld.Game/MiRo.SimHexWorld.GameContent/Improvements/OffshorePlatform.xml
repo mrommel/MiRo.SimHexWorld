@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Improvement">
+    <Name>Offshore Platform</Name>
+    <Description>
+      An Offshore Platform is the aquatic equivelent of the oil well. It can be built by a work boat on any ocean tile which has oil.
+      The offshore platform is an important late-game improvement as it provides access to the highly-prized oil resource, but only when that resource is in the ocean (workers construct wells to access oil that is on land). Work boats are consumed when they construct an offshore platform.
+    </Description>
+    <ImageName>OffshorePlatform</ImageName>
+    <Bonus>
+      <Food>0</Food>
+      <Production>0</Production>
+      <Commercial>1</Commercial>
+    </Bonus>
+    <ImprovesResources>
+      <Item>
+        <Ressource>Oil</Ressource>
+        <Bonus>
+          <Food>0</Food>
+          <Production>0</Production>
+          <Commercial>1</Commercial>
+        </Bonus>
+      </Item>
+    </ImprovesResources>
+    <RequiredTech>Refrigeration</RequiredTech>
+    <TerrainNames>
+      <Item>Ocean</Item>
+    </TerrainNames>
+    <FeatureNames>
+    </FeatureNames>
+  </Asset>
+</XnaContent>

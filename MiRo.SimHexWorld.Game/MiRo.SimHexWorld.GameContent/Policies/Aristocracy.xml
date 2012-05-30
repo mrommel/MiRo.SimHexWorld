@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Policy">
+    <Name>Aristocracy</Name>
+    <Description>
+      +33% [Prod] when building Wonders.
+    </Description>
+    <ImageName>Aristocracy</ImageName>
+    <Historical>
+      Aristocracy is a form of government in which a group of the most prominent citizens rule. Membership to this group may be hereditary, or it may be through merit or wealth or all three. The term is derived from the Greek word aristokratia, meaning "the rule of the best." There is a very thin line between an aristocracy and an oligarchy, and which form a government actually is might very well depend upon one's point of view: the rulers might consider themselves aristocrats, while everybody else sees them as oligarchs.
+    </Historical>
+    <PolicyTypeName>Tradition</PolicyTypeName>
+    <RequiredPolicyNames></RequiredPolicyNames>
+    
+    <!-- bonuses -->
+    <WonderProductionModifier>0.33</WonderProductionModifier>
+    <!-- bonuses -->
+
+    <Flavours>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

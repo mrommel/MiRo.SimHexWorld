@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Building">
+    <Name>Library</Name>
+    <Title></Title>
+    <Description></Description>
+    <ImageName>Library</ImageName>
+    <Cost>80</Cost>
+    <Maintenance>1</Maintenance>
+    <RequiredTechName>Writing</RequiredTechName>
+    <SpecialistType>Scientist</SpecialistType>
+    <SpecialistSlots>2</SpecialistSlots>
+    <NeverCapture>true</NeverCapture>
+    <Flavours>
+      <Item>
+        <Name>Science</Name>
+        <Amount>20</Amount>
+      </Item>
+    </Flavours> 
+  </Asset>
+</XnaContent>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Improvement">
+    <Name>Pasture</Name>
+    <Description>
+      A pasture is a fenced-in section of open land that has been planted with grass to feed grazing animals like horses or cows.
+    </Description>
+    <ImageName>Pasture</ImageName>
+    <Bonus>
+      <Food>0</Food>
+      <Production>0</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <ImprovesResources>
+      <Item>
+        <Ressource>Horses</Ressource>
+        <Bonus>
+          <Food>0</Food>
+          <Production>1</Production>
+          <Commercial>0</Commercial>
+        </Bonus>
+      </Item>
+      <Item>
+        <Ressource>Cattle</Ressource>
+        <Bonus>
+          <Food>0</Food>
+          <Production>1</Production>
+          <Commercial>0</Commercial>
+        </Bonus>
+      </Item>
+      <Item>
+        <Ressource>Sheep</Ressource>
+        <Bonus>
+          <Food>1</Food>
+          <Production>0</Production>
+          <Commercial>0</Commercial>
+        </Bonus>
+      </Item>
+    </ImprovesResources>
+    <RequiredTech>AnimalHusbandry</RequiredTech>
+    <TerrainNames>
+      <Item>Grassland</Item>
+      <Item>Plains</Item>
+      <Item>Tundra</Item>
+    </TerrainNames>
+    <FeatureNames>
+    </FeatureNames>
+  </Asset>
+</XnaContent>

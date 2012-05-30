@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Improvement">
+    <Name>Oil Well</Name>
+    <Description>
+      An oil well is a land-based improvement that is used to get at the oil resource. It can be built on any place where there's oil beneath.
+      For the ocean-based equivalent, see offshore platform.
+      The dry-land version of the offshore platform, a well is a late-game improvement which provides access to the crucially-important oil resource.
+    </Description>
+    <ImageName>OilWell</ImageName>
+    <Bonus>
+      <Food>0</Food>
+      <Production>1</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <ImprovesResources>
+      <Item>
+        <Ressource>Oil</Ressource>
+        <Bonus>
+          <Food>0</Food>
+          <Production>1</Production>
+          <Commercial>0</Commercial>
+        </Bonus>
+      </Item>
+    </ImprovesResources>
+    <RequiredTech>Refrigeration</RequiredTech>
+    <TerrainNames>
+      <Item>Desert</Item>
+      <Item>Tundra</Item>
+      <Item>Snow</Item>
+    </TerrainNames>
+    <FeatureNames>
+      <Item>Jungle</Item>
+      <Item>Marsh</Item>
+    </FeatureNames>
+  </Asset>
+</XnaContent>

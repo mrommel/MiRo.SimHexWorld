@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Improvement">
+    <Name>Road</Name>
+    <Description>
+      A road is a tile improvement that allows units to move faster. In addition, roads that link a city to its civilization's capital create trade routes.
+      Roads can be built by workers after a civilization discovers The Wheel. Roads can also be removed to save on maintenance costs. Every city has an inherent road.
+      When moving along a road, all hexes cost 1/2 movement point (MP), regardless of the terrain on either tile. However, a river in between the two roaded tiles will still end the unit's move, until bridge building is obtained with the Construction tech. After discovering Engineering, the movement cost per hex goes down to 1/3 MP. A unit cannot use roads in enemy terrain.
+      Roads that are inside a civ's cultural borders have a maintenance cost of 1 gold per tile per turn. Generally, you should use roads to connect all cities to create trade routes, then remove many of them as your port cities build harbors.
+      In Civilization V the roads and railroads work a little differently to the other games of the franchise. They are still constructed by workers and allow units to move larger distances within a turn by negating the movement costs of terrain. However, now they have an upkeep cost: roads cost 1 gold per tile per turn and railroads 2 gold per tile per turn. You can also choose which ones to build: roads or railroads. If you don't need railroads to some particular areas you can save by building just plain roads. Roads require the wheel technology and railroads require the railroad technology.
+    </Description>
+    <ImageName>Road</ImageName>
+    <Bonus>
+      <Food>0</Food>
+      <Production>0</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <ImprovesResources></ImprovesResources>
+    <RequiredTech>TheWheel</RequiredTech>
+    <TerrainNames>
+      <Item>Plains</Item>
+      <Item>Grassland</Item>
+      <Item>Desert</Item>
+      <Item>Tundra</Item>
+      <Item>Snow</Item>
+      <Item>Hills</Item>
+    </TerrainNames>
+    <FeatureNames>
+      <Item>Jungle</Item>
+      <Item>Marsh</Item>
+      <Item>Forest</Item>
+    </FeatureNames>
+  </Asset>
+</XnaContent>

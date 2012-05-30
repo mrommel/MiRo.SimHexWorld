@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStartLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <StartLocation>
+    <Tribe>German</Tribe>
+    <Position>
+      <X>15</X>
+      <Y>24</Y>
+    </Position>
+  </StartLocation>
+</ArrayOfStartLocation>

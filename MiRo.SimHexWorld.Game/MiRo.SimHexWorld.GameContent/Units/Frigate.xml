@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Frigate</Name>
+    <Title>TXT_KEY_UNITS_FRIGATE_TITLE</Title>
+    <Description>TXT_KEY_UNITS_FRIGATE_DESCRIPTION</Description>
+    <ImageName>Frigate</ImageName>
+    <Notes>
+      May not melee attack
+    </Notes>
+    <EraName>Renaissance</EraName>     
+    <UnitType>Naval</UnitType>
+    <IsSpecial>false</IsSpecial>
+    <Cost>160</Cost>
+    <CombatStrength>30</CombatStrength>
+    <RangedCombatStrength>15</RangedCombatStrength>
+    <Range>2</Range>
+    <Movement>5</Movement>
+    <MoveRate>WoodenBoat</MoveRate>
+    <Domain>Sea</Domain>
+    <RequiredResources>
+      <Item>Iron</Item>
+    </RequiredResources>
+    <RequiredTechnology>Navigation</RequiredTechnology>
+    <UpgradesTo></UpgradesTo>
+  </Asset>
+</XnaContent>

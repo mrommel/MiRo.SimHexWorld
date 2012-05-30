@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Difficulty">
+    <Name>Warlord</Name>
+    <Title>TXT_KEY_DIFFICULTY_WARLORD_TITLE</Title>
+    <Description>TXT_KEY_DIFFICULTY_WARLORD_DESCRIPTION</Description>
+    <ImageName>Warlord</ImageName>
+    <Order>2</Order>
+    <AIGrowthModifier>1.1</AIGrowthModifier>
+    <CultureModifier>0.85</CultureModifier>
+
+  </Asset>
+</XnaContent>

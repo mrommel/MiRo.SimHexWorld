@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Astronomy</Name>
+    <Description>Astronomy is the study of objects in space - from space dust to asteroids to moons, planets, stars, and galaxies - as well as other more esoteric objects like black holes and wormholes. Astronomy is the oldest of the natural sciences, with its roots in the religious and astrological practices of pre-history.</Description>
+    <ImageName>Astronomy</ImageName>
+    <Quote>"Joyfully to the breeze royal Odysseus spread his sail, and with his rudder skillfully he steered." - Homer</Quote>
+    <Cost>650</Cost>
+    <Notes>Allows you to build the Caravel, the first Naval Unit capable of exploring the world's oceans. Also allows embarked land units to cross ocean tiles.</Notes>
+    <Required>
+      <Item>Compass</Item>
+      <Item>Education</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Renaissance</EraName>
+    <Flavours>
+      <Item>
+        <Name>NavalRecon</Name>
+        <Amount>6</Amount>
+      </Item>
+      <Item>
+        <Name>Naval</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Science</Name>
+        <Amount>2</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

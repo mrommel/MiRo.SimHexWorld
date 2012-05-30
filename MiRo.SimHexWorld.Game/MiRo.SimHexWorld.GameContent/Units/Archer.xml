@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Archer</Name>
+    <Title>Archer</Title>
+    <Description>TXT_KEY_UNITS_ARCHER_DESCRIPTION</Description>
+    <ImageName>Archer</ImageName>
+    <Notes>
+      May not melee attack, preforms ranged attacks
+    </Notes>
+    <EraName>Ancient</EraName>     
+    <UnitType>Archery</UnitType>
+    <IsSpecial>false</IsSpecial>
+    <Cost>70</Cost>
+    <CombatStrength>4</CombatStrength>
+    <RangedCombatStrength>6</RangedCombatStrength>
+    <Range>2</Range>
+    <Movement>2</Movement>
+    <Domain>Land</Domain>
+    <RequiredResources>
+    </RequiredResources>
+    <RequiredTechnology>Archery</RequiredTechnology>
+    <UpgradesTo>Crossbowman</UpgradesTo>
+    <Flavours>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Ranged</Name>
+        <Amount>5</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

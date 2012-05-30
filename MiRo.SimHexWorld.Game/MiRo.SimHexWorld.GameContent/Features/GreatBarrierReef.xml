@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Feature">
+    <Name>Reef</Name>
+    <Description>
+      The Great Barrier Reef is the world's largest reef. A chain of almost 3000 reefs and 1000 islands, it stretches almost 1600 miles along the coast of north-east Australia. Constructed over 500,000 years by billions of coral polyps, the Great Barrier Reef is the largest single structure made by living creatures. The Great Barrier Reef is home to a hugely diverse population of whales, dolphins, porpoises, dugongs, turtles, fish, octopi, and snakes, not to mention over 200 species of birds.
+    </Description>
+    <ImageName>GreatBarrierReef</ImageName>
+    <Civ5Name></Civ5Name>
+    <AtlasName>FeatureAtlas</AtlasName>
+    <AtlasIdentifier>GreatBarrierReef</AtlasIdentifier>
+    <Bonus>
+      <Food>0</Food>
+      <Production>2</Production>
+      <Commercial>3</Commercial>
+    </Bonus>
+    <CombatModifiers>1.00</CombatModifiers>
+    <MovementCost>-1</MovementCost>
+    <ImprovesTerrains>
+    </ImprovesTerrains>
+    <PossibleRessources>
+    </PossibleRessources>
+    <IsForest>false</IsForest>
+  </Asset>
+</XnaContent>

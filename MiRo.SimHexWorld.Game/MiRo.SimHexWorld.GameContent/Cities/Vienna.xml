@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.CityData">
+    <Name>Vienna</Name>
+    <Title>TXT_KEY_CITIES_VIENNA_TITLE</Title>
+    <Description>TXT_KEY_CITIES_VIENNA_DESCRIPTION</Description>
+    <ImageName>Vienna</ImageName>
+    <Civilization>City State</Civilization>   
+  </Asset>
+</XnaContent>

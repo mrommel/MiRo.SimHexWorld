@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>AnimalHusbandry</Name>
+	<Description>Animal husbandry appears to have occurred at about the same time as the invention of agriculture. The dog appears to be the earliest domesticated animal, probably bred to assist in hunting and killing game. Evidence suggests that they were first tamed and bred in China - in fact, geneticists believe that about 95% of the dogs living today are descended from just a few common Chinese animals. Goats and sheep were domesticated in the Middle East perhaps by about 10,000 BC.</Description>
+	<ImageName>AnimalHusbandry</ImageName>
+	<Quote>"Thou shalt not muzzle the ox when he treadeth out the corn." - The Bible, Deuteronomy, 25:4</Quote>
+	<Cost>35</Cost>
+	<Notes>Allows Workers to construct Pastures on     Cows and     Sheep. Also reveals     Horses, which are used to build powerful mounted units.</Notes>
+	<Required>
+    <Item>Agriculture</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Ancient</EraName>
+	<Flavours>
+    <Item>
+      <Name>Mobile</Name>
+      <Amount>4</Amount>
+    </Item>
+    <Item>
+      <Name>TileImprovement</Name>
+      <Amount>1</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

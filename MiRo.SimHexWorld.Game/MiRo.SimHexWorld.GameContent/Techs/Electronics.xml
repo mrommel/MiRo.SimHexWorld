@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Electronics</Name>
+    <Description>Electronics covers the branch of technology which studies the controlled motion of electrons through various forms of media, including vacuums. This is not the same as Electrical Technology, which is concerned with the generation and distribution of power. Electronics wasn't recognized as its own field of study until 1950, when it was split off from radio technology.</Description>
+    <ImageName>Electronics</ImageName>
+    <Quote>"There's a basic principle about consumer electronics: it gets more powerful all the time and it gets cheaper all the time." - Trip Hawkins</Quote>
+    <Cost>2600</Cost>
+    <Notes>Allows you to build the Mechanized Infantry, a basic speedy unit that requires no resources.</Notes>
+    <Required>
+      <Item>Telegraph</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Modern</EraName>
+    <Flavours>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

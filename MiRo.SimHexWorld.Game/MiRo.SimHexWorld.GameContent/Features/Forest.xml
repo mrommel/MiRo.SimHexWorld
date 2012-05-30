@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Feature">
+    <Name>Forest</Name>
+    <Description>
+      For early man, the forests were a great source of bounty, providing wood for fire, tools and shelter, and also many animals for sustenance and clothing. As a city grows there is a great temptation to cut down the forests for farmland, but a wise leader will always leave some standing - for productivity and to lift his people's spirits. Also, military units stationed in forests receive a significant defensive bonus.
+    </Description>
+    <ImageName>Forest</ImageName>
+    <Civ5Name>FEATURE_FOREST</Civ5Name>
+    <AtlasName>FeatureAtlas</AtlasName>
+    <AtlasIdentifier>Forest</AtlasIdentifier>
+    <Bonus>
+      <Food>1</Food>
+      <Production>1</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <CombatModifiers>1.25</CombatModifiers>
+    <MovementCost>2</MovementCost>
+    <ImprovesTerrains></ImprovesTerrains>
+    <PossibleRessources>
+      <Item>Uranium</Item>
+      <Item>Deer</Item>
+      <Item>Furs</Item>
+      <Item>Dyes</Item>
+      <Item>Silk</Item>
+    </PossibleRessources>
+    <IsForest>true</IsForest>
+  </Asset>
+</XnaContent>

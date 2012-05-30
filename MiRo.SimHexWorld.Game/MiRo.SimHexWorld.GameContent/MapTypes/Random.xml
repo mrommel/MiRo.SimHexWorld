@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.MapType">
+    <Name>Random</Name>
+	  <Title>TXT_KEY_MAP_TYPE_RANDOM_TITLE</Title>
+    <Description>TXT_KEY_MAP_TYPE_RANDOM_DESCRIPTION</Description>
+    <ImageName>Random</ImageName>
+    <Order>0</Order>
+    <OceanRatio>0.3</OceanRatio>
+  </Asset>
+</XnaContent>

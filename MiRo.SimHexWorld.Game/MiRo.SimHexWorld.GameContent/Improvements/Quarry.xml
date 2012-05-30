@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Improvement">
+    <Name>Quarry</Name>
+    <Description>
+      In common usage a quarry is a place that produces any stone or gravel. In Civilization V quarries access the marble resource, a highly-valued stone used for construction and artwork.
+    </Description>
+    <ImageName>Quarry</ImageName>
+    <Bonus>
+      <Food>0</Food>
+      <Production>0</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <ImprovesResources>
+      <Item>
+        <Ressource>Marble</Ressource>
+        <Bonus>
+          <Food>0</Food>
+          <Production>0</Production>
+          <Commercial>2</Commercial>
+        </Bonus>
+      </Item>
+    </ImprovesResources>
+    <RequiredTech>Masonry</RequiredTech>
+    <TerrainNames>
+      <Item>Grassland</Item>
+      <Item>Plains</Item>
+      <Item>Desert</Item>
+      <Item>Tundra</Item>
+      <Item>Hills</Item>
+    </TerrainNames>
+    <FeatureNames>
+    </FeatureNames>
+  </Asset>
+</XnaContent>

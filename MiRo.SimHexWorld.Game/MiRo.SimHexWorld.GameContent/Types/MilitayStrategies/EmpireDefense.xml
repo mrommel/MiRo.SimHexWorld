@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.MilitayStrategyData">
+    <Name>EmpireDefense</Name>
+    <Description></Description>
+    <ImageName></ImageName>
+    <CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+    <FirstTurnExecuted>25</FirstTurnExecuted>
+    <MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+    <NoMinorCivs>true</NoMinorCivs>
+    <Flavours></Flavours>
+  </Asset>
+</XnaContent>

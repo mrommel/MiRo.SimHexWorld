@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.World.Hexagon">
+    <Points>
+      <Item>
+        <!-- Center 0 -->
+        <Point>0 0 0</Point>
+        <TexturePoint>0.5 0.5</TexturePoint>
+        <Weight>0 0 0 0 0 0 1</Weight>         
+      </Item>
+      <Item>
+        <!-- TopCenter 1 -->
+        <Point>0 0 -4</Point>
+        <TexturePoint>0.5 0</TexturePoint>
+        <Weight>1 0 0 0 0 0 0</Weight>
+      </Item>
+      <Item>
+        <!-- TopRight 2 -->
+        <Point>3.464 0 -2</Point>
+        <TexturePoint>1.0 0</TexturePoint>
+        <Weight>0 1 0 0 0 0 0</Weight>
+      </Item>
+      <Item>
+        <!-- BottomRight 3 -->
+        <Point>3.464 0 2</Point>
+        <TexturePoint>1.0 1.0</TexturePoint>
+        <Weight>0 0 1 0 0 0 0</Weight>
+      </Item>
+      <Item>
+        <!-- BottomCenter 4 -->
+        <Point>0 0 4</Point>
+        <TexturePoint>0.5 1.0</TexturePoint>
+        <Weight>0 0 0 1 0 0 0</Weight>
+      </Item>
+      <Item>
+        <!-- BottomLeft 5 -->
+        <Point>-3.464 0 2</Point>
+        <TexturePoint>0 1.0</TexturePoint>
+        <Weight>0 0 0 0 1 0 0</Weight>
+      </Item>
+      <Item>
+        <!-- TopLeft 6 -->
+        <Point>-3.464 0 -2</Point>
+        <TexturePoint>0 0</TexturePoint>
+        <Weight>0 0 0 0 0 1 0</Weight>
+      </Item>
+    </Points>
+    <Triangles>
+      <Item>
+        <A>0</A>
+        <B>1</B>
+        <C>2</C>
+      </Item>
+      <Item>
+        <A>0</A>
+        <B>2</B>
+        <C>3</C>
+      </Item>
+      <Item>
+        <A>0</A>
+        <B>3</B>
+        <C>4</C>
+      </Item>
+      <Item>
+        <A>0</A>
+        <B>4</B>
+        <C>5</C>
+      </Item>
+      <Item>
+        <A>0</A>
+        <B>5</B>
+        <C>6</C>
+      </Item>
+      <Item>
+        <A>0</A>
+        <B>6</B>
+        <C>1</C>
+      </Item>
+    </Triangles>
+  </Asset>
+</XnaContent>

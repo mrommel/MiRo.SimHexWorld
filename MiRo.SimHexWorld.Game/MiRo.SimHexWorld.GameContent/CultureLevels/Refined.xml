@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.CultureLevel">
+    <Name>Refined</Name>
+    <Description>TXT_KEY_CULTURELEVEL_REFINED</Description>
+    <ImageName></ImageName>
+    <CityDefenseModifier>60</CityDefenseModifier>
+    <Threshold>500</Threshold>
+  </Asset>
+</XnaContent>

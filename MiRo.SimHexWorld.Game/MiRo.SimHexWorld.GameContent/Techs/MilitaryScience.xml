@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>MilitaryScience</Name>
+	<Description>Military Science is the science of using military power to achieve one's political goals. It has many branches and areas of expertise, and is generally taught in a military academy. For instance, how far can an army march in a day and how many calories does each soldier need to remain in top fighting condition? Or, how does one fight against an insurgency in our own country? Suppose we're an occupying army in another country; how does that change the approach to an insurgency? Or what's the expected survival rate from a nuclear war if we launch first?</Description>
+	<ImageName>MilitaryScience</ImageName>
+	<Quote>"Wars may be fought with weapons, but they are won by men. It is the spirit of the men who follow and of the man who leads that gains the victory." - George S. Patton</Quote>
+	<Cost>1300</Cost>
+	<Notes>Allows you to build Cavalry, a mounted unit which can hold its own against strong infantry units.</Notes>
+	<Required>
+    <Item>Economics</Item>
+    <Item>Chemistry</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Renaissance</EraName>
+	<Flavours>
+	</Flavours>
+	</Asset>
+</XnaContent>

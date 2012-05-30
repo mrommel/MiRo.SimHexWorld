@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Pikeman</Name>
+    <Title>Pikeman</Title>
+    <Description>TXT_KEY_UNITS_PIKEMAN_DESCRIPTION</Description>
+    <ImageName>Pikeman</ImageName>
+    <Notes>
+    </Notes>
+    <EraName>Medieval</EraName>
+    <UnitType>Melee</UnitType>
+    <IsSpecial>false</IsSpecial>
+    <Cost>100</Cost>
+    <CombatStrength>10</CombatStrength>
+    <RangedCombatStrength>0</RangedCombatStrength>
+    <Range>0</Range>
+    <Sight>2</Sight>
+    <Movement>2</Movement>
+    <Domain>Land</Domain>
+    <UnitAIs>
+      <Item>Counter</Item>
+      <Item>Defense</Item>
+      <Item>Explore</Item>
+    </UnitAIs>
+    <DefaultUnitAI>Counter</DefaultUnitAI>
+    <NoBadGoodies>false</NoBadGoodies>
+    <MilitarySupport>true</MilitarySupport>
+    <MilitaryProduction>true</MilitaryProduction>
+    <Pillage>true</Pillage>
+    <IgnoreBuildingDefense>false</IgnoreBuildingDefense>
+    <Mechanized>false</Mechanized>
+    <RequiredRessourceNames>
+    </RequiredRessourceNames>
+    <RequiredTechName>CivilService</RequiredTechName>
+    <ObsoleteTechName>Rifling</ObsoleteTechName>
+    <UpgradesTo>Rifleman</UpgradesTo>
+    <Flavours>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>5</Amount>
+      </Item>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>6</Amount>
+      </Item>
+    </Flavours>
+    <PromotionNames>
+      <Item>AntiMounted2</Item>
+    </PromotionNames>
+    <ModelName>PlayerMarine_mdla</ModelName>
+    <ModelScale>0.2</ModelScale>
+    <ModelScript>Pikeman</ModelScript>
+  </Asset>
+</XnaContent>

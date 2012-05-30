@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Currency</Name>
+    <Description>Currency is a remarkable innovation by which pieces of paper or small discs represent a certain amount of wealth and can be traded to others in return for goods and services. The earliest currencies were metal coins; these were worth whatever was the current value of the metal out of which they were carved. Later on, the currency itself might have little or no intrinsic value - on a desert island, a dollar bill is nothing more than a small rectangular piece of paper - but the currency's issuer (usually a government) assigned it a value, and as long as the issuer remained solvent, the currency was as good as gold, so to speak.</Description>
+    <ImageName>Currency</ImageName>
+    <Quote>"Better is bread with a happy heart Than wealth with vexation." - Amenemope</Quote>
+    <Cost>250</Cost>
+    <Notes>Allows you to build various     Gold-boosting buildings like the Market, and also allows your cities to convert     Production into     Gold instead of working on units or buildings.</Notes>
+    <Required>
+      <Item>Mathematics</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Medieval</EraName>
+    <Flavours>
+      <Item>
+        <Name>Gold</Name>
+        <Amount>8</Amount>
+      </Item>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>2</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

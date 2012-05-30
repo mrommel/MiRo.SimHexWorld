@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Lasers</Name>
+	<Description>The term "laser" was originally spelled "LASER", as it is the acronym for "Light Amplification by Stimulated Emission of Radiation", basically its own definition. The first scientific foundations for lasers were laid down by Albert Einstein in 1917 when he re-derived Planck's law of radiation, about the same time science fiction writers coincidentally began to describe a similar possible technology. The first functional laser wasn't demonstrated until 1960 when the Hughes Research Laboratories introduced laser technology capable of storing data via optical storage devices (like a DVD burner).</Description>
+	<ImageName>Lasers</ImageName>
+	<Quote>"The night is far spent, the day is at hand: let us therefore cast off the works of darkness, and let us put on the armor of light." - The Holy Bible: Romans, 13:12 </Quote>
+	<Cost>3000</Cost>
+	<Notes>Allows you to build the Modern Armor, an incredibly fast and powerful Armored Unit. Also allows you to build the Jet Fighter, the most powerful fighter unit in the game.</Notes>
+	<Required>
+    <Item>Radar</Item>
+    <Item>Combustion</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Modern</EraName>
+	<Flavours>
+    <Item>
+      <Name>Offense</Name>
+      <Amount>5</Amount>
+    </Item>
+    <Item>
+      <Name>Mobile</Name>
+      <Amount>5</Amount>
+    </Item>
+    <Item>
+      <Name>Air</Name>
+      <Amount>5</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

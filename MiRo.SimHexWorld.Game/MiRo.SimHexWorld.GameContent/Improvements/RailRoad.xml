@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Improvement">
+    <Name>Railroad</Name>
+    <Description>
+      A railroad is a tile improvement that allows units to move faster, by reducing movement costs per hex and negating the movement costs of terrain. In addition, railroads may create trade routes, and if they do they will give a +50% production bonus to the city.
+      To build railroads, the civilization first needs to discover the Railroad technology. Immediately upon its discovery, all of the civilization's workers will have the "build railroad" option when in non-railroaded terrain.
+      When moving on a railroad, all tiles cost 1/10 movement points (MP) to enter. A unit cannot use railroads in enemy terrain.
+      Railroads have a significant maintenance cost: 2 gold per tile per turn. Generally, you should build rail links only to link up cities to get the production bonus.
+    </Description>
+    <ImageName>Railroad</ImageName>
+    <Bonus>
+      <Food>0</Food>
+      <Production>0</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <ImprovesResources>
+    </ImprovesResources>
+    <RequiredTech>Railroad</RequiredTech>
+    <TerrainNames>
+      <Item>Grassland</Item>
+      <Item>Plains</Item>
+      <Item>Desert</Item>
+      <!-- Todo -->
+    </TerrainNames>
+    <FeatureNames>
+      <Item>Forest</Item>
+      <Item>Marsh</Item>
+      <Item>FloodPlains</Item>
+      <Item>Jungle</Item>
+      <!-- Todo -->
+    </FeatureNames>
+  </Asset>
+</XnaContent>

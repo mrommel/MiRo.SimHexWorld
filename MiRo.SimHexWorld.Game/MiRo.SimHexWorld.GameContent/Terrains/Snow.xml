@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Terrain">
+    <Name>Snow</Name>
+    <Title>Snow</Title>
+    <Description>
+      Snow
+    </Description>
+    <ImageName>Snow</ImageName>
+    <Civ5Name>TERRAIN_SNOW</Civ5Name>
+    <AtlasName>TerrainAtlas</AtlasName>
+    <AtlasIdentifier>Snow</AtlasIdentifier>
+    <TileType>Snow</TileType>
+    <TileHeight>Zero</TileHeight>
+    <Bonus>
+      <Food>0</Food>
+      <Production>0</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <CombatModifiers>0.66</CombatModifiers>
+    <MovementCost>1</MovementCost>
+    <PossibleFeatures>
+    </PossibleFeatures>
+    <PossibleRessources>
+      <Item>Iron</Item>
+      <Item>Oil</Item>
+      <Item>Uranium</Item>
+    </PossibleRessources>
+    <CanFound>false</CanFound>
+    <InfluenceCost>2</InfluenceCost>
+    <BuildModifier>50</BuildModifier>
+    <MoveRateTypes>
+      <Item>BiPed</Item>
+      <Item>Wheeled</Item>
+    </MoveRateTypes>
+  </Asset>
+</XnaContent>

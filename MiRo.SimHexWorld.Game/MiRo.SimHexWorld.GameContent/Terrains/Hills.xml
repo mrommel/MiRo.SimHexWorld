@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Terrain">
+    <Name>Hills</Name>
+    <Title>Hills</Title>
+    <Description>
+      Hills are well, hilly. They're difficult to farm and hard to move through, but they provide good defensive bonuses and many different resources can be found therein. In addition, units atop hills can see over "blocking terrain. "Hills provide increased productivity to a nearby city, as well as important combat bonuses.
+    </Description>
+    <ImageName>Hills</ImageName>
+    <Civ5Name></Civ5Name>
+    <AtlasName>TerrainAtlas</AtlasName>
+    <AtlasIdentifier>Hills</AtlasIdentifier>
+    <TileType>Rock</TileType>
+    <TileHeight>Hill</TileHeight>
+    <Bonus>
+      <Food>0</Food>
+      <Production>2</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <CombatModifiers>1.25</CombatModifiers>
+    <MovementCost>2</MovementCost>
+    <PossibleFeatures>
+      <Item>Forest</Item>
+      <Item>Jungle</Item>
+    </PossibleFeatures>
+    <PossibleRessources>
+    </PossibleRessources>
+    <CanFound>false</CanFound>
+    <InfluenceCost>0</InfluenceCost>
+    <BuildModifier>0</BuildModifier>
+    <MoveRateTypes>
+      <Item>BiPed</Item>
+      <Item>Wheeled</Item>
+    </MoveRateTypes>
+  </Asset>
+</XnaContent>

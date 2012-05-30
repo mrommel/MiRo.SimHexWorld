@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Caravel</Name>
+    <Title>Caravel</Title>
+    <Description>TXT_KEY_UNITS_CARAVEL_DESCRIPTION</Description>
+    <ImageName>Caravel</ImageName>
+    <Notes>
+      +2 extra sight
+      May not melee attack
+    </Notes>
+    <EraName>Renaissance</EraName>     
+    <UnitType>Naval</UnitType>
+    <IsSpecial>false</IsSpecial>
+    <Cost>100</Cost>
+    <CombatStrength>15</CombatStrength>
+    <RangedCombatStrength>7</RangedCombatStrength>
+    <Range>2</Range>
+    <Movement>6</Movement>
+    <MoveRate>Boat</MoveRate>
+    <Domain>Sea</Domain>
+    <UnitAIs>
+      <Item>
+        <Name>AttackSea</Name>
+        <Name>ReserveSea</Name>
+        <Name>EscortSea</Name>
+        <Name>ExploreSea</Name>
+      </Item>
+    </UnitAIs>
+    <DefaultUnitAI>ExploreSea</DefaultUnitAI>
+    <MilitarySupport>true</MilitarySupport>
+    <MilitaryProduction>true</MilitaryProduction>
+    <Pillage>true</Pillage>
+    <Mechanized>true</Mechanized>
+    <RequiredResources>
+    </RequiredResources>
+    <RequiredTechnology>Astronomy</RequiredTechnology>
+    <ObsoleteTechnology>Electricity</ObsoleteTechnology>
+    <UpgradesTo>Destroyer</UpgradesTo>
+    <Flavours>
+      <Item>
+        <Name>Naval</Name>
+        <Amount>5</Amount>
+      </Item>
+      <Item>
+        <Name>NavalRecon</Name>
+        <Amount>5</Amount>
+      </Item>
+    </Flavours>
+    <PromotionNames>
+      <Item>ExtraSight2</Item>
+      <Item>OnlyDefensive</Item>
+    </PromotionNames>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.MilitayStrategyData">
+    <Name>AtWar</Name>
+    <Description></Description>
+    <ImageName></ImageName>
+    <CheckTriggerTurnCount>1</CheckTriggerTurnCount>
+    <MinimumNumTurnsExecuted>5</MinimumNumTurnsExecuted>
+    <UpdateCitySpecializations>true</UpdateCitySpecializations>
+    <NoMinorCivs>true</NoMinorCivs>
+    <Flavours>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>15</Amount>
+      </Item>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>15</Amount>
+      </Item>
+      <Item>
+        <Name>Ranged</Name>
+        <Amount>15</Amount>
+      </Item>
+      <Item>
+        <Name>CityDefense</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>-10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

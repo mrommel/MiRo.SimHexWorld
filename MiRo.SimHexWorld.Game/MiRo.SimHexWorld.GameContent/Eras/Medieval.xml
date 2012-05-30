@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Era">
+    <Name>Medieval</Name>
+    <Title>TXT_KEY_ERAS_MEDIEVAL_TITLE</Title>
+    <Description>TXT_KEY_ERAS_MEDIEVAL_DESCRIPTION</Description>
+    <ImageName>Medieval</ImageName>
+    <Successor>Renaissance</Successor>
+    <GrowthModifier>1.0</GrowthModifier>
+  </Asset>
+</XnaContent>

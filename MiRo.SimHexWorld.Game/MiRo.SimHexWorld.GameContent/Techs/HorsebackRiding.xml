@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>HorsebackRiding</Name>
+	<Description>Horseback riding was developed in the second millennium BC (possibly earlier), probably by the nomadic people of Central Asia. The horse had been domesticated for some time by then, but the original animal was too small. It wasn't until a large enough animal had been bred that horseback riding became practical. One early group of nomads, the Scythians, were particularly accomplished riders; they might have invented the first saddle and stirrup (although they may have used the stirrup only for mounting and dismounting the horse). According to the Greek historians the Scythians were the first to "geld" (castrate) unruly male horses, making them much more docile and controllable.</Description>
+	<ImageName>HorsebackRiding</ImageName>
+	<Quote>"My kingdom for a horse!" - Shakespeare (Richard III)</Quote>
+	<Cost>100</Cost>
+	<Notes>Allows you to build the Horseman, a fast and powerful mounted unit.</Notes>
+	<Required>
+    <Item>TheWheel</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Classical</EraName>
+	<Flavours>
+    <Item>
+      <Name>Mobile</Name>
+      <Amount>10</Amount>
+    </Item>
+    <Item>
+      <Name>Offense</Name>
+      <Amount>5</Amount>
+    </Item>
+    <Item>
+      <Name>Production</Name>
+      <Amount>3</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

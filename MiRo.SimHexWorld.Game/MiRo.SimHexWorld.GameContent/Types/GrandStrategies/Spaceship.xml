@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.GrandStrategyData">
+    <Name>Spaceship</Name>
+    <Description></Description>
+    <ImageName></ImageName>
+    <Flavours>
+      <Item>
+        <Name>Spaceship</Name>
+        <Amount>13</Amount>
+      </Item>
+    </Flavours>
+    <Yields>
+      <Item>
+        <Type>Science</Type>
+        <Amount>100</Amount>
+      </Item>
+      <Item>
+        <Type>Production</Type>
+        <Amount>100</Amount>
+      </Item>
+    </Yields>
+  </Asset>
+</XnaContent>

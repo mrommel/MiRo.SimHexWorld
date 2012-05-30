@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Agriculture</Name>
+    <Description>Agriculture is the production of plants and animals, most notably for food, but also for clothing, shelter, medicine, recreation, and other diverse uses. Crop cultivation probably developed independently in numerous places. The earliest evidence of agriculture thus far discovered dates back to the end of the last ice age, approximately 11,000 years ago. Interestingly, it appears that agriculture was not invented by starving hunter-gatherers desperately seeking new sources of sustenance; instead, evidence suggests that the earliest agriculturalists were successful and wealthy hunter-gatherers who probably had plenty of food already on hand. This makes some sense: people with a surplus of food can afford to experiment on new technologies, while those who are hungry are going to expend all of their energy on tried and true methods of gaining sustenance.</Description>
+    <ImageName>Agriculture</ImageName>
+    <Quote>Where tillage begins, other arts follow. The farmers therefore are the founders of human civilization." - Daniel Webster</Quote>
+    <Cost>20</Cost>
+    <Notes>Allows Workers to construct Farms, vital for increasing the     Food output of map tiles.</Notes>
+    <Required>
+    </Required>
+    <RequiredOr>
+      <Item>Agriculture</Item>
+    </RequiredOr>
+    <EraName>Ancient</EraName>
+    <Flavours>
+      <Item>
+        <Name>Growth</Name>
+        <Amount>5</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

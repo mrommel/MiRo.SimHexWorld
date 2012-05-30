@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Policy">
+    <Name>Discipline</Name>
+    <Description>
+      +15% [Force] combat strength for military Units which have another military Unit in an adjacent tile.
+    </Description>
+    <ImageName>Discipline</ImageName>
+    <Historical>
+      In a military structure, discipline refers to a soldier's willingness to follow legitimate orders, to respect superior officers, and to put their life in jeopardy or even die when required. Disciplined soldiers are expected to uphold the dignity of their uniform when off-duty and to protect the weak and helpless. Lapses in discipline may lead to military punishment or even courts-martial and discharge.
+    </Historical>
+    <PolicyTypeName>Honor</PolicyTypeName>
+    <RequiredPolicyNames></RequiredPolicyNames>
+    
+    <!-- bonuses -->
+    <FreePromotionName>AdjacentBonus</FreePromotionName>
+    <!-- bonuses -->
+    
+    <Flavours>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

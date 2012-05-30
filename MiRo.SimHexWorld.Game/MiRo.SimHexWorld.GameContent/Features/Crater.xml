@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Feature">
+    <Name>Crater</Name>
+    <Description>
+      The Barringer Crater is a huge meteorite crater located in Arizona, in the United States of America. The crater is four thousand feet in diameter, and scientists believe that it was created some 50,000 years ago when the site was hit by a large nickel-iron meteorite weighing, at time of impact, 160,000 tons and moving at perhaps 27,000 miles per hour.
+    </Description>
+    <ImageName>BarringerCrater</ImageName>
+    <Civ5Name></Civ5Name>
+    <AtlasName>FeatureAtlas</AtlasName>
+    <AtlasIdentifier>BarringerCrater</AtlasIdentifier>
+    <Bonus>
+      <Food>0</Food>
+      <Production>2</Production>
+      <Commercial>3</Commercial>
+    </Bonus>
+    <CombatModifiers>1.00</CombatModifiers>
+    <MovementCost>-1</MovementCost>
+    <ImprovesTerrains>
+    </ImprovesTerrains>
+    <PossibleRessources>
+    </PossibleRessources>
+    <IsForest>false</IsForest>
+  </Asset>
+</XnaContent>

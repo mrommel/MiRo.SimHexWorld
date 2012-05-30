@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Computers</Name>
+    <Description>At its most basic, a computer is a machine which manipulates data or controls according to a set of given instructions. While the first "modern" computer wasn't conceived of until the early 20th century, the earliest computers can be traced back to Al-Jazari's mechanical astronomical clocks in 1206 A.D. and Jacquard's programmable textile loom in 1801. While both of these machines were programmable, they didn't perform the other function of modern computers - storing data. The earliest computers used mechanical and analog parts to function and store their data, eventually switching to digital electronics in the 1940's. There's no exact point at which the modern day computer was decidedly invented; it was rather arrived at by a series of steps and advances, along which came such notable ones as Konrad Zuse's Z Machine and the U.S. Army's ENIAC.</Description>
+    <ImageName>Computers</ImageName>
+    <Quote>"Computers are like Old Testament gods: lots of rules and no mercy." - Joseph Campbell</Quote>
+    <Cost>3000</Cost>
+    <Notes>Allows you to build the Nuclear Submarine, a ship invisible to all Units except for Destroyers and other Subs that may also carry missiles. Also allows you to build the Mobile SAM, a fast unit specialized in thwarting enemy aircraft.</Notes>
+    <Required>
+      <Item>Electronics</Item>
+      <Item>MassMedia</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Modern</EraName>
+    <Flavours>
+      <Item>
+        <Name>Air</Name>
+        <Amount>5</Amount>
+      </Item>
+      <Item>
+        <Name>Naval</Name>
+        <Amount>5</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

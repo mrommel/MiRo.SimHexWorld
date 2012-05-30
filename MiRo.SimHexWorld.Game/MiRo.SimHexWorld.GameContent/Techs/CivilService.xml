@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>CivilService</Name>
+    <Description>The term "civil service" is generally used to describe the parts of a government in which individuals are employed on the basis of merit rather than because of political patronage or being born into a certain class or because the person is related to the current ruler. In the United States federal government, for instance, the highest posts in the bureaucracy are appointed by the president. They are "political appointments" and will likely change with each new administration. Ranks below the highest points are filled with permanent "civil servants," who generally hold their positions from administration to administration, no matter which party wins.</Description>
+    <ImageName>CivilService</ImageName>
+    <Quote>"The only thing that saves us from the bureaucracy is its inefficiency." - Eugene McCarthy</Quote>
+    <Cost>400</Cost>
+    <Notes>Farms next to rivers and lakes produce +1     Food, an extremely useful bonus. Also allows you to build the Pikeman, a unit deadly against mounted enemies like the Horseman and Knight.</Notes>
+    <Required>
+      <Item>Philosophy</Item>
+      <Item>Trapping</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Medieval</EraName>
+    <Flavours>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>6</Amount>
+      </Item>
+      <Item>
+        <Name>Growth</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>2</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Penicilin</Name>
+	<Description>Penicillin is a group of antibiotics derived from a certain fungus. Antibiotics fight and kill bacteria, tiny life-forms, some of which - plague, syphilis, and leprosy, to name but three - are quite detrimental to human health and well-being. It is believed that the use of a primitive form of penicillin dates back to medieval times, when moldy bread was employed to treat suppurating wounds. The scientific discovery of the antibiotic is attributed to Alexander Fleming in 1928, with the first official medical use some two years later by pathologist Cecil George Paine. As its use has grown, some bacteria have developed a tolerance for penicillin and a wide range of other antibiotics have been invented to deal with the new drug-resistant strains. Still, penicillin and its heirs remain important weapons in the physician's unending battle with the deadly menace of bacteria.</Description>
+	<ImageName>Penicilin</ImageName>
+	<Quote>"In nothing do men more nearly approach the gods than in giving health to men." - Cicero</Quote>
+	<Cost>2600</Cost>
+	<Notes>Allows you to build the Medical Lab, a building which speeds the     growth of your Cities.</Notes>
+	<Required>
+    <Item>Refrigeration</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Modern</EraName>
+	<Flavours>
+    <Item>
+      <Name>Growth</Name>
+      <Amount>10</Amount>
+    </Item>
+    <Item>
+      <Name>Science</Name>
+      <Amount>2</Amount>
+    </Item>
+    <Item>
+      <Name>Gold</Name>
+      <Amount>2</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

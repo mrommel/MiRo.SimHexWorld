@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Dynamite</Name>
+    <Description>Dynamite is an explosive material invented by Swedish chemist and engineer Alfred Nobel in 1867. Dynamite is created by soaking an absorbent material like diatomaceous earth (interestingly, the same material used in many pool filters) in nitroglycerin. Nitroglycerin is an extremely powerful but terrifyingly unstable explosive; dynamite is less powerful but a lot more stable.</Description>
+    <ImageName>Dynamite</ImageName>
+    <Quote>"As soon as men decide that all means are permitted to fight an evil, then their good becomes indistinguishable from the evil that they set out to destroy." - Christopher Dawson</Quote>
+    <Cost>1900</Cost>
+    <Notes>Allows you to build the Artillery, a deadly siege unit capable of shooting further than any previous ranged unit.</Notes>
+    <Required>
+      <Item>Fertilizer</Item>
+      <Item>Rifling</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Industrial</EraName>
+    <Flavours>
+      <Item>
+        <Name>Ranged</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.MilitayStrategyData">
+    <Name>NeedRanged</Name>
+    <Description></Description>
+    <ImageName></ImageName>
+    <CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+    <FirstTurnExecuted>25</FirstTurnExecuted>
+    <MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+    <Flavours>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>-5</Amount>
+      </Item>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>-5</Amount>
+      </Item>
+      <Item>
+        <Name>Ranged</Name>
+        <Amount>20</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

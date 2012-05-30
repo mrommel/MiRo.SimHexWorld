@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Warrior</Name>
+    <Title>Warrior</Title>
+    <Description>TXT_KEY_UNITS_WARRIOR_DESCRIPTION</Description>
+    <ImageName>Warrior</ImageName>
+    <Notes>
+    </Notes>
+    <EraName>Ancient</EraName>
+    <UnitType>Melee</UnitType>
+    <IsSpecial>false</IsSpecial>
+    <Cost>40</Cost>
+    <CombatStrength>6</CombatStrength>
+    <RangedCombatStrength>0</RangedCombatStrength>
+    <Range>0</Range>
+    <Sight>2</Sight>
+    <Movement>2</Movement>
+    <Domain>Land</Domain>
+    <UnitAIs>
+      <Item>Attack</Item>
+      <Item>Defense</Item>
+      <Item>Explore</Item>
+    </UnitAIs>
+    <DefaultUnitAI>Attack</DefaultUnitAI>
+    <NoBadGoodies>false</NoBadGoodies>
+    <MilitarySupport>true</MilitarySupport>
+    <MilitaryProduction>true</MilitaryProduction>
+    <Pillage>true</Pillage>
+    <IgnoreBuildingDefense>false</IgnoreBuildingDefense>
+    <Mechanized>false</Mechanized>
+    <RequiredRessourceNames>
+    </RequiredRessourceNames>
+    <RequiredTechName></RequiredTechName>
+    <ObsoleteTechName>MetalCasting</ObsoleteTechName>
+    <UpgradesTo>Swordsman</UpgradesTo>
+    <Flavours>
+      <Item>
+        <Name>Recon</Name>
+        <Amount>1</Amount>
+      </Item>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>2</Amount>
+      </Item>
+    </Flavours>
+    <PromotionNames></PromotionNames>
+    <ModelName>Warrior</ModelName>
+    <ModelScale>0.2</ModelScale>
+    <ModelScript>Warrior</ModelScript>
+  </Asset>
+</XnaContent>

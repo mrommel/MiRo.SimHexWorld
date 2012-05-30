@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Musketman</Name>
+    <Title>TXT_KEY_UNITS_MUSKETMAN_TITLE</Title>
+    <Description>TXT_KEY_UNITS_MUSKETMAN_DESCRIPTION</Description>
+    <ImageName>Musketman</ImageName>
+    <Notes></Notes>
+    <EraName>Renaissance</EraName>  
+    <UnitType>Gunpowder</UnitType>
+    <IsSpecial>false</IsSpecial>
+    <Cost>120</Cost>
+    <CombatStrength>16</CombatStrength>
+    <RangedCombatStrength>-1</RangedCombatStrength>
+    <Range>-1</Range>
+    <Movement>2</Movement>
+    <Domain>Land</Domain>
+    <RequiredResources>
+    </RequiredResources>
+    <RequiredTechnology>Gunpowder</RequiredTechnology>
+    <UpgradesTo>Rifleman</UpgradesTo>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>AtomicTheory</Name>
+    <Description>Atomic theory of matter was first proposed in ancient Greece. The philosophers Leucippus and Democritus proposed that the physical world was composed of an infinite number of extremely small particles, or "atoms," which existed in a void, or vacuum. Atoms combine in different quantities and formations to create everything in existence, from air to gold to human flesh to the world beneath our feet. The men had of course no way to prove their theory, and it was rejected by later Greek philosophers such as Plato and Aristotle, who had what might be called a more spiritual view of existence. That view as adopted by the Church and most of Medieval Europe, and the atomic theory languished for millennia.</Description>
+    <ImageName>AtomicTheory</ImageName>
+    <Quote>"The unleashed power of the atom has changed everything save our modes of thinking, and we thus drift toward unparalleled catastrophes." - Albert Einsten</Quote>
+    <Cost>2600</Cost>
+    <Notes>Reveals     Uranium and allows you to start working on the Manhattan Project, setting the stage for the production of nuclear weapons.</Notes>
+    <Required>
+      <Item>Combustion</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Modern</EraName>
+    <Flavours>
+      <Item>
+        <Name>Ranged</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

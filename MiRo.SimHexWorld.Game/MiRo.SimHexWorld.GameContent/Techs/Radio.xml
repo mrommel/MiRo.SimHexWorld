@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Radio</Name>
+	<Description>Radio is the technology of transmitting information to a remote receiver by modifying a "carrier wave's" amplitude, frequency, or duration. In less technical terms, somewhere a transmitter translates sounds into waves which it broadcasts into the atmosphere. Distant radio receivers can pick up these waves and translate them back into sound.</Description>
+	<ImageName>Radio</ImageName>
+	<Quote>"The whole country was tied together by radio. We all experienced the same heroes and comedians and singers. They were giants." - Woody Allen</Quote>
+	<Cost>2200</Cost>
+	<Notes>Allows you to build the Broadcast Tower, a building which doubles the     Cultural output of a city. Also allows you to train Anti-Aircraft Guns, useful for thwarting enemy aircraft.</Notes>
+	<Required>
+    <Item>Electricity</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Industrial</EraName>
+	<Flavours>
+    <Item>
+      <Name>Air</Name>
+      <Amount>2</Amount>
+    </Item>
+    <Item>
+      <Name>Culture</Name>
+      <Amount>15</Amount>
+    </Item>
+    <Item>
+      <Name>Wonder</Name>
+      <Amount>4</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

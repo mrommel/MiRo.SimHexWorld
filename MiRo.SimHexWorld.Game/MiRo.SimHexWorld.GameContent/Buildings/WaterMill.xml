@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Building">
+    <Name>WaterMill</Name>
+    <Title>TXT_KEY_BUILDINGS_WATERMILL_TITLE</Title>
+    <Description>TXT_KEY_BUILDINGS_WATERMILL_DESCRIPTION</Description>
+    <ImageName>WaterMill</ImageName>
+    <Cost>120</Cost>
+    <Maintenance>2</Maintenance>
+    <RequiredTechName>TheWheel</RequiredTechName>
+    <AllowsRangeStrike>true</AllowsRangeStrike>
+    <Flavours>
+      <Item>
+        <Name>Growth</Name>
+        <Amount>25</Amount>
+      </Item>
+    </Flavours>
+    <NeedRiver>true</NeedRiver>
+  </Asset>
+</XnaContent>

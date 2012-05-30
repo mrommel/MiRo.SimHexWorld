@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Calendar</Name>
+    <Description>A calendar is a method of keeping track of the days. In many ancient cultures calendars served both religious and practical purposes: certain days of the year were dedicated to the worship of certain deities, and it was very bad to offend the gods by failing to give them their due. More prosaically, of course, calendars allowed people to track the weather in an area, telling them when to plant crops, when to harvest, and so forth.</Description>
+    <ImageName>Calendar</ImageName>
+    <Quote>"So teach us to number our days, so that we may apply our hearts unto wisdom." - The Bible, Psalms, 90:12</Quote>
+    <Cost>70</Cost>
+    <Notes>Allows Workers to construct Plantations on many Luxury Resources, which are extremely important for     growth and     Happiness. (Note: Many resources require you to have chopped a forest or jungle first, which requires other Technologies.)</Notes>
+    <Required>
+      <Item>Pottery</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Ancient</EraName>
+    <Flavours>
+      <Item>
+        <Name>Happiness</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>TileImprovement</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>4</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

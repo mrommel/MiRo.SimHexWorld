@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Optics</Name>
+	<Description>Optics is the study of light and vision. The earliest and most important optical challenges were centered upon aiding the perception of the human eye - letting it see greater distances, or allowing it to look at very small objects, or in darkness. The first lenses were developed by the ancient Egyptians and the Mesopotamians. The oldest lenses, made from polished crystal, date back to 700 BC. The Greeks and Romans created crude lenses by filling glass spheres with water. In "Optics," Euclid described the mathematical rules of perception and examined refraction. In the eighth century AD Islamic scholars studied optics in depth, writing learned treatises on refraction and the construction of lenses and mirrors.</Description>
+	<ImageName>Optics</ImageName>
+	<Quote>"He made an instrument to know If the moon shine at full or no." - Samuel Butler</Quote>
+	<Cost>80</Cost>
+	<Notes>Allows land units to Embark onto water tiles and travel the ocean. Also allows you to build the Lighthouse in coastal cities, improving     Food output from water tiles, speeding their growth.</Notes>
+	<Required>
+    <Item>Sailing</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Classical</EraName>
+	<Flavours>
+    <Item>
+      <Name>Naval</Name>
+      <Amount>5</Amount>
+    </Item>
+    <Item>
+      <Name>NavalGrowth</Name>
+      <Amount>5</Amount>
+    </Item>
+    <Item>
+      <Name>Growth</Name>
+      <Amount>5</Amount>
+    </Item>
+    <Item>
+      <Name>Science</Name>
+      <Amount>5</Amount>
+    </Item>
+    <Item>
+      <Name>Expansion</Name>
+      <Amount>5</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

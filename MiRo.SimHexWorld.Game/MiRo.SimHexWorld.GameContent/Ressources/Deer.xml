@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Ressource">
+    <Name>Deer</Name>
+    <Description>Deer and their relatives - reindeer, moose, roe, etc. - can be found in herds across the planet. They have provided food, leather, bones, gut, and other materials for pre-industrial people for uncounted thousands of years. </Description>
+    <ImageName>Deer</ImageName>
+    <RessourceType>Bonus</RessourceType>
+    <Bonus>
+      <Food>1</Food>
+      <Production>0</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <Improvements>
+      <Item>Camp</Item>
+    </Improvements>
+    <RequiredTechName></RequiredTechName>
+  </Asset>
+</XnaContent>

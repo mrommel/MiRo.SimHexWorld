@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Archery</Name>
+    <Description>Archery is the technology by which a person uses the spring power stored in a bent stick (or "bow") to shoot a slender pointed projectile (an "arrow") a great distance at rapid speed. Throughout history bows and arrows have been employed in the hunt and in war. Their earliest use is lost in the mists of time, but probably dates from the Paleolithic era (which ended some 14,000 years ago) or even earlier (archaeologists have found stone points in Africa dating 60,000 years ago that may have been arrowheads). Virtually every early culture employed bows and arrows, excepting for the Aboriginal Australians, who appear never to have invented them.</Description>
+    <ImageName>Archery</ImageName>
+    <Quote>"The haft of the arrow had been feathered with one of the eagle's own plumes. We often give our enemies the means of our own destruction." - Aesop</Quote>
+    <Cost>35</Cost>
+    <Notes>Allows you to build the Archer, the first ranged unit in the game.</Notes>
+    <Required>
+      <Item>Agriculture</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Ancient</EraName>
+    <Flavours>
+      <Item>
+        <Name>Ranged</Name>
+        <Amount>4</Amount>
+      </Item>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>1</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

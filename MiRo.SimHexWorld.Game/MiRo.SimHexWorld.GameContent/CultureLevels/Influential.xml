@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.CultureLevel">
+    <Name>Influential</Name>
+    <Description>TXT_KEY_CULTURELEVEL_INFLUENTIAL</Description>
+    <ImageName></ImageName>
+    <CityDefenseModifier>80</CityDefenseModifier>
+    <Threshold>5000</Threshold>
+  </Asset>
+</XnaContent>

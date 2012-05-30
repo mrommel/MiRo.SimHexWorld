@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.UI.TextureAtlas">
+    <Name>Units</Name>
+    <TextureName>UnitTiles</TextureName>
+    <Rows>16</Rows>
+    <Columns>8</Columns>
+    <Tiles>
+      <Item>
+        <Name>Settler</Name>
+        <Index>0</Index>
+      </Item>
+      <Item>
+        <Name>Worker</Name>
+        <Index>1</Index>
+      </Item>
+    </Tiles>
+  </Asset>
+</XnaContent>

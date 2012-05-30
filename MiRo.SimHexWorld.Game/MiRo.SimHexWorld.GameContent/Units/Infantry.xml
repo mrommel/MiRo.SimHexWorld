@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Infantry</Name>
+    <Title>TXT_KEY_UNITS_INFANTRY_TITLE</Title>
+    <Description>TXT_KEY_UNITS_INFANTRY_DESCRIPTION</Description>
+    <ImageName>Infantry</ImageName>
+    <Notes>      
+    </Notes>
+    <EraName>Industrial</EraName>     
+    <UnitType>Gunpowder</UnitType>
+    <IsSpecial>false</IsSpecial>
+    <Cost>300</Cost>
+    <CombatStrength>36</CombatStrength>
+    <RangedCombatStrength>-1</RangedCombatStrength>
+    <Range>-1</Range>
+    <Movement>2</Movement>
+    <Domain>Land</Domain>
+    <RequiredResources>
+    </RequiredResources>
+    <RequiredTechnology>ReplaceableParts</RequiredTechnology>
+    <UpgradesTo>MechanizedInfantry</UpgradesTo>
+  </Asset>
+</XnaContent>

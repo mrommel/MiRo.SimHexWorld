@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Improvement">
+    <Name>Fort</Name>
+    <Description>
+      A fort is a special improvement that doesn't increase a hex's productivity or provide access to a resource. Instead, a fort improves a hex's defensive bonus. However, they do not provide a defensive bonus to units in enemy territory.
+    </Description>
+    <ImageName>Fort</ImageName>
+    <Bonus>
+      <Food>0</Food>
+      <Production>0</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <ImprovesResources>
+    </ImprovesResources>
+    <RequiredTech>Engineering</RequiredTech>
+    <TerrainNames>
+      <Item>Grassland</Item>
+      <Item>Plains</Item>
+      <Item>Desert</Item>
+      <!-- Todo -->
+    </TerrainNames>
+    <FeatureNames>
+      <Item>Forest</Item>
+      <Item>Marsh</Item>
+      <Item>FloodPlains</Item>
+      <Item>Jungle</Item>
+      <!-- Todo -->
+    </FeatureNames>
+  </Asset>
+</XnaContent>

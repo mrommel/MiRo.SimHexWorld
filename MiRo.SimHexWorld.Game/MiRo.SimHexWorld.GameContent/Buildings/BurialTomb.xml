@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Building">
+    <Name>BurialTomb</Name>
+    <Title></Title>
+    <Description></Description>
+    <ImageName>BurialTomb</ImageName>
+    <Cost>120</Cost>
+    <Maintenance>0</Maintenance>
+    <RequiredTechName>Philosophy</RequiredTechName>
+    <Culture>2</Culture>
+    <NeverCapture>false</NeverCapture>    
+    <Happiness>2</Happiness>
+    <Flavours>
+      <Item>
+        <Name>Culture</Name>
+        <Amount>20</Amount>
+      </Item>
+      <Item>
+        <Name>Happiness</Name>
+        <Amount>20</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

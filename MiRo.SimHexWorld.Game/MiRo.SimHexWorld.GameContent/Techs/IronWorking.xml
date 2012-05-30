@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>IronWorking</Name>
+	<Description>Iron working is older than history itself. The first iron worked probably came from meteorites; when this useful material was not to be found, the ancient people probably looked elsewhere for similar materials. Iron "smelting" - the extraction of the metal from iron ore - appears to have been discovered in the 12th century BC, in the Caucuses Mountains, Asia Minor, or possibly India. The production of wrought iron dates from approximately 1,000 BC.</Description>
+	<ImageName>IronWorking</ImageName>
+	<Quote>"Do not wait to strike 'til the iron is hot; but make it hot by striking." - William Butler Yeats</Quote>
+	<Cost>150</Cost>
+	<Notes>Reveals     Iron and allows you to build the Swordsman, an extremely powerful melee unit which requires it.</Notes>
+	<Required>
+    <Item>BronzeWorking</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Classical</EraName>
+	<Flavours>
+    <Item>
+      <Name>Offense</Name>
+      <Amount>12</Amount>
+    </Item>
+    <Item>
+      <Name>Defense</Name>
+      <Amount>6</Amount>
+    </Item>
+    <Item>
+      <Name>MilitaryTraining</Name>
+      <Amount>3</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

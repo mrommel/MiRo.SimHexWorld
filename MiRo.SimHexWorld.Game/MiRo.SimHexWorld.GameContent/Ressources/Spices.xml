@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Ressource">
+    <Name>Spices</Name>
+    <Description>Spices are plant-derived substances used to preserve and enhance the flavor, color or texture of food. Some spices have religious significance as well, and some are purported to have medicinal benefits. Common spices include pepper, mustard, cinnamon, saffron, and ginger. Generally, spices must be dried and ground before being applied to food; this distinguishes them from herbs like sage or oregano, which are green and leafy and which may be used fresh or dried. </Description>
+    <ImageName>Spices</ImageName>
+    <RessourceType>Luxury</RessourceType>
+    <Bonus>
+      <Food>0</Food>
+      <Production>0</Production>
+      <Commercial>2</Commercial>
+    </Bonus>
+    <Improvements>
+      <Item>Plantation</Item>
+    </Improvements>
+    <RequiredTechName></RequiredTechName>
+  </Asset>
+</XnaContent>

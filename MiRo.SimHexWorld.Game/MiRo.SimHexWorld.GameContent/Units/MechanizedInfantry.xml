@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>MechanizedInfantry</Name>
+    <Title>TXT_KEY_UNITS_MECHANIZEDINFANTRY_TITLE</Title>
+    <Description>TXT_KEY_UNITS_MECHANIZEDINFANTRY_DESCRIPTION</Description>
+    <ImageName>MechanizedInfantry</ImageName>
+    <Notes>      
+    </Notes>
+    <EraName>Modern</EraName>     
+    <UnitType>Gunpowder</UnitType>
+    <IsSpecial>false</IsSpecial>
+    <Cost>440</Cost>
+    <CombatStrength>50</CombatStrength>
+    <RangedCombatStrength>-1</RangedCombatStrength>
+    <Range>-1</Range>
+    <Movement>4</Movement>
+    <RequiredResources>
+    </RequiredResources>
+    <RequiredTechnology>Electronics</RequiredTechnology>
+    <UpgradesTo></UpgradesTo>
+  </Asset>
+</XnaContent>

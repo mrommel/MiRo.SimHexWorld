@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>ForeignLegion</Name>
+    <Title>TXT_KEY_UNITS_FOREIGNLEGION_TITLE</Title>
+    <Description>TXT_KEY_UNITS_FOREIGNLEGION_DESCRIPTION</Description>
+    <ImageName>ForeignLegion</ImageName>
+    <Notes>20% combat bonus outside friendly territory</Notes>
+    <EraName>Industrial</EraName>  
+    <UnitType>Gunpowder</UnitType>
+    <IsSpecial>true</IsSpecial>
+    <UniqueUnitOfTribe>French</UniqueUnitOfTribe>
+    <Replaces>Infantry</Replaces>
+    <Cost>300</Cost>
+    <CombatStrength>36</CombatStrength>
+    <RangedCombatStrength>-1</RangedCombatStrength>
+    <Range>-1</Range>
+    <Movement>2</Movement>
+    <MoveRate>Wheeled</MoveRate>
+    <Domain>Land</Domain>
+    <RequiredResources>
+    </RequiredResources>
+    <RequiredTechnology>ReplaceableParts</RequiredTechnology>
+    <UpgradesTo>MechanizedInfantry</UpgradesTo>
+  </Asset>
+</XnaContent>

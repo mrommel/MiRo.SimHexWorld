@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.CityData">
+    <Name>Seoul</Name>
+    <Title>TXT_KEY_CITIES_SEOUL_TITLE</Title>
+    <Description>TXT_KEY_CITIES_SEOUL_DESCRIPTION</Description>
+    <ImageName>Seoul</ImageName>
+    <Civilization>City State</Civilization>
+  </Asset>
+</XnaContent>

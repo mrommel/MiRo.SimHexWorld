@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.PolicyType">
+    <Name>Honor</Name>
+    <Description>
+      Adopting Honor improves the effectiveness of a civ's armies and military. Upon adopting, this policy will grant all units a 25% combat bonus against Barbarians, and a notification will be provided each time a new Barbarian Encampment spawns in revealed territory.
+    </Description>
+    <ImageName></ImageName>
+    <Historical>
+      In an "honorable" society, the citizens' status is based upon the society's judgment of their personal qualities. Qualities that are usually considered honorable include fealty, honesty, integrity, and courage. In many such societies men are expected to "defend their honor" to the death, as any loss of honor is considered far worse than loss of life.
+    </Historical>
+    <EraName>Ancient</EraName>
+
+    <!-- bonuses -->
+    <BarbarianCombatModifier>0.25</BarbarianCombatModifier>
+    <AlwaysSeeBarbCamps>true</AlwaysSeeBarbCamps>
+    <!-- bonuses -->
+  </Asset>
+</XnaContent>

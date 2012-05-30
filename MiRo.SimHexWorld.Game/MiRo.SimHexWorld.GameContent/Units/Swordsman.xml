@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Swordsman</Name>
+    <Title>Swordsman</Title>
+    <Description>TXT_KEY_UNITS_SWORDSMAN_DESCRIPTION</Description>
+    <ImageName>Swordsman</ImageName>
+    <Notes>
+    </Notes>
+    <EraName>Classical</EraName>
+    <UnitType>Melee</UnitType>
+    <IsSpecial>false</IsSpecial>
+    <Cost>80</Cost>
+    <CombatStrength>11</CombatStrength>
+    <RangedCombatStrength>0</RangedCombatStrength>
+    <Range>0</Range>
+    <Sight>2</Sight>
+    <Movement>2</Movement>
+    <Domain>Land</Domain>
+    <UnitAIs>
+      <Item>Defense</Item>
+      <Item>Explore</Item>
+    </UnitAIs>
+    <DefaultUnitAI>Attack</DefaultUnitAI>
+    <NoBadGoodies>false</NoBadGoodies>
+    <MilitarySupport>true</MilitarySupport>
+    <MilitaryProduction>true</MilitaryProduction>
+    <Pillage>true</Pillage>
+    <IgnoreBuildingDefense>false</IgnoreBuildingDefense>
+    <Mechanized>false</Mechanized>
+    <RequiredRessourceNames>
+      <Item>Iron</Item>
+    </RequiredRessourceNames>
+    <RequiredTechName>IronWorking</RequiredTechName>
+    <ObsoleteTechName>Gunpowder</ObsoleteTechName>
+    <UpgradesTo>Longswordsman</UpgradesTo>
+    <Flavours>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>5</Amount>
+      </Item>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>5</Amount>
+      </Item>
+    </Flavours>
+    <PromotionNames></PromotionNames>
+    <ModelName>PlayerMarine_mdla</ModelName>
+    <ModelScale>0.2</ModelScale>
+    <ModelScript>Swordsman</ModelScript>
+  </Asset>
+</XnaContent>

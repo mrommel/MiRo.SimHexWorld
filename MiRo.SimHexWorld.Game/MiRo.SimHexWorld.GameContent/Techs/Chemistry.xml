@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Chemistry</Name>
+    <Description>The offspring of alchemy and mathematics, Chemistry is the science of matter, its structure, behavior, composition, and how it behaves during chemical reactions. Physicists drop balls off of towers and time how long it takes them to fall; chemists study the balls themselves and try to figure out why some shatter and some bounce.</Description>
+    <ImageName>Chemistry</ImageName>
+    <Quote>"Wherever we look, the work of the chemist has raised the level of our civilization and has increased the productive capacity of the nation." - Calvin Coolidge</Quote>
+    <Cost>900</Cost>
+    <Notes>Allows you to build the Cannon, a Renaissance-era siege unit.</Notes>
+    <Required>
+      <Item>Gunpowder</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Renaissance</EraName>
+    <Flavours>
+      <Item>
+        <Name>Ranged</Name>
+        <Amount>7</Amount>
+      </Item>
+      <Item>
+        <Name>Production</Name>
+        <Amount>3</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

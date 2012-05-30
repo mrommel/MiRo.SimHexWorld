@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Ressource">
+    <Name>Wheat</Name>
+    <Description>
+      Originally cultivated in the Fertile Crescent of the Middle East, wheat is one of the most important grains in the human diet. A remarkably versatile grain, wheat can be turned into flour and made into bread, pasta, cereal or cake, and it can be fermented and made into a variety of alcoholic beverages.
+    </Description>
+    <ImageName>Wheat</ImageName>
+    <RessourceType>Luxury</RessourceType>
+    <Bonus>
+      <Food>1</Food>
+      <Production>0</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <Improvements>
+      <Item>Farm</Item>
+    </Improvements>
+    <RequiredTechName></RequiredTechName>
+  </Asset>
+</XnaContent>

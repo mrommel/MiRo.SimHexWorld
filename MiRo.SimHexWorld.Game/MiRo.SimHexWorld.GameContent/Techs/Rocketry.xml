@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Rocketry</Name>
+	<Description>The earliest known rocket flight is a bit contested, although it is generally believed that it occurred sometime around 1230 A.D. in China, during a military operation. The first actual recorded flight did occur in China in 1264 as part of an internal-combustion firework. These early rockets used solid fuel, usually gunpowder, and did not fly very far, perhaps only 2000 feet.</Description>
+	<ImageName>Rocketry</ImageName>
+	<Quote>"A good rule for rocket experimenters to follow is this: always assume that it will explode." - Astronautics Magazine, 1937</Quote>
+	<Cost>3000</Cost>
+	<Notes>An important technology, Rocketry allows you to build the Apollo Program, a project necessary to win a Science Victory. Also allows you to build the Rocket Artillery and Helicopter Gunship military units.</Notes>
+	<Required>
+    <Item>Radar</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Modern</EraName>
+	<Flavours>
+    <Item>
+      <Name>Ranged</Name>
+      <Amount>10</Amount>
+    </Item>
+    <Item>
+      <Name>Air</Name>
+      <Amount>5</Amount>
+    </Item>
+    <Item>
+      <Name>Mobile</Name>
+      <Amount>5</Amount>
+    </Item>
+    <Item>
+      <Name>Spaceship</Name>
+      <Amount>30</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

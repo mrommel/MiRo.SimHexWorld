@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.MapType">
+    <Name>Pangaea</Name>
+    <Title>TXT_KEY_MAP_TYPE_PANGAEA_TITLE</Title>
+    <Description>TXT_KEY_MAP_TYPE_PANGAEA_DESCRIPTION</Description>
+    <ImageName>Pangaea</ImageName>
+    <Order>2</Order>
+    <OceanRatio>0.3</OceanRatio>
+  </Asset>
+</XnaContent>

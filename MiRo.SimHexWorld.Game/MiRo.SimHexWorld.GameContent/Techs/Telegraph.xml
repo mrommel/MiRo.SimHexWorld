@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Telegraph</Name>
+	<Description>The electric telegraph is the first mechanical device capable of transmitting information rapidly over distances greater than the eye can see. Before the telegraph, the fastest way to pass information between Europe and North America was by clipper ship, which could make the voyage in perhaps 10-20 days, depending upon the weather. After the transatlantic telegraph was introduced, that same information could be transmitted in minutes.</Description>
+	<ImageName>Telegraph</ImageName>
+	<Quote>"I once sent a dozen of my friends a telegram saying 'flee at once - all is discovered.' They all left town immediately." - Mark Twain</Quote>
+	<Cost>2200</Cost>
+	<Notes>Allows you to build the Battleship, the mightiest front-line warship in the game. Also allows you to build the Military Base in your Cities, increasing their     Combat Strength and making them harder to capture.</Notes>
+	<Required>
+    <Item>Electricity</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Industrial</EraName>
+	<Flavours>
+    <Item>
+      <Name>CityDefense</Name>
+      <Amount>3</Amount>
+    </Item>
+    <Item>
+      <Name>Naval</Name>
+      <Amount>5</Amount>
+    </Item>
+    <Item>
+      <Name>Wonder</Name>
+      <Amount>4</Amount>
+    </Item>
+    <Item>
+      <Name>Defense</Name>
+      <Amount>5</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

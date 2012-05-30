@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Settler</Name>
+    <Title>TXT_KEY_UNITS_SETTLER_TITLE</Title>
+    <Description>TXT_KEY_UNITS_SETTLER_DESCRIPTION</Description>
+    <ImageName>Settler</ImageName>
+    <Notes>
+      Can found a new city
+    </Notes>
+    <EraName>Ancient</EraName>
+    <UnitType>Civilian</UnitType>
+    <IsSpecial>false</IsSpecial>
+    <Cost>89</Cost>
+    <CombatStrength>-1</CombatStrength>
+    <RangedCombatStrength>-1</RangedCombatStrength>
+    <Range>-1</Range>
+    <Sight>2</Sight>
+    <Movement>2</Movement>
+    <Domain>Land</Domain>
+    <UnitAIs>
+      <Item>Settle</Item>
+    </UnitAIs>
+    <DefaultUnitAI>Settle</DefaultUnitAI>
+    <NoBadGoodies>false</NoBadGoodies>
+    <MilitarySupport>false</MilitarySupport>
+    <MilitaryProduction>false</MilitaryProduction>
+    <Pillage>false</Pillage>
+    <IgnoreBuildingDefense>false</IgnoreBuildingDefense>
+    <Mechanized>false</Mechanized>
+    <RequiredRessourceNames>
+    </RequiredRessourceNames>
+    <RequiredTechName></RequiredTechName>
+    <ObsoleteTechName></ObsoleteTechName>
+    <UpgradesTo></UpgradesTo>
+    <Flavours>
+      <Item>
+        <Name>Expansion</Name>
+        <Amount>20</Amount>
+      </Item>
+    </Flavours>
+    <Actions></Actions>
+    <CanFound>true</CanFound>
+    <PromotionNames />
+    <ModelName>Settler</ModelName>
+    <ModelScale>0.01</ModelScale>
+    <ModelScript>Settler</ModelScript>
+    <ModelRotation>4.2</ModelRotation>
+  </Asset>
+</XnaContent>

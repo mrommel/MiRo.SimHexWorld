@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Writing</Name>
+    <Description>Writing is the art of recording information on material (paper, stone, clay, animal skins) so that others who look at the material can discern its meaning. Invented sometime around the fourth millennium BC, the earliest form of writing was "pictography," in which the writer draws little pictures representing the subject matter. This may work adequately for very simple subjects, but other methods become necessary when more esoteric topics are discussed. (Drawing a picture of a sheep may be easy, but how about a picture of a thousand sheep, or a picture of the sound a sheep makes when it falls off of a pyramid? Not so easy.)</Description>
+    <ImageName>Writing</ImageName>
+    <Quote>"He who destroys a good book kills reason itself." - John Milton</Quote>
+    <Cost>55</Cost>
+    <Notes>Allows you to build the first     Science building, the Library, helping your empire research new technologies more quickly.</Notes>
+    <Required>
+      <Item>Pottery</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Ancient</EraName>
+    <Flavours>
+      <Item>
+        <Name>Science</Name>
+        <Amount>6</Amount>
+      </Item>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Diplomacy</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>MilitaryTraining</Name>
+        <Amount>4</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

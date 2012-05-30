@@ -1,0 +1,297 @@
+
+newmtl Material.000001
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_eu_shadow.png
+
+
+newmtl Material.000005
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd african_city.blend.png
+
+
+newmtl Material.000060
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_eu_shadow.png
+
+
+newmtl Material.000064
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd african_city.blend.png
+
+
+newmtl Material.0000cf
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_eu_shadow.png
+
+
+newmtl Material.0000d3
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd african_city.blend.png
+
+
+newmtl Material.000167
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_eu_shadow.png
+
+
+newmtl Material.00016b
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd african_city.blend.png
+
+
+newmtl Material.0001b4
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_eu_shadow.png
+
+
+newmtl Material.0001b8
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd african_city.blend.png
+
+
+newmtl Material.0001e4
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_eu_shadow.png
+
+
+newmtl Material.0001e8
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd african_city.blend.png
+
+
+newmtl Material.00027c
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd african_city.blend.png
+
+
+newmtl Material.000310
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_eu_shadow.png
+
+
+newmtl Material.000314
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd african_city.blend.png
+
+
+newmtl Material.000340
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_eu_shadow.png
+
+
+newmtl Material.000344
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd african_city.blend.png
+
+
+newmtl Material.00046c
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_eu_shadow.png
+
+
+newmtl Material.000470
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd african_city.blend.png
+
+
+newmtl Material.000504
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_eu_shadow.png
+
+
+newmtl Material.000508
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd african_city.blend.png
+
+
+newmtl Material.000538
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_eu_shadow.png
+
+
+newmtl Material.00053c
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd african_city.blend.png
+
+
+newmtl Material.00056c
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_eu_shadow.png
+
+
+newmtl Material.000570
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd african_city.blend.png
+
+
+newmtl Material.000604
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_eu_shadow.png
+
+
+newmtl Material.000608
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd african_city.blend.png
+
+
+newmtl Material.000730
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_eu_shadow.png
+
+
+newmtl Material.000734
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd african_city.blend.png
+
+
+newmtl Material.0008cc
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_eu_shadow.png
+
+
+newmtl Material.0008d0
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd african_city.blend.png
+
+
+newmtl Material.000952
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd med_eu_shadow.png
+
+
+newmtl Material.000956
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+d 1
+Ns 10
+map_Kd african_city.blend.png
+

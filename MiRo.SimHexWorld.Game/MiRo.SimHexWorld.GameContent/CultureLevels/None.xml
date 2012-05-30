@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.CultureLevel">
+    <Name>None</Name>
+    <Description>TXT_KEY_CULTURELEVEL_NONE</Description>
+    <ImageName></ImageName>
+    <CityDefenseModifier>0</CityDefenseModifier>
+    <Threshold>0</Threshold>
+  </Asset>
+</XnaContent>

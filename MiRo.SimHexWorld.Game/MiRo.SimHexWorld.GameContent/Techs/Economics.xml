@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Economics</Name>
+    <Description>Economics is the study of money, or more precisely, the study of "the production, distribution and consumption of goods and services." While in older times goods might have been distributed via barter, for most of the last several thousand years money has been the medium of exchange.</Description>
+    <ImageName>Economics</ImageName>
+    <Quote>"Compound interest is the most powerful force in the universe." - Albert Einstein</Quote>
+    <Cost>900</Cost>
+    <Notes>Allows you to build the Windmill in cities built on flat land, increasing     Production.</Notes>
+    <Required>
+      <Item>Banking</Item>
+      <Item>PrintingPress</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Renaissance</EraName>
+    <Flavours>
+      <Item>
+        <Name>Gold</Name>
+        <Amount>8</Amount>
+      </Item>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>2</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

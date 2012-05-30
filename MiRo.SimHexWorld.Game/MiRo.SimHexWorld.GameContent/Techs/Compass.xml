@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Compass</Name>
+    <Description>A basic compass is a device which uses a lodestone or magnetized needle to point out the direction of "magnetic" north. Although magnetic north is not identical with "true" north, the two are close enough to make magnets extremely useful tools when navigating the world. The first compasses were invented in China and Europe (apparently independently) in the 12th century. Compasses allowed sailors to closely monitor and track their ship's "bearing" (direction) when at sea, something that in the years before compasses was all but impossible in overcast or stormy days and nights. They were equally useful to landsmen traveling in trackless deserts or during snowstorms or deep beneath the canopies of ancient jungles.</Description>
+    <ImageName>Compass</ImageName>
+    <Quote>"I find the great thing in this world is not so much where we stand, as in what direction we are moving..." - Oliver Wendell Holmes</Quote>
+    <Cost>340</Cost>
+    <Notes>Allows you to build the Harbor, which creates trade routes from cities to the capital over the water, producing     Gold.</Notes>
+    <Required>
+      <Item>Optics</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Medieval</EraName>
+    <Flavours>
+      <Item>
+        <Name>Gold</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>Production</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Naval</Name>
+        <Amount>4</Amount>
+      </Item>
+      <Item>
+        <Name>WaterConnection</Name>
+        <Amount>8</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

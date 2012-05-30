@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Archaeology</Name>
+    <Description>Archaeology is the study of the remnants of ancient people to learn about their culture, art, architecture, and history. Archaeologists study building ruins, burial mounds, trash heaps, ancient carvings hidden in caves, and long drowned ships on the bottom of the ocean.</Description>
+    <ImageName>Archaeology</ImageName>
+    <Quote>"Those who cannot remember the past are condemned to repeat it." - George Santayana</Quote>
+    <Cost>1300</Cost>
+    <Notes>Allows you to build the Museum, which provides a large boost to     when built in a city. Also provides other bonuses relating to     Culture.</Notes>
+    <Required>
+      <Item>Navigation</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Renaissance</EraName>
+    <Flavours>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Culture</Name>
+        <Amount>8</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

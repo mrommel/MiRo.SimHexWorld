@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.MapSize">
+    <Name>Huge</Name>
+    <Title>TXT_KEY_MAP_SIZE_HUGE_TITLE</Title>
+    <Description>TXT_KEY_MAP_SIZE_HUGE_DESCRIPTION</Description>
+    <ImageName>Huge</ImageName>
+    <Size>
+      <Width>128</Width>
+      <Height>80</Height>
+    </Size>
+    <Players>12</Players>
+    <CityStates>24</CityStates>
+    <CultureModifierPerCity>0.15</CultureModifierPerCity>
+    <Order>5</Order>
+    <NumOfRivers>36</NumOfRivers>
+    <CitiesPerPlayer>40</CitiesPerPlayer>
+    
+  </Asset>
+</XnaContent>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Trireme</Name>
+    <Title>TXT_KEY_UNITS_TRIREME_TITLE</Title>
+    <Description>TXT_KEY_UNITS_TRIREME_DESCRIPTION</Description>
+    <ImageName>Trireme</ImageName>
+    <Notes>
+      May not melee attack
+      Cannot enter deep ocean
+    </Notes>
+    <EraName>Ancient</EraName>     
+    <UnitType>Naval</UnitType>
+    <IsSpecial>false</IsSpecial>
+    <Cost>60</Cost>
+    <CombatStrength>6</CombatStrength>
+    <RangedCombatStrength>4</RangedCombatStrength>
+    <Range>2</Range>
+    <Movement>4</Movement>
+    <MoveRate>WoodenBoat</MoveRate>
+    <Domain>Sea</Domain>
+    <RequiredResources>
+    </RequiredResources>
+    <RequiredTechnology>Sailing</RequiredTechnology>
+    <UpgradesTo>Frigate</UpgradesTo>
+  </Asset>
+</XnaContent>

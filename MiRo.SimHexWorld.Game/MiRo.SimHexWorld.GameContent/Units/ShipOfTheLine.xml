@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>ShipOfTheLine</Name>
+    <Title>TXT_KEY_UNITS_SHIPOFTHELINE_TITLE</Title>
+    <Description>TXT_KEY_UNITS_SHIPOFTHELINE_DESCRIPTION</Description>
+    <ImageName>ShipOfTheLine</ImageName>
+    <Notes>
+      +1 extra Sight
+    </Notes>
+    <EraName>Industrial</EraName>     
+    <UnitType>Naval</UnitType>
+    <IsSpecial>true</IsSpecial>
+    <UniqueUnitOfTribe>English</UniqueUnitOfTribe>
+    <Replaces>Frigate</Replaces>
+    <Cost>140</Cost>
+    <CombatStrength>30</CombatStrength>
+    <RangedCombatStrength>17</RangedCombatStrength>
+    <Range>2</Range>
+    <Movement>5</Movement>
+    <MoveRate>Boat</MoveRate>
+    <Domain>Sea</Domain>
+    <RequiredResources>
+      <Item>Iron</Item>
+    </RequiredResources>
+    <RequiredTechnology>Navigation</RequiredTechnology>
+    <UpgradesTo>Destroyer</UpgradesTo>
+  </Asset>
+</XnaContent>

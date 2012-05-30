@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Improvement">
+    <Name>Farm</Name>
+    <Description>
+      Farming is one of the earliest and most important of all human professions, as it allowed mankind to stop migrating and settle in one location without depleting the local resources. Farms can be constructed on most any land to improve the hex's output of food.
+    </Description>
+    <ImageName>Farm</ImageName>
+    <Bonus>
+      <Food>1</Food>
+      <Production>0</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <ImprovesResources>
+      <Item>
+        <Ressource>Wheat</Ressource>
+        <Bonus>
+          <Food>1</Food>
+          <Production>0</Production>
+          <Commercial>0</Commercial>
+        </Bonus>
+      </Item>
+    </ImprovesResources>
+    <RequiredTech>Agriculture</RequiredTech>
+    <TerrainNames>
+      <Item>Plains</Item>
+    </TerrainNames>
+    <FeatureNames>
+      <Item>FloodPlains</Item>
+    </FeatureNames>
+  </Asset>
+</XnaContent>

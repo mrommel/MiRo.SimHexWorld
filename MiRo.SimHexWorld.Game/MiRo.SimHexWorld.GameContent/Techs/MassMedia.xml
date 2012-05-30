@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>MassMedia</Name>
+	<Description>The term "mass media" was coined in the 1920's with the advent of the radio, but the idea of media for large audience consumption has been around since the dramas and plays of the Ancient World. Mass media has been directly driven by technology, with greater advances in publishing techniques and communications leading to even larger possible audiences being reached.</Description>
+	<ImageName>MassMedia</ImageName>
+	<Quote>"The speed of communications is wondrous to behold. It is also true that speed can multiply the distribution of information that we know to be untrue." - Edward R. Murrow</Quote>
+	<Cost>2600</Cost>
+	<Notes>Allows you to build the Stadium, which improves     Happiness in the empire, which in turn helps your city growth and makes     Golden Ages more likely.</Notes>
+	<Required>
+    <Item>Radio</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Modern</EraName>
+	<Flavours>
+	</Flavours>
+	</Asset>
+</XnaContent>

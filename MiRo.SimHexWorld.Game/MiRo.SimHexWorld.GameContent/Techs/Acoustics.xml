@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Acoustics</Name>
+    <Description>Acoustics is the study of sound. Sounds are waves of energy transmitted through gases, liquids and solids. The most important aspect of acoustics of course is that humans can "hear" sounds, and much of the current research involves improving human reception of sounds, especially for the deaf. Acoustics is used in other applications as well, including sonar. Sonar allows equipment to "hear" undersea vessels, animals and geological formations.</Description>
+    <ImageName>Acoustics</ImageName>
+    <Quote>"Their rising all at once was as the sound of thunder heard remote." - Milton</Quote>
+    <Cost>650</Cost>
+    <Notes>Allows you to build the Opera House, which provides a large boost to     Culture.</Notes>
+    <Required>
+      <Item>Education</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Renaissance</EraName>
+    <Flavours>
+      <Item>
+        <Name>Culture</Name>
+        <Amount>6</Amount>
+      </Item>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>4</Amount>      
+    </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

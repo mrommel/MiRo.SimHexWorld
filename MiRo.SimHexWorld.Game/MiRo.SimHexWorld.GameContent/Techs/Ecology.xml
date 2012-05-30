@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Ecology</Name>
+    <Description>Not a single technology in itself, Ecology is an interdisciplinary study of all the various forms of interactions and causations between organisms and their environment, or rather, the study of ecosystems. The basic tenant of the field is that everything in a given ecosystem - the rocks, soil, birds, bugs, trees, etc. - have an effect on and connection to all the other things in the ecosystem, either directly or through a series of chain relations. While all these things are connected, ecologists also believe in the concept of holism - that even with all these tiny interactions explained, they cannot account for every possible reaction and the entire system as a whole needs to be evaluated. Ecology studies how all these things are connected, and how changing one can effect, benefit or destroy another.</Description>
+    <ImageName>Ecology</ImageName>
+    <Quote>"Only within the moment of time represented by the present century as one species, man, acquired significant power to alter the nature of his world." - Rachel Carson</Quote>
+    <Cost>3000</Cost>
+    <Notes>Allows you to build the Solar Plant, a building which may only be built in Cities on or next to Desert, and increases     Production.</Notes>
+    <Required>
+      <Item>Plastic</Item>
+      <Item>Penicilin</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Modern</EraName>
+    <Flavours>
+      <Item>
+        <Name>Production</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

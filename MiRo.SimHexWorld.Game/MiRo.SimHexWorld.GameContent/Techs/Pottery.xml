@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Pottery</Name>
+	<Description>Pottery is one of the oldest and most useful of all of the arts. In pottery, objects are built out of clay and then placed in an oven and subject to extremely high temperatures. The resulting product is extremely brittle but is also airtight and virtually impervious to corrosion, oxidation, infestation, and the other destructive forces that would attack items made of metal, wood or cloth. The earliest pottery objects include jugs and containers to hold liquids or grains, as well as cooking pots, serving bowls, plates, and cups.</Description>
+	<ImageName>Pottery</ImageName>
+	<Quote>"Shall the clay say to him that fashioneth it, What makest thou?" - The Bible, Isaiah, 45:9</Quote>
+	<Cost>35</Cost>
+	<Notes>Allows your cities to build the Granary, which provides Food, helping your cities grow larger.</Notes>
+	<Required>
+    <Item>Agriculture</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Ancient</EraName>
+	<Flavours>
+    <Item>
+      <Name>Growth</Name>
+      <Amount>5</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

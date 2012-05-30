@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.LeaderAbility">
+    <Name>FurorTeutonicus</Name>
+    <Description>
+      Special ability of German leader Bismarck.
+      Upon defeating a Barbarian unit inside an encampment, there is a 50% chance you earn 25 Gold and they join your side.
+    </Description>
+    <ImageName></ImageName>
+  </Asset>
+</XnaContent>

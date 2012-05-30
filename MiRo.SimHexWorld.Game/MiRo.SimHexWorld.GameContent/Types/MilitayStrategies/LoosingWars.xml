@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.MilitayStrategyData">
+    <Name>LoosingWars</Name>
+    <Description></Description>
+    <ImageName></ImageName>
+    <CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+    <MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+    <NoMinorCivs>true</NoMinorCivs>
+    <Flavours>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>-5</Amount>
+      </Item>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>CityDefense</Name>
+        <Amount>25</Amount>
+      </Item>
+      <Item>
+        <Name>Expansion</Name>
+        <Amount>-15</Amount>
+      </Item>
+      <Item>
+        <Name>TileImprovement</Name>
+        <Amount>-10</Amount>
+      </Item>
+      <Item>
+        <Name>Recon</Name>
+        <Amount>-15</Amount>
+      </Item>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>-15</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

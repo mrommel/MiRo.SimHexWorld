@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Rifling</Name>
+	<Description>Rifling is the process of making spiral grooves in the barrel of a cannon or firearm which imparts a spin on the projectile. The spin stabilizes the projectile, greatly increasing its accuracy. Rifling was invented in Vienna in the 15th century. However, the early process was extremely expensive and time-consuming, and it did not see popular use for some three centuries. By the early eighteenth century rifles were used by sharpshooters in armies across Europe and the world.</Description>
+	<ImageName>Rifling</ImageName>
+	<Quote>"It is well that war is so terrible, or we should grow too fond of it." - Robert E. Lee</Quote>
+	<Cost>1425</Cost>
+	<Notes>Allows you to build the Rifleman, a front-line infantry unit of the Renaissance Era.</Notes>
+	<Required>
+    <Item>Metallurgy</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Renaissance</EraName>
+	<Flavours>
+    <Item>
+      <Name>Defense</Name>
+      <Amount>10</Amount>
+    </Item>
+    <Item>
+      <Name>Offense</Name>
+      <Amount>10</Amount>
+    </Item>
+    <Item>
+      <Name>CityDefense</Name>
+      <Amount>5</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

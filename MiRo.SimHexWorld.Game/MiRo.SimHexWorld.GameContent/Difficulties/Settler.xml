@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Difficulty">
+    <Name>Settler</Name>
+	  <Title>TXT_KEY_DIFFICULTY_SETTLER_TITLE</Title>
+    <Description>TXT_KEY_DIFFICULTY_SETTLER_DESCRIPTION</Description>
+    <ImageName>Settler</ImageName>
+    <Order>0</Order>
+    <AIGrowthModifier>1.6</AIGrowthModifier>
+    <CultureModifier>0.5</CultureModifier>
+  </Asset>
+</XnaContent>

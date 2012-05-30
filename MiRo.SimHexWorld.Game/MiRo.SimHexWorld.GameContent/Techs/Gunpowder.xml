@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Gunpowder</Name>
+	<Description>Gunpowder, also known as "black powder," was invented in China, possibly as far back as the 9th century AD, by alchemists looking for an elixir of immortality (which it isn't). A mixture of sulfur, charcoal, and potassium nitrate, gunpowder burns very rapidly when exposed to flame, producing a great quantity of gasses and solids which can be employed as a propellant in firearms and in fireworks. The Chinese used gunpowder in primitive bombs and rockets against the Mongol invaders, and once they conquered China, the Mongols used them against everybody else.</Description>
+	<ImageName>Gunpowder</ImageName>
+	<Quote>"The day when two army corps can annihilate each other in one second, all civilized nations, it is to be hoped, will recoil from war and discharge their troops." - Alfred Nobel</Quote>
+	<Cost>680</Cost>
+	<Notes>Allows you to build the Musketman, the first unit in the game which wields firearms.</Notes>
+	<Required>
+    <Item>Physics</Item>
+    <Item>Steel</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Renaissance</EraName>
+	<Flavours>
+		<Item>
+		<Name>Defense</Name>
+      <Amount>10</Amount>
+	</Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

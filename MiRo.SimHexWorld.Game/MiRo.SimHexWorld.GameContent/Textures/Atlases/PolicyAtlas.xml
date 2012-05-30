@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.UI.TextureAtlas">
+    <Name>Policies</Name>
+    <TextureName>PolicyTiles</TextureName>
+    <Rows>8</Rows>
+    <Columns>8</Columns>
+    <Tiles>
+      <Item>
+        <Name>Tradition</Name>
+        <Index>0</Index>
+      </Item>
+      <Item>
+        <Name>Aristocracy</Name>
+        <Index>55</Index>
+      </Item>
+    </Tiles>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Improvement">
+    <Name>Plantation</Name>
+    <Description>
+      A plantation is a fancy name for a farm. It is generally applied to large estates located in semi-tropical or tropical locations, and especially those which grow crops for export rather than for local consumption. The term has acquired an unsavory flavor because of its association with slavery in the United States and the Caribbean, but there's nothing inherently evil about a well-run plantation which employs free workers.
+    </Description>
+    <ImageName>Plantation</ImageName>
+    <Bonus>
+      <Food>0</Food>
+      <Production>1</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <ImprovesResources>
+      <Item>
+        <Ressource>Iron</Ressource>
+        <Bonus>
+          <Food>0</Food>
+          <Production>1</Production>
+          <Commercial>1</Commercial>
+        </Bonus>
+      </Item>
+      <Item>
+        <Ressource>Coal</Ressource>
+        <Bonus>
+          <Food>0</Food>
+          <Production>1</Production>
+          <Commercial>1</Commercial>
+        </Bonus>
+      </Item>
+      <Item>
+        <Ressource>Aluminum</Ressource>
+        <Bonus>
+          <Food>0</Food>
+          <Production>1</Production>
+          <Commercial>1</Commercial>
+        </Bonus>
+      </Item>
+      <Item>
+        <Ressource>Uranium</Ressource>
+        <Bonus>
+          <Food>0</Food>
+          <Production>1</Production>
+          <Commercial>1</Commercial>
+        </Bonus>
+      </Item>
+    </ImprovesResources>
+    <RequiredTech>Mining</RequiredTech>
+    <TerrainNames>
+      <Item>Grassland</Item>
+      <Item>Plains</Item>
+      <Item>Desert</Item>
+      <Item>Tundra</Item>
+      <Item>Snow</Item>
+      <Item>Hills</Item>
+    </TerrainNames>
+    <FeatureNames>
+      <Item>Jungle</Item>
+    </FeatureNames>
+  </Asset>
+</XnaContent>

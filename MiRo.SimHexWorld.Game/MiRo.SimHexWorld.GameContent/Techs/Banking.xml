@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Banking</Name>
+    <Description>The first banks in history were probably religious temples, established around 3,000 BC. Actually, banks may predate money: the first deposits may very well have been in the form of grain. In 18th century BC Babylon, the great leader Hammurabi wrote laws regulating banks in his famous Code. The Greeks further advanced banking, and there are records of temples and other financial institutions making loans, accepting deposits, exchanging currency, and validating coins (to ensure that they're not forgeries). The Romans continued banking in the Greek model with some further improvements, but when the Roman Empire fell, so too did most of the banking institutions in Europe. Banks did not reappear in much of Europe until the Middle Ages, rediscovered by people looking for ways to fund the Crusades.</Description>
+    <ImageName>Banking</ImageName>
+    <Quote>"Happiness: a good bank account, a good cook and a good digestion." - Jean Jacques Rousseau</Quote>
+    <Cost>650</Cost>
+    <Notes>Allows you to build the Bank, a building which increases the     Gold produced by a city.</Notes>
+    <Required>
+      <Item>Chivalry</Item>
+      <Item>Education</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Renaissance</EraName>
+    <Flavours>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Gold</Name>
+        <Amount>8</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

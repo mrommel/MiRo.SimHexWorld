@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Policy">
+    <Name>Professional Army</Name>
+    <Description>
+      [Gold] Gold cost of upgrading Military Units reduced by 50%.
+    </Description>
+    <ImageName>ProfessionalArmy</ImageName>
+    <Historical>
+      A professional army is a full-time military organization that remains in being even when the country is at peace. Its soldiers are paid for their services by the state and spend their time training or performing public works when not at war. The earliest armies were not professional. When war was imminent, the country's leaders would issue a call and all able-bodied men would shoulder their weapons and march off to battle. These amateur soldiers usually didn't have much training and were often expected to supply their own weapons and armor, so their quality was not very high. They tended to desert when they had to tend to their crops, so battles were scheduled for the summer. If victory wasn't achieved by harvest, the war would often be called off for a year.
+      Professional armies form when a society has grown wealthy enough to support a large number of men who do not work the fields or perform other productive work. The soldiers are usually housed in barracks and segregated from the civilian population to minimize friction, and the state provides their food, weapons, armor, and training. They are almost always more effective than the amateurs.
+      Modern warfare has grown monumentally complex, and soldiers kill each other with extremely complicated weapons which require substantial training for effective use. Amateur soldiers are simply not up to the task, and most states field some kind of professional force.
+    </Historical>
+    <PolicyTypeName>Honor</PolicyTypeName>
+    <RequiredPolicyNames>
+      <Item>MilitaryCaste</Item>
+    </RequiredPolicyNames>
+
+    <!-- bonuses -->
+    <UnitUpgradeCostModifier>-0.50</UnitUpgradeCostModifier>
+    <!-- bonuses -->
+
+    <Flavours>
+      <Item>
+        <Name>MilitaryTraining</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

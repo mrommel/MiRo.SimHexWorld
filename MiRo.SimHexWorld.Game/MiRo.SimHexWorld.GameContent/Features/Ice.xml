@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Feature">
+    <Name>Ice</Name>
+    <Description>
+      Ice is just that: ice. It's almost entirely useless to civilization. It is impassable (except to flying units and submarines) and provides no yields. Stay away from ice. Ice tiles are impassable except to air and submarine units.
+      Ice is impassable, except to air and submarine units. They provide nothing to cities.
+    </Description>
+    <ImageName>Ice</ImageName>
+    <Civ5Name>FEATURE_ICE</Civ5Name>
+    <AtlasName>FeatureAtlas</AtlasName>
+    <AtlasIdentifier>Ice</AtlasIdentifier>
+    <Bonus>
+      <Food>0</Food>
+      <Production>0</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <CombatModifiers>1.0</CombatModifiers>
+    <MovementCost>1000</MovementCost>
+    <ImprovesTerrains></ImprovesTerrains>
+    <PossibleRessources>
+    </PossibleRessources>
+  </Asset>
+</XnaContent>

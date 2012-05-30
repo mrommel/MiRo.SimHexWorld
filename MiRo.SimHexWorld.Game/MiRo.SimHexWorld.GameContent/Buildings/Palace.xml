@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Building">
+    <Name>Palace</Name>
+    <Title>TXT_KEY_BUILDING_PALACE_TITLE</Title>
+    <Description>TXT_KEY_BUILDING_PALACE_DESC</Description>
+    <ImageName>Palace</ImageName>
+    <Cost>0</Cost>
+    <Maintenance>1</Maintenance>
+    <RequiredTechName></RequiredTechName>
+    <Defense>200</Defense>
+    <Culture>1</Culture>
+    <NeverCapture>true</NeverCapture>
+    <InCapitalOnly>true</InCapitalOnly>
+    <Flavours>
+      <Item>
+        <Name>Gold</Name>
+        <Amount>5</Amount>
+      </Item>
+      <Item>
+        <Name>Science</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>Culture</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+    <Yields>
+      <Item>
+        <Type>Gold</Type>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Type>Production</Type>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Type>Science</Type>
+        <Amount>3</Amount>
+      </Item>
+    </Yields>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Musketeer</Name>
+    <Title>TXT_KEY_UNITS_MUSKETEER_TITLE</Title>
+    <Description>TXT_KEY_UNITS_MUSKETEER_DESCRIPTION</Description>
+    <ImageName>Musketeer</ImageName>
+    <Notes></Notes>
+    <EraName>Industrial</EraName>    
+    <UnitType>Gunpowder</UnitType>
+    <IsSpecial>true</IsSpecial>
+    <UniqueUnitOfTribe>French</UniqueUnitOfTribe>
+    <Replaces>Musketman</Replaces>
+    <Cost>120</Cost>
+    <CombatStrength>20</CombatStrength>
+    <RangedCombatStrength>-1</RangedCombatStrength>
+    <Range>-1</Range>
+    <Movement>2</Movement>
+    <Domain>Land</Domain>
+    <RequiredResources>
+    </RequiredResources>
+    <RequiredTechnology>Gunpowder</RequiredTechnology>
+    <UpgradesTo>Rifleman</UpgradesTo>
+  </Asset>
+</XnaContent>

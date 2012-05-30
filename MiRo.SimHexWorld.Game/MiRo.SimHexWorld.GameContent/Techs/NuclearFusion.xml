@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>NuclearFusion</Name>
+	<Description>Occurring naturally in stars, nuclear fusion is the act of multiple like-charged atoms joining together to form a heavier, larger one, like two hydrogen atoms fusing to become a helium atom. A byproduct of this joining is a large release or absorption of energy, considerably more than the amount of energy required to fuse the two nuclei in the first place. Harnessing the power of fusion in a controlled manner has been the focus of energy research since the 1950's, after witnessing the power of an uncontrolled chain of reactions in the first hydrogen bomb.</Description>
+	<ImageName>NuclearFusion</ImageName>
+	<Quote>"The release of atomic energy has not created a new problem. It has merely made more urgent the necessity of solving an existing one." - Albert Einstein</Quote>
+	<Cost>3600</Cost>
+	<Notes>Allows you to build the Giant Death Robot, the strongest unit in the game.</Notes>
+	<Required>
+    <Item>Satellites</Item>
+    <Item>Stealth</Item>
+    <Item>AdvancedBallistics</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Future</EraName>
+	<Flavours>
+	</Flavours>
+	</Asset>
+</XnaContent>

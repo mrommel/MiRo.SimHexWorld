@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.CultureLevel">
+    <Name>Legendary</Name>
+    <Description>TXT_KEY_CULTURELEVEL_LEGENDARY</Description>
+    <ImageName></ImageName>
+    <CityDefenseModifier>100</CityDefenseModifier>
+    <Threshold>50000</Threshold>
+  </Asset>
+</XnaContent>

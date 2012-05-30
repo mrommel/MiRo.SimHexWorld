@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Ressource">
+    <Name>Coal</Name>
+    <Description>
+      Used by Factories and Ironclads.
+      Coal is ancient plant matter that has decomposed and compressed over the millennia into highly combustible black compound. Found in substantial quantities across virtually the entire planet, coal has been one of the most important sources of energy to mankind throughout history. Coal is not a clean fuel and its extraction and burning is a major source of pollution around the world. Scientists are frantically looking for the elusive "clean coal" technology, but that remains as of yet undiscovered. Remember that coal is a strategic resource, and thus it is consumed as you construct the associated units and buildings.
+    </Description>
+    <ImageName>Coal</ImageName>
+    <RessourceType>Strategic</RessourceType>
+    <Bonus>
+      <Food>0</Food>
+      <Production>1</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <Improvements>
+      <Item>Mine</Item>
+    </Improvements>
+    <RequiredTechName>ScientificTheory</RequiredTechName>
+    <!--Units Requiring this Resource: Helicopter Gunship, Jet Fighter, Missile Cruiser, Mobile SAM, Modern Armor, Rocket Artillery, Stealth Bomber, Battleship, Carrier, Fighter, Panzer, Submarine, Tank, Zero, B-17 Bomber, Bomber-->
+    <!--BuildingsRequiring this Resource: None-->
+  </Asset>
+</XnaContent>
+

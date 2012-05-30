@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Feature">
+    <Name>Rivers</Name>
+    <Description>
+      When worked by cities, tiles adjacent to rivers receive a bonus of 1 gold. Further, rivers are sources of fresh water, allowing the construction of farms on adjacent hills and tundra. Farms next to fresh water receive an additional +1 food when the Civil Service technology is researched. Units expend all of their movement points when crossing rivers. This is true even if the tiles are connected by roads, until the civilization learns the Construction technology. Finally, units receive a defensive bonus when they are attacked across a river.
+    </Description>
+    <ImageName>Rivers</ImageName>
+    <Civ5Name>FEATURE_RIVER</Civ5Name>
+    <AtlasName>FeatureAtlas</AtlasName>
+    <AtlasIdentifier>Rivers</AtlasIdentifier>
+    <Bonus>
+      <Food>0</Food>
+      <Production>0</Production>
+      <Commercial>1</Commercial>
+    </Bonus>
+    <CombatModifiers>1.0</CombatModifiers>
+    <MovementCost>10</MovementCost>
+    <ImprovesTerrains>
+      <Item>
+        <Terrain>Grassland</Terrain>
+        <Bonus>
+          <Food>0</Food>
+          <Production>0</Production>
+          <Commercial>1</Commercial>
+        </Bonus>
+      </Item>
+      <Item>
+        <Terrain>Desert</Terrain>
+        <Bonus>
+          <Food>0</Food>
+          <Production>0</Production>
+          <Commercial>1</Commercial>
+        </Bonus>
+      </Item>
+      <Item>
+        <Terrain>Plains</Terrain>
+        <Bonus>
+          <Food>0</Food>
+          <Production>0</Production>
+          <Commercial>1</Commercial>
+        </Bonus>
+      </Item>
+      <Item>
+        <Terrain>Tundra</Terrain>
+        <Bonus>
+          <Food>0</Food>
+          <Production>0</Production>
+          <Commercial>1</Commercial>
+        </Bonus>
+      </Item>
+    </ImprovesTerrains>
+    <PossibleRessources>
+    </PossibleRessources>
+    <IsRiver>true</IsRiver>
+  </Asset>
+</XnaContent>

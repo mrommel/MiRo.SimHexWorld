@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>ReplaceableParts</Name>
+	<Description>Replaceable parts is a kind of manufacturing process by which many duplicate copies of an item are fabricated, each of them identical component parts. This process allows for a tremendous increase in the speed and profitability of manufacturing, which in turn helped fuel the Industrial Revolution of the 19th Century.</Description>
+	<ImageName>ReplaceableParts</ImageName>
+	<Quote>"Nothing is particularly hard if you divide it into small jobs." - Henry Ford</Quote>
+	<Cost>1900</Cost>
+	<Notes>Allows you to build Infantry, a basic Industrial Era land unit, and the Anti-Tank Gun, a weapon specialized in defeating enemy Tanks.</Notes>
+	<Required>
+    <Item>SteamPower</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Industrial</EraName>
+	<Flavours>
+    <Item>
+      <Name>Defense</Name>
+      <Amount>16</Amount>
+    </Item>
+    <Item>
+      <Name>Woner</Name>
+      <Amount>2</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

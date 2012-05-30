@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Theology</Name>
+	<Description>Theology is the study of religion. Theologians study religious traditions and beliefs. The practice goes at least as far back in history as the Classical Greeks, who had an extremely rich mythology and religious tradition to observe. In the first and second century AD, Jewish religious scholarship flourished. The Jerusalem Talmud, a collection of Rabbinic notes about Jewish Oral tradition, was published around 200 AD and added to and expanded upon over the next two centuries.</Description>
+	<ImageName>Theology</ImageName>
+	<Quote>Three things are necessary for the salvation of man: to know what he ought to believe; to know what he ought to desire; and to know what he ought to do." - St. Thomas Aquinas</Quote>
+	<Cost>250</Cost>
+	<Notes>Allows you to build a handful of specialized buildings and wonders which improve your     Cultural output and ability to create new     Great People.</Notes>
+	<Required>
+    <Item>Calendar</Item>
+    <Item>Philosophy</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Medieval</EraName>
+	<Flavours>
+    <Item>
+      <Name>Culture</Name>
+      <Amount>5</Amount>
+    </Item>
+    <Item>
+      <Name>GreatPeople</Name>
+      <Amount>3</Amount>
+    </Item>
+    <Item>
+      <Name>Wonders</Name>
+      <Amount>4</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

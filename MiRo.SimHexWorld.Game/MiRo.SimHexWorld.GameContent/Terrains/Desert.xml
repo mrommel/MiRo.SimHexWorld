@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Terrain">
+    <Name>Desert</Name>
+    <Title>Desert</Title>
+    <Description>
+      Desert
+    </Description>
+    <ImageName>Desert</ImageName>
+    <Civ5Name>TERRAIN_DESERT</Civ5Name>
+    <AtlasName>TerrainAtlas</AtlasName>
+    <AtlasIdentifier>Desert</AtlasIdentifier>
+    <TileType>Sand</TileType>
+    <TileHeight>Zero</TileHeight>
+    <Bonus>
+      <Food>0</Food>
+      <Production>0</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <CombatModifiers>0.66</CombatModifiers>
+    <MovementCost>1</MovementCost>
+    <PossibleFeatures>
+      <Item>Oasis</Item>
+      <Item>FloodPlains</Item>
+    </PossibleFeatures>
+    <PossibleRessources>
+      <Item>Iron</Item>
+      <Item>Oil</Item>
+      <Item>Aluminum</Item>
+      <Item>Uranium</Item>
+      <Item>Gold</Item>
+      <Item>Silver</Item>
+      <Item>Gems</Item>
+      <Item>Marble</Item>
+      <Item>Cotton</Item>
+      <Item>Incense</Item>
+      <Item>Sheep</Item>
+    </PossibleRessources>
+    <CanFound>true</CanFound>
+    <InfluenceCost>2</InfluenceCost>
+    <BuildModifier>25</BuildModifier>
+    <MoveRateTypes>
+      <Item>BiPed</Item>
+      <Item>Wheeled</Item>
+    </MoveRateTypes>
+  </Asset>
+</XnaContent>

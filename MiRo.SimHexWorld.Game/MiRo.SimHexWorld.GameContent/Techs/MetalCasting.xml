@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>MetalCasting</Name>
+    <Description>Metal casting is the process by which a craftsman can make one or more metal objects by pouring molten metal into a mold. One of the oldest methods of making a mold is the "lost wax" procedure, which dates back at least to the third millennium BC. In this process, the craftsman creates a wax duplicate of the object around which is built the mold; the wax is then melted and flows out of the mold and is replaced by molten metal. Once the metal cools the mold is opened and the object is removed.</Description>
+    <ImageName>MetalCasting</ImageName>
+    <Quote>"When pieces of bronze or gold or iron break, the metal-smith welds them together again in the fire, and the bond is established." - Sri Guru Granth Sahib</Quote>
+    <Cost>250</Cost>
+    <Notes>Allows you to build the Workshop, which speeds up the production of buildings, and the Forge, which speeds the production of units.</Notes>
+    <Required>
+      <Item>IronWorking</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Medieval</EraName>
+    <Flavours>
+      <Item>
+        <Name>Production</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

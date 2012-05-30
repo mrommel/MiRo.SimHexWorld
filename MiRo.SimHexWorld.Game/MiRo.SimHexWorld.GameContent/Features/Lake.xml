@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Feature">
+    <Name>Lake</Name>
+    <Description>
+      A lake is any body of water ten tiles or smaller in size that is completely surrounded by land tiles (any larger body of water is considered ocean). When worked, lakes provide 2 food and 1 gold to nearby cities. Lakes are sources of fresh water, allowing the construction of farms on adjacent hills and tundra. Farms next to fresh water receive an additional +1 food when the Civil Service technology is researched.
+    </Description>
+    <ImageName>Lake</ImageName>
+    <Civ5Name>FEATURE_LAKE</Civ5Name>
+    <AtlasName>FeatureAtlas</AtlasName>
+    <AtlasIdentifier>Lake</AtlasIdentifier>
+    <Bonus>
+      <Food>2</Food>
+      <Production>0</Production>
+      <Commercial>1</Commercial>
+    </Bonus>
+    <CombatModifiers>1.0</CombatModifiers>
+    <MovementCost>-1</MovementCost>
+    <ImprovesTerrains></ImprovesTerrains>
+    <PossibleRessources>
+    </PossibleRessources>
+  </Asset>
+</XnaContent>

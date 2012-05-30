@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.MilitayStrategyData">
+    <Name>EradicateBarbarians</Name>
+    <Description></Description>
+    <ImageName></ImageName>
+    <CheckTriggerTurnCount>5</CheckTriggerTurnCount>
+    <FirstTurnExecuted>25</FirstTurnExecuted>
+    <MinimumNumTurnsExecuted>5</MinimumNumTurnsExecuted>
+    <WeightThreshold>50</WeightThreshold>
+    <Flavours>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>5</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

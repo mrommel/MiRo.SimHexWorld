@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Improvement">
+    <Name>Camp</Name>
+    <Description>
+      Hunting wild animals is one of the first ways in which ancient Man harvested the resources of the world around him. A hunting camp allows access to deer, fur, and ivory resources.
+    </Description>
+    <ImageName>Camp</ImageName>
+    <Bonus>
+      <Food>0</Food>
+      <Production>0</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <ImprovesResources>
+      <Item>
+        <Ressource>Ivory</Ressource>
+        <Bonus>
+          <Food>0</Food>
+          <Production>0</Production>
+          <Commercial>1</Commercial>
+        </Bonus>
+      </Item>
+      <Item>
+        <Ressource>Furs</Ressource>
+        <Bonus>
+          <Food>0</Food>
+          <Production>0</Production>
+          <Commercial>1</Commercial>
+        </Bonus>
+      </Item>
+      <Item>
+        <Ressource>Deer</Ressource>
+        <Bonus>
+          <Food>1</Food>
+          <Production>0</Production>
+          <Commercial>1</Commercial>
+        </Bonus>
+      </Item>
+    </ImprovesResources>
+    <RequiredTech>Trapping</RequiredTech>
+    <TerrainNames>
+      <Item>Plains</Item>
+    </TerrainNames>
+    <FeatureNames>
+      <Item>FloodPlains</Item>
+    </FeatureNames>
+  </Asset>
+</XnaContent>

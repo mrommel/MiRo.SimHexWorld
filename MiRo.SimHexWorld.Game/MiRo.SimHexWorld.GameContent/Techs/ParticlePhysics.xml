@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>ParticlePhysics</Name>
+	<Description>Particle physics takes us one step deeper into the understanding of the nature of matter and energy than its ancestor, "atomic theory." While the term "atom" wasn't coined until 1803 by chemist John Dalton, the idea that all matter can be broken down into smaller and smaller fundamental building blocks can be traced back as far as the 6th century B.C. Modern particle physics, or more properly the study of quantum mechanics, didn't fully begin until 1838 with the discovery of cathode rays by Michael Faraday, which helped prove that atoms - until then the smallest known objects in science - were in fact composed of even smaller particles.</Description>
+	<ImageName>ParticlePhysics</ImageName>
+	<Quote>"Every particle of matter is attracted by or gravitates to every other particle of matter with a force inversely proportional to the squares of their distances." - Isaac Newton</Quote>
+	<Cost>3350</Cost>
+	<Notes>Allows you to build the SS Engine, one of the Spaceship parts necessary to win a Science Victory.</Notes>
+	<Required>
+    <Item>Globalization</Item>
+    <Item>Robotics</Item>
+    <Item>Satellites</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Future</EraName>
+	<Flavours>
+	</Flavours>
+	</Asset>
+</XnaContent>

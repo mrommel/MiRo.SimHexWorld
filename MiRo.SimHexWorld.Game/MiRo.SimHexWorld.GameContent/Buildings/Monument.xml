@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Building">
+    <Name>Monument</Name>
+    <Title>TXT_KEY_BUILDINGS_MONUMENT_TITLE</Title>
+    <Description>TXT_KEY_BUILDINGS_MONUMENT_DESCRIPTION</Description>
+    <ImageName>Monument</ImageName>
+    <Cost>60</Cost>
+    <Maintenance>1</Maintenance>
+    <RequiredTechName></RequiredTechName>
+    <Culture>2</Culture>
+    <NeverCapture>true</NeverCapture>
+    <Flavours>
+      <Item>
+        <Name>Culture</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours> 
+  </Asset>
+</XnaContent>

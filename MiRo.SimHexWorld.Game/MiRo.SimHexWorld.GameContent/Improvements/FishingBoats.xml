@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Improvement">
+    <Name>FishingBoats</Name>
+    <Description>
+      Fishing boats allow a civilization to harvest the valuable fish, whale and pearl resources. To construct fishing boats, you must build a work boat in a coastal city (after your civilization has learned the requisite technology). Work boats are consumed when they construct fishing boats.
+    </Description>
+    <ImageName>FishingBoats</ImageName>
+    <Bonus>
+      <Food>1</Food>
+      <Production>0</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <ImprovesResources>
+      <Item>
+        <Ressource>Fish</Ressource>
+        <Bonus>
+          <Food>1</Food>
+          <Production>0</Production>
+          <Commercial>0</Commercial>
+        </Bonus>
+      </Item>
+      <Item>
+        <Ressource>Whales</Ressource>
+        <Bonus>
+          <Food>1</Food>
+          <Production>0</Production>
+          <Commercial>1</Commercial>
+        </Bonus>
+      </Item>
+      <Item>
+        <Ressource>Pearls</Ressource>
+        <Bonus>
+          <Food>0</Food>
+          <Production>0</Production>
+          <Commercial>2</Commercial>
+        </Bonus>
+      </Item>     
+    </ImprovesResources>
+    <RequiredTech>Sailing</RequiredTech>
+    <TerrainNames>
+      <Item>Coast</Item>
+    </TerrainNames>
+    <FeatureNames>
+    </FeatureNames>
+  </Asset>
+</XnaContent>

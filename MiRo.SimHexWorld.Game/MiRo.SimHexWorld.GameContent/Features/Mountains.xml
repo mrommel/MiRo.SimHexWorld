@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Feature">
+    <Name>Mountains</Name>
+    <Description>
+      
+    </Description>
+    <ImageName>Mountains</ImageName>
+    <Civ5Name>FEATURE_MOUNTAINS</Civ5Name>
+    <AtlasName>FeatureAtlas</AtlasName>
+    <AtlasIdentifier>Mountains</AtlasIdentifier>
+    <Bonus>
+      <Food>0</Food>
+      <Production>1</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <CombatModifiers>1.25</CombatModifiers>
+    <MovementCost>2</MovementCost>
+    <ImprovesTerrains></ImprovesTerrains>
+    <PossibleRessources>
+    </PossibleRessources>
+    <IsForest>false</IsForest>
+    <IsSpring>true</IsSpring>
+  </Asset>
+</XnaContent>

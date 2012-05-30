@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Metallurgy</Name>
+	<Description>Metallurgy is the science of metals and metallic alloys. In Civilization V the "metallurgy" technology covers the advancements in this field since the 19th century AD. In the 19th and 20th centuries, great strides have been made in all facets of metallurgy, from extraction, to the creation of new alloys, to the production of cheap, high-quality metals.</Description>
+	<ImageName>Metallurgy</ImageName>
+	<Quote>"There never was a good knife made of bad steel." - Benjamin Franklin</Quote>
+	<Cost>900</Cost>
+	<Notes>Allows you to build the Lancer, a fast mounted unit designed to hunt down other mounted units.</Notes>
+	<Required>
+    <Item>Gunpowder</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Renaissance</EraName>
+	<Flavours>
+	</Flavours>
+	</Asset>
+</XnaContent>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Feature">
+    <Name>Marsh</Name>
+    <Description>
+      Although rich in biodiversity, marshes have little to offer a hungry growing civilization, as they must be drained or otherwise altered before they provide any city bonuses. Note that military units in marshes receive a significant PENALTY when attacked.
+    </Description>
+    <ImageName>Marsh</ImageName>
+    <Civ5Name>FEATURE_MARSH</Civ5Name>
+    <AtlasName>FeatureAtlas</AtlasName>
+    <AtlasIdentifier>Marsh</AtlasIdentifier>
+    <Bonus>
+      <Food>-1</Food>
+      <Production>0</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <CombatModifiers>0.66</CombatModifiers>
+    <MovementCost>2</MovementCost>
+    <ImprovesTerrains></ImprovesTerrains>
+    <PossibleRessources>
+      <Item>Oil</Item>
+      <Item>Uranium</Item>
+      <Item>Sugar</Item>
+    </PossibleRessources>
+  </Asset>
+</XnaContent>

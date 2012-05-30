@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>BronzeWorking</Name>
+    <Description>Bronze is a metal "alloy" (mixture) of copper and tin. The resulting material is harder and tougher than either of the original metals and it is easier to melt and cast (e.g., pour into molds to make spear tips and other useful items). Copper was probably first used in Egypt before 5,000 BC. The first evidence of bronze appears some 1,300 years later in the form of a bronze rod found in a pyramid dating from 3700 BC. Bronze appeared in Asia much later, around 1,500 BC, and in the Americas later still, between 100-200 AD.</Description>
+    <ImageName>BronzeWorking</ImageName>
+    <Quote>"Here Hector entered, with a spear eleven cubits long in his hand; the bronze point gleamed in front of him, and was fastened to the shaft of the spear by a ring of gold." - Homer</Quote>
+    <Cost>55</Cost>
+    <Notes>Allows your Workers to Chop Jungle, clearing the map tile so other improvements can be constructed. Also allows you to build the Spearman, a military unit strong against mounted enemies.</Notes>
+    <Required>
+      <Item>Mining</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Ancient</EraName>
+    <Flavours>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>4</Amount>
+      </Item>
+      <Item>
+        <Name>MilitaryTraining</Name>
+        <Amount>4</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

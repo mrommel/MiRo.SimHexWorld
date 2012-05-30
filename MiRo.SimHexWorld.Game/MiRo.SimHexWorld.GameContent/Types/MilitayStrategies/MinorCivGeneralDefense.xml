@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.MilitayStrategyData">
+    <Name>MinorCivGeneralDefense</Name>
+    <Description></Description>
+    <ImageName></ImageName>
+    <CheckTriggerTurnCount>50</CheckTriggerTurnCount>
+    <MinimumNumTurnsExecuted>50</MinimumNumTurnsExecuted>
+    <OnlyMinorCivs>true</OnlyMinorCivs>
+    <Flavours>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>6</Amount>
+      </Item>
+      <Item>
+        <Name>CityDefense</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

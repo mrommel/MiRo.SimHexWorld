@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Dokumente und Einstellungen\mrommel.JAMES\Eigene Dateien\Dropbox\Prog\MiRo.SimHexWorld\MiRoSimHexWorld.Engine\MiRo.SimHexWorld.Engine.csproj" total="8" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-01-24" time="20:14:36">
+  <environment nunit-version="2.5.10.11092" clr-version="2.0.50727.3625" os-version="Microsoft Windows NT 5.1.2600 Service Pack 3" platform="Win32NT" cwd="C:\Dokumente und Einstellungen\mrommel.JAMES\Eigene Dateien\Dropbox\Prog\MiRo.SimHexWorld\MiRoSimHexWorld.Engine" machine-name="JAMES" user="mrommel" user-domain="JAMES" />
+  <culture-info current-culture="de-DE" current-uiculture="de-DE" />
+  <test-suite type="Project" name="C:\Dokumente und Einstellungen\mrommel.JAMES\Eigene Dateien\Dropbox\Prog\MiRo.SimHexWorld\MiRoSimHexWorld.Engine\MiRo.SimHexWorld.Engine.csproj" executed="True" result="Success" success="True" time="0.172" asserts="0">
+    <results>
+      <test-suite type="Assembly" name="C:\Dokumente und Einstellungen\mrommel.JAMES\Eigene Dateien\Dropbox\Prog\MiRo.SimHexWorld\MiRoSimHexWorld.Engine\bin\x86\Debug\MiRoSimHexWorld.Engine.dll" executed="True" result="Success" success="True" time="0.141" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="MiRoSimHexWorld" executed="True" result="Success" success="True" time="0.141" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="Engine" executed="True" result="Success" success="True" time="0.141" asserts="0">
+                <results>
+                  <test-suite type="Namespace" name="World" executed="True" result="Success" success="True" time="0.109" asserts="0">
+                    <results>
+                      <test-suite type="TestFixture" name="IntRangeTest" executed="True" result="Success" success="True" time="0.109" asserts="0">
+                        <results>
+                          <test-case name="MiRoSimHexWorld.Engine.World.IntRangeTest.Test_1In0To5Range" executed="True" result="Success" success="True" time="0.016" asserts="1" />
+                          <test-case name="MiRoSimHexWorld.Engine.World.IntRangeTest.Test0In0To5Range" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="MiRoSimHexWorld.Engine.World.IntRangeTest.Test1In0To5Range" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="MiRoSimHexWorld.Engine.World.IntRangeTest.Test2In0To5Range" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="MiRoSimHexWorld.Engine.World.IntRangeTest.Test3In0To5Range" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="MiRoSimHexWorld.Engine.World.IntRangeTest.Test4In0To5Range" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="MiRoSimHexWorld.Engine.World.IntRangeTest.Test5In0To5Range" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                          <test-case name="MiRoSimHexWorld.Engine.World.IntRangeTest.Test6In0To5Range" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                        </results>
+                      </test-suite>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

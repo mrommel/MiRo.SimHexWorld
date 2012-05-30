@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Building">
+    <Name>Walls</Name>
+    <Title>TXT_KEY_BUILDINGS_WALLS_TITLE</Title>
+    <Description>TXT_KEY_BUILDINGS_WALLS_DESCRIPTION</Description>
+    <ImageName>Walls</ImageName>
+    <Cost>100</Cost>
+    <Maintenance>1</Maintenance>
+    <RequiredTechName>Masonry</RequiredTechName>
+    <AllowsRangeStrike>true</AllowsRangeStrike>
+    <Defense>500</Defense>
+    <CityWall>true</CityWall>
+    <Flavours>
+      <Item>
+        <Name>CityDefense</Name>
+        <Amount>20</Amount>
+      </Item>
+    </Flavours> 
+  </Asset>
+</XnaContent>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Feature">
+    <Name>Jungle</Name>
+    <Description>
+      Dark, forbidding, and deadly to the uninitiated, jungles are a rich source of food to those with the skill and knowledge to live within them.
+      However, jungles do not provide much in the way of materials, and a growing civilization may be tempted to mine them or turn them into cropland. However, military units situated in jungles receive a significant defensive bonus. When chopped, Jungle tiles become Plains.
+    </Description>
+    <ImageName>Jungle</ImageName>
+    <Civ5Name>FEATURE_JUNGLE</Civ5Name>
+    <AtlasName>FeatureAtlas</AtlasName>
+    <AtlasIdentifier>Jungle</AtlasIdentifier>
+    <Bonus>
+      <Food>1</Food>
+      <Production>-1</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <CombatModifiers>1.25</CombatModifiers>
+    <MovementCost>2</MovementCost>
+    <ImprovesTerrains>
+    </ImprovesTerrains>
+    <PossibleRessources>
+      <Item>Oil</Item>
+      <Item>Uranium</Item>
+      <Item>Bananas</Item>
+      <Item>Gems</Item>
+      <Item>Dyes</Item>
+      <Item>Spices</Item>
+    </PossibleRessources>
+    <IsForest>true</IsForest>
+  </Asset>
+</XnaContent>

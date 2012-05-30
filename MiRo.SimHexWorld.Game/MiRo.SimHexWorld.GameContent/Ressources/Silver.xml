@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Ressource">
+    <Name>Silver</Name>
+    <Description>
+      Silver is a shiny, soft, malleable precious metal. It is highly valued for its beauty and for centuries it has been used in ornaments, jewelry, utensils, and coinage in cultures around the world. Silver has excellent thermal and electrical conductivity properties as well, which make it quite useful in many electronic applications. Silver has been mined for at least 6,000 years, and perhaps much longer. In 1859 the "Comstock Lode" was discovered in Nevada, USA. This was a mighty deposit of silver which led to a huge boom in the local economy. The good times lasted some twenty-three years until the lower levels of the mine became flooded and silver extraction petered out, at which point most of the so-called "boom towns" simply dried up and died.
+    </Description>
+    <ImageName>Silver</ImageName>
+    <RessourceType>Luxury</RessourceType>
+    <Bonus>
+      <Food>0</Food>
+      <Production>0</Production>
+      <Commercial>2</Commercial>
+    </Bonus>
+    <Improvements>
+      <Item>Mine</Item>
+    </Improvements>
+    <RequiredTechName>Mining</RequiredTechName>
+  </Asset>
+</XnaContent>

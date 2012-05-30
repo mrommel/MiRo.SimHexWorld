@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Robotics</Name>
+	<Description>While various forms of automatons and machines have been in evidence from as early as the first century A.D., the first fully autonomous machine didn't appear until the mid 20th century. Science fiction writer Isaac Asimov unknowingly coined the term "robotics" in his 1941 short story "Liar!," figuring that the word must already be in use since other ones like "electronics" were. The study of robotics covers all aspects of their electronic, mechanical, and software design, and the different ways in which they sense and interact with the world around them.</Description>
+	<ImageName>Robotics</ImageName>
+	<Quote>"1. A robot may not injure a human being or, through inaction, allow a human being to come to harm.2. A robot must obey any orders given to it by human beings, except when such orders would conflict with the First Law.3. A robot must protect its own existence as long as such protection does not conflict with the First or Second Law." - Isaac Asimov</Quote>
+	<Cost>3350</Cost>
+	<Notes>An important technology for the Space Race, Robotics allows you to build the Spaceship Factory, a building which speeds the construction of Spaceship parts. It also allows you to build the SS Booster, one of the Spaceship parts required to win a Science Victory.</Notes>
+	<Required>
+    <Item>Computers</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Modern</EraName>
+	<Flavours>
+    <Item>
+      <Name>Naval</Name>
+      <Amount>4</Amount>
+    </Item>
+    <Item>
+      <Name>Spaceship</Name>
+      <Amount>15</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.CitySpecialization">
+    <Name>Science</Name>
+    <Description></Description>
+    <ImageName></ImageName>
+    <Yield>Science</Yield>
+    <Flavours>
+      <Item>
+        <Name>Expansion</Name>
+        <Amount>-4</Amount>
+      </Item>
+      <Item>
+        <Name>Culture</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>Production</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>Gold</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>Science</Name>
+        <Amount>30</Amount>
+      </Item>
+      <Item>
+        <Name>Happiness</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>GreatPeople</Name>
+        <Amount>5</Amount>
+      </Item>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>-4</Amount>
+      </Item>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>-4</Amount>
+      </Item>
+      <Item>
+        <Name>Ranged</Name>
+        <Amount>-4</Amount>
+      </Item>
+      <Item>
+        <Name>Naval</Name>
+        <Amount>-4</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

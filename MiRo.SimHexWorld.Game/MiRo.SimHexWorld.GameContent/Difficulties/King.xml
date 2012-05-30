@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Difficulty">
+    <Name>King</Name>
+    <Title>TXT_KEY_DIFFICULTY_KING_TITLE</Title>
+    <Description>TXT_KEY_DIFFICULTY_KING_DESCRIPTION</Description>
+    <ImageName>King</ImageName>
+    <Order>4</Order>
+    <AIGrowthModifier>0.9</AIGrowthModifier>
+    <CultureModifier>1</CultureModifier>
+  </Asset>
+</XnaContent>

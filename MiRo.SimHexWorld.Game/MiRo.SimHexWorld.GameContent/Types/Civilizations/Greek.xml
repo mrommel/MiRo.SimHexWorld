@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Civilization">
+    <Name>Greek</Name>
+    <Description>
+      </Description>
+    <ImageName>Greek</ImageName>
+    <UniqueUnits>
+    </UniqueUnits>
+    <UniqueBuildings></UniqueBuildings>
+    <StartingTechNames>
+      <Item>Agriculture</Item>
+    </StartingTechNames>
+    <Duration></Duration>
+    <Location>Western Europe</Location>
+    <Size></Size>
+    <Capital>Athen</Capital>
+    <Cities>    
+    </Cities>
+  </Asset>
+</XnaContent>

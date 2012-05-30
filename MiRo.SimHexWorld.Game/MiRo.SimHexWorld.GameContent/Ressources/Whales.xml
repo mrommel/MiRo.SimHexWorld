@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Ressource">
+    <Name>Whales</Name>
+    <Description>
+      The largest mammals alive today, for centuries men have hunted whales for their meat, blubber, and bones. In pre-industrial times men challenged these massive animals from sailing vessels, employing harpoons against the massive beasts in an often deadly fight of man against animal. Now the hunters use modern ships, sonar, and exploding weapons against the whales - with such success that their survival remains in doubt.
+    </Description>
+    <ImageName>Whales</ImageName>
+    <RessourceType>Luxury</RessourceType>
+    <Bonus>
+      <Food>1</Food>
+      <Production>0</Production>
+      <Commercial>1</Commercial>
+    </Bonus>
+    <Improvements>
+      <Item>FishingBoats</Item>
+    </Improvements>
+    <RequiredTechName></RequiredTechName>
+    <!--Units Requiring this Resource: Helicopter Gunship, Jet Fighter, Missile Cruiser, Mobile SAM, Modern Armor, Rocket Artillery, Stealth Bomber, Battleship, Carrier, Fighter, Panzer, Submarine, Tank, Zero, B-17 Bomber, Bomber-->
+    <!--BuildingsRequiring this Resource: None-->
+  </Asset>
+</XnaContent>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Improvement">
+    <Name>TradingPost</Name>
+    <Description>
+      Trading Posts are outposts where hunters and trappers may sell their wares to civilians in exchange for food, weapons, whiskey, gold, and all of the other trappings of society. They can generate a lot of wealth for a society.
+    </Description>
+    <ImageName>TradingPost</ImageName>
+    <Bonus>
+      <Food>0</Food>
+      <Production>0</Production>
+      <Commercial>2</Commercial>
+    </Bonus>
+    <ImprovesResources>      
+    </ImprovesResources>
+    <RequiredTech>Trapping</RequiredTech>
+    <TerrainNames>
+      <Item>Grassland</Item>
+      <Item>Plains</Item>
+      <Item>Desert</Item>
+      <!-- Todo -->
+    </TerrainNames>
+    <FeatureNames>
+      <Item>Forest</Item>
+      <Item>Marsh</Item>
+      <Item>FloodPlains</Item>
+      <Item>Jungle</Item>
+      <!-- Todo -->
+    </FeatureNames>
+  </Asset>
+</XnaContent>

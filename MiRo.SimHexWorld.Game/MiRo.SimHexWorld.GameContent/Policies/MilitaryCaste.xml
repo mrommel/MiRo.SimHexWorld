@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Policy">
+    <Name>Military Caste</Name>
+    <Description>
+      Each City with a garrison reduces empire [Unhappiness] Unhappiness by 1.
+    </Description>
+    <ImageName>MilitaryCaste</ImageName>
+    <Historical>In a society with a military caste, all members of the military are from a specific tribe, nationality, religion, or other socio-economic subgroup. Citizens who are not part of the caste are forbidden from joining the military and often from carrying any weapons at all, often because the military caste fears that the citizens might use the weapons against them. Much of feudal Japan was under a military caste system, as was ancient Sparta.</Historical>
+    <PolicyTypeName>Honor</PolicyTypeName>
+    <RequiredPolicyNames>
+      <Item>Discipline</Item>
+    </RequiredPolicyNames>
+
+    <!-- bonuses -->
+    <HappinessPerGarrisonedUnit>1</HappinessPerGarrisonedUnit>
+    <!-- bonuses -->
+
+    <Flavours>
+      <Item>
+        <Name>Happiness</Name>
+        <Amount>20</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

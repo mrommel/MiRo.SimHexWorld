@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Panzer</Name>
+    <Title>TXT_KEY_UNITS_PANZER_TITLE</Title>
+    <Description>TXT_KEY_UNITS_PANZER_DESCRIPTION</Description>
+    <ImageName>Panzer</ImageName>
+    <Notes>
+      Penalty when attacking cities
+      No defensive bonuses
+      Limited visibility
+      Can move after attacking
+    </Notes>
+    <EraName>Industrial</EraName>
+    <UnitType>Armored</UnitType>
+    <IsSpecial>true</IsSpecial>
+    <UniqueUnitOfCivilization>German</UniqueUnitOfCivilization>
+    <Replaces>Tank</Replaces>
+    <Cost>450</Cost>
+    <CombatStrength>60</CombatStrength>
+    <RangedCombatStrength>-1</RangedCombatStrength>
+    <Range>-1</Range>
+    <Sight>3</Sight>
+    <Movement>5</Movement>
+    <MoveRateType>Wheeled</MoveRateType>
+    <Domain>Land</Domain>
+    <UnitAIs>
+      <Item>Attack</Item>
+      <Item>Defense</Item>
+      <Item>FastAttack</Item>
+    </UnitAIs>
+    <DefaultUnitAI>Attack</DefaultUnitAI>
+    <NoBadGoodies>false</NoBadGoodies>
+    <MilitarySupport>true</MilitarySupport>
+    <MilitaryProduction>true</MilitaryProduction>
+    <Pillage>true</Pillage>
+    <IgnoreBuildingDefense>true</IgnoreBuildingDefense>
+    <Mechanized>true</Mechanized>
+    <RequiredRessourceNames>
+      <Item>Oil</Item>
+    </RequiredRessourceNames>
+    <RequiredTechName>Combustion</RequiredTechName>
+    <ObsoleteTechName></ObsoleteTechName>
+    <UpgradesTo>ModernArmor</UpgradesTo>
+    <Flavours>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>20</Amount>
+      </Item>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>Mobile</Name>
+        <Amount>14</Amount>
+      </Item>
+    </Flavours>
+    <Actions></Actions>
+    <CanFound>false</CanFound>
+    <PromotionNames>
+      <Item>CityPenalty</Item>
+      <Item>NoDefenseBonuses</Item>
+      <Item>SightPenalty</Item>
+      <Item>CanMoveAfterAttacking</Item>
+    </PromotionNames>
+    <ModelName>PlayerMarine_mdla</ModelName>
+    <ModelScale>0.2</ModelScale>
+    <ModelScript>Marine</ModelScript>
+  </Asset>
+</XnaContent>

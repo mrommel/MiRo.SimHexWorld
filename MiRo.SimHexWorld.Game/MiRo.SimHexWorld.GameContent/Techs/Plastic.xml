@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>
+    </Name>
+    <Description>Plastic is a lightweight, transparent and tough material that does not conduct electricity well. Plastic comes in many different forms, some tougher, some more flexible, some with a greater or lesser tolerance to heat. Plastic can be molded, pressed or extruded into virtually any shape desired. It's found in every facet of modern life, used in everything from automobile bumpers to prosthetic limbs, from baby food jars to infantry weapons. It's one of the most crucial building-blocks of the 21st century.</Description>
+    <ImageName>Plastic</ImageName>
+    <Quote>"Ben, I want to say one word to you, just one word: plastics." - Buck Henry and Calder Willingham, The Graduate</Quote>
+    <Cost>2600</Cost>
+    <Notes>Allows you to build the Research Lab, a building which improves [Science] Science in a City. Also allows you to build the Hydro Plant, which increases [Production] Production from tiles next to a River.</Notes>
+    <Required>
+      <Item>Refrigeration</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Modern</EraName>
+    <Flavours>
+      <Item>
+        <Name>Production</Name>
+        <Amount>5</Amount>
+      </Item>
+      <Item>
+        <Name>Science</Name>
+        <Amount>5</Amount>
+      </Item>
+      <Item>
+        <Name>Spaceship</Name>
+        <Amount>5</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

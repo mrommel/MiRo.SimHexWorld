@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <!-- TODO: replace this Asset with your own XML asset data. -->
+  <Asset Type="MiRo.SimHexWorld.World.Maps.NamedList[MiRo.SimHexWorld.Engine.World.TileMatchPattern]">
+    <Item>
+      <Name>Default</Name>
+      <TerrainName>*</TerrainName>
+      <TerrainNameAdjacent>
+        <Item>*</Item>
+        <Item>*</Item>
+        <Item>*</Item>
+        <Item>*</Item>
+        <Item>*</Item>
+        <Item>*</Item>
+      </TerrainNameAdjacent>
+      <Tiles>
+        <Item>
+          <Tiles>
+            <Item>hidden</Item>
+          </Tiles>
+        </Item>
+      </Tiles>
+    </Item>
+  </Asset>
+</XnaContent>

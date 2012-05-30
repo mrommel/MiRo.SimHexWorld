@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Terrain">
+    <Name>Grassland</Name>
+    <Title>Grassland</Title>
+    <Description>
+      Grassland
+    </Description>
+    <ImageName>Grassland</ImageName>
+    <Civ5Name>TERRAIN_GRASS</Civ5Name>
+    <AtlasName>TerrainAtlas</AtlasName>
+    <AtlasIdentifier>Grassland</AtlasIdentifier>
+    <TileType>Grass</TileType>
+    <TileHeight>Zero</TileHeight>
+    <Bonus>
+      <Food>2</Food>
+      <Production>0</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <CombatModifiers>0.66</CombatModifiers>
+    <MovementCost>1</MovementCost>
+    <PossibleFeatures>
+      <Item>Forest</Item>
+      <Item>Marsh</Item>
+    </PossibleFeatures>
+    <PossibleRessources>
+      <Item>Iron</Item>
+      <Item>Horses</Item>
+      <Item>Coal</Item>
+      <Item>Uranium</Item>
+      <Item>Cattle</Item>
+      <Item>Gold</Item>
+      <Item>Gems</Item>
+      <Item>Marble</Item>
+      <Item>Cotton</Item>
+      <Item>Wine</Item>
+      <Item>Sheep</Item>
+    </PossibleRessources>
+    <CanFound>true</CanFound>
+    <InfluenceCost>1</InfluenceCost>
+    <BuildModifier>0</BuildModifier>
+    <MoveRateTypes>
+      <Item>BiPed</Item>
+      <Item>Wheeled</Item>
+    </MoveRateTypes>
+  </Asset>
+</XnaContent>

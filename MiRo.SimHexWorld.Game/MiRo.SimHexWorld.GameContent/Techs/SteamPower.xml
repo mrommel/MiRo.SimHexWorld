@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>SteamPower</Name>
+	<Description>When heated, water produces steam. Steam expands under pressure, and in a steam engine part of the heat energy is captured and used to raise and lower a piston or turn a rotor. The principles behind steam power were known by the ancient Greeks, but no one had figured out how to put it to practical use until the late 17th century, when Englishman Thomas Savery created a steam-powered pump designed to raise water from mines. In 1765 James Watt greatly improved the steam engine to the point that it could be used in a wide variety of applications. By 1802 steam engines were being installed in boats, and by 1825, steam railroads were in operation.</Description>
+	<ImageName>SteamPower</ImageName>
+	<Quote>"The nations of the West hope that by means of steam communication all the world will become as one family." - Townsend Harris</Quote>
+	<Cost>1680</Cost>
+	<Notes>Allows you to build the Factory, a building which requires     Coal and greatly increases the     Production of Cities. Also allows you to build the Ironclad, a powerful warship only capable of traveling in coastal waters.</Notes>
+	<Required>
+    <Item>ScientificTheory</Item>
+    <Item>MilitaryScience</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Industrial</EraName>
+	<Flavours>
+    <Item>
+      <Name>Naval</Name>
+      <Amount>4</Amount>
+    </Item>
+    <Item>
+      <Name>Production</Name>
+      <Amount>12</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

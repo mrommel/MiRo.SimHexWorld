@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Improvement">
+    <Name>Lumber Mill</Name>
+    <Description>
+      A lumbermill allows you to improve the production output of forest hexes.
+    </Description>
+    <ImageName>LumberMill</ImageName>
+    <Bonus>
+      <Food>0</Food>
+      <Production>1</Production>
+      <Commercial>0</Commercial>
+    </Bonus>
+    <ImprovesResources> 
+    </ImprovesResources>
+    <RequiredTech>Engineering</RequiredTech>
+    <TerrainNames>
+      <Item>Grassland</Item>
+      <Item>Plains</Item>
+      <Item>Desert</Item>
+    </TerrainNames>
+    <FeatureNames>
+      <Item>Forest</Item>
+    </FeatureNames>
+  </Asset>
+</XnaContent>

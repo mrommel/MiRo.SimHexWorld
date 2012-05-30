@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Satellites</Name>
+    <Description>In the context of a technology, Satellites covers the study and development of artificial, orbital bodies - not naturally occurring ones like the Moon. Man-made satellites had been a major source of inspiration for science fiction writers through the early 1900's, with visionaries like Arthur C. Clarke laying out plans for a network of mass communications satellites long before such things were technologically feasible.</Description>
+    <ImageName>Satellites</ImageName>
+    <Quote>"Now, somehow, in some new way, the sky seemed almost alien." - Lyndon B. Johnson</Quote>
+    <Cost>3350</Cost>
+    <Notes>Allows you to build the SS Cockpit, one of the Spaceship parts necessary to win a Science Victory.</Notes>
+    <Required>
+      <Item>Rocketry</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Modern</EraName>
+    <Flavours>
+      <Item>
+        <Name>Ranged</Name>
+        <Amount>4</Amount>
+      </Item>
+      <Item>
+        <Name>Spaceship</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

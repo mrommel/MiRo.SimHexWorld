@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+    <Asset Type="MiRo.SimHexWorld.Engine.Types.Ressource">
+      <Name>Oil</Name>
+      <Description>
+        Oil is a strategic resource in Civilization 5 that can be found on Desert, Snow, Tundra or Coast. You need to make an oil well on land to get at it or an offshore platform to get at it on the sea.
+        Used by powerful late-game Units.
+        Oil is a liquid fuel found in large and small deposits across the world. Although occasionally used by some civilizations as far back as four thousand years ago to create asphalt or naptha or burned as a light source, modern use can be traced back to 1857 when the first modern refinery was constructed in Alsace, France. At about the same time wells were being drilled across Europe and in North America. By the early 20th century oil was in great demand, largely due to its use in internal combustion engines as used by ships, planes, and automobiles. Today much of international politics is driven by growing tension between those who have abundant sources of oil, and those who do not. Remember that oil is a strategic resource, and thus it is consumed as you construct the associated units and buildings.
+      </Description>
+      <ImageName>Oil</ImageName>
+      <RessourceType>Strategic</RessourceType>
+      <Bonus>
+        <Food>0</Food>
+        <Production>1</Production>
+        <Commercial>1</Commercial>
+      </Bonus>
+      <Improvements>
+        <Item>OilWell</Item>
+        <Item>OffshorePlatform</Item>
+      </Improvements>
+      <RequiredTechName>Biology</RequiredTechName>
+      <!--Units Requiring this Resource: Helicopter Gunship, Jet Fighter, Missile Cruiser, Mobile SAM, Modern Armor, Rocket Artillery, Stealth Bomber, Battleship, Carrier, Fighter, Panzer, Submarine, Tank, Zero, B-17 Bomber, Bomber-->
+      <!--BuildingsRequiring this Resource: None-->
+  </Asset>
+</XnaContent>

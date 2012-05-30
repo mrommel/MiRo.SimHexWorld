@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Feature">
+    <Name>Oasis</Name>
+    <Description>
+      An oasis is an especially lush and verdant area within a desert, usually because it sits atop a source of clean and plentiful water. Oases are extremely valuable resources in an otherwise barren and lifeless desert, and countless battles have been fought between desperate desert tribesmen to possess them.
+    </Description>
+    <ImageName>Oasis</ImageName>
+    <Civ5Name>FEATURE_OASIS</Civ5Name>
+    <AtlasName>FeatureAtlas</AtlasName>
+    <AtlasIdentifier>Oasis</AtlasIdentifier>
+    <Bonus>
+      <Food>3</Food>
+      <Production>0</Production>
+      <Commercial>1</Commercial>
+    </Bonus>
+    <CombatModifiers>0.66</CombatModifiers>
+    <MovementCost>1</MovementCost>
+    <ImprovesTerrains>
+    </ImprovesTerrains>
+    <PossibleRessources>
+    </PossibleRessources>
+  </Asset>
+</XnaContent>

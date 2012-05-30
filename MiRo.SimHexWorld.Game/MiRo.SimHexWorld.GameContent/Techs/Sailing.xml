@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Sailing</Name>
+	<Description>Sailing is the art of harnessing the power of the wind to move a boat over the water. To be successful, sailing required the mastery of a number of diverse skills. First, the culture must be able to construct a seaworthy craft. Second, they must be able to construct some sort of sturdy sheets (sails) which can catch the wind and transmit its energy to the hull. Third they must be able to build the various ropes and cleats and pulleys used to control the ship's sails, and finally they must be able to successfully navigate the vessel from point to point without getting lost or capsizing or suffering some other misfortune.</Description>
+	<ImageName>Sailing</ImageName>
+	<Quote>"He who commands the sea has command of everything." - Themistocles</Quote>
+	<Cost>55</Cost>
+	<Notes>Allows you to build military and economic ships, useful for exploration and harvesting resources in the water like     Fish and     Pearls.</Notes>
+	<Required>
+    <Item>Pottery</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Ancient</EraName>
+	<Flavours>
+    <Item>
+      <Name>Amount_NAVAL</Name>
+      <Amount>3</Amount>
+    </Item>
+    <Item>
+      <Name>Amount_NAVAL_TILE_IMPROVEMENT</Name>
+      <Amount>3</Amount>
+    </Item>
+    <Item>
+      <Name>Amount_WONDER</Name>
+      <Amount>2</Amount>
+    </Item>
+    <Item>
+      <Name>Amount_NAVAL_RECON</Name>
+      <Amount>2</Amount>
+    </Item>
+    <Item>
+      <Name>Amount_GOLD</Name>
+      <Amount>3</Amount>
+    </Item>
+    <Item>
+      <Name>Amount_HAPPINESS</Name>
+      <Amount>3</Amount>
+    </Item>
+	</Flavours>
+	</Asset>
+</XnaContent>

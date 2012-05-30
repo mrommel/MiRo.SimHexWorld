@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Electricity</Name>
+    <Description>The first experience mankind had with electricity was in the form of shocks from electric fish, recorded by Egyptian authors as far back as 2750 BC. In the 15th century AD, the Arabs discovered that lightning was another form of electricity, and this was later confirmed by a British-American scientist named Ben Franklin in 1752. The first semi-reliable battery was made in 1800 by Alessandro Volta, and in 1821 Michael Faraday invented the electric motor.</Description>
+    <ImageName>Electricity</ImageName>
+    <Quote>"Is it a fact - or have I dreamt it - that, by means of electricity, the world of matter has become a great nerve, vibrating thousands of miles in a breathless point of time?" - Nathaniel Hawthorne</Quote>
+    <Cost>1900</Cost>
+    <Notes>Reveals     Aluminum, a resource used for many late-game units. Also allows Cities to build the Stock Exchange, a building which boosts     Gold. Finally, it allows the training of the Destroyer, a fast ship capable of hunting down Submarines.</Notes>
+    <Required>
+      <Item>Biology</Item>
+      <Item>SteamPower</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Industrial</EraName>
+    <Flavours>
+      <Item>
+        <Name>Gold</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>Naval</Name>
+        <Amount>5</Amount>
+    </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

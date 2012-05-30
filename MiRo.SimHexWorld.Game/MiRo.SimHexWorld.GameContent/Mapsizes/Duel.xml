@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.MapSize">
+    <Name>Duel</Name>
+	  <Title>TXT_KEY_MAP_SIZE_DUEL_TITLE</Title>
+    <Description>TXT_KEY_MAP_SIZE_DUEL_DESCRIPTION</Description>
+    <ImageName>Duel</ImageName>
+    <Size>
+      <Width>40</Width>
+      <Height>24</Height>
+    </Size>
+	  <Players>2</Players>
+	  <CityStates>4</CityStates>
+    <CultureModifierPerCity>0.3</CultureModifierPerCity>
+    <Order>0</Order>
+    <NumOfRivers>20</NumOfRivers>
+    <CitiesPerPlayer>6</CitiesPerPlayer>
+    
+  </Asset>
+</XnaContent>

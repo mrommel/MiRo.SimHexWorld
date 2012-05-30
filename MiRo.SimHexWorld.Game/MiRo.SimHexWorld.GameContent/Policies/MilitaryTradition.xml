@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Policy">
+    <Name>Military Tradition</Name>
+    <Description>
+      Military Units gain double Experience from combat.
+    </Description>
+    <ImageName>MilitaryTradition</ImageName>
+    <Historical>Military tradition is the policy of honoring and romanticizing service in the nation's military. Soldiers and veterans are venerated, while those who do not serve in the military are inferior, possibly even dishonorable. Modern Israel has a significant military tradition, as did Victorian England and the pre-Civil War southern United States.</Historical>
+    <PolicyTypeName>Honor</PolicyTypeName>
+    <RequiredPolicyNames>
+      <Item>WarriorCode</Item>
+    </RequiredPolicyNames>
+
+    <!-- bonuses -->
+    <ExperienceModifier>1.0</ExperienceModifier><!-- +100% -->
+    <!-- bonuses -->
+
+    <Flavours>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

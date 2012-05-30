@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Chivalry</Name>
+    <Description>Chivalry describes the honorable behavior expected of "knights" - the armed nobility of a culture. It is very roughly akin to "bushido" (way of the warrior) code of conduct of Japanese samurai. The chivalric code was at its height in the 12th century, fueled by the Crusades, in which the knights believed that they were doing God's work by smiting the unbelievers in the Middle East. To earn God's favor one must act in a godly manner; unchivalrous behavior might very well result in failure, death, and damnation. The Muslim knights opposing the Christians had similar and in some ways even more "civilized" codes.</Description>
+    <ImageName>Chivalry</ImageName>
+    <Quote>"Whoso pulleth out this sword of this stone and anvil, is rightwise king born of all England." - Malory</Quote>
+    <Cost>440</Cost>
+    <Notes>Allows you to build the Knight, a fast and powerful mounted unit. Also allows you to build the Castle to improve the     Defense of your cities.</Notes>
+    <Required>
+      <Item>CivilService</Item>
+      <Item>HorsebackRiding</Item>
+      <Item>Currency</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Medieval</EraName>
+    <Flavours>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>3</Amount>
+      </Item>
+      <Item>
+        <Name>Mobile</Name>
+        <Amount>3</Amount>
+      </Item>
+      <Item>
+        <Name>CityDefense</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>2</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

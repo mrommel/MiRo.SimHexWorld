@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.MilitayStrategyData">
+    <Name>WinningsWars</Name>
+    <Description></Description>
+    <ImageName></ImageName>
+    <CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+    <MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+    <NoMinorCivs>true</NoMinorCivs>
+    <Flavours>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>5</Amount>
+      </Item>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>-5</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

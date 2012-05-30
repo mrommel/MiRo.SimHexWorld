@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.UI.TextureAtlas">
+    <Name>Yields</Name>
+    <TextureName>YieldTiles</TextureName>
+    <Rows>7</Rows>
+    <Columns>4</Columns>
+    <Tiles>
+      <!-- Food -->
+      <Item>
+        <Name>Food1</Name>
+        <Index>0</Index>
+      </Item>
+      <Item>
+        <Name>Food2</Name>
+        <Index>4</Index>
+      </Item>
+      <Item>
+        <Name>Food3</Name>
+        <Index>8</Index>
+      </Item>
+      <Item>
+        <Name>Food4</Name>
+        <Index>12</Index>
+      </Item>
+      <Item>
+        <Name>Food5</Name>
+        <Index>16</Index>
+      </Item>
+      <!-- Production -->
+      <Item>
+        <Name>Prod1</Name>
+        <Index>1</Index>
+      </Item>
+      <Item>
+        <Name>Prod2</Name>
+        <Index>5</Index>
+      </Item>
+      <Item>
+        <Name>Prod3</Name>
+        <Index>9</Index>
+      </Item>
+      <Item>
+        <Name>Prod4</Name>
+        <Index>13</Index>
+      </Item>
+      <Item>
+        <Name>Prod5</Name>
+        <Index>17</Index>
+      </Item>
+      <!-- Gold -->
+      <Item>
+        <Name>Gold1</Name>
+        <Index>2</Index>
+      </Item>
+      <Item>
+        <Name>Gold2</Name>
+        <Index>6</Index>
+      </Item>
+      <Item>
+        <Name>Gold3</Name>
+        <Index>10</Index>
+      </Item>
+      <Item>
+        <Name>Gold4</Name>
+        <Index>14</Index>
+      </Item>
+      <Item>
+        <Name>Gold5</Name>
+        <Index>18</Index>
+      </Item>
+    </Tiles>
+  </Asset>
+</XnaContent>

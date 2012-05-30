@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Minuteman</Name>
+    <Title>TXT_KEY_UNITS_MINUTEMAN_TITLE</Title>
+    <Description>TXT_KEY_UNITS_MINUTEMAN_DESCRIPTION</Description>
+    <ImageName>Minuteman</ImageName>
+    <Notes>All terrains cost 1 to move</Notes>
+    <EraName>Renaissance</EraName>    
+    <UnitType>Gunpowder</UnitType>
+    <IsSpecial>true</IsSpecial>
+    <UniqueUnitOfTribe>American</UniqueUnitOfTribe>
+    <Replaces>Musketman</Replaces>
+    <Cost>120</Cost>
+    <CombatStrength>16</CombatStrength>
+    <RangedCombatStrength>-1</RangedCombatStrength>
+    <Range>-1</Range>
+    <Movement>2</Movement>
+    <RequiredResources>
+    </RequiredResources>
+    <RequiredTechnology>Gunpowder</RequiredTechnology>
+    <UpgradesTo>Rifleman</UpgradesTo>
+  </Asset>
+</XnaContent>

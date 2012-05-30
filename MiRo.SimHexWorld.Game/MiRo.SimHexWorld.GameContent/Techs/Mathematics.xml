@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Mathematics</Name>
+    <Description>Mathematics may be defined as the science of order, structure and relation that has evolved from counting, measuring and describing objects and their shapes. Mathematics is the most basic building block upon which all physical science is based. The Sumerians had a remarkably robust and complex mathematical system which was "base-ten" (like the modern system) and "base-60" as well. Remnants of the "base-60" system survive today primarily in modern time-keeping - 60 seconds to the minute, 60 minutes to the hour.</Description>
+    <ImageName>Mathematics</ImageName>
+    <Quote>"Mathematics is the gate and key to the sciences." - Roger Bacon</Quote>
+    <Cost>100</Cost>
+    <Notes>Allows you to build the Catapult, a powerful siege weapon. Also allows you to build the Courthouse, a building which reduces the     Unhappiness from       Occupied Cities.</Notes>
+    <Required>
+      <Item>TheWheel</Item>
+      <Item>Archery</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Classical</EraName>
+    <Flavours>
+      <Item>
+        <Name>Ranged</Name>
+        <Amount>8</Amount>
+      </Item>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>4</Amount>
+      </Item>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>2</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.MapType">
+    <Name>Continents</Name>
+    <Title>TXT_KEY_MAP_TYPE_CONTINENTS_TITLE</Title>
+    <Description>TXT_KEY_MAP_TYPE_CONTINENTS_DESCRIPTION</Description>
+    <ImageName>Continents</ImageName>
+    <Order>1</Order>
+    <OceanRatio>0.3</OceanRatio>
+  </Asset>
+</XnaContent>

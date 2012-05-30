@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Mining</Name>
+    <Description>Mining is the process of extracting various useful substances from beneath the earth's surface. The earliest mined elements include copper, iron, diamonds, gold, silver, salt and coal. Since one can't eat any of that stuff (except for salt, of course, but you see where we're heading here), miners must be part of a community that grows enough excess food to support them and their families.</Description>
+    <ImageName>Mining</ImageName>
+    <Quote>"The meek shall inherit the Earth, but not its mineral rights." - J. Paul Getty</Quote>
+    <Cost>35</Cost>
+    <Notes>Allows Workers to construct Mines to increase the     Production of map tiles, and Chop Forests, allowing the construction of other improvements.</Notes>
+    <Required>
+      <Item>Agriculture</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Ancient</EraName>
+    <Flavours>
+      <Item>
+        <Name>Production</Name>
+        <Amount>3</Amount>
+      </Item>
+      <Item>
+        <Name>TileImprovement</Name>
+        <Amount>2</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

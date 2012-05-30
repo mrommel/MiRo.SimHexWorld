@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
+    <Name>Crossbowman</Name>
+    <Title>Crossbowman</Title>
+    <Description>TXT_KEY_UNITS_CROSSBOWMAN_DESCRIPTION</Description>
+    <ImageName>Crossbowman</ImageName>
+    <Notes>
+      May not melee attack
+    </Notes>
+    <EraName>Medieval</EraName>     
+    <UnitType>Archery</UnitType>
+    <IsSpecial>false</IsSpecial>
+    <Cost>360</Cost>
+    <CombatStrength>6</CombatStrength>
+    <RangedCombatStrength>12</RangedCombatStrength>
+    <Range>2</Range>
+    <Movement>2</Movement>
+    <RequiredResources>
+    </RequiredResources>
+    <RequiredTechnology>Machinery</RequiredTechnology>
+    <UpgradesTo>Rifleman</UpgradesTo>
+  </Asset>
+</XnaContent>

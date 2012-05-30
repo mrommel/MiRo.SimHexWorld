@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Era">
+    <Name>Classical</Name>
+    <Title>TXT_KEY_ERA_CLASSICAL_TITLE</Title>
+    <Description>TXT_KEY_ERA_CLASSICAL_DESCRIPTION</Description>
+    <ImageName>Classical</ImageName>
+    <Successor>Medieval</Successor>
+    <GrowthModifier>1.0</GrowthModifier>
+  </Asset>
+</XnaContent>

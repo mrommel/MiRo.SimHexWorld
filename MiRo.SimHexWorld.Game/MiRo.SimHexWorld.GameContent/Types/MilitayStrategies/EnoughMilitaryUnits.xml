@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.MilitayStrategyData">
+    <Name>EnoughMilitaryUnits</Name>
+    <Description></Description>
+    <ImageName></ImageName>
+    <CheckTriggerTurnCount>2</CheckTriggerTurnCount>
+    <FirstTurnExecuted>25</FirstTurnExecuted>
+    <MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
+    <NoMinorCivs>true</NoMinorCivs>
+    <Flavours>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>-50</Amount>
+      </Item>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>-50</Amount>
+      </Item>
+      <Item>
+        <Name>Ranged</Name>
+        <Amount>-50</Amount>
+      </Item>
+      <Item>
+        <Name>Naval</Name>
+        <Amount>-30</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

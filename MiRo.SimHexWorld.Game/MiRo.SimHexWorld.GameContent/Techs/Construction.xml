@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Construction</Name>
+    <Description>Construction represents the advancement of the study of masonry, primarily by adding iron and other metals to the builder's toolbox. Although remarkably durable, stone and brick are also quite heavy and inflexible. It's impossible to construct very tall structures out of these materials - unless the structure in question is solid stone or brick and is pyramid-shaped - otherwise they will collapse under their own weight or in the face of a strong wind.</Description>
+    <ImageName>Construction</ImageName>
+    <Quote>"Three things are to be looked to in a building: that it stand on the right spot; that it be securely founded; that it be successfully executed." - Johann Wolfgang von Goethe</Quote>
+    <Cost>100</Cost>
+    <Notes>Allows you to build the Colosseum, which improves     Happiness in the empire, which in turn helps your city growth and makes     Golden Ages more likely. Additionally, bridges are automatically added to roads which cross rivers, allowing units to pass over them without slowing down.</Notes>
+    <Required>
+      <Item>Masonry</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Classical</EraName>
+    <Flavours>
+      <Item>
+        <Name>Happiness</Name>
+        <Amount>17</Amount>
+      </Item>
+      <Item>
+        <Name>Infrastructure</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>2</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

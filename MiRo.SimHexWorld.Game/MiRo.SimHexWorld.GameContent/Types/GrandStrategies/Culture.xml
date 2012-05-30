@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.GrandStrategyData">
+    <Name>Culture</Name>
+    <Description></Description>
+    <ImageName></ImageName>
+    <Flavours>
+      <Item>
+        <Name>Culture</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+    <Yields>
+      <Item>
+        <Type>Gold</Type>
+        <Amount>50</Amount>
+      </Item>
+      <Item>
+        <Type>Science</Type>
+        <Amount>50</Amount>
+      </Item>
+    </Yields>
+  </Asset>
+</XnaContent>

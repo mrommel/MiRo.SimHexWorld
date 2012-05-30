@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Terrain">
+    <Name>Coast</Name>
+    <Title>Coast</Title>
+    <Description>
+      Coast hexes are the ocean hexes directly adjacent to land. They provide food and gold to a nearby city, but only if that civilization has the Sailing technology. Only naval units and "embarked" land units may enter coastal hexes. You cannot build cities on coasts; only naval units or embarked units may enter this kind of tile. Coasts can be worked without the Sailing Technology.
+    </Description>
+    <ImageName>Coast</ImageName>
+    <Civ5Name>TERRAIN_COAST</Civ5Name>
+    <AtlasName>TerrainAtlas</AtlasName>
+    <AtlasIdentifier>Coast</AtlasIdentifier>
+    <TileType>Sand</TileType>
+    <TileHeight>Coast</TileHeight>
+    <Bonus>
+      <Food>1</Food>
+      <Production>0</Production>
+      <Commercial>1</Commercial>
+    </Bonus>
+    <CombatModifiers>1.0</CombatModifiers>
+    <MovementCost>1</MovementCost>
+    <PossibleFeatures>
+      <Item>Ice</Item>
+    </PossibleFeatures>
+    <PossibleRessources>
+      <Item>Fish</Item>
+      <Item>Whales</Item>
+      <Item>Pearls</Item>
+      <Item>Oil</Item>
+    </PossibleRessources>
+    <CanFound>false</CanFound>
+    <InfluenceCost>2</InfluenceCost>
+    <BuildModifier>0</BuildModifier>
+    <MoveRateTypes>
+      <Item>WoodenBoat</Item>
+      <Item>Boat</Item>
+    </MoveRateTypes>
+  </Asset>
+</XnaContent>

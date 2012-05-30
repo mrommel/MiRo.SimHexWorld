@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Era">
+    <Name>Future</Name>
+    <Title>TXT_KEY_ERAS_FUTURE_TITLE</Title>
+    <Description>TXT_KEY_ERAS_FUTURE_DESCRIPTION</Description>
+    <ImageName>Future</ImageName>
+    <Successor></Successor>
+    <GrowthModifier>0.5</GrowthModifier>
+  </Asset>
+</XnaContent>

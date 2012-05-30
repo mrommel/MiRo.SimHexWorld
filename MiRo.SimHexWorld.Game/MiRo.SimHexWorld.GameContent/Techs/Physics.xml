@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+	<Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+	<Name>Physics</Name>
+	<Description>Physics is the study of matter and it is the basic physical science. Originally termed "natural science," it is concerned with everything in the observable universe, from the smallest particle to the largest galaxy. Physics is concerned with gravity, light, heat, and magnetism. Over time, as human knowledge has expanded exponentially, physics has split into numerous sub-disciplines such as astronomy, chemistry, geology, biology and engineering, but all are basically concerned with measuring and explaining natural phenomena.</Description>
+	<ImageName>Physics</ImageName>
+	<Quote>"Measure what is measurable, and make measurable what is not so." - Galileo</Quote>
+	<Cost>440</Cost>
+	<Notes>Allows you to build the Trebuchet, a very useful siege unit specialized in weakening enemy cities.</Notes>
+	<Required>
+    <Item>Engineering</Item>
+    <Item>MetalCasting</Item>
+	</Required>
+	<RequiredOr>
+	</RequiredOr>
+	<EraName>Medieval</EraName>
+	<Flavours>
+	</Flavours>
+	</Asset>
+</XnaContent>

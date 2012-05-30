@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Biology</Name>
+    <Description>Biology is the study of living organisms. It's a wide field, ranging from the study of the largest whale to the smallest bacterium. Much of pre-nineteenth century biology was concerned with discovering and categorizing all of the plants, insects and animals in existence on the Earth. As the science advanced and the equipment improved, scientists began to dig into the building blocks of biology - cells, and later, genes and DNA. Today, much is known about the biology of all living organisms on the planet.</Description>
+    <ImageName>Biology</ImageName>
+    <Quote>"If the brain were so simple we could understand it, we would be so simple we couldn't." - Lyall Watson</Quote>
+    <Cost>1680</Cost>
+    <Notes>Reveals     Oil, a vital late-game resource. Also allows you to build the Hospital, a building which increases the     growth rate of Cities.</Notes>
+    <Required>
+      <Item>Archaeology</Item>
+      <Item>ScientificTheory</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Industrial</EraName>
+    <Flavours>
+      <Item>
+        <Name>Growth</Name>
+        <Amount>7</Amount>
+      </Item>
+      <Item>
+        <Name>TileImprovement</Name>
+        <Amount>3</Amount>
+    </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Tech">
+    <Name>Masonry</Name>
+    <Description>Masonry is the construction of structures from individual blocks bound together by some kind of mortar. The blocks may be made of stone, concrete, cinder, or they may be clay bricks. The mortar is some kind of workable paste that dries into an extremely durable material. It is usually composed of a mixture of sand, cement or lime, and water.</Description>
+    <ImageName>Masonry</ImageName>
+    <Quote>"How happy are those whose walls already rise!" - Virgil</Quote>
+    <Cost>55</Cost>
+    <Notes>Allows you to build Walls, which greatly improve the defense of cities from attack. Also allows Workers to construct Quarries on     Marble and Clear Marshes, allowing other improvements to be constructed.</Notes>
+    <Required>
+      <Item>Mining</Item>
+    </Required>
+    <RequiredOr>
+    </RequiredOr>
+    <EraName>Ancient</EraName>
+    <Flavours>
+      <Item>
+        <Name>CityDefense</Name>
+        <Amount>4</Amount>
+      </Item>
+      <Item>
+        <Name>Happiness</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>TileImprovement</Name>
+        <Amount>2</Amount>
+      </Item>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>4</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

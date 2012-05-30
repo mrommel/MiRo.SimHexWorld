@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Difficulty">
+    <Name>Deity</Name>
+    <Title>TXT_KEY_DIFFICULTY_DEITY_TITLE</Title>
+    <Description>TXT_KEY_DIFFICULTY_DEITY_DESCRIPTION</Description>
+    <ImageName>Deity</ImageName>
+    <Order>7</Order>
+    <AIGrowthModifier>0.6</AIGrowthModifier>
+    <CultureModifier>1</CultureModifier>
+  </Asset>
+</XnaContent>

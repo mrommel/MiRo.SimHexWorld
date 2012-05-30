@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Policy">
+    <Name>Warrior Code</Name>
+    <Description>
+      Great General appears outside the [Capital] Capital.
+    </Description>
+    <ImageName>WarriorCode</ImageName>
+    <Historical>
+      The warrior code represents those military organizations in which the soldiers feel a stronger allegiance to the army and their fellow soldiers than to anything else. The soldier is willing - if not eager - to fight and die for the army. He'll follow orders without question, putting the good of the military ahead of his own personal welfare, or indeed the welfare of his nation as a whole. Such organizations can be very dangerous unless the nation's leaders keep an extremely tight grip on it. According to some historians, in pre-World War II Japan, the Imperial Army and Navy were almost entirely out of civilian control, and their militaristic actions dragged that country into the ultimately-disastrous confrontation with the United States.
+    </Historical>
+    <PolicyTypeName>Honor</PolicyTypeName>
+    <RequiredPolicyNames></RequiredPolicyNames>
+    
+    <!-- bonuses -->
+    <FreeUnitName>GreatGeneral</FreeUnitName>
+    <!-- bonuses -->
+    
+    <Flavours>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>0</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>
