@@ -51,7 +51,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
         public void Initialize()
         {
-            if (Map.Extension.StartLocations.Count > 0)
+            if (Map.Extension.StartLocations != null && Map.Extension.StartLocations.Count > 0)
             {
                 foreach (AbstractPlayerData pl in _players)
                 {
