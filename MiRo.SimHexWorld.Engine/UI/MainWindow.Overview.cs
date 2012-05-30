@@ -12,7 +12,6 @@ namespace MiRo.SimHexWorld.Engine.UI
     {
         ImageBox _lblOverview;
         ImageBox _lblBottomRight;
-        ImageBox _lblOverviewSide;
 
         Texture2D _overviewSideTexture;
         Texture2D _overviewTexture;

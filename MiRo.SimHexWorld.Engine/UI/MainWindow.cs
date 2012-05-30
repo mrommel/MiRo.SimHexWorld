@@ -629,7 +629,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             _lblUnit.Visible = visible;
 
             _lblOverview.Visible = visible;
-            _lblOverviewSide.Visible = visible;
+            _lblBottomRight.Visible = visible;
 
             _lblUnit.Visible = visible;
             for (int i = 0; i < _actionButtons.Length; ++i)
