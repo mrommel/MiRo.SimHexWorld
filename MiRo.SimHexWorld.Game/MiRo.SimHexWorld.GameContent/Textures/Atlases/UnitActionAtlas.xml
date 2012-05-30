@@ -7,12 +7,16 @@
     <Columns>8</Columns>
     <Tiles>
       <Item>
-        <Name>Found</Name>
-        <Index>52</Index>
+        <Name>BuildFarm</Name>
+        <Index>21</Index>
       </Item>
       <Item>
         <Name>BuildRoad</Name>
         <Index>24</Index>
+      </Item>
+      <Item>
+        <Name>Found</Name>
+        <Index>52</Index>
       </Item>
     </Tiles>
   </Asset>

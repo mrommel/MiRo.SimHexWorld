@@ -8,30 +8,9 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
 {
     partial class MapData
     {
-        //public static MapData FromCiv5Map(Civ5Map civ5Map)
-        //{
-        //    var map = new MapData();
-
-        //    map.InitFromCiv5Map(civ5Map);
-
-        //    return map;
-        //}
-
-        //public void LoadCiv5Map2(string filename)
-        //{
-        //    var map = new Civ5Map();
-        //    map.Load(filename);
-
-        //    InitFromCiv5Map(map);
-
-        //    if( OnMapUpdate != null)
-        //        OnMapUpdate(new MapChangeArgs(this));
-        //}
-
         public void InitFromCiv5Map(Civ5Map civ5Map)
         {
             Init(civ5Map.Width + 1, civ5Map.Height + 1);
-            //Init(civ5Map.Height + 1, civ5Map.Width + 1);
 
             Dictionary<byte, Terrain> terrainDict = new Dictionary<byte, Terrain>();
 

@@ -74,11 +74,21 @@ namespace MiRo.SimHexWorld.Engine.UI
             ImageBox cnt = sender as ImageBox;
             int num = int.Parse(cnt.Tag.ToString());
 
-            UnitAction action = _currentUnitActions[num];
-            Texture2D texture = Provider.GetAtlas("UnitActionAtlas").GetTexture(action.ToString());
+            try
+            {
+                if (_currentUnitActions.Count > num)
+                {
+                    UnitAction action = _currentUnitActions[num];
+                    Texture2D texture = Provider.GetAtlas("UnitActionAtlas").GetTexture(action.ToString());
 
-            if (texture != null)
-                e.Renderer.Draw(texture, e.Rectangle, Color.White);
+                    if (texture != null)
+                        e.Renderer.Draw(texture, e.Rectangle, Color.White);
+                }
+            }
+            catch (Exception ex)
+            {
+ 
+            }
         }
 
         void LblUnit_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)

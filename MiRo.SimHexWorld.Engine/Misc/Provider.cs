@@ -29,7 +29,6 @@ namespace MiRo.SimHexWorld.Engine.Misc
         public readonly Dictionary<string, MapSize> MapSizes;
         public readonly Dictionary<string, MapType> MapTypes;
         public readonly Dictionary<string, Difficulty> Difficulties;
-        public readonly Dictionary<string, Translation> Translations;
         public readonly Dictionary<string, Pace> Paces;
 
         public readonly Dictionary<string, FlavourData> Flavours;
@@ -62,7 +61,6 @@ namespace MiRo.SimHexWorld.Engine.Misc
             MapSizes = MainApplication.ManagerInstance.Content.LoadContent<MapSize>("Content\\MapSizes");
             MapTypes = MainApplication.ManagerInstance.Content.LoadContent<MapType>("Content\\MapTypes");
             Difficulties = MainApplication.ManagerInstance.Content.LoadContent<Difficulty>("Content\\Difficulties");
-            Translations = MainApplication.ManagerInstance.Content.LoadContent<Translation>("Content\\Translations");
 
             Flavours = MainApplication.ManagerInstance.Content.LoadContent<FlavourData>("Content\\Types\\Flavours");
             Leaders = MainApplication.ManagerInstance.Content.LoadContent<LeaderData>("Content\\Types\\Leaders");
@@ -74,6 +72,8 @@ namespace MiRo.SimHexWorld.Engine.Misc
 
             //Paces = MainApplication.ManagerInstance.Content.LoadContent<Pace>("Content\\Paces");
             Maps = MainApplication.ManagerInstance.Content.LoadContent<Civ5Map>("Content\\Maps");
+
+            UpdateMaps();
 
             Atlases = MainApplication.ManagerInstance.Content.LoadContent<TextureAtlas>("Content\\Textures\\Atlases", "*Atlas.*");
 
@@ -92,10 +92,19 @@ namespace MiRo.SimHexWorld.Engine.Misc
             _log.InfoFormat("MapSizes:      {0}", MapSizes.Count);
             _log.InfoFormat("MapTypes:      {0}", MapTypes.Count);
             _log.InfoFormat("Difficulties:  {0}", Difficulties.Count);
-            _log.InfoFormat("Translations:  {0}", Translations.Count);
             _log.InfoFormat("Flavours:  {0}", Flavours.Count);
             //log.InfoFormat("Paces:         {0}", Paces.Count);
             _log.InfoFormat("Maps:          {0}", Maps.Count);
+        }
+
+        private void UpdateMaps()
+        {
+            foreach (KeyValuePair<string, Civ5Map> mapPair in Maps)
+            {
+                mapPair.Value.ImageName = mapPair.Key;
+                mapPair.Value.Name += ("_" + mapPair.Key).ToUpper();
+                mapPair.Value.FileName = mapPair.Key;
+            }
         }
 
         private static Provider _instance = null;
@@ -103,19 +112,6 @@ namespace MiRo.SimHexWorld.Engine.Misc
         {
             get { return _instance ?? (_instance = new Provider()); }
         }
-
-        //private static string _local;
-        //public static string Locale
-        //{
-        //    get { return _local; }
-        //    set
-        //    {
-        //        if (!Instance.Translations.ContainsKey(value))
-        //            throw new Exception("Unknown locale: '" + value + "'");
-
-        //        _local = value;
-        //    }
-        //}
 
         public static bool CanTranslate
         {
@@ -129,21 +125,6 @@ namespace MiRo.SimHexWorld.Engine.Misc
                 return key;
             else
                 return str;
-
-            //if (_local == null || Translations.Count == 0 || !Translations.ContainsKey(_local))
-            //    return key;
-
-            //Translation.TranslationItem item = Translations[_local].Items.FirstOrDefault(a => a.Key == key);
-
-            //if (item != null)
-            //    return item.Value;
-
-            //item = Translations["en_us"].Items.FirstOrDefault(a => a.Key == key);
-
-            //if (item == null)
-            //    throw new Exception("Unknown key: '" + _local + "' => '" + key + "'");
-
-            //return "def:" + item.Value;
         }
 
         public string Check()

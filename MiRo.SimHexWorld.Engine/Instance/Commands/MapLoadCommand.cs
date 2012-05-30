@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using PureMVC.Patterns;
 using PureMVC.Interfaces;
@@ -22,20 +23,18 @@ namespace MiRo.SimHexWorld.Engine.Instance.Commands
          */
         public override void Execute(INotification note)
         {
-            Thread t = new Thread(() => Run(note.Body as string));
+            Thread t = new Thread(() => Run(note.Body as Civ5Map));
             t.Start();
         }
 
-        public static void Run(string mapName)
+        public static void Run(Civ5Map civ5map)
         {
-            Civ5Map civ5Map = Provider.Instance.Maps[mapName];
-
             MapData map = new MapData();
-            map.InitFromCiv5Map(civ5Map);
+            map.InitFromCiv5Map(civ5map);
 
             try
             {
-                map.Extension = MainApplication.Instance.Content.Load<MapExtension>("Content/MapsExtension/" + mapName);
+                map.Extension = MainApplication.Instance.Content.Load<MapExtension>("Content/MapsExtension/" + civ5map.FileName);
             }
             catch { }
 

@@ -65,7 +65,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net">
-      <HintPath>..\..\MiRoSimHexWorld.Engine\Lib\log4net.dll</HintPath>
+      <HintPath>..\..\MiRo.SimHexWorld.Engine\Lib\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
       <Private>False</Private>
@@ -97,9 +97,12 @@
     <Reference Include="mscorlib">
       <Private>False</Private>
     </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\MiRo.SimHexWorld.Engine\Lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="PureMVC.DotNET.35, Version=3.0.0.0, Culture=neutral, PublicKeyToken=9c0aeba5d5e58cc6, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\MiRoSimHexWorld.Engine\Lib\PureMVC.DotNET.35.dll</HintPath>
+      <HintPath>..\..\MiRo.SimHexWorld.Engine\Lib\PureMVC.DotNET.35.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>False</Private>
@@ -118,7 +121,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="TomShane.Neoforce.Controls">
-      <HintPath>..\..\..\XNA\TomShane.Neoforce.Controls.XNA4\Neoforce\Samples\Bin\TomShane.Neoforce.Controls.dll</HintPath>
+      <HintPath>..\..\MiRo.SimHexWorld.Engine\Lib\TomShane.Neoforce.Controls.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -40,7 +40,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Dialogs
             lstMain.Height = ClientHeight - 16 - BottomPanel.Height - TopPanel.Height;
             lstMain.Anchor = Anchors.Top | Anchors.Right | Anchors.Bottom;
             lstMain.HideSelection = false;
-            lstMain.Items.AddRange(Provider.Instance.Maps.Keys );
+            lstMain.Items.AddRange(Provider.Instance.Maps.Values );
 
             btnOk = new Button(manager);
             btnOk.Init();
@@ -70,9 +70,9 @@ namespace MiRo.SimHexWorld.Engine.UI.Dialogs
         ////////////////////////////////////////////////////////////////////////////    
 
         ////////////////////////////////////////////////////////////////////////////    
-        public string SelectetItem
+        public object SelectedItem
         {
-            get { return lstMain.SelectedItemName; }
+            get { return lstMain.Items[ lstMain.ItemIndex]; }
         }
         //////////////////////////////////////////////////////////////////////////// 
     }

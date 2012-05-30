@@ -808,7 +808,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             Dialog dialog = sender as Dialog;
             if (dialog != null && dialog.ModalResult == TomShane.Neoforce.Controls.ModalResult.Ok)
             {
-                GameFacade.getInstance().SendNotification(GameNotification.LoadMap, (sender as SelectMapLoadDialog).SelectetItem);
+                GameFacade.getInstance().SendNotification(GameNotification.LoadMap, (sender as SelectMapLoadDialog).SelectedItem);
             }
 
             e.Dispose = true;

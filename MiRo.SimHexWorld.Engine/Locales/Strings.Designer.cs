@@ -97,6 +97,60 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Duel auf der Erde ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_MAP_EARTH_TITLE_EARTH_DUEL {
+            get {
+                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_TITLE_EARTH_DUEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Riesige Erde ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_MAP_EARTH_TITLE_EARTH_HUGE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_TITLE_EARTH_HUGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Große Erde ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_MAP_EARTH_TITLE_EARTH_LARGE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_TITLE_EARTH_LARGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Kleine Erde ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_MAP_EARTH_TITLE_EARTH_SMALL {
+            get {
+                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_TITLE_EARTH_SMALL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Normale Erde ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_MAP_EARTH_TITLE_EARTH_STANDARD {
+            get {
+                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_TITLE_EARTH_STANDARD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Winzige Erde ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_MAP_EARTH_TITLE_EARTH_TINY {
+            get {
+                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_TITLE_EARTH_TINY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Prüfung ähnelt.
         /// </summary>
         internal static string TXT_KEY_UI_MAINAPPLICATION_CHECK {

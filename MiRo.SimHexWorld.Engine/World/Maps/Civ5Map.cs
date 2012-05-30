@@ -2,10 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using MiRo.SimHexWorld.Engine.Types;
+using MiRo.SimHexWorld.Engine.Misc;
+using MiRo.SimHexWorld.Engine.Locales;
 
 namespace MiRo.SimHexWorld.Engine.World.Maps
 {
-    public class Civ5Map
+    public class Civ5Map : AbstractNamedEntity
     {
         byte _type;
         int width;
@@ -213,13 +216,29 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
 
         public string Name
         {
-            get { return mapName; }
+            get 
+            {
+                string str = Strings.ResourceManager.GetString(mapName);
+
+                if (string.IsNullOrEmpty(str))
+                    return mapName;
+                else
+                    return str;
+            }
             set { mapName = value; }
         }
 
         public string Description
         {
-            get { return description; }
+            get 
+            {
+                string str = Strings.ResourceManager.GetString(description);
+
+                if (string.IsNullOrEmpty(str))
+                    return description;
+                else
+                    return str;
+            }
             set { description = value; }
         }
 
@@ -410,5 +429,30 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
                     return HeightType.Mountain;
             }
         }
+
+        public override string ImagePath
+        {
+            get { return ""; }
+        }
+
+        public override Microsoft.Xna.Framework.Graphics.Texture2D Image
+        {
+            get { return Provider.GetAtlas("MapAtlas").GetTexture(ImageName); }
+        }
+
+        public override List<Misc.MissingAsset> CheckIntegrity()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string FileName { get; set; }
+
+        public override string ToString()
+        {
+            if (Name == null)
+                return "Map";
+
+            return Name;
+        } 
     }
 }

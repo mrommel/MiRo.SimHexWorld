@@ -166,4 +166,22 @@
   <data name="TXT_KEY_BUILDINGS_MONUMENT_TITLE" xml:space="preserve">
     <value>Monument</value>
   </data>
+  <data name="TXT_KEY_MAP_EARTH_TITLE_EARTH_DUEL" xml:space="preserve">
+    <value>Duel auf der Erde</value>
+  </data>
+  <data name="TXT_KEY_MAP_EARTH_TITLE_EARTH_HUGE" xml:space="preserve">
+    <value>Riesige Erde</value>
+  </data>
+  <data name="TXT_KEY_MAP_EARTH_TITLE_EARTH_LARGE" xml:space="preserve">
+    <value>Große Erde</value>
+  </data>
+  <data name="TXT_KEY_MAP_EARTH_TITLE_EARTH_SMALL" xml:space="preserve">
+    <value>Kleine Erde</value>
+  </data>
+  <data name="TXT_KEY_MAP_EARTH_TITLE_EARTH_STANDARD" xml:space="preserve">
+    <value>Normale Erde</value>
+  </data>
+  <data name="TXT_KEY_MAP_EARTH_TITLE_EARTH_TINY" xml:space="preserve">
+    <value>Winzige Erde</value>
+  </data>
 </root>

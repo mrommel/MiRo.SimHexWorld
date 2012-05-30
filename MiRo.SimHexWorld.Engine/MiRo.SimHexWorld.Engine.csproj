@@ -84,7 +84,9 @@
     <Reference Include="mscorlib">
       <Private>False</Private>
     </Reference>
-    <Reference Include="nunit.framework, Version=2.5.9.10348, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="nunit.framework, Version=2.5.9.10348, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>Lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="PureMVC.DotNET.35">
       <HintPath>Lib\PureMVC.DotNET.35.dll</HintPath>
     </Reference>
@@ -107,7 +109,10 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="TomShane.Neoforce.Controls">
-      <HintPath>..\..\XNA\TomShane.Neoforce.Controls.XNA4\Neoforce\Samples\Bin\TomShane.Neoforce.Controls.dll</HintPath>
+      <HintPath>Lib\TomShane.Neoforce.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="TomShane.Neoforce.Importers">
+      <HintPath>Lib\TomShane.Neoforce.Importers.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
