@@ -105,6 +105,11 @@
         <Index>23</Index>
       </Item>
       <!-- next row -->
+
+      <Item>
+        <Name>Education</Name>
+        <Index>25</Index>
+      </Item>
       <Item>
         <Name>Banking</Name>
         <Index>31</Index>
@@ -113,6 +118,10 @@
       <Item>
         <Name>Trapping</Name>
         <Index>77</Index>
+      </Item>
+      <Item>
+        <Name>Acoustics</Name>
+        <Index>78</Index>
       </Item>
     </Tiles>
   </Asset>
