@@ -801,6 +801,8 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                     modifier += policy.ScienceModifier;
                 }
 
+                science += Citizen;
+
                 science *= modifier;
 
                 return science;
