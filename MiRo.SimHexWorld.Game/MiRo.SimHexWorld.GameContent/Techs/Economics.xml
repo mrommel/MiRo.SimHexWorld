@@ -11,8 +11,8 @@
       <Item>Banking</Item>
       <Item>PrintingPress</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
+    
+    
     <EraName>Renaissance</EraName>
     <Flavours>
       <Item>

@@ -10,8 +10,8 @@
     <Required>
       <Item>ReplaceableParts</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
+    
+    
     <EraName>Industrial</EraName>
     <Flavours>
       <Item>

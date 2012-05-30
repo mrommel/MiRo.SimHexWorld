@@ -11,8 +11,8 @@
     <Item>Engineering</Item>
     <Item>MetalCasting</Item>
 	</Required>
-	<RequiredOr>
-	</RequiredOr>
+	
+	
 	<EraName>Medieval</EraName>
 	<Flavours>
 	</Flavours>

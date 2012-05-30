@@ -10,8 +10,8 @@
     <Required>
       <Item>Telegraph</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
+    
+    
     <EraName>Modern</EraName>
     <Flavours>
       <Item>

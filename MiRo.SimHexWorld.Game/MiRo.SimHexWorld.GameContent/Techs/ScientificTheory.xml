@@ -12,8 +12,6 @@
       <Item>Navigation</Item>
       <Item>Acoustics</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
     <EraName>Renaissance</EraName>
     <Flavours>
       <Item>

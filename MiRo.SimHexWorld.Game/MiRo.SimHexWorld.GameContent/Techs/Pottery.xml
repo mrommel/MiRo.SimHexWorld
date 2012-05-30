@@ -10,8 +10,6 @@
 	<Required>
     <Item>Agriculture</Item>
 	</Required>
-	<RequiredOr>
-	</RequiredOr>
 	<EraName>Ancient</EraName>
 	<Flavours>
     <Item>

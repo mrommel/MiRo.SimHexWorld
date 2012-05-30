@@ -12,8 +12,8 @@
     <Item>Robotics</Item>
     <Item>Satellites</Item>
 	</Required>
-	<RequiredOr>
-	</RequiredOr>
+	
+	
 	<EraName>Future</EraName>
 	<Flavours>
 	</Flavours>

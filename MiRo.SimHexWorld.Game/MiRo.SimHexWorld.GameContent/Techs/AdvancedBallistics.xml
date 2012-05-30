@@ -11,8 +11,8 @@
       <Item>NuclearFission</Item>
       <Item>Lasers</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
+    
+    
     <EraName>Modern</EraName>
     <Flavours>
       <Item>

@@ -10,8 +10,8 @@
     <Required>
       <Item>Gunpowder</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
+    
+    
     <EraName>Renaissance</EraName>
     <Flavours>
       <Item>

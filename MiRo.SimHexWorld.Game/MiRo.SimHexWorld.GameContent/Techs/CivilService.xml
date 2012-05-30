@@ -11,8 +11,8 @@
       <Item>Philosophy</Item>
       <Item>Trapping</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
+    
+    
     <EraName>Medieval</EraName>
     <Flavours>
       <Item>

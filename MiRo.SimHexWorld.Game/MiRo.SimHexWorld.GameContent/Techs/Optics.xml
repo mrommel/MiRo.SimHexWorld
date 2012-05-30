@@ -10,8 +10,8 @@
 	<Required>
     <Item>Sailing</Item>
 	</Required>
-	<RequiredOr>
-	</RequiredOr>
+	
+	
 	<EraName>Classical</EraName>
 	<Flavours>
     <Item>

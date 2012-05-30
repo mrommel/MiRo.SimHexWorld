@@ -10,8 +10,8 @@
 	<Required>
     <Item>Radio</Item>
 	</Required>
-	<RequiredOr>
-	</RequiredOr>
+	
+	
 	<EraName>Modern</EraName>
 	<Flavours>
 	</Flavours>

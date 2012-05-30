@@ -11,8 +11,8 @@
       <Item>Plastic</Item>
       <Item>Penicilin</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
+    
+    
     <EraName>Modern</EraName>
     <Flavours>
       <Item>

@@ -11,8 +11,6 @@
       <Item>Nanotechnology</Item>
       <Item>NuclearFusion</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
     <EraName>Future</EraName>
     <Flavours>
       <Item>

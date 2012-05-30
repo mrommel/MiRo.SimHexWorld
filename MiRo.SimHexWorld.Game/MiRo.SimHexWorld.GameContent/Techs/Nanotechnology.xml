@@ -10,8 +10,6 @@
 	<Required>
     <Item>ParticlePhysics</Item>
 	</Required>
-	<RequiredOr>
-	</RequiredOr>
 	<EraName>Future</EraName>
 	<Flavours>
 	</Flavours>

@@ -11,8 +11,8 @@
     <Item>Economics</Item>
     <Item>Chemistry</Item>
 	</Required>
-	<RequiredOr>
-	</RequiredOr>
+	
+	
 	<EraName>Renaissance</EraName>
 	<Flavours>
 	</Flavours>

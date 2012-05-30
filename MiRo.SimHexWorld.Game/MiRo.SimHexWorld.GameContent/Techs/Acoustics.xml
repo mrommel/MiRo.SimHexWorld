@@ -10,8 +10,8 @@
     <Required>
       <Item>Education</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
+    
+    
     <EraName>Renaissance</EraName>
     <Flavours>
       <Item>

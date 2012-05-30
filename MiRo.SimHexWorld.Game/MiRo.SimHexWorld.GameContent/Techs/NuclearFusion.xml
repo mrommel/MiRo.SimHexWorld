@@ -12,8 +12,6 @@
     <Item>Stealth</Item>
     <Item>AdvancedBallistics</Item>
 	</Required>
-	<RequiredOr>
-	</RequiredOr>
 	<EraName>Future</EraName>
 	<Flavours>
 	</Flavours>

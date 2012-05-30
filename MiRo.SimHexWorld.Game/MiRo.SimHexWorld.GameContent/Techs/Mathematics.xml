@@ -11,8 +11,8 @@
       <Item>TheWheel</Item>
       <Item>Archery</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
+    
+    
     <EraName>Classical</EraName>
     <Flavours>
       <Item>

@@ -10,10 +10,16 @@
 	<Required>
     <Item>Astronomy</Item>
 	</Required>
-	<RequiredOr>
-	</RequiredOr>
 	<EraName>Renaissance</EraName>
 	<Flavours>
+    <Item>
+      <Name>Naval</Name>
+      <Amount>12</Amount>
+    </Item>
+    <Item>
+      <Name>Production</Name>
+      <Amount>4</Amount>
+    </Item>
 	</Flavours>
 	</Asset>
 </XnaContent>

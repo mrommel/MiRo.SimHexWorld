@@ -11,8 +11,6 @@
     <Item>Physics</Item>
     <Item>Steel</Item>
 	</Required>
-	<RequiredOr>
-	</RequiredOr>
 	<EraName>Renaissance</EraName>
 	<Flavours>
 		<Item>

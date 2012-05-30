@@ -11,8 +11,8 @@
       <Item>Archaeology</Item>
       <Item>ScientificTheory</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
+    
+    
     <EraName>Industrial</EraName>
     <Flavours>
       <Item>

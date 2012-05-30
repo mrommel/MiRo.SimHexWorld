@@ -8,10 +8,7 @@
     <Cost>20</Cost>
     <Notes>Allows Workers to construct Farms, vital for increasing the     Food output of map tiles.</Notes>
     <Required>
-    </Required>
-    <RequiredOr>
-      <Item>Agriculture</Item>
-    </RequiredOr>
+    </Required>   
     <EraName>Ancient</EraName>
     <Flavours>
       <Item>

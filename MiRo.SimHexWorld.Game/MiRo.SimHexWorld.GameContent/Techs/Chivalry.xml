@@ -12,8 +12,8 @@
       <Item>HorsebackRiding</Item>
       <Item>Currency</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
+    
+    
     <EraName>Medieval</EraName>
     <Flavours>
       <Item>

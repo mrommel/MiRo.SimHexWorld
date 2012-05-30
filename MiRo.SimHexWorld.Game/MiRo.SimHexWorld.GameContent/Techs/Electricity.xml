@@ -11,8 +11,8 @@
       <Item>Biology</Item>
       <Item>SteamPower</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
+    
+    
     <EraName>Industrial</EraName>
     <Flavours>
       <Item>

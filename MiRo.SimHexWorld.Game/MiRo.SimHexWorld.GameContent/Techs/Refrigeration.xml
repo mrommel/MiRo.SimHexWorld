@@ -10,8 +10,6 @@
 	<Required>
     <Item>Electricity</Item>
 	</Required>
-	<RequiredOr>
-	</RequiredOr>
 	<EraName>Industrial</EraName>
 	<Flavours>
     <Item>

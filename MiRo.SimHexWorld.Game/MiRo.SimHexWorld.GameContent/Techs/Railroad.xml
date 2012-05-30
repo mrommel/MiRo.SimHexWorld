@@ -11,8 +11,6 @@
     <Item>SteamPower</Item>
     <Item>Dynamite</Item>
 	</Required>
-	<RequiredOr>
-	</RequiredOr>
 	<EraName>Industrial</EraName>
 	<Flavours>
     <Item>

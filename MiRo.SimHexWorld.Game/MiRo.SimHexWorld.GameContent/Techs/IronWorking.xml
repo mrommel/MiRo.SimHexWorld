@@ -10,8 +10,6 @@
 	<Required>
     <Item>BronzeWorking</Item>
 	</Required>
-	<RequiredOr>
-	</RequiredOr>
 	<EraName>Classical</EraName>
 	<Flavours>
     <Item>

@@ -10,8 +10,8 @@
     <Required>
       <Item>Combustion</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
+    
+    
     <EraName>Modern</EraName>
     <Flavours>
       <Item>

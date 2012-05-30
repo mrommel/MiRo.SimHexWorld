@@ -12,8 +12,8 @@
       <Item>Railroad</Item>
       <Item>Dynamite</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
+    
+    
     <EraName>Industrial</EraName>
     <Flavours>
       <Item>

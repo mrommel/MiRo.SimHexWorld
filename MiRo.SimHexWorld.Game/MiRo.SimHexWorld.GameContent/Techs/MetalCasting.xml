@@ -10,8 +10,8 @@
     <Required>
       <Item>IronWorking</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
+    
+    
     <EraName>Medieval</EraName>
     <Flavours>
       <Item>

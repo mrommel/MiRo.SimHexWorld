@@ -11,8 +11,6 @@
     <Item>Calendar</Item>
     <Item>Philosophy</Item>
 	</Required>
-	<RequiredOr>
-	</RequiredOr>
 	<EraName>Medieval</EraName>
 	<Flavours>
     <Item>

@@ -11,8 +11,6 @@
     <Item>ScientificTheory</Item>
     <Item>MilitaryScience</Item>
 	</Required>
-	<RequiredOr>
-	</RequiredOr>
 	<EraName>Industrial</EraName>
 	<Flavours>
     <Item>

@@ -11,8 +11,8 @@
       <Item>Fertilizer</Item>
       <Item>Rifling</Item>
     </Required>
-    <RequiredOr>
-    </RequiredOr>
+    
+    
     <EraName>Industrial</EraName>
     <Flavours>
       <Item>
