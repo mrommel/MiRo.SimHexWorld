@@ -155,6 +155,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             _mapBox.Height = Manager.GraphicsDevice.Viewport.Height - 32;
             _mapBox.FocusChanged += MapBox_FocusChanged;
             _mapBox.CityOpened += MapBox_CityOpened;
+            _mapBox.CitySelected += MapBox_CitySelected;
             _mapBox.HumanUnitsSelected += MapBox_HumanUnitsSelected;
             Add(_mapBox);
 
@@ -592,12 +593,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             switch (_view)
             {
                 case MapView.Main:
-                    _imgZoomIn.Visible = false;
-                    _imgZoomOut.Visible = false;
-
-                    _sidebar.Visible = false;
-
-                    _lblUnit.Visible = false;
+                    ShowMainControls(false);
 
                     // city
                     ShowCityControls(true);
@@ -609,12 +605,7 @@ namespace MiRo.SimHexWorld.Engine.UI
                     _view = MapView.City;
                     break;
                 case MapView.City:
-                    _imgZoomIn.Visible = true;
-                    _imgZoomOut.Visible = true;
-
-                    _sidebar.Visible = true;
-
-                    _lblUnit.Visible = true;
+                    ShowMainControls(true);
 
                     // city
                     ShowCityControls(false);
@@ -628,6 +619,22 @@ namespace MiRo.SimHexWorld.Engine.UI
             }
         }
 
+        private void ShowMainControls(bool visible)
+        {
+            _imgZoomIn.Visible = visible;
+            _imgZoomOut.Visible = visible;
+
+            _sidebar.Visible = visible;
+
+            _lblUnit.Visible = visible;
+
+            _lblOverview.Visible = visible;
+            _lblOverviewSide.Visible = visible;
+
+            _lblUnit.Visible = visible;
+            for (int i = 0; i < _actionButtons.Length; ++i)
+                _actionButtons[i].Visible = visible;
+        }
 
         public bool FogOfWarEnabled
         {

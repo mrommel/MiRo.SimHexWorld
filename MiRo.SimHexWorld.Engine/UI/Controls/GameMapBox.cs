@@ -37,6 +37,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
         public event MapUpdateHandler FocusChanged;
         public event CityOpenHandler CityOpened;
+        public event CityOpenHandler CitySelected;
         public event UnitsSelectHandler HumanUnitsSelected;
         public event UnitsSelectHandler EnemyUnitsSelected;
 
@@ -195,19 +196,28 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                     if (CityOpened != null)
                         CityOpened(city);
                 }
-                else
+            }
+            else if (mouseState.LeftButton == ButtonState.Released && _oldMouseState.LeftButton == ButtonState.Pressed)
+            {
+                City city = MainWindow.Game.GetCityAt(_mapRenderer.Cursor);
+                List<Unit> units = MainWindow.Game.GetUnitsAt(_mapRenderer.Cursor);
+
+                // select unit city
+                if (city != null)
                 {
-                    List<Unit> units = MainWindow.Game.GetUnitsAt(_mapRenderer.Cursor);
+                    if (CitySelected != null)
+                        CitySelected(city);
+                }
 
-                    if (units.Count > 0)
-                    {
-                        Unit first = units.First();
+                // select unit
+                if (units.Count > 0)
+                {
+                    Unit first = units.First();
 
-                        if (first.Player.IsHuman && HumanUnitsSelected != null)
-                            HumanUnitsSelected(units);
-                        else if (!first.Player.IsHuman && EnemyUnitsSelected != null)
-                            EnemyUnitsSelected(units);
-                    }
+                    if (first.Player.IsHuman && HumanUnitsSelected != null)
+                        HumanUnitsSelected(units);
+                    else if (!first.Player.IsHuman && EnemyUnitsSelected != null)
+                        EnemyUnitsSelected(units);
                 }
             }
 

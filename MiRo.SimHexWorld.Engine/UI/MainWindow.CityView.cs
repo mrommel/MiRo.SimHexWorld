@@ -242,6 +242,10 @@ namespace MiRo.SimHexWorld.Engine.UI
             UpdateCityControls();
         }
 
+        void MapBox_CitySelected(City city)
+        {
+        }
+
         void _citySidebar_Draw(object sender, DrawEventArgs e)
         {
             e.Renderer.Draw(_citySideBarTexture, e.Rectangle, Microsoft.Xna.Framework.Color.White);
