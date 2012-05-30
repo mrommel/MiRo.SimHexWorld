@@ -162,11 +162,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
                     foreach (Tech techAnd in tech.RequiredTech)
                         requiredAnd &= Technologies.Contains(techAnd);
 
-                    bool requiredOr = tech.RequiredOr.Count == 0;
-                    foreach (Tech techOr in tech.RequiredOrTech)
-                        requiredOr |= Technologies.Contains(techOr);
-
-                    if (requiredAnd && requiredOr && !Technologies.Contains(tech))
+                    if (requiredAnd && !Technologies.Contains(tech))
                     {
                         if (tech.Flavours.Count == 0)
                             throw new Exception("Tech without Flavours: " + tech.Name);

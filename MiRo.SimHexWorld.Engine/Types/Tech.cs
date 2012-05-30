@@ -62,22 +62,6 @@ namespace MiRo.SimHexWorld.Engine.Types
             }
         }
 
-        public List<string> RequiredOr { get; set; }
-
-        [ContentSerializerIgnore]
-        public List<Tech> RequiredOrTech
-        {
-            get
-            {
-                List<Tech> list = new List<Tech>();
-
-                foreach (string req in RequiredOr)
-                    list.Add(Provider.Instance.Techs[req]);
-
-                return list;
-            }
-        }
- 
         public string EraName { get; set; }
 
         [ContentSerializerIgnore]
@@ -107,10 +91,6 @@ namespace MiRo.SimHexWorld.Engine.Types
             foreach (string req in Required)
                 if (!Provider.Instance.Techs.ContainsKey(req))
                     result.Add(new MissingAsset(this, "Technology", req));
-
-            foreach (string req in RequiredOr)
-                if (!Provider.Instance.Techs.ContainsKey(req))
-                    result.Add(new MissingAsset(this, "Technology (OR)", req));
 
             // check flavours
             if (Flavours != null)
