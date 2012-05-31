@@ -11,10 +11,12 @@
     <Item>Engineering</Item>
     <Item>MetalCasting</Item>
 	</Required>
-	
-	
 	<EraName>Medieval</EraName>
 	<Flavours>
+    <Item>
+      <Name>Ranged</Name>
+      <Amount>10</Amount>
+    </Item>
 	</Flavours>
 	</Asset>
 </XnaContent>

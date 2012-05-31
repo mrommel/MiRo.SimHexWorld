@@ -149,10 +149,10 @@
 [Food] Nahrungswachstum der Stadt ist angehalten solange er gebaut wird.</value>
   </data>
   <data name="TXT_KEY_UNITS_SETTLER_HISTORICAL" xml:space="preserve">
-    <value />
+    <value>Pioneers drive civilization. While most are satisfied with the status quo, happy just to survive, in every culture there are a few hardy individuals willing to strike out on their own, to risk everything in the hope of finding a better life for themselves and their children. In the past, brave settlers have led humanity out of Africa and into Europe, Asia, the Pacific, and the Americas. In the future they may lead the way to the moon, Mars, and even beyond.</value>
   </data>
   <data name="TXT_KEY_UNITS_SETTLER_STRATEGY" xml:space="preserve">
-    <value />
+    <value>Use this unit to construct new cities. It cannot defend itself, so accompany it with a combat unit.</value>
   </data>
   <data name="TXT_KEY_UNITS_SETTLER_TITLE" xml:space="preserve">
     <value>Siedler</value>
@@ -163,7 +163,7 @@
   <data name="TXT_KEY_UNITS_WORKER_TITLE" xml:space="preserve">
     <value>Arbeiter</value>
   </data>
-  <data name="TXT_KEY_BUILDINGS_MONUMENT_TITLE" xml:space="preserve">
+  <data name="TXT_KEY_BUILDING_MONUMENT_TITLE" xml:space="preserve">
     <value>Monument</value>
   </data>
   <data name="TXT_KEY_MAP_EARTH_TITLE_EARTH_DUEL" xml:space="preserve">
@@ -183,5 +183,8 @@
   </data>
   <data name="TXT_KEY_MAP_EARTH_TITLE_EARTH_TINY" xml:space="preserve">
     <value>Winzige Erde</value>
+  </data>
+  <data name="TXT_KEY_BUILDING_MONUMENT_DESCRIPTION" xml:space="preserve">
+    <value>The Monument increases the Culture of a city, speeding the growth of the city's territory and the civilization's acquisition of Social Policies.</value>
   </data>
 </root>

@@ -345,6 +345,30 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
             return index;
         }
 
+        Improvement road = Provider.GetImprovement("Road");
+        public int GetRoadTileIndex(int i, int j)
+        {
+            if (!this[i,j].Improvements.Contains(road))
+                return -1;
+
+            int index = 0, c = 1;
+            var loc = new HexPoint(i, j);
+
+            foreach (HexDirection dir in HexDirection.All)
+            {
+                HexPoint pt = loc.Neighbor(dir);
+                if (IsValid(pt))
+                {
+                    if (this[pt].Improvements.Contains(road))
+                        index += c;
+                }
+
+                c *= 2;
+            }
+
+            return index;
+        }
+
         public bool ShouldBeCoast(int i, int j)
         {
             HexPoint pt = new HexPoint(i, j);

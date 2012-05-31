@@ -30,6 +30,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
         /// body: Exception
         /// </summary>
         Exception,
-        Message
+        Message,
+        UpdateRoads
     }
 }

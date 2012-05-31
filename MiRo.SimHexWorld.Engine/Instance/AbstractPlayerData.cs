@@ -451,6 +451,14 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
             unit.Moved += new UnitMovedHandler(unit_Moved);
 
+            unit.WorkFinished += delegate(Unit u, HexPoint pt, Improvement imp)
+            {
+                GameFacade.getInstance().SendNotification(GameNotification.Message, imp.Title + " was build on " + pt, imp);
+
+                if( imp.Name == "Road" )
+                    GameFacade.getInstance().SendNotification(GameNotification.UpdateRoads);
+            };
+
             _units.Add(unit);
         }
 

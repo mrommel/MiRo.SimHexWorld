@@ -213,7 +213,8 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
                     if (unit != null)
                     {
-                        unit.MoveTarget(_mapRenderer.Cursor);
+                        unit.Action = UnitAction.Move;
+                        unit.SetTarget(_mapRenderer.Cursor);
                     }
                 }
                 else
@@ -385,15 +386,22 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
         public override System.Collections.Generic.List<Instance.GameNotification> NotificationInterests
         {
-            get { return new List<GameNotification> { GameNotification.LoadMapSuccess, GameNotification.CreateMapSuccess }; }
+            get 
+            { 
+                return new List<GameNotification> 
+                { 
+                    GameNotification.UpdateRoads
+                }; 
+            }
         }
 
         public override void HandleNotification(INotification notification)
         {
             switch ((GameNotification)System.Enum.Parse(typeof(GameNotification), notification.Name))
             {
-                //default:
-                //    throw new System.Exception(notification.Name + " notification handled");
+                case GameNotification.UpdateRoads:
+                    _mapRenderer.UpdateRoads();
+                    break;
             }
         }
     }

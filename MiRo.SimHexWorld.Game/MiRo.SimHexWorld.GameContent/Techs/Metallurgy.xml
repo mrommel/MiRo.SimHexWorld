@@ -10,10 +10,20 @@
 	<Required>
     <Item>Gunpowder</Item>
 	</Required>
-	
-	
 	<EraName>Renaissance</EraName>
 	<Flavours>
+    <Item>
+      <Name>Offense</Name>
+      <Amount>4</Amount>
+    </Item>
+    <Item>
+      <Name>Mobile</Name>
+      <Amount>4</Amount>
+    </Item>
+    <Item>
+      <Name>Defense</Name>
+      <Amount>4</Amount>
+    </Item>
 	</Flavours>
 	</Asset>
 </XnaContent>

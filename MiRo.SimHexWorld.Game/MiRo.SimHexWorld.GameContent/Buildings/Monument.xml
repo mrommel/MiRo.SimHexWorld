@@ -2,8 +2,8 @@
 <XnaContent>
   <Asset Type="MiRo.SimHexWorld.Engine.Types.Building">
     <Name>Monument</Name>
-    <Title>TXT_KEY_BUILDINGS_MONUMENT_TITLE</Title>
-    <Description>TXT_KEY_BUILDINGS_MONUMENT_DESCRIPTION</Description>
+    <Title>TXT_KEY_BUILDING_MONUMENT_TITLE</Title>
+    <Description>TXT_KEY_BUILDING_MONUMENT_DESCRIPTION</Description>
     <ImageName>Monument</ImageName>
     <Cost>60</Cost>
     <Maintenance>1</Maintenance>

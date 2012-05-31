@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using MiRo.SimHexWorld.Engine.World.Helper;
 using MiRo.SimHexWorld.Engine.UI.Entities;
 using Microsoft.Xna.Framework;
+using NUnit.Framework;
 
 namespace MiRo.SimHexWorld.Engine.World.Entities
 {
@@ -34,7 +35,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
 
         private UnitAI _unitAI;
         private UnitAction _action = UnitAction.Idle;
-        private Path _path = null;
+        private WayPoints _path = null;
 
         public event UnitMovedHandler Moved;
 
@@ -59,7 +60,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             InitTransitions();
         }
 
-        public Path Path
+        public WayPoints Path
         {
             get
             {
@@ -87,10 +88,15 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             }
         }
 
-        public void MoveTarget(HexPoint target)
+        public void SetTarget(HexPoint target)
         {
-            _path = Map.FindPath(this, target);
-            //_path = Path.Create(Point, target);
+            _path = WayPoints.FromPath( Map.FindPath(this, target) );
+
+            Assert.AreEqual(Point, _path.Peek);
+            Assert.AreEqual(target, _path.Goal);
+
+            // remove the current position
+            _path.Pop();
         }
 
         public void Move(HexPoint target)
@@ -99,6 +105,9 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                 Moved(this, Point, target);
 
             _point = target;
+
+            if (_path.Finished)
+                _path = null;
 
             UpdateSpotting();
         }

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.UI.TextureAtlas">
+    <Name>Maps</Name>
+    <TextureName>MapTiles</TextureName>
+    <Rows>4</Rows>
+    <Columns>8</Columns>
+    <Tiles>
+      <Item>
+        <Name>Earth_Duel</Name>
+        <Index>3</Index>
+      </Item>
+      <Item>
+        <Name>Earth_Standard</Name>
+        <Index>3</Index>
+      </Item>
+      <Item>
+        <Name>Earth_Huge</Name>
+        <Index>3</Index>
+      </Item>
+      <Item>
+        <Name>Earth_Large</Name>
+        <Index>3</Index>
+      </Item>
+      <Item>
+        <Name>Earth_Small</Name>
+        <Index>3</Index>
+      </Item>
+      <Item>
+        <Name>Earth_Tiny</Name>
+        <Index>3</Index>
+      </Item>
+    </Tiles>
+  </Asset>
+</XnaContent>

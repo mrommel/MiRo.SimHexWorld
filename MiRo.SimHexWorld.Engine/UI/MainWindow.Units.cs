@@ -112,7 +112,11 @@ namespace MiRo.SimHexWorld.Engine.UI
                 r.Height = 256;
                 r.X -= 26;
                 r.Y += 24;
-                e.Renderer.Draw(unit.Data.Image, r, Color.White);
+
+                if (unit.Data.Image != null)
+                    e.Renderer.Draw(unit.Data.Image, r, Color.White);
+                else
+                    e.Renderer.DrawString(_cityTitleFont, unit.Data.Name, r, Color.Pink, Alignment.MiddleCenter);
             }
         }
     

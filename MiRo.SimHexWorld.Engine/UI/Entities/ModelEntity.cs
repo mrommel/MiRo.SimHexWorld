@@ -33,9 +33,6 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
         /// </remarks>
         private Matrix[] absoluteBoneTransforms;
 
-        public HexPoint _target = HexPoint.Zero;
-        private float _targetOrientation = 0f;
-
         Unit _parent;
 
         public ModelEntity(AbstractPlayerData player, Unit parent, string name)
@@ -59,35 +56,21 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
             this.absoluteBoneTransforms = new Matrix[boneCount];
         }
 
-        /// <summary>Relative transforms of the individual bones in the model</summary>
-        //public Matrix[] BoneTransforms
-        //{
-        //    get { return this.boneTransforms; }
-        //}
-
         public ModelStatus Status
         {
             get;
             set;
         }
 
-        //public HexPoint Target
-        //{
-        //    get
-        //    {
-        //        return _parent.Target;
-        //    }
-        //}
-
         public Vector3 TargetPosition
         {
             get
             {
-                if (_parent.Path == null || _parent.Path.Peek == null)
-                    return  MapData.GetWorldPosition(_parent.Point);
+                if (_parent.Path == null || _parent.Path.Finished)
+                    return MapData.GetWorldPosition(_parent.Point);
 
-                return MapData.GetWorldPosition(_parent.Path.Peek.Point);
-            }
+                return MapData.GetWorldPosition(_parent.Path.Peek);
+           }
         }
 
         public override void Update(GameTime gameTime)
@@ -105,7 +88,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
                             HexPoint next = Point.Clone();
                             next.MoveDir(dir);
 
-                            _parent.MoveTarget( next );
+                            _parent.SetTarget( next );
 
                             Assert.IsTrue(Point.IsNeighbor(next));
 
@@ -132,13 +115,10 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
                     switch (Status)
                     {
                         case ModelStatus.Standing:
-                            if (_parent.Path == null)
+                            if (_parent.Path == null || _parent.Path.Finished)
                                 return;
 
-                            if (_parent.Path.Peek.Point == Point)
-                                _parent.Path.GetNextWaypoint();
-
-                            HexDirection dir = Point.GetDirection(_parent.Path.Peek.Point);
+                            HexDirection dir = Point.GetDirection(_parent.Path.Peek);
 
                             anim = new ObjectAnimation(
                                 Position,
@@ -174,10 +154,10 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
                                 anim.Update(gameTime);
                                 if (anim.Ready)
                                 {
-                                    Point = _parent.Path.Peek.Point;
-                                    _parent.Path.GetNextWaypoint();
-                                   
-                                    _parent.Move( Point );
+                                    HexPoint pt = _parent.Path.Peek;                                   
+                                    _parent.Path.Pop();
+                                    _parent.Move(pt);
+                                    Point = pt;
 
                                     anim = null;
                                     Status = ModelStatus.Standing;
@@ -187,74 +167,6 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
                     }
                     break;
             }
-
-            //switch (Status)
-            //{
-            //    case ModelStatus.Standing:
-            //        if (rand.Next(100) < 5)
-            //        {
-            //            foreach (HexDirection dir in HexDirection.All.Shuffle())
-            //            {
-            //                HexPoint next = Point.Clone();
-            //                next.MoveDir(dir);
-
-            //                Target = next;
-
-            //                Assert.IsTrue(Point.IsNeighbor(next));
-
-            //                if (!MainWindow.Game.Map.IsValid(next))
-            //                    continue;
-
-            //                if (MainWindow.Game.Map[next].IsOcean && !MainWindow.Game.Map[Point].IsOcean)
-            //                    continue;
-
-            //                anim = new ObjectAnimation(
-            //                    Position,
-            //                    Position,
-            //                    Rotation,
-            //                    //new Vector3(0, (float)HexPoint.Deg2Rad(Point.Angle(next)) + MathHelper.PiOver2, 0),
-            //                    new Vector3(0, dir.Angle, 0),
-            //                    TimeSpan.FromSeconds(0.5f), false);
-
-            //                Status = ModelStatus.Rotating;
-
-            //                break;
-            //            }
-            //        }
-
-            //        break;
-            //    case ModelStatus.Rotating:
-            //        if (anim != null)
-            //        {
-            //            anim.Update(gameTime);
-            //            if (anim.Ready)
-            //            {
-            //                Status = ModelStatus.Moving;
-            //                Rotation = anim.Rotation;
-            //                anim = new ObjectAnimation(
-            //                    Position,
-            //                    TargetPosition,
-            //                    Rotation,
-            //                    Rotation,
-            //                    TimeSpan.FromSeconds(0.5f), false);
-            //            }
-            //        }
-            //        break;
-            //    case ModelStatus.Moving:
-            //        if (anim != null)
-            //        {
-            //            anim.Update(gameTime);
-            //            if (anim.Ready)
-            //            {
-            //                _parent.Move(Target);
-            //                Point = Target;
-
-            //                anim = null;
-            //                Status = ModelStatus.Standing;
-            //            }
-            //        }
-            //        break;
-            //}
         }
 
         public override void Draw(GameTime time)

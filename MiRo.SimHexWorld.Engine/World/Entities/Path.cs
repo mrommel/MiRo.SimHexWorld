@@ -7,6 +7,58 @@ using System.Diagnostics;
 
 namespace MiRo.SimHexWorld.Engine.World.Entities
 {
+    public class WayPoints
+    {
+        Queue<HexPoint> _points = new Queue<HexPoint>();
+        HexPoint _goal;
+
+        public bool Finished
+        {
+            get { return _points.Count == 0; }
+        }
+
+        public HexPoint Peek
+        {
+            get { return _points.Peek(); }
+        }
+
+        public HexPoint Pop()
+        {
+            return _points.Dequeue();
+        }
+
+        public static WayPoints FromPath(Path path)
+        {
+            WayPoints points = new WayPoints();
+
+            while (!path.Finished)
+            {
+                IGridCell current = path.GetNextWaypoint();
+
+                if (current != null)
+                {
+                    points.Push(new HexPoint(current.X, current.Y));
+                    points._goal = new HexPoint(current.X, current.Y);
+                }
+            }
+
+            return points;
+        }
+
+        protected void Push(HexPoint hexPoint)
+        {
+            _points.Enqueue(hexPoint);
+        }
+
+        public HexPoint Goal 
+        { 
+            get 
+            {
+                return _goal;
+            } 
+        }
+    }
+
     public class Path
     {
         /// <summary>

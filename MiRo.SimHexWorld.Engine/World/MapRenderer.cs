@@ -27,7 +27,7 @@ namespace MiRo.SimHexWorld.Engine.World
         readonly Mesh _cursorsMesh;
         HexPoint _lastPos = new HexPoint();
 
-        Mesh _borderMesh;
+        Mesh _borderMesh, _roadMesh;
 
         readonly Manager _manager;
 
@@ -48,6 +48,7 @@ namespace MiRo.SimHexWorld.Engine.World
         bool _needToCreate = false;
         bool _needToUpdateHidden = false;
         bool _needToUpdateBorders = false;
+        bool _needToUpdateRoads = false;
 
         public MapRenderer(Manager manager)
         {
@@ -56,6 +57,7 @@ namespace MiRo.SimHexWorld.Engine.World
             _baseMesh = new Mesh(manager.GraphicsDevice, "ground");
             _cursorsMesh = new Mesh(manager.GraphicsDevice, "cursors");
             _borderMesh = new Mesh(manager.GraphicsDevice, "cursors");
+            _roadMesh = new Mesh(manager.GraphicsDevice, "roads");
 
             TextureManager.Instance.Device = manager.GraphicsDevice;
 
@@ -69,14 +71,6 @@ namespace MiRo.SimHexWorld.Engine.World
 
         public void Initialize()
         {
-            //_terrainPatterns = _manager.Content.Load<NamedList<TileMatchPattern>>("Content/Data/tilematchpatterns");
-            //_terrainPatterns.AddRange(_manager.Content.Load<NamedList<TileMatchPattern>>("Content/Data/coastpattern"));
-            //_terrainMatcher = new TileMatchPatternMatcher(_terrainPatterns);
-            //_log.InfoFormat("Initialize: {0} patterns", _terrainPatterns.Count);
-
-            //_featurePatterns = _manager.Content.Load<NamedList<TileMatchPattern>>("Content/Data/featurematchpatterns");
-            //_featureMatcher = new TileMatchPatternMatcher(_featurePatterns);
-
             _hiddenPatterns = _manager.Content.Load<NamedList<TileMatchPattern>>("Content/Data/hiddenmatchpatterns");
             _hiddenMatcher = new TileMatchPatternMatcher(_hiddenPatterns);
         }
@@ -94,6 +88,10 @@ namespace MiRo.SimHexWorld.Engine.World
             _cursorsMesh.AddObject(new HexagonMeshItem8X8(MapData.GetWorldPosition(20, 20), 63));
 
             _borderMesh.LoadContent(_manager.Content);
+
+            // roads
+            TextureManager.Instance.Add("roads", _manager.Content.Load<Texture2D>("Content/Textures/Ground/roads"));
+            _roadMesh.LoadContent(_manager.Content);
 
             _terrainBillboards = new BillboardSystem<EBillBoard>(_manager.GraphicsDevice, _manager.Content);
             _terrainBillboards.AddEntity(EBillBoard.Wood1, "Content/Textures/Billboards/wood1", new Vector2(3, 3));
@@ -159,6 +157,28 @@ namespace MiRo.SimHexWorld.Engine.World
                     _map.MapControlling += OnUpdateBorders;
                 }                    
             }
+        }
+
+        public void UpdateRoads()
+        {
+            _roadMesh.Clear();
+
+            // now the tiles
+            for (int i = 0; i < _map.Width; i++)
+            {
+                for (int j = 0; j < _map.Height; j++)
+                {
+                    if (_map[i, j] == null)
+                        continue;
+
+                    int roadTileIndex = _map.GetRoadTileIndex(i, j);
+
+                    if (roadTileIndex != -1)
+                        _roadMesh.AddObject(new HexagonMeshItem8X8(MapData.GetWorldPosition(i, j), roadTileIndex), false);
+                }
+            }
+
+            _roadMesh.UpdateBuffers();
         }
 
         void OnMapSpotting(MapSpottingArgs args)
@@ -458,6 +478,7 @@ namespace MiRo.SimHexWorld.Engine.World
                 hMesh.Draw(gameTime, camera.View, camera.Projection, camera.Position);
                 _cursorsMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
                 _borderMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
+                _roadMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
                 //_terrainBillboards.Draw(camera.View, camera.Projection, camera.Position, camera.Up, camera.Right);
 
                 if (FogOfWarEnabled)

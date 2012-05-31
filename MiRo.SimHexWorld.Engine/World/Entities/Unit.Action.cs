@@ -10,6 +10,8 @@ using MiRo.SimHexWorld.Engine.Misc;
 
 namespace MiRo.SimHexWorld.Engine.World.Entities
 {
+    public delegate void UnitWorkHandler(Unit unit, HexPoint point, Improvement improvement);
+
     partial class Unit
     {
         static Improvement road, farm;
@@ -17,6 +19,8 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
 
         Improvement _currentWork = null;
         int _currentWorkProgress = 0;
+
+        public event UnitWorkHandler WorkFinished;
 
         private void InitTransitions()
         {
@@ -29,10 +33,10 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                 new UnitActionTransition(UnitAI.Work, UnitAction.Move, UnitAction.Idle, TargetReached),
 
                 new UnitActionTransition(UnitAI.Work, UnitAction.Idle, UnitAction.BuildRoad, CanBuildRoad),
-                new UnitActionTransition(UnitAI.Work, UnitAction.BuildRoad, UnitAction.Idle, WorkFinished),
+                new UnitActionTransition(UnitAI.Work, UnitAction.BuildRoad, UnitAction.Idle, IsWorkFinished),
 
                 new UnitActionTransition(UnitAI.Work, UnitAction.Idle, UnitAction.BuildFarm, CanBuildFarm),
-                new UnitActionTransition(UnitAI.Work, UnitAction.BuildFarm, UnitAction.Idle, WorkFinished),
+                new UnitActionTransition(UnitAI.Work, UnitAction.BuildFarm, UnitAction.Idle, IsWorkFinished),
 
                 // Settle
                 new UnitActionTransition(UnitAI.Settle, UnitAction.Idle, UnitAction.Idle, CanIdle, 0.5),
@@ -82,8 +86,8 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
 
         public UnitAction Action
         {
-            get
-            { return _action; }
+            get { return _action; }
+            set { _action = value; }
         }
 
         public bool CanIdle()
@@ -109,34 +113,36 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             switch (_unitAI)
             {
                 case Types.UnitAI.Work:
-                    PropabilityMap<Path> propsWork = new PropabilityMap<Path>();
+                    PropabilityMap<WayPoints> propsWork = new PropabilityMap<WayPoints>();
 
                     foreach (HexPoint pt in Point.Neighbors)
                     {
                         if (Map[pt].CanEnter(this))
-                            propsWork.AddItem(Map.FindPath(this,pt), _player.ImprovementLocationMap[pt] * (_player.ImprovementLocationMap.IsLocalMaximum(pt) ? 1.0f : 0.2f));
+                            propsWork.AddItem(WayPoints.FromPath(Map.FindPath(this, pt)), _player.ImprovementLocationMap[pt] * (_player.ImprovementLocationMap.IsLocalMaximum(pt) ? 1.0f : 0.2f));
                     }
 
                     _path = propsWork.Random;
                     break;
                 case Types.UnitAI.Settle:
-                    PropabilityMap<Path> propsSettle = new PropabilityMap<Path>();
+                    PropabilityMap<WayPoints> propsSettle = new PropabilityMap<WayPoints>();
 
                     List<HexPoint> interest = GetTilesOfInterest(_settlerInterest);
                     foreach (HexPoint pt in interest)
                     {
                         Path path = Map.FindPath(this, pt);
                         if (path.IsValid)
-                            propsSettle.AddItem(path, _player.CityLocationMap[pt] * (_player.CityLocationMap.IsLocalMaximum(pt) ? 1.0f : 0.2f));
+                        {
+                            propsSettle.AddItem(WayPoints.FromPath( path ), _player.CityLocationMap[pt] * (_player.CityLocationMap.IsLocalMaximum(pt) ? 1.0f : 0.2f));
+                        }
                     }
 
                     _path = propsSettle.Random;
                     break;
                 case Types.UnitAI.Explore:
-                    PropabilityMap<Path> propsExplore = new PropabilityMap<Path>();
+                    PropabilityMap<WayPoints> propsExplore = new PropabilityMap<WayPoints>();
 
                     foreach (HexPoint pt in Point.Neighbors)
-                        propsExplore.AddItem(Map.FindPath(this, pt), 1);
+                        propsExplore.AddItem(WayPoints.FromPath (Map.FindPath(this, pt)), 1);
 
                     _path = propsExplore.Random;
                     break;
@@ -155,7 +161,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             return _path.Finished;
         }
 
-        public bool WorkFinished()
+        public bool IsWorkFinished()
         {
             if (_currentWork == null)
                 throw new NullReferenceException();
@@ -163,6 +169,9 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             if (_currentWork.Cost < _currentWorkProgress)
             {
                 Map[Point].Improvements.Add(_currentWork);
+
+                if( WorkFinished != null )
+                    WorkFinished(this, Point, _currentWork);
 
                 _currentWork = null;
                 _currentWorkProgress = 0;

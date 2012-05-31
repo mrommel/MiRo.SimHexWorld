@@ -70,6 +70,24 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The Monument increases the Culture of a city, speeding the growth of the city&apos;s territory and the civilization&apos;s acquisition of Social Policies. ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_BUILDING_MONUMENT_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("TXT_KEY_BUILDING_MONUMENT_DESCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Monument ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_BUILDING_MONUMENT_TITLE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_BUILDING_MONUMENT_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Zeigt an, dass diese Stadt die [ICON_CAPITAL] Hauptstadt des Reichs ist.[NEWLINE][NEWLINE]Durch das [ICON_CONNECTED] Verbinden anderer Städte mit der [ICON_CAPITAL] Hauptstadt wird zusätzliches [ICON_GOLD] Gold produziert.[NEWLINE][NEWLINE]+2 [ICON_PRODUCTION] Produktion, +3 [ICON_RESEARCH] Wissenschaft, +2 [ICON_GOLD] Gold ähnelt.
         /// </summary>
         internal static string TXT_KEY_BUILDING_PALACE_DESC {
@@ -84,15 +102,6 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         internal static string TXT_KEY_BUILDING_PALACE_TITLE {
             get {
                 return ResourceManager.GetString("TXT_KEY_BUILDING_PALACE_TITLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Monument ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_BUILDINGS_MONUMENT_TITLE {
-            get {
-                return ResourceManager.GetString("TXT_KEY_BUILDINGS_MONUMENT_TITLE", resourceCulture);
             }
         }
         
@@ -215,7 +224,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Pioneers drive civilization. While most are satisfied with the status quo, happy just to survive, in every culture there are a few hardy individuals willing to strike out on their own, to risk everything in the hope of finding a better life for themselves and their children. In the past, brave settlers have led humanity out of Africa and into Europe, Asia, the Pacific, and the Americas. In the future they may lead the way to the moon, Mars, and even beyond. ähnelt.
         /// </summary>
         internal static string TXT_KEY_UNITS_SETTLER_HISTORICAL {
             get {
@@ -224,7 +233,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Use this unit to construct new cities. It cannot defend itself, so accompany it with a combat unit. ähnelt.
         /// </summary>
         internal static string TXT_KEY_UNITS_SETTLER_STRATEGY {
             get {
