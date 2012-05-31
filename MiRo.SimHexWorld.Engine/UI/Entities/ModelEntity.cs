@@ -176,6 +176,8 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
                                 {
                                     Point = _parent.Path.Peek.Point;
                                     _parent.Path.GetNextWaypoint();
+                                   
+                                    _parent.Move( Point );
 
                                     anim = null;
                                     Status = ModelStatus.Standing;

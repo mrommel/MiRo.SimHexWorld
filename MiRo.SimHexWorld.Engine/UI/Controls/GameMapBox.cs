@@ -106,7 +106,8 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         {
             get { return _mapRenderer.FogOfWarEnabled; }
         }
-            
+
+        HexPoint _dragStart;
         private void HandleKeyboard()
 		{
 			int dx = 0, dy = 0;
@@ -197,40 +198,47 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                         CityOpened(city);
                 }
             }
+            else if (mouseState.LeftButton == ButtonState.Pressed && _oldMouseState.LeftButton == ButtonState.Released)
+            {
+                _dragStart = _mapRenderer.Cursor;
+            }
             else if (mouseState.LeftButton == ButtonState.Released && _oldMouseState.LeftButton == ButtonState.Pressed)
             {
-                City city = MainWindow.Game.GetCityAt(_mapRenderer.Cursor);
-                List<Unit> units = MainWindow.Game.GetUnitsAt(_mapRenderer.Cursor);
-
-                // select unit city
-                if (city != null)
+                if (_dragStart != _mapRenderer.Cursor)
                 {
-                    if (CitySelected != null)
-                        CitySelected(city);
-                }
+                    // drag action
+                    List<Unit> units = MainWindow.Game.GetUnitsAt(_dragStart);
 
-                // select unit
-                if (units.Count > 0)
+                    Unit unit = units.FirstOrDefault();
+
+                    if (unit != null)
+                    {
+                        unit.MoveTarget(_mapRenderer.Cursor);
+                    }
+                }
+                else
                 {
-                    Unit first = units.First();
+                    //City city = MainWindow.Game.GetCityAt(_mapRenderer.Cursor);
+                    List<Unit> units = MainWindow.Game.GetUnitsAt(_mapRenderer.Cursor);
 
-                    if (first.Player.IsHuman && HumanUnitsSelected != null)
-                        HumanUnitsSelected(units);
-                    else if (!first.Player.IsHuman && EnemyUnitsSelected != null)
-                        EnemyUnitsSelected(units);
+                    // select unit city
+                    //if (city != null)
+                    //{
+                    //    if (CitySelected != null)
+                    //        CitySelected(city);
+                    //}
+
+                    // select unit
+                    if (units.Count > 0)
+                    {
+                        Unit first = units.First();
+
+                        if (first.Player.IsHuman && HumanUnitsSelected != null)
+                            HumanUnitsSelected(units);
+                        else if (!first.Player.IsHuman && EnemyUnitsSelected != null)
+                            EnemyUnitsSelected(units);
+                    }
                 }
-            }
-
-            //if (keyState.IsKeyDown(Keys.J) && !_oldKeyState.IsKeyDown(Keys.J))
-            //{
-            //    Unit u = new Unit(new HexPoint(21, 21), MainWindow.Game.Player, Provider.Instance.Units.FirstOrDefault(a => a.Key == "Panzer").Value);
-            //    string script = Manager.Content.Load<string>("Content/Scripts/Marine");
-            //    u.AssignScript(script);
-            //}
-
-            if (keyState.IsKeyDown(Keys.M) && !_oldKeyState.IsKeyDown(Keys.M))
-            {
-                List<UnitData> us = MainWindow.Game.Human.AvailableUnits;
             }
 
             _oldKeyState = keyState;
@@ -254,7 +262,6 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
             {
                 Vector3 groundIntersection = _camera.Position + direction * intersection.Value;
                 HexPoint pt = MapData.GetMapPosition(groundIntersection);
-
 
                 foreach( HexPoint neighbor in pt.Neighbors )
                     if (Vector3.Distance(MapData.GetWorldPosition(pt), groundIntersection) > Vector3.Distance(MapData.GetWorldPosition(neighbor), groundIntersection))
