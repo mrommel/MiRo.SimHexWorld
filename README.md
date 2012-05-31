@@ -7,3 +7,8 @@ Some of the content is directly taken from CIV5 and will be replaced in furture.
 This is still in development and unstable esp. the AI.
 
 Enjoy.
+
+Installation
+------------
+* XNA
+* Visual Studio Express C#
