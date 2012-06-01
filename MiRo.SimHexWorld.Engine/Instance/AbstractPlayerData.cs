@@ -10,6 +10,7 @@ using NUnit.Framework;
 using MiRo.SimHexWorld.Engine.World.Maps;
 using MiRo.SimHexWorld.Engine.UI;
 using MiRo.SimHexWorld.Engine.Instance.AI;
+using MiRo.SimHexWorld.Engine.Locales;
 
 namespace MiRo.SimHexWorld.Engine.Instance
 {
@@ -362,8 +363,8 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
         private void UpdateInfluenceMaps()
         {
-            if (IsHuman)
-                return;
+            //if (IsHuman)
+            //    return;
 
             if (Map == null)
                 return;
@@ -453,10 +454,9 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
             unit.WorkFinished += delegate(Unit u, HexPoint pt, Improvement imp)
             {
-                GameFacade.getInstance().SendNotification(GameNotification.Message, imp.Title + " was build on " + pt, imp);
+                GameFacade.getInstance().SendNotification(GameNotification.Message, string.Format(Strings.TXT_KEY_NOTIFICATION_BUILD_IMPROVEMENT, u.Player.Civilization.Title, imp.Title, pt), imp);
 
-                if( imp.Name == "Road" )
-                    GameFacade.getInstance().SendNotification(GameNotification.UpdateRoads);
+                GameFacade.getInstance().SendNotification(GameNotification.UpdateImprovements);
             };
 
             _units.Add(unit);
@@ -472,13 +472,15 @@ namespace MiRo.SimHexWorld.Engine.Instance
             MainWindow mw = MainApplication.Instance.MainWindow as MainWindow;
             bool fogOfWarEnabled = mw.FogOfWarEnabled;
 
-            foreach (Unit unit in _units)
+            Unit[] units = _units.ToArray();
+            foreach (Unit unit in units)
             {
                 if (Map[unit.Point].IsSpotted(MainWindow.Game.Human) || !fogOfWarEnabled)
                     unit.Draw(gameTime);
             }
 
-            foreach (City city in _cities)
+            City[] cities = _cities.ToArray();
+            foreach (City city in cities)
             {
                 if (Map[city.Point].IsSpotted(MainWindow.Game.Human) || !fogOfWarEnabled)
                     city.Draw(gameTime);
@@ -497,7 +499,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
             c.IsCapital = _cities.Count == 0;
 
-            GameFacade.getInstance().SendNotification(GameNotification.Message, "City found: " + c.Name, c);
+            GameFacade.getInstance().SendNotification(GameNotification.Message, string.Format(Strings.TXT_KEY_NOTIFICATION_FOUND_CITY, c.Player.Leader.Title, c.Name), c);
 
             c.CityGrowth += delegate(City city, int from, int to) 
             { 

@@ -51,6 +51,12 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
 
                 new UnitActionTransition(UnitAI.Explore, UnitAction.Idle, UnitAction.Move, CanMove),
                 new UnitActionTransition(UnitAI.Explore, UnitAction.Move, UnitAction.Idle, TargetReached),
+
+                // Attack
+                new UnitActionTransition(UnitAI.Attack, UnitAction.Idle, UnitAction.Idle, CanIdle, 0.5),
+
+                new UnitActionTransition(UnitAI.Attack, UnitAction.Idle, UnitAction.Move, CanMove),
+                new UnitActionTransition(UnitAI.Attack, UnitAction.Move, UnitAction.Idle, TargetReached),
             };
         }
 
@@ -138,6 +144,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
 
                     _path = propsSettle.Random;
                     break;
+                case Types.UnitAI.Attack:
                 case Types.UnitAI.Explore:
                     PropabilityMap<WayPoints> propsExplore = new PropabilityMap<WayPoints>();
 

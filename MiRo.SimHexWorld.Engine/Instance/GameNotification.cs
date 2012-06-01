@@ -31,6 +31,8 @@ namespace MiRo.SimHexWorld.Engine.Instance
         /// </summary>
         Exception,
         Message,
-        UpdateRoads
+        UpdateImprovements,
+        UpdateSpotting,
+        UpdateMapControlling
     }
 }

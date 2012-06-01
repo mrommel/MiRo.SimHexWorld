@@ -124,9 +124,8 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
                                 Position,
                                 Position,
                                 Rotation,
-                                //new Vector3(0, (float)HexPoint.Deg2Rad(Point.Angle(next)) + MathHelper.PiOver2, 0),
                                 new Vector3(0, dir.Angle + _parent.Data.ModelRotation, 0),
-                                TimeSpan.FromSeconds(0.5f), false);
+                                TimeSpan.FromSeconds(0.3f), false);
 
                             Status = ModelStatus.Rotating;
 
@@ -144,7 +143,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
                                         TargetPosition,
                                         Rotation,
                                         Rotation,
-                                        TimeSpan.FromSeconds(0.5f), false);
+                                        TimeSpan.FromSeconds(0.2f), false);
                                 }
                             }
                             break;

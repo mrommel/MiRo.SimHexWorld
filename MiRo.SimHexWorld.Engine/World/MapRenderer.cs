@@ -14,6 +14,8 @@ using MiRoSimHexWorld.Engine.World.Helper;
 using MiRo.SimHexWorld.Engine.UI.Entities;
 using MiRo.SimHexWorld.Engine.UI;
 using MiRo.SimHexWorld.Helper;
+using MiRo.SimHexWorld.Engine.Types;
+using MiRo.SimHexWorld.Engine.Misc;
 
 namespace MiRo.SimHexWorld.Engine.World
 {
@@ -27,7 +29,7 @@ namespace MiRo.SimHexWorld.Engine.World
         readonly Mesh _cursorsMesh;
         HexPoint _lastPos = new HexPoint();
 
-        Mesh _borderMesh, _roadMesh;
+        Mesh _borderMesh, _roadMesh, _farmMesh;
 
         readonly Manager _manager;
 
@@ -50,6 +52,8 @@ namespace MiRo.SimHexWorld.Engine.World
         bool _needToUpdateBorders = false;
         bool _needToUpdateRoads = false;
 
+        
+
         public MapRenderer(Manager manager)
         {
             _manager = manager;
@@ -58,6 +62,7 @@ namespace MiRo.SimHexWorld.Engine.World
             _cursorsMesh = new Mesh(manager.GraphicsDevice, "cursors");
             _borderMesh = new Mesh(manager.GraphicsDevice, "cursors");
             _roadMesh = new Mesh(manager.GraphicsDevice, "roads");
+            _farmMesh = new Mesh(manager.GraphicsDevice, "farms");
 
             TextureManager.Instance.Device = manager.GraphicsDevice;
 
@@ -92,6 +97,10 @@ namespace MiRo.SimHexWorld.Engine.World
             // roads
             TextureManager.Instance.Add("roads", _manager.Content.Load<Texture2D>("Content/Textures/Ground/roads"));
             _roadMesh.LoadContent(_manager.Content);
+
+            // farms
+            TextureManager.Instance.Add("farms", _manager.Content.Load<Texture2D>("Content/Textures/Ground/farms"));
+            _farmMesh.LoadContent(_manager.Content);
 
             _terrainBillboards = new BillboardSystem<EBillBoard>(_manager.GraphicsDevice, _manager.Content);
             _terrainBillboards.AddEntity(EBillBoard.Wood1, "Content/Textures/Billboards/wood1", new Vector2(3, 3));
@@ -142,26 +151,22 @@ namespace MiRo.SimHexWorld.Engine.World
         {
             set
             {
-                if (_map != null)
-                {
-                    _map.MapSpotting -= OnMapSpotting;
-                    _map.MapControlling -= OnUpdateBorders;
-                }
-
                 if (value != null)
                 {
                     _map = value;
                     _needToCreate = true;
-
-                    _map.MapSpotting += OnMapSpotting;
-                    _map.MapControlling += OnUpdateBorders;
                 }                    
             }
         }
 
-        public void UpdateRoads()
+        Improvement farm = null;
+        public void UpdateImprovements()
         {
+            if (farm == null)
+                farm = Provider.GetImprovement("Farm");
+
             _roadMesh.Clear();
+            _farmMesh.Clear();
 
             // now the tiles
             for (int i = 0; i < _map.Width; i++)
@@ -175,13 +180,17 @@ namespace MiRo.SimHexWorld.Engine.World
 
                     if (roadTileIndex != -1)
                         _roadMesh.AddObject(new HexagonMeshItem8X8(MapData.GetWorldPosition(i, j), roadTileIndex), false);
+
+                    if( _map[i,j].Improvements.Contains(farm) )
+                        _farmMesh.AddObject(new HexagonMeshItem8X8(MapData.GetWorldPosition(i, j), 0), false);
                 }
             }
 
             _roadMesh.UpdateBuffers();
+            _farmMesh.UpdateBuffers();
         }
 
-        void OnMapSpotting(MapSpottingArgs args)
+        public void OnMapSpotting(MapSpottingArgs args)
         {
             _needToUpdateHidden = true;           
         }
@@ -413,7 +422,7 @@ namespace MiRo.SimHexWorld.Engine.World
             _terrainBillboards.Build();
         }
 
-        void OnUpdateBorders(MapControllingArgs args)
+        public void OnUpdateBorders(MapControllingArgs args)
         {
             _needToUpdateBorders = true;
         }
@@ -463,6 +472,7 @@ namespace MiRo.SimHexWorld.Engine.World
 
             _baseMesh.Update(gameTime);
             _cursorsMesh.Update(gameTime);
+            _farmMesh.Update(gameTime);
             hMesh.Update(gameTime);
 
             foreach (AbstractPlayerData pl in MainWindow.Game.Players)
@@ -473,13 +483,11 @@ namespace MiRo.SimHexWorld.Engine.World
         {
             if (_map != null)
             {
-                //_baseMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
-                //_tiledMeshContainer.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
                 hMesh.Draw(gameTime, camera.View, camera.Projection, camera.Position);
                 _cursorsMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
                 _borderMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
                 _roadMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
-                //_terrainBillboards.Draw(camera.View, camera.Projection, camera.Position, camera.Up, camera.Right);
+                _farmMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
 
                 if (FogOfWarEnabled)
                     _hiddenMeshContainer.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);

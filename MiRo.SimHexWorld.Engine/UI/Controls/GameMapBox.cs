@@ -390,7 +390,9 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
             { 
                 return new List<GameNotification> 
                 { 
-                    GameNotification.UpdateRoads
+                    GameNotification.UpdateImprovements,
+                    GameNotification.UpdateSpotting,
+                    GameNotification.UpdateMapControlling
                 }; 
             }
         }
@@ -399,8 +401,20 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         {
             switch ((GameNotification)System.Enum.Parse(typeof(GameNotification), notification.Name))
             {
-                case GameNotification.UpdateRoads:
-                    _mapRenderer.UpdateRoads();
+                case GameNotification.UpdateImprovements:
+                    _mapRenderer.UpdateImprovements();
+                    break;
+                case GameNotification.UpdateSpotting:
+                    {
+                        MapSpottingArgs args = notification.Body as MapSpottingArgs;
+                        _mapRenderer.OnMapSpotting(args);
+                    }
+                    break;
+                case GameNotification.UpdateMapControlling:
+                    {
+                        MapControllingArgs args = notification.Body as MapControllingArgs;
+                        _mapRenderer.OnUpdateBorders(args);
+                    }
                     break;
             }
         }

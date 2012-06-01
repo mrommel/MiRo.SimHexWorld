@@ -2,7 +2,7 @@
 <XnaContent>
   <Asset Type="MiRo.SimHexWorld.Engine.Types.UnitData">
     <Name>Warrior</Name>
-    <Title>Warrior</Title>
+    <Title>TXT_KEY_UNITS_WARRIOR_TITLE</Title>
     <Description>TXT_KEY_UNITS_WARRIOR_DESCRIPTION</Description>
     <ImageName>Warrior</ImageName>
     <Notes>
@@ -50,7 +50,7 @@
     </Flavours>
     <PromotionNames></PromotionNames>
     <ModelName>Warrior</ModelName>
-    <ModelScale>0.2</ModelScale>
+    <ModelScale>1.5</ModelScale>
     <ModelScript>Warrior</ModelScript>
   </Asset>
 </XnaContent>

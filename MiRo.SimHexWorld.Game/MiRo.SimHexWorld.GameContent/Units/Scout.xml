@@ -44,8 +44,8 @@
     <PromotionNames>
       <Item>IgnoreTerrainCost</Item>
     </PromotionNames>
-    <ModelName>PlayerMarine_mdla</ModelName>
-    <ModelScale>0.2</ModelScale>
+    <ModelName>legion</ModelName>
+    <ModelScale>0.04</ModelScale>
     <ModelScript>Scout</ModelScript>
   </Asset>
 </XnaContent>

@@ -968,16 +968,12 @@ namespace MiRo.SimHexWorld.Engine.UI
                     _game.Map = notification.Body as MapData;
                     _mapBox.Map = _game.Map;
 
-                    _game.Map.MapSpotting += new MapSpottingHandler(Map_OnMapSpotting);
-
                     _game.Initialize();
 
                     break;
                 case GameNotification.LoadMapSuccess:
                     _game.Map = notification.Body as MapData;
                     _mapBox.Map = _game.Map;
-
-                    _game.Map.MapSpotting += new MapSpottingHandler(Map_OnMapSpotting);
 
                     _game.Initialize();
                     break;
@@ -988,14 +984,12 @@ namespace MiRo.SimHexWorld.Engine.UI
                     _messages.Add( new ScreenNotification( txt, DateTime.Now.AddSeconds( 10 ) ) );
 
                     break;
+                case GameNotification.UpdateSpotting:
+                    _needToUpdateOverview = true;
+                    break;
                 default:
                     throw new System.Exception(notification.Name + " notification not handled");
             }
-        }
-
-        void Map_OnMapSpotting(MapSpottingArgs args)
-        {
-            _needToUpdateOverview = true;
         }
 
         public override List<GameNotification> NotificationInterests
@@ -1006,7 +1000,8 @@ namespace MiRo.SimHexWorld.Engine.UI
                            {
                                GameNotification.CreateMapSuccess, 
                                GameNotification.LoadMapSuccess,
-                               GameNotification.Message
+                               GameNotification.Message,
+                               GameNotification.UpdateSpotting
                            };
             }
         }

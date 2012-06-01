@@ -160,6 +160,24 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {0} hat {1} auf {2} gebaut ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_NOTIFICATION_BUILD_IMPROVEMENT {
+            get {
+                return ResourceManager.GetString("TXT_KEY_NOTIFICATION_BUILD_IMPROVEMENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {0} hat Stadt {1} gegründet ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_NOTIFICATION_FOUND_CITY {
+            get {
+                return ResourceManager.GetString("TXT_KEY_NOTIFICATION_FOUND_CITY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Prüfung ähnelt.
         /// </summary>
         internal static string TXT_KEY_UI_MAINAPPLICATION_CHECK {
@@ -247,6 +265,15 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         internal static string TXT_KEY_UNITS_SETTLER_TITLE {
             get {
                 return ResourceManager.GetString("TXT_KEY_UNITS_SETTLER_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Krieger ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_UNITS_WARRIOR_TITLE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_UNITS_WARRIOR_TITLE", resourceCulture);
             }
         }
         

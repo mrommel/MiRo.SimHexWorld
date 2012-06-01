@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using System.Xml.Serialization;
 using log4net;
 using MiRo.SimHexWorld.Engine.Types;
+using MiRo.SimHexWorld.Engine.Instance;
 
 namespace MiRo.SimHexWorld.Engine.World.Maps
 {
@@ -23,9 +24,7 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
         public MapExtension Extension = new MapExtension();
 
         // events
-        public event MapSpottingHandler MapSpotting;
         public event MapUpdateHandler MapUpdate;
-        public event MapControllingHandler MapControlling;
 
         /// <summary>
         /// The name of the world.
@@ -401,14 +400,12 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
 
         public void OnMapSpotting(MapSpottingArgs args)
         {
-            if (MapSpotting != null)
-                MapSpotting(args);
+            GameFacade.getInstance().SendNotification(GameNotification.UpdateSpotting, args);
         }
 
         public void OnMapControlling(MapControllingArgs args)
         {
-            if (MapControlling != null)
-                MapControlling(args);
+            GameFacade.getInstance().SendNotification(GameNotification.UpdateMapControlling, args);
         }
 
         public void SetControlled(HexPoint point, int id, bool doOverride = false, int neighborhood = 0)

@@ -187,4 +187,13 @@
   <data name="TXT_KEY_BUILDING_MONUMENT_DESCRIPTION" xml:space="preserve">
     <value>The Monument increases the Culture of a city, speeding the growth of the city's territory and the civilization's acquisition of Social Policies.</value>
   </data>
+  <data name="TXT_KEY_UNITS_WARRIOR_TITLE" xml:space="preserve">
+    <value>Krieger</value>
+  </data>
+  <data name="TXT_KEY_NOTIFICATION_BUILD_IMPROVEMENT" xml:space="preserve">
+    <value>{0} hat {1} auf {2} gebaut</value>
+  </data>
+  <data name="TXT_KEY_NOTIFICATION_FOUND_CITY" xml:space="preserve">
+    <value>{0} hat Stadt {1} gegründet</value>
+  </data>
 </root>

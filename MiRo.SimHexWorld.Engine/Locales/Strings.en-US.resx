@@ -157,4 +157,7 @@
   <data name="TXT_KEY_UNITS_WORKER_TITLE" xml:space="preserve">
     <value>Worker</value>
   </data>
+  <data name="TXT_KEY_UNITS_WARRIOR_TITLE" xml:space="preserve">
+    <value>Warrior</value>
+  </data>
 </root>

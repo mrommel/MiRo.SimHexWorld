@@ -14,6 +14,10 @@
         <Name>Worker</Name>
         <Index>1</Index>
       </Item>
+      <Item>
+        <Name>Warrior</Name>
+        <Index>3</Index>
+      </Item>
     </Tiles>
   </Asset>
 </XnaContent>
