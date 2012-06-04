@@ -307,7 +307,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             }
         }
 
-        TimeSpan updateEvery = TimeSpan.FromSeconds(0.5); // from setting ???
+        TimeSpan updateEvery = TimeSpan.FromSeconds(2); // from setting ???
         TimeSpan currentTime = TimeSpan.FromSeconds(0);
         public void Update(GameTime time)
         {
@@ -697,15 +697,15 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                 _cityFoodBillboard.Draw(GameMapBox.Camera.View, GameMapBox.Camera.Projection, GameMapBox.Camera.Position, GameMapBox.Camera.Up, GameMapBox.Camera.Right);
                 _cityProductionBillboard.Draw(GameMapBox.Camera.View, GameMapBox.Camera.Projection, GameMapBox.Camera.Position, GameMapBox.Camera.Up, GameMapBox.Camera.Right);
                 _cityGoldBillboard.Draw(GameMapBox.Camera.View, GameMapBox.Camera.Projection, GameMapBox.Camera.Position, GameMapBox.Camera.Up, GameMapBox.Camera.Right);
-
             }
         }
 
-        public int FoodSurplus
+        public float FoodSurplus
         {
             get
             {
-                int food = 0;
+                float food = 0;
+                float modifier = 1f;
 
                 // buildings
                 foreach (Building building in _buildings)
@@ -725,6 +725,8 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                     food += _player.Policies.Sum(a => a.YieldsFoodCapital);
 
                 _food += _player.Policies.Sum(a => a.YieldsFood);
+
+                _food *= modifier;
 
                 return food;
             }
@@ -759,7 +761,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             }
         }
 
-        public int GoldSurplus
+        public float GoldSurplus
         {
             get
             {

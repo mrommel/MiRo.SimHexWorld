@@ -170,22 +170,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
 
         public bool IsWorkFinished()
         {
-            if (_currentWork == null)
-                throw new NullReferenceException();
-
-            if (_currentWork.Cost < _currentWorkProgress)
-            {
-                Map[Point].Improvements.Add(_currentWork);
-
-                if( WorkFinished != null )
-                    WorkFinished(this, Point, _currentWork);
-
-                _currentWork = null;
-                _currentWorkProgress = 0;
-                return true;
-            }
-
-            return false;
+            return _currentWork == null;
         }
 
         public bool CanBuild(Improvement imp)
@@ -239,7 +224,10 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                 return false;
 
             if (MainWindow.Game.Map == null)
-                return false; 
+                return false;
+
+            if (_player.CityLocationMap == null)
+                return false;
 
             return _player.CityLocationMap.IsLocalMaximum(Point); // && _player.Cities.Count < MainWindow.Game.Map.Size.CitiesPerPlayer;
         }

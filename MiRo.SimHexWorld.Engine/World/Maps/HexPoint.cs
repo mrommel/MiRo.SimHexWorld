@@ -214,18 +214,28 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
 
         public static int GetDistance(int x1, int y1, int x2, int y2)
         {
-            int dist = 0;
-            var tmp = new HexPoint(x1, y1);
-            var toggled = new HexPoint(y2, x2);
+            //int dist = 0;
+            //var tmp = new HexPoint(x1, y1);
+            //var toggled = new HexPoint(y2, x2);
 
-            while ((tmp.X != x2 && tmp.Y != y2) && (dist < MaximalPathLength))
-            {
-                int theta = tmp.Angle(toggled) / 60 * 60 + 30;
-                tmp.Move(theta);
-                dist++;
+            //while ((tmp.X != x2 && tmp.Y != y2) && (dist < MaximalPathLength))
+            //{
+            //    int theta = tmp.Angle(toggled) / 60 * 60 + 30;
+            //    tmp.Move(theta);
+            //    dist++;
+            //}
+
+            //return dist;
+            int dx = x2 - x1;
+            int dy = y1 - y1;
+            if (Math.Sign(dx) == Math.Sign(dy))
+            {    // this is (1); see first paragraph
+                return Math.Max(Math.Abs(dx), Math.Abs(dy));
             }
-
-            return dist;
+            else
+            {
+                return Math.Abs(dx) + Math.Abs(dy);
+            }
         }
 
         public static double Rad2Deg(double rad)

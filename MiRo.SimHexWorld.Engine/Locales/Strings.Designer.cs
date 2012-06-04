@@ -106,6 +106,42 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die England ist auf Großbritannien, ein &quot;grünes und angenehm&quot; Insel vor der Westküste Europas. Es ist das größte Mitglied der politischen Einheit wie das Vereinigte Königreich von Großbritannien und Nordirland bekannt. Historisch gesehen ein Volk von Seefahrern, für einen Großteil der letzten 500 Jahre die Engländer haben ihren unvergleichlichen Marine genutzt, um ihre Macht in Europa und der ganzen Welt zu projizieren. ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_CIVIZATION_ENGLISH_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("TXT_KEY_CIVIZATION_ENGLISH_DESCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die England ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_CIVIZATION_ENGLISH_TITLE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_CIVIZATION_ENGLISH_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Während verschiedene &quot;germanischen&quot; Völker Nord-und Mittelitaliens Europa seit tausenden von Jahren beschäftigt haben, ist die moderne politische Einheit als &quot;Deutschland&quot; bekannt extrem jung, fast im Alleingang von dem genialen preußischen Politiker Otto von Bismarck schuf gut 140 Jahren. Während seiner kurzen Existenz hat Deutschland hatte einen profunden Effekt - für gute und für schlechte - auf der menschlichen Geschichte. ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_CIVIZATION_GERMAN_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("TXT_KEY_CIVIZATION_GERMAN_DESCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Deutschland ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_CIVIZATION_GERMAN_TITLE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_CIVIZATION_GERMAN_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Duel auf der Erde ähnelt.
         /// </summary>
         internal static string TXT_KEY_MAP_EARTH_TITLE_EARTH_DUEL {
@@ -169,11 +205,65 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {0} von {1} hat ein {2} gebaut ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_NOTIFICATION_CITY_BUILDING {
+            get {
+                return ResourceManager.GetString("TXT_KEY_NOTIFICATION_CITY_BUILDING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {0} von {1} schrumpft auf {2} Einwohner ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_NOTIFICATION_CITY_DECLINE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_NOTIFICATION_CITY_DECLINE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {0} von {1} wuchs auf {2} Einwohner ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_NOTIFICATION_CITY_GREW {
+            get {
+                return ResourceManager.GetString("TXT_KEY_NOTIFICATION_CITY_GREW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {0} von {1} hat eine Einheit {2} aufgestellt  ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_NOTIFICATION_CITY_UNIT {
+            get {
+                return ResourceManager.GetString("TXT_KEY_NOTIFICATION_CITY_UNIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die {0} hat Stadt {1} gegründet ähnelt.
         /// </summary>
         internal static string TXT_KEY_NOTIFICATION_FOUND_CITY {
             get {
                 return ResourceManager.GetString("TXT_KEY_NOTIFICATION_FOUND_CITY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die {0} hat {1} entdeckt ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_NOTIFICATION_SCIENCE_DISCOVERED {
+            get {
+                return ResourceManager.GetString("TXT_KEY_NOTIFICATION_SCIENCE_DISCOVERED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Bogenschießen ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_TECH_ARCHERY {
+            get {
+                return ResourceManager.GetString("TXT_KEY_TECH_ARCHERY", resourceCulture);
             }
         }
         

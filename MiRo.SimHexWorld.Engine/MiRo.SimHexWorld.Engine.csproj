@@ -191,6 +191,7 @@
     <Compile Include="UI\Entities\CityEntity.cs" />
     <Compile Include="UI\Entities\Entity.cs" />
     <Compile Include="UI\Entities\EntityManager.cs" />
+    <Compile Include="UI\Entities\ForestEntity.cs" />
     <Compile Include="UI\Entities\MarineModelEntity.cs" />
     <Compile Include="UI\Entities\ModelEntity.cs" />
     <Compile Include="UI\Entities\ObjectAnimation.cs" />

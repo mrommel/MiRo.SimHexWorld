@@ -166,6 +166,17 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             if (_currentWork != null)
             {
                 _currentWorkProgress++;
+
+                if (_currentWork.Cost < _currentWorkProgress)
+                {
+                    Map[Point].Improvements.Add(_currentWork);
+
+                    if (WorkFinished != null)
+                        WorkFinished(this, Point, _currentWork);
+
+                    _currentWork = null;
+                    _currentWorkProgress = 0;
+                }
             }
         }
 

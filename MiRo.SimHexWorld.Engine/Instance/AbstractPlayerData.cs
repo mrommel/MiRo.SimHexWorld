@@ -14,6 +14,8 @@ using MiRo.SimHexWorld.Engine.Locales;
 
 namespace MiRo.SimHexWorld.Engine.Instance
 {
+    public delegate void CivilizationHandler(Civilization civ);
+
     /// player ai and human
     public abstract class AbstractPlayerData : IDisposable
     {
@@ -51,12 +53,14 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
         // turn
         double _secondsToNextUpdate = 0f;
-        double _secondsPerTurn = 0.5f;
+        double _secondsPerTurn = 2f;
         bool _isFirstRun = true;
 
         bool _needToUpdateInfluenceMaps = true;
 
         LeaderData _leader;
+
+        public event CivilizationHandler FirstContact;
 
         protected static Random rand = new Random();
 
@@ -150,6 +154,14 @@ namespace MiRo.SimHexWorld.Engine.Instance
             }
         }
 
+        public DiplomaticStatus DiplomaticStatusTo(Civilization civ)
+        {
+            foreach (DiplomaticStatus ds in _diplomaticStatuses)
+                if (ds.CivilizationName == civ.Name)
+                    return ds;
+
+            return null;
+        }
 
         public List<Tech> PossibleTechnologies
         {
@@ -273,7 +285,8 @@ namespace MiRo.SimHexWorld.Engine.Instance
         }
 
         public virtual bool Update(GameTime time)
-        {          
+        {
+            bool turned = false;
             _secondsToNextUpdate -= time.ElapsedGameTime.TotalSeconds;
 
             if (_secondsToNextUpdate <= 0f)
@@ -288,6 +301,12 @@ namespace MiRo.SimHexWorld.Engine.Instance
                 if( _needToUpdateInfluenceMaps )
                     UpdateInfluenceMaps();
 
+                _isFirstRun = false;
+                turned = true;
+            }
+
+            if (CityLocationMap != null)
+            {
                 foreach (Unit unit in _units)
                     unit.Update(time);
 
@@ -295,20 +314,22 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
                 foreach (City city in _cities)
                     city.Update(time);
-
-                _isFirstRun = false;
-
-                return true;
             }
 
-            return false;
+            return turned;
         }
 
         private void UpdateScience()
         {
             if (CurrentResearch != null && _science > CurrentResearch.Cost)
             {
-                GameFacade.getInstance().SendNotification(GameNotification.Message, _civilization.Name + " has discovered " + CurrentResearch.Name, CurrentResearch);
+                GameFacade.getInstance().SendNotification(
+                    GameNotification.Message, 
+                    string.Format( Strings.TXT_KEY_NOTIFICATION_SCIENCE_DISCOVERED, Leader.Title, CurrentResearch.Title ), 
+                    Civilization,
+                    MessageFilter.Friends | MessageFilter.Self,
+                    CurrentResearch);
+
                 Technologies.Add(CurrentResearch);
                 CurrentResearch = null;
                 _science = 0;
@@ -416,6 +437,8 @@ namespace MiRo.SimHexWorld.Engine.Instance
                     #endregion city found map
                 }
             }
+
+            _needToUpdateInfluenceMaps = false;
         }
 
         public bool IsFirstRun
@@ -454,7 +477,12 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
             unit.WorkFinished += delegate(Unit u, HexPoint pt, Improvement imp)
             {
-                GameFacade.getInstance().SendNotification(GameNotification.Message, string.Format(Strings.TXT_KEY_NOTIFICATION_BUILD_IMPROVEMENT, u.Player.Civilization.Title, imp.Title, pt), imp);
+                GameFacade.getInstance().SendNotification(
+                    GameNotification.Message, 
+                    string.Format(Strings.TXT_KEY_NOTIFICATION_BUILD_IMPROVEMENT, u.Player.Civilization.Title, imp.Title, pt), 
+                    u.Player.Civilization,
+                    MessageFilter.Friends | MessageFilter.Self,
+                    imp);
 
                 GameFacade.getInstance().SendNotification(GameNotification.UpdateImprovements);
             };
@@ -499,23 +527,48 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
             c.IsCapital = _cities.Count == 0;
 
-            GameFacade.getInstance().SendNotification(GameNotification.Message, string.Format(Strings.TXT_KEY_NOTIFICATION_FOUND_CITY, c.Player.Leader.Title, c.Name), c);
+            GameFacade.getInstance().SendNotification(
+                GameNotification.Message, 
+                string.Format(Strings.TXT_KEY_NOTIFICATION_FOUND_CITY, c.Player.Leader.Title, c.Name), 
+                Civilization,
+                MessageFilter.Self | MessageFilter.Friends,
+                c);
 
             c.CityGrowth += delegate(City city, int from, int to) 
             { 
-                GameFacade.getInstance().SendNotification(GameNotification.Message, "City " + city.Name + " grew from " + from + " to " + to, city); 
+                GameFacade.getInstance().SendNotification(
+                    GameNotification.Message, 
+                    string.Format( Strings.TXT_KEY_NOTIFICATION_CITY_GREW, city.Name, c.Player.Leader.Title,to), 
+                    city.Player.Civilization,
+                    MessageFilter.Friends | MessageFilter.Self,
+                    city); 
             };
             c.CityDecline += delegate(City city, int from, int to)
             {
-                GameFacade.getInstance().SendNotification(GameNotification.Message, "City " + city.Name + " declined from " + from + " to " + to, city);
+                GameFacade.getInstance().SendNotification(
+                    GameNotification.Message, 
+                    string.Format(Strings.TXT_KEY_NOTIFICATION_CITY_DECLINE, city.Name, c.Player.Leader.Title,to),
+                    city.Player.Civilization,
+                    MessageFilter.Friends | MessageFilter.Self,
+                    city);
             };
             c.CityBuild += delegate(City city, Building building)
             {
-                GameFacade.getInstance().SendNotification(GameNotification.Message, "City " + city.Name + " build " + building.Title, city);
+                GameFacade.getInstance().SendNotification(
+                    GameNotification.Message, 
+                    string.Format( Strings.TXT_KEY_NOTIFICATION_CITY_BUILDING, city.Name, c.Player.Leader.Title, building.Title ),
+                    city.Player.Civilization,
+                    MessageFilter.Self,
+                    city);
             };
             c.UnitBuild += delegate(City city, UnitData unit)
             {
-                GameFacade.getInstance().SendNotification(GameNotification.Message, "Unit " + unit.Title + " build in " + city.Name, city);
+                GameFacade.getInstance().SendNotification(
+                    GameNotification.Message, 
+                    string.Format( Strings.TXT_KEY_NOTIFICATION_CITY_UNIT, city.Name, c.Player.Leader.Title, unit.Title ),
+                    city.Player.Civilization,
+                    MessageFilter.Self, 
+                    city);
             };
 
             Map.SetControlled(point, Id, false, 1);

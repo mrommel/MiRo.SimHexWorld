@@ -960,38 +960,6 @@ namespace MiRo.SimHexWorld.Engine.UI
         ////////////////////////////////////////////////////////////////////////////
 
         ////////////////////////////////////////////////////////////////////////////
-        public override void HandleNotification(INotification notification)
-        {
-            switch ((GameNotification)System.Enum.Parse(typeof(GameNotification), notification.Name))
-            {
-                case GameNotification.CreateMapSuccess:
-                    _game.Map = notification.Body as MapData;
-                    _mapBox.Map = _game.Map;
-
-                    _game.Initialize();
-
-                    break;
-                case GameNotification.LoadMapSuccess:
-                    _game.Map = notification.Body as MapData;
-                    _mapBox.Map = _game.Map;
-
-                    _game.Initialize();
-                    break;
-                case GameNotification.Message:
-                    List<object> objs = notification.Body as List<object>;
-                    string txt = objs[0] as string;
-
-                    _messages.Add( new ScreenNotification( txt, DateTime.Now.AddSeconds( 10 ) ) );
-
-                    break;
-                case GameNotification.UpdateSpotting:
-                    _needToUpdateOverview = true;
-                    break;
-                default:
-                    throw new System.Exception(notification.Name + " notification not handled");
-            }
-        }
-
         public override List<GameNotification> NotificationInterests
         {
             get

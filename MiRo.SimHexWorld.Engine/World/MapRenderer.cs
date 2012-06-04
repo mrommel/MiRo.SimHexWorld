@@ -16,6 +16,7 @@ using MiRo.SimHexWorld.Engine.UI;
 using MiRo.SimHexWorld.Helper;
 using MiRo.SimHexWorld.Engine.Types;
 using MiRo.SimHexWorld.Engine.Misc;
+using System.Collections.Generic;
 
 namespace MiRo.SimHexWorld.Engine.World
 {
@@ -52,7 +53,7 @@ namespace MiRo.SimHexWorld.Engine.World
         bool _needToUpdateBorders = false;
         bool _needToUpdateRoads = false;
 
-        
+        List<ForestEntity> _forests = new List<ForestEntity>();
 
         public MapRenderer(Manager manager)
         {
@@ -316,6 +317,7 @@ namespace MiRo.SimHexWorld.Engine.World
                 return;
 
             hMesh.Clear();
+            _forests.Clear();
 
             // now the tiles
             for (int i = 0; i < _map.Width; i++)
@@ -412,6 +414,8 @@ namespace MiRo.SimHexWorld.Engine.World
                     hex.Apply(topH, topRightH, bottomRightH, bottomH, bottomLeftH, topLeftH, GetHeight( _map[i, j].TileHeight));
 
                     hMesh.AddHexagon(hex, false);
+
+                    _forests.Add(new ForestEntity(_map[i, j].Point));
                 }
             }
 
@@ -488,6 +492,13 @@ namespace MiRo.SimHexWorld.Engine.World
                 _borderMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
                 _roadMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
                 _farmMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
+
+                if (_lastPos != null)
+                {
+                    foreach (ForestEntity forest in _forests)
+                        if (forest.Point.DistanceTo(_lastPos) < 2)
+                            forest.Draw(gameTime);
+                }
 
                 if (FogOfWarEnabled)
                     _hiddenMeshContainer.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);

@@ -65,5 +65,10 @@ namespace MiRo.SimHexWorld.Engine.Instance
         {
             base.SendNotification(notification.ToString(), new List<object> { body, body2, body3 });
         }
+
+        public void SendNotification(GameNotification notification, object body, object body2, object body3, object body4)
+        {
+            base.SendNotification(notification.ToString(), new List<object> { body, body2, body3, body4 });
+        }
     }
 }
