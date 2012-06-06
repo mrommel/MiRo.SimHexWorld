@@ -18,6 +18,13 @@
         <Name>Warrior</Name>
         <Index>3</Index>
       </Item>
+      <!-- next row -->
+      <!-- next row -->
+      <!-- next row -->
+      <Item>
+        <Name>Pikeman</Name>
+        <Index>33</Index>
+      </Item>
     </Tiles>
   </Asset>
 </XnaContent>

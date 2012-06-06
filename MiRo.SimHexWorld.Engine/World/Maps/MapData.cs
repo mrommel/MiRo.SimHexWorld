@@ -408,6 +408,11 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
             GameFacade.getInstance().SendNotification(GameNotification.UpdateMapControlling, args);
         }
 
+        public void OnMapExploiting(MapControllingArgs args)
+        {
+            GameFacade.getInstance().SendNotification(GameNotification.UpdateMapExploiting, args);
+        }
+
         public void SetControlled(HexPoint point, int id, bool doOverride = false, int neighborhood = 0)
         {
             this[point].ControlledBy = id;

@@ -173,5 +173,10 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                 return new HexPoint(cell.X, cell.Y);
             }
         }
+
+        public override string ToString()
+        {
+            return string.Format("[PathNode: {0}, {1} => {2} ]",cell.X, cell.Y, cell.Weight(unit) );
+        }
     }
 }

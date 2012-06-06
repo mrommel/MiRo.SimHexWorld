@@ -10,6 +10,7 @@ using MiRo.SimHexWorld.Engine.Misc;
 using Microsoft.Xna.Framework;
 using MiRo.SimHexWorld.Engine.World.Entities;
 using MiRo.SimHexWorld.Engine.Types;
+using MiRo.SimHexWorld.Engine.UI.Dialogs;
 
 namespace MiRo.SimHexWorld.Engine.Instance
 {
@@ -119,6 +120,24 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
             foreach (AbstractPlayerData pl in _players)
                 pl.Update(time);
+
+            // store each 10th score in array 
+            if (_currentTurn % 10 == 0)
+                foreach (AbstractPlayerData pl in _players)
+                    pl.Scores.Add(pl.Score);
+        }
+
+        public Scores Scores
+        {
+            get 
+            {
+                Scores sc = new Scores();
+
+                foreach (AbstractPlayerData pl in _players)
+                    sc.Add(pl.Id, pl.Scores);
+
+                return sc;
+            }
         }
 
         public List<AbstractPlayerData> Players

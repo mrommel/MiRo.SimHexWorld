@@ -12,6 +12,18 @@
 	</Required>
 	<EraName>Modern</EraName>
 	<Flavours>
+    <Item>
+      <Name>Nuke</Name>
+      <Amount>30</Amount>
+    </Item>
+    <Item>
+      <Name>Offense</Name>
+      <Amount>5</Amount>
+    </Item>
+    <Item>
+      <Name>Production</Name>
+      <Amount>10</Amount>
+    </Item>
 	</Flavours>
 	</Asset>
 </XnaContent>

@@ -8,12 +8,18 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using MiRo.SimHexWorld;
 using MiRo.SimHexWorld.Engine.Types.AI;
+using MiRo.SimHexWorld.Engine.Instance.AI;
 
 namespace MiRo.SimHexWorld.Engine.Types
 {
     public enum SpecialistType { Scientist, Merchant };
 
-    public class Building : AbstractNamedEntity
+    public interface IProductionTarget
+    { 
+        int Cost { get;  } 
+    }
+
+    public class Building : AbstractNamedEntity, IProductionTarget
     {
         public int Cost { get; set; }
 
@@ -96,7 +102,7 @@ namespace MiRo.SimHexWorld.Engine.Types
         [ContentSerializer(Optional = true)]
         public string UniqueUnitOfCivilization { get; set; } // if IsSpecial is True
 
-        public List<Flavour> Flavours { get; set; }
+        public Flavours Flavours { get; set; }
 
         [ContentSerializer(Optional = true)]
         public List<Yield> Yields { get; set; }

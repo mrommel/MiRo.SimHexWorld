@@ -157,6 +157,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             _mapBox.CityOpened += MapBox_CityOpened;
             _mapBox.CitySelected += MapBox_CitySelected;
             _mapBox.HumanUnitsSelected += MapBox_HumanUnitsSelected;
+            _mapBox.UnitsUnselected += new UnselectHandler(MapBox_UnitsUnselected);
             Add(_mapBox);
 
             // top ////////////////////////////////////////////////
@@ -503,6 +504,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             ShowMainDialog();
         }
 
+
         enum MainOptionChoises { New, Load, Check, Exit };
         private void ShowMainDialog()
         {
@@ -539,7 +541,6 @@ namespace MiRo.SimHexWorld.Engine.UI
         }
 
         TimeSpan lastFpsUpdate;
-        TimeSpan lastGCUpdate;
         protected override void Update(GameTime gameTime)
         {
             fpsCounter.Update(gameTime);

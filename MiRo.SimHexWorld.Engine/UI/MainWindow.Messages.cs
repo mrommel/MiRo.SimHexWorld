@@ -96,6 +96,9 @@ namespace MiRo.SimHexWorld.Engine.UI
                 case GameNotification.UpdateSpotting:
                     _needToUpdateOverview = true;
                     break;
+                case GameNotification.ShowScoreHistory:
+
+                    break;
                 default:
                     throw new System.Exception(notification.Name + " notification not handled");
             }

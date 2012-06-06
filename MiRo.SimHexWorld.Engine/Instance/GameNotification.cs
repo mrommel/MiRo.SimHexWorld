@@ -33,6 +33,8 @@ namespace MiRo.SimHexWorld.Engine.Instance
         Message,
         UpdateImprovements,
         UpdateSpotting,
-        UpdateMapControlling
+        UpdateMapControlling,
+        UpdateMapExploiting,
+        ShowScoreHistory
     }
 }

@@ -33,6 +33,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
 
             Point = point;
             Scale = new Vector3(0.01f);
+            Rotation = new Vector3(0, (float)(rand.NextDouble() * Math.PI * 2), 0);
 
             int boneCount = model.Bones.Count;
             boneVisible = Enumerable.Repeat<bool>(true, boneCount).ToArray();
@@ -86,42 +87,62 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
                 Matrix.CreateRotationZ(Rotation.Z) *
                 Matrix.CreateTranslation(Position);
 
-            int meshCount = model.Meshes.Count;
+            // Copy any parent transforms.
+            Matrix[] transforms = new Matrix[model.Bones.Count];
+            model.CopyAbsoluteBoneTransformsTo(transforms);
 
-            // first draw the shadows
-            for (int meshIndex = 0; meshIndex < meshCount; meshIndex++)
+            // Draw the model. A model can have multiple meshes, so loop.
+            foreach (ModelMesh mesh in model.Meshes)
             {
-                // hide models which ought not be seen
-                if (!boneVisible[meshIndex])
-                    continue;
-
-                ModelMesh mesh = model.Meshes[meshIndex];
-
-                int parentBoneIndex = mesh.ParentBone.Index;
-
-                int effectCount = mesh.Effects.Count;
-                for (int effectIndex = 0; effectIndex < effectCount; effectIndex++)
+                // This is where the mesh orientation is set, as well 
+                // as our camera and projection.
+                foreach (BasicEffect effect in mesh.Effects)
                 {
-                    Effect effect = mesh.Effects[effectIndex];
-                    if (effect == null)
-                    {
-                        continue; // Model.Draw() would throw an exception in this case
-                    }
-
-                    // Hand the mesh's transformation matrices to the effect
-                    IEffectMatrices matrices = effect as IEffectMatrices;
-                    if (matrices != null)
-                    {
-                        matrices.World = this.absoluteBoneTransforms[parentBoneIndex] * wMatrix;
-                        matrices.View = GameMapBox.Camera.View;
-                        matrices.Projection = GameMapBox.Camera.Projection;
-                    }
+                    effect.EnableDefaultLighting();
+                    effect.World = transforms[mesh.ParentBone.Index] * wMatrix;
+                    effect.View = GameMapBox.Camera.View;
+                    effect.Projection = GameMapBox.Camera.Projection;
                 }
-
-                MainApplication.Instance.GraphicsDevice.RasterizerState = RasterizerState.CullNone;
-
+                // Draw the mesh, using the effects set above.
                 mesh.Draw();
             }
+
+            //int meshCount = model.Meshes.Count;
+
+            //// first draw the shadows
+            //for (int meshIndex = 0; meshIndex < meshCount; meshIndex++)
+            //{
+            //    // hide models which ought not be seen
+            //    if (!boneVisible[meshIndex])
+            //        continue;
+
+            //    ModelMesh mesh = model.Meshes[meshIndex];
+
+            //    int parentBoneIndex = mesh.ParentBone.Index;
+
+            //    int effectCount = mesh.Effects.Count;
+            //    for (int effectIndex = 0; effectIndex < effectCount; effectIndex++)
+            //    {
+            //        Effect effect = mesh.Effects[effectIndex];
+            //        if (effect == null)
+            //        {
+            //            continue; // Model.Draw() would throw an exception in this case
+            //        }
+
+            //        // Hand the mesh's transformation matrices to the effect
+            //        IEffectMatrices matrices = effect as IEffectMatrices;
+            //        if (matrices != null)
+            //        {
+            //            matrices.World = this.absoluteBoneTransforms[parentBoneIndex] * wMatrix;
+            //            matrices.View = GameMapBox.Camera.View;
+            //            matrices.Projection = GameMapBox.Camera.Projection;
+            //        }
+            //    }
+
+            //    MainApplication.Instance.GraphicsDevice.RasterizerState = RasterizerState.CullNone;
+
+            //    mesh.Draw();
+            //}
         }
     }
 }

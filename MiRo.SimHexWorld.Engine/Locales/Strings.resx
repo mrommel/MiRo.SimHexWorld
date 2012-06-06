@@ -202,6 +202,9 @@
   <data name="TXT_KEY_CIVIZATION_GERMAN_TITLE" xml:space="preserve">
     <value>Deutschland</value>
   </data>
+  <data name="TXT_KEY_IMPROVEMENT_FARM_TITLE" xml:space="preserve">
+    <value>Bauernhof</value>
+  </data>
   <data name="TXT_KEY_NOTIFICATION_BUILD_IMPROVEMENT" xml:space="preserve">
     <value>{0} hat {1} auf {2} gebaut</value>
   </data>
@@ -225,5 +228,14 @@
   </data>
   <data name="TXT_KEY_TECH_ARCHERY" xml:space="preserve">
     <value>Bogenschießen</value>
+  </data>
+  <data name="TXT_KEY_IMPROVEMENT_FARM_DESCRIPTION" xml:space="preserve">
+    <value>Die Landwirtschaft ist einer der frühesten und wichtigsten aller menschlichen Berufe, wie es die Menschheit für die Migration zu stoppen und sich in einem Ort ohne das Aufbrauchen der lokalen Ressourcen erlaubt. Farms kann auf fast jedem Land errichtet werden, um den Hex-Ausgang von Lebensmitteln zu verbessern.</value>
+  </data>
+  <data name="TXT_KEY_GERMAN_CITIES_COLOGNE" xml:space="preserve">
+    <value>Köln</value>
+  </data>
+  <data name="TXT_KEY_GERMAN_CITIES_MUNICH" xml:space="preserve">
+    <value>München</value>
   </data>
 </root>

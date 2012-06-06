@@ -20,6 +20,8 @@ namespace MiRo.SimHexWorld.Engine.UI
             _scienceFrameTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//techpanelframe");
             _scienceTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//techpanelmeter");
 
+            // TODO make another label for science only
+
             _lblLeftTopCorner = new ImageBox(Manager);
             _lblLeftTopCorner.Init();
             _lblLeftTopCorner.Top = 24;

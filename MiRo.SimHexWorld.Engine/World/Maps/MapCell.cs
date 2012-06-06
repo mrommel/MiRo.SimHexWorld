@@ -81,7 +81,7 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
 
         readonly BitArray _spotted; // set of Player IDs
         readonly BitArray _discovered;
-        private int _controlledBy = -1;
+        private int _controlledBy = -1, _exploitedBy = -1;
         private const int MaxPlayerId = 8;
         List<Improvement> _improvements;
 
@@ -475,8 +475,40 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
         {
             get
             {
-                return Terrain.Bonus.Food + 
-                    _features.Sum(feature => feature.Bonus.Food);
+                int food = Terrain.Bonus.Food;
+
+                food += _features.Sum(feature => feature.Bonus.Food);
+
+                foreach (Improvement imp in _improvements)
+                {
+                    food += imp.Bonus.Food;
+
+                    if (imp.ImprovesResources != null)
+                    {
+                        foreach (ResourceBonus rb in imp.ImprovesResources)
+                        {
+                            if (_ressource.Select(a => a.Name).Contains(rb.Ressource))
+                                food += rb.Bonus.Food;
+                        }
+                    }
+
+                    if (ControlledBy != -1)
+                    {
+                        AbstractPlayerData controller = MainWindow.Game.Players[ControlledBy];
+
+                        if (imp.TechnologyBonuses != null)
+                        {
+                            foreach (TechnologyBonus tb in imp.TechnologyBonuses)
+                            {
+                                if (tb.IsValid(controller.Technologies))
+                                    if (tb.Yield.Type == Types.AI.YieldType.Food)
+                                        food += tb.Yield.Amount;
+                            }
+                        }
+                    }
+                }
+
+                return food;
             }
         }
 
@@ -632,6 +664,32 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
                 _controlledBy = value;
 
                 MainWindow.Game.Map.OnMapControlling(new MapControllingArgs(MainWindow.Game.Map, _pt, _controlledBy));
+            }
+        }
+
+        public int ExploitedBy
+        {
+            get
+            {
+                return _exploitedBy;
+            }
+            set
+            {
+                _exploitedBy = value;
+
+                MainWindow.Game.Map.OnMapExploiting(new MapControllingArgs(MainWindow.Game.Map, _pt, _exploitedBy));
+            }
+        }
+
+        public bool Unexploited
+        {
+            get { return _exploitedBy == -1; }
+            set 
+            {
+                if (value == false)
+                    throw new Exception("You need to call ExploitedBy with the new exploiter");
+
+                _exploitedBy = -1; 
             }
         }
 

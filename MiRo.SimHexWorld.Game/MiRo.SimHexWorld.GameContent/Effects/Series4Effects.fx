@@ -295,7 +295,7 @@ WPixelToFrame WaterPS(WVertexToPixel PSIn)
 
      float3 reflectionVector = -reflect(xLightDirection, normalVector);
      float specular = dot(normalize(reflectionVector), normalize(eyeVector));
-     specular = pow(specular, 256);        
+     specular = pow(abs(specular), 256);        
      Output.Color.rgb += specular;
 
     
@@ -346,7 +346,7 @@ technique Water
      perlin += tex2D(TextureSampler, (PSIn.TextureCoords)*16+xTime*move)/32;
      perlin += tex2D(TextureSampler, (PSIn.TextureCoords)*32+xTime*move)/32;    
      
-     Output.Color.rgb = 1.0f-pow(perlin.r, xOvercast)*2.0f;
+     Output.Color.rgb = 1.0f-pow(abs(perlin.r), xOvercast)*2.0f;
      Output.Color.a =1;
  
      return Output;

@@ -227,7 +227,7 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
 
             //return dist;
             int dx = x2 - x1;
-            int dy = y1 - y1;
+            int dy = y2 - y1;
             if (Math.Sign(dx) == Math.Sign(dy))
             {    // this is (1); see first paragraph
                 return Math.Max(Math.Abs(dx), Math.Abs(dy));

@@ -23,5 +23,10 @@ namespace MiRo.SimHexWorld.Engine.Types
 
         public string Name { get; set; }
         public float Amount { get; set; }
+
+        public override string ToString()
+        {
+            return "[Flavour: " + Name + "=" + Amount + "]";
+        }
     }
 }

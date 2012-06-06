@@ -77,6 +77,11 @@ namespace MiRo.SimHexWorld.Engine.Instance
             return a1.Value > a2.Value;
         }
 
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
         #region tests
 
         [Test]

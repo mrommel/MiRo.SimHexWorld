@@ -136,7 +136,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                     foreach (HexPoint pt in interest)
                     {
                         Path path = Map.FindPath(this, pt);
-                        if (path.IsValid)
+                        if (path != null && path.IsValid)
                         {
                             propsSettle.AddItem(WayPoints.FromPath( path ), _player.CityLocationMap[pt] * (_player.CityLocationMap.IsLocalMaximum(pt) ? 1.0f : 0.2f));
                         }
@@ -229,12 +229,13 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             if (_player.CityLocationMap == null)
                 return false;
 
-            return _player.CityLocationMap.IsLocalMaximum(Point); // && _player.Cities.Count < MainWindow.Game.Map.Size.CitiesPerPlayer;
+            return _player.CityLocationMap.IsLocalMaximum(Point);
         }
 
         public void Found()
         {
-            _player.AddCity(Point);
+            if( MainWindow.Game.GetCityAt(Point) == null )
+                _player.AddCity(Point);
 
             // unit need to be removed - later on (we are probably in a foreach)
             _deleted = true;

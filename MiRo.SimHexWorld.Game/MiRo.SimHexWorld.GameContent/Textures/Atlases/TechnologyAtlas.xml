@@ -105,16 +105,82 @@
         <Index>23</Index>
       </Item>
       <!-- next row -->
-
+      <Item>
+        <Name>Physics</Name>
+        <Index>24</Index>
+      </Item>
       <Item>
         <Name>Education</Name>
         <Index>25</Index>
       </Item>
       <Item>
+        <Name>Chivalry</Name>
+        <Index>27</Index>
+      </Item>
+      <Item>
+        <Name>Steel</Name>
+        <Index>28</Index>
+      </Item>
+      <Item>
+        <Name>Navigation</Name>
+        <Index>29</Index>
+      </Item>
+      <Item>
+        <Name>PrintingPress</Name>
+        <Index>30</Index>
+      </Item>
+      <Item>
         <Name>Banking</Name>
         <Index>31</Index>
       </Item>
-
+      <!-- next row -->
+      <Item>
+        <Name>Gunpowder</Name>
+        <Index>32</Index>
+      </Item>
+      <Item>
+        <Name>Metallurgy</Name>
+        <Index>33</Index>
+      </Item>
+      <Item>
+        <Name>Astronomy</Name>
+        <Index>34</Index>
+      </Item>
+      <Item>
+        <Name>Economics</Name>
+        <Index>35</Index>
+      </Item>
+      <Item>
+        <Name>Chemistry</Name>
+        <Index>37</Index>
+      </Item>
+      <Item>
+        <Name>Biology</Name>
+        <Index>38</Index>
+      </Item>
+      <Item>
+        <Name>ScientificTheory</Name>
+        <Index>39</Index>
+      </Item>
+      <!-- next row -->
+      <Item>
+        <Name>Rifling</Name>
+        <Index>40</Index>
+      </Item>
+      <Item>
+        <Name>Archaeology</Name>
+        <Index>43</Index>
+      </Item>
+      <!-- next row -->
+      <Item>
+        <Name>Refrigeration</Name>
+        <Index>50</Index>
+      </Item>
+      <Item>
+        <Name>Telegraph</Name>
+        <Index>51</Index>
+      </Item>
+      <!-- next row -->
       <Item>
         <Name>Trapping</Name>
         <Index>77</Index>

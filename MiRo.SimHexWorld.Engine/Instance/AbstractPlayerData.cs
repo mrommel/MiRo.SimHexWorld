@@ -62,6 +62,8 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
         public event CivilizationHandler FirstContact;
 
+        public List<float> Scores = new List<float>();
+
         protected static Random rand = new Random();
 
         #endregion Fields & proterties      
@@ -406,8 +408,9 @@ namespace MiRo.SimHexWorld.Engine.Instance
                     MapCell cell = Map[x,y];
                     if (cell.IsSpotted(this))
                     {
-                        CityLocationMap[x, y] = Map.GetValue(x, y, MapValueType.CityFoundValue);
-                        ImprovementLocationMap[x, y] = Map.GetValue(x, y, MapValueType.CityFoundValue);
+                        float value = Map.GetValue(x, y, MapValueType.CityFoundValue);
+                        CityLocationMap[x, y] = value;
+                        ImprovementLocationMap[x, y] = value;
 
                         if (_cities.Count == 0)
                         {
@@ -425,12 +428,14 @@ namespace MiRo.SimHexWorld.Engine.Instance
                             ImprovementLocationMap[pt] = 0;
                         }
 
-                        foreach(HexPoint n in pt.Neighbors )
+                        foreach (HexPoint n in pt.Neighbors)
+                        {
                             if (GetCityAt(n) != null)
                             {
-                                CityLocationMap[n] = 0;
+                                CityLocationMap[pt] = 0;
                                 ImprovementLocationMap[x, y] *= 1.7f;
                             }
+                        }
                     }
                     else
                         CityLocationMap[x, y] = 0;
@@ -503,23 +508,27 @@ namespace MiRo.SimHexWorld.Engine.Instance
             Unit[] units = _units.ToArray();
             foreach (Unit unit in units)
             {
-                if (Map[unit.Point].IsSpotted(MainWindow.Game.Human) || !fogOfWarEnabled)
+                if (!fogOfWarEnabled || Map[unit.Point].IsSpotted(MainWindow.Game.Human) )
                     unit.Draw(gameTime);
             }
 
             City[] cities = _cities.ToArray();
             foreach (City city in cities)
             {
-                if (Map[city.Point].IsSpotted(MainWindow.Game.Human) || !fogOfWarEnabled)
+                if (!fogOfWarEnabled || city.Player.IsHuman || Map[city.Point].IsSpotted(MainWindow.Game.Human) )
                     city.Draw(gameTime);
             }
         }
 
+        Improvement road = Provider.GetImprovement("Road");
         public void AddCity(HexPoint point)
         {
             // check if this is really possible (controlled by must be -1 or Id)
             if (Map[point].ControlledBy != -1 && Map[point].ControlledBy != Id)
                 throw new Exception("This should not have happend, cities can only be build on tiles that are free or controlled by yourself");
+
+            if (!Map[point].Improvements.Contains(road))
+                Map[point].Improvements.Add(road);
 
             string cityName = GetNextCityName();
 
@@ -579,23 +588,31 @@ namespace MiRo.SimHexWorld.Engine.Instance
         public string GetNextCityName()
         {
             if (_cities.Count == 0)
-                return _civilization.Capital;
+            {
+                if (_civilization.Capital.StartsWith("TXT_KEY_"))
+                    return Provider.Instance.Translate(_civilization.Capital);
+                else
+                    return _civilization.Capital;
+            }
 
-            List<string> possibleName = _civilization.Cities;
+            List<string> possibleNames = _civilization.Cities;
 
-            if (possibleName.Count == 0)
+            if (possibleNames.Count == 0)
                 throw new Exception("No Citylist found for " + _civilization.Name);
 
             foreach (City city in _cities)
             {
-                if( possibleName.Contains(city.Name))
-                    possibleName.Remove(city.Name);
+                if( possibleNames.Contains(city.Name))
+                    possibleNames.Remove(city.Name);
             }
 
-            if( possibleName.Count == 0 )
+            if( possibleNames.Count == 0 )
                 return "Futurename";
 
-            return possibleName.First();
+            if (possibleNames.First().StartsWith("TXT_KEY_"))
+                return Provider.Instance.Translate(possibleNames.First());
+            else
+                return possibleNames.First();
         }
 
         public void DeleteUnit(Unit unit)
@@ -744,6 +761,32 @@ namespace MiRo.SimHexWorld.Engine.Instance
                     return _science / CurrentResearch.Cost;
 
                 return 0f; 
+            }
+        }
+
+        private static float SCORE_CITY_MULTIPLIER = 8;
+        private static float SCORE_POPULATION_MULTIPLIER = 4;
+        private static float SCORE_LAND_MULTIPLIER = 1;
+        private static float SCORE_WONDER_MULTIPLIER = 25;
+        private static float SCORE_TECH_MULTIPLIER = 4;
+        private static float SCORE_FUTURE_TECH_MULTIPLIER = 10;
+
+        public float Score
+        {
+            get 
+            {
+                float score = 0;
+
+                if (Map == null)
+                    return 0;
+
+                score += _cities.Count * SCORE_CITY_MULTIPLIER;
+                score += Cities.Sum(a => a.Citizen) * SCORE_POPULATION_MULTIPLIER;
+                score += Map.Tiles.Count(a => a.ControlledBy == Id) * SCORE_LAND_MULTIPLIER;
+                score += Cities.Sum(a => a.Wonders.Count) * SCORE_WONDER_MULTIPLIER;
+                score += Technologies.Count * SCORE_TECH_MULTIPLIER;
+
+                return score;
             }
         }
     }

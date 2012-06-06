@@ -3,9 +3,7 @@
   <Asset Type="MiRo.SimHexWorld.Engine.Types.Civilization">
     <Name>English</Name>
     <Title>TXT_KEY_CIVIZATION_ENGLISH_TITLE</Title>
-    <Description>
-      TXT_KEY_CIVIZATION_ENGLISH_DESCRIPTION
-    </Description>
+    <Description>TXT_KEY_CIVIZATION_ENGLISH_DESCRIPTION</Description>
     <ImageName>English</ImageName>
     <UniqueUnits>
       <Item>Longbowman</Item>

@@ -174,7 +174,7 @@ namespace MiRo.SimHexWorld.Engine.UI
         {
             Texture2D _cityProductionMeterModTexture = new Texture2D(Manager.GraphicsDevice,256,256);
 
-            if (_currentCity.CurrentBuilding != null)
+            if (_currentCity.CurrentBuildingTarget != null)
             {
                 float radReady = _currentCity.ProductionReady * (float)Math.PI * 2f - (float)Math.PI;
 
@@ -201,8 +201,8 @@ namespace MiRo.SimHexWorld.Engine.UI
             e.Renderer.Draw(_cityProductionMeterModTexture, r, Color.White);
             e.Renderer.Draw(_cityProductionFrameTexture, r, Color.White);
 
-            if (_currentCity.CurrentBuilding != null && _currentCity.CurrentBuilding.Image != null)
-                e.Renderer.Draw(_currentCity.CurrentBuilding.Image, r, Color.White);
+            if (_currentCity.CurrentBuildingTarget != null && _currentCity.CurrentBuildingTarget.Image != null)
+                e.Renderer.Draw(_currentCity.CurrentBuildingTarget.Image, r, Color.White);
         }
 
         public void UpdateCityControls()
@@ -212,8 +212,8 @@ namespace MiRo.SimHexWorld.Engine.UI
 
             _lblCitizen.Text = "Citizen: " + _currentCity.Citizen + " (" + _currentCity.Population + ")";
 
-            if (_currentCity.CurrentBuilding != null)
-                _lblCurrentBuilding.Text = _currentCity.CurrentBuilding.Title + "(" + (int)(_currentCity.ProductionReady * 100) + "%)";
+            if (_currentCity.CurrentBuildingTarget != null)
+                _lblCurrentBuilding.Text = _currentCity.CurrentBuildingTarget.Title + "(" + (int)(_currentCity.ProductionReady * 100) + "%)";
             else
                 _lblCurrentBuilding.Text = "";
 
@@ -226,7 +226,7 @@ namespace MiRo.SimHexWorld.Engine.UI
         {
             _lblCurrentBuilding.Visible = show;
             _btnCityExit.Visible = show;
-            _citySidebar.Visible = show;
+            //_citySidebar.Visible = show;
             _lblCityname.Visible = show;
             _lblCitynameTribe.Visible = show;
             _lblProductionMeter.Visible = show;

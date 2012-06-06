@@ -40,6 +40,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         public event CityOpenHandler CitySelected;
         public event UnitsSelectHandler HumanUnitsSelected;
         public event UnitsSelectHandler EnemyUnitsSelected;
+        public event UnselectHandler UnitsUnselected;
 
         readonly HexPoint _mapCenter = new HexPoint(20, 20);
         KeyboardState _oldKeyState;
@@ -61,7 +62,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         private void Initialize()
         {
             // create Camera
-            _camera = new ArcBallCamera(MapData.GetWorldPosition(20, 20), 0, MathHelper.PiOver2 / 2, 0, MathHelper.PiOver2, CameraDistance, 30, 100, Manager.GraphicsDevice);
+            _camera = new ArcBallCamera(MapData.GetWorldPosition(20, 20), 0, MathHelper.PiOver2 * 0.5f * 0.8f * 0.8f, 0, MathHelper.PiOver2, CameraDistance, 30, 100, Manager.GraphicsDevice);
 
             _effect = Manager.Content.Load<Effect>("Content/Effects/Series4Effects");
  
@@ -133,7 +134,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
             {
                 _mapCenter.X += dx;
                 _mapCenter.Y += dy;
-
+                _mapRenderer.Center = _mapCenter;
                 _camera.Target = MapData.GetWorldPosition(_mapCenter);               
             }
 
@@ -161,6 +162,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                     _mapCenter.X = capital.Point.X;
                     _mapCenter.Y = capital.Point.Y;
                     _camera.Target = MapData.GetWorldPosition(_mapCenter);
+                    _mapRenderer.Center = _mapCenter;
                 }
                 else
                 {
@@ -172,18 +174,20 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                     _mapCenter.X = loc.X;
                     _mapCenter.Y = loc.Y;
                     _camera.Target = MapData.GetWorldPosition(_mapCenter);
+                    _mapRenderer.Center = _mapCenter;
                 }
             }
 
             if (keyState.IsKeyDown(Keys.P) && !_oldKeyState.IsKeyDown(Keys.P))
             {
-                PolicyChooseDialog pcd = new PolicyChooseDialog(Manager);
-                pcd.Left = 100;
-                pcd.Top = 100;
+                //PolicyChooseDialog pcd = new PolicyChooseDialog(Manager);
+                //pcd.Left = 100;
+                //pcd.Top = 100;
 
-                Manager.Add(pcd);
+                //Manager.Add(pcd);
 
-                pcd.ShowModal();
+                //pcd.ShowModal();
+                ScoreWindow.Show(Manager, MainWindow.Game.Scores, "Scores");
             }
 
             MouseState mouseState = Mouse.GetState();
@@ -239,6 +243,8 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                         else if (!first.Player.IsHuman && EnemyUnitsSelected != null)
                             EnemyUnitsSelected(units);
                     }
+                    else if( UnitsUnselected != null )
+                        UnitsUnselected();
                 }
             }
 

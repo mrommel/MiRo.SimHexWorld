@@ -46,5 +46,38 @@ namespace MiRo.SimHexWorld.Engine.Instance.AI
                 return default(T);
             }
         }
+
+        public T RandomOfBest3
+        {
+            get 
+            {
+                Sort();
+
+                int index = rnd.Next(Math.Min(items.Count, 3));
+
+                return items[index];
+            }
+        }
+
+        private void Sort()
+        {
+            for (int i = 0; i < items.Count; ++i)
+            {
+                for (int j = i; j < items.Count; ++j)
+                {
+                    if (propabilities[i] > propabilities[j])
+                    {
+                        float tmpF = propabilities[i];
+                        propabilities[i] = propabilities[j];
+                        propabilities[j] = tmpF;
+
+                        T tmpI = items[i];
+                        items[i] = items[j];
+                        items[j] = tmpI;
+                    }
+                }
+            }
+
+        }
     }
 }

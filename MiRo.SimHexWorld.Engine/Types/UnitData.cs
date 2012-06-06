@@ -60,7 +60,7 @@ namespace MiRo.SimHexWorld.Engine.Types
         BuildFarm
     }
 
-    public class UnitData : AbstractNamedEntity
+    public class UnitData : AbstractNamedEntity, IProductionTarget
     {
         public class UnitAction
         {

@@ -142,6 +142,42 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Köln ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_GERMAN_CITIES_COLOGNE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_GERMAN_CITIES_COLOGNE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die München ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_GERMAN_CITIES_MUNICH {
+            get {
+                return ResourceManager.GetString("TXT_KEY_GERMAN_CITIES_MUNICH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Die Landwirtschaft ist einer der frühesten und wichtigsten aller menschlichen Berufe, wie es die Menschheit für die Migration zu stoppen und sich in einem Ort ohne das Aufbrauchen der lokalen Ressourcen erlaubt. Farms kann auf fast jedem Land errichtet werden, um den Hex-Ausgang von Lebensmitteln zu verbessern. ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_IMPROVEMENT_FARM_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("TXT_KEY_IMPROVEMENT_FARM_DESCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Bauernhof ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_IMPROVEMENT_FARM_TITLE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_IMPROVEMENT_FARM_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Duel auf der Erde ähnelt.
         /// </summary>
         internal static string TXT_KEY_MAP_EARTH_TITLE_EARTH_DUEL {

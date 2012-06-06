@@ -31,7 +31,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
         {
             WayPoints points = new WayPoints();
 
-            while (!path.Finished)
+            while (path != null && !path.Finished)
             {
                 IGridCell current = path.GetNextWaypoint();
 

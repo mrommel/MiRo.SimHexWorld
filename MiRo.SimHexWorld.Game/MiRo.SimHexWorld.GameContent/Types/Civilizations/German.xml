@@ -3,9 +3,7 @@
   <Asset Type="MiRo.SimHexWorld.Engine.Types.Civilization">
     <Name>German</Name>
     <Title>TXT_KEY_CIVIZATION_GERMAN_TITLE</Title>
-    <Description>
-      TXT_KEY_CIVIZATION_GERMAN_DESCRIPTION
-    </Description>
+    <Description>TXT_KEY_CIVIZATION_GERMAN_DESCRIPTION</Description>
     <ImageName>German</ImageName>
     <UniqueUnits>
       <Item>Panzer</Item>
@@ -21,8 +19,8 @@
     <Capital>Berlin</Capital>
     <Cities>
       <Item>Hamburg</Item>
-      <Item>Munich</Item>
-      <Item>Cologne</Item>
+      <Item>TXT_KEY_GERMAN_CITIES_MUNICH</Item>
+      <Item>TXT_KEY_GERMAN_CITIES_COLOGNE</Item>
       <Item>Frankfurt</Item>
       <Item>Essen</Item>
       <Item>Dortmund</Item>
@@ -38,7 +36,7 @@
       <Item>Bielefeld</Item>
       <Item>Karlsruhe</Item>
       <Item>Gelsenkirchen</Item>
-      <Item>Weisbaden</Item>
+      <Item>Wiesbaden</Item>
       <Item>Munster</Item>
       <Item>Rostock</Item>
       <Item>Chemnitz</Item>

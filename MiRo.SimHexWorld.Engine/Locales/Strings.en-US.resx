@@ -160,4 +160,10 @@
   <data name="TXT_KEY_UNITS_WARRIOR_TITLE" xml:space="preserve">
     <value>Warrior</value>
   </data>
+  <data name="TXT_KEY_GERMAN_CITIES_COLOGNE" xml:space="preserve">
+    <value>Cologne</value>
+  </data>
+  <data name="TXT_KEY_GERMAN_CITIES_MUNICH" xml:space="preserve">
+    <value>Munich</value>
+  </data>
 </root>

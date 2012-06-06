@@ -60,18 +60,19 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
 
         List<CitizenWork> _work = new List<CitizenWork>();
 
-        UnitData _currentUnit;
-        Building _currentBuilding = null;
+        IProductionTarget _currentProductionTarget = null;
         float _currentBuildingProgress = 0;
 
         int neighborHood = 1;
 
         //static PythonEngine _behaviour;
-        static BillboardSystem<Civilization> _civilizationFlagBillboards;
+        BillboardSystem<Civilization> _civilizationFlagBillboards;
         BillboardSystem<string> _cityNameBillboard;
         BillboardSystem<float> _cityFoodBillboard;
         BillboardSystem<float> _cityProductionBillboard;
         BillboardSystem<float> _cityGoldBillboard;
+
+        static Texture2D citybannerleftbackground, citybannerbackground, citybannerrightbackground, citybannerbuttonbaseleft, citybannerbuttonbase, citybannerbuttonbaseright, citybannerstrength;
 
         // events
         public event CityGrowthHandler CityGrowth;
@@ -102,9 +103,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             _civilizationFlagBillboards.Build();
 
             _cityNameBillboard = new BillboardSystem<string>(MainApplication.Instance.GraphicsDevice, MainApplication.Instance.Content);
-            _cityNameBillboard.AddEntity(Name, TextTexture, new Vector2(5, 1));
-            _cityNameBillboard.AddPosition(Name, _entity.Position + new Vector3(0, 1, 0));
-            _cityNameBillboard.Build();
+            UpdateCityNameBillboard();
 
             _cityFoodBillboard = new BillboardSystem<float>(MainApplication.Instance.GraphicsDevice, MainApplication.Instance.Content);
             _cityFoodBillboard.AddEntity(1, Provider.GetAtlas("YieldAtlas").GetTexture("Food1"), new Vector2(1, 1));
@@ -127,23 +126,61 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             _cityGoldBillboard.AddEntity(4, Provider.GetAtlas("YieldAtlas").GetTexture("Gold4"), new Vector2(1, 1));
             _cityGoldBillboard.AddEntity(5, Provider.GetAtlas("YieldAtlas").GetTexture("Gold5"), new Vector2(1, 1));
         }
-
+       
         private Texture2D TextTexture
         {
             get
             {
-                SpriteFont font = MainApplication.Instance.Content.Load<SpriteFont>("Content//Fonts//ArialS");
-                Vector2 fontSize = font.MeasureString(Citizen + " " + Name);
-                Vector2 pos = new Vector2((128 - fontSize.X) / 2, (32 - fontSize.Y) / 2);
+                // only load these texture 1 time
+                if (citybannerleftbackground == null)
+                {
+                    citybannerleftbackground = MainApplication.Instance.Content.Load<Texture2D>("Content//Textures//UI//MainView//citybannerleftbackground");
+                    citybannerbackground = MainApplication.Instance.Content.Load<Texture2D>("Content//Textures//UI//MainView//citybannerbackground");
+                    citybannerrightbackground = MainApplication.Instance.Content.Load<Texture2D>("Content//Textures//UI//MainView//citybannerrightbackground");
 
-                RenderTarget2D target = new RenderTarget2D(MainApplication.Instance.GraphicsDevice, 128, 32);
+                    citybannerbuttonbaseleft = MainApplication.Instance.Content.Load<Texture2D>("Content//Textures//UI//MainView//citybannerbuttonbaseleft");
+                    citybannerbuttonbase = MainApplication.Instance.Content.Load<Texture2D>("Content//Textures//UI//MainView//citybannerbuttonbase");
+                    citybannerbuttonbaseright = MainApplication.Instance.Content.Load<Texture2D>("Content//Textures//UI//MainView//citybannerbuttonbaseright");
+
+                    citybannerstrength = MainApplication.Instance.Content.Load<Texture2D>("Content//Textures//UI//MainView//citybannerstrength");
+                }
+
+                int bannerWidth = 128;
+                int bannerHeight = 64, bannerTextYPos = 16;
+
+                SpriteFont font = MainApplication.Instance.Content.Load<SpriteFont>("Content//Fonts//ArialS");
+                Vector2 fontSizeTitle = font.MeasureString(Name);
+                Vector2 posTitle = new Vector2((bannerWidth - fontSizeTitle.X) / 2, (32 - fontSizeTitle.Y) / 2 + bannerTextYPos);
+
+                Vector2 fontSizeCitizen = font.MeasureString(Citizen.ToString());
+                Vector2 posCitizen = new Vector2(8, (32 - fontSizeTitle.Y) / 2 + bannerTextYPos);
+
+                RenderTarget2D target = new RenderTarget2D(MainApplication.Instance.GraphicsDevice, bannerWidth, bannerHeight);
                 MainApplication.Instance.GraphicsDevice.SetRenderTarget(target);// Now the spriteBatch will render to the RenderTarget2D
 
                 MainApplication.Instance.GraphicsDevice.Clear(Color.Transparent);
+                //MainApplication.Instance.GraphicsDevice.Clear(Color.Yellow);
 
                 SpriteBatch spriteBatch = new SpriteBatch(MainApplication.Instance.GraphicsDevice);
                 spriteBatch.Begin();
-                spriteBatch.DrawString(font, Citizen + " " + Name, pos, Color.White);//Do your stuff here
+
+                //// button base
+                spriteBatch.Draw(citybannerleftbackground, new Rectangle(0, bannerTextYPos, 32, 32), Color.White);
+                spriteBatch.Draw(citybannerbackground, new Rectangle(32, bannerTextYPos, bannerWidth - 32 * 2, 32), Color.White);
+                spriteBatch.Draw(citybannerrightbackground, new Rectangle(bannerWidth - 32, bannerTextYPos, 32, 32), Color.White);
+
+                //// button edges
+                spriteBatch.Draw(citybannerbuttonbaseleft, new Rectangle(0, 0, 36, 64), Color.White);
+                spriteBatch.Draw(citybannerbuttonbase, new Rectangle(36, 0, bannerWidth - 36 * 2, 64), Color.White);
+                spriteBatch.Draw(citybannerbuttonbaseright, new Rectangle(bannerWidth - 36, 0, 36, 64), Color.White);
+
+                // strength banner
+                spriteBatch.Draw(citybannerstrength, new Rectangle((bannerWidth - 56) / 2, 0, 56, 16), Color.White);
+
+                // city name text
+                spriteBatch.DrawString(font, Name, posTitle, Color.Black);
+                spriteBatch.DrawString(font, Citizen.ToString(), posCitizen, Color.Black);
+
                 spriteBatch.End();
 
                 MainApplication.Instance.GraphicsDevice.SetRenderTarget(null);//This will set the spriteBatch to render to the screen again.
@@ -341,7 +378,10 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             _food -= Citizen * _foodPerCitizen;
             bool enoughFood = _food > 0;
 
-            float growthRate = enoughFood ? 1.02f : 0.98f;
+            float growthRate = 1.02f;
+
+            if(!enoughFood )
+                growthRate = 0.98f;
 
             // apply handicap/difficulty
             if (!_player.IsHuman)
@@ -352,21 +392,18 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
 
             // happiness
             if (Happiness < Unhappiness)
-                growthRate = Math.Max(growthRate, 1.01f);
+                growthRate = Math.Min(growthRate, 1f);
 
             int oldCitizen = Citizen;
 
-            _population = (float)Math.Pow(_population, growthRate);
+            _population += ( (float)Math.Pow(_population, growthRate) - _population ) / 10f;
 
             int newCitizen = Citizen;
 
             if (newCitizen > oldCitizen)
             {
                 // update city text
-                _cityNameBillboard.Reset();
-                _cityNameBillboard.AddEntity(Name, TextTexture, new Vector2(5, 1));
-                _cityNameBillboard.AddPosition(Name, _entity.Position + new Vector3(0, 1, 0));
-                _cityNameBillboard.Build();
+                UpdateCityNameBillboard();
 
                 if (CityGrowth != null)
                     CityGrowth(this, oldCitizen, newCitizen);
@@ -374,14 +411,19 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             else if (newCitizen < oldCitizen)
             {
                 // update city text
-                _cityNameBillboard.Reset();
-                _cityNameBillboard.AddEntity(Name, TextTexture, new Vector2(5, 1));
-                _cityNameBillboard.AddPosition(Name, _entity.Position + new Vector3(0, 1, 0));
-                _cityNameBillboard.Build();
+                UpdateCityNameBillboard();
 
                 if (CityDecline != null)
                     CityDecline(this, oldCitizen, newCitizen);
             }
+        }
+
+        private void UpdateCityNameBillboard()
+        {
+            _cityNameBillboard.Reset();
+            _cityNameBillboard.AddEntity(Name, TextTexture, new Vector2(5, 2));
+            _cityNameBillboard.AddPosition(Name, _entity.Position + new Vector3(0, 1, 0));
+            _cityNameBillboard.Build();
         }
 
         private void UpdateWork()
@@ -432,7 +474,10 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
 
             foreach (HexPoint pt in Point.GetNeighborhood(neighborHood))
             {
-                if (Map.IsValid(pt) && Map[pt].IsSpotted(_player) && Map[pt].ControlledBy == _player.Id)
+                if (Map.IsValid(pt) && 
+                    Map[pt].IsSpotted(_player) && 
+                    Map[pt].ControlledBy == _player.Id &&
+                    Map[pt].Unexploited)
                 {
                     CitizenWork work = new CitizenWork();
                     work.Point = pt;
@@ -470,7 +515,14 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             possibleWorks.Sort(SortWork);
 
             if (possibleWorks.Count > 0)
-                _work.Add(possibleWorks.First());
+            {
+                CitizenWork bestWork = possibleWorks.First();
+
+                if (bestWork.Type == WorkType.Land || bestWork.Type == WorkType.Sea)
+                    Map[bestWork.Point].ExploitedBy = _player.Id;
+
+                _work.Add(bestWork);
+            }
             else
                 _work.Add(new CitizenWork());
         }
@@ -536,22 +588,36 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
 
             _work.Sort(SortWork);
 
-            _work.RemoveAt(_work.Count - 1);
+            CitizenWork worstWork = _work.Last();
+
+            // release exploit
+            if (worstWork.Type == WorkType.Land || worstWork.Type == WorkType.Sea)
+                Map[worstWork.Point].Unexploited = true;
+
+            _work.Remove(worstWork);
         }
 
-        public Building CurrentBuilding
+        public Building CurrentBuildingTarget
         {
             get
             {
-                return _currentBuilding;
+                return _currentProductionTarget is Building ? _currentProductionTarget as Building : null;
+            }
+        }
+
+        public UnitData CurrentUnitTarget
+        {
+            get
+            {
+                return _currentProductionTarget is UnitData ? _currentProductionTarget as UnitData : null;
             }
         }
 
         private void UpdateProduction()
         {
             // increment current building
-            if (_currentBuilding == null && _currentUnit == null)
-                ChooseCurrentProductionTarget();
+            if (_currentProductionTarget == null)
+                SelectCurrentProductionTarget();
 
             // receive food, production, commerce
             _currentBuildingProgress += ProductionSurplus;
@@ -560,32 +626,32 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             _science += ScienceSurplus;
             _culture += CultureSurplus;
 
-            if (_currentBuilding != null && _currentBuilding.Cost <= _currentBuildingProgress)
+            if (CurrentBuildingTarget != null && _currentProductionTarget.Cost <= _currentBuildingProgress)
             {
                 // hurra we build building xy
-                _buildings.Add(_currentBuilding);
+                _buildings.Add(CurrentBuildingTarget);
 
                 if (CityBuild != null)
-                    CityBuild(this, _currentBuilding);
+                    CityBuild(this, CurrentBuildingTarget);
 
-                _currentBuilding = null;
+                _currentProductionTarget = null;
                 _currentBuildingProgress = 0;
             }
-            else if (_currentUnit != null && _currentUnit.Cost <= _currentBuildingProgress)
+            else if (CurrentUnitTarget != null && CurrentUnitTarget.Cost <= _currentBuildingProgress)
             {
                 // hurra we build unit xy
-                _player.AddUnit(_currentUnit.Name, Point.X, Point.Y);
+                _player.AddUnit(CurrentUnitTarget.Name, Point.X, Point.Y);
 
                 if (UnitBuild != null)
-                    UnitBuild(this, _currentUnit);
+                    UnitBuild(this, CurrentUnitTarget);
 
-                _currentUnit = null;
+                _currentProductionTarget = null;
                 _currentBuildingProgress = 0;
             }
             // wonders ????
         }
 
-        private void ChooseCurrentProductionTarget()
+        private void SelectCurrentProductionTarget()
         {
             switch (_specialization.Name)
             {
@@ -595,23 +661,20 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                         List<UnitData> possibleUnits = PossibleUnits;
 
                         // calculate flavours of city
-                        List<Flavour> flavours = _player.Leader.Flavours;
+                        List<Flavour> leaderFlavours = _player.Leader.Flavours;
 
-                        Building bestBuilding = null;
-                        UnitData bestUnit = null;
-                        float minBuilding = float.MaxValue;
-                        float minUnit = float.MaxValue;
+                        Flavours buildingFlavours = new Flavours();
+                        foreach (Building b in _buildings)
+                            buildingFlavours += b.Flavours;
+
+                        PropabilityMap<IProductionTarget> nextProductuionTarget = new PropabilityMap<IProductionTarget>();
 
                         // calculate flavour difference for each unit/building
                         foreach (Building b in possibleBuildings)
                         {
-                            float dist = Flavours.Distance(b.Flavours, flavours);
+                            float dist = Flavours.Distance(b.Flavours + buildingFlavours, leaderFlavours);
 
-                            if (minBuilding > dist)
-                            {
-                                minBuilding = dist;
-                                bestBuilding = b;
-                            }
+                            nextProductuionTarget.AddItem(b, 1f / (dist * dist));
                         }
 
                         // fetch units from surrounding
@@ -621,29 +684,22 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                             if (Map.IsValid(pt))
                             {
                                 foreach (Unit unit in MainWindow.Game.GetUnitsAt(pt))
-                                    unitFlavours += (unit.Data.Flavours / 10f);
+                                    unitFlavours += (unit.Data.Flavours / 2f);
                             }
                         }
 
                         foreach (Unit unit in MainWindow.Game.GetUnitsAt(Point))
-                            unitFlavours += (unit.Data.Flavours / 3f);
+                            unitFlavours += (unit.Data.Flavours);
 
                         foreach (UnitData u in possibleUnits)
                         {
-                            // evtl. nearby units zur aktuellen unit addieren
-                            float dist = Flavours.Distance(u.Flavours + unitFlavours, flavours);
+                            float dist = Flavours.Distance(u.Flavours + unitFlavours, leaderFlavours);
 
-                            if (minUnit > dist)
-                            {
-                                minUnit = dist;
-                                bestUnit = u;
-                            }
+                            nextProductuionTarget.AddItem(u, 1f / (dist * dist));
                         }
 
-                        if (minBuilding < minUnit)
-                            _currentBuilding = bestBuilding;
-                        else
-                            _currentUnit = bestUnit;
+                        IProductionTarget winner = nextProductuionTarget.RandomOfBest3;
+                        _currentProductionTarget = winner;
                     }
                     break;
                 default:
@@ -724,9 +780,9 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                 if (IsCapital)
                     food += _player.Policies.Sum(a => a.YieldsFoodCapital);
 
-                _food += _player.Policies.Sum(a => a.YieldsFood);
+                food += _player.Policies.Sum(a => a.YieldsFood);
 
-                _food *= modifier;
+                food *= modifier;
 
                 return food;
             }
@@ -889,11 +945,8 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
         {
             get
             {
-                if (_currentBuilding != null)
-                    return _currentBuildingProgress / _currentBuilding.Cost;
-
-                if (_currentUnit != null)
-                    return _currentBuildingProgress / _currentUnit.Cost;
+                if (_currentProductionTarget != null)
+                    return _currentBuildingProgress / _currentProductionTarget.Cost;
 
                 return 0f;
             }

@@ -165,6 +165,7 @@
     <Compile Include="Types\AI\MilitayStrategyData.cs" />
     <Compile Include="Types\Pace.cs" />
     <Compile Include="Types\PromotionData.cs" />
+    <Compile Include="Types\TechnologyBonus.cs" />
     <Compile Include="Types\WonderData.cs" />
     <Compile Include="UI\Controls\GameControl.cs" />
     <Compile Include="UI\Data\TeaserList.cs">
@@ -185,6 +186,7 @@
     <Compile Include="UI\Dialogs\ScienceInfoDialog.cs" />
     <Compile Include="UI\Dialogs\MessageBox.cs" />
     <Compile Include="UI\Dialogs\PolicyChooseDialog.cs" />
+    <Compile Include="UI\Dialogs\ScoreWindow.cs" />
     <Compile Include="UI\Dialogs\SelectMapLoadDialog.cs" />
     <Compile Include="UI\Dialogs\SimpleInputDialog.cs" />
     <Compile Include="UI\Dialogs\UnitInfoDialog.cs" />

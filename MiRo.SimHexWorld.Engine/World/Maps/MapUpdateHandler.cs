@@ -9,6 +9,7 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
 
     public delegate void CityOpenHandler(City city );
     public delegate void UnitsSelectHandler(List<Unit> unit);
+    public delegate void UnselectHandler();
 
     public class MapSpottingArgs : EventArgs
     {

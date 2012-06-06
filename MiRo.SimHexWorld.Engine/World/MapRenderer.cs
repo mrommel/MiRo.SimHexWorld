@@ -73,7 +73,11 @@ namespace MiRo.SimHexWorld.Engine.World
             FogOfWarEnabled = false;
 
             hMesh = new HexMesh(manager.GraphicsDevice);
+
+            Center = new HexPoint();
         }
+
+        public HexPoint Center { get; set; }
 
         public void Initialize()
         {
@@ -183,7 +187,7 @@ namespace MiRo.SimHexWorld.Engine.World
                         _roadMesh.AddObject(new HexagonMeshItem8X8(MapData.GetWorldPosition(i, j), roadTileIndex), false);
 
                     if( _map[i,j].Improvements.Contains(farm) )
-                        _farmMesh.AddObject(new HexagonMeshItem8X8(MapData.GetWorldPosition(i, j), 0), false);
+                        _farmMesh.AddObject(new HexagonMeshItem8X8(MapData.GetWorldPosition(i, j), 1), false);
                 }
             }
 
@@ -415,7 +419,8 @@ namespace MiRo.SimHexWorld.Engine.World
 
                     hMesh.AddHexagon(hex, false);
 
-                    _forests.Add(new ForestEntity(_map[i, j].Point));
+                    if( _map[i, j].IsForest )
+                        _forests.Add(new ForestEntity(_map[i, j].Point));
                 }
             }
 
@@ -435,6 +440,8 @@ namespace MiRo.SimHexWorld.Engine.World
         {
             if (_map == null)
                 return;
+
+            _borderMesh.Clear();
 
             // now the tiles
             for (int i = 0; i < _map.Width; i++)
@@ -490,15 +497,12 @@ namespace MiRo.SimHexWorld.Engine.World
                 hMesh.Draw(gameTime, camera.View, camera.Projection, camera.Position);
                 _cursorsMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
                 _borderMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
-                _roadMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
                 _farmMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
-
-                if (_lastPos != null)
-                {
-                    foreach (ForestEntity forest in _forests)
-                        if (forest.Point.DistanceTo(_lastPos) < 2)
-                            forest.Draw(gameTime);
-                }
+                _roadMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
+                
+                //foreach (ForestEntity forest in _forests)
+                //    if (forest.Point.DistanceTo(Center) < 15)
+                //        forest.Draw(gameTime);
 
                 if (FogOfWarEnabled)
                     _hiddenMeshContainer.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);

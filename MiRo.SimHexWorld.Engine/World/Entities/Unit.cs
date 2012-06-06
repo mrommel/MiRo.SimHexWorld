@@ -148,17 +148,25 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             get { return _player; }
         }
 
+        TimeSpan updateEvery = TimeSpan.FromSeconds(1); // from setting ???
+        TimeSpan currentTime = TimeSpan.FromSeconds(0);
         public void Update(GameTime time)
         {
             if (_deleted)
                 return;
 
-            if( !_player.IsHuman )
-                UpdateAI();
+            currentTime -= time.ElapsedGameTime;
+            if (currentTime.TotalMilliseconds <= 0)
+            {
+                if( !_player.IsHuman || _action == UnitAction.Idle )
+                    UpdateAI();
 
-            UpdateWork();
+                UpdateWork();
+                // reset timer
+                currentTime = updateEvery;
 
-            _entity.Update(time);
+                _entity.Update(time);
+            }
         }
 
         private void UpdateWork()

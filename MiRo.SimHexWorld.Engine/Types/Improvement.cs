@@ -58,6 +58,9 @@ namespace MiRo.SimHexWorld.Engine.Types
         public List<string> TerrainNames { get; set; }
         public List<string> FeatureNames { get; set; }
 
+        [ContentSerializer(Optional = true)]
+        public List<TechnologyBonus> TechnologyBonuses { get; set; }
+
         [ContentSerializerIgnore]
         public List<Terrain> Terrains
         {

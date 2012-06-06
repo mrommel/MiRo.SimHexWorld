@@ -87,6 +87,9 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
         /// This element will be the one that will be returned if you subsequently call Next().
         public T Peek()
         {
+            if (mA.Count == 0)
+                return default(T);
+
             return mA[0];
         }
 
