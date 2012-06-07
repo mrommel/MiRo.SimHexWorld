@@ -970,7 +970,8 @@ namespace MiRo.SimHexWorld.Engine.UI
                                GameNotification.CreateMapSuccess, 
                                GameNotification.LoadMapSuccess,
                                GameNotification.Message,
-                               GameNotification.UpdateSpotting
+                               GameNotification.UpdateSpotting,
+                               GameNotification.StartEra
                            };
             }
         }

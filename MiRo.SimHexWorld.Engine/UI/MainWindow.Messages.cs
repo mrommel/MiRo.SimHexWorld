@@ -8,6 +8,8 @@ using MiRo.SimHexWorld.Engine.Instance;
 using PureMVC.Interfaces;
 using MiRo.SimHexWorld.Engine.World.Maps;
 using MiRo.SimHexWorld.Engine.Types;
+using MiRo.SimHexWorld.Engine.UI.Dialogs;
+using MiRo.SimHexWorld.Engine.Locales;
 
 namespace MiRo.SimHexWorld.Engine.UI
 {
@@ -82,19 +84,32 @@ namespace MiRo.SimHexWorld.Engine.UI
                     _game.Initialize();
                     break;
                 case GameNotification.Message:
-                    List<object> objs = notification.Body as List<object>;
+                    {
+                        List<object> objs = notification.Body as List<object>;
 
-                    string txt = objs[0] as string;
-                    Civilization civSender = objs[1] as Civilization;
-                    MessageFilter filter = (MessageFilter)objs[2];
+                        string txt = objs[0] as string;
+                        Civilization civSender = objs[1] as Civilization;
+                        MessageFilter filter = (MessageFilter)objs[2];
 
-                    if ((civSender.Name == Game.Human.Civilization.Name && (IsSet(filter, MessageFilter.Self))) ||
-                        IsValidMessage(Game.Human.DiplomaticStatusTo(civSender), filter))
-                        _messages.Add(new ScreenNotification(txt, DateTime.Now.AddSeconds(10)));
-
+                        if ((civSender.Name == Game.Human.Civilization.Name && (IsSet(filter, MessageFilter.Self))) ||
+                            IsValidMessage(Game.Human.DiplomaticStatusTo(civSender), filter))
+                            _messages.Add(new ScreenNotification(txt, DateTime.Now.AddSeconds(10)));
+                    }
                     break;
                 case GameNotification.UpdateSpotting:
                     _needToUpdateOverview = true;
+                    break;
+                case GameNotification.StartEra:
+                    {
+                        List<object> objs = notification.Body as List<object>;
+
+                        AbstractPlayerData player = objs[0] as AbstractPlayerData;
+                        Era era = objs[1] as Era;
+
+                        // show window if human
+                        if( player.IsHuman )
+                            NewEraWindow.Show(Manager, era, Strings.TXT_KEY_UI_NEWERA_TITLE);
+                    }
                     break;
                 case GameNotification.ShowScoreHistory:
 

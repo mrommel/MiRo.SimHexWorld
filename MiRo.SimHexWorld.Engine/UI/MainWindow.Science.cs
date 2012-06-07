@@ -55,28 +55,34 @@ namespace MiRo.SimHexWorld.Engine.UI
                 ScienceInfoDialog.Show(Manager, Game.Human.CurrentResearch, "Science");
         }
 
+        float lastScience = -1;
+        Texture2D _scienceMeterModTexture;
         void LblResearch_Draw(object sender, DrawEventArgs e)
         {
-            Texture2D _scienceMeterModTexture = new Texture2D(Manager.GraphicsDevice, 220, 220);
-
-            float radReady = Game.Human.ScienceReady * (float)Math.PI * 2f - (float)Math.PI;
-
-            // remove not present slice
-            Color[] colors = new Color[220 * 220];
-            _scienceTexture.GetData<Color>(colors);
-
-            for (int x = 0; x < 220; x++)
+            if (Game.Human.ScienceReady != lastScience)
             {
-                for (int y = 0; y < 220; ++y)
+                _scienceMeterModTexture = new Texture2D(Manager.GraphicsDevice, 220, 220);
+
+                float radReady = Game.Human.ScienceReady * (float)Math.PI * 2f - (float)Math.PI;
+
+                // remove not present slice
+                Color[] colors = new Color[220 * 220];
+                _scienceTexture.GetData<Color>(colors);
+
+                for (int x = 0; x < 220; x++)
                 {
-                    int i = y * 220 + x;
+                    for (int y = 0; y < 220; ++y)
+                    {
+                        int i = y * 220 + x;
 
-                    if (Math.Atan2(x - 110, y - 110) < radReady)
-                        colors[i] = Microsoft.Xna.Framework.Color.Transparent;
+                        if (Math.Atan2(x - 110, y - 110) < radReady)
+                            colors[i] = Microsoft.Xna.Framework.Color.Transparent;
+                    }
                 }
-            }
 
-            _scienceMeterModTexture.SetData<Color>(colors);
+                _scienceMeterModTexture.SetData<Color>(colors);
+                lastScience = Game.Human.ScienceReady;
+            }
 
             Rectangle r = new Rectangle(e.Rectangle.X, e.Rectangle.Y, 220, 220);
 

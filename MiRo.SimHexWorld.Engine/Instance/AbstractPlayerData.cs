@@ -283,11 +283,20 @@ namespace MiRo.SimHexWorld.Engine.Instance
         public void DiscoverTechnology(Tech tech)
         {
             if (tech.Era > _era)
+            {
                 _era = tech.Era;
+
+                GameFacade.getInstance().SendNotification( GameNotification.StartEra, this, _era);
+
+                // evtl. enable policies
+            }
         }
 
         public virtual bool Update(GameTime time)
         {
+            if (Map == null)
+                return false;
+
             bool turned = false;
             _secondsToNextUpdate -= time.ElapsedGameTime.TotalSeconds;
 
@@ -331,6 +340,8 @@ namespace MiRo.SimHexWorld.Engine.Instance
                     Civilization,
                     MessageFilter.Friends | MessageFilter.Self,
                     CurrentResearch);
+
+                DiscoverTechnology(CurrentResearch);
 
                 Technologies.Add(CurrentResearch);
                 CurrentResearch = null;
@@ -596,6 +607,9 @@ namespace MiRo.SimHexWorld.Engine.Instance
             }
 
             List<string> possibleNames = _civilization.Cities;
+
+            // translate if needed
+            possibleNames = possibleNames.Select(a => a.StartsWith("TXT_KEY_") ? Provider.Instance.Translate(a) : a).ToList();
 
             if (possibleNames.Count == 0)
                 throw new Exception("No Citylist found for " + _civilization.Name);

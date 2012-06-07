@@ -46,7 +46,7 @@ namespace MiRo.SimHexWorld.Engine.Types
         }
 
         private string _description;
-        public string Description 
+        public virtual string Description 
         {
             get
             {

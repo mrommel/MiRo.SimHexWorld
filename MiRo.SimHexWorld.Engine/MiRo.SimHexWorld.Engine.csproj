@@ -184,6 +184,7 @@
     <Compile Include="Types\Era.cs" />
     <Compile Include="Types\Feature.cs" />
     <Compile Include="UI\Dialogs\ChooseEnumDialog.cs" />
+    <Compile Include="UI\Dialogs\NewEraWindow.cs" />
     <Compile Include="UI\Dialogs\ScienceInfoDialog.cs" />
     <Compile Include="UI\Dialogs\MessageBox.cs" />
     <Compile Include="UI\Dialogs\PolicyChooseDialog.cs" />

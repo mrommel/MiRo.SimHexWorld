@@ -238,4 +238,34 @@
   <data name="TXT_KEY_GERMAN_CITIES_MUNICH" xml:space="preserve">
     <value>München</value>
   </data>
+  <data name="TXT_KEY_ERA_ANCIENT_TITLE" xml:space="preserve">
+    <value>Antike</value>
+  </data>
+  <data name="TXT_KEY_ERA_CLASSICAL_TITLE" xml:space="preserve">
+    <value>Klassik</value>
+  </data>
+  <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_DUEL" xml:space="preserve">
+    <value>2 Spieler mit 4 Stadtstaaten.</value>
+  </data>
+  <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_HUGE" xml:space="preserve">
+    <value>12 Spieler mit 24 Stadtstaaten.</value>
+  </data>
+  <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_LARGE" xml:space="preserve">
+    <value>10 Spieler mit 20 Stadtstaaten.</value>
+  </data>
+  <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_SMALL" xml:space="preserve">
+    <value>6 Spieler mit 12 Stadtstaaten.</value>
+  </data>
+  <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_STANDARD" xml:space="preserve">
+    <value>8 Spieler mit 16 Stadtstaaten.</value>
+  </data>
+  <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_TINY" xml:space="preserve">
+    <value>4 Spieler mit 8 Stadtstaaten.</value>
+  </data>
+  <data name="TXT_KEY_UI_NEWERA_TITLE" xml:space="preserve">
+    <value>Neue Ära</value>
+  </data>
+  <data name="TXT_KEY_UI_NEWERA_WELCOME" xml:space="preserve">
+    <value>Willkommen in der {0}</value>
+  </data>
 </root>

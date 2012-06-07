@@ -228,9 +228,9 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
             set { mapName = value; }
         }
 
-        public string Description
+        public override string Description
         {
-            get 
+            get
             {
                 string str = Strings.ResourceManager.GetString(description);
 

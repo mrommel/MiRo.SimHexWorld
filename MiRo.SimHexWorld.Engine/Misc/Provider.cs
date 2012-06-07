@@ -103,6 +103,7 @@ namespace MiRo.SimHexWorld.Engine.Misc
             {
                 mapPair.Value.ImageName = mapPair.Key;
                 mapPair.Value.Name += ("_" + mapPair.Key).ToUpper();
+                mapPair.Value.Description += ("_" + mapPair.Key).ToUpper();
                 mapPair.Value.FileName = mapPair.Key;
             }
         }

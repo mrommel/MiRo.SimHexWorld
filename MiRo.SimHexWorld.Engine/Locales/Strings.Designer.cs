@@ -142,6 +142,24 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Antike ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_ERA_ANCIENT_TITLE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_ERA_ANCIENT_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Klassik ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_ERA_CLASSICAL_TITLE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_ERA_CLASSICAL_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Köln ähnelt.
         /// </summary>
         internal static string TXT_KEY_GERMAN_CITIES_COLOGNE {
@@ -174,6 +192,60 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         internal static string TXT_KEY_IMPROVEMENT_FARM_TITLE {
             get {
                 return ResourceManager.GetString("TXT_KEY_IMPROVEMENT_FARM_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die 2 Spieler mit 4 Stadtstaaten. ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_MAP_EARTH_HELP_EARTH_DUEL {
+            get {
+                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_HELP_EARTH_DUEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die 12 Spieler mit 24 Stadtstaaten. ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_MAP_EARTH_HELP_EARTH_HUGE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_HELP_EARTH_HUGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die 10 Spieler mit 20 Stadtstaaten. ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_MAP_EARTH_HELP_EARTH_LARGE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_HELP_EARTH_LARGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die 6 Spieler mit 12 Stadtstaaten. ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_MAP_EARTH_HELP_EARTH_SMALL {
+            get {
+                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_HELP_EARTH_SMALL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die 8 Spieler mit 16 Stadtstaaten. ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_MAP_EARTH_HELP_EARTH_STANDARD {
+            get {
+                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_HELP_EARTH_STANDARD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die 4 Spieler mit 8 Stadtstaaten. ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_MAP_EARTH_HELP_EARTH_TINY {
+            get {
+                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_HELP_EARTH_TINY", resourceCulture);
             }
         }
         
@@ -354,6 +426,24 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         internal static string TXT_KEY_UI_MAINAPPLICATION_TURN_PATTERN {
             get {
                 return ResourceManager.GetString("TXT_KEY_UI_MAINAPPLICATION_TURN_PATTERN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Neue Ära ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_UI_NEWERA_TITLE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_UI_NEWERA_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Willkommen in der {0} ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_UI_NEWERA_WELCOME {
+            get {
+                return ResourceManager.GetString("TXT_KEY_UI_NEWERA_WELCOME", resourceCulture);
             }
         }
         

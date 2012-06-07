@@ -57,6 +57,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             _lblCitynameTribe.Width = 256;
             _lblCitynameTribe.Height = 64;
             _lblCitynameTribe.Image = Manager.Content.Load<Texture2D>("Content//Textures//UI//CityView//tribeHeading");
+            _lblCitynameTribe.Draw += new DrawEventHandler(_lblCitynameTribe_Draw);
             Add(_lblCitynameTribe);
 
             _lblCityname = new ImageBox(Manager);
@@ -158,6 +159,11 @@ namespace MiRo.SimHexWorld.Engine.UI
             Add(_btnCityExit);
         }
 
+        void _lblCitynameTribe_Draw(object sender, DrawEventArgs e)
+        {
+            e.Renderer.Draw(_currentCity.Player.Civilization.Image, e.Rectangle, Color.White);
+        }
+
         void _btnCityExit_Draw(object sender, DrawEventArgs e)
         {
             e.Renderer.DrawString(_cityTitleFont, "Return to Map", e.Rectangle, Color.White, Alignment.MiddleCenter);
@@ -165,7 +171,6 @@ namespace MiRo.SimHexWorld.Engine.UI
 
         void _lblCityname_Draw(object sender, DrawEventArgs e)
         {
-
             e.Rectangle.Height = 36;
             e.Renderer.DrawString(_cityTitleFont, _currentCity.Citizen + " " + _currentCity.Name, e.Rectangle, Color.White, Alignment.MiddleCenter);
         }

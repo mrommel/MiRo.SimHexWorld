@@ -166,4 +166,25 @@
   <data name="TXT_KEY_GERMAN_CITIES_MUNICH" xml:space="preserve">
     <value>Munich</value>
   </data>
+  <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_DUEL" xml:space="preserve">
+    <value>2 players with 4 City States.</value>
+  </data>
+  <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_HUGE" xml:space="preserve">
+    <value>12 players with 24 City States.</value>
+  </data>
+  <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_LARGE" xml:space="preserve">
+    <value>10 players with 20 City States.</value>
+  </data>
+  <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_SMALL" xml:space="preserve">
+    <value>6 players with 12 City States.</value>
+  </data>
+  <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_STANDARD" xml:space="preserve">
+    <value>8 players with 16 City States.</value>
+  </data>
+  <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_TINY" xml:space="preserve">
+    <value>4 players with 8 City States.</value>
+  </data>
+  <data name="TXT_KEY_UI_NEWERA_TITLE" xml:space="preserve">
+    <value>New Era</value>
+  </data>
 </root>
