@@ -625,7 +625,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             _imgZoomIn.Visible = visible;
             _imgZoomOut.Visible = visible;
 
-            _sidebar.Visible = visible;
+            //_sidebar.Visible = visible;
 
             _lblUnit.Visible = visible;
 

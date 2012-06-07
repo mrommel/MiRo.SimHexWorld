@@ -63,12 +63,30 @@ namespace MiRo.SimHexWorld.Engine.UI
                 _unitButtons[i].Top = Manager.GraphicsDevice.Viewport.Height - 170;
                 _unitButtons[i].Tag = i;
                 _unitButtons[i].StayOnTop = true;
-                //_unitButtons[i].Visible = false;
+                _unitButtons[i].Visible = false;
                 _unitButtons[i].Image = Manager.Content.Load<Texture2D>("Content//Textures//UI//UnitView//action");
                 _unitButtons[i].SizeMode = SizeMode.Stretched;
                 _unitButtons[i].Draw += new DrawEventHandler(UnitButton_Draw);
+                _unitButtons[i].Click += new TomShane.Neoforce.Controls.EventHandler(UnitButton_Click);
                 Add(_unitButtons[i]);
             }
+        }
+
+        void UnitButton_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
+        {
+            if (_currentUnits == null)
+                return;
+
+            ImageBox cnt = sender as ImageBox;
+            int num = int.Parse(cnt.Tag.ToString());
+
+            Unit unit = _currentUnits[num];
+
+            // move current unit to the front
+            _currentUnits.Remove(unit);
+            _currentUnits.Insert(0, unit);
+
+            e.Handled = true;
         }
 
         void UnitButton_Draw(object sender, DrawEventArgs e)
@@ -108,8 +126,11 @@ namespace MiRo.SimHexWorld.Engine.UI
 
             Unit u = _currentUnits.FirstOrDefault(a => a.Actions.Contains(action));
 
-            if( u != null )
+            if (u != null)
+            {
                 u.Execute(action);
+                e.Handled = true;
+            }
         }
 
         void ActionButton_Draw(object sender, DrawEventArgs e)
@@ -172,6 +193,9 @@ namespace MiRo.SimHexWorld.Engine.UI
             _currentUnits = null;
 
             foreach (ImageBox box in _actionButtons)
+                box.Visible = false;
+
+            foreach (ImageBox box in _unitButtons)
                 box.Visible = false;
         }
     

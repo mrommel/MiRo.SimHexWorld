@@ -7,6 +7,14 @@
     <Columns>8</Columns>
     <Tiles>
       <Item>
+        <Name>Idle</Name>
+        <Index>4</Index>
+      </Item>
+      <Item>
+        <Name>Move</Name>
+        <Index>9</Index>
+      </Item>
+      <Item>
         <Name>BuildFarm</Name>
         <Index>21</Index>
       </Item>

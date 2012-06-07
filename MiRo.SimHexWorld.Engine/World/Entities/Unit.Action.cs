@@ -149,7 +149,10 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                     PropabilityMap<WayPoints> propsExplore = new PropabilityMap<WayPoints>();
 
                     foreach (HexPoint pt in Point.Neighbors)
-                        propsExplore.AddItem(WayPoints.FromPath (Map.FindPath(this, pt)), 1);
+                    {
+                        if (Map[pt].CanEnter(this))
+                            propsExplore.AddItem(WayPoints.FromPath(Map.FindPath(this, pt)), 1);
+                    }
 
                     _path = propsExplore.Random;
                     break;
@@ -262,6 +265,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                         _action = transition.To;
 
                         Execute(_action);
+                        return;
                     }
                 }
 
@@ -305,6 +309,8 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                 default:
                     throw new Exception("No handle for " + _action); 
             }
+
+            UpdateUnitAction();
         }
     }
 }

@@ -706,7 +706,7 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
 
         public bool IsWalkable(Unit unit)
         {
-            return CanEnter(unit);
+            return CanEnter(unit) && IsSpotted(unit.Player);
         }
 
         public bool Matches(HexPoint p)

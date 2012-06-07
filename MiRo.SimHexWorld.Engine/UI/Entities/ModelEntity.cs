@@ -205,14 +205,14 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
                     }
                 }
 
-                MainApplication.Instance.GraphicsDevice.RasterizerState = RasterizerState.CullClockwise;
+                MainApplication.Instance.GraphicsDevice.RasterizerState = RasterizerState.CullNone;
 
                 mesh.Draw();
             }
 
             Matrix wMatrix2 = Matrix.CreateTranslation(TargetPosition);
 
-            box.Draw(wMatrix2, GameMapBox.Camera.View, GameMapBox.Camera.Projection);
+            //box.Draw(wMatrix2, GameMapBox.Camera.View, GameMapBox.Camera.Projection);
         }
 
         /// <summary>Calculates the absolute bone transformation matrices in model space</summary>

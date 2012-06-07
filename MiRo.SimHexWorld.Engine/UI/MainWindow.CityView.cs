@@ -226,7 +226,7 @@ namespace MiRo.SimHexWorld.Engine.UI
         {
             _lblCurrentBuilding.Visible = show;
             _btnCityExit.Visible = show;
-            //_citySidebar.Visible = show;
+            _citySidebar.Visible = show;
             _lblCityname.Visible = show;
             _lblCitynameTribe.Visible = show;
             _lblProductionMeter.Visible = show;

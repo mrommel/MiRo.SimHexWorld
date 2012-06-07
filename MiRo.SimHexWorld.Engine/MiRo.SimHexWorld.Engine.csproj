@@ -152,6 +152,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.en-US.resx</DependentUpon>
     </Compile>
+    <Compile Include="Misc\BoundingBoxRenderer.cs" />
     <Compile Include="Misc\FileSizeFormatProvider.cs" />
     <Compile Include="Misc\FpsCounter.cs" />
     <Compile Include="Misc\MissingAsset.cs" />

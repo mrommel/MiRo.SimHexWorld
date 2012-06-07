@@ -12,6 +12,9 @@ using MiRo.SimHexWorld.Engine.World.Helper;
 using MiRo.SimHexWorld.Engine.UI.Entities;
 using Microsoft.Xna.Framework;
 using NUnit.Framework;
+using MiRoSimHexWorld.Engine.World;
+using MiRo.SimHexWorld.Engine.Misc;
+using MiRo.SimHexWorld.Engine.UI.Controls;
 
 namespace MiRo.SimHexWorld.Engine.World.Entities
 {
@@ -28,7 +31,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
         AbstractPlayerData _player;
         HexPoint _point;
 
-        PythonEngine _behaviour;
+        //PythonEngine _behaviour;
         UnitData _data;
 
         ModelEntity _entity;
@@ -40,6 +43,8 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
         public event UnitMovedHandler Moved;
 
         List<UnitActionTransition> _transitions;
+
+        BillboardSystem<UnitAction> _unitActionBillboard;
 
         private bool _deleted;
 
@@ -58,6 +63,15 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             UpdateSpotting();
 
             InitTransitions();
+
+            _unitActionBillboard = new BillboardSystem<UnitAction>(MainApplication.Instance.GraphicsDevice, MainApplication.Instance.Content);
+            _unitActionBillboard.AddEntity(UnitAction.Idle, Provider.GetAtlas("UnitActionAtlas").GetTexture("Idle"), new Vector2(2, 2));
+            _unitActionBillboard.AddEntity(UnitAction.Move, Provider.GetAtlas("UnitActionAtlas").GetTexture("Move"), new Vector2(2, 2));
+            _unitActionBillboard.AddEntity(UnitAction.BuildFarm, Provider.GetAtlas("UnitActionAtlas").GetTexture("BuildFarm"), new Vector2(2, 2));
+            _unitActionBillboard.AddEntity(UnitAction.BuildRoad, Provider.GetAtlas("UnitActionAtlas").GetTexture("BuildRoad"), new Vector2(2, 2));
+            _unitActionBillboard.AddEntity(UnitAction.Found, Provider.GetAtlas("UnitActionAtlas").GetTexture("Found"), new Vector2(2, 2));
+
+            UpdateUnitAction();
         }
 
         public WayPoints Path
@@ -66,6 +80,13 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             {
                 return _path;
             }
+        }
+
+        public void UpdateUnitAction()
+        {
+            _unitActionBillboard.ResetPositions();
+            _unitActionBillboard.AddPosition(_action, MapData.GetWorldPosition(Point) + new Vector3(0, 5, 0));
+            _unitActionBillboard.Build();
         }
 
         protected void UpdateSpotting()
@@ -192,7 +213,9 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
         {
             if (_deleted)
                 return;
-                
+
+            _unitActionBillboard.Draw(GameMapBox.Camera.View, GameMapBox.Camera.Projection, GameMapBox.Camera.Position, GameMapBox.Camera.Up, GameMapBox.Camera.Right);
+
             _entity.Draw(time);
         }
 
