@@ -51,8 +51,10 @@ namespace MiRoSimHexWorld.Engine.World
         {
             foreach (T t in _entities.Keys)
             {
-                if (_positions.ContainsKey(t) &&_positions[t].Count > 0)
+                if (_positions.ContainsKey(t) && _positions[t].Count > 0)
                     _entities[t].GenerateParticles(_positions[t].ToArray());
+                else
+                    _entities[t].Initialized = false;
             }
         }
 
@@ -61,7 +63,7 @@ namespace MiRoSimHexWorld.Engine.World
             foreach (T t in _entities.Keys)
             {
                 if( _entities[t].Initialized)
-                _entities[t].Draw(view,projection,camPos,up,right);
+                    _entities[t].Draw(view,projection,camPos,up,right);
             }
         }
 
@@ -190,7 +192,14 @@ namespace MiRoSimHexWorld.Engine.World
                 {
                     return _nBillboards > 0;
                 }
+                set
+                {
+                    if (value == false)
+                        _nBillboards = 0;
+                }
             }
         }
+
+        public bool HasPositions { get { return _positions.Count > 0; } }
     }    
 }

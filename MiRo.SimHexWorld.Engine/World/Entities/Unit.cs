@@ -280,7 +280,8 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             if (_deleted)
                 return;
 
-            _unitActionBillboard.Draw(GameMapBox.Camera.View, GameMapBox.Camera.Projection, GameMapBox.Camera.Position, GameMapBox.Camera.Up, GameMapBox.Camera.Right);
+            if( _unitActionBillboard.HasPositions )
+                _unitActionBillboard.Draw(GameMapBox.Camera.View, GameMapBox.Camera.Projection, GameMapBox.Camera.Position, GameMapBox.Camera.Up, GameMapBox.Camera.Right);
 
             if( _pathMesh.HasObjects )
                 _pathMesh.Draw(time, GameMapBox.Camera.View, GameMapBox.Camera.Projection, Vector3.Zero);
