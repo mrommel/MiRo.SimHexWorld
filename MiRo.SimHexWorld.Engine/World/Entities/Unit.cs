@@ -15,6 +15,8 @@ using NUnit.Framework;
 using MiRoSimHexWorld.Engine.World;
 using MiRo.SimHexWorld.Engine.Misc;
 using MiRo.SimHexWorld.Engine.UI.Controls;
+using MiRo.SimHexWorld.Engine.World.Meshed;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace MiRo.SimHexWorld.Engine.World.Entities
 {
@@ -45,6 +47,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
         List<UnitActionTransition> _transitions;
 
         BillboardSystem<UnitAction> _unitActionBillboard;
+        Mesh _pathMesh;
 
         private bool _deleted;
 
@@ -72,6 +75,15 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             _unitActionBillboard.AddEntity(UnitAction.Found, Provider.GetAtlas("UnitActionAtlas").GetTexture("Found"), new Vector2(2, 2));
 
             UpdateUnitAction();
+
+            // path mesh
+            _pathMesh = new Mesh(MainApplication.Instance.GraphicsDevice, "paths");
+
+            if( TextureManager.Instance.Device == null )
+                TextureManager.Instance.Device = MainApplication.Instance.GraphicsDevice;
+
+            TextureManager.Instance.Add("paths", MainApplication.Instance.Content.Load<Texture2D>("Content/Textures/Ground/paths"));
+            _pathMesh.LoadContent(MainApplication.Instance.Content);
         }
 
         public WayPoints Path
@@ -116,8 +128,58 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             Assert.AreEqual(Point, _path.Peek);
             Assert.AreEqual(target, _path.Goal);
 
+            UpdatePathMesh();
+
             // remove the current position
             _path.Pop();
+        }
+
+        private void UpdatePathMesh()
+        {
+            _pathMesh.Clear();
+
+            if (_path != null)
+            {
+                List<HexPoint> pts = _path.Points;
+                for (int i = 0; i < pts.Count; ++i)
+                {
+                    HexPoint predecessor = i <= 0 ? null : pts[i - 1];
+                    HexPoint pt = pts[i];
+                    HexPoint successor = i >= (pts.Count - 1) ? null : pts[i + 1];
+
+                    int tileIndex = 0;
+
+                    if (predecessor != null)
+                    {
+                        switch (pt.GetDirection(predecessor))
+                        {
+                            case HexDirection.NorthEast: tileIndex += 1; break;
+                            case HexDirection.East: tileIndex += 2; break;
+                            case HexDirection.SouthEast: tileIndex += 4; break;
+                            case HexDirection.SouthWest: tileIndex += 8; break;
+                            case HexDirection.West: tileIndex += 16; break;
+                            case HexDirection.NorthWest: tileIndex += 32; break;
+                        }
+                    }
+
+                    if (successor != null)
+                    {
+                        switch (pt.GetDirection(successor))
+                        {
+                            case HexDirection.NorthEast: tileIndex += 1; break;
+                            case HexDirection.East: tileIndex += 2; break;
+                            case HexDirection.SouthEast: tileIndex += 4; break;
+                            case HexDirection.SouthWest: tileIndex += 8; break;
+                            case HexDirection.West: tileIndex += 16; break;
+                            case HexDirection.NorthWest: tileIndex += 32; break;
+                        }
+                    }
+
+                    _pathMesh.AddObject(new HexagonMeshItem8X8(MapData.GetWorldPosition(pt), tileIndex));
+                }
+            }
+
+            _pathMesh.UpdateBuffers();
         }
 
         public void Move(HexPoint target)
@@ -128,9 +190,13 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             _point = target;
 
             if (_path.Finished)
+            {
                 _path = null;
+                UpdatePathMesh();
+            }
 
             UpdateSpotting();
+            UpdateUnitAction();
         }
 
         public List<HexPoint> TilesInSight
@@ -215,6 +281,9 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                 return;
 
             _unitActionBillboard.Draw(GameMapBox.Camera.View, GameMapBox.Camera.Projection, GameMapBox.Camera.Position, GameMapBox.Camera.Up, GameMapBox.Camera.Right);
+
+            if( _pathMesh.HasObjects )
+                _pathMesh.Draw(time, GameMapBox.Camera.View, GameMapBox.Camera.Projection, Vector3.Zero);
 
             _entity.Draw(time);
         }

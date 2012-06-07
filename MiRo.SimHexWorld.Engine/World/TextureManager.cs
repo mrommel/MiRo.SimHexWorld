@@ -37,6 +37,7 @@ namespace MiRo.SimHexWorld.Engine.World
 
         public GraphicsDevice Device
         {
+            get { return _device; }
             set
             {
                 _device = value;

@@ -27,6 +27,18 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             return _points.Dequeue();
         }
 
+        public List<HexPoint> Points
+        {
+            get 
+            {
+                List<HexPoint> pts = new List<HexPoint>();
+
+                pts.AddRange(_points);
+
+                return pts;
+            }
+        }
+
         public static WayPoints FromPath(Path path)
         {
             WayPoints points = new WayPoints();

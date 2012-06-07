@@ -145,10 +145,18 @@ namespace MiRo.SimHexWorld.Engine.World
             if (_indexBuffer != null)
                 _indexBuffer.Dispose();
 
-            if (_texture != null)
-                _texture.Dispose();
+            //if (_texture != null)
+            //    _texture.Dispose();
         }
 
-        
+
+
+        public bool HasObjects
+        {
+            get
+            {
+                return _vertices.Count > 0;
+            }
+        }
     }
 }

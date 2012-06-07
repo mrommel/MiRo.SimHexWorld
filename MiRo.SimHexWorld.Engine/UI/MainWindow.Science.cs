@@ -11,7 +11,7 @@ namespace MiRo.SimHexWorld.Engine.UI
 {
     partial class MainWindow
     {
-        ImageBox _lblLeftTopCorner;
+        ImageBox _lblLeftTopCorner, _lblResearchProgress;
         Texture2D _scienceBackTexture, _scienceFrameTexture, _scienceTexture;
 
         public void InitScienceControls()
@@ -31,18 +31,31 @@ namespace MiRo.SimHexWorld.Engine.UI
             _lblLeftTopCorner.StayOnBack = true;
             _lblLeftTopCorner.Image = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//topleft022");
             _lblLeftTopCorner.SizeMode = SizeMode.Normal;
-            _lblLeftTopCorner.Draw += new DrawEventHandler(LblLeftTopCorner_Draw);
-            _lblLeftTopCorner.Click += new TomShane.Neoforce.Controls.EventHandler(LblLeftTopCorner_Click);
+            //_lblLeftTopCorner.Draw += new DrawEventHandler(LblLeftTopCorner_Draw);
+            //_lblLeftTopCorner.Click += new TomShane.Neoforce.Controls.EventHandler(LblLeftTopCorner_Click);
             Add(_lblLeftTopCorner);
+
+            _lblResearchProgress = new ImageBox(Manager);
+            _lblResearchProgress.Init();
+            _lblResearchProgress.Top = 24;
+            _lblResearchProgress.Left = 0;
+            _lblResearchProgress.Width = 220;
+            _lblResearchProgress.Height = 220;
+            _lblResearchProgress.StayOnBack = true;
+            //_lblLeftTopCorner.Image = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//topleft022");
+            _lblResearchProgress.SizeMode = SizeMode.Normal;
+            _lblResearchProgress.Draw += new DrawEventHandler(LblResearch_Draw);
+            _lblResearchProgress.Click += new TomShane.Neoforce.Controls.EventHandler(LblResearch_Click);
+            Add(_lblResearchProgress);
         }
 
-        void LblLeftTopCorner_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
+        void LblResearch_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
         {
             if( Game.Human.CurrentResearch != null )
                 ScienceInfoDialog.Show(Manager, Game.Human.CurrentResearch, "Science");
         }
 
-        void LblLeftTopCorner_Draw(object sender, DrawEventArgs e)
+        void LblResearch_Draw(object sender, DrawEventArgs e)
         {
             Texture2D _scienceMeterModTexture = new Texture2D(Manager.GraphicsDevice, 220, 220);
 

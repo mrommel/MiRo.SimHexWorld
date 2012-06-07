@@ -97,16 +97,6 @@ namespace MiRo.SimHexWorld.Engine.Types
              return sb.ToString();
         }
 
-        public TeaserList.TeaserItem ToTeaser()
-        {
-            Name = Name.Trim();
-            Description = Description.Trim();
-
-            string desc = LimitTextLength(Description,100);
-
-            return new TeaserList.TeaserItem(Title, desc, ImagePath);
-        }
-
         public override string ToString()
         {
             return Title;
