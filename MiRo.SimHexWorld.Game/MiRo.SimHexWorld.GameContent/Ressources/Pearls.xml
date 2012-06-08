@@ -6,6 +6,7 @@
       Pearls are shiny, white, translucent balls formed inside the shells of mollusks. They are highly prized and often used in jewelry and other ornate decorations. Although many mollusks produce pearls, certain species of saltwater oysters and freshwater clams - those whose shells are lined with "mother of pearl" (or nacre) - produce the most sought-after varieties. The color of the pearl varies depending upon the mollusk and the local environment. Colors range from black to white, with cream, blue, yellow and green also occurring. The rose-colored Indian pearls are generally the most valued.
     </Description>
     <ImageName>Pearls</ImageName>
+    <Civ5Name>RESOURCE_PEARLS</Civ5Name>
     <RessourceType>Luxury</RessourceType>
     <Bonus>
       <Food>0</Food>

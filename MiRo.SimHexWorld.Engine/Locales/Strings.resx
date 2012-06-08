@@ -262,6 +262,15 @@
   <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_TINY" xml:space="preserve">
     <value>4 Spieler mit 8 Stadtstaaten.</value>
   </data>
+  <data name="TXT_KEY_REGION_EUROPE" xml:space="preserve">
+    <value>Europa</value>
+  </data>
+  <data name="TXT_KEY_REGION_GROENLAND" xml:space="preserve">
+    <value>Grönland</value>
+  </data>
+  <data name="TXT_KEY_REGION_NORTH_AMERICA" xml:space="preserve">
+    <value>Nordamerika</value>
+  </data>
   <data name="TXT_KEY_UI_NEWERA_TITLE" xml:space="preserve">
     <value>Neue Ära</value>
   </data>

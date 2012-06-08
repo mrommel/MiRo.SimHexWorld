@@ -7,6 +7,7 @@
       Aluminum is one of the most abundant elements on Earth. A remarkably useful metal, aluminum is flexible, durable, and highly resistant to corrosion. Although plentiful, in its natural state aluminum is almost always found combined with other materials. It wasn't until the mid-19th century that scientists discovered how to extract and process aluminum in quantity. But by the 20th-21st centuries it is widely used in the construction of military, aerospace, and consumer goods. Remember that aluminum is a strategic resource, and thus it is consumed as you construct the associated units and buildings.
     </Description>
     <ImageName>Aluminum</ImageName>
+    <Civ5Name>RESOURCE_ALUMINUM</Civ5Name>
     <RessourceType>Strategic</RessourceType>
     <Bonus>
       <Food>0</Food>

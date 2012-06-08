@@ -65,7 +65,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
             _camera = new ArcBallCamera(MapData.GetWorldPosition(20, 20), 0, MathHelper.PiOver2 * 0.5f * 0.8f * 0.8f, 0, MathHelper.PiOver2, CameraDistance, 30, 100, Manager.GraphicsDevice);
 
             _effect = Manager.Content.Load<Effect>("Content/Effects/Series4Effects");
- 
+
             Mouse.SetPosition(Manager.GraphicsDevice.Viewport.Width / 2, Manager.GraphicsDevice.Viewport.Height / 2);
 
             _skyDome = Manager.Content.Load<Model>("Content/Models/dome");
@@ -81,20 +81,20 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
             defaultViewport.X = 0;
             defaultViewport.Y = 0;
             defaultViewport.Width = Manager.GraphicsDevice.Viewport.Width;
-            defaultViewport.Height = Manager.GraphicsDevice.Viewport.Height; 
+            defaultViewport.Height = Manager.GraphicsDevice.Viewport.Height;
 
             // init control view
             controlViewport = new Viewport();
             controlViewport.X = 7;
             controlViewport.Y = 27;
             controlViewport.Width = Manager.GraphicsDevice.Viewport.Width - 14;
-            controlViewport.Height = Manager.GraphicsDevice.Viewport.Height - 32; 
+            controlViewport.Height = Manager.GraphicsDevice.Viewport.Height - 32;
         }
 
         protected override void Update(GameTime gameTime)
         {
-			HandleKeyboard();
-			
+            HandleKeyboard();
+
             _mapRenderer.Update(gameTime);
 
             // Update the camera
@@ -110,20 +110,20 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
         HexPoint _dragStart;
         private void HandleKeyboard()
-		{
-			int dx = 0, dy = 0;
-			
+        {
+            int dx = 0, dy = 0;
+
             KeyboardState keyState = Keyboard.GetState();
-            if ((keyState.IsKeyDown(Keys.Up) || keyState.IsKeyDown(Keys.W)) && 
+            if ((keyState.IsKeyDown(Keys.Up) || keyState.IsKeyDown(Keys.W)) &&
                 !(_oldKeyState.IsKeyDown(Keys.Up) || _oldKeyState.IsKeyDown(Keys.W)))
                 dy = -1;
-            if ((keyState.IsKeyDown(Keys.Down) || keyState.IsKeyDown(Keys.S)) && 
+            if ((keyState.IsKeyDown(Keys.Down) || keyState.IsKeyDown(Keys.S)) &&
                 !(_oldKeyState.IsKeyDown(Keys.Down) || _oldKeyState.IsKeyDown(Keys.S)))
                 dy = 1;
             if ((keyState.IsKeyDown(Keys.Right) || keyState.IsKeyDown(Keys.D)) &&
                 !(_oldKeyState.IsKeyDown(Keys.Right) || _oldKeyState.IsKeyDown(Keys.D)))
                 dx = 1;
-            if ((keyState.IsKeyDown(Keys.Left) || keyState.IsKeyDown(Keys.A)) && 
+            if ((keyState.IsKeyDown(Keys.Left) || keyState.IsKeyDown(Keys.A)) &&
                 !(_oldKeyState.IsKeyDown(Keys.Left) || _oldKeyState.IsKeyDown(Keys.A)))
                 dx = -1;
 
@@ -135,7 +135,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                 _mapCenter.X += dx;
                 _mapCenter.Y += dy;
                 _mapRenderer.Center = _mapCenter;
-                _camera.Target = MapData.GetWorldPosition(_mapCenter);               
+                _camera.Target = MapData.GetWorldPosition(_mapCenter);
             }
 
             if (keyState.IsKeyDown(Keys.K) && !_oldKeyState.IsKeyDown(Keys.K))
@@ -155,6 +155,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
             if (keyState.IsKeyDown(Keys.C) && !_oldKeyState.IsKeyDown(Keys.C))
             {
+
                 City capital = MainWindow.Game.Human.Capital;
 
                 if (capital != null)
@@ -166,15 +167,18 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                 }
                 else
                 {
-                    StartLocation loc = Map.Extension.StartLocations.FirstOrDefault(a => a.CivilizationName == MainWindow.Game.Human.Civilization.Name);
+                    if (Map != null && Map.Extension != null)
+                    {
+                        StartLocation loc = Map.Extension.StartLocations.FirstOrDefault(a => a.CivilizationName == MainWindow.Game.Human.Civilization.Name);
 
-                    if (loc == null)
-                        throw new Exception("No Start location for " + MainWindow.Game.Human.Civilization.Name);
+                        if (loc == null)
+                            throw new Exception("No Start location for " + MainWindow.Game.Human.Civilization.Name);
 
-                    _mapCenter.X = loc.X;
-                    _mapCenter.Y = loc.Y;
-                    _camera.Target = MapData.GetWorldPosition(_mapCenter);
-                    _mapRenderer.Center = _mapCenter;
+                        _mapCenter.X = loc.X;
+                        _mapCenter.Y = loc.Y;
+                        _camera.Target = MapData.GetWorldPosition(_mapCenter);
+                        _mapRenderer.Center = _mapCenter;
+                    }
                 }
             }
 
@@ -192,7 +196,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
             MouseState mouseState = Mouse.GetState();
             if (mouseState.RightButton == ButtonState.Released && _oldMouseState.RightButton == ButtonState.Pressed)
-            { 
+            {
                 City city = MainWindow.Game.GetCityAt(_mapRenderer.Cursor);
 
                 // select unit city
@@ -243,14 +247,14 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                         else if (!first.Player.IsHuman && EnemyUnitsSelected != null)
                             EnemyUnitsSelected(units);
                     }
-                    else if( UnitsUnselected != null )
+                    else if (UnitsUnselected != null)
                         UnitsUnselected();
                 }
             }
 
             _oldKeyState = keyState;
             _oldMouseState = mouseState;
-		}
+        }
 
         private void UpdateCursor()
         {
@@ -258,9 +262,9 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
             MouseState mouseState = Mouse.GetState();
 
             //Vector3 mousePos = Manager.GraphicsDevice.Viewport.Unproject(new Vector3(mouseState.X + Left, mouseState.Y + Top, 0), camera.Projection, camera.View, Matrix.Identity);
-            Vector3 mousePos = Manager.GraphicsDevice.Viewport.Unproject(new Vector3(mouseState.X + 2 * AbsoluteLeft, mouseState.Y + 2 * AbsoluteTop, 0), _camera.Projection, _camera.View, Matrix.Identity);
+            Vector3 mousePos = Manager.GraphicsDevice.Viewport.Unproject(new Vector3(mouseState.X, mouseState.Y, 0), _camera.Projection, _camera.View, Matrix.Identity);
 
-            // get views intersection with groudn plane
+            // get views intersection with ground plane
             Vector3 direction = mousePos - _camera.Position;
             var r = new Ray(_camera.Position, direction);
             float? intersection = r.Intersects(GroundPlane);
@@ -270,9 +274,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                 Vector3 groundIntersection = _camera.Position + direction * intersection.Value;
                 HexPoint pt = MapData.GetMapPosition(groundIntersection);
 
-                foreach( HexPoint neighbor in pt.Neighbors )
-                    if (Vector3.Distance(MapData.GetWorldPosition(pt), groundIntersection) > Vector3.Distance(MapData.GetWorldPosition(neighbor), groundIntersection))
-                        pt = neighbor;
+                pt.MoveDir(HexDirection.SouthEast);
 
                 if (FocusChanged != null)
                     FocusChanged(new MapChangeArgs(Map, pt));
@@ -392,14 +394,14 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
         public override System.Collections.Generic.List<Instance.GameNotification> NotificationInterests
         {
-            get 
-            { 
+            get
+            {
                 return new List<GameNotification> 
                 { 
                     GameNotification.UpdateImprovements,
                     GameNotification.UpdateSpotting,
                     GameNotification.UpdateMapControlling
-                }; 
+                };
             }
         }
 

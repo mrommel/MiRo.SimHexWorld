@@ -30,13 +30,14 @@ namespace MiRo.SimHexWorld.Engine.Instance.Commands
         public static void Run(Civ5Map civ5map)
         {
             MapData map = new MapData();
-            map.InitFromCiv5Map(civ5map);
 
             try
             {
                 map.Extension = MainApplication.Instance.Content.Load<MapExtension>("Content/MapsExtension/" + civ5map.FileName);
             }
             catch { }
+
+            map.InitFromCiv5Map(civ5map);
 
             GameFacade.getInstance().SendNotification(GameNotification.LoadMapSuccess, map);
         }

@@ -4,6 +4,7 @@
     <Name>Cotton</Name>
     <Description></Description>
     <ImageName>Cotton</ImageName>
+    <Civ5Name>RESOURCE_COTTON</Civ5Name>
     <RessourceType>Luxury</RessourceType>
     <Bonus>
       <Food>0</Food>

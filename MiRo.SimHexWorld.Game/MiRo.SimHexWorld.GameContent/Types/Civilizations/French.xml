@@ -23,6 +23,7 @@
       Modern France - The years following World War II saw France grudgingly divesting itself from its overseas possessions, fighting painful and ultimately futile wars in Vietnam and Algeria. At the same time it was rebuilding at home, creating a new and modern country out of the ashes of the Great Wars. It possesses a large immigrant population, including many Muslims, and it too is suffering through the difficulties caused by the current painful clash of cultures between Islam and the West. French arts are flourishing as never before, and Paris – the "City of Lights" – is once again a cultural beacon to the world. France has become a leading member of the European Union, alongside its former enemy Germany. In historical terms this is an astonishing triumph of common sense and suggests a bright future for France, Europe, and the world.
     </Description>
     <ImageName>French</ImageName>
+    <PlayerColorName>French</PlayerColorName>
     <UniqueUnits>
       <Item>ForeignLegion</Item>
       <Item>Musketeer</Item>

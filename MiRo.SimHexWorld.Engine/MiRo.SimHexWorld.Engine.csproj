@@ -161,10 +161,12 @@
     <Compile Include="Types\AI\CitySpecialization.cs" />
     <Compile Include="Types\AI\GrandStrategyData.cs" />
     <Compile Include="Types\AI\Yield.cs" />
+    <Compile Include="Types\CivilizationMinor.cs" />
     <Compile Include="Types\Flavour.cs" />
     <Compile Include="Types\FlavourData.cs" />
     <Compile Include="Types\AI\MilitayStrategyData.cs" />
     <Compile Include="Types\Pace.cs" />
+    <Compile Include="Types\PlayerColor.cs" />
     <Compile Include="Types\PromotionData.cs" />
     <Compile Include="Types\TechnologyBonus.cs" />
     <Compile Include="Types\WonderData.cs" />

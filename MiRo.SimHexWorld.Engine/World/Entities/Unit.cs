@@ -20,11 +20,6 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace MiRo.SimHexWorld.Engine.World.Entities
 {
-    public interface IScriptable
-    {
-        void ScriptCallback(string message, object body); 
-    }
-
     // events
     public delegate void UnitMovedHandler(Unit sender, HexPoint oldPosition, HexPoint newPosition);
 
@@ -129,6 +124,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             Assert.AreEqual(target, _path.Goal);
 
             UpdatePathMesh();
+            UpdateUnitAction();
 
             // remove the current position
             _path.Pop();

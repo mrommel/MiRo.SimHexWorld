@@ -4,6 +4,7 @@
     <Name>Dyes</Name>
     <Description>A dye is a substance which can (temporarily or permanently) alter the color of some other substance, typically fabric or human skin. Throughout history dyes have been made from a variety of different materials, including plants, minerals, and animal bits. Humanity has been using dyes for at least 37,000 years, and possibly longer. </Description>
     <ImageName>Dyes</ImageName>
+    <Civ5Name>RESOURCE_DYES</Civ5Name>
     <RessourceType>Luxury</RessourceType>
     <Bonus>
       <Food>0</Food>

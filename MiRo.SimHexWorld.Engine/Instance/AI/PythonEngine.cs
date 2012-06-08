@@ -12,6 +12,11 @@ using MiRo.SimHexWorld.Engine.World.Entities;
 
 namespace MiRo.SimHexWorld.Engine.AI
 {
+    public interface IScriptable
+    {
+        void ScriptCallback(string message, object body);
+    }
+
     public class PythonEngine
     {
         private IScriptable _callback;

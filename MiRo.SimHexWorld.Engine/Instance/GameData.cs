@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework;
 using MiRo.SimHexWorld.Engine.World.Entities;
 using MiRo.SimHexWorld.Engine.Types;
 using MiRo.SimHexWorld.Engine.UI.Dialogs;
+using MiRo.SimHexWorld.Engine.UI;
 
 namespace MiRo.SimHexWorld.Engine.Instance
 {
@@ -125,6 +126,18 @@ namespace MiRo.SimHexWorld.Engine.Instance
             if (_currentTurn % 10 == 0)
                 foreach (AbstractPlayerData pl in _players)
                     pl.Scores.Add(pl.Score);
+        }
+
+        private List<PlayerColor> _colors;
+        public List<PlayerColor> PlayerColors
+        {
+            get 
+            {
+                if( _colors == null )
+                    _colors = MainApplication.ManagerInstance.Content.Load<List<PlayerColor>>("Content/Types/Colors");
+
+                return _colors;
+            }
         }
 
         public Scores Scores

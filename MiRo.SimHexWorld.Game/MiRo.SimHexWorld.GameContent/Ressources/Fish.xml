@@ -6,6 +6,7 @@
       Fish have been an important source of protein for coastal dwellers for all of history. Fish remain an important foodstuff in the 21st century - so much so that there is increasing danger of depopulating the world's oceans of edible fish entirely.
     </Description>
     <ImageName>Fish</ImageName>
+    <Civ5Name>RESOURCE_FISH</Civ5Name>
     <RessourceType>Bonus</RessourceType>
     <Bonus>
       <Food>0</Food>

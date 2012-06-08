@@ -88,7 +88,8 @@ namespace MiRo.SimHexWorld.Engine.Instance
             _era = Provider.GetEra("Ancient");
             Assert.NotNull(_era, "There must be at least the 'Ancient' era present");
 
-            Technologies = _civilization.StartingTechs;
+            foreach (Tech tech in _civilization.StartingTechs)
+                DiscoverTechnology(tech);
         }
 
         public LeaderData Leader
@@ -288,8 +289,18 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
                 GameFacade.getInstance().SendNotification( GameNotification.StartEra, this, _era);
 
+                // reveal resources for all players
+                foreach (MapCell cell in Map.Tiles)
+                    if (!cell.RessourceRevealed && cell.Ressource != null && cell.Ressource.RequiredTechName == tech.Name)
+                        cell.RessourceRevealed = true;
+
                 // evtl. enable policies
             }
+        }
+
+        public PlayerColor PlayerColor
+        {
+            get { return _civilization.PlayerColor; }
         }
 
         public virtual bool Update(GameTime time)

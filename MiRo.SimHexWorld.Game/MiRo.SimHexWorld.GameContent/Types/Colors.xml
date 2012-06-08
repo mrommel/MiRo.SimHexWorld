@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent xmlns:Generic="System.Collections.Generic">
+  <Asset Type="Generic:List[MiRo.SimHexWorld.Engine.Types.PlayerColor]">
+    <!-- all colos are noticed with ARGB -->
+    <!-- main -->
+    <Item>
+      <Name>Black</Name>
+      <Primary>FF000000</Primary>
+      <Secondary>FFFFFFFF</Secondary>
+    </Item>
+    <!-- Civilizations -->
+    <Item>
+      <Name>German</Name>
+      <Primary>FF252B21</Primary>
+      <Secondary>FFB3B2B8</Secondary>
+    </Item>
+    <Item>
+      <Name>French</Name>
+      <Primary>FFEBEB8B</Primary>
+      <Secondary>FF418DFE</Secondary>
+    </Item>
+    <Item>
+      <Name>English</Name>
+      <Primary>FFFFFFFF</Primary>
+      <Secondary>FF6D0200</Secondary>
+    </Item>
+    <!-- minor civs -->
+    <Item>
+      <Name>MinorWhite</Name>
+      <Primary>FF000000</Primary>
+      <Secondary>FFFFFFFF</Secondary>
+    </Item>
+  </Asset>
+</XnaContent>

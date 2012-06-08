@@ -96,6 +96,7 @@
       The United States is no longer the sole superpower in the world. It shares that dubious title with China, at least. Internally it's struggling to recover from economic excesses of the late 20th century, as well as trying to finally banish the ghost of slavery and racism that still haunts it. The US is somewhat battered but is by no means broken. It still possesses the resources, drive and human capitol to be a vital and important civilization in the coming century.
     </Description>
     <ImageName>American</ImageName>
+    <PlayerColorName>American</PlayerColorName>
     <UniqueUnits>
       <Item>Minuteman</Item>
       <Item>B17</Item>

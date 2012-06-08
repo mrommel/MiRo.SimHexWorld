@@ -4,6 +4,7 @@
     <Name>Furs</Name>
     <Description>As a resource, "fur" refers to the pelt or coat of certain mammals prized for their warmth and beauty. Unlike animals such as sheep, whose hair can be shaved off without destroying the animal, fur animals are killed when their skins are harvested. Humans have hunted animals for their furs for uncounted millennia. In the early years the hunters and their families probably ate the animals they caught, but in modern times the animal's body has been often discarded. Animals hunted for their fur include foxes, bears, beavers, seals, and rabbits. </Description>
     <ImageName>Furs</ImageName>
+    <Civ5Name>RESOURCE_FURS</Civ5Name>
     <RessourceType>Bonus</RessourceType>
     <Bonus>
       <Food>0</Food>

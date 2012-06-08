@@ -3,6 +3,7 @@ using System.Linq;
 using MiRo.SimHexWorld.Engine.Misc;
 using MiRo.SimHexWorld.Engine.Types;
 using System.Collections.Generic;
+using MiRo.SimHexWorld.Engine.Instance.AI;
 
 namespace MiRo.SimHexWorld.Engine.World.Maps
 {
@@ -23,6 +24,19 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
                     throw new Exception("No Terrain found for '" + terrainName + "'");
 
                 terrainDict.Add(b++, t);
+            }
+
+            Dictionary<byte, Ressource> ressourceDict = new Dictionary<byte, Ressource>();
+
+            b = 0;
+            foreach (string ressourceName in civ5Map.RessourceNames)
+            {
+                Ressource r = Provider.Instance.Ressources.FirstOrDefault(a => a.Value.Civ5Name == ressourceName).Value;
+
+                if (r == null)
+                    throw new Exception("No Ressource found for '" + ressourceName + "'");
+
+                ressourceDict.Add(b++, r);
             }
 
             Dictionary<byte, Feature> featureDict = new Dictionary<byte, Feature>();
@@ -74,6 +88,10 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
 
                     this[x + dx, y + dy].River = civ5Map.GetRiver(x, y);
 
+                    byte civ5RessourceId = civ5Map.GetResourceId(x, y);
+
+                    if (civ5RessourceId != 255)
+                        this[x + dx, y + dy].SetRessources(ressourceDict[civ5RessourceId]);
                     //this[x + dx, y + dy].Info = this[x + dx, y + dy].River + "=>" + this[x + dx, y + dy].RiverFlowString;
                 }
             }
@@ -88,6 +106,53 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
 
                 if (cell.Terrain.Name == "Ocean" && ShouldBeCoast(cell.X, cell.Y))
                     cell.Terrain = coast;
+            }
+
+            // if there are no resources applied, do this
+            if (_tiles.Count(a => a.Ressource != null ) == 0)
+            {
+                MakeResources();
+            }
+        }
+
+        private static Random rnd = new Random();
+        private void MakeResources()
+        {
+            for (int x = 0; x < Width; x++)
+            {
+                for (int y = 0; y < Height; y++)
+                {
+                    List<Ressource> possibleResources = new List<Ressource>();
+
+                    MapCell cell = this[x, y];
+
+                    foreach (string resName in cell.Terrain.PossibleRessources)
+                        possibleResources.Add(Provider.GetRessource(resName));
+
+                    foreach (Feature feature in cell.Features)
+                        foreach (string resName in feature.PossibleRessources)
+                            possibleResources.Add(Provider.GetRessource(resName));
+
+                    List<MapRegion> regions = this.GetRegions(x, y);
+
+                    foreach (MapRegion mr in regions)
+                    {
+                        foreach (string resName in mr.RessourceExcludes)
+                            if (possibleResources.Count( a => a.Name == resName ) > 0 )
+                                possibleResources.RemoveAll(a => a.Name == resName);
+                    }
+
+                    // if we have any possible there is a 20% chance to place a resource
+                    if (possibleResources.Count > 0 && rnd.NextDouble() < 0.2)
+                    {
+                        PropabilityMap<Ressource> map = new PropabilityMap<Ressource>();
+
+                        foreach (Ressource r in possibleResources)
+                            map.AddItem(r, 1);
+
+                        cell.SetRessources(map.Random);
+                    }
+                }
             }
         }
     }

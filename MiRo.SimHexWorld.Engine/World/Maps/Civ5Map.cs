@@ -192,11 +192,11 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
             promotionTypes = new string(reader.ReadChars(lengthOfPromotionTypeList)); //string[] -- Promotion type list
             victoryTypes = new string(reader.ReadChars(lengthOfVictoryTypeList));
 
-            //string rest = "";
-            //while (reader.PeekChar() != -1)
-            //    rest += reader.ReadChar();
+            string rest = "";
+            while (reader.PeekChar() != -1)
+                rest += reader.ReadChar();
 
-            // rest = "<start>" + rest + "<end>";
+            rest = "<start>" + rest + "<end>";
 
             return true;
         }
@@ -259,14 +259,27 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
             {
                 if (_terrains.Count == 0 && terrainTypes != null)
                     _terrains.AddRange(terrainTypes.Split(new char[] { '\0' }, StringSplitOptions.RemoveEmptyEntries).ToList());
-                //else
-                //    _terrains = new List<string>();
 
                 return _terrains;
             }
             set
             {
                 _terrains = value;
+            }
+        }
+
+        public List<string> RessourceNames
+        {
+            get
+            {
+                if (_resources.Count == 0 && resourceTypes != null)
+                    _resources.AddRange(resourceTypes.Split(new char[] { '\0' }, StringSplitOptions.RemoveEmptyEntries).ToList());
+
+                return _resources;
+            }
+            set
+            {
+                _resources = value;
             }
         }
 
@@ -338,7 +351,7 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
             return result;
         }
 
-        readonly List<string> _resources = new List<string>();
+        List<string> _resources = new List<string>();
 
         private List<string> ResourceNames
         {
@@ -412,6 +425,11 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
         public byte GetFeature2ndId(int x, int y)
         {
             return plots[x, y].Feature2ndType;
+        }
+
+        public byte GetResourceId(int x, int y)
+        {
+            return plots[x, y].RessourceType;
         }
 
         public enum HeightType { Flat, Hills, Mountain }

@@ -4,30 +4,51 @@
     <MapName>Earth_Huge</MapName>
     <Regions>
       <Item>
-        <Name>GROENLAND</Name>
+        <Name>TXT_KEY_REGION_GROENLAND</Name>
         <X>36</X>
         <Y>0</Y>
         <Width>11</Width>
         <Height>10</Height>
-        <RessourceExcludes>
+        <RessourceExcludes>    
         </RessourceExcludes>
       </Item>
       <Item>
-        <Name>NORTH_AMERICA</Name>
+        <Name>TXT_KEY_REGION_NORTH_AMERICA</Name>
         <X>0</X>
         <Y>0</Y>
         <Width>37</Width>
         <Height>33</Height>
         <RessourceExcludes>
+          <Item>Horse</Item>
+          <Item>Spice</Item>
+          <Item>Ivory</Item>
+          <Item>Silk</Item>
+          <Item>Incense</Item>
         </RessourceExcludes>
       </Item>
       <Item>
-        <Name>EUROPE</Name>
+        <Name>TXT_KEY_REGION_EUROPE_EAST</Name>
         <X>52</X>
         <Y>5</Y>
         <Width>20</Width>
         <Height>23</Height>
         <RessourceExcludes>
+        </RessourceExcludes>
+      </Item>
+      <Item>
+        <Name>TXT_KEY_REGION_EUROPE_WEST</Name>
+        <X>52</X>
+        <Y>5</Y>
+        <Width>20</Width>
+        <Height>23</Height>
+        <RessourceExcludes>
+          <Item>Ivory</Item>
+          <Item>Pearls</Item>
+          <Item>Spices</Item>
+          <Item>Silk</Item>
+          <Item>Sugar</Item>
+          <Item>Cotton</Item>
+          <Item>Incense</Item>
         </RessourceExcludes>
       </Item>
     </Regions>
@@ -66,6 +87,46 @@
         <CivilizationName>Roman</CivilizationName>
         <X>63</X>
         <Y>25</Y>
+      </Item>
+      <Item>
+        <CivilizationName>American</CivilizationName>
+        <X>29</X>
+        <Y>27</Y>
+      </Item>
+      <Item>
+        <CivilizationName>Atzek</CivilizationName>
+        <X>20</X>
+        <Y>34</Y>
+      </Item>
+      <Item>
+        <CivilizationName>Egypt</CivilizationName>
+        <X>70</X>
+        <Y>32</Y>
+      </Item>
+      <Item>
+        <CivilizationName>Russia</CivilizationName>
+        <X>70</X>
+        <Y>16</Y>
+      </Item>
+      <Item>
+        <CivilizationName>Turks</CivilizationName>
+        <X>71</X>
+        <Y>27</Y>
+      </Item>
+      <Item>
+        <CivilizationName>Chinese</CivilizationName>
+        <X>106</X>
+        <Y>29</Y>
+      </Item>
+      <Item>
+        <CivilizationName>Japanese</CivilizationName>
+        <X>114</X>
+        <Y>29</Y>
+      </Item>
+      <Item>
+        <CivilizationName>Indian</CivilizationName>
+        <X>90</X>
+        <Y>35</Y>
       </Item>
     </StartLocations>
   </Asset>

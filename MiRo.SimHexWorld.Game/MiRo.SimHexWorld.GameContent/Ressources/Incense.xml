@@ -6,6 +6,7 @@
       Incense is a material created to slowly burn while releasing fragrant smoke. Incense is often employed in religious ceremonies, and some believe that certain incenses have healing powers. The use of incense dates back thousands of years. It probably originated in the Middle East, possibly in Egypt. The Pharaohs used it not only to cover the smell of grubby commoners but also to drive away demons and to please the gods. A wide variety of materials have been used to make incense: camphor, frankincense, myrrh, sandalwood, cloves, lavender, musk, and other exotic materials. Long used in traditional Eastern medicine, in the West incense is enjoying something of a boom in the pseudo-scientific "aroma therapy" which, while perhaps of dubious efficacy, at least makes the practitioner smell nice.
     </Description>
     <ImageName>Incense</ImageName>
+    <Civ5Name>RESOURCE_INCENSE</Civ5Name>
     <RessourceType>Luxury</RessourceType>
     <Bonus>
       <Food>0</Food>

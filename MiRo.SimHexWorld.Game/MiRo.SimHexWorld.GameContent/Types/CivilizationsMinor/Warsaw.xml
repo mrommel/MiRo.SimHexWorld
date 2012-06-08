@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.CivilizationMinor">
+    <Name>Warsaw</Name>
+    <Description></Description>
+    <ImageName>Warsaw</ImageName>
+    <PlayerColorName>MinorWhite</PlayerColorName>
+    <Flavours>
+      <Item>
+        <Name>Expansion</Name>
+        <Amount>0</Amount>
+      </Item>
+      <Item>
+        <Name>CityDefense</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>5</Amount>
+      </Item>
+      <Item>
+        <Name>Wonder</Name>
+        <Amount>0</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

@@ -29,6 +29,25 @@ namespace MiRo.SimHexWorld.Engine.Types
             get { return ""; }
         }
 
+        public string PlayerColorName { get; set; }
+
+        private PlayerColor _color;
+
+        [ContentSerializerIgnore]
+        public PlayerColor PlayerColor
+        { 
+            get 
+            { 
+                if( _color == null )
+                    _color = MainWindow.Game.PlayerColors.FirstOrDefault(a => a.Name == PlayerColorName);
+
+                if (_color == null)
+                    throw new Exception("Color: " + PlayerColorName + " not found in Colors definition");
+
+                return _color;
+            } 
+        }
+
         public List<string> UniqueUnits { get; set; }
         public List<string> UniqueBuildings { get; set; }
         public List<string> StartingTechNames { get; set; }

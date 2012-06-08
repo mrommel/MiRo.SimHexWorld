@@ -367,6 +367,33 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Europa ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_REGION_EUROPE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_REGION_EUROPE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Grönland ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_REGION_GROENLAND {
+            get {
+                return ResourceManager.GetString("TXT_KEY_REGION_GROENLAND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Nordamerika ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_REGION_NORTH_AMERICA {
+            get {
+                return ResourceManager.GetString("TXT_KEY_REGION_NORTH_AMERICA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Bogenschießen ähnelt.
         /// </summary>
         internal static string TXT_KEY_TECH_ARCHERY {

@@ -34,11 +34,11 @@ namespace MiRo.SimHexWorld.Engine.World
 
         readonly Manager _manager;
 
-        enum EBillBoard { Wood1, Wood2, Wood3, Jungle1, Jungle2, Jungle3, Pine1, Pine2 }
-        BillboardSystem<EBillBoard> _terrainBillboards;
-        readonly Vector3 _woodPos1 = new Vector3(1.7f, 0f, 1.7f);
-        readonly Vector3 _woodPos2 = new Vector3(1.7f, 0f, -1.7f);
-        readonly Vector3 _woodPos3 = new Vector3(-1.8f, 0f, 0f);
+        //enum EBillBoard { Wood1, Wood2, Wood3, Jungle1, Jungle2, Jungle3, Pine1, Pine2 }
+        //BillboardSystem<EBillBoard> _terrainBillboards;
+        //readonly Vector3 _woodPos1 = new Vector3(1.7f, 0f, 1.7f);
+        //readonly Vector3 _woodPos2 = new Vector3(1.7f, 0f, -1.7f);
+        //readonly Vector3 _woodPos3 = new Vector3(-1.8f, 0f, 0f);
 
         //readonly TiledMeshContainer _tiledMeshContainer;
 
@@ -54,6 +54,8 @@ namespace MiRo.SimHexWorld.Engine.World
         bool _needToUpdateRoads = false;
 
         List<ForestEntity> _forests = new List<ForestEntity>();
+
+        BillboardSystem<string> _resourceBillboards;
 
         public MapRenderer(Manager manager)
         {
@@ -107,13 +109,23 @@ namespace MiRo.SimHexWorld.Engine.World
             TextureManager.Instance.Add("farms", _manager.Content.Load<Texture2D>("Content/Textures/Ground/farms"));
             _farmMesh.LoadContent(_manager.Content);
 
-            _terrainBillboards = new BillboardSystem<EBillBoard>(_manager.GraphicsDevice, _manager.Content);
-            _terrainBillboards.AddEntity(EBillBoard.Wood1, "Content/Textures/Billboards/wood1", new Vector2(3, 3));
-            _terrainBillboards.AddEntity(EBillBoard.Wood2, "Content/Textures/Billboards/wood2", new Vector2(3, 3));
-            _terrainBillboards.AddEntity(EBillBoard.Wood3, "Content/Textures/Billboards/wood3", new Vector2(3, 3));
+            _resourceBillboards = new BillboardSystem<string>(_manager.GraphicsDevice, _manager.Content);
 
-            _terrainBillboards.AddEntity(EBillBoard.Pine1, "Content/Textures/Billboards/pine1", new Vector2(3, 3));
-            _terrainBillboards.AddEntity(EBillBoard.Pine2, "Content/Textures/Billboards/pine2", new Vector2(3, 3));
+            foreach (Ressource r in Provider.Instance.Ressources.Values)
+            {
+                if (r.Image != null)
+                    _resourceBillboards.AddEntity(r.Name, r.Image, new Vector2(2, 2));
+                else
+                    throw new Exception("No image for " + r.Name + " found");
+            }
+
+            //_terrainBillboards = new BillboardSystem<EBillBoard>(_manager.GraphicsDevice, _manager.Content);
+            //_terrainBillboards.AddEntity(EBillBoard.Wood1, "Content/Textures/Billboards/wood1", new Vector2(3, 3));
+            //_terrainBillboards.AddEntity(EBillBoard.Wood2, "Content/Textures/Billboards/wood2", new Vector2(3, 3));
+            //_terrainBillboards.AddEntity(EBillBoard.Wood3, "Content/Textures/Billboards/wood3", new Vector2(3, 3));
+
+            //_terrainBillboards.AddEntity(EBillBoard.Pine1, "Content/Textures/Billboards/pine1", new Vector2(3, 3));
+            //_terrainBillboards.AddEntity(EBillBoard.Pine2, "Content/Textures/Billboards/pine2", new Vector2(3, 3));
 
             hMesh.LoadContent(_manager.Content);
             //_billboards.AddEntity(EBillBoard.Jungle1, "Content/Textures/forest/wood1", new Vector2(3, 3));
@@ -322,6 +334,7 @@ namespace MiRo.SimHexWorld.Engine.World
 
             hMesh.Clear();
             _forests.Clear();
+            _resourceBillboards.ResetPositions();
 
             // now the tiles
             for (int i = 0; i < _map.Width; i++)
@@ -421,6 +434,12 @@ namespace MiRo.SimHexWorld.Engine.World
 
                     if( _map[i, j].IsForest )
                         _forests.Add(new ForestEntity(_map[i, j].Point));
+
+                    if (_map[i, j].Ressource != null)
+                    {
+                        if( _map[i, j].RessourceRevealed )
+                            _resourceBillboards.AddPosition(_map[i, j].Ressource.Name, MapData.GetWorldPosition(_map[i, j].Point) + new Vector3(0, 2, 0));
+                    }
                 }
             }
 
@@ -428,7 +447,8 @@ namespace MiRo.SimHexWorld.Engine.World
 
             UpdateSpotting();
 
-            _terrainBillboards.Build();
+            _resourceBillboards.Build();
+            //_terrainBillboards.Build();
         }
 
         public void OnUpdateBorders(MapControllingArgs args)
@@ -499,7 +519,9 @@ namespace MiRo.SimHexWorld.Engine.World
                 _borderMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
                 _farmMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
                 _roadMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
-                
+
+                _resourceBillboards.Draw(camera.View, camera.Projection, camera.Position, camera.Up, camera.Right);
+
                 //foreach (ForestEntity forest in _forests)
                 //    if (forest.Point.DistanceTo(Center) < 15)
                 //        forest.Draw(gameTime);

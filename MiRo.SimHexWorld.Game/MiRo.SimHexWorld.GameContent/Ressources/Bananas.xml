@@ -4,6 +4,7 @@
     <Name>Bananas</Name>
     <Description>A banana is a popular tropical fruit. It, and its cousins the plantains, are an important part of many tropical peoples' diets. Originating in Southeast Asia, the banana is now cultivated around the world. </Description>
     <ImageName>Bananas</ImageName>
+    <Civ5Name>RESOURCE_BANANAS</Civ5Name>
     <RessourceType>Luxury</RessourceType>
     <Bonus>
       <Food>1</Food>

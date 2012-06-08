@@ -4,6 +4,7 @@
     <Name>Silk</Name>
     <Description>Silk is a fiber which is made from the cocoons of silkworms. Silk fabric was first developed in ancient China, according to legend by the empress Lei Zu. Originally reserved for the Chinese nobility, over time it spread throughout China, and via the famous Silk Road of antiquity, into Europe and across the planet. (The earliest record of silk in Europe dates to Egypt in approximately 1000 BC.) </Description>
     <ImageName>Silk</ImageName>
+    <Civ5Name>RESOURCE_SILK</Civ5Name>
     <RessourceType>Luxury</RessourceType>
     <Bonus>
       <Food>0</Food>

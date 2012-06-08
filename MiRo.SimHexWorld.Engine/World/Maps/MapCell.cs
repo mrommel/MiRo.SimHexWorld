@@ -76,7 +76,7 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
         HexPoint _pt = new HexPoint();
         Terrain _terrain;
         readonly List<Feature> _features = new List<Feature>();
-        readonly List<Ressource> _ressource = new List<Ressource>();
+        Ressource _ressource;
         byte _river;
 
         readonly BitArray _spotted; // set of Player IDs
@@ -84,6 +84,7 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
         private int _controlledBy = -1, _exploitedBy = -1;
         private const int MaxPlayerId = 8;
         List<Improvement> _improvements;
+        private bool _ressourceRevealed;
 
         //HeightLevel _hLevel;
         //Climate _climate = Climate.None;
@@ -391,7 +392,7 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
 
         #region resources
 
-        public List<Ressource> Ressources
+        public Ressource Ressource
         {
             get { return _ressource; }
         }
@@ -400,7 +401,10 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
         {
             get
             {
-                return _ressource.Count.ToString(CultureInfo.InvariantCulture) + " " + string.Join(", ", _ressource.Select(a => a.Name)).Trim().Trim(',');
+                if (_ressource == null)
+                    return "";
+
+                return _ressource.Name;
             }
         }
 
@@ -487,7 +491,7 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
                     {
                         foreach (ResourceBonus rb in imp.ImprovesResources)
                         {
-                            if (_ressource.Select(a => a.Name).Contains(rb.Ressource))
+                            if (_ressource != null && _ressource.Name == rb.Ressource)
                                 food += rb.Bonus.Food;
                         }
                     }
@@ -695,8 +699,7 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
 
         public IList<Improvement> Improvements
         {
-            get
-            { return _improvements; }
+            get { return _improvements; }
         }
 
         public int Weight(Unit unit)
@@ -719,6 +722,23 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
             get
             {
                 return MapData.GetWorldPosition(Point);
+            }
+        }
+
+        internal void SetRessources(Ressource ressource)
+        {
+            _ressource = ressource;
+        }
+
+        public bool RessourceRevealed
+        {
+            get
+            {
+                return _ressourceRevealed;
+            }
+            set
+            {
+                _ressourceRevealed = value;
             }
         }
     }

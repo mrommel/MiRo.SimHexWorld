@@ -5,6 +5,7 @@
     <Description>
       </Description>
     <ImageName>Sugar</ImageName>
+    <Civ5Name>RESOURCE_SUGAR</Civ5Name>
     <RessourceType>Luxury</RessourceType>
     <Bonus>
       <Food>0</Food>

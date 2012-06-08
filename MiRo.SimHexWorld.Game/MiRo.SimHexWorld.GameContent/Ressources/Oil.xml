@@ -8,6 +8,7 @@
         Oil is a liquid fuel found in large and small deposits across the world. Although occasionally used by some civilizations as far back as four thousand years ago to create asphalt or naptha or burned as a light source, modern use can be traced back to 1857 when the first modern refinery was constructed in Alsace, France. At about the same time wells were being drilled across Europe and in North America. By the early 20th century oil was in great demand, largely due to its use in internal combustion engines as used by ships, planes, and automobiles. Today much of international politics is driven by growing tension between those who have abundant sources of oil, and those who do not. Remember that oil is a strategic resource, and thus it is consumed as you construct the associated units and buildings.
       </Description>
       <ImageName>Oil</ImageName>
+      <Civ5Name>RESOURCE_OIL</Civ5Name>
       <RessourceType>Strategic</RessourceType>
       <Bonus>
         <Food>0</Food>

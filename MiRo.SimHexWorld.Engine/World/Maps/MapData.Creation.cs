@@ -615,7 +615,7 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
                 ProgressNotificationChanged(this, e);
         }
 
-        internal string GetRegionNames(HexPoint pt)
+        public string GetRegionNames(HexPoint pt)
         {
             StringBuilder sb = new StringBuilder();
 
@@ -624,6 +624,22 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
                     sb.Append(mr.Name + ", ");
 
             return sb.ToString();
+        }
+
+        public List<MapRegion> GetRegions(HexPoint pt)
+        {
+            return GetRegions(pt.X, pt.Y);
+        }
+
+        public List<MapRegion> GetRegions(int x, int y)
+        {
+            List<MapRegion> result = new List<MapRegion>();
+
+            foreach (MapRegion mr in Extension.Regions)
+                if (mr.IsInside(x, y) && this[x, y].IsOcean == mr.IsOcean)
+                    result.Add(mr);
+
+            return result;
         }
 
         public float GetValue(int x, int y, MapValueType mapValueType)

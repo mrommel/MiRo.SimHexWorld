@@ -5,6 +5,7 @@
     <Title>TXT_KEY_CIVIZATION_GERMAN_TITLE</Title>
     <Description>TXT_KEY_CIVIZATION_GERMAN_DESCRIPTION</Description>
     <ImageName>German</ImageName>
+    <PlayerColorName>German</PlayerColorName>
     <UniqueUnits>
       <Item>Panzer</Item>
       <Item>Landsknecht</Item>

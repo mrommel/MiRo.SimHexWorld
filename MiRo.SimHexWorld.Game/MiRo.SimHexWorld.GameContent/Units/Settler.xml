@@ -43,6 +43,7 @@
     <CanFound>true</CanFound>
     <PromotionNames />
     <ModelName>Settler</ModelName>
+    <!--<ModelName>wolvark_run</ModelName>-->
     <ModelScale>0.01</ModelScale>
     <ModelScript>Settler</ModelScript>
     <ModelRotation>4.2</ModelRotation>

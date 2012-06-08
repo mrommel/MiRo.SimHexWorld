@@ -32,6 +32,7 @@ namespace MiRo.SimHexWorld.Engine.UI
         SpriteFont _messageFont;
 
         GameMapBox _mapBox;
+        ContextMenu _ctxUnitMenu;
 
         MapView _view = MapView.Main;
 
@@ -75,6 +76,8 @@ namespace MiRo.SimHexWorld.Engine.UI
 
         // zoom
         ImageBox _imgZoomIn, _imgZoomOut;
+
+        HexPoint focus;
 
         readonly GameStartupSettings _startupSettings = new GameStartupSettings();
 
@@ -145,6 +148,9 @@ namespace MiRo.SimHexWorld.Engine.UI
         private void InitMainControls()
         {
             ////////////////////////////////////////////////
+            _ctxUnitMenu = new TomShane.Neoforce.Controls.ContextMenu(Manager);
+            _ctxUnitMenu.Init();
+
             _mapBox = new GameMapBox(Manager);
             _mapBox.Init();
             _mapBox.StayOnBack = false;
@@ -158,6 +164,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             _mapBox.CitySelected += MapBox_CitySelected;
             _mapBox.HumanUnitsSelected += MapBox_HumanUnitsSelected;
             _mapBox.UnitsUnselected += new UnselectHandler(MapBox_UnitsUnselected);
+            _mapBox.ContextMenu = _ctxUnitMenu;
             Add(_mapBox);
 
             // top ////////////////////////////////////////////////
@@ -504,7 +511,6 @@ namespace MiRo.SimHexWorld.Engine.UI
             ShowMainDialog();
         }
 
-
         enum MainOptionChoises { New, Load, Check, Exit };
         private void ShowMainDialog()
         {
@@ -560,6 +566,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             if (lastFpsUpdate.TotalSeconds <= 0)
             {
                 this.Text = Strings.Title + ": " + fpsCounter.FrameRate + " FPS, mem: " + String.Format(new FileSizeFormatProvider(), "{0:fs}", GC.GetTotalMemory(false));
+                this.Text += ", Cursor: " + focus;
                 lastFpsUpdate = TimeSpan.FromSeconds(3);
             }
 
@@ -650,6 +657,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             if (_lblPosition != null)
             {
                 HexPoint pt = args.UpdatedTiles.First();
+                focus = pt;
 
                 if (_mapBox.Map.IsValid(pt))
                 {

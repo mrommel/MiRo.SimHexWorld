@@ -2625,11 +2625,6 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
-    <Compile Include="Textures\Atlases\RessourceTiles.png">
-      <Name>RessourceTiles</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Textures\Ground\water.png">
       <Name>water</Name>
       <Importer>TextureImporter</Importer>
@@ -2935,6 +2930,21 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="Types\CivilizationsMinor\Warsaw.xml">
+      <Name>Warsaw</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Colors.xml">
+      <Name>Colors</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\Atlases\RessourceTiles.png">
+      <Name>RessourceTiles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fonts\Default.spritefont">
@@ -3006,31 +3016,6 @@
     </Compile>
     <Compile Include="Maps\Earth_Tiny.Civ5Map">
       <Name>Earth_Tiny</Name>
-      <Importer>Civ5MapImporter</Importer>
-      <Processor>Civ5MapProcessor</Processor>
-    </Compile>
-    <Compile Include="Maps\Tutorial_1_MovementAndExploration.Civ5Map">
-      <Name>Tutorial_1_MovementAndExploration</Name>
-      <Importer>Civ5MapImporter</Importer>
-      <Processor>Civ5MapProcessor</Processor>
-    </Compile>
-    <Compile Include="Maps\Tutorial_2_FoundCities.Civ5Map">
-      <Name>Tutorial_2_FoundCities</Name>
-      <Importer>Civ5MapImporter</Importer>
-      <Processor>Civ5MapProcessor</Processor>
-    </Compile>
-    <Compile Include="Maps\Tutorial_3_ImprovingCities.Civ5Map">
-      <Name>Tutorial_3_ImprovingCities</Name>
-      <Importer>Civ5MapImporter</Importer>
-      <Processor>Civ5MapProcessor</Processor>
-    </Compile>
-    <Compile Include="Maps\Tutorial_4_CombatAndConquest.Civ5Map">
-      <Name>Tutorial_4_CombatAndConquest</Name>
-      <Importer>Civ5MapImporter</Importer>
-      <Processor>Civ5MapProcessor</Processor>
-    </Compile>
-    <Compile Include="Maps\Tutorial_5_Diplomacy.Civ5Map">
-      <Name>Tutorial_5_Diplomacy</Name>
       <Importer>Civ5MapImporter</Importer>
       <Processor>Civ5MapProcessor</Processor>
     </Compile>

@@ -5,6 +5,7 @@
     <Title>TXT_KEY_CIVIZATION_ENGLISH_TITLE</Title>
     <Description>TXT_KEY_CIVIZATION_ENGLISH_DESCRIPTION</Description>
     <ImageName>English</ImageName>
+    <PlayerColorName>English</PlayerColorName>
     <UniqueUnits>
       <Item>Longbowman</Item>
       <Item>ShipOfTheLine</Item>

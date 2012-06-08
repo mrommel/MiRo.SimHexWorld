@@ -197,6 +197,8 @@ namespace MiRo.SimHexWorld.Engine.UI
 
             foreach (ImageBox box in _unitButtons)
                 box.Visible = false;
+
+            _ctxUnitMenu.Items.Clear();
         }
     
         void MapBox_HumanUnitsSelected(List<Unit> units)
@@ -208,6 +210,8 @@ namespace MiRo.SimHexWorld.Engine.UI
 
             foreach ( ImageBox box in _unitButtons )
                 box.Visible = false;
+
+            _ctxUnitMenu.Items.Clear();
 
             // show units actions
             _currentUnitActions = new List<UnitAction>();
@@ -229,6 +233,35 @@ namespace MiRo.SimHexWorld.Engine.UI
             {
                 _actionButtons[i].ToolTip.Text = _currentUnitActions[i].ToString();
                 _actionButtons[i].Visible = true;
+            }
+
+            foreach (UnitAction ua in _currentUnitActions)
+            {
+                MenuItem mi = new MenuItem(ua.ToString());
+                mi.Image = Provider.GetAtlas("UnitActionAtlas").GetTexture(ua.ToString()).GetThumbnail(16,16);
+                mi.Click += new TomShane.Neoforce.Controls.EventHandler(mi_Click);
+                _ctxUnitMenu.Items.Add(mi);
+            }
+        }
+
+        void mi_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
+        {
+            if (_currentUnitActions == null)
+                return;
+
+            MenuItem mi = sender as MenuItem;
+
+            UnitAction action = _currentUnitActions.FirstOrDefault( a => a.ToString() == mi.Text);
+
+            if (action != null)
+            {
+                Unit u = _currentUnits.FirstOrDefault(a => a.Actions.Contains(action));
+
+                if (u != null)
+                {
+                    u.Execute(action);
+                    e.Handled = true;
+                }
             }
         }
     }

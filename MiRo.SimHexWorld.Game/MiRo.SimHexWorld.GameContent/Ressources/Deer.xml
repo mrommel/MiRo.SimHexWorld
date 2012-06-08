@@ -4,6 +4,7 @@
     <Name>Deer</Name>
     <Description>Deer and their relatives - reindeer, moose, roe, etc. - can be found in herds across the planet. They have provided food, leather, bones, gut, and other materials for pre-industrial people for uncounted thousands of years. </Description>
     <ImageName>Deer</ImageName>
+    <Civ5Name>RESOURCE_DEER</Civ5Name>
     <RessourceType>Bonus</RessourceType>
     <Bonus>
       <Food>1</Food>

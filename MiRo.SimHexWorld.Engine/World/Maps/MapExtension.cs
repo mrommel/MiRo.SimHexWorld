@@ -3,12 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Content;
+using MiRo.SimHexWorld.Engine.Misc;
 
 namespace MiRo.SimHexWorld.Engine.World.Maps
 {
     public class MapRegion
     {
-        public string Name { get; set; }
+        private string _name;
+        public string Name 
+        {
+            get
+            {
+                if (_name.StartsWith("TXT_KEY_") && Provider.CanTranslate)
+                    return Provider.Instance.Translate(_name);
+                else
+                    return _name;
+            }
+            set
+            { 
+                _name = value; 
+            }
+        }
+
         public int X { get; set; }
         public int Y { get; set; }
         public int Width { get; set; }
@@ -21,10 +37,15 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
 
         public bool IsInside(HexPoint pt)
         {
-            return X <= pt.X
-                && pt.X <= (X + Width)
-                && Y <= pt.Y
-                && pt.Y <= (Y + Height);
+            return IsInside(pt.X, pt.Y);
+        }
+
+        internal bool IsInside(int x, int y)
+        {
+            return X <= x
+                 && x <= (X + Width)
+                 && Y <= y
+                 && y <= (Y + Height);
         }
     }
 

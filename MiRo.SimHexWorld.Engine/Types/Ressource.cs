@@ -19,7 +19,7 @@ namespace MiRo.SimHexWorld.Engine.Types
         {
             get
             {
-                return Provider.GetAtlas("ResourceAtlas").GetTexture(ImageName);
+                return Provider.GetAtlas("RessourceAtlas").GetTexture(ImageName);
             }
         }
 
@@ -31,6 +31,8 @@ namespace MiRo.SimHexWorld.Engine.Types
                 return "";
             }
         }
+
+        public string Civ5Name { get; set; }
 
         public RessourceType RessourceType { get; set; }
         public Bonus Bonus { get; set; }

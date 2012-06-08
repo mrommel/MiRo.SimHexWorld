@@ -164,12 +164,12 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                 SpriteBatch spriteBatch = new SpriteBatch(MainApplication.Instance.GraphicsDevice);
                 spriteBatch.Begin();
 
-                //// button base
-                spriteBatch.Draw(citybannerleftbackground, new Rectangle(0, bannerTextYPos, 32, 32), Color.White);
-                spriteBatch.Draw(citybannerbackground, new Rectangle(32, bannerTextYPos, bannerWidth - 32 * 2, 32), Color.White);
-                spriteBatch.Draw(citybannerrightbackground, new Rectangle(bannerWidth - 32, bannerTextYPos, 32, 32), Color.White);
+                // button base
+                spriteBatch.Draw(citybannerleftbackground, new Rectangle(0, bannerTextYPos, 32, 32), _player.PlayerColor.Secondary);
+                spriteBatch.Draw(citybannerbackground, new Rectangle(32, bannerTextYPos, bannerWidth - 32 * 2, 32), _player.PlayerColor.Secondary);
+                spriteBatch.Draw(citybannerrightbackground, new Rectangle(bannerWidth - 32, bannerTextYPos, 32, 32), _player.PlayerColor.Secondary);
 
-                //// button edges
+                // button edges
                 spriteBatch.Draw(citybannerbuttonbaseleft, new Rectangle(0, 0, 36, 64), Color.White);
                 spriteBatch.Draw(citybannerbuttonbase, new Rectangle(36, 0, bannerWidth - 36 * 2, 64), Color.White);
                 spriteBatch.Draw(citybannerbuttonbaseright, new Rectangle(bannerWidth - 36, 0, 36, 64), Color.White);
@@ -178,8 +178,8 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                 spriteBatch.Draw(citybannerstrength, new Rectangle((bannerWidth - 56) / 2, 0, 56, 16), Color.White);
 
                 // city name text
-                spriteBatch.DrawString(font, Name, posTitle, Color.Black);
-                spriteBatch.DrawString(font, Citizen.ToString(), posCitizen, Color.Black);
+                spriteBatch.DrawString(font, Name, posTitle, _player.PlayerColor.Primary);
+                spriteBatch.DrawString(font, Citizen.ToString(), posCitizen, _player.PlayerColor.Primary);
 
                 spriteBatch.End();
 
