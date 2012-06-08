@@ -52,6 +52,7 @@ namespace MiRo.SimHexWorld.Engine.World
         bool _needToUpdateHidden = false;
         bool _needToUpdateBorders = false;
         bool _needToUpdateRoads = false;
+        bool _needToUpdateResources = false;
 
         List<ForestEntity> _forests = new List<ForestEntity>();
 
@@ -210,6 +211,11 @@ namespace MiRo.SimHexWorld.Engine.World
         public void OnMapSpotting(MapSpottingArgs args)
         {
             _needToUpdateHidden = true;           
+        }
+
+        public void OnMapUpdateResources()
+        {
+            _needToUpdateResources = true;
         }
 
         private void UpdateSpotting()
@@ -501,6 +507,12 @@ namespace MiRo.SimHexWorld.Engine.World
                 _needToUpdateBorders = false;
             }
 
+            if (_needToUpdateResources)
+            {
+                UpdateResources();
+                _needToUpdateResources = false;
+            }
+
             _baseMesh.Update(gameTime);
             _cursorsMesh.Update(gameTime);
             _farmMesh.Update(gameTime);
@@ -508,6 +520,32 @@ namespace MiRo.SimHexWorld.Engine.World
 
             foreach (AbstractPlayerData pl in MainWindow.Game.Players)
                 pl.Update(gameTime);
+        }
+
+        private void UpdateResources()
+        {
+            if (_map == null)
+                return;
+
+            _resourceBillboards.ResetPositions();
+
+            // now the tiles
+            for (int i = 0; i < _map.Width; i++)
+            {
+                for (int j = 0; j < _map.Height; j++)
+                {
+                    if (_map[i, j] == null)
+                        continue;
+
+                    if (_map[i, j].Ressource != null)
+                    {
+                        if (_map[i, j].RessourceRevealed)
+                            _resourceBillboards.AddPosition(_map[i, j].Ressource.Name, MapData.GetWorldPosition(_map[i, j].Point) + new Vector3(0, 2, 0));
+                    }
+                }
+            }
+
+            _resourceBillboards.Build();
         }
 
         public void Draw(GameTime gameTime, ArcBallCamera camera)

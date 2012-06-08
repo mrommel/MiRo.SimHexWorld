@@ -289,10 +289,19 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
                 GameFacade.getInstance().SendNotification( GameNotification.StartEra, this, _era);
 
+                bool needToUpdateResources = false;
                 // reveal resources for all players
                 foreach (MapCell cell in Map.Tiles)
+                {
                     if (!cell.RessourceRevealed && cell.Ressource != null && cell.Ressource.RequiredTechName == tech.Name)
+                    {
                         cell.RessourceRevealed = true;
+                        needToUpdateResources = true;
+                    }
+                }
+
+                if( needToUpdateResources )
+                    GameFacade.getInstance().SendNotification(GameNotification.UpdateResources, this);
 
                 // evtl. enable policies
             }

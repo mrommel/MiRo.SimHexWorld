@@ -400,7 +400,8 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                 { 
                     GameNotification.UpdateImprovements,
                     GameNotification.UpdateSpotting,
-                    GameNotification.UpdateMapControlling
+                    GameNotification.UpdateMapControlling,
+                    GameNotification.UpdateResources
                 };
             }
         }
@@ -422,6 +423,11 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                     {
                         MapControllingArgs args = notification.Body as MapControllingArgs;
                         _mapRenderer.OnUpdateBorders(args);
+                    }
+                    break;
+                case GameNotification.UpdateResources:
+                    {
+                        _mapRenderer.OnMapUpdateResources();
                     }
                     break;
             }

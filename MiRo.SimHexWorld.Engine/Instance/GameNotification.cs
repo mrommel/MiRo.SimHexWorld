@@ -36,6 +36,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
         UpdateMapControlling,
         UpdateMapExploiting,
         ShowScoreHistory,
-        StartEra
+        StartEra,
+        UpdateResources
     }
 }
