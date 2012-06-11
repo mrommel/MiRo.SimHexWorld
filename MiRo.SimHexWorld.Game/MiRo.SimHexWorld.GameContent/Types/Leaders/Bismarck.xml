@@ -2,24 +2,8 @@
 <XnaContent>
   <Asset Type="MiRo.SimHexWorld.Engine.Types.LeaderData">
     <Name>Bismarck</Name>
-    <Description>
-      Otto von Bismarck, also known as the "Iron Chancellor," is perhaps the most significant figure in German history. During his long political career Bismarck unified Germany and founded the German Empire; Germany was transformed from a weak and loose confederation of states into a powerful united country that would come to dominate continental Europe.
-      
-      - Early Life
-      Descended of a noble Prussian family, Bismarck certainly inherited the arrogance of the Prussian Junker class. He was a poor student who excelled at dueling and was quite a historian and linguist. However, he spent much of his time drinking with the other aristocrats in their exclusive fraternity.
-      Unable to accept the discipline required for military service, Bismarck instead entered the Prussian diplomatic corps, where his skill quickly brought him to the attention of the Prussian Kaiser. Appointed to the German Federal Diet (congress), Bismarck worked to increase Prussian status and power within Germany. Eventually he would rise to the rank of Prussian Prime Minister, where after years of long struggle, he succeeded in unifying Germany under Prussian rule. Bismarck would accomplish this through crafty diplomacy, aided by a series of successful wars.
-
-      - Foreign Policy
-      Once Germany was unified, Bismarck's main foreign policy aim was to keep the peace in Europe, mostly by isolating France, Germany's historic enemy. In this he was largely successful. He engineered a war with France in 1870 in order to draw several German states (Bavaria, Baden, and others) into the German empire. In the war, France was quickly defeated.
-      Having achieved his objective of acquiring the German states, Bismarck argued for fairly lenient terms, but the German people and military wanted more, and he was forced to annex the French provinces of Alsace and Loraine. Bismarck knew that this would be trouble in the long run − before the war he had told a colleague, "Supposing we did win Alsace, we would have to maintain our conquest and to keep Strasbourg perpetually garrisoned. This would be an impossible position, for in the end the French would find new allies − and we might have a bad time." This, of course, is exactly what happened in World War I, where Germany had a very bad time indeed.
-
-      - Domestic Policy
-      Although an ardent conservative and monarchist, Bismarck was the first European leader to promote a system of social security for workers. He rebuilt the German monetary system, introducing for the first time a single currency. He also helped fabricate the new country's code of civil and commercial law. His benevolence was not universal, however; while emancipating the Jews, Bismarck also enacted laws aimed at restraining Germany's Catholics.
-      
-      - Judgment of History
-      As a diplomat, Bismarck's greatest weakness was his single-minded desire to weaken France. He was largely successful during his lifetime, but in doing so he made France into an implacable enemy, which would have dire consequences in the next century. Domestically, Bismarck's great flaw was his indifference to the lives of the German people. As Germany grew in power and stature, the people's lives improved but little. His social security system did some good, but he enacted that mainly to avoid having to make greater concessions to the German Socialists.
-      Bismarck was a great leader, perhaps the greatest European leader of the 19th Century. His triumphs outweighed his defeats, and he almost single-handedly turned a group of bickering kingdoms into a mighty state. Although his policies did contribute to the disasters in Germany's future, those were more so a result of his successors' inability to adjust to the changing geopolitical climate in Europe.
-    </Description>
+    <Title></Title>
+    <Description></Description>
     <ImageName>Bismarck</ImageName>
     <CivilizationName>German</CivilizationName>
     <SpecialAbilityName>FurorTeutonicus</SpecialAbilityName>

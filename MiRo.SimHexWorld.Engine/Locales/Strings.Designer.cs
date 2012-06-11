@@ -106,6 +106,24 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Die Stdatmauer schützt die Stadt. ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_BUILDINGS_WALLS_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("TXT_KEY_BUILDINGS_WALLS_DESCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Stadtmauer ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_BUILDINGS_WALLS_TITLE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_BUILDINGS_WALLS_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die England ist auf Großbritannien, ein &quot;grünes und angenehm&quot; Insel vor der Westküste Europas. Es ist das größte Mitglied der politischen Einheit wie das Vereinigte Königreich von Großbritannien und Nordirland bekannt. Historisch gesehen ein Volk von Seefahrern, für einen Großteil der letzten 500 Jahre die Engländer haben ihren unvergleichlichen Marine genutzt, um ihre Macht in Europa und der ganzen Welt zu projizieren. ähnelt.
         /// </summary>
         internal static string TXT_KEY_CIVIZATION_ENGLISH_DESCRIPTION {

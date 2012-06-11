@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Civilization">
+    <Name>Indian</Name>
+    <Title>TXT_KEY_CIVIZATION_INDIAN_TITLE</Title>
+    <Description>TXT_KEY_CIVIZATION_INDIAN_DESCRIPTION</Description>
+    <ImageName>Indian</ImageName>
+    <PlayerColorName>Indian</PlayerColorName>
+    <UniqueUnits>
+    </UniqueUnits>
+    <UniqueBuildings></UniqueBuildings>
+    <StartingTechNames>
+      <Item>Agriculture</Item>
+    </StartingTechNames>
+    <Duration></Duration>
+    <Location></Location>
+    <Size></Size>
+    <Capital>Neu Dehli</Capital>
+    <Cities>
+      <Item>Neu Dehli1</Item>
+      <Item>Neu Dehli2</Item>
+      <Item>Neu Dehli3</Item>
+      <Item>Neu Dehli4</Item>
+      <Item>Neu Dehli5</Item>    
+    </Cities>
+    <AvoidStartRegions>
+    </AvoidStartRegions>
+  </Asset>
+</XnaContent>

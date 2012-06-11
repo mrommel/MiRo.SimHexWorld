@@ -120,6 +120,9 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
         {
             _path = WayPoints.FromPath( Map.FindPath(this, target) );
 
+            if (_path.Peek == null)
+                return;
+
             Assert.AreEqual(Point, _path.Peek);
             Assert.AreEqual(target, _path.Goal);
 
@@ -231,7 +234,9 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             get { return _player; }
         }
 
-        TimeSpan updateEvery = TimeSpan.FromSeconds(1); // from setting ???
+        static TimeSpan updateEvery = TimeSpan.FromSeconds(1); // from setting ???
+
+        TimeSpan idleTimeHuman = TimeSpan.FromSeconds(5); 
         TimeSpan currentTime = TimeSpan.FromSeconds(0);
         public void Update(GameTime time)
         {
@@ -241,8 +246,17 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             currentTime -= time.ElapsedGameTime;
             if (currentTime.TotalMilliseconds <= 0)
             {
-                if( !_player.IsHuman || _action == UnitAction.Idle )
+                if( !_player.IsHuman )
                     UpdateAI();
+
+                if (_player.IsHuman)
+                {
+                    if( _action == UnitAction.Idle )
+                        idleTimeHuman -= time.ElapsedGameTime;
+
+                    if (idleTimeHuman.TotalMilliseconds <= 0)
+                        UpdateAI();
+                }
 
                 UpdateWork();
                 // reset timer

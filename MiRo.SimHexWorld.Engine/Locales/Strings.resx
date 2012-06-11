@@ -238,6 +238,12 @@
   <data name="TXT_KEY_GERMAN_CITIES_MUNICH" xml:space="preserve">
     <value>München</value>
   </data>
+  <data name="TXT_KEY_BUILDINGS_WALLS_DESCRIPTION" xml:space="preserve">
+    <value>Die Stdatmauer schützt die Stadt.</value>
+  </data>
+  <data name="TXT_KEY_BUILDINGS_WALLS_TITLE" xml:space="preserve">
+    <value>Stadtmauer</value>
+  </data>
   <data name="TXT_KEY_ERA_ANCIENT_TITLE" xml:space="preserve">
     <value>Antike</value>
   </data>

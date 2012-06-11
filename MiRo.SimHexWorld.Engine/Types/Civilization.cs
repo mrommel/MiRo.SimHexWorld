@@ -12,8 +12,6 @@ namespace MiRo.SimHexWorld.Engine.Types
 {
     public class Civilization : AbstractNamedEntity
     {
-        private Texture2D _image;
-
         [ContentSerializerIgnore]
         public override Texture2D Image
         {
@@ -77,6 +75,9 @@ namespace MiRo.SimHexWorld.Engine.Types
 
         public string Capital { get; set; }
         public List<string> Cities { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public List<string> AvoidStartRegions { get; set; }
 
         public override List<MissingAsset> CheckIntegrity()
         {

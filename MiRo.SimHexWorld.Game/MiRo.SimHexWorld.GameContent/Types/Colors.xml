@@ -24,6 +24,57 @@
       <Primary>FFFFFFFF</Primary>
       <Secondary>FF6D0200</Secondary>
     </Item>
+    <Item>
+      <Name>Egypt</Name>
+      <Primary>FF5300D0</Primary>
+      <Secondary>FFFFFC03</Secondary>
+    </Item>
+    <Item>
+      <Name>Indian</Name>
+      <Primary>FFFF9932</Primary>
+      <Secondary>FF128807</Secondary>
+    </Item>
+    <Item>
+      <Name>American</Name>
+      <Primary>FFFFFFFF</Primary>
+      <Secondary>FF1F3378</Secondary>
+    </Item>
+    <Item>
+      <Name>Chinese</Name>
+      <Primary>FFFFFFFF</Primary>
+      <Secondary>FF009552</Secondary>
+    </Item>
+    <Item>
+      <Name>Greek</Name>
+      <Primary>FF4188FE</Primary>
+      <Secondary>FFFFFFFF</Secondary>
+    </Item>
+    <Item>
+      <Name>Japanese</Name>
+      <Primary>FFB80000</Primary>
+      <Secondary>FFFFFFFF</Secondary>
+    </Item>
+
+    <Item>
+      <Name>Aztek</Name>
+      <Primary>FF89EFD5</Primary>
+      <Secondary>FFA13923</Secondary>
+    </Item>
+    <Item>
+      <Name>Russian</Name>
+      <Primary>FF000000</Primary>
+      <Secondary>FFEFB400</Secondary>
+    </Item>
+    <Item>
+      <Name>Arabian</Name>
+      <Primary>FF93DD63</Primary>
+      <Secondary>FF2B582E</Secondary>
+    </Item>
+    <Item>
+      <Name>Incan</Name>
+      <Primary>FFB800DD</Primary>
+      <Secondary>FFDDFFFF</Secondary>
+    </Item>
     <!-- minor civs -->
     <Item>
       <Name>MinorWhite</Name>

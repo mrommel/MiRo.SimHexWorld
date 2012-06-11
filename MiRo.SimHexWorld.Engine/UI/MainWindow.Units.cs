@@ -9,6 +9,7 @@ using MiRo.SimHexWorld.Engine.UI.Dialogs;
 using Microsoft.Xna.Framework.Graphics;
 using MiRo.SimHexWorld.Engine.Types;
 using MiRo.SimHexWorld.Engine.Misc;
+using MiRo.SimHexWorld.Engine.World.Maps;
 
 namespace MiRo.SimHexWorld.Engine.UI
 {
@@ -220,7 +221,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             foreach (Unit u in units)
             {
                 foreach (UnitAction action in u.Actions)
-                    if (!_currentUnitActions.Contains(action))
+                    if (!_currentUnitActions.Contains(action) && CanExecute(action, focus))
                         _currentUnitActions.Add(action);
 
                 if( j < 4 )
@@ -244,6 +245,37 @@ namespace MiRo.SimHexWorld.Engine.UI
             }
         }
 
+        private Improvement road, farm;
+        private bool CanExecute(UnitAction action, World.Maps.HexPoint focus)
+        {
+            switch (action)
+            {
+                case UnitAction.Found:
+                    if (Game.GetCityAt(focus) != null)
+                        return false;
+
+                    foreach( HexPoint pt in focus.Neighbors )
+                        if (Game.GetCityAt(pt) != null)
+                            return false;
+
+                    return true;
+                case UnitAction.BuildRoad:
+
+                    if (road == null)
+                        road = Provider.GetImprovement("Road");
+
+                    return !Game.Map[focus].Improvements.Contains(road);
+                case UnitAction.BuildFarm:
+
+                    if (road == null)
+                        road = Provider.GetImprovement("Farm");
+
+                    return !Game.Map[focus].Improvements.Contains(farm);
+            }
+
+            return false;
+        }
+
         void mi_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
         {
             if (_currentUnitActions == null)
@@ -259,6 +291,7 @@ namespace MiRo.SimHexWorld.Engine.UI
 
                 if (u != null)
                 {
+                    u.Action = action;
                     u.Execute(action);
                     e.Handled = true;
                 }

@@ -77,6 +77,9 @@ namespace MiRo.SimHexWorld.Engine.Instance
             // set leader from tribe
             _leader = Provider.Instance.Leaders.FirstOrDefault(a => a.Value.CivilizationName == _civilization.Name).Value;
 
+            if (_leader == null)
+                throw new Exception("No Leader found for " + _civilization.Name);
+
             Init();
 			
             if( !_isHuman)

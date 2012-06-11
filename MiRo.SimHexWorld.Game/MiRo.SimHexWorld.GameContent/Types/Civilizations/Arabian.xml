@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Civilization">
+    <Name>Arabian</Name>
+    <Title>TXT_KEY_CIVIZATION_ARABIAN_TITLE</Title>
+    <Description>TXT_KEY_CIVIZATION_ARABIAN_DESCRIPTION</Description>
+    <ImageName>Arabian</ImageName>
+    <PlayerColorName>Arabian</PlayerColorName>
+    <UniqueUnits>
+    </UniqueUnits>
+    <UniqueBuildings></UniqueBuildings>
+    <StartingTechNames>
+      <Item>Agriculture</Item>
+    </StartingTechNames>
+    <Duration></Duration>
+    <Location></Location>
+    <Size></Size>
+    <Capital>Mekka</Capital>
+    <Cities>
+      <Item>Mekka1</Item>
+      <Item>Mekka2</Item>
+      <Item>Mekka3</Item>
+      <Item>Mekka4</Item>
+      <Item>Mekka5</Item>    
+    </Cities>
+    <AvoidStartRegions>
+    </AvoidStartRegions>
+  </Asset>
+</XnaContent>

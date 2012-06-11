@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Civilization">
+    <Name>Chinese</Name>
+    <Title>TXT_KEY_CIVIZATION_CHINESE_TITLE</Title>
+    <Description>TXT_KEY_CIVIZATION_CHINESE_DESCRIPTION</Description>
+    <ImageName>Chinese</ImageName>
+    <PlayerColorName>Chinese</PlayerColorName>
+    <UniqueUnits>
+      <Item>Chu-Ko-Nu</Item>
+    </UniqueUnits>
+    <UniqueBuildings></UniqueBuildings>
+    <StartingTechNames>
+      <Item>Agriculture</Item>
+    </StartingTechNames>
+    <Duration></Duration>
+    <Location></Location>
+    <Size></Size>
+    <Capital>Beijing</Capital>
+    <Cities>
+      <Item>Beijing1</Item>
+      <Item>Beijing2</Item>
+      <Item>Beijing3</Item>
+      <Item>Beijing4</Item>
+      <Item>Beijing5</Item>    
+    </Cities>
+    <AvoidStartRegions>
+    </AvoidStartRegions>
+  </Asset>
+</XnaContent>

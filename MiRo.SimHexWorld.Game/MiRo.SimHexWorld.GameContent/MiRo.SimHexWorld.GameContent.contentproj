@@ -207,13 +207,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Types\Leaders\Montezuma_I.xml">
-      <Name>Montezuma_I</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Types\Civilizations\German.xml">
       <Name>German</Name>
       <Importer>XmlImporter</Importer>
@@ -2944,6 +2937,96 @@
       <Name>RessourceTiles</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Civilizations\Egypt.xml">
+      <Name>Egypt</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Civilizations\Chinese.xml">
+      <Name>Chinese</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Civilizations\Indian.xml">
+      <Name>Indian</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Civilizations\Japanese.xml">
+      <Name>Japanese</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Leaders\Washington.xml">
+      <Name>Washington</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Leaders\Napoleon.xml">
+      <Name>Napoleon</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Leaders\Ramesses.xml">
+      <Name>Ramesses</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Leaders\WuZetian.xml">
+      <Name>WuZetian</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Leaders\OdaNobunaga.xml">
+      <Name>OdaNobunaga</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Leaders\Ghandi.xml">
+      <Name>Ghandi</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Civilizations\Aztek.xml">
+      <Name>Aztek</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Civilizations\Russian.xml">
+      <Name>Russian</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Civilizations\Arabian.xml">
+      <Name>Arabian</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Civilizations\Incan.xml">
+      <Name>Incan</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Leaders\Catherine.xml">
+      <Name>Catherine</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Leaders\Montezuma.xml">
+      <Name>Montezuma</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Leaders\HanunAlRashid.xml">
+      <Name>HanunAlRashid</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Types\Leaders\Yupanqui.xml">
+      <Name>Yupanqui</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>

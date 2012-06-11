@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Civilization">
+    <Name>Russian</Name>
+    <Title>TXT_KEY_CIVIZATION_JAPANESE_TITLE</Title>
+    <Description>TXT_KEY_CIVIZATION_JAPANESE_DESCRIPTION</Description>
+    <ImageName>Russian</ImageName>
+    <PlayerColorName>Russian</PlayerColorName>
+    <UniqueUnits>
+      <Item>Cossack</Item>
+    </UniqueUnits>
+    <UniqueBuildings>
+      <Item>Krepost</Item>
+    </UniqueBuildings>
+    <StartingTechNames>
+      <Item>Agriculture</Item>
+    </StartingTechNames>
+    <Duration></Duration>
+    <Location></Location>
+    <Size></Size>
+    <Capital>Moskow</Capital>
+    <Cities>
+      <Item>Moskow1</Item>
+      <Item>Moskow2</Item>
+      <Item>Moskow3</Item>
+      <Item>Moskow4</Item>
+      <Item>Moskow5</Item>    
+    </Cities>
+    <AvoidStartRegions>
+    </AvoidStartRegions>
+  </Asset>
+</XnaContent>

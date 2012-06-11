@@ -64,7 +64,7 @@
         <Y>17</Y>
       </Item>
       <Item>
-        <CivilizationName>France</CivilizationName>
+        <CivilizationName>French</CivilizationName>
         <X>59</X>
         <Y>20</Y>
       </Item>
@@ -94,9 +94,19 @@
         <Y>27</Y>
       </Item>
       <Item>
-        <CivilizationName>Atzek</CivilizationName>
+        <CivilizationName>Aztek</CivilizationName>
         <X>20</X>
         <Y>34</Y>
+      </Item>
+      <Item>
+        <CivilizationName>Incan</CivilizationName>
+        <X>29</X>
+        <Y>52</Y>
+      </Item>
+      <Item>
+        <CivilizationName>Arabian</CivilizationName>
+        <X>77</X>
+        <Y>37</Y>
       </Item>
       <Item>
         <CivilizationName>Egypt</CivilizationName>
@@ -104,7 +114,7 @@
         <Y>32</Y>
       </Item>
       <Item>
-        <CivilizationName>Russia</CivilizationName>
+        <CivilizationName>Russian</CivilizationName>
         <X>70</X>
         <Y>16</Y>
       </Item>

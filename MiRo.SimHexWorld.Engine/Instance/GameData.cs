@@ -47,6 +47,18 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
             _players.Add(new HumanPlayerData(0, Provider.GetCivilization("English")));
             _players.Add(new AIPlayerData(1, Provider.GetCivilization("German")));
+            _players.Add(new AIPlayerData(2, Provider.GetCivilization("French")));
+            _players.Add(new AIPlayerData(3, Provider.GetCivilization("American")));
+
+            _players.Add(new AIPlayerData(4, Provider.GetCivilization("Egypt")));
+            _players.Add(new AIPlayerData(5, Provider.GetCivilization("Chinese")));
+            _players.Add(new AIPlayerData(6, Provider.GetCivilization("Japanese")));
+            _players.Add(new AIPlayerData(7, Provider.GetCivilization("Indian")));
+
+            _players.Add(new AIPlayerData(8, Provider.GetCivilization("Aztek")));
+            _players.Add(new AIPlayerData(9, Provider.GetCivilization("Russian")));
+            _players.Add(new AIPlayerData(10, Provider.GetCivilization("Arabian")));
+            _players.Add(new AIPlayerData(11, Provider.GetCivilization("Incan")));
 
             _handicap = Provider.GetHandicap("Settler");
         }

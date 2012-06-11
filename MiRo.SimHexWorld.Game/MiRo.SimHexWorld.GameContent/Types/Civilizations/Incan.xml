@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Civilization">
+    <Name>Incan</Name>
+    <Title>TXT_KEY_CIVIZATION_INCAN_TITLE</Title>
+    <Description>TXT_KEY_CIVIZATION_INCAN_DESCRIPTION</Description>
+    <ImageName>Incan</ImageName>
+    <PlayerColorName>Incan</PlayerColorName>
+    <UniqueUnits>
+    </UniqueUnits>
+    <UniqueBuildings></UniqueBuildings>
+    <StartingTechNames>
+      <Item>Agriculture</Item>
+    </StartingTechNames>
+    <Duration></Duration>
+    <Location></Location>
+    <Size></Size>
+    <Capital>Cusco</Capital>
+    <Cities>
+      <Item>Quito</Item>
+      <Item>Quito2</Item>
+      <Item>Quito3</Item>
+      <Item>Quito4</Item>
+      <Item>Quito5</Item>    
+    </Cities>
+    <AvoidStartRegions>
+    </AvoidStartRegions>
+  </Asset>
+</XnaContent>

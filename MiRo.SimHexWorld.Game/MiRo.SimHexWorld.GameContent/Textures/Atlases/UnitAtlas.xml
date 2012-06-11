@@ -15,10 +15,34 @@
         <Index>1</Index>
       </Item>
       <Item>
+        <Name>Trireme</Name>
+        <Index>2</Index>
+      </Item>
+      <Item>
         <Name>Warrior</Name>
         <Index>3</Index>
       </Item>
+      <Item>
+        <Name>Jaguar</Name>
+        <Index>4</Index>
+      </Item>
+      <Item>
+        <Name>Scout</Name>
+        <Index>5</Index>
+      </Item>
+      <Item>
+        <Name>Archer</Name>
+        <Index>6</Index>
+      </Item>
       <!-- next row -->
+      <Item>
+        <Name>Spearman</Name>
+        <Index>9</Index>
+      </Item>
+      <Item>
+        <Name>Hoplite</Name>
+        <Index>10</Index>
+      </Item>
       <!-- next row -->
       <!-- next row -->
       <Item>

@@ -166,6 +166,12 @@
   <data name="TXT_KEY_GERMAN_CITIES_MUNICH" xml:space="preserve">
     <value>Munich</value>
   </data>
+  <data name="TXT_KEY_BUILDINGS_WALLS_DESCRIPTION" xml:space="preserve">
+    <value>Walls increase a city's Defense Strength, making the city more difficult to capture. Walls are quite useful for cities located along a civilization's frontier.</value>
+  </data>
+  <data name="TXT_KEY_BUILDINGS_WALLS_TITLE" xml:space="preserve">
+    <value>Walls</value>
+  </data>
   <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_DUEL" xml:space="preserve">
     <value>2 players with 4 City States.</value>
   </data>

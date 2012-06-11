@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Civilization">
+    <Name>Aztek</Name>
+    <Title>TXT_KEY_CIVIZATION_AZTEK_TITLE</Title>
+    <Description>TXT_KEY_CIVIZATION_AZTEK_DESCRIPTION</Description>
+    <ImageName>Aztek</ImageName>
+    <PlayerColorName>Aztek</PlayerColorName>
+    <UniqueUnits>
+    </UniqueUnits>
+    <UniqueBuildings></UniqueBuildings>
+    <StartingTechNames>
+      <Item>Agriculture</Item>
+    </StartingTechNames>
+    <Duration></Duration>
+    <Location></Location>
+    <Size></Size>
+    <Capital>Quito</Capital>
+    <Cities>
+      <Item>Quito1</Item>
+      <Item>Quito2</Item>
+      <Item>Quito3</Item>
+      <Item>Quito4</Item>
+      <Item>Quito5</Item>    
+    </Cities>
+    <AvoidStartRegions>
+    </AvoidStartRegions>
+  </Asset>
+</XnaContent>

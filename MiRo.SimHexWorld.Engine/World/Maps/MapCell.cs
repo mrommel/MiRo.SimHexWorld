@@ -82,7 +82,7 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
         readonly BitArray _spotted; // set of Player IDs
         readonly BitArray _discovered;
         private int _controlledBy = -1, _exploitedBy = -1;
-        private const int MaxPlayerId = 8;
+        private const int MaxPlayerId = 24;
         List<Improvement> _improvements;
         private bool _ressourceRevealed;
 
