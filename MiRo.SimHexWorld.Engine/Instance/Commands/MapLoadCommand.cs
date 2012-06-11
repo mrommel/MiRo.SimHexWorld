@@ -34,10 +34,14 @@ namespace MiRo.SimHexWorld.Engine.Instance.Commands
             try
             {
                 map.Extension = MainApplication.Instance.Content.Load<MapExtension>("Content/MapsExtension/" + civ5map.FileName);
+                
             }
             catch { }
 
             map.InitFromCiv5Map(civ5map);
+
+            if( map.Extension != null )
+                map.ApplyRivers();
 
             GameFacade.getInstance().SendNotification(GameNotification.LoadMapSuccess, map);
         }

@@ -207,19 +207,19 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
                 return null;
 
             if( this[point].IsRiver)
-                return Rivers.FirstOrDefault(river => river.Points.Contains(point));
+                return Rivers.FirstOrDefault(river => river.Points.Select( a => a.Point ).Contains(point));
 
             HexPoint neighbor = point.Neighbor(HexDirection.NorthEast);
             if (IsValid(neighbor) && this[neighbor].IsNEOfRiver)
-                return Rivers.FirstOrDefault(river => river.Points.Contains(neighbor));
+                return Rivers.FirstOrDefault(river => river.Points.Select(a => a.Point).Contains(neighbor));
 
             neighbor = point.Neighbor(HexDirection.West);
             if (IsValid(neighbor) && this[neighbor].IsWOfRiver)
-                return Rivers.FirstOrDefault(river => river.Points.Contains(neighbor));
+                return Rivers.FirstOrDefault(river => river.Points.Select(a => a.Point).Contains(neighbor));
 
             neighbor = point.Neighbor(HexDirection.NorthWest);
             if (IsValid(neighbor) && this[neighbor].IsNWOfRiver)
-                return Rivers.FirstOrDefault(river => river.Points.Contains(neighbor));
+                return Rivers.FirstOrDefault(river => river.Points.Select(a => a.Point).Contains(neighbor));
 
             return null;
         }

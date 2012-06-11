@@ -75,6 +75,10 @@ namespace MiRo.SimHexWorld.Engine.Instance
                     pl.AddUnit("Worker", loc.X, loc.Y);
                 }
             }
+            else 
+            {
+                // find good start locations
+            }
         }
 
         public MapData Map

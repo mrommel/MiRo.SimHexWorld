@@ -67,6 +67,7 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
 
             neighbor.MoveDir(dir);
 
+            Assert.False(ReferenceEquals(this, neighbor), "references must be different");
             Assert.AreNotEqual(neighbor, this, "Neighbor cannot be equal to current object");
 
             return neighbor;

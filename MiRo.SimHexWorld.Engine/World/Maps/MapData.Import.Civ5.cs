@@ -108,10 +108,46 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
                     cell.Terrain = coast;
             }
 
+            PatchRivers();
+        
             // if there are no resources applied, do this
             if (_tiles.Count(a => a.Ressource != null ) == 0)
-            {
                 MakeResources();
+         }   
+
+        private void PatchRivers()
+        {
+            return;
+
+            bool[,] rivers = new bool[Width,Height];
+
+            for (int x = 0; x < Width; x++)
+                for (int y = 0; y < Height; y++)
+                    rivers[x, y] = this[x, y].RiverTileValue > 0;
+
+            for (int x = 0; x < Width; x++)
+            {
+                for (int y = 0; y < Height; y++)
+                {
+                    this[x,y].River = 0;
+
+                    HexPoint pt = new HexPoint(x, y);
+
+                    HexPoint east = pt.Neighbor(HexDirection.East);
+
+                    if (this.IsValid(east) && rivers[x,y] && rivers[east.X, east.Y])
+                        this[x, y].SetRiver(MapCell.FlowDirectionType.North);
+
+                    HexPoint southEast = pt.Neighbor(HexDirection.SouthEast);
+
+                    if (this.IsValid(southEast) && rivers[x, y] && rivers[southEast.X, southEast.Y])
+                        this[x, y].SetRiver(MapCell.FlowDirectionType.NorthEast);
+
+                    HexPoint southWest = pt.Neighbor(HexDirection.SouthWest);
+
+                    if (this.IsValid(southWest) && rivers[x, y] && rivers[southWest.X, southWest.Y])
+                        this[x, y].SetRiver(MapCell.FlowDirectionType.NorthWest);
+                }
             }
         }
 

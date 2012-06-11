@@ -901,9 +901,18 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                 {
                     if (!_buildings.Contains(b))
                     {
+                        bool possible = false;
+
                         // techs
                         if ((b.RequiredTech == null || _player.Technologies.Contains(b.RequiredTech)) &&
                             ((b.InCapitalOnly == IsCapital) || IsCapital))
+                            possible = true;
+
+                        // check wether we need a river for that building
+                        if (b.NeedRiver && !IsNearRiver)
+                            possible = false;
+
+                        if(possible)
                             buildings.Add(b);
                     }
                 }
@@ -951,5 +960,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                 return 0f;
             }
         }
+
+        public bool IsNearRiver { get { return Map[Point].IsRiver; } }
     }
 }

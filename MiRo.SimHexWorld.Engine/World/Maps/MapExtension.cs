@@ -60,6 +60,7 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
     {
         public string MapName { get; set; }
         public List<MapRegion> Regions { get; set; }
+        public List<River> Rivers { get; set; }
         public List<StartLocation> StartLocations { get; set; }
     }
 }

@@ -1541,6 +1541,7 @@
       <Name>Earth_Huge</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
+      <SubType>Designer</SubType>
     </Compile>
     <Compile Include="Buildings\BurialTomb.xml">
       <Name>BurialTomb</Name>
@@ -3027,6 +3028,11 @@
       <Name>Yupanqui</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\Ground\rivers.png">
+      <Name>rivers</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -52,6 +52,27 @@
         </RessourceExcludes>
       </Item>
     </Regions>
+    <Rivers>
+      <Item>
+        <Name>TXT_KEY_RIVER_MISSISSIPPI</Name>
+        <Points Count="7">
+          <Item>24 30 S</Item>
+          <Item>25 29 SE</Item>
+          <Item>24 29 S</Item>
+          <Item>24 28 SW</Item>
+          <Item>24 28 S</Item>
+          <Item>25 27 SE</Item>
+          <Item>24 27 S</Item>
+        </Points>
+      </Item>
+      <Item>
+        <Name>TXT_KEY_RIVER_DONAU</Name>
+        <Points Count="2">
+          <Item>24 30 S</Item>
+          <Item>25 29 SE</Item>        
+        </Points>
+      </Item>
+    </Rivers>
     <StartLocations>
       <Item>
         <CivilizationName>German</CivilizationName>

@@ -30,7 +30,7 @@ namespace MiRo.SimHexWorld.Engine.World
         readonly Mesh _cursorsMesh;
         HexPoint _lastPos = new HexPoint();
 
-        Mesh _borderMesh, _roadMesh, _farmMesh;
+        Mesh _borderMesh, _roadMesh, _farmMesh, _riverMesh;
 
         readonly Manager _manager;
 
@@ -67,6 +67,7 @@ namespace MiRo.SimHexWorld.Engine.World
             _borderMesh = new Mesh(manager.GraphicsDevice, "cursors");
             _roadMesh = new Mesh(manager.GraphicsDevice, "roads");
             _farmMesh = new Mesh(manager.GraphicsDevice, "farms");
+            _riverMesh = new Mesh(manager.GraphicsDevice, "rivers");
 
             TextureManager.Instance.Device = manager.GraphicsDevice;
 
@@ -110,6 +111,11 @@ namespace MiRo.SimHexWorld.Engine.World
             TextureManager.Instance.Add("farms", _manager.Content.Load<Texture2D>("Content/Textures/Ground/farms"));
             _farmMesh.LoadContent(_manager.Content);
 
+            // rivers
+            TextureManager.Instance.Add("rivers", _manager.Content.Load<Texture2D>("Content/Textures/Ground/rivers"));
+            _riverMesh.LoadContent(_manager.Content);
+
+            // resources
             _resourceBillboards = new BillboardSystem<string>(_manager.GraphicsDevice, _manager.Content);
 
             foreach (Ressource r in Provider.Instance.Ressources.Values)
@@ -446,10 +452,17 @@ namespace MiRo.SimHexWorld.Engine.World
                         if( _map[i, j].RessourceRevealed )
                             _resourceBillboards.AddPosition(_map[i, j].Ressource.Name, MapData.GetWorldPosition(_map[i, j].Point) + new Vector3(0, 2, 0));
                     }
+
+                    if (_map[i, j].IsRiver)
+                    {
+                        int riverTileIndex = _map[i, j].RiverTileValue;
+                        _riverMesh.AddObject( new HexagonMeshItem8X8( MapData.GetWorldPosition(i,j), riverTileIndex ), false );
+                    }
                 }
             }
 
             hMesh.UpdateBuffers();
+            _riverMesh.UpdateBuffers();
 
             UpdateSpotting();
 
@@ -517,6 +530,7 @@ namespace MiRo.SimHexWorld.Engine.World
             _cursorsMesh.Update(gameTime);
             _farmMesh.Update(gameTime);
             hMesh.Update(gameTime);
+            _riverMesh.Update(gameTime);
 
             foreach (AbstractPlayerData pl in MainWindow.Game.Players)
                 pl.Update(gameTime);
@@ -553,6 +567,7 @@ namespace MiRo.SimHexWorld.Engine.World
             if (_map != null)
             {
                 hMesh.Draw(gameTime, camera.View, camera.Projection, camera.Position);
+                _riverMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
                 _cursorsMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
                 _borderMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
                 _farmMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
@@ -570,7 +585,7 @@ namespace MiRo.SimHexWorld.Engine.World
                 foreach (AbstractPlayerData pl in MainWindow.Game.Players)
                     pl.Draw(gameTime);
 
-                _manager.GraphicsDevice.RasterizerState = RasterizerState.CullCounterClockwise;
+                //_manager.GraphicsDevice.RasterizerState = RasterizerState.CullCounterClockwise;
             }
         }
     }

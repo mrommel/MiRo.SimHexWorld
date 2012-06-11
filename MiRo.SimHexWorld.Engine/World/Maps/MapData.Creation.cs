@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using MiRo.SimHexWorld.Engine.Instance;
 using MiRo.AiXGame.Maps;
@@ -124,14 +125,14 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
 
         private void DoRiver(HexPointFlow hexPointFlow, HexPointCorner hxc, River river, int iteration)
         {
-            if (river.Points.Count > 20 || iteration > 30) // paranoia
+            if (river.Points.Count > 50 || iteration > 100) // paranoia
                 return;
 
             if (!IsValid(hxc.Point))
                 return;
 
-            if( !river.Points.Contains(hxc.Point) )
-                river.Points.Add(hxc.Point);
+            if( !river.Points.Select( a => a.Point).Contains(hxc.Point) )
+                river.Points.Add(new FlowPoint( hxc.Point, hexPointFlow.Flow));
 
             this[hxc.Point].SetRiver(hexPointFlow.Flow);
 
@@ -684,6 +685,23 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
             }
 
             return cells;
+        }
+
+        public void ApplyRivers()
+        {
+            for (int i = 0; i < Width; ++i)
+            {
+                for (int j = 0; j < Height; ++j)
+                {
+                    this[i, j].River = 0;
+                }
+            }
+
+            foreach (River r in Extension.Rivers)
+            {
+                foreach (FlowPoint pt in r.Points)
+                    this[pt.Point].SetRiver(pt.Flow);
+            }
         }
     }
 
