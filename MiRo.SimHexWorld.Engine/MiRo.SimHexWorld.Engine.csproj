@@ -273,6 +273,7 @@
     <Compile Include="World\Maps\MapDataReader.cs" />
     <Compile Include="World\Maps\Civ5MapReader.cs" />
     <Compile Include="World\Maps\River.cs" />
+    <Compile Include="World\Maps\RiverSerializer.cs" />
     <Compile Include="World\Meshed\HexagonMeshItem1x1.cs" />
     <Compile Include="World\Meshed\HexagonMeshItem4x2.cs" />
     <Compile Include="World\Meshed\HexagonMeshItem4x4.cs" />

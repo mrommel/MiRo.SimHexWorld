@@ -12,6 +12,9 @@ using MiRo.SimHexWorld.Engine.World.Entities;
 using MiRo.SimHexWorld.Engine.Types;
 using MiRo.SimHexWorld.Engine.UI.Dialogs;
 using MiRo.SimHexWorld.Engine.UI;
+using System.Xml;
+using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate;
+using System.IO;
 
 namespace MiRo.SimHexWorld.Engine.Instance
 {

@@ -5,6 +5,8 @@ using System.Text;
 using TomShane.Neoforce.Controls;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using MiRo.SimHexWorld.Engine.Instance;
+using MiRo.SimHexWorld.Engine.World.Maps;
 
 namespace MiRo.SimHexWorld.Engine.UI
 {
@@ -71,11 +73,25 @@ namespace MiRo.SimHexWorld.Engine.UI
                     int i = x + y * Game.Map.Width;
 
                     if (_mapBox.FogOfWarEnabled && !Game.Map[x, y].IsSpotted(Game.Human))
-                        overviewColors[i] = Color.Black;
+                        overviewColors[i] = Color.Transparent;
                     else if (Game.Map[x, y].IsOcean)
-                        overviewColors[i] = Color.Blue;
+                        overviewColors[i] = Color.LightBlue;
                     else
-                        overviewColors[i] = Color.Green;
+                    {
+                        int controlledBy = Game.Map[x,y].ControlledBy;
+
+                        if (controlledBy == -1 || Game.Players.Count <= controlledBy)
+                            overviewColors[i] = Color.LightGreen;
+                        else
+                        {
+                            AbstractPlayerData controller = Game.Players[controlledBy];
+
+                            if (Game.GetCityAt(new HexPoint(x,y)) != null)
+                                overviewColors[i] = controller.PlayerColor.Primary;
+                            else
+                                overviewColors[i] = controller.PlayerColor.Secondary;
+                        }
+                    }
                 }
             }
 

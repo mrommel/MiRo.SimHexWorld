@@ -55,22 +55,253 @@
     <Rivers>
       <Item>
         <Name>TXT_KEY_RIVER_MISSISSIPPI</Name>
-        <Points Count="7">
-          <Item>24 30 S</Item>
-          <Item>25 29 SE</Item>
-          <Item>24 29 S</Item>
-          <Item>24 28 SW</Item>
-          <Item>24 28 S</Item>
-          <Item>25 27 SE</Item>
-          <Item>24 27 S</Item>
-        </Points>
+        <Data>
+          <Item>24 30 SouthWest</Item>
+          <Item>24 30 South</Item>
+          <Item>25 29 SouthEast</Item>
+          <Item>24 29 South</Item>
+          <Item>24 28 SouthWest</Item>
+          <Item>24 28 South</Item>
+          <Item>25 27 SouthEast</Item>
+          <Item>24 27 South</Item>
+          <Item>24 26 NorthEast</Item>
+          <Item>24 26 North</Item>
+          <Item>25 25 SouthEast</Item>
+          <!-- ... -->
+          <Item>24 29 North</Item>
+          <Item>24 28 NorthEast</Item>
+          <Item>24 28 North</Item>
+          <Item>25 27 SouthEast</Item>
+          <!-- ... -->
+          <Item>19 19 NorthEast</Item>
+          <Item>20 19 SouthEast</Item>
+          <Item>19 20 North</Item>
+        </Data>
       </Item>
       <Item>
         <Name>TXT_KEY_RIVER_DONAU</Name>
-        <Points Count="2">
-          <Item>24 30 S</Item>
-          <Item>25 29 SE</Item>        
-        </Points>
+        <Data>
+          <Item>69 22 SouthEast</Item>
+          <Item>68 22 SouthWest</Item>
+          <Item>68 22 SouthEast</Item>
+          <Item>67 22 SouthWest</Item>
+          <Item>67 22 SouthEast</Item>
+          <Item>66 22 SouthWest</Item>
+          <Item>66 22 SouthEast</Item>
+          <Item>65 22 South</Item>
+          <Item>66 21 SouthEast</Item>
+          <Item>65 21 South</Item>
+          <Item>65 20 SouthEast</Item>
+          <Item>64 20 SouthEast</Item>
+          <Item>64 20 SouthWest</Item>
+          <Item>63 20 South</Item>
+          <Item>63 19 SouthEast</Item>
+          <Item>63 19 SouthWest</Item>
+        </Data>
+      </Item>
+      <Item>
+        <Name>TXT_KEY_RIVER_NIL</Name>
+        <Data>
+          <Item>70 32 North</Item>
+          <Item>70 32 NorthEast</Item>
+          <Item>70 33 North</Item>
+          <Item>71 33 NorthWest</Item>
+          <Item>70 34 North</Item>
+          <Item>70 34 NorthEast</Item>
+          <Item>70 35 North</Item>
+          <Item>70 35 NorthEast</Item>
+          <Item>69 36 North</Item>
+          <Item>69 36 NorthEast</Item>
+          <Item>69 37 North</Item>
+          <Item>70 37 NorthWest</Item>
+          <!-- ... -->
+          <Item>71 46 NorthWest</Item>
+          <Item>70 46 North</Item>
+          <Item>71 45 NorthWest</Item>
+          <Item>70 45 North</Item>
+          <Item>70 44 NorthEast</Item>
+          <Item>70 44 North</Item>
+          <Item>71 43 NorthWest</Item>
+          <Item>70 43 North</Item>
+          <Item>70 42 NorthEast</Item>
+          <Item>70 42 North</Item>
+          <Item>71 41 NorthWest</Item>
+          <Item>70 41 North</Item>
+          <Item>70 40 NorthEast</Item>
+          <Item>70 40 North</Item>
+        </Data>
+      </Item>
+      <Item>
+        <Name>TXT_KEY_RIVER_TIBER</Name>
+        <Data>
+          <Item>63 25 SouthEast</Item>
+        </Data>
+      </Item>
+      <Item>
+        <Name>TXT_KEY_RIVER_WOLGA</Name>
+        <Data>
+          <Item>77 21 North</Item>
+          <Item>77 20 SouthEast</Item>
+          <!-- ... -->
+          <Item>76 19 North</Item>
+          <Item>76 18 NorthEast</Item>
+          <Item>76 18 North</Item>
+          <Item>77 17 NorthEast</Item>
+          <Item>77 17 North</Item>
+          <Item>77 16 NorthEast</Item>
+          <Item>77 16 North</Item>
+          <Item>78 15 SouthEast</Item>
+          <!-- ... -->
+          <Item>75 14 SouthEast</Item>
+          <Item>75 14 NorthEast</Item>
+          <Item>76 14 SouthEast</Item>
+          <Item>76 15 North</Item>
+        </Data>
+      </Item>
+      <Item>
+        <Name>TXT_KEY_RIVER_OB</Name>
+        <Data>
+          <Item>91 17 NorthWest</Item>
+          <Item>90 17 North</Item>
+          <Item>90 16 NorthEast</Item>
+          <Item>90 16 North</Item>
+          <Item>91 15 NorthWest</Item>
+          <Item>90 15 North</Item>
+          <Item>90 14 NorthWest</Item>
+          <Item>89 14 NorthEast</Item>
+          <!-- ... -->
+          <Item>88 13 NorthWest</Item>
+          <Item>87 13 North</Item>
+          <Item>87 12 NorthWest</Item>
+          <Item>86 12 NorthEast</Item>
+          <!-- ... -->
+          <Item>86 11 North</Item>
+          <Item>86 10 NorthWest</Item>
+          <Item>85 10 North</Item>
+          <Item>86 9 NorthEast</Item>
+          <Item>87 9 SouthEast</Item>
+          <Item>87 9 NorthEast</Item>
+          <Item>87 9 North</Item>
+          <Item>87 8 NorthEast</Item>
+          <Item>88 8 SouthEast</Item>
+          <Item>88 8 NorthEast</Item>
+          <Item>88 8 North</Item>
+          <Item>89 7 NorthWest</Item>
+          <Item>88 7 North</Item>
+        </Data>
+      </Item>
+      <Item>
+        <Name>TXT_KEY_RIVER_KLONDIKE</Name>
+        <Data>
+        </Data>
+      </Item>
+      <Item>
+        <Name>TXT_KEY_RIVER_RIO_DE_LA_PLATA</Name>
+        <Data>
+          <Item>37 59 North</Item>
+          <Item>37 58 NorthEast</Item>
+          <Item>37 58 North</Item>
+          <Item>38 57 NorthEast</Item>
+          <Item>38 57 North</Item>
+          <Item>38 56 NorthEast</Item>
+          <Item>38 56 North</Item>
+          <Item>39 55 NorthEast</Item>
+          <Item>39 55 North</Item>
+          <Item>39 54 NorthEast</Item>
+          <Item>39 54 North</Item>
+          <Item>40 53 NorthEast</Item>
+          <Item>41 53 NorthWest</Item>
+        </Data>
+      </Item>
+      <Item>
+        <Name>TXT_KEY_RIVER_AMAZONAS</Name>
+        <Data>
+          <Item>31 45 NorthEast</Item>
+          <Item>32 45 SouthEast</Item>
+          <Item>31 46 North</Item>
+          <!-- ... -->
+          <Item>31 47 SouthEast</Item>
+          <Item>31 47 NorthEast</Item>
+          <Item>32 47 SouthEast</Item>
+          <Item>31 48 North</Item>
+          <!-- ... -->
+          <Item>32 46 SouthEast</Item>
+          <Item>32 46 NorthEast</Item>
+          <Item>33 46 SouthEast</Item>
+          <Item>33 47 North</Item>
+          <!-- ... -->
+          <Item>38 52 NorthEast</Item>
+          <Item>38 52 North</Item>
+          <Item>39 51 NorthEast</Item>
+          <Item>40 51 NorthWest</Item>
+          <Item>39 51 North</Item>
+          <Item>39 50 NorthWest</Item>
+          <Item>38 50 North</Item>
+          <Item>39 49 NorthEast</Item>
+          <Item>40 49 NorthWest</Item>
+          <Item>39 49 North</Item>
+          <Item>39 48 NorthEast</Item>
+          <Item>39 48 North</Item>
+          <Item>40 47 NorthEast</Item>
+          <Item>40 47 North</Item>
+        </Data>
+      </Item>
+      <Item>
+        <Name>TXT_KEY_RIVER_GANGES</Name>
+        <Data>
+          <Item>94 37 North</Item>
+          <Item>94 36 SouthEast</Item>
+          <!-- ... -->
+          <Item>88 32 SouthEast</Item>
+          <Item>88 32 NorthEast</Item>
+          <Item>89 32 SouthEast</Item>
+          <Item>89 32 NorthEast</Item>
+          <Item>90 32 SouthEast</Item>
+          <Item>90 32 NorthEast</Item>
+          <Item>91 32 SouthEast</Item>
+          <Item>91 33 North</Item>
+        </Data>
+      </Item>
+      <Item>
+        <Name>TXT_KEY_RIVER_INDUS</Name>
+        <Data>
+          <Item>84 34 North</Item>
+          <Item>85 33 NorthEast</Item>
+          <Item>85 33 North</Item>
+          <Item>85 32 NorthEast</Item>
+          <Item>85 32 North</Item>
+          <Item>86 31 NorthEast</Item>
+          <Item>86 31 North</Item>
+          <Item>86 30 NorthEast</Item>
+          <Item>86 30 North</Item>
+          <Item>87 29 NorthEast</Item>
+          <Item>88 29 NorthWest</Item>
+        </Data>
+      </Item>
+      <Item>
+        <Name>TXT_KEY_RIVER_JANGTSEKIANG</Name>
+        <Data>      
+        </Data>
+      </Item>
+      <Item>
+        <Name>TXT_KEY_RIVER_EUPHRAT</Name>
+        <Data>
+          <Item>73 28 SouthEast</Item>
+          <Item>73 29 North</Item>
+          <!-- ... -->
+          <Item>74 29 SouthEast</Item>
+          <Item>74 29 NorthEast</Item>
+          <Item>75 29 SouthEast</Item>
+          <Item>74 30 North</Item>
+        </Data>
+      </Item>
+      <Item>
+        <Name>TXT_KEY_RIVER_TIGRIS</Name>
+        <Data>
+          <Item>76 30 North</Item>
+          <Item>77 29 SouthEast</Item>
+          <!-- ... -->
+        </Data>
       </Item>
     </Rivers>
     <StartLocations>

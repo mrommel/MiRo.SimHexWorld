@@ -689,6 +689,8 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
 
         public void ApplyRivers()
         {
+            return;
+
             for (int i = 0; i < Width; ++i)
             {
                 for (int j = 0; j < Height; ++j)

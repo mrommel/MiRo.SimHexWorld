@@ -2798,6 +2798,7 @@
       <Name>UnitActionAtlas</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
+      <SubType>Designer</SubType>
     </Compile>
     <Compile Include="Textures\Atlases\UnitActionTiles.png">
       <Name>UnitActionTiles</Name>

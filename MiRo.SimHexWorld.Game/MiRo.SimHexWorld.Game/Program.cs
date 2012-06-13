@@ -4,6 +4,8 @@ using MiRo.SimHexWorld.Engine.UI;
 using Microsoft.Xna.Framework.Graphics;
 using System.Windows.Forms;
 using System.Globalization;
+using System.Xml;
+using MiRo.SimHexWorld.Engine.World.Maps;
 
 namespace MiRo.SimHexWorld.Game
 {

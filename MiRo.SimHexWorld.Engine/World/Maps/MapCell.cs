@@ -228,13 +228,18 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
         {
 			NoFlowdirection = 0,
 
+            //North = 1,
+            //South = 2,     
+            //SouthEast = 4,
+            //NorthWest = 8,
+            //SouthWest = 16,
+            //NorthEast = 32,
             North = 1,
-            South = 2,     
+            NorthEast = 2,
             SouthEast = 4,
-            NorthWest = 8,
+            South = 8,
             SouthWest = 16,
-            NorthEast = 32,
-           
+            NorthWest = 32,
             //NORTH_MASK,
             //SOUTH_MASK,
             //SOUTHEAST_MASK,
@@ -309,6 +314,23 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
             }
         }
 
+        /// <summary>
+        /// North, South or NoFlowdirection
+        /// </summary>
+        public FlowDirectionType WOfRiver
+        {
+            get
+            {
+                if ((River & (int)FlowDirectionType.North) > 0)
+                    return FlowDirectionType.North;
+
+                if ((River & (int)FlowDirectionType.South) > 0)
+                    return FlowDirectionType.South;
+
+                return FlowDirectionType.NoFlowdirection;
+            }
+        }
+
         public void SetNWOfRiver(bool river, FlowDirectionType flowDir)
         {
             if (flowDir != FlowDirectionType.NorthEast && flowDir != FlowDirectionType.SouthWest)
@@ -333,6 +355,23 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
             }
         }
 
+        /// <summary>
+        /// NorthEast, SouthWest or NoFlowdirection
+        /// </summary>
+        public FlowDirectionType NWOfRiver
+        {
+            get
+            {
+                if ((River & (int)FlowDirectionType.NorthEast) > 0)
+                    return FlowDirectionType.NorthEast;
+
+                if ((River & (int)FlowDirectionType.SouthWest) > 0)
+                    return FlowDirectionType.SouthWest;
+
+                return FlowDirectionType.NoFlowdirection;
+            }
+        }
+
         public void SetNEOfRiver(bool river, FlowDirectionType flowDir)
         {
             if (flowDir != FlowDirectionType.NorthWest && flowDir != FlowDirectionType.SouthEast)
@@ -354,6 +393,23 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
                     return true;
 
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// NorthWest, SouthEast or NoFlowdirection
+        /// </summary>
+        public FlowDirectionType NEOfRiver
+        {
+            get
+            {
+                if ((River & (int)FlowDirectionType.NorthWest) > 0)
+                    return FlowDirectionType.NorthWest;
+
+                if ((River & (int)FlowDirectionType.SouthEast) > 0)
+                    return FlowDirectionType.SouthEast;
+
+                return FlowDirectionType.NoFlowdirection;
             }
         }
 

@@ -4,6 +4,8 @@ using MiRo.SimHexWorld.Engine.Misc;
 using MiRo.SimHexWorld.Engine.Types;
 using System.Collections.Generic;
 using MiRo.SimHexWorld.Engine.Instance.AI;
+using System.Xml;
+using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate;
 
 namespace MiRo.SimHexWorld.Engine.World.Maps
 {
@@ -108,7 +110,7 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
                     cell.Terrain = coast;
             }
 
-            PatchRivers();
+            //PatchRivers();
         
             // if there are no resources applied, do this
             if (_tiles.Count(a => a.Ressource != null ) == 0)
@@ -117,38 +119,112 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
 
         private void PatchRivers()
         {
-            return;
-
-            bool[,] rivers = new bool[Width,Height];
-
-            for (int x = 0; x < Width; x++)
-                for (int y = 0; y < Height; y++)
-                    rivers[x, y] = this[x, y].RiverTileValue > 0;
-
+            // fill base data
+            List<FlowPoint> riverParts = new List<FlowPoint>();
+         
             for (int x = 0; x < Width; x++)
             {
                 for (int y = 0; y < Height; y++)
                 {
-                    this[x,y].River = 0;
+                    MapCell.FlowDirectionType fd = this[x, y].WOfRiver;
 
-                    HexPoint pt = new HexPoint(x, y);
+                    if (fd != MapCell.FlowDirectionType.NoFlowdirection)
+                        riverParts.Add(new FlowPoint(new HexPoint(x, y), fd));
 
-                    HexPoint east = pt.Neighbor(HexDirection.East);
+                    fd = this[x, y].NEOfRiver;
 
-                    if (this.IsValid(east) && rivers[x,y] && rivers[east.X, east.Y])
-                        this[x, y].SetRiver(MapCell.FlowDirectionType.North);
+                    if (fd != MapCell.FlowDirectionType.NoFlowdirection)
+                        riverParts.Add(new FlowPoint(new HexPoint(x, y), fd));
 
-                    HexPoint southEast = pt.Neighbor(HexDirection.SouthEast);
+                    fd = this[x, y].NWOfRiver;
 
-                    if (this.IsValid(southEast) && rivers[x, y] && rivers[southEast.X, southEast.Y])
-                        this[x, y].SetRiver(MapCell.FlowDirectionType.NorthEast);
-
-                    HexPoint southWest = pt.Neighbor(HexDirection.SouthWest);
-
-                    if (this.IsValid(southWest) && rivers[x, y] && rivers[southWest.X, southWest.Y])
-                        this[x, y].SetRiver(MapCell.FlowDirectionType.NorthWest);
+                    if (fd != MapCell.FlowDirectionType.NoFlowdirection)
+                        riverParts.Add(new FlowPoint(new HexPoint(x, y), fd));
                 }
             }
+
+            // create river graphs
+            List<River> rivers = new List<River>();
+            int riverNum = 0;
+
+            foreach (FlowPoint fp in riverParts)
+            {
+                River r = rivers.FirstOrDefault(a => a.IsConnected(fp));
+
+                if (r == null)
+                {
+                    River newRiver = new River("River " + (riverNum++));
+                    newRiver.Points.Add(fp);
+                    rivers.Add(newRiver);
+                }
+                else 
+                {
+                    r.Points.Add(fp);
+                }
+            }
+
+            // join rivers
+            bool riversNeedJoin = true;
+            while (riversNeedJoin)
+            {
+                River r1, r2;
+                riversNeedJoin = FindRiversToJoin(rivers, out r1, out r2 );
+
+                if (riversNeedJoin)
+                {
+                    r1.Join(r2);
+                    rivers.Remove(r2);
+                }
+            }
+
+            // remove strange flows
+            foreach (River r in rivers)
+                r.Clean();
+
+            //XmlWriterSettings settings = new XmlWriterSettings();
+            //settings.Indent = true;
+
+            //using (XmlWriter writer = XmlWriter.Create("river.xml", settings))
+            //{
+            //    IntermediateSerializer.Serialize(writer, rivers, null);
+            //}
+
+            for (int x = 0; x < Width; x++)
+                for (int y = 0; y < Height; y++)
+                    this[x, y].River = 0;
+
+            foreach (River r in rivers)
+            {
+                if (r.Length > 1)
+                {
+                    foreach (FlowPoint fp in r.Points)
+                        this[fp.Point].SetRiver(fp.Flow);
+                }
+            }
+        }
+
+        private bool FindRiversToJoin(List<River> rivers, out River r1, out River r2)
+        {
+            r1 = null;
+            r2 = null;
+
+            foreach (River r in rivers)
+            {
+                foreach (River rInner in rivers)
+                {
+                    if (ReferenceEquals(r, rInner))
+                        continue;
+
+                    if (r.IsConnected(rInner))
+                    {
+                        r1 = r;
+                        r2 = rInner;
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         private static Random rnd = new Random();
