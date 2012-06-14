@@ -1914,6 +1914,21 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="Controls\MainWindow.Right.xml">
+      <Name>MainWindow.Right</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\MainWindow.Overview.xml">
+      <Name>MainWindow.Overview</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\DiplomacyDialog.xml">
+      <Name>DiplomacyDialog</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
     <Content Include="Skins\Default.skin">
       <Name>Default</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -3035,6 +3050,86 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="Textures\UI\MainView\resourcesback64.png">
+      <Name>resourcesback64</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\CityView\workerslot.png">
+      <Name>workerslot</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\CityView\citizenworker.png">
+      <Name>citizenworker</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\CityView\topcornerleft.png">
+      <Name>topcornerleft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\CityView\topcornerright.png">
+      <Name>topcornerright</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\CityView\civilopediatoptitle.png">
+      <Name>civilopediatoptitle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\Atlases\CitizenTiles.png">
+      <Name>CitizenTiles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\Atlases\CitizenAtlas.xml">
+      <Name>CitizenAtlas</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\CityView\grid9blueframe.png">
+      <Name>grid9blueframe</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\CityView\frametopbottom44.png">
+      <Name>frametopbottom44</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\diplomacybase.png">
+      <Name>diplomacybase</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\notificationiconsadvisor.png">
+      <Name>notificationiconsadvisor</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\topright020.png">
+      <Name>topright020</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\socialpolicybase.png">
+      <Name>socialpolicybase</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\mapview.png">
+      <Name>mapview</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\overviewBackground.png">
+      <Name>overviewBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fonts\Default.spritefont">
@@ -3052,6 +3147,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Paces\" />
+    <Folder Include="Textures\UI\DiplomacyView\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Effects\effects.fx">

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.UI.Controls.ControlSet">
+    <Item>
+      <Name>RightTopBg</Name>
+      <Type>ImageBox</Type>
+      <Top>20</Top>
+      <Left>-544</Left>
+      <Width>512</Width>
+      <Height>128</Height>
+      <ImageAsset>Content\\Textures\\UI\\MainView\\topright020</ImageAsset>
+    </Item>
+    <Item>
+      <Name>BtnPolicies</Name>
+      <Type>ImageBox</Type>
+      <Top>24</Top>
+      <Left>-220</Left>
+      <Width>64</Width>
+      <Height>64</Height>
+      <ImageAsset>Content\\Textures\\UI\\MainView\\socialpolicybase</ImageAsset>
+      <ImageMode>Stretched</ImageMode>
+      <Click>BtnPolicies_Click</Click>
+    </Item>
+    <Item>
+      <Name>BtnDiplomacy</Name>
+      <Type>ImageBox</Type>
+      <Top>24</Top>
+      <Left>-100</Left>
+      <Width>64</Width>
+      <Height>64</Height>
+      <ImageAsset>Content\\Textures\\UI\\MainView\\diplomacybase</ImageAsset>
+      <ImageMode>Stretched</ImageMode>
+      <Click>BtnDiplomacy_Click</Click>
+    </Item>
+    <Item>
+      <Name>BtnAdvisors</Name>
+      <Type>ImageBox</Type>
+      <Top>24</Top>
+      <Left>-160</Left>
+      <Width>64</Width>
+      <Height>64</Height>
+      <ImageAsset>Content\\Textures\\UI\\MainView\\notificationiconsadvisor</ImageAsset>
+      <ImageMode>Stretched</ImageMode>
+      <Click>BtnAdvisors_Click</Click>
+    </Item>
+  </Asset>
+</XnaContent>

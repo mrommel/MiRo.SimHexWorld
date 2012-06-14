@@ -201,6 +201,12 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                     return false;
             }
 
+            if (!string.IsNullOrEmpty(imp.RequiredTech))
+            {
+                if (!Player.Technologies.Contains(Provider.GetTech(imp.RequiredTech)))
+                    return false;
+            }
+
             // look at road map
             return true;
         }
@@ -230,6 +236,9 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                 return false;
 
             if (_player.CityLocationMap == null)
+                return false;
+
+            if( _player.CityLocationMap[Point] <= 0 )
                 return false;
 
             return _player.CityLocationMap.IsLocalMaximum(Point);

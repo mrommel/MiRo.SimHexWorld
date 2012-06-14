@@ -283,4 +283,16 @@
   <data name="TXT_KEY_UI_NEWERA_WELCOME" xml:space="preserve">
     <value>Willkommen in der {0}</value>
   </data>
+  <data name="TXT_KEY_UI_CITYVIEW_BUILDINGS" xml:space="preserve">
+    <value>Gebäude</value>
+  </data>
+  <data name="TXT_KEY_UI_CITYVIEW_BUILDINGS_COLLAPSE" xml:space="preserve">
+    <value>- Gebäude</value>
+  </data>
+  <data name="TXT_KEY_UI_CITYVIEW_BUILDINGS_EXPAND" xml:space="preserve">
+    <value>+ Gebäude</value>
+  </data>
+  <data name="TXT_KEY_UI_CITYVIEW_RETURN_MAP" xml:space="preserve">
+    <value>Zurück zur Karte</value>
+  </data>
 </root>

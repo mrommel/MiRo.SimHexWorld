@@ -68,9 +68,12 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
         //static PythonEngine _behaviour;
         BillboardSystem<Civilization> _civilizationFlagBillboards;
         BillboardSystem<string> _cityNameBillboard;
+
         BillboardSystem<float> _cityFoodBillboard;
         BillboardSystem<float> _cityProductionBillboard;
         BillboardSystem<float> _cityGoldBillboard;
+
+        BillboardSystem<WorkerDisplay> _cityWorkerBillboard;
 
         static Texture2D citybannerleftbackground, citybannerbackground, citybannerrightbackground, citybannerbuttonbaseleft, citybannerbuttonbase, citybannerbuttonbaseright, citybannerstrength;
 
@@ -125,7 +128,15 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             _cityGoldBillboard.AddEntity(3, Provider.GetAtlas("YieldAtlas").GetTexture("Gold3"), new Vector2(1, 1));
             _cityGoldBillboard.AddEntity(4, Provider.GetAtlas("YieldAtlas").GetTexture("Gold4"), new Vector2(1, 1));
             _cityGoldBillboard.AddEntity(5, Provider.GetAtlas("YieldAtlas").GetTexture("Gold5"), new Vector2(1, 1));
+
+            _cityWorkerBillboard = new BillboardSystem<WorkerDisplay>(MainApplication.Instance.GraphicsDevice, MainApplication.Instance.Content);
+            _cityWorkerBillboard.AddEntity(WorkerDisplay.Empty, Provider.GetAtlas("CitizenAtlas").GetTexture("Black"), new Vector2(2, 2));
+            _cityWorkerBillboard.AddEntity(WorkerDisplay.Used, Provider.GetAtlas("CitizenAtlas").GetTexture("Green"), new Vector2(2, 2));
+            _cityWorkerBillboard.AddEntity(WorkerDisplay.Exchange, Provider.GetAtlas("CitizenAtlas").GetTexture("Switch"), new Vector2(2, 2));
+            _cityWorkerBillboard.AddEntity(WorkerDisplay.Buyable, Provider.GetAtlas("CitizenAtlas").GetTexture("Buy"), new Vector2(2, 2));
         }
+
+        private enum WorkerDisplay { Empty, Used, Buyable, Exchange };
        
         private Texture2D TextTexture
         {
@@ -450,21 +461,40 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                 _cityFoodBillboard.ResetPositions();
                 _cityProductionBillboard.ResetPositions();
                 _cityGoldBillboard.ResetPositions();
+                _cityWorkerBillboard.ResetPositions();
 
-                foreach (CitizenWork work in _work)
+                List<HexPoint> tilesOfCity = Point.GetNeighborhood(2);
+
+                foreach (HexPoint pt in tilesOfCity)
                 {
-                    if (work.Type == WorkType.Land || work.Type == WorkType.Sea)
+                    if (Map[pt].ControlledBy == Player.Id)
                     {
-                        Gain gain = GetGain(work);
-                        _cityFoodBillboard.AddPosition(gain.Food, MapData.GetWorldPosition(work.Point) + new Vector3(0, 1, 0));
-                        _cityProductionBillboard.AddPosition(gain.Production, MapData.GetWorldPosition(work.Point) + new Vector3(0, 1.5f, 0));
-                        _cityGoldBillboard.AddPosition(gain.Gold, MapData.GetWorldPosition(work.Point) + new Vector3(0, 2, 0));
+                        CitizenWork tmpWork = new CitizenWork();
+                        tmpWork.Point = pt;
+                        tmpWork.Type = Map[pt].IsOcean ? WorkType.Sea : WorkType.Land;
+
+                        Gain gain = GetGain(tmpWork);
+
+                        _cityFoodBillboard.AddPosition(gain.Food, MapData.GetWorldPosition(tmpWork.Point) + new Vector3(0, 1, 0));
+                        _cityProductionBillboard.AddPosition(gain.Production, MapData.GetWorldPosition(tmpWork.Point) + new Vector3(0, 1.5f, 0));
+                        _cityGoldBillboard.AddPosition(gain.Gold, MapData.GetWorldPosition(tmpWork.Point) + new Vector3(0, 2, 0));
+
+                        CitizenWork work = _work.FirstOrDefault( a => a.Point == pt );
+                        if (work != null)
+                            _cityWorkerBillboard.AddPosition(WorkerDisplay.Used, MapData.GetWorldPosition(pt) + new Vector3(0, 4, 0));
+                        else if( Map[pt].ExploitedBy == Player.Id )
+                            _cityWorkerBillboard.AddPosition(WorkerDisplay.Exchange, MapData.GetWorldPosition(pt) + new Vector3(0, 4, 0));
+                        else
+                            _cityWorkerBillboard.AddPosition(WorkerDisplay.Empty, MapData.GetWorldPosition(pt) + new Vector3(0, 4, 0));
                     }
+                    else
+                        _cityWorkerBillboard.AddPosition(WorkerDisplay.Buyable, MapData.GetWorldPosition(pt) + new Vector3(0, 4, 0));
                 }
 
                 _cityFoodBillboard.Build();
                 _cityProductionBillboard.Build();
                 _cityGoldBillboard.Build();
+                _cityWorkerBillboard.Build();
             }
         }
 
@@ -741,18 +771,22 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
         {
             _entity.Draw(time);
 
-            // draw tribe flag  
-            _civilizationFlagBillboards.Draw(GameMapBox.Camera.View, GameMapBox.Camera.Projection, GameMapBox.Camera.Position, GameMapBox.Camera.Up, GameMapBox.Camera.Right);
-
-            // draw name, population (citizen)
-            _cityNameBillboard.Draw(GameMapBox.Camera.View, GameMapBox.Camera.Projection, GameMapBox.Camera.Position, GameMapBox.Camera.Up, GameMapBox.Camera.Right);
-
-            // draw food
-            if (InDetailView)
+            if (!InDetailView)
             {
+                // draw tribe flag  
+                _civilizationFlagBillboards.Draw(GameMapBox.Camera.View, GameMapBox.Camera.Projection, GameMapBox.Camera.Position, GameMapBox.Camera.Up, GameMapBox.Camera.Right);
+
+                // draw name, population (citizen)
+                _cityNameBillboard.Draw(GameMapBox.Camera.View, GameMapBox.Camera.Projection, GameMapBox.Camera.Position, GameMapBox.Camera.Up, GameMapBox.Camera.Right);
+            }  
+            else
+            {
+                // draw food / producation / commerce
                 _cityFoodBillboard.Draw(GameMapBox.Camera.View, GameMapBox.Camera.Projection, GameMapBox.Camera.Position, GameMapBox.Camera.Up, GameMapBox.Camera.Right);
                 _cityProductionBillboard.Draw(GameMapBox.Camera.View, GameMapBox.Camera.Projection, GameMapBox.Camera.Position, GameMapBox.Camera.Up, GameMapBox.Camera.Right);
                 _cityGoldBillboard.Draw(GameMapBox.Camera.View, GameMapBox.Camera.Projection, GameMapBox.Camera.Position, GameMapBox.Camera.Up, GameMapBox.Camera.Right);
+
+                _cityWorkerBillboard.Draw(GameMapBox.Camera.View, GameMapBox.Camera.Projection, GameMapBox.Camera.Position, GameMapBox.Camera.Up, GameMapBox.Camera.Right);
             }
         }
 

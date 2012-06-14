@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.UI.Controls.WindowSet">
+    <Title>Diplomacy</Title>
+    <Width>300</Width>
+    <Height>500</Height>
+    <Controls>
+      <Item>
+        <Name>Body</Name>
+        <Type>Container</Type>
+        <Top>20</Top>
+        <Left>20</Left>
+        <Width>250</Width>
+        <Height>400</Height>
+      </Item>
+      <Item>
+        <Name>Logo1</Name>
+        <Type>ImageBox</Type>
+        <Parent>Body</Parent>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Width>48</Width>
+        <Height>48</Height>
+        <AtlasAsset>
+          <Atlas>CivilizationAtlas</Atlas>
+          <Name>German</Name>
+        </AtlasAsset>
+        <ImageMode>Stretched</ImageMode>
+      </Item>
+      <Item>
+        <Name>CivLabel1</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>0</Top>
+        <Left>55</Left>
+        <Width>120</Width>
+        <Height>48</Height>
+        <Text>German</Text>
+      </Item>
+      <Item>
+        <Name>CivRank1</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>0</Top>
+        <Left>180</Left>
+        <Width>32</Width>
+        <Height>48</Height>
+        <Text>123</Text>
+      </Item>
+    </Controls>
+  </Asset>
+</XnaContent>

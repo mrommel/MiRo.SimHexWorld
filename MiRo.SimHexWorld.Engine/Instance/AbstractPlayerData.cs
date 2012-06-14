@@ -523,6 +523,8 @@ namespace MiRo.SimHexWorld.Engine.Instance
                     MessageFilter.Friends | MessageFilter.Self,
                     imp);
 
+                _needToUpdateInfluenceMaps = true;
+
                 GameFacade.getInstance().SendNotification(GameNotification.UpdateImprovements);
             };
 

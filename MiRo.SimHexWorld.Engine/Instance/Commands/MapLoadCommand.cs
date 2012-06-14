@@ -40,8 +40,8 @@ namespace MiRo.SimHexWorld.Engine.Instance.Commands
 
             map.InitFromCiv5Map(civ5map);
 
-            if (map.Extension != null)
-                map.ApplyRivers();
+            //if (map.Extension != null)
+            //    map.ApplyRivers();
 
             GameFacade.getInstance().SendNotification(GameNotification.LoadMapSuccess, map);
         }

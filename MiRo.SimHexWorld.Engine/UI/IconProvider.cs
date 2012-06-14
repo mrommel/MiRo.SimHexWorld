@@ -11,6 +11,18 @@ namespace MiRo.SimHexWorld.Engine.UI
 {
     public class IconProvider
     {
+        static Texture2D _pixel;
+        public static Texture2D Pixel
+        {
+            get
+            {
+                if (_pixel == null)
+                    _pixel = MainApplication.ManagerInstance.Content.Load<Texture2D>("Content\\Textures\\UI\\pixel");
+
+                return _pixel;
+            }
+        }
+
         static Texture2D _exitIcon;
         public static Texture2D ExitIcon
         {

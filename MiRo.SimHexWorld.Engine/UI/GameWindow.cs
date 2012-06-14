@@ -5,6 +5,7 @@ using System.Text;
 using TomShane.Neoforce.Controls;
 using PureMVC.Interfaces;
 using MiRo.SimHexWorld.Engine.Instance;
+using MiRo.SimHexWorld.Engine.UI.Controls;
 
 namespace MiRo.SimHexWorld.Engine.UI
 {
@@ -55,5 +56,17 @@ namespace MiRo.SimHexWorld.Engine.UI
         }
 
         public abstract void HandleNotification(INotification notification);
+
+        public void LoadWindow(string assetName)
+        {
+            WindowSet set = Manager.Content.Load<WindowSet>(assetName);
+            set.Init(this, Manager);
+        }
+
+        public void LoadControls(string assetName)
+        {
+            ControlSet set = Manager.Content.Load<ControlSet>(assetName);
+            set.Init(this, Manager);
+        }
     }
 }

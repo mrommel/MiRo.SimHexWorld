@@ -421,6 +421,42 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Gebäude ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_UI_CITYVIEW_BUILDINGS {
+            get {
+                return ResourceManager.GetString("TXT_KEY_UI_CITYVIEW_BUILDINGS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die - Gebäude ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_UI_CITYVIEW_BUILDINGS_COLLAPSE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_UI_CITYVIEW_BUILDINGS_COLLAPSE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die + Gebäude ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_UI_CITYVIEW_BUILDINGS_EXPAND {
+            get {
+                return ResourceManager.GetString("TXT_KEY_UI_CITYVIEW_BUILDINGS_EXPAND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Zurück zur Karte ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_UI_CITYVIEW_RETURN_MAP {
+            get {
+                return ResourceManager.GetString("TXT_KEY_UI_CITYVIEW_RETURN_MAP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Prüfung ähnelt.
         /// </summary>
         internal static string TXT_KEY_UI_MAINAPPLICATION_CHECK {

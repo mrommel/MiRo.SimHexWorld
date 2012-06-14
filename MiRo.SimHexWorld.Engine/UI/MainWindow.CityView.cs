@@ -9,6 +9,7 @@ using MiRo.SimHexWorld.Engine.Types;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using MiRo.SimHexWorld.Engine.World.Entities;
+using MiRo.SimHexWorld.Engine.Locales;
 
 namespace MiRo.SimHexWorld.Engine.UI
 {
@@ -19,7 +20,7 @@ namespace MiRo.SimHexWorld.Engine.UI
         // city view
         SideBar _citySidebar;
         Label _lblCitizen;
-        Label _lblBuildings;
+        ImageBox _lblBuildings;
         ImageListBox _lstBuildings;
         MenuItem _miBuildingDelete;
         Label _lblCurrentBuilding;
@@ -35,8 +36,11 @@ namespace MiRo.SimHexWorld.Engine.UI
         Texture2D _cityProductionBackTexture;
         Texture2D _cityProductionFrameTexture;
         Texture2D _cityProductionMeterTexture;
+        Texture2D _citySeperatorTexture;
 
-        SpriteFont _cityTitleFont;
+        SpriteFont _cityTitleFont, _cityMenu;
+
+        Rectangle cityOwnerIconLocation = new Rectangle( 0, 0, 42, 42);
 
         private void InitCityControls()
         {
@@ -46,7 +50,10 @@ namespace MiRo.SimHexWorld.Engine.UI
             _cityProductionFrameTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//CityView//productionpanelframe");
             _cityProductionMeterTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//CityView//productionpanelmeter");
 
+            _citySeperatorTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//CityView//frametopbottom44");
+
             _cityTitleFont = Manager.Content.Load<SpriteFont>("Content//Fonts//ArialS");
+            _cityMenu = Manager.Content.Load<SpriteFont>("Content//Fonts//Default");
 
             _lblCitynameTribe = new ImageBox(Manager);
             _lblCitynameTribe.Init();
@@ -57,7 +64,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             _lblCitynameTribe.Width = 256;
             _lblCitynameTribe.Height = 64;
             _lblCitynameTribe.Image = Manager.Content.Load<Texture2D>("Content//Textures//UI//CityView//tribeHeading");
-            _lblCitynameTribe.Draw += new DrawEventHandler(_lblCitynameTribe_Draw);
+            _lblCitynameTribe.Draw += new DrawEventHandler(LblCitynameTribe_Draw);
             Add(_lblCitynameTribe);
 
             _lblCityname = new ImageBox(Manager);
@@ -69,7 +76,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             _lblCityname.Width = 464;
             _lblCityname.Height = 36;
             _lblCityname.Image = Manager.Content.Load<Texture2D>("Content//Textures//UI//CityView//title");
-            _lblCityname.Draw += new DrawEventHandler(_lblCityname_Draw);
+            _lblCityname.Draw += new DrawEventHandler(LblCityname_Draw);
             Add(_lblCityname);
 
             _citySidebar = new SideBar(Manager);
@@ -82,7 +89,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             _citySidebar.Height = Manager.GraphicsDevice.Viewport.Height - _topBar.Height;
             _citySidebar.Anchor = Anchors.Right | Anchors.Top | Anchors.Bottom;
             _citySidebar.Visible = false;
-            _citySidebar.Draw += new DrawEventHandler(_citySidebar_Draw);
+            _citySidebar.Draw += new DrawEventHandler(CitySidebar_Draw);
             Add(_citySidebar);
 
             _lblCitizen = new Label(Manager);
@@ -90,20 +97,22 @@ namespace MiRo.SimHexWorld.Engine.UI
             _lblCitizen.Passive = false;
             _lblCitizen.Parent = _citySidebar;
             _lblCitizen.Top = 8;
-            _lblCitizen.Left = 8;
+            _lblCitizen.Left = 12;
             _lblCitizen.Width = _citySidebar.Width - 16 - 8;
             _lblCitizen.Height = 16;
             _lblCitizen.Text = "Citizen: 1";
 
-            _lblBuildings = new Label(Manager);
+            _lblBuildings = new ImageBox(Manager);
             _lblBuildings.Init();
             _lblBuildings.Passive = false;
             _lblBuildings.Parent = _citySidebar;
             _lblBuildings.Top = _lblCitizen.Top + _lblCitizen.Height + 8;
-            _lblBuildings.Left = 8;
+            _lblBuildings.Left = 10;
             _lblBuildings.Width = _citySidebar.Width - 16;
-            _lblBuildings.Height = 16;
-            _lblBuildings.Text = "Buildings";
+            _lblBuildings.Height = 22;
+            _lblBuildings.Image = _citySeperatorTexture;
+            _lblBuildings.SizeMode = SizeMode.Stretched;
+            _lblBuildings.Draw += new DrawEventHandler(LblBuildings_Draw);
             _lblBuildings.Click += new TomShane.Neoforce.Controls.EventHandler(_lblBuildings_Click);
 
             ContextMenu ctxBuildings = new ContextMenu(Manager);
@@ -116,8 +125,8 @@ namespace MiRo.SimHexWorld.Engine.UI
             _lstBuildings.Init();
             _lstBuildings.Parent = _citySidebar;
             _lstBuildings.Top = _lblBuildings.Top + _lblBuildings.Height + 8;
-            _lstBuildings.Left = 8;
-            _lstBuildings.Width = _citySidebar.Width - 16;
+            _lstBuildings.Left = 10;
+            _lstBuildings.Width = _citySidebar.Width - 24;
             _lstBuildings.Height = 200;
             _lstBuildings.Anchor = Anchors.Top | Anchors.Right | Anchors.Bottom;
             _lstBuildings.HideSelection = false;
@@ -138,44 +147,58 @@ namespace MiRo.SimHexWorld.Engine.UI
             _lblProductionMeter.Init();
             _lblProductionMeter.Visible = false;
             _lblProductionMeter.Anchor = Anchors.All;
-            _lblProductionMeter.Top = Manager.GraphicsDevice.Viewport.Height - 256 - 22;
+            _lblProductionMeter.Top = Manager.GraphicsDevice.Viewport.Height - 256 - 70;
             _lblProductionMeter.Left = 0;
             _lblProductionMeter.Image = _cityProductionBackTexture;
             _lblProductionMeter.Width = 256;
             _lblProductionMeter.Height = 256;
             _lblProductionMeter.SizeMode = SizeMode.Normal;
-            _lblProductionMeter.Draw += new DrawEventHandler(_lblProductionMeter_Draw);
+            _lblProductionMeter.Draw += new DrawEventHandler(LblProductionMeter_Draw);
             Add(_lblProductionMeter);
 
             _btnCityExit = new ImageBox(Manager);
             _btnCityExit.Init();
-            _btnCityExit.Width = 170;
+            _btnCityExit.Width = 250;
+            _btnCityExit.Height = 44;
             _btnCityExit.Visible = false;
             _btnCityExit.Left = ( Manager.GraphicsDevice.Viewport.Width - _btnCityExit.Width ) / 2;
             _btnCityExit.Top = Manager.GraphicsDevice.Viewport.Height - 120;
-            _btnCityExit.Image = Manager.Content.Load<Texture2D>("Content//Textures//UI//CityView//button");
-            _btnCityExit.Draw += new DrawEventHandler(_btnCityExit_Draw);
+            _btnCityExit.Image = Manager.Content.Load<Texture2D>("Content//Textures//UI//CityView//grid9blueframe");
+            _btnCityExit.SizeMode = SizeMode.Stretched;
+            _btnCityExit.Draw += new DrawEventHandler(BtnCityExit_Draw);
             _btnCityExit.Click += new TomShane.Neoforce.Controls.EventHandler(_btnCityExit_Click);
             Add(_btnCityExit);
         }
 
-        void _lblCitynameTribe_Draw(object sender, DrawEventArgs e)
+        void LblBuildings_Draw(object sender, DrawEventArgs e)
         {
-            e.Renderer.Draw(_currentCity.Player.Civilization.Image, e.Rectangle, Color.White);
+            //e.Renderer.Draw(_citySeperatorTexture, e.Rectangle, new Rectangle(0,0,44,44), Color.White);
+
+            if( _lstBuildings.Visible )
+                e.Renderer.DrawString(_cityMenu, Strings.TXT_KEY_UI_CITYVIEW_BUILDINGS_COLLAPSE, e.Rectangle, Color.White, Alignment.MiddleLeft);
+            else
+                e.Renderer.DrawString(_cityMenu, Strings.TXT_KEY_UI_CITYVIEW_BUILDINGS_EXPAND, e.Rectangle, Color.White, Alignment.MiddleLeft);
         }
 
-        void _btnCityExit_Draw(object sender, DrawEventArgs e)
+        void LblCitynameTribe_Draw(object sender, DrawEventArgs e)
         {
-            e.Renderer.DrawString(_cityTitleFont, "Return to Map", e.Rectangle, Color.White, Alignment.MiddleCenter);
+            cityOwnerIconLocation.X = e.Rectangle.X + 106;
+            cityOwnerIconLocation.Y = e.Rectangle.Y + 10;
+            e.Renderer.Draw(_currentCity.Player.Civilization.Image, cityOwnerIconLocation, Color.White);
         }
 
-        void _lblCityname_Draw(object sender, DrawEventArgs e)
+        void BtnCityExit_Draw(object sender, DrawEventArgs e)
+        {
+            e.Renderer.DrawString(_cityTitleFont, Strings.TXT_KEY_UI_CITYVIEW_RETURN_MAP, e.Rectangle, Color.White, Alignment.MiddleCenter);
+        }
+
+        void LblCityname_Draw(object sender, DrawEventArgs e)
         {
             e.Rectangle.Height = 36;
-            e.Renderer.DrawString(_cityTitleFont, _currentCity.Citizen + " " + _currentCity.Name, e.Rectangle, Color.White, Alignment.MiddleCenter);
+            e.Renderer.DrawString(_cityTitleFont, _currentCity.Name, e.Rectangle, Color.White, Alignment.MiddleCenter);
         }
 
-        void _lblProductionMeter_Draw(object sender, DrawEventArgs e)
+        void LblProductionMeter_Draw(object sender, DrawEventArgs e)
         {
             Texture2D _cityProductionMeterModTexture = new Texture2D(Manager.GraphicsDevice,256,256);
 
@@ -251,9 +274,12 @@ namespace MiRo.SimHexWorld.Engine.UI
         {
         }
 
-        void _citySidebar_Draw(object sender, DrawEventArgs e)
+        void CitySidebar_Draw(object sender, DrawEventArgs e)
         {
-            e.Renderer.Draw(_citySideBarTexture, e.Rectangle, Microsoft.Xna.Framework.Color.White);
+            e.Renderer.Draw(IconProvider.Pixel, e.Rectangle, Microsoft.Xna.Framework.Color.Black);
+
+            Rectangle r2 = new Rectangle(e.Rectangle.X, e.Rectangle.Y, 11, e.Rectangle.Height);
+            e.Renderer.Draw(_overviewSideTextureLeft, r2, Color.White);
         }
 
         void _lstBuildings_ItemIndexChanged(object sender, TomShane.Neoforce.Controls.EventArgs e)
@@ -281,7 +307,15 @@ namespace MiRo.SimHexWorld.Engine.UI
 
         void _lblBuildings_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
         {
-            _lstBuildings.Height = _lstBuildings.Height == 0 ? 200 : 0;
+            //_lstBuildings.Height = _lstBuildings.Height == 0 ? 200 : 0;
+            _lstBuildings.Visible = !_lstBuildings.Visible;
+
+            UpdateCityControlsHeight();
+        }
+
+        private void UpdateCityControlsHeight()
+        {
+            
         }
     }
 }

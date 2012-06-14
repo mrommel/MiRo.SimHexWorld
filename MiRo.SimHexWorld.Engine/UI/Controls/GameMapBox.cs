@@ -184,13 +184,6 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
             if (keyState.IsKeyDown(Keys.P) && !_oldKeyState.IsKeyDown(Keys.P))
             {
-                //PolicyChooseDialog pcd = new PolicyChooseDialog(Manager);
-                //pcd.Left = 100;
-                //pcd.Top = 100;
-
-                //Manager.Add(pcd);
-
-                //pcd.ShowModal();
                 ScoreWindow.Show(Manager, MainWindow.Game.Scores, "Scores");
             }
 

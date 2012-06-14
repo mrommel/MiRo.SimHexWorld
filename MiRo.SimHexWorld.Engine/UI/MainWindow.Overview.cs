@@ -12,48 +12,37 @@ namespace MiRo.SimHexWorld.Engine.UI
 {
     partial class MainWindow
     {
-        ImageBox _lblOverview;
-        ImageBox _lblBottomRight;
-
-        Texture2D _overviewSideTexture;
+        Texture2D _overviewSideTextureLeft, _overviewSideTextureRight;
         Texture2D _overviewTexture;
         bool _needToUpdateOverview = false;
 
+        Rectangle overviewSideRect = new Rectangle(0, 0, 11, 224);
+        Rectangle overviewInnerRect = new Rectangle(0, 0, 300, 224);
+
         void InitOverviewControls()
         {
-            _overviewSideTexture = Manager.Content.Load<Texture2D>("Content\\Textures\\UI\\MainView\\sideleft");
+            _overviewSideTextureLeft = Manager.Content.Load<Texture2D>("Content\\Textures\\UI\\MainView\\sideleft");
+            _overviewSideTextureRight = Manager.Content.Load<Texture2D>("Content\\Textures\\UI\\MainView\\sideright");
 
-            _lblOverview = new ImageBox(Manager);
-            _lblOverview.Init();
-            _lblOverview.Width = 300;
-            _lblOverview.Height = 224;
-            _lblOverview.Left = Manager.GraphicsDevice.Viewport.Width - _lblOverview.Width - 32;
-            _lblOverview.Top = Manager.GraphicsDevice.Viewport.Height - _lblOverview.Height - 36;
-            _lblOverview.SizeMode = SizeMode.Stretched;
-            _lblOverview.Draw += new DrawEventHandler(LblOverview_Draw);
-            Add(_lblOverview);
-
-            _lblBottomRight = new ImageBox(Manager);
-            _lblBottomRight.Init();
-            _lblBottomRight.Width = 128;
-            _lblBottomRight.Height = 224;
-            _lblBottomRight.Left = Manager.GraphicsDevice.Viewport.Width - _lblOverview.Width - _lblBottomRight.Width - 32;
-            _lblBottomRight.Top = Manager.GraphicsDevice.Viewport.Height - _lblBottomRight.Height - 36;
-            _lblBottomRight.Image = Manager.Content.Load<Texture2D>("Content\\Textures\\UI\\MainView\\bottomright128x224");
-            _lblBottomRight.SizeMode = SizeMode.Stretched;
-            Add(_lblBottomRight);
+            LoadControls("Content//Controls//MainWindow.Overview");
         }
 
-        void LblOverview_Draw(object sender, DrawEventArgs e)
+        public void LblOverview_Draw(object sender, DrawEventArgs e)
         {
             if (_overviewTexture != null)
             {
-                Rectangle r = new Rectangle(e.Rectangle.X + 11, e.Rectangle.Y, 300, 224);
-                e.Renderer.Draw(_overviewTexture, r, Color.White);
+                overviewInnerRect.X = e.Rectangle.X + 11;
+                overviewInnerRect.Y = e.Rectangle.Y;
+                e.Renderer.Draw(_overviewTexture, overviewInnerRect, Color.White);
             }
 
-            Rectangle r2 = new Rectangle(e.Rectangle.X, e.Rectangle.Y, 11, 224);
-            e.Renderer.Draw(_overviewSideTexture, r2, Color.White);
+            overviewSideRect.X = e.Rectangle.X;
+            overviewSideRect.Y = e.Rectangle.Y;
+            e.Renderer.Draw(_overviewSideTextureLeft, overviewSideRect, Color.White);
+
+            overviewSideRect.X = e.Rectangle.X + e.Rectangle.Width - 11;
+            overviewSideRect.Y = e.Rectangle.Y;
+            e.Renderer.Draw(_overviewSideTextureRight, overviewSideRect, Color.White);
         }
 
         void UpdateOverviewControls()
@@ -75,13 +64,13 @@ namespace MiRo.SimHexWorld.Engine.UI
                     if (_mapBox.FogOfWarEnabled && !Game.Map[x, y].IsSpotted(Game.Human))
                         overviewColors[i] = Color.Transparent;
                     else if (Game.Map[x, y].IsOcean)
-                        overviewColors[i] = Color.LightBlue;
+                        overviewColors[i] = Color.Aquamarine;
                     else
                     {
                         int controlledBy = Game.Map[x,y].ControlledBy;
 
                         if (controlledBy == -1 || Game.Players.Count <= controlledBy)
-                            overviewColors[i] = Color.LightGreen;
+                            overviewColors[i] = Color.LawnGreen;
                         else
                         {
                             AbstractPlayerData controller = Game.Players[controlledBy];

@@ -112,6 +112,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             InitUnitControls();
             InitScienceControls();
             InitOverviewControls();
+            InitRightTop();
 
             Manager.SetSkin("Default");
 
@@ -636,12 +637,16 @@ namespace MiRo.SimHexWorld.Engine.UI
 
             _lblUnit.Visible = visible;
 
-            _lblOverview.Visible = visible;
-            _lblBottomRight.Visible = visible;
+            GetControl("OverviewTop").Visible = visible;
+            GetControl("OverviewBottomRight").Visible = visible;
+            GetControl("OverviewMap").Visible = visible;
 
             _lblUnit.Visible = visible;
             for (int i = 0; i < _actionButtons.Length; ++i)
                 _actionButtons[i].Visible = visible;
+
+            _lblResearchProgress.Visible = visible;
+            _lblLeftTopCorner.Visible = visible;
         }
 
         public bool FogOfWarEnabled

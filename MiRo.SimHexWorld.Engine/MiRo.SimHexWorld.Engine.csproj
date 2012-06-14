@@ -157,6 +157,7 @@
     <Compile Include="Misc\FpsCounter.cs" />
     <Compile Include="Misc\MissingAsset.cs" />
     <Compile Include="Misc\OutOfVideoMemoryException.cs" />
+    <Compile Include="Misc\TextureUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types\AI\CitySpecialization.cs" />
     <Compile Include="Types\AI\GrandStrategyData.cs" />
@@ -170,6 +171,7 @@
     <Compile Include="Types\PromotionData.cs" />
     <Compile Include="Types\TechnologyBonus.cs" />
     <Compile Include="Types\WonderData.cs" />
+    <Compile Include="UI\Controls\ControlSet.cs" />
     <Compile Include="UI\Controls\GameControl.cs" />
     <Compile Include="UI\Data\TeaserList.cs">
       <SubType>Code</SubType>
@@ -186,6 +188,7 @@
     <Compile Include="Types\Era.cs" />
     <Compile Include="Types\Feature.cs" />
     <Compile Include="UI\Dialogs\ChooseEnumDialog.cs" />
+    <Compile Include="UI\Dialogs\DiplomacyDialog.cs" />
     <Compile Include="UI\Dialogs\NewEraWindow.cs" />
     <Compile Include="UI\Dialogs\ScienceInfoDialog.cs" />
     <Compile Include="UI\Dialogs\MessageBox.cs" />
@@ -207,6 +210,7 @@
     <Compile Include="UI\MainWindow.CityView.cs" />
     <Compile Include="UI\MainWindow.Messages.cs" />
     <Compile Include="UI\MainWindow.Overview.cs" />
+    <Compile Include="UI\MainWindow.Right.cs" />
     <Compile Include="UI\MainWindow.Science.cs" />
     <Compile Include="UI\MainWindow.Units.cs" />
     <Compile Include="UI\ScreenNotification.cs" />

@@ -118,10 +118,11 @@ namespace MiRo.SimHexWorld.Engine.World
             // resources
             _resourceBillboards = new BillboardSystem<string>(_manager.GraphicsDevice, _manager.Content);
 
+            Texture2D resourceBackground = _manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//resourcesback64");
             foreach (Ressource r in Provider.Instance.Ressources.Values)
             {
                 if (r.Image != null)
-                    _resourceBillboards.AddEntity(r.Name, r.Image, new Vector2(2, 2));
+                    _resourceBillboards.AddEntity(r.Name, TextureUtils.Combine(_manager.GraphicsDevice, resourceBackground, r.Image), new Vector2(2, 2));
                 else
                     throw new Exception("No image for " + r.Name + " found");
             }
@@ -449,7 +450,7 @@ namespace MiRo.SimHexWorld.Engine.World
 
                     if (_map[i, j].Ressource != null)
                     {
-                        if( _map[i, j].RessourceRevealed )
+                        if (_map[i, j].RessourceRevealed || string.IsNullOrEmpty(_map[i, j].Ressource.RequiredTechName))
                             _resourceBillboards.AddPosition(_map[i, j].Ressource.Name, MapData.GetWorldPosition(_map[i, j].Point) + new Vector3(0, 2, 0));
                     }
 
