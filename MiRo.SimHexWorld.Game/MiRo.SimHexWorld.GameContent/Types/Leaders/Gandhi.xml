@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <XnaContent>
   <Asset Type="MiRo.SimHexWorld.Engine.Types.LeaderData">
-    <Name>Ghandi</Name>
+    <Name>Gandhi</Name>
     <Title></Title>
     <Description></Description>
-    <ImageName>Ghandi</ImageName>
+    <ImageName>Gandhi</ImageName>
     <CivilizationName>Indian</CivilizationName>
     <SpecialAbilityName></SpecialAbilityName>
     <Lived></Lived>

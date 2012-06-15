@@ -321,5 +321,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
 
             UpdateUnitAction();
         }
+
+        public bool IsAutomated { get; set; }
     }
 }

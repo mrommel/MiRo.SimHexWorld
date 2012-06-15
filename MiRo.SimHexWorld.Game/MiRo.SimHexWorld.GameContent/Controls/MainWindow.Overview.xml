@@ -8,6 +8,7 @@
       <Left>-544</Left>
       <Width>512</Width>
       <Height>128</Height>
+      <StayOnBack>true</StayOnBack>
       <ImageAsset>Content\\Textures\\UI\\MainView\\mapview</ImageAsset>
       <ImageMode>Stretched</ImageMode>
     </Item>
@@ -18,6 +19,7 @@
       <Left>-566</Left>
       <Width>128</Width>
       <Height>224</Height>
+      <StayOnBack>true</StayOnBack>
       <ImageAsset>Content\\Textures\\UI\\MainView\\bottomright128x224</ImageAsset>
       <ImageMode>Stretched</ImageMode>
     </Item>
@@ -28,9 +30,32 @@
       <Left>-438</Left>
       <Width>406</Width>
       <Height>224</Height>
+      <StayOnBack>true</StayOnBack>
       <ImageAsset>Content\\Textures\\UI\\MainView\\overviewBackground</ImageAsset>
       <ImageMode>Stretched</ImageMode>
       <Draw>LblOverview_Draw</Draw>
+    </Item>
+    <Item>
+      <Name>MapOptions</Name>
+      <Type>ImageBox</Type>
+      <Top>-80</Top>
+      <Left>-480</Left>
+      <Width>42</Width>
+      <Height>42</Height>
+      <StayOnBack>true</StayOnBack>
+      <ImageAsset>Content\\Textures\\UI\\MainView\\Overview\\mainstrategicbutton</ImageAsset>
+      <ImageMode>Stretched</ImageMode>
+    </Item>
+    <Item>
+      <Name>NoteOptions</Name>
+      <Type>ImageBox</Type>
+      <Top>-130</Top>
+      <Left>-480</Left>
+      <Width>42</Width>
+      <Height>42</Height>
+      <StayOnBack>true</StayOnBack>
+      <ImageAsset>Content\\Textures\\UI\\MainView\\Overview\\notificationnotes</ImageAsset>
+      <ImageMode>Stretched</ImageMode>
     </Item>
   </Asset>
 </XnaContent>

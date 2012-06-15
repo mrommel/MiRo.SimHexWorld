@@ -34,7 +34,7 @@ namespace MiRo.SimHexWorld.Engine.Types
 
         public override Microsoft.Xna.Framework.Graphics.Texture2D Image
         {
-            get { return null; }
+            get { return Provider.GetAtlas("LeaderAtlas").GetTexture(ImageName); }
         }
 
         public override List<MissingAsset> CheckIntegrity()

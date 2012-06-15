@@ -283,6 +283,9 @@
   <data name="TXT_KEY_UI_NEWERA_WELCOME" xml:space="preserve">
     <value>Willkommen in der {0}</value>
   </data>
+  <data name="TXT_KEY_SATURATE" xml:space="preserve">
+    <value>Ihr</value>
+  </data>
   <data name="TXT_KEY_UI_CITYVIEW_BUILDINGS" xml:space="preserve">
     <value>Gebäude</value>
   </data>
@@ -294,5 +297,8 @@
   </data>
   <data name="TXT_KEY_UI_CITYVIEW_RETURN_MAP" xml:space="preserve">
     <value>Zurück zur Karte</value>
+  </data>
+  <data name="TXT_KEY_TECH_AGRICULTURE" xml:space="preserve">
+    <value>Ackerbau</value>
   </data>
 </root>

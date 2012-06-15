@@ -193,10 +193,16 @@
   <data name="TXT_KEY_UI_NEWERA_TITLE" xml:space="preserve">
     <value>New Era</value>
   </data>
+  <data name="TXT_KEY_SATURATE" xml:space="preserve">
+    <value>You</value>
+  </data>
   <data name="TXT_KEY_UI_CITYVIEW_BUILDINGS" xml:space="preserve">
     <value>Buildings</value>
   </data>
   <data name="TXT_KEY_UI_CITYVIEW_RETURN_MAP" xml:space="preserve">
     <value>Return to map</value>
+  </data>
+  <data name="TXT_KEY_TECH_AGRICULTURE" xml:space="preserve">
+    <value>Agriculture</value>
   </data>
 </root>

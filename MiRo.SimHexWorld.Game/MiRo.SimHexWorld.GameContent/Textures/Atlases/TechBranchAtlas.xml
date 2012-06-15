@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.UI.TextureAtlas">
+    <Name>TechBranches</Name>
+    <TextureName>TechBranchTiles</TextureName>
+    <Rows>3</Rows>
+    <Columns>3</Columns>
+    <Tiles>
+      <Item>
+        <Name>Agriculture</Name>
+        <Index>0</Index>
+      </Item>
+    </Tiles>
+  </Asset>
+</XnaContent>

@@ -75,7 +75,7 @@ namespace MiRo.SimHexWorld.Engine.UI
         ImageBox _lblUnit;
 
         // zoom
-        ImageBox _imgZoomIn, _imgZoomOut;
+        //ImageBox _imgZoomIn, _imgZoomOut;
 
         HexPoint focus;
 
@@ -107,11 +107,11 @@ namespace MiRo.SimHexWorld.Engine.UI
             _messageFont = Manager.Content.Load<SpriteFont>("Content\\Fonts\\ArialL");
 
             InitMainControls();
-            InitCityControls();
-            InitMessages();
+            InitCityControls();          
             InitUnitControls();
             InitScienceControls();
             InitOverviewControls();
+            InitMessages();
             InitRightTop();
 
             Manager.SetSkin("Default");
@@ -484,28 +484,28 @@ namespace MiRo.SimHexWorld.Engine.UI
             _lblRegion.Top = _lblUnitName.Top + _lblUnitName.Height + 8;
             _lblRegion.Text = "";
 
-            // /////////////////////
-            // ui
-            _imgZoomIn = new ImageBox(Manager);
-            _imgZoomIn.Init();
-            _imgZoomIn.Width = 50;
-            _imgZoomIn.Left = Manager.GraphicsDevice.Viewport.Width - 90;
-            _imgZoomIn.Top = Manager.GraphicsDevice.Viewport.Height - 120;
-            _imgZoomIn.Image = IconProvider.ZoomInIcon.GetThumbnail(50,50);
-            _imgZoomIn.Click += ImgZoomInClick;
-            _imgZoomIn.ToolTip = new TomShane.Neoforce.Controls.ToolTip(Manager);
-            _imgZoomIn.ToolTip.Text = "Zoom in";
-            Add(_imgZoomIn);
+            //// /////////////////////
+            //// ui
+            //_imgZoomIn = new ImageBox(Manager);
+            //_imgZoomIn.Init();
+            //_imgZoomIn.Width = 50;
+            //_imgZoomIn.Left = Manager.GraphicsDevice.Viewport.Width - 90;
+            //_imgZoomIn.Top = Manager.GraphicsDevice.Viewport.Height - 120;
+            //_imgZoomIn.Image = IconProvider.ZoomInIcon.GetThumbnail(50,50);
+            //_imgZoomIn.Click += ImgZoomInClick;
+            //_imgZoomIn.ToolTip = new TomShane.Neoforce.Controls.ToolTip(Manager);
+            //_imgZoomIn.ToolTip.Text = "Zoom in";
+            //Add(_imgZoomIn);
 
-            _imgZoomOut = new ImageBox(Manager);
-            _imgZoomOut.Width = 50;
-            _imgZoomOut.Left = Manager.GraphicsDevice.Viewport.Width - 90;
-            _imgZoomOut.Top = Manager.GraphicsDevice.Viewport.Height - 180;
-            _imgZoomOut.Image = IconProvider.ZoomOutIcon.GetThumbnail(50, 50);
-            _imgZoomOut.Click += ImgZoomOutClick;
-            _imgZoomOut.ToolTip = new TomShane.Neoforce.Controls.ToolTip(Manager);
-            _imgZoomOut.ToolTip.Text = "Zoom out";
-            Add(_imgZoomOut);
+            //_imgZoomOut = new ImageBox(Manager);
+            //_imgZoomOut.Width = 50;
+            //_imgZoomOut.Left = Manager.GraphicsDevice.Viewport.Width - 90;
+            //_imgZoomOut.Top = Manager.GraphicsDevice.Viewport.Height - 180;
+            //_imgZoomOut.Image = IconProvider.ZoomOutIcon.GetThumbnail(50, 50);
+            //_imgZoomOut.Click += ImgZoomOutClick;
+            //_imgZoomOut.ToolTip = new TomShane.Neoforce.Controls.ToolTip(Manager);
+            //_imgZoomOut.ToolTip.Text = "Zoom out";
+            //Add(_imgZoomOut);
 
             Manager.Add(this);
 
@@ -630,8 +630,8 @@ namespace MiRo.SimHexWorld.Engine.UI
 
         private void ShowMainControls(bool visible)
         {
-            _imgZoomIn.Visible = visible;
-            _imgZoomOut.Visible = visible;
+            //_imgZoomIn.Visible = visible;
+            //_imgZoomOut.Visible = visible;
 
             //_sidebar.Visible = visible;
 
@@ -645,8 +645,9 @@ namespace MiRo.SimHexWorld.Engine.UI
             for (int i = 0; i < _actionButtons.Length; ++i)
                 _actionButtons[i].Visible = visible;
 
-            _lblResearchProgress.Visible = visible;
-            _lblLeftTopCorner.Visible = visible;
+            GetControl("LeftTopCorner").Visible = visible;
+            GetControl("ResearchProgress").Visible = visible;
+            GetControl("ScienceDetail").Visible = visible;
         }
 
         public bool FogOfWarEnabled

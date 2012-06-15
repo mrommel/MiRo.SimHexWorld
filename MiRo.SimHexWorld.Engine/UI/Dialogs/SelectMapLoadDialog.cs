@@ -26,9 +26,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Dialogs
             Text = "Load";
             Icon = IconProvider.ApplicationIcon;
 
-            TopPanel.Visible = true;
-            Caption.Text = "Information";
-            Description.Text = "Demonstration of various controls available in Neoforce Controls library.";
+            TopPanel.Visible = false;
             Caption.TextColor = Description.TextColor = new Color(96, 96, 96);      
 
             lstMain = new ImageListBox(manager);

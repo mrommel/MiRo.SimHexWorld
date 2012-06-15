@@ -1929,6 +1929,16 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
+    <Compile Include="Controls\ScienceDialog.xml">
+      <Name>ScienceDialog</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\MainWindow.Science.xml">
+      <Name>MainWindow.Science</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
     <Content Include="Skins\Default.skin">
       <Name>Default</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -3000,8 +3010,8 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
-    <Compile Include="Types\Leaders\Ghandi.xml">
-      <Name>Ghandi</Name>
+    <Compile Include="Types\Leaders\Gandhi.xml">
+      <Name>Gandhi</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
@@ -3127,6 +3137,127 @@
     </Compile>
     <Compile Include="Textures\UI\MainView\overviewBackground.png">
       <Name>overviewBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\Atlases\LeaderTiles.png">
+      <Name>LeaderTiles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\Atlases\LeaderAtlas.xml">
+      <Name>LeaderAtlas</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\Overview\mainstrategicbutton.png">
+      <Name>mainstrategicbutton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\ScienceView\maintechbutton.png">
+      <Name>maintechbutton</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\Overview\notificationnotes.png">
+      <Name>notificationnotes</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\NotificationView\notificationiconsfreescience.png">
+      <Name>notificationiconsfreescience</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\NotificationView\notificationiconsproduction.png">
+      <Name>notificationiconsproduction</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\NotificationView\notificationiconsscience.png">
+      <Name>notificationiconsscience</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\NotificationView\notificationnaturalwonder.png">
+      <Name>notificationnaturalwonder</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\NotificationView\notificationancientruins.png">
+      <Name>notificationancientruins</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\NotificationView\notificationbarbarian.png">
+      <Name>notificationbarbarian</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\NotificationView\notificationcitygrowthglow.png">
+      <Name>notificationcitygrowthglow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\NotificationView\notificationcitydeclineglow.png">
+      <Name>notificationcitydeclineglow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\NotificationView\notificationgenericglow.png">
+      <Name>notificationgenericglow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\NotificationView\notificationframebase.png">
+      <Name>notificationframebase</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\NotificationView\notificationgeneric.png">
+      <Name>notificationgeneric</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\Atlases\TechBranchTiles.png">
+      <Name>TechBranchTiles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\Atlases\TechBranchAtlas.xml">
+      <SubType>Designer</SubType>
+      <Name>TechBranchAtlas</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\ScienceView\techbranchh.png">
+      <Name>techbranchh</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\ScienceView\techbranchv.png">
+      <Name>techbranchv</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\ScienceView\grid9green8.png">
+      <Name>grid9green8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\ScienceView\TechActive.png">
+      <Name>TechActive</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\ScienceView\TechNoReach.png">
+      <Name>TechNoReach</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\ScienceView\TechPossible.png">
+      <Name>TechPossible</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

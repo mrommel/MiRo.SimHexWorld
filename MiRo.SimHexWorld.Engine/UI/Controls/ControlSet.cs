@@ -8,12 +8,14 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Reflection;
 using MiRo.SimHexWorld.Engine.Misc;
 using Microsoft.Xna.Framework;
+using MiRo.SimHexWorld.Engine.Locales;
 
 namespace MiRo.SimHexWorld.Engine.UI.Controls
 {
     public class WindowSet
     {
         public string Title { get; set; }
+        public string Icon { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
 
@@ -22,6 +24,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         public void Init(GameWindow gameWindow, Manager manager)
         {
             gameWindow.Text = Title;
+            gameWindow.Icon = manager.Content.Load<Texture2D>(Icon);
             gameWindow.Width = Width;
             gameWindow.Height = Height;
 
@@ -46,6 +49,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
     public class ControlItem
     {
+
         public string Name { get; set; }
         public string Type { get; set; }
 
@@ -56,6 +60,51 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         public int Left { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public bool StayOnBack { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public bool StayOnTop { get; set; }
+
+        private Color Color { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public string ColorName
+        {
+            get { return ColorConversion.FromColor(Color); }
+            set 
+            {
+                if( value != null )
+                    Color = ColorConversion.FromName(value); 
+            }
+        }
+
+        private Color BackColor { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public string BackColorName
+        {
+            get { return ColorConversion.FromColor(BackColor); }
+            set 
+            { 
+                if (value != null)                
+                    BackColor = ColorConversion.FromName(value); 
+            }
+        }
+
+        private Color TextColor { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public string TextColorName
+        {
+            get { return ColorConversion.FromColor(TextColor); }
+            set 
+            {
+                if (value != null)
+                    TextColor = ColorConversion.FromName(value); 
+            }
+        }
 
         [ContentSerializer(Optional = true)]
         public AtlasAsset AtlasAsset { get; set; }
@@ -89,17 +138,28 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                     Container container = new Container(manager);
                     container.Init();
 
-                    if( !string.IsNullOrEmpty(Parent))
+                    if (!string.IsNullOrEmpty(Parent))
                         container.Parent = parent.GetControl(Parent);
-              
+
                     container.Name = Name;
                     container.Top = Top < 0 ? manager.GraphicsDevice.Viewport.Height + Top : Top;
                     container.Left = Left < 0 ? manager.GraphicsDevice.Viewport.Width + Left : Left;
                     container.Width = Width;
                     container.Height = Height;
 
-                    container.BackColor = Color.Cyan;
-                    container.Color = Color.Cornsilk;
+                    container.StayOnBack = StayOnBack;
+                    container.StayOnTop = StayOnTop;
+
+                    if (TextColor != Color.Transparent)
+                        container.TextColor = TextColor;
+
+                    if (BackColor != Color.Transparent)
+                        container.BackColor = BackColor;
+
+                    if (Color != Color.Transparent)
+                        container.Color = Color;
+
+                    container.AutoScroll = true;
 
                     if (string.IsNullOrEmpty(Parent))
                         parent.Add(container);
@@ -116,6 +176,18 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                     box.Left = Left < 0 ? manager.GraphicsDevice.Viewport.Width + Left : Left;
                     box.Width = Width;
                     box.Height = Height;
+
+                    box.StayOnBack = StayOnBack;
+                    box.StayOnTop = StayOnTop;
+
+                    if (BackColor != Color.Transparent)
+                        box.BackColor = BackColor;
+
+                    if (Color != Color.Transparent)
+                        box.Color = Color;
+
+                    if (TextColor != Color.Transparent)
+                        box.TextColor = TextColor;
 
                     if (!string.IsNullOrEmpty(ImageAsset))
                         box.Image = manager.Content.Load<Texture2D>(ImageAsset);
@@ -170,8 +242,21 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                     label.Width = Width;
                     label.Height = Height;
 
-                    label.Text = Text;
-                    label.TextColor = Color.Black;
+                    label.StayOnBack = StayOnBack;
+                    label.StayOnTop = StayOnTop;
+
+                    if (BackColor != Color.Transparent)
+                        label.BackColor = BackColor;
+
+                    if (Color != Color.Transparent)
+                        label.Color = Color;
+
+                    if (TextColor != Color.Transparent)
+                        label.TextColor = TextColor;
+                    else
+                        label.TextColor = Color.Black;
+
+                    label.Text = Text.StartsWith("TXT_KEY_") ? Provider.Instance.Translate(Text) : Text;
 
                     if (string.IsNullOrEmpty(Parent))
                         parent.Add(label);
@@ -180,17 +265,5 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                     throw new Exception("No handling for " + Type);
             }
         }
-
-        //static TomShane.Neoforce.Controls.EventHandler GetEventHandler(object classInstance, string eventName)
-        //{
-        //    Type classType = classInstance.GetType();
-        //    MethodInfo eventField = classType.GetMethod(eventName);
-        //    eventField.Invoke(classInstance,
-        //    //ParameterInfo[] a = eventField.GetParameters();
-        //    //TomShane.Neoforce.Controls.EventHandler eventDelegate = eventField.Invoke(
-        //    classInstance.
-        //    return (TomShane.Neoforce.Controls.EventHandler)eventField.;
-        //}
-
     }
 }

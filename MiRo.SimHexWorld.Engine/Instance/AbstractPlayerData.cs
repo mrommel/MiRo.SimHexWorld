@@ -359,6 +359,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
             {
                 GameFacade.getInstance().SendNotification(
                     GameNotification.Message, 
+                    NotificationType.Science,
                     string.Format( Strings.TXT_KEY_NOTIFICATION_SCIENCE_DISCOVERED, Leader.Title, CurrentResearch.Title ), 
                     Civilization,
                     MessageFilter.Friends | MessageFilter.Self,
@@ -516,13 +517,16 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
             unit.WorkFinished += delegate(Unit u, HexPoint pt, Improvement imp)
             {
-                GameFacade.getInstance().SendNotification(
-                    GameNotification.Message, 
-                    string.Format(Strings.TXT_KEY_NOTIFICATION_BUILD_IMPROVEMENT, u.Player.Civilization.Title, imp.Title, pt), 
-                    u.Player.Civilization,
-                    MessageFilter.Friends | MessageFilter.Self,
-                    imp);
-
+                if( !u.IsAutomated )
+                {
+                    GameFacade.getInstance().SendNotification(
+                        GameNotification.Message, 
+                        NotificationType.ImprovementReady,
+                        string.Format(Strings.TXT_KEY_NOTIFICATION_BUILD_IMPROVEMENT, u.Player.Civilization.Title, imp.Title, pt), 
+                        u.Player.Civilization,
+                        MessageFilter.Friends | MessageFilter.Self,
+                        new List<object>() { imp, pt } );
+                }
                 _needToUpdateInfluenceMaps = true;
 
                 GameFacade.getInstance().SendNotification(GameNotification.UpdateImprovements);
@@ -574,6 +578,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
             GameFacade.getInstance().SendNotification(
                 GameNotification.Message, 
+                NotificationType.FoundCity,
                 string.Format(Strings.TXT_KEY_NOTIFICATION_FOUND_CITY, c.Player.Leader.Title, c.Name), 
                 Civilization,
                 MessageFilter.Self | MessageFilter.Friends,
@@ -583,6 +588,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
             { 
                 GameFacade.getInstance().SendNotification(
                     GameNotification.Message, 
+                    NotificationType.CityGrowth,
                     string.Format( Strings.TXT_KEY_NOTIFICATION_CITY_GREW, city.Name, c.Player.Leader.Title,to), 
                     city.Player.Civilization,
                     MessageFilter.Friends | MessageFilter.Self,
@@ -592,6 +598,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
             {
                 GameFacade.getInstance().SendNotification(
                     GameNotification.Message, 
+                    NotificationType.CityDecline,
                     string.Format(Strings.TXT_KEY_NOTIFICATION_CITY_DECLINE, city.Name, c.Player.Leader.Title,to),
                     city.Player.Civilization,
                     MessageFilter.Friends | MessageFilter.Self,
@@ -601,6 +608,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
             {
                 GameFacade.getInstance().SendNotification(
                     GameNotification.Message, 
+                    NotificationType.ProducationReady,
                     string.Format( Strings.TXT_KEY_NOTIFICATION_CITY_BUILDING, city.Name, c.Player.Leader.Title, building.Title ),
                     city.Player.Civilization,
                     MessageFilter.Self,
@@ -610,6 +618,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
             {
                 GameFacade.getInstance().SendNotification(
                     GameNotification.Message, 
+                    NotificationType.ProducationReady,
                     string.Format( Strings.TXT_KEY_NOTIFICATION_CITY_UNIT, city.Name, c.Player.Leader.Title, unit.Title ),
                     city.Player.Civilization,
                     MessageFilter.Self, 

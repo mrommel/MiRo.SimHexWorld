@@ -412,6 +412,24 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Ihr ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_SATURATE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_SATURATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Ackerbau ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_TECH_AGRICULTURE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_TECH_AGRICULTURE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Bogenschießen ähnelt.
         /// </summary>
         internal static string TXT_KEY_TECH_ARCHERY {

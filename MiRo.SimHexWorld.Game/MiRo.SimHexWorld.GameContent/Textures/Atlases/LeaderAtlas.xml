@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.UI.TextureAtlas">
+    <Name>Leaders</Name>
+    <TextureName>LeaderTiles</TextureName>
+    <Rows>4</Rows>
+    <Columns>8</Columns>
+    <Tiles>
+      <Item>
+        <Name>Washington</Name>
+        <Index>0</Index>
+      </Item>
+      <Item>
+        <Name>HanunAlRashid</Name>
+        <Index>1</Index>
+      </Item>
+      <Item>
+        <Name>Montezuma</Name>
+        <Index>2</Index>
+      </Item>
+      <Item>
+        <Name>WuZetian</Name>
+        <Index>4</Index>
+      </Item>
+      <Item>
+        <Name>Ramesses</Name>
+        <Index>5</Index>
+      </Item>
+      <Item>
+        <Name>Elizabeth</Name>
+        <Index>6</Index>
+      </Item>
+      <Item>
+        <Name>Napoleon</Name>
+        <Index>7</Index>
+      </Item>
+      <!-- next line -->
+      <Item>
+        <Name>Bismarck</Name>
+        <Index>8</Index>
+      </Item>
+      <Item>
+        <Name>Alexander</Name>
+        <Index>9</Index>
+      </Item>
+      <Item>
+        <Name>Gandhi</Name>
+        <Index>11</Index>
+      </Item>
+      <Item>
+        <Name>OdaNobunaga</Name>
+        <Index>13</Index>
+      </Item>
+      <Item>
+        <Name>Augustus</Name>
+        <Index>17</Index>
+      </Item>
+      <Item>
+        <Name>Catherine</Name>
+        <Index>18</Index>
+      </Item>
+      <Item>
+        <Name>Askia</Name>
+        <Index>20</Index>
+      </Item>
+      <!-- unknown -->
+      <Item>
+        <Name>Darius</Name>
+        <Index>22</Index>
+      </Item>
+      <Item>
+        <Name>Yupanqui</Name>
+        <Index>22</Index>
+      </Item>
+    </Tiles>
+  </Asset>
+</XnaContent>

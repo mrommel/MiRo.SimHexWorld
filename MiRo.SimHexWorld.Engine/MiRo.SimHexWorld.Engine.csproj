@@ -153,6 +153,7 @@
       <DependentUpon>Strings.en-US.resx</DependentUpon>
     </Compile>
     <Compile Include="Misc\BoundingBoxRenderer.cs" />
+    <Compile Include="Misc\ColorConversion.cs" />
     <Compile Include="Misc\FileSizeFormatProvider.cs" />
     <Compile Include="Misc\FpsCounter.cs" />
     <Compile Include="Misc\MissingAsset.cs" />
@@ -190,6 +191,7 @@
     <Compile Include="UI\Dialogs\ChooseEnumDialog.cs" />
     <Compile Include="UI\Dialogs\DiplomacyDialog.cs" />
     <Compile Include="UI\Dialogs\NewEraWindow.cs" />
+    <Compile Include="UI\Dialogs\ScienceDialog.cs" />
     <Compile Include="UI\Dialogs\ScienceInfoDialog.cs" />
     <Compile Include="UI\Dialogs\MessageBox.cs" />
     <Compile Include="UI\Dialogs\PolicyChooseDialog.cs" />

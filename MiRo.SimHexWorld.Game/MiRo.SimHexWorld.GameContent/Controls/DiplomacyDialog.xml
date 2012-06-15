@@ -2,49 +2,369 @@
 <XnaContent>
   <Asset Type="MiRo.SimHexWorld.Engine.UI.Controls.WindowSet">
     <Title>Diplomacy</Title>
+    <Icon>Content\\Textures\\UI\\Globe_Icon_Small</Icon>
     <Width>300</Width>
     <Height>500</Height>
     <Controls>
       <Item>
         <Name>Body</Name>
         <Type>Container</Type>
-        <Top>20</Top>
-        <Left>20</Left>
-        <Width>250</Width>
-        <Height>400</Height>
+        <Top>5</Top>
+        <Left>5</Left>
+        <Width>275</Width>
+        <Height>455</Height>
+        <ColorName>Black</ColorName>
       </Item>
+      <!-- divider -->
       <Item>
-        <Name>Logo1</Name>
+        <Name>LeaderLogo0</Name>
         <Type>ImageBox</Type>
         <Parent>Body</Parent>
         <Top>0</Top>
         <Left>0</Left>
         <Width>48</Width>
         <Height>48</Height>
-        <AtlasAsset>
-          <Atlas>CivilizationAtlas</Atlas>
-          <Name>German</Name>
-        </AtlasAsset>
         <ImageMode>Stretched</ImageMode>
       </Item>
       <Item>
-        <Name>CivLabel1</Name>
+        <Name>LeaderName0</Name>
         <Type>Label</Type>
         <Parent>Body</Parent>
         <Top>0</Top>
         <Left>55</Left>
         <Width>120</Width>
-        <Height>48</Height>
+        <Height>16</Height>
+        <TextColorName>White</TextColorName>     
+        <Text>Bismarck</Text>
+      </Item>
+      <Item>
+        <Name>CivilizationName0</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>24</Top>
+        <Left>55</Left>
+        <Width>120</Width>
+        <Height>16</Height>
+        <TextColorName>Gray</TextColorName>       
         <Text>German</Text>
       </Item>
       <Item>
-        <Name>CivRank1</Name>
+        <Name>CivRank0</Name>
         <Type>Label</Type>
         <Parent>Body</Parent>
         <Top>0</Top>
         <Left>180</Left>
         <Width>32</Width>
         <Height>48</Height>
+        <TextColorName>White</TextColorName>
+        <Text>123</Text>
+      </Item>
+      <!-- divider -->
+      <Item>
+        <Name>LeaderLogo1</Name>
+        <Type>ImageBox</Type>
+        <Parent>Body</Parent>
+        <Top>48</Top>
+        <Left>0</Left>
+        <Width>48</Width>
+        <Height>48</Height>
+        <ImageMode>Stretched</ImageMode>
+      </Item>
+      <Item>
+        <Name>LeaderName1</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>48</Top>
+        <Left>55</Left>
+        <Width>120</Width>
+        <Height>16</Height>
+        <TextColorName>White</TextColorName>
+        <Text>German</Text>
+      </Item>
+      <Item>
+        <Name>CivilizationName1</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>72</Top>
+        <Left>55</Left>
+        <Width>120</Width>
+        <Height>16</Height>
+        <TextColorName>Gray</TextColorName>
+        <Text>German</Text>
+      </Item>
+      <Item>
+        <Name>CivRank1</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>48</Top>
+        <Left>180</Left>
+        <Width>32</Width>
+        <Height>48</Height>
+        <TextColorName>White</TextColorName>
+        <Text>123</Text>
+      </Item>
+      <!-- divider -->
+      <Item>
+        <Name>LeaderLogo2</Name>
+        <Type>ImageBox</Type>
+        <Parent>Body</Parent>
+        <Top>96</Top>
+        <Left>0</Left>
+        <Width>48</Width>
+        <Height>48</Height>
+        <ImageMode>Stretched</ImageMode>
+      </Item>
+      <Item>
+        <Name>LeaderName2</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>96</Top>
+        <Left>55</Left>
+        <Width>120</Width>
+        <Height>16</Height>
+        <TextColorName>White</TextColorName>
+        <Text>German</Text>
+      </Item>
+      <Item>
+        <Name>CivRank2</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>96</Top>
+        <Left>180</Left>
+        <Width>32</Width>
+        <Height>48</Height>
+        <TextColorName>White</TextColorName>
+        <Text>123</Text>
+      </Item>
+      <!-- divider -->
+      <Item>
+        <Name>LeaderLogo3</Name>
+        <Type>ImageBox</Type>
+        <Parent>Body</Parent>
+        <Top>144</Top>
+        <Left>0</Left>
+        <Width>48</Width>
+        <Height>48</Height>
+        <ImageMode>Stretched</ImageMode>
+      </Item>
+      <Item>
+        <Name>LeaderName3</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>144</Top>
+        <Left>55</Left>
+        <Width>120</Width>
+        <Height>16</Height>
+        <TextColorName>White</TextColorName>
+        <Text>German</Text>
+      </Item>
+      <Item>
+        <Name>CivRank3</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>144</Top>
+        <Left>180</Left>
+        <Width>32</Width>
+        <Height>48</Height>
+        <TextColorName>White</TextColorName>
+        <Text>123</Text>
+      </Item>
+      <!-- divider -->
+      <Item>
+        <Name>LeaderLogo4</Name>
+        <Type>ImageBox</Type>
+        <Parent>Body</Parent>
+        <Top>192</Top>
+        <Left>0</Left>
+        <Width>48</Width>
+        <Height>48</Height>
+        <ImageMode>Stretched</ImageMode>
+      </Item>
+      <Item>
+        <Name>LeaderName4</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>192</Top>
+        <Left>55</Left>
+        <Width>120</Width>
+        <Height>16</Height>
+        <TextColorName>White</TextColorName>
+        <Text>German</Text>
+      </Item>
+      <Item>
+        <Name>CivRank4</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>192</Top>
+        <Left>180</Left>
+        <Width>32</Width>
+        <Height>48</Height>
+        <TextColorName>White</TextColorName>
+        <Text>123</Text>
+      </Item>
+      <!-- divider -->
+      <Item>
+        <Name>LeaderLogo5</Name>
+        <Type>ImageBox</Type>
+        <Parent>Body</Parent>
+        <Top>240</Top>
+        <Left>0</Left>
+        <Width>48</Width>
+        <Height>48</Height>
+        <ImageMode>Stretched</ImageMode>
+      </Item>
+      <Item>
+        <Name>LeaderName5</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>240</Top>
+        <Left>55</Left>
+        <Width>120</Width>
+        <Height>16</Height>
+        <TextColorName>White</TextColorName>
+        <Text>German</Text>
+      </Item>
+      <Item>
+        <Name>CivRank5</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>240</Top>
+        <Left>180</Left>
+        <Width>32</Width>
+        <Height>48</Height>
+        <TextColorName>White</TextColorName>
+        <Text>123</Text>
+      </Item>
+      <!-- divider -->
+      <Item>
+        <Name>LeaderLogo6</Name>
+        <Type>ImageBox</Type>
+        <Parent>Body</Parent>
+        <Top>288</Top>
+        <Left>0</Left>
+        <Width>48</Width>
+        <Height>48</Height>
+        <ImageMode>Stretched</ImageMode>
+      </Item>
+      <Item>
+        <Name>LeaderName6</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>288</Top>
+        <Left>55</Left>
+        <Width>120</Width>
+        <Height>16</Height>
+        <TextColorName>White</TextColorName>
+        <Text>German</Text>
+      </Item>
+      <Item>
+        <Name>CivRank6</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>288</Top>
+        <Left>180</Left>
+        <Width>32</Width>
+        <Height>48</Height>
+        <TextColorName>White</TextColorName>
+        <Text>123</Text>
+      </Item>
+      <!-- divider -->
+      <Item>
+        <Name>LeaderLogo7</Name>
+        <Type>ImageBox</Type>
+        <Parent>Body</Parent>
+        <Top>336</Top>
+        <Left>0</Left>
+        <Width>48</Width>
+        <Height>48</Height>
+        <ImageMode>Stretched</ImageMode>
+      </Item>
+      <Item>
+        <Name>LeaderName7</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>336</Top>
+        <Left>55</Left>
+        <Width>120</Width>
+        <Height>16</Height>
+        <TextColorName>White</TextColorName>
+        <Text>German</Text>
+      </Item>
+      <Item>
+        <Name>CivRank7</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>336</Top>
+        <Left>180</Left>
+        <Width>32</Width>
+        <Height>48</Height>
+        <TextColorName>White</TextColorName>
+        <Text>123</Text>
+      </Item>
+      <!-- divider -->
+      <Item>
+        <Name>LeaderLogo8</Name>
+        <Type>ImageBox</Type>
+        <Parent>Body</Parent>
+        <Top>384</Top>
+        <Left>0</Left>
+        <Width>48</Width>
+        <Height>48</Height>
+        <ImageMode>Stretched</ImageMode>
+      </Item>
+      <Item>
+        <Name>LeaderName8</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>384</Top>
+        <Left>55</Left>
+        <Width>120</Width>
+        <Height>16</Height>
+        <TextColorName>White</TextColorName>
+        <Text>German</Text>
+      </Item>
+      <Item>
+        <Name>CivRank8</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>384</Top>
+        <Left>180</Left>
+        <Width>32</Width>
+        <Height>48</Height>
+        <TextColorName>White</TextColorName>
+        <Text>123</Text>
+      </Item>
+      <!-- divider -->
+      <Item>
+        <Name>LeaderLogo9</Name>
+        <Type>ImageBox</Type>
+        <Parent>Body</Parent>
+        <Top>432</Top>
+        <Left>0</Left>
+        <Width>48</Width>
+        <Height>48</Height>
+        <ImageMode>Stretched</ImageMode>
+      </Item>
+      <Item>
+        <Name>LeaderName9</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>432</Top>
+        <Left>55</Left>
+        <Width>120</Width>
+        <Height>16</Height>
+        <TextColorName>White</TextColorName>
+        <Text>German</Text>
+      </Item>
+      <Item>
+        <Name>CivRank9</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>432</Top>
+        <Left>180</Left>
+        <Width>32</Width>
+        <Height>48</Height>
+        <TextColorName>White</TextColorName>
         <Text>123</Text>
       </Item>
     </Controls>

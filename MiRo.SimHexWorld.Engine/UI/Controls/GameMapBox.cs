@@ -174,10 +174,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                         if (loc == null)
                             throw new Exception("No Start location for " + MainWindow.Game.Human.Civilization.Name);
 
-                        _mapCenter.X = loc.X;
-                        _mapCenter.Y = loc.Y;
-                        _camera.Target = MapData.GetWorldPosition(_mapCenter);
-                        _mapRenderer.Center = _mapCenter;
+                        CenterAt(new HexPoint(loc.X,loc.Y));
                     }
                 }
             }
@@ -188,6 +185,12 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
             }
 
             MouseState mouseState = Mouse.GetState();
+
+            if (mouseState.ScrollWheelValue > _oldMouseState.ScrollWheelValue)
+                ZoomIn();
+            else if (mouseState.ScrollWheelValue < _oldMouseState.ScrollWheelValue)
+                ZoomOut();
+
             if (mouseState.RightButton == ButtonState.Released && _oldMouseState.RightButton == ButtonState.Pressed)
             {
                 City city = MainWindow.Game.GetCityAt(_mapRenderer.Cursor);
@@ -247,6 +250,14 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
             _oldKeyState = keyState;
             _oldMouseState = mouseState;
+        }
+
+        public void CenterAt(HexPoint loc)
+        {
+            _mapCenter.X = loc.X;
+            _mapCenter.Y = loc.Y;
+            _camera.Target = MapData.GetWorldPosition(_mapCenter);
+            _mapRenderer.Center = _mapCenter;
         }
 
         private void UpdateCursor()
