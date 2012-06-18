@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Policy">
+    <Name>Monarchy</Name>
+    <Title>TXT_KEY_POLICY_MONARCHY_TITLE</Title>
+    <Description>TXT_KEY_POLICY_MONARCHY_DESCRIPTION</Description>
+    <ImageName>Monarchy</ImageName>
+    <Historical></Historical>
+    <PolicyTypeName>Tradition</PolicyTypeName>
+    <RequiredPolicyNames>
+      <Item>Oligarchy</Item>
+    </RequiredPolicyNames>
+
+    <!-- bonuses -->
+    <PlotGoldCostMod>-50</PlotGoldCostMod>
+    <!-- bonuses -->
+
+    <Flavours>
+      <Item>
+        <Name>Growth</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

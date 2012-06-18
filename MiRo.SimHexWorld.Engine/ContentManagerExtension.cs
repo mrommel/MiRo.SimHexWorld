@@ -23,7 +23,7 @@ namespace MiRo.SimHexWorld.Engine
         /// <param name="contentManager">The content manager for which content is to be loaded.</param>
         /// <param name="contentFolder">The game project root folder relative folder path.</param>
         /// <returns>A list of loaded content objects.</returns>
-        public static Dictionary<String, T> LoadContent<T>(this ContentManager contentManager, string contentFolder, string filter = "*.*")
+        public static Dictionary<String, T> LoadContent<T>(this ContentManager contentManager, string contentFolder, string filter = "*.*", bool includeSubfolders = false)
         {
             //Load directory info, abort if none
             var dir = new DirectoryInfo(Path.Combine(contentManager.RootDirectory, contentFolder));
@@ -33,6 +33,20 @@ namespace MiRo.SimHexWorld.Engine
             //Init the resulting list
             var result = new Dictionary<String, T>();
 
+            LoadFolder<T>(contentManager, contentFolder, filter, dir, result);
+
+            if (includeSubfolders)
+            {
+                foreach (DirectoryInfo dirInfo in dir.GetDirectories())
+                    LoadFolder(contentManager, Path.Combine(contentFolder, dirInfo.Name), filter, dirInfo, result);
+            }
+
+            //Return the result
+            return result;
+        }
+
+        private static void LoadFolder<T>(ContentManager contentManager, string contentFolder, string filter, DirectoryInfo dir, Dictionary<string, T> result)
+        {
             //Load all files that matches the file filter
             FileInfo[] files = dir.GetFiles(filter);
             foreach (FileInfo file in files)
@@ -49,9 +63,6 @@ namespace MiRo.SimHexWorld.Engine
                     MessageBox.Show(ex.ToString(), "Error during loading of: " + file.Name);
                 }
             }
-
-            //Return the result
-            return result;
         }
 
         /// <summary>

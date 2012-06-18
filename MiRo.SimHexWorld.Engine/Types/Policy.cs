@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Content;
 using MiRo.SimHexWorld.Engine.Misc;
 using MiRo.SimHexWorld.Engine.Types.AI;
+using MiRo.SimHexWorld.Engine.Instance.AI;
 
 namespace MiRo.SimHexWorld.Engine.Types
 {
@@ -15,10 +16,37 @@ namespace MiRo.SimHexWorld.Engine.Types
 
         public List<string> RequiredPolicyNames { get; set; }
 
+        #region bonuses
+
+        [ContentSerializer(Optional = true)]
+        public float BarbarianCombatModifier { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public bool AlwaysSeeBarbarianCamps { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public float SettlerProductionModifier { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public int FreeFoodBox { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public int MinorFriendshipDecayMod { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public int ExtraHappiness { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public float CapitalUnhappinessMod { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public int PlotGoldCostMod { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public int CulturePerCity { get; set; }
+
         [ContentSerializer(Optional = true)]
         public List<Yield> Yields { get; set; }
-
-        #region bonuses
 
         [ContentSerializer(Optional = true)]
         public float ScienceModifier { get; set; }
@@ -47,15 +75,21 @@ namespace MiRo.SimHexWorld.Engine.Types
         [ContentSerializer(Optional = true)]
         public float UnitUpgradeCostModifier { get; set; }
 
+        [ContentSerializer(Optional = true)]
+        public int HappinessPerTradeRoute { get; set; }
+
         #endregion bonuses
 
-        public List<Flavour> Flavours { get; set; }
+        public Flavours Flavours { get; set; }
 
         [ContentSerializerIgnore]
         public int YieldsHappiness
         {
             get
             {
+                if (Yields == null)
+                    return 0;
+
                 Yield yield = Yields.FirstOrDefault(a => a.Type == YieldType.Happiness && !a.CapitalOnly);
 
                 if (yield != null)
@@ -70,6 +104,9 @@ namespace MiRo.SimHexWorld.Engine.Types
         {
             get
             {
+                if (Yields == null)
+                    return 0;
+
                 Yield yield = Yields.FirstOrDefault(a => a.Type == YieldType.Food && !a.CapitalOnly);
 
                 if (yield != null)
@@ -84,6 +121,9 @@ namespace MiRo.SimHexWorld.Engine.Types
         {
             get
             {
+                if (Yields == null)
+                    return 0;
+
                 Yield yield = Yields.FirstOrDefault(a => a.Type == YieldType.Food && a.CapitalOnly );
 
                 if (yield != null)
@@ -98,6 +138,9 @@ namespace MiRo.SimHexWorld.Engine.Types
         {
             get
             {
+                if (Yields == null)
+                    return 0;
+
                 Yield yield = Yields.FirstOrDefault(a => a.Type == YieldType.Science);
 
                 if (yield != null)
@@ -109,7 +152,7 @@ namespace MiRo.SimHexWorld.Engine.Types
 
         public override Microsoft.Xna.Framework.Graphics.Texture2D Image
         {
-            get { return null; }
+            get { return Provider.GetAtlas("PolicyAtlas").GetTexture(ImageName); }
         }
 
         public override string ImagePath

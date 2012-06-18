@@ -391,7 +391,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Policies\WarriorCode.xml">
+    <Compile Include="Policies\Honor\WarriorCode.xml">
       <Name>WarriorCode</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
@@ -405,28 +405,28 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Policies\Discipline.xml">
+    <Compile Include="Policies\Honor\Discipline.xml">
       <Name>Discipline</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Policies\MilitaryTradition.xml">
+    <Compile Include="Policies\Honor\MilitaryTradition.xml">
       <Name>MilitaryTradition</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Policies\MilitaryCaste.xml">
+    <Compile Include="Policies\Honor\MilitaryCaste.xml">
       <Name>MilitaryCaste</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Policies\ProfessionalArmy.xml">
+    <Compile Include="Policies\Honor\ProfessionalArmy.xml">
       <Name>ProfessionalArmy</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
@@ -1568,12 +1568,12 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
-    <Compile Include="Policies\Aristocracy.xml">
+    <Compile Include="Policies\Tradition\Aristocracy.xml">
       <Name>Aristocracy</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
-    <Compile Include="Policies\LandedElite.xml">
+    <Compile Include="Policies\Tradition\LandedElite.xml">
       <Name>LandedElite</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
@@ -1936,6 +1936,136 @@
     </Compile>
     <Compile Include="Controls\MainWindow.Science.xml">
       <Name>MainWindow.Science</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Policies\Honor\Honor.xml">
+      <Name>Honor</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Policies\Tradition\Tradition.xml">
+      <Name>Tradition</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Policies\Liberty\Liberty.xml">
+      <Name>Liberty</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="PolicyTypes\Liberty.xml">
+      <Name>Liberty</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="PolicyTypes\Piety.xml">
+      <Name>Piety</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\PolicyChooseDialog\Tradition.xml">
+      <Name>Tradition</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\PolicyChooseDialog\Liberty.xml">
+      <Name>Liberty</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Policies\Liberty\CollectiveRule.xml">
+      <Name>CollectiveRule</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\PolicyChooseDialog\Honor.xml">
+      <Name>Honor</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\PolicyChooseDialog\Piety.xml">
+      <Name>Piety</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\PolicyChooseDialog\Patronage.xml">
+      <Name>Patronage</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="PolicyTypes\Patronage.xml">
+      <Name>Patronage</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Policies\Patronage\Patronage.xml">
+      <Name>Patronage</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Policies\Piety\Piety.xml">
+      <Name>Piety</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Policies\Liberty\Citizenship.xml">
+      <Name>Citizenship</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\MapOptionDialog.xml">
+      <Name>MapOptionDialog</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Policies\Tradition\Legalism.xml">
+      <Name>Legalism</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\PolicyChooseDialog\Order.xml">
+      <Name>Order</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="PolicyTypes\Order.xml">
+      <Name>Order</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\PolicyChooseDialog\Autocracy.xml">
+      <Name>Autocracy</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="PolicyTypes\Autocracy.xml">
+      <Name>Autocracy</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Policies\Tradition\Monarchy.xml">
+      <Name>Monarchy</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Policies\Liberty\Republic.xml">
+      <Name>Republic</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Policies\Liberty\Representation.xml">
+      <Name>Representation</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Policies\Liberty\Meritocracy.xml">
+      <Name>Meritocracy</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Policies\Tradition\Oligarchy.xml">
+      <Name>Oligarchy</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
@@ -3241,11 +3371,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Textures\UI\ScienceView\grid9green8.png">
-      <Name>grid9green8</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
     <Compile Include="Textures\UI\ScienceView\TechActive.png">
       <Name>TechActive</Name>
       <Importer>TextureImporter</Importer>
@@ -3258,6 +3383,36 @@
     </Compile>
     <Compile Include="Textures\UI\ScienceView\TechPossible.png">
       <Name>TechPossible</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\NotificationView\notificationiconsglass.png">
+      <Name>notificationiconsglass</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\NotificationView\notificationorange.png">
+      <Name>notificationorange</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\NotificationView\notificationpurple.png">
+      <Name>notificationpurple</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\NotificationView\notificationred.png">
+      <Name>notificationred</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\NotificationView\notificationiconsculture.png">
+      <Name>notificationiconsculture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\PolicyView\button44gold.png">
+      <Name>button44gold</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

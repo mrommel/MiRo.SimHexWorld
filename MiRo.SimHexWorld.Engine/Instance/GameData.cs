@@ -75,7 +75,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
                     HexPoint loc = pl.StartLocation;
 
                     pl.AddUnit("Settler", loc.X, loc.Y);
-                    pl.AddUnit("Worker", loc.X, loc.Y);
+                    pl.AddUnit("Warrior", loc.X, loc.Y);
                 }
             }
             else 

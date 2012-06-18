@@ -120,33 +120,27 @@
   <data name="Title" xml:space="preserve">
     <value>MiRo.SimHexWorld</value>
   </data>
-  <data name="TXT_KEY_BUILDING_PALACE_DESC" xml:space="preserve">
-    <value>Zeigt an, dass diese Stadt die [ICON_CAPITAL] Hauptstadt des Reichs ist.[NEWLINE][NEWLINE]Durch das [ICON_CONNECTED] Verbinden anderer Städte mit der [ICON_CAPITAL] Hauptstadt wird zusätzliches [ICON_GOLD] Gold produziert.[NEWLINE][NEWLINE]+2 [ICON_PRODUCTION] Produktion, +3 [ICON_RESEARCH] Wissenschaft, +2 [ICON_GOLD] Gold</value>
-  </data>
-  <data name="TXT_KEY_BUILDING_PALACE_TITLE" xml:space="preserve">
-    <value>Palast</value>
-  </data>
   <data name="TXT_KEY_UI_MAINAPPLICATION_CHECK" xml:space="preserve">
-    <value>Prüfung</value>
+    <value>Check</value>
   </data>
   <data name="TXT_KEY_UI_MAINAPPLICATION_EXIT" xml:space="preserve">
-    <value>Beenden</value>
+    <value>Exit</value>
   </data>
   <data name="TXT_KEY_UI_MAINAPPLICATION_LOAD" xml:space="preserve">
-    <value>Laden</value>
+    <value>Load</value>
   </data>
   <data name="TXT_KEY_UI_MAINAPPLICATION_START" xml:space="preserve">
     <value>Start</value>
   </data>
   <data name="TXT_KEY_UI_MAINAPPLICATION_TURN" xml:space="preserve">
-    <value>Zug</value>
+    <value>Turn</value>
   </data>
   <data name="TXT_KEY_UI_MAINAPPLICATION_TURN_PATTERN" xml:space="preserve">
-    <value>Zug: {0}, {1}</value>
+    <value>Turn: {0}, {1}</value>
   </data>
   <data name="TXT_KEY_UNITS_SETTLER_DESCRIPTION" xml:space="preserve">
-    <value>Gründet neue Städte für Ihr Reich.
-[Food] Nahrungswachstum der Stadt ist angehalten solange er gebaut wird.</value>
+    <value>Founds new Cities to expand your empire.
+[Food] Growth of the City is stopped while this Unit is being built.</value>
   </data>
   <data name="TXT_KEY_UNITS_SETTLER_HISTORICAL" xml:space="preserve">
     <value>Pioneers drive civilization. While most are satisfied with the status quo, happy just to survive, in every culture there are a few hardy individuals willing to strike out on their own, to risk everything in the hope of finding a better life for themselves and their children. In the past, brave settlers have led humanity out of Africa and into Europe, Asia, the Pacific, and the Americas. In the future they may lead the way to the moon, Mars, and even beyond.</value>
@@ -155,150 +149,117 @@
     <value>Use this unit to construct new cities. It cannot defend itself, so accompany it with a combat unit.</value>
   </data>
   <data name="TXT_KEY_UNITS_SETTLER_TITLE" xml:space="preserve">
-    <value>Siedler</value>
+    <value>Settler</value>
   </data>
   <data name="TXT_KEY_UNITS_WORKER_DESCRIPTION" xml:space="preserve">
-    <value>Verbessert [Food] Nahrung[Production] Produktion und [Gold] Gold durch die Errichtung von Verbesserungen auf der Karte bei Städten.</value>
+    <value>Improves [Food] Food [Production] Production and [Gold] Gold by constructing Improvements on map tiles outside of Cities.</value>
   </data>
   <data name="TXT_KEY_UNITS_WORKER_TITLE" xml:space="preserve">
-    <value>Arbeiter</value>
-  </data>
-  <data name="TXT_KEY_BUILDING_MONUMENT_TITLE" xml:space="preserve">
-    <value>Monument</value>
-  </data>
-  <data name="TXT_KEY_MAP_EARTH_TITLE_EARTH_DUEL" xml:space="preserve">
-    <value>Duel auf der Erde</value>
-  </data>
-  <data name="TXT_KEY_MAP_EARTH_TITLE_EARTH_HUGE" xml:space="preserve">
-    <value>Riesige Erde</value>
-  </data>
-  <data name="TXT_KEY_MAP_EARTH_TITLE_EARTH_LARGE" xml:space="preserve">
-    <value>Große Erde</value>
-  </data>
-  <data name="TXT_KEY_MAP_EARTH_TITLE_EARTH_SMALL" xml:space="preserve">
-    <value>Kleine Erde</value>
-  </data>
-  <data name="TXT_KEY_MAP_EARTH_TITLE_EARTH_STANDARD" xml:space="preserve">
-    <value>Normale Erde</value>
-  </data>
-  <data name="TXT_KEY_MAP_EARTH_TITLE_EARTH_TINY" xml:space="preserve">
-    <value>Winzige Erde</value>
-  </data>
-  <data name="TXT_KEY_BUILDING_MONUMENT_DESCRIPTION" xml:space="preserve">
-    <value>The Monument increases the Culture of a city, speeding the growth of the city's territory and the civilization's acquisition of Social Policies.</value>
+    <value>Worker</value>
   </data>
   <data name="TXT_KEY_UNITS_WARRIOR_TITLE" xml:space="preserve">
-    <value>Krieger</value>
-  </data>
-  <data name="TXT_KEY_CIVIZATION_ENGLISH_DESCRIPTION" xml:space="preserve">
-    <value>England ist auf Großbritannien, ein "grünes und angenehm" Insel vor der Westküste Europas. Es ist das größte Mitglied der politischen Einheit wie das Vereinigte Königreich von Großbritannien und Nordirland bekannt. Historisch gesehen ein Volk von Seefahrern, für einen Großteil der letzten 500 Jahre die Engländer haben ihren unvergleichlichen Marine genutzt, um ihre Macht in Europa und der ganzen Welt zu projizieren.</value>
-  </data>
-  <data name="TXT_KEY_CIVIZATION_ENGLISH_TITLE" xml:space="preserve">
-    <value>England</value>
-  </data>
-  <data name="TXT_KEY_CIVIZATION_GERMAN_DESCRIPTION" xml:space="preserve">
-    <value>Während verschiedene "germanischen" Völker Nord-und Mittelitaliens Europa seit tausenden von Jahren beschäftigt haben, ist die moderne politische Einheit als "Deutschland" bekannt extrem jung, fast im Alleingang von dem genialen preußischen Politiker Otto von Bismarck schuf gut 140 Jahren. Während seiner kurzen Existenz hat Deutschland hatte einen profunden Effekt - für gute und für schlechte - auf der menschlichen Geschichte.</value>
-  </data>
-  <data name="TXT_KEY_CIVIZATION_GERMAN_TITLE" xml:space="preserve">
-    <value>Deutschland</value>
-  </data>
-  <data name="TXT_KEY_IMPROVEMENT_FARM_TITLE" xml:space="preserve">
-    <value>Bauernhof</value>
-  </data>
-  <data name="TXT_KEY_NOTIFICATION_BUILD_IMPROVEMENT" xml:space="preserve">
-    <value>{0} hat {1} auf {2} gebaut</value>
-  </data>
-  <data name="TXT_KEY_NOTIFICATION_CITY_BUILDING" xml:space="preserve">
-    <value>{0} von {1} hat ein {2} gebaut</value>
-  </data>
-  <data name="TXT_KEY_NOTIFICATION_CITY_DECLINE" xml:space="preserve">
-    <value>{0} von {1} schrumpft auf {2} Einwohner</value>
-  </data>
-  <data name="TXT_KEY_NOTIFICATION_CITY_GREW" xml:space="preserve">
-    <value>{0} von {1} wuchs auf {2} Einwohner</value>
-  </data>
-  <data name="TXT_KEY_NOTIFICATION_CITY_UNIT" xml:space="preserve">
-    <value>{0} von {1} hat eine Einheit {2} aufgestellt </value>
-  </data>
-  <data name="TXT_KEY_NOTIFICATION_FOUND_CITY" xml:space="preserve">
-    <value>{0} hat Stadt {1} gegründet</value>
-  </data>
-  <data name="TXT_KEY_NOTIFICATION_SCIENCE_DISCOVERED" xml:space="preserve">
-    <value>{0} hat {1} entdeckt</value>
-  </data>
-  <data name="TXT_KEY_TECH_ARCHERY" xml:space="preserve">
-    <value>Bogenschießen</value>
-  </data>
-  <data name="TXT_KEY_IMPROVEMENT_FARM_DESCRIPTION" xml:space="preserve">
-    <value>Die Landwirtschaft ist einer der frühesten und wichtigsten aller menschlichen Berufe, wie es die Menschheit für die Migration zu stoppen und sich in einem Ort ohne das Aufbrauchen der lokalen Ressourcen erlaubt. Farms kann auf fast jedem Land errichtet werden, um den Hex-Ausgang von Lebensmitteln zu verbessern.</value>
+    <value>Warrior</value>
   </data>
   <data name="TXT_KEY_GERMAN_CITIES_COLOGNE" xml:space="preserve">
-    <value>Köln</value>
+    <value>Cologne</value>
   </data>
   <data name="TXT_KEY_GERMAN_CITIES_MUNICH" xml:space="preserve">
-    <value>München</value>
+    <value>Munich</value>
   </data>
   <data name="TXT_KEY_BUILDINGS_WALLS_DESCRIPTION" xml:space="preserve">
-    <value>Die Stdatmauer schützt die Stadt.</value>
+    <value>Walls increase a city's Defense Strength, making the city more difficult to capture. Walls are quite useful for cities located along a civilization's frontier.</value>
   </data>
   <data name="TXT_KEY_BUILDINGS_WALLS_TITLE" xml:space="preserve">
-    <value>Stadtmauer</value>
-  </data>
-  <data name="TXT_KEY_ERA_ANCIENT_TITLE" xml:space="preserve">
-    <value>Antike</value>
-  </data>
-  <data name="TXT_KEY_ERA_CLASSICAL_TITLE" xml:space="preserve">
-    <value>Klassik</value>
+    <value>Walls</value>
   </data>
   <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_DUEL" xml:space="preserve">
-    <value>2 Spieler mit 4 Stadtstaaten.</value>
+    <value>2 players with 4 City States.</value>
   </data>
   <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_HUGE" xml:space="preserve">
-    <value>12 Spieler mit 24 Stadtstaaten.</value>
+    <value>12 players with 24 City States.</value>
   </data>
   <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_LARGE" xml:space="preserve">
-    <value>10 Spieler mit 20 Stadtstaaten.</value>
+    <value>10 players with 20 City States.</value>
   </data>
   <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_SMALL" xml:space="preserve">
-    <value>6 Spieler mit 12 Stadtstaaten.</value>
+    <value>6 players with 12 City States.</value>
   </data>
   <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_STANDARD" xml:space="preserve">
-    <value>8 Spieler mit 16 Stadtstaaten.</value>
+    <value>8 players with 16 City States.</value>
   </data>
   <data name="TXT_KEY_MAP_EARTH_HELP_EARTH_TINY" xml:space="preserve">
-    <value>4 Spieler mit 8 Stadtstaaten.</value>
-  </data>
-  <data name="TXT_KEY_REGION_EUROPE" xml:space="preserve">
-    <value>Europa</value>
-  </data>
-  <data name="TXT_KEY_REGION_GROENLAND" xml:space="preserve">
-    <value>Grönland</value>
-  </data>
-  <data name="TXT_KEY_REGION_NORTH_AMERICA" xml:space="preserve">
-    <value>Nordamerika</value>
+    <value>4 players with 8 City States.</value>
   </data>
   <data name="TXT_KEY_UI_NEWERA_TITLE" xml:space="preserve">
-    <value>Neue Ära</value>
-  </data>
-  <data name="TXT_KEY_UI_NEWERA_WELCOME" xml:space="preserve">
-    <value>Willkommen in der {0}</value>
+    <value>New Era</value>
   </data>
   <data name="TXT_KEY_SATURATE" xml:space="preserve">
-    <value>Ihr</value>
+    <value>You</value>
   </data>
   <data name="TXT_KEY_UI_CITYVIEW_BUILDINGS" xml:space="preserve">
-    <value>Gebäude</value>
-  </data>
-  <data name="TXT_KEY_UI_CITYVIEW_BUILDINGS_COLLAPSE" xml:space="preserve">
-    <value>- Gebäude</value>
-  </data>
-  <data name="TXT_KEY_UI_CITYVIEW_BUILDINGS_EXPAND" xml:space="preserve">
-    <value>+ Gebäude</value>
+    <value>Buildings</value>
   </data>
   <data name="TXT_KEY_UI_CITYVIEW_RETURN_MAP" xml:space="preserve">
-    <value>Zurück zur Karte</value>
+    <value>Return to map</value>
   </data>
   <data name="TXT_KEY_TECH_AGRICULTURE" xml:space="preserve">
-    <value>Ackerbau</value>
+    <value>Agriculture</value>
+  </data>
+  <data name="TXT_KEY_POLICY_CITIZENSHIP_TITLE" xml:space="preserve">
+    <value>Citizenship</value>
+  </data>
+  <data name="TXT_KEY_NOTIFICATION_BUILD_IMPROVEMENT" xml:space="preserve">
+    <value>{0} has constructed a {1} on {2}</value>
+  </data>
+  <data name="TXT_KEY_NOTIFICATION_CITY_BUILDING" xml:space="preserve">
+    <value>{0} of {1} has constructed {2}</value>
+  </data>
+  <data name="TXT_KEY_NOTIFICATION_CITY_DECLINE" xml:space="preserve">
+    <value>{0} of {1} declined to {2} citizen</value>
+  </data>
+  <data name="TXT_KEY_NOTIFICATION_CITY_GREW" xml:space="preserve">
+    <value>{0} of {1} grew to {2} citizen</value>
+  </data>
+  <data name="TXT_KEY_NOTIFICATION_CITY_UNIT" xml:space="preserve">
+    <value>{0} of {1} has created a unit {2}</value>
+  </data>
+  <data name="TXT_KEY_NOTIFICATION_FOUND_CITY" xml:space="preserve">
+    <value>{0} has found {1}</value>
+  </data>
+  <data name="TXT_KEY_NOTIFICATION_SCIENCE_DISCOVERED" xml:space="preserve">
+    <value>{0} has discovered {1}</value>
+  </data>
+  <data name="TXT_KEY_NOTIFICATION_SELECT_POLICY" xml:space="preserve">
+    <value>Select a social policy</value>
+  </data>
+  <data name="TXT_KEY_POLICY_TYPE_HONOR_TITLE" xml:space="preserve">
+    <value>Honor</value>
+  </data>
+  <data name="TXT_KEY_POLICY_TYPE_LIBERTY_TITLE" xml:space="preserve">
+    <value>Liberty</value>
+  </data>
+  <data name="TXT_KEY_POLICY_TYPE_PATRONAGE_TITLE" xml:space="preserve">
+    <value>Patronage</value>
+  </data>
+  <data name="TXT_KEY_POLICY_TYPE_PIETY_TITLE" xml:space="preserve">
+    <value>Piety</value>
+  </data>
+  <data name="TXT_KEY_POLICY_TYPE_TRADITION_TITLE" xml:space="preserve">
+    <value>Tradition</value>
+  </data>
+  <data name="TXT_KEY_UI_CITYVIEW_BUILDINGS_COLLAPSE" xml:space="preserve">
+    <value>- Building</value>
+  </data>
+  <data name="TXT_KEY_UI_CITYVIEW_BUILDINGS_EXPAND" xml:space="preserve">
+    <value>+ Building</value>
+  </data>
+  <data name="TXT_KEY_UI_NEWERA_WELCOME" xml:space="preserve">
+    <value>New era</value>
+  </data>
+  <data name="TXT_KEY_POLICY_TYPE_AUTOCRACY_TITLE" xml:space="preserve">
+    <value>Autocracy</value>
+  </data>
+  <data name="TXT_KEY_POLICY_TYPE_ORDER_TITLE" xml:space="preserve">
+    <value>Order</value>
   </data>
 </root>

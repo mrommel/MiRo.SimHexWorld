@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.PolicyType">
+    <Name>Autocracy</Name>
+    <Title>TXT_KEY_POLICY_TYPE_AUTOCRACY_TITLE</Title>
+    <Description>TXT_KEY_POLICY_TYPE_AUTOCRACY_DESCRIPTION</Description>
+    <ImageName>Autocracy</ImageName>
+    <Historical></Historical>
+    <EraName>Industrial</EraName>
+
+    <FreePolicyName>Autocracy</FreePolicyName>
+  </Asset>
+</XnaContent>

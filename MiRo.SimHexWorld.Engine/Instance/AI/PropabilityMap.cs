@@ -9,8 +9,8 @@ namespace MiRo.SimHexWorld.Engine.Instance.AI
     public class PropabilityMap<T> 
     {
         private static Random rnd = new Random();
-        public List<T> items = new List<T>();
-        public List<float> propabilities = new List<float>();
+        protected List<T> _items = new List<T>();
+        protected List<float> _propabilities = new List<float>();
 
         public PropabilityMap()
         {
@@ -18,32 +18,46 @@ namespace MiRo.SimHexWorld.Engine.Instance.AI
 
         public void AddItem(T item, float propability)
         {
-            items.Add(item);
+            _items.Add(item);
 
             // limit propability
             if (propability < 0f)
                 propability = 0f;
 
-            propabilities.Add(propability);
+            _propabilities.Add(propability);
+        }
+
+        public List<T> Items
+        {
+            get { return _items; }
         }
 
         public T Random
         {
             get
             {
-                float sum = propabilities.Sum();
+                float sum = _propabilities.Sum();
 
                 float rndVal = (float)rnd.NextDouble() * sum;
 
-                for (int i = 0; i < items.Count; ++i)
+                for (int i = 0; i < _items.Count; ++i)
                 {
-                    if (rndVal <= propabilities[i])
-                        return items[i];
+                    if (rndVal <= _propabilities[i])
+                        return _items[i];
 
-                    rndVal -= propabilities[i];
+                    rndVal -= _propabilities[i];
                 }
 
                 return default(T);
+            }
+        }
+
+        public T Best
+        {
+            get
+            {
+                Sort();
+                return _items.First();
             }
         }
 
@@ -53,27 +67,27 @@ namespace MiRo.SimHexWorld.Engine.Instance.AI
             {
                 Sort();
 
-                int index = rnd.Next(Math.Min(items.Count, 3));
+                int index = rnd.Next(Math.Min(_items.Count, 3));
 
-                return items[index];
+                return _items[index];
             }
         }
 
         private void Sort()
         {
-            for (int i = 0; i < items.Count; ++i)
+            for (int i = 0; i < _items.Count; ++i)
             {
-                for (int j = i; j < items.Count; ++j)
+                for (int j = i; j < _items.Count; ++j)
                 {
-                    if (propabilities[i] > propabilities[j])
+                    if (_propabilities[i] > _propabilities[j])
                     {
-                        float tmpF = propabilities[i];
-                        propabilities[i] = propabilities[j];
-                        propabilities[j] = tmpF;
+                        float tmpF = _propabilities[i];
+                        _propabilities[i] = _propabilities[j];
+                        _propabilities[j] = tmpF;
 
-                        T tmpI = items[i];
-                        items[i] = items[j];
-                        items[j] = tmpI;
+                        T tmpI = _items[i];
+                        _items[i] = _items[j];
+                        _items[j] = tmpI;
                     }
                 }
             }

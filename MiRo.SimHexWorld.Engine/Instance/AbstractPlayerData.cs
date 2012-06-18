@@ -23,7 +23,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
         #region Fields & proterties
         private bool _isHuman;
-		
+
         public int Id { get; set; }
         public string Name { get; set; }
 
@@ -40,6 +40,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
         protected List<DiplomaticStatus> _diplomaticStatuses = new List<DiplomaticStatus>();
 
         protected Era _era;
+        protected List<Era> _eras = new List<Era>();
 
         protected List<Policy> _policies = new List<Policy>();
         protected List<PolicyType> _policyTypes = new List<PolicyType>();
@@ -53,7 +54,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
         // turn
         double _secondsToNextUpdate = 0f;
-        double _secondsPerTurn = 2f;
+        double _secondsPerTurn = 3f;
         bool _isFirstRun = true;
 
         bool _needToUpdateInfluenceMaps = true;
@@ -66,9 +67,9 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
         protected static Random rand = new Random();
 
-        #endregion Fields & proterties      
-		
-        protected AbstractPlayerData( int id, Civilization tribe, bool isHuman )
+        #endregion Fields & proterties
+
+        protected AbstractPlayerData(int id, Civilization tribe, bool isHuman)
         {
             Id = id;
             _isHuman = isHuman;
@@ -81,15 +82,18 @@ namespace MiRo.SimHexWorld.Engine.Instance
                 throw new Exception("No Leader found for " + _civilization.Name);
 
             Init();
-			
-            if( !_isHuman)
+
+            if (!_isHuman)
                 StartAiThreads();
         }
 
-        public virtual void Init() 
+        public virtual void Init()
         {
             _era = Provider.GetEra("Ancient");
             Assert.NotNull(_era, "There must be at least the 'Ancient' era present");
+
+            _eras.Add(_era);
+            Assert.AreEqual(1, _eras.Count, "There must be exacly one era (Ancient)");
 
             foreach (Tech tech in _civilization.StartingTechs)
                 DiscoverTechnology(tech);
@@ -123,7 +127,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
                 return wonders;
             }
         }
-        
+
         public bool IsEarly
         {
             get
@@ -143,8 +147,8 @@ namespace MiRo.SimHexWorld.Engine.Instance
                 {
                     bool requiredRessourceAvailable = true;
 
-                    foreach( string resStr in unit.RequiredRessourceNames )
-                        if( !Ressources.Exists( a => a.Name == resStr ) )
+                    foreach (string resStr in unit.RequiredRessourceNames)
+                        if (!Ressources.Exists(a => a.Name == resStr))
                             requiredRessourceAvailable = false;
 
                     bool requiredTechAvailable = Technologies.Exists(a => a.Name == unit.RequiredTechName);
@@ -152,7 +156,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
                     if (string.IsNullOrEmpty(unit.RequiredTechName))
                         requiredTechAvailable = true;
 
-                    if ( requiredTechAvailable && requiredRessourceAvailable)
+                    if (requiredTechAvailable && requiredRessourceAvailable)
                         units.Add(unit);
                 }
 
@@ -193,7 +197,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
                 return techs;
             }
         }
-		
+
         public bool IsHuman
         {
             get
@@ -201,7 +205,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
                 return _isHuman;
             }
         }
-		
+
         public bool IsArtificial
         {
             get
@@ -248,7 +252,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
             return null;
         }
-		
+
         public abstract void StartAiThreads();
 
         public abstract void Dispose();
@@ -284,13 +288,19 @@ namespace MiRo.SimHexWorld.Engine.Instance
             }
         }
 
+        public List<Era> Eras
+        {
+            get { return _eras; }
+        }
+
         public void DiscoverTechnology(Tech tech)
         {
             if (tech.Era > _era)
             {
                 _era = tech.Era;
+                _eras.Add(tech.Era);
 
-                GameFacade.getInstance().SendNotification( GameNotification.StartEra, this, _era);
+                GameFacade.getInstance().SendNotification(GameNotification.StartEra, this, _era);
 
                 bool needToUpdateResources = false;
                 // reveal resources for all players
@@ -303,7 +313,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
                     }
                 }
 
-                if( needToUpdateResources )
+                if (needToUpdateResources)
                     GameFacade.getInstance().SendNotification(GameNotification.UpdateResources, this);
 
                 // evtl. enable policies
@@ -327,12 +337,12 @@ namespace MiRo.SimHexWorld.Engine.Instance
             {
                 _secondsToNextUpdate = _secondsPerTurn;
 
-                CalculateCulture();
+                UpdateCulture();
                 CalculateScience();
 
                 UpdateScience();
 
-                if( _needToUpdateInfluenceMaps )
+                if (_needToUpdateInfluenceMaps)
                     UpdateInfluenceMaps();
 
                 _isFirstRun = false;
@@ -358,9 +368,9 @@ namespace MiRo.SimHexWorld.Engine.Instance
             if (CurrentResearch != null && _science > CurrentResearch.Cost)
             {
                 GameFacade.getInstance().SendNotification(
-                    GameNotification.Message, 
+                    GameNotification.Message,
                     NotificationType.Science,
-                    string.Format( Strings.TXT_KEY_NOTIFICATION_SCIENCE_DISCOVERED, Leader.Title, CurrentResearch.Title ), 
+                    string.Format(Strings.TXT_KEY_NOTIFICATION_SCIENCE_DISCOVERED, Leader.Title, CurrentResearch.Title),
                     Civilization,
                     MessageFilter.Friends | MessageFilter.Self,
                     CurrentResearch);
@@ -440,7 +450,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
                     HexPoint pt = new HexPoint(x, y);
 
                     #region city found map
-                    MapCell cell = Map[x,y];
+                    MapCell cell = Map[x, y];
                     if (cell.IsSpotted(this))
                     {
                         float value = Map.GetValue(x, y, MapValueType.CityFoundValue);
@@ -489,12 +499,111 @@ namespace MiRo.SimHexWorld.Engine.Instance
             }
         }
 
-        protected void CalculateCulture()
+        public float CultureSuplus
         {
-            _culture = 0;
+            get 
+            {
+                float surplus = 0f;
 
-            foreach (City city in _cities)
-                _culture += city.Culture;
+                foreach (City city in _cities)
+                    surplus += city.Culture;
+
+                foreach (Policy p in _policies)
+                    surplus += p.CulturePerCity * _cities.Count;
+
+                return surplus;
+            }
+        }
+
+        int freePolicies = 0;
+        protected void UpdateCulture()
+        {
+            _culture += CultureSuplus;
+
+            float neededCulture = CultureNeededForChange;
+
+            if (_culture >= neededCulture)
+            {
+                if (_isHuman)
+                {
+                    GameFacade.getInstance().SendNotification(
+                        GameNotification.Message,
+                        NotificationType.PolicyReady,
+                        Strings.TXT_KEY_NOTIFICATION_SELECT_POLICY,
+                        _civilization,
+                        MessageFilter.Self,
+                        this);
+
+                    adoptedPolicies++;
+                    freePolicies++;
+                    _culture -= neededCulture;
+                }
+                else
+                {
+                    // ai -> select policy to adopt
+                    AutoSelectPolicy();
+                }
+            }
+        }
+
+        private void AutoSelectPolicy()
+        {
+            List<PolicyType> possibleTypes = Provider.Instance.PolicyTypes.Values.ToList();
+            List<Policy> policies = new List<Policy>();
+            IEnumerable<string> pastEraNames = Eras.Select(b => b.Name);
+
+            // remove all policy types which will become active in future eras only
+            possibleTypes.RemoveAll(a => !pastEraNames.Contains(a.EraName));
+
+            PropabilityMap<PolicyType> typeMap = new PropabilityMap<PolicyType>();
+
+            foreach (PolicyType type in possibleTypes)
+            {
+                // add only to evaluation if not already adopted
+                if (!_policyTypes.Contains(type))
+                    typeMap.AddItem(type, 1f / Flavours.Distance(type.Flavours, Leader.Flavours));
+                else
+                    policies.AddRange(type.Policies);
+            }
+
+            policies.RemoveAll(a => _policies.Contains(a));
+
+            PropabilityMap<Policy> policyMap = new PropabilityMap<Policy>();
+
+            foreach (Policy p in policies)
+                policyMap.AddItem(p, 1f / Flavours.Distance(p.Flavours, Leader.Flavours));
+
+            if (typeMap.Items.Count > 0)
+            {
+                PolicyType bestPolicyType = typeMap.Best;
+
+
+                if (policyMap.Items.Count == 0)
+                {
+                    if (!AdoptPolicyType(bestPolicyType))
+                        throw new Exception("There was an error while adopting " + bestPolicyType);
+                }
+                else
+                {
+                    Policy bestPolicy = policyMap.RandomOfBest3;
+                    if (Flavours.Distance(bestPolicyType.Flavours, Leader.Flavours) < Flavours.Distance(bestPolicy.Flavours, Leader.Flavours))
+                    {
+                        if (!AdoptPolicyType(bestPolicyType))
+                            throw new Exception("There was an error while adopting " + bestPolicyType);
+                    }
+                    else
+                    {
+                        if (!AdoptPolicy(bestPolicy))
+                            throw new Exception("There was an error while adopting " + bestPolicy);
+                    }
+                }
+            }
+            else
+            {
+                Assert.Greater(policyMap.Items.Count, 0, "There must be at least one policy to select!");
+
+                AdoptPolicy(policyMap.RandomOfBest3);
+            }
         }
 
         public float Culture
@@ -517,15 +626,15 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
             unit.WorkFinished += delegate(Unit u, HexPoint pt, Improvement imp)
             {
-                if( !u.IsAutomated )
+                if (!u.IsAutomated)
                 {
                     GameFacade.getInstance().SendNotification(
-                        GameNotification.Message, 
+                        GameNotification.Message,
                         NotificationType.ImprovementReady,
-                        string.Format(Strings.TXT_KEY_NOTIFICATION_BUILD_IMPROVEMENT, u.Player.Civilization.Title, imp.Title, pt), 
+                        string.Format(Strings.TXT_KEY_NOTIFICATION_BUILD_IMPROVEMENT, u.Player.Civilization.Title, imp.Title, pt),
                         u.Player.Civilization,
                         MessageFilter.Friends | MessageFilter.Self,
-                        new List<object>() { imp, pt } );
+                        new List<object>() { imp, pt });
                 }
                 _needToUpdateInfluenceMaps = true;
 
@@ -548,14 +657,14 @@ namespace MiRo.SimHexWorld.Engine.Instance
             Unit[] units = _units.ToArray();
             foreach (Unit unit in units)
             {
-                if (!fogOfWarEnabled || Map[unit.Point].IsSpotted(MainWindow.Game.Human) )
+                if (!fogOfWarEnabled || Map[unit.Point].IsSpotted(MainWindow.Game.Human))
                     unit.Draw(gameTime);
             }
 
             City[] cities = _cities.ToArray();
             foreach (City city in cities)
             {
-                if (!fogOfWarEnabled || city.Player.IsHuman || Map[city.Point].IsSpotted(MainWindow.Game.Human) )
+                if (!fogOfWarEnabled || city.Player.IsHuman || Map[city.Point].IsSpotted(MainWindow.Game.Human))
                     city.Draw(gameTime);
             }
         }
@@ -577,29 +686,29 @@ namespace MiRo.SimHexWorld.Engine.Instance
             c.IsCapital = _cities.Count == 0;
 
             GameFacade.getInstance().SendNotification(
-                GameNotification.Message, 
+                GameNotification.Message,
                 NotificationType.FoundCity,
-                string.Format(Strings.TXT_KEY_NOTIFICATION_FOUND_CITY, c.Player.Leader.Title, c.Name), 
+                string.Format(Strings.TXT_KEY_NOTIFICATION_FOUND_CITY, c.Player.Leader.Title, c.Name),
                 Civilization,
                 MessageFilter.Self | MessageFilter.Friends,
                 c);
 
-            c.CityGrowth += delegate(City city, int from, int to) 
-            { 
+            c.CityGrowth += delegate(City city, int from, int to)
+            {
                 GameFacade.getInstance().SendNotification(
-                    GameNotification.Message, 
+                    GameNotification.Message,
                     NotificationType.CityGrowth,
-                    string.Format( Strings.TXT_KEY_NOTIFICATION_CITY_GREW, city.Name, c.Player.Leader.Title,to), 
+                    string.Format(Strings.TXT_KEY_NOTIFICATION_CITY_GREW, city.Name, c.Player.Leader.Title, to),
                     city.Player.Civilization,
                     MessageFilter.Friends | MessageFilter.Self,
-                    city); 
+                    city);
             };
             c.CityDecline += delegate(City city, int from, int to)
             {
                 GameFacade.getInstance().SendNotification(
-                    GameNotification.Message, 
+                    GameNotification.Message,
                     NotificationType.CityDecline,
-                    string.Format(Strings.TXT_KEY_NOTIFICATION_CITY_DECLINE, city.Name, c.Player.Leader.Title,to),
+                    string.Format(Strings.TXT_KEY_NOTIFICATION_CITY_DECLINE, city.Name, c.Player.Leader.Title, to),
                     city.Player.Civilization,
                     MessageFilter.Friends | MessageFilter.Self,
                     city);
@@ -607,9 +716,9 @@ namespace MiRo.SimHexWorld.Engine.Instance
             c.CityBuild += delegate(City city, Building building)
             {
                 GameFacade.getInstance().SendNotification(
-                    GameNotification.Message, 
+                    GameNotification.Message,
                     NotificationType.ProducationReady,
-                    string.Format( Strings.TXT_KEY_NOTIFICATION_CITY_BUILDING, city.Name, c.Player.Leader.Title, building.Title ),
+                    string.Format(Strings.TXT_KEY_NOTIFICATION_CITY_BUILDING, city.Name, c.Player.Leader.Title, building.Title),
                     city.Player.Civilization,
                     MessageFilter.Self,
                     city);
@@ -617,11 +726,11 @@ namespace MiRo.SimHexWorld.Engine.Instance
             c.UnitBuild += delegate(City city, UnitData unit)
             {
                 GameFacade.getInstance().SendNotification(
-                    GameNotification.Message, 
+                    GameNotification.Message,
                     NotificationType.ProducationReady,
-                    string.Format( Strings.TXT_KEY_NOTIFICATION_CITY_UNIT, city.Name, c.Player.Leader.Title, unit.Title ),
+                    string.Format(Strings.TXT_KEY_NOTIFICATION_CITY_UNIT, city.Name, c.Player.Leader.Title, unit.Title),
                     city.Player.Civilization,
-                    MessageFilter.Self, 
+                    MessageFilter.Self,
                     city);
             };
 
@@ -650,11 +759,11 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
             foreach (City city in _cities)
             {
-                if( possibleNames.Contains(city.Name))
+                if (possibleNames.Contains(city.Name))
                     possibleNames.Remove(city.Name);
             }
 
-            if( possibleNames.Count == 0 )
+            if (possibleNames.Count == 0)
                 return "Futurename";
 
             if (possibleNames.First().StartsWith("TXT_KEY_"))
@@ -668,7 +777,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
             _units.Remove(unit);
         }
 
-        public IList<Policy> SelectedPolicies 
+        public IList<Policy> SelectedPolicies
         {
             get
             {
@@ -686,29 +795,41 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
         public bool AdoptPolicyType(PolicyType type)
         {
+            Assert.NotNull(type);
+            Assert.NotNull(type.FreePolicy);
+
             if (!_policyTypes.Contains(type))
             {
                 // check if enough culture is there
                 float cultureNeededForChange = CultureNeededForChange;
 
-                if (_culture < cultureNeededForChange)
-                    return false;
+                // handle human policies
+                if (freePolicies > 0)
+                {
+                    // finally add it
+                    _policyTypes.Add(type);
+                    _policies.Add(type.FreePolicy);
 
-                adoptedPolicies++;
+                    freePolicies--;
+                    return true;
+                }
+                else if (_culture >= cultureNeededForChange)
+                {
+                    adoptedPolicies++;
 
-                // check other types and unadopt them id needed 
+                    // finally add it
+                    _policyTypes.Add(type);
+                    _policies.Add(type.FreePolicy);
 
-                // send notification
+                    _culture -= cultureNeededForChange;
+                    return true;
+                }
 
-                // finally add it
-                _policyTypes.Add(type);
-
-                return true;
+                return false;
             }
 
             return false;
         }
-
 
         public bool AdoptPolicy(Policy policy)
         {
@@ -717,14 +838,22 @@ namespace MiRo.SimHexWorld.Engine.Instance
                 // check if enough culture is there
                 float cultureNeededForChange = CultureNeededForChange;
 
-                if (_culture < cultureNeededForChange)
-                    return false;
+                if (freePolicies > 0)
+                {
+                    adoptedPolicies++;
+                    _policies.Add(policy);
+                    freePolicies--;
+                    return true;
+                }
+                else if (_culture >= cultureNeededForChange)
+                {
+                    adoptedPolicies++;
+                    _policies.Add(policy);
+                    _culture -= cultureNeededForChange;
+                    return true;
+                }
 
-                adoptedPolicies++;
-
-                _policies.Add(policy);
-
-                return true;
+                return false;
             }
 
             return false;
@@ -751,7 +880,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
                 culture *= MainWindow.Game.Handicap.CultureModifier;
 
-                if(  MainWindow.Game.Map != null )
+                if (MainWindow.Game.Map != null)
                     culture += MainWindow.Game.Map.Size.CultureModifierPerCity * Cities.Count;
 
                 // game speed
@@ -808,7 +937,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
                 if (CurrentResearch != null)
                     return _science / CurrentResearch.Cost;
 
-                return 0f; 
+                return 0f;
             }
         }
 
@@ -821,7 +950,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
         public float Score
         {
-            get 
+            get
             {
                 float score = 0;
 
@@ -837,5 +966,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
                 return score;
             }
         }
+
+        public float CulturePerTurn { get { return CultureSuplus; } }
     }
 }

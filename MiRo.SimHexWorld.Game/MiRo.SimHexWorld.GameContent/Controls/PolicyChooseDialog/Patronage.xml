@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.UI.Controls.ControlSet">
+    <Item>
+      <Name>PatronageBox</Name>
+      <Type>ImageBox</Type>
+      <Top>10</Top>
+      <Left>773</Left>
+      <Width>192</Width>
+      <Height>292</Height>
+      <StayOnBack>true</StayOnBack>
+      <StayOnTop>false</StayOnTop>
+      <ImageAsset>Content//Textures//UI//PolicyView//socialpoliciespatronage</ImageAsset>
+      <ImageMode>Stretched</ImageMode>
+      <Draw>Box_Draw</Draw>
+    </Item>
+  </Asset>
+</XnaContent>

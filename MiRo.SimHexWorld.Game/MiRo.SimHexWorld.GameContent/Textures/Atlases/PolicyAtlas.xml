@@ -10,9 +10,52 @@
         <Name>Tradition</Name>
         <Index>0</Index>
       </Item>
+      <!-- Liberty -->
+      <Item>
+        <Name>CollectiveRule</Name>
+        <Index>25</Index>
+      </Item>
+      <Item>
+        <Name>Citizenship</Name>
+        <Index>26</Index>
+      </Item>
+      <Item>
+        <Name>Republic</Name>
+        <Index>27</Index>
+      </Item>
+      <Item>
+        <Name>Representation</Name>
+        <Index>28</Index>
+      </Item>
+      <Item>
+        <Name>Meritocracy</Name>
+        <Index>29</Index>
+      </Item>
+      <!-- Piety -->
+      <Item>
+        <Name>Piety</Name>
+        <Index>42</Index>
+      </Item>
+      <!-- Tradition -->
       <Item>
         <Name>Aristocracy</Name>
         <Index>55</Index>
+      </Item>
+      <Item>
+        <Name>Oligarchy</Name>
+        <Index>56</Index>
+      </Item>
+      <Item>
+        <Name>Legalism</Name>
+        <Index>57</Index>
+      </Item>
+      <Item>
+        <Name>LandedElite</Name>
+        <Index>58</Index>
+      </Item>
+      <Item>
+        <Name>Monarchy</Name>
+        <Index>59</Index>
       </Item>
     </Tiles>
   </Asset>

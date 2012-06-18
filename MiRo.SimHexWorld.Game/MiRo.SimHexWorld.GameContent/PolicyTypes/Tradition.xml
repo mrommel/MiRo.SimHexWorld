@@ -2,23 +2,12 @@
 <XnaContent>
   <Asset Type="MiRo.SimHexWorld.Engine.Types.PolicyType">
     <Name>Tradition</Name>
-    <Description>
-      This policy is best for small empires, as many policies only improve the Capital City. Adopting Tradition will immediately provide a bonus of +1 Food per turn generated in the Capital.
-    </Description>
+    <Title>TXT_KEY_POLICY_TYPE_TRADITION_TITLE</Title>
+    <Description>TXT_KEY_POLICY_TYPE_TRADITION_DESCRIPTION</Description>
     <ImageName>Tradition</ImageName>
-    <Historical>
-      Tradition is the policy of honoring the decisions made by one's ancestors and all earlier rulers of the state. New policies are viewed with deep suspicion and distrust. Even in allegedly forward-thinking countries like the United States, tradition can be quite powerful indeed, as may be seen in the tension between those who favor strict adherence to the original literal meaning of the US Constitution, and those who believe that the Constitution must be more broadly interpreted in light of the changing nature of the United States and the world. The former group would be considered to be more traditionalist than the latter.
-    </Historical>
+    <Historical></Historical>
     <EraName>Ancient</EraName>
 
-    <!-- bonuses -->
-    <Yields>
-      <Item>
-        <Type>Food</Type>
-        <Amount>1</Amount>
-        <CapitalOnly>true</CapitalOnly>
-      </Item>
-    </Yields>
-    <!-- bonuses -->
+    <FreePolicyName>Tradition</FreePolicyName>
   </Asset>
 </XnaContent>

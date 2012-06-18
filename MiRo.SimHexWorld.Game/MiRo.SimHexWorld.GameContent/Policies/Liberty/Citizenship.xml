@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Policy">
+    <Name>Citizenship</Name>
+    <Title>TXT_KEY_POLICY_CITIZENSHIP_TITLE</Title>
+    <Description>TXT_KEY_POLICY_CITIZENSHIP_DESCRIPTION</Description>
+    <ImageName>Citizenship</ImageName>
+    <Historical></Historical>
+    <PolicyTypeName>Liberty</PolicyTypeName>
+    <RequiredPolicyNames></RequiredPolicyNames>
+
+    <!-- bonuses -->
+    <FreeFoodBox>50</FreeFoodBox>
+    <!-- bonuses -->
+
+    <Flavours>
+      <Item>
+        <Name>Expansion</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

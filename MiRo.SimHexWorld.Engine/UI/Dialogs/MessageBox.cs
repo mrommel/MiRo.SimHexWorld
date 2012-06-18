@@ -25,6 +25,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Dialogs
             txtBox.Height = ClientHeight - 30;
             txtBox.Left = 0;
             txtBox.Top = 0;
+            txtBox.Mode = TextBoxMode.Multiline;
             txtBox.Parent = this;
 
             okButton = new Button(manager);
@@ -52,8 +53,9 @@ namespace MiRo.SimHexWorld.Engine.UI.Dialogs
         public static void Show(Manager manager,string text, string title)
         {
             MessageBox msgBox = new MessageBox(manager);
+            msgBox.Icon = IconProvider.ApplicationIcon;
             msgBox.Text = title;
-            msgBox.txtBox.Text = text;
+            msgBox.txtBox.Text = text.Replace("\n", Environment.NewLine);
             msgBox.Resizable = false;
             msgBox.ShowModal();
         }

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.PolicyType">
+    <Name>Order</Name>
+    <Title>TXT_KEY_POLICY_TYPE_ORDER_TITLE</Title>
+    <Description>TXT_KEY_POLICY_TYPE_ORDER_DESCRIPTION</Description>
+    <ImageName>Order</ImageName>
+    <Historical></Historical>
+    <EraName>Industrial</EraName>
+
+    <FreePolicyName>Order</FreePolicyName>
+  </Asset>
+</XnaContent>

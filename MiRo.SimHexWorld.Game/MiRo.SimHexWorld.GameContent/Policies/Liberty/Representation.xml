@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Policy">
+    <Name>Representation</Name>
+    <Title>TXT_KEY_POLICY_REPRESENTATION_TITLE</Title>
+    <Description>TXT_KEY_POLICY_REPRESENTATION_DESCRIPTION</Description>
+    <ImageName>Representation</ImageName>
+    <Historical></Historical>
+    <PolicyTypeName>Liberty</PolicyTypeName>
+    <RequiredPolicyNames>
+      <Item>Citizenship</Item>
+    </RequiredPolicyNames>
+
+    <!-- bonuses -->
+    <CulturePerCity>1</CulturePerCity>
+    <!-- bonuses -->
+
+    <Flavours>
+      <Item>
+        <Name>Expansion</Name>
+        <Amount>5</Amount>
+      </Item>
+      <Item>
+        <Name>Culture</Name>
+        <Amount>5</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

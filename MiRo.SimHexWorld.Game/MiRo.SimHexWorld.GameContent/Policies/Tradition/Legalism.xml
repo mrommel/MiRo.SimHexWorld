@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Policy">
+    <Name>Legalism</Name>
+    <Title>Legalism</Title>
+    <Description></Description>
+    <ImageName>Legalism</ImageName>
+    <Historical></Historical>
+    <PolicyTypeName>Tradition</PolicyTypeName>
+    <RequiredPolicyNames></RequiredPolicyNames>
+
+    <!-- bonuses -->
+    <CapitalUnhappinessMod>-0.333</CapitalUnhappinessMod>
+    <!-- bonuses -->
+
+    <Flavours>
+      <Item>
+        <Name>Happiness</Name>
+        <Amount>20</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Policy">
+    <Name>Liberty</Name>
+    <Title>TXT_KEY_POLICY_LIBERTY_TITLE</Title>
+    <Description>TXT_KEY_POLICY_LIBERTY_DESCRIPTION</Description>
+    <ImageName>Liberty</ImageName>
+    <Historical></Historical>
+    <PolicyTypeName>Liberty</PolicyTypeName>
+    <RequiredPolicyNames></RequiredPolicyNames>
+
+    <!-- bonuses -->
+    <SettlerProductionModifier>1.5</SettlerProductionModifier>
+    <!-- bonuses -->
+
+    <Flavours>
+      <Item>
+        <Name>Expansion</Name>
+        <Amount>20</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

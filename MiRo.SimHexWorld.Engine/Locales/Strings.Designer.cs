@@ -70,43 +70,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die The Monument increases the Culture of a city, speeding the growth of the city&apos;s territory and the civilization&apos;s acquisition of Social Policies. ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_BUILDING_MONUMENT_DESCRIPTION {
-            get {
-                return ResourceManager.GetString("TXT_KEY_BUILDING_MONUMENT_DESCRIPTION", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Monument ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_BUILDING_MONUMENT_TITLE {
-            get {
-                return ResourceManager.GetString("TXT_KEY_BUILDING_MONUMENT_TITLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Zeigt an, dass diese Stadt die [ICON_CAPITAL] Hauptstadt des Reichs ist.[NEWLINE][NEWLINE]Durch das [ICON_CONNECTED] Verbinden anderer Städte mit der [ICON_CAPITAL] Hauptstadt wird zusätzliches [ICON_GOLD] Gold produziert.[NEWLINE][NEWLINE]+2 [ICON_PRODUCTION] Produktion, +3 [ICON_RESEARCH] Wissenschaft, +2 [ICON_GOLD] Gold ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_BUILDING_PALACE_DESC {
-            get {
-                return ResourceManager.GetString("TXT_KEY_BUILDING_PALACE_DESC", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Palast ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_BUILDING_PALACE_TITLE {
-            get {
-                return ResourceManager.GetString("TXT_KEY_BUILDING_PALACE_TITLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Die Stdatmauer schützt die Stadt. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Walls increase a city&apos;s Defense Strength, making the city more difficult to capture. Walls are quite useful for cities located along a civilization&apos;s frontier. ähnelt.
         /// </summary>
         internal static string TXT_KEY_BUILDINGS_WALLS_DESCRIPTION {
             get {
@@ -115,7 +79,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Stadtmauer ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Walls ähnelt.
         /// </summary>
         internal static string TXT_KEY_BUILDINGS_WALLS_TITLE {
             get {
@@ -124,61 +88,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die England ist auf Großbritannien, ein &quot;grünes und angenehm&quot; Insel vor der Westküste Europas. Es ist das größte Mitglied der politischen Einheit wie das Vereinigte Königreich von Großbritannien und Nordirland bekannt. Historisch gesehen ein Volk von Seefahrern, für einen Großteil der letzten 500 Jahre die Engländer haben ihren unvergleichlichen Marine genutzt, um ihre Macht in Europa und der ganzen Welt zu projizieren. ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_CIVIZATION_ENGLISH_DESCRIPTION {
-            get {
-                return ResourceManager.GetString("TXT_KEY_CIVIZATION_ENGLISH_DESCRIPTION", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die England ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_CIVIZATION_ENGLISH_TITLE {
-            get {
-                return ResourceManager.GetString("TXT_KEY_CIVIZATION_ENGLISH_TITLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Während verschiedene &quot;germanischen&quot; Völker Nord-und Mittelitaliens Europa seit tausenden von Jahren beschäftigt haben, ist die moderne politische Einheit als &quot;Deutschland&quot; bekannt extrem jung, fast im Alleingang von dem genialen preußischen Politiker Otto von Bismarck schuf gut 140 Jahren. Während seiner kurzen Existenz hat Deutschland hatte einen profunden Effekt - für gute und für schlechte - auf der menschlichen Geschichte. ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_CIVIZATION_GERMAN_DESCRIPTION {
-            get {
-                return ResourceManager.GetString("TXT_KEY_CIVIZATION_GERMAN_DESCRIPTION", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Deutschland ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_CIVIZATION_GERMAN_TITLE {
-            get {
-                return ResourceManager.GetString("TXT_KEY_CIVIZATION_GERMAN_TITLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Antike ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_ERA_ANCIENT_TITLE {
-            get {
-                return ResourceManager.GetString("TXT_KEY_ERA_ANCIENT_TITLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Klassik ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_ERA_CLASSICAL_TITLE {
-            get {
-                return ResourceManager.GetString("TXT_KEY_ERA_CLASSICAL_TITLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Köln ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Cologne ähnelt.
         /// </summary>
         internal static string TXT_KEY_GERMAN_CITIES_COLOGNE {
             get {
@@ -187,7 +97,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die München ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Munich ähnelt.
         /// </summary>
         internal static string TXT_KEY_GERMAN_CITIES_MUNICH {
             get {
@@ -196,25 +106,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Die Landwirtschaft ist einer der frühesten und wichtigsten aller menschlichen Berufe, wie es die Menschheit für die Migration zu stoppen und sich in einem Ort ohne das Aufbrauchen der lokalen Ressourcen erlaubt. Farms kann auf fast jedem Land errichtet werden, um den Hex-Ausgang von Lebensmitteln zu verbessern. ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_IMPROVEMENT_FARM_DESCRIPTION {
-            get {
-                return ResourceManager.GetString("TXT_KEY_IMPROVEMENT_FARM_DESCRIPTION", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Bauernhof ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_IMPROVEMENT_FARM_TITLE {
-            get {
-                return ResourceManager.GetString("TXT_KEY_IMPROVEMENT_FARM_TITLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die 2 Spieler mit 4 Stadtstaaten. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die 2 players with 4 City States. ähnelt.
         /// </summary>
         internal static string TXT_KEY_MAP_EARTH_HELP_EARTH_DUEL {
             get {
@@ -223,7 +115,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die 12 Spieler mit 24 Stadtstaaten. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die 12 players with 24 City States. ähnelt.
         /// </summary>
         internal static string TXT_KEY_MAP_EARTH_HELP_EARTH_HUGE {
             get {
@@ -232,7 +124,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die 10 Spieler mit 20 Stadtstaaten. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die 10 players with 20 City States. ähnelt.
         /// </summary>
         internal static string TXT_KEY_MAP_EARTH_HELP_EARTH_LARGE {
             get {
@@ -241,7 +133,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die 6 Spieler mit 12 Stadtstaaten. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die 6 players with 12 City States. ähnelt.
         /// </summary>
         internal static string TXT_KEY_MAP_EARTH_HELP_EARTH_SMALL {
             get {
@@ -250,7 +142,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die 8 Spieler mit 16 Stadtstaaten. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die 8 players with 16 City States. ähnelt.
         /// </summary>
         internal static string TXT_KEY_MAP_EARTH_HELP_EARTH_STANDARD {
             get {
@@ -259,7 +151,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die 4 Spieler mit 8 Stadtstaaten. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die 4 players with 8 City States. ähnelt.
         /// </summary>
         internal static string TXT_KEY_MAP_EARTH_HELP_EARTH_TINY {
             get {
@@ -268,61 +160,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Duel auf der Erde ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_MAP_EARTH_TITLE_EARTH_DUEL {
-            get {
-                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_TITLE_EARTH_DUEL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Riesige Erde ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_MAP_EARTH_TITLE_EARTH_HUGE {
-            get {
-                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_TITLE_EARTH_HUGE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Große Erde ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_MAP_EARTH_TITLE_EARTH_LARGE {
-            get {
-                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_TITLE_EARTH_LARGE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Kleine Erde ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_MAP_EARTH_TITLE_EARTH_SMALL {
-            get {
-                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_TITLE_EARTH_SMALL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Normale Erde ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_MAP_EARTH_TITLE_EARTH_STANDARD {
-            get {
-                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_TITLE_EARTH_STANDARD", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Winzige Erde ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_MAP_EARTH_TITLE_EARTH_TINY {
-            get {
-                return ResourceManager.GetString("TXT_KEY_MAP_EARTH_TITLE_EARTH_TINY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die {0} hat {1} auf {2} gebaut ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die {0} has constructed a {1} on {2} ähnelt.
         /// </summary>
         internal static string TXT_KEY_NOTIFICATION_BUILD_IMPROVEMENT {
             get {
@@ -331,7 +169,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die {0} von {1} hat ein {2} gebaut ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die {0} of {1} has constructed {2} ähnelt.
         /// </summary>
         internal static string TXT_KEY_NOTIFICATION_CITY_BUILDING {
             get {
@@ -340,7 +178,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die {0} von {1} schrumpft auf {2} Einwohner ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die {0} of {1} declined to {2} citizen ähnelt.
         /// </summary>
         internal static string TXT_KEY_NOTIFICATION_CITY_DECLINE {
             get {
@@ -349,7 +187,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die {0} von {1} wuchs auf {2} Einwohner ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die {0} of {1} grew to {2} citizen ähnelt.
         /// </summary>
         internal static string TXT_KEY_NOTIFICATION_CITY_GREW {
             get {
@@ -358,7 +196,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die {0} von {1} hat eine Einheit {2} aufgestellt  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die {0} of {1} has created a unit {2} ähnelt.
         /// </summary>
         internal static string TXT_KEY_NOTIFICATION_CITY_UNIT {
             get {
@@ -367,7 +205,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die {0} hat Stadt {1} gegründet ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die {0} has found {1} ähnelt.
         /// </summary>
         internal static string TXT_KEY_NOTIFICATION_FOUND_CITY {
             get {
@@ -376,7 +214,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die {0} hat {1} entdeckt ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die {0} has discovered {1} ähnelt.
         /// </summary>
         internal static string TXT_KEY_NOTIFICATION_SCIENCE_DISCOVERED {
             get {
@@ -385,34 +223,88 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Europa ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Select a social policy ähnelt.
         /// </summary>
-        internal static string TXT_KEY_REGION_EUROPE {
+        internal static string TXT_KEY_NOTIFICATION_SELECT_POLICY {
             get {
-                return ResourceManager.GetString("TXT_KEY_REGION_EUROPE", resourceCulture);
+                return ResourceManager.GetString("TXT_KEY_NOTIFICATION_SELECT_POLICY", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Grönland ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Citizenship ähnelt.
         /// </summary>
-        internal static string TXT_KEY_REGION_GROENLAND {
+        internal static string TXT_KEY_POLICY_CITIZENSHIP_TITLE {
             get {
-                return ResourceManager.GetString("TXT_KEY_REGION_GROENLAND", resourceCulture);
+                return ResourceManager.GetString("TXT_KEY_POLICY_CITIZENSHIP_TITLE", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Nordamerika ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Autocracy ähnelt.
         /// </summary>
-        internal static string TXT_KEY_REGION_NORTH_AMERICA {
+        internal static string TXT_KEY_POLICY_TYPE_AUTOCRACY_TITLE {
             get {
-                return ResourceManager.GetString("TXT_KEY_REGION_NORTH_AMERICA", resourceCulture);
+                return ResourceManager.GetString("TXT_KEY_POLICY_TYPE_AUTOCRACY_TITLE", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Ihr ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Honor ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_POLICY_TYPE_HONOR_TITLE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_POLICY_TYPE_HONOR_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Liberty ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_POLICY_TYPE_LIBERTY_TITLE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_POLICY_TYPE_LIBERTY_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Order ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_POLICY_TYPE_ORDER_TITLE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_POLICY_TYPE_ORDER_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Patronage ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_POLICY_TYPE_PATRONAGE_TITLE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_POLICY_TYPE_PATRONAGE_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Piety ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_POLICY_TYPE_PIETY_TITLE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_POLICY_TYPE_PIETY_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Tradition ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_POLICY_TYPE_TRADITION_TITLE {
+            get {
+                return ResourceManager.GetString("TXT_KEY_POLICY_TYPE_TRADITION_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die You ähnelt.
         /// </summary>
         internal static string TXT_KEY_SATURATE {
             get {
@@ -421,7 +313,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Ackerbau ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Agriculture ähnelt.
         /// </summary>
         internal static string TXT_KEY_TECH_AGRICULTURE {
             get {
@@ -430,16 +322,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Bogenschießen ähnelt.
-        /// </summary>
-        internal static string TXT_KEY_TECH_ARCHERY {
-            get {
-                return ResourceManager.GetString("TXT_KEY_TECH_ARCHERY", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Gebäude ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Buildings ähnelt.
         /// </summary>
         internal static string TXT_KEY_UI_CITYVIEW_BUILDINGS {
             get {
@@ -448,7 +331,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die - Gebäude ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die - Building ähnelt.
         /// </summary>
         internal static string TXT_KEY_UI_CITYVIEW_BUILDINGS_COLLAPSE {
             get {
@@ -457,7 +340,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die + Gebäude ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die + Building ähnelt.
         /// </summary>
         internal static string TXT_KEY_UI_CITYVIEW_BUILDINGS_EXPAND {
             get {
@@ -466,7 +349,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Zurück zur Karte ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Return to map ähnelt.
         /// </summary>
         internal static string TXT_KEY_UI_CITYVIEW_RETURN_MAP {
             get {
@@ -475,7 +358,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Prüfung ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Check ähnelt.
         /// </summary>
         internal static string TXT_KEY_UI_MAINAPPLICATION_CHECK {
             get {
@@ -484,7 +367,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Beenden ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Exit ähnelt.
         /// </summary>
         internal static string TXT_KEY_UI_MAINAPPLICATION_EXIT {
             get {
@@ -493,7 +376,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Laden ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Load ähnelt.
         /// </summary>
         internal static string TXT_KEY_UI_MAINAPPLICATION_LOAD {
             get {
@@ -511,7 +394,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Zug ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Turn ähnelt.
         /// </summary>
         internal static string TXT_KEY_UI_MAINAPPLICATION_TURN {
             get {
@@ -520,7 +403,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Zug: {0}, {1} ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Turn: {0}, {1} ähnelt.
         /// </summary>
         internal static string TXT_KEY_UI_MAINAPPLICATION_TURN_PATTERN {
             get {
@@ -529,7 +412,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Neue Ära ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die New Era ähnelt.
         /// </summary>
         internal static string TXT_KEY_UI_NEWERA_TITLE {
             get {
@@ -538,7 +421,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Willkommen in der {0} ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die New era ähnelt.
         /// </summary>
         internal static string TXT_KEY_UI_NEWERA_WELCOME {
             get {
@@ -547,8 +430,8 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Gründet neue Städte für Ihr Reich.
-        ///[Food] Nahrungswachstum der Stadt ist angehalten solange er gebaut wird. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Founds new Cities to expand your empire.
+        ///[Food] Growth of the City is stopped while this Unit is being built. ähnelt.
         /// </summary>
         internal static string TXT_KEY_UNITS_SETTLER_DESCRIPTION {
             get {
@@ -575,7 +458,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Siedler ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Settler ähnelt.
         /// </summary>
         internal static string TXT_KEY_UNITS_SETTLER_TITLE {
             get {
@@ -584,7 +467,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Krieger ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Warrior ähnelt.
         /// </summary>
         internal static string TXT_KEY_UNITS_WARRIOR_TITLE {
             get {
@@ -593,7 +476,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Verbessert [Food] Nahrung[Production] Produktion und [Gold] Gold durch die Errichtung von Verbesserungen auf der Karte bei Städten. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Improves [Food] Food [Production] Production and [Gold] Gold by constructing Improvements on map tiles outside of Cities. ähnelt.
         /// </summary>
         internal static string TXT_KEY_UNITS_WORKER_DESCRIPTION {
             get {
@@ -602,7 +485,7 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Arbeiter ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Worker ähnelt.
         /// </summary>
         internal static string TXT_KEY_UNITS_WORKER_TITLE {
             get {

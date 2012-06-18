@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.UI.Controls.WindowSet">
+    <Title>MapOptions</Title>
+    <Icon>Content\\Textures\\UI\\Globe_Icon_Small</Icon>
+    <Width>150</Width>
+    <Height>200</Height>
+    <Controls>
+      <Item>
+        <Name>Body</Name>
+        <Type>Container</Type>
+        <Top>5</Top>
+        <Left>5</Left>
+        <Width>120</Width>
+        <Height>170</Height>
+        <ColorName>Black</ColorName>
+      </Item>
+      <!-- divider -->
+      <Item>
+        <Name>HideRecommondations</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>20</Top>
+        <Left>20</Left>
+        <Width>96</Width>
+        <Height>24</Height>
+        <Text>Hide Recommondations</Text>
+      </Item>
+      <Item>
+        <Name>ResourceIcons</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>45</Top>
+        <Left>20</Left>
+        <Width>96</Width>
+        <Height>24</Height>
+        <Text>ResourceIcons</Text>
+      </Item>
+      <Item>
+        <Name>YieldIcons</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>65</Top>
+        <Left>20</Left>
+        <Width>96</Width>
+        <Height>24</Height>
+        <Text>Yield Icons</Text>
+      </Item>
+      <Item>
+        <Name>HexGrid</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>85</Top>
+        <Left>20</Left>
+        <Width>96</Width>
+        <Height>24</Height>
+        <Text>Hex Grid</Text>
+      </Item>
+      <Item>
+        <Name>UnitIcons</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>105</Top>
+        <Left>20</Left>
+        <Width>96</Width>
+        <Height>24</Height>
+        <Text>Unit Icons</Text>
+      </Item>
+      <Item>
+        <Name>UnitPromotions</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>125</Top>
+        <Left>20</Left>
+        <Width>96</Width>
+        <Height>24</Height>
+        <Text>Unit Promotions</Text>
+      </Item>
+    </Controls>
+  </Asset>
+</XnaContent>

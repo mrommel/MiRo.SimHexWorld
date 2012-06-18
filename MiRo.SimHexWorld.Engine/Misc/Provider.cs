@@ -54,7 +54,7 @@ namespace MiRo.SimHexWorld.Engine.Misc
             Techs = MainApplication.ManagerInstance.Content.LoadContent<Tech>("Content\\Techs");
             Civilizations = MainApplication.ManagerInstance.Content.LoadContent<Civilization>("Content\\Types\\Civilizations");
             Improvements = MainApplication.ManagerInstance.Content.LoadContent<Improvement>("Content\\Improvements");
-            Policies = MainApplication.ManagerInstance.Content.LoadContent<Policy>("Content\\Policies");
+            Policies = MainApplication.ManagerInstance.Content.LoadContent<Policy>("Content\\Policies", "*.*", true);         
             PolicyTypes = MainApplication.ManagerInstance.Content.LoadContent<PolicyType>("Content\\PolicyTypes");
             Buildings = MainApplication.ManagerInstance.Content.LoadContent<Building>("Content\\Buildings");
             CultureLevels = MainApplication.ManagerInstance.Content.LoadContent<CultureLevel>("Content\\CultureLevels");

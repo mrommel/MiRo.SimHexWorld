@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Policy">
+    <Name>Honor</Name>
+    <Title>TXT_KEY_POLICY_HONOR_TITLE</Title>
+    <Description>TXT_KEY_POLICY_HONOR_DESCRIPTION</Description>
+    <ImageName>Discipline</ImageName>
+    <Historical></Historical>
+    <PolicyTypeName>Honor</PolicyTypeName>
+    <RequiredPolicyNames></RequiredPolicyNames>
+
+    <!-- bonuses -->
+    <BarbarianCombatModifier>25</BarbarianCombatModifier>
+    <AlwaysSeeBarbarianCamps>true</AlwaysSeeBarbarianCamps>
+    <!-- bonuses -->
+
+    <Flavours>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>25</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

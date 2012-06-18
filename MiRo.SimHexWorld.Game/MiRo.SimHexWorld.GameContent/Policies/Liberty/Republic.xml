@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Policy">
+    <Name>Republic</Name>
+    <Title>TXT_KEY_POLICY_REPUBLIC_TITLE</Title>
+    <Description>TXT_KEY_POLICY_REPUBLIC_DESCRIPTION</Description>
+    <ImageName>Republic</ImageName>
+    <Historical></Historical>
+    <PolicyTypeName>Liberty</PolicyTypeName>
+    <RequiredPolicyNames>
+      <Item>CollectiveRule</Item>
+    </RequiredPolicyNames>
+
+    <!-- bonuses -->
+    <Yields>
+      <Item>
+        <Type>Production</Type>
+        <Amount>1</Amount>
+      </Item> 
+    </Yields>
+    <!-- bonuses -->
+
+    <Flavours>
+      <Item>
+        <Name>Growth</Name>
+        <Amount>10</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MiRo.SimHexWorld.Engine.UI
 {
-    public enum NotificationType { None, ProducationReady, Science, ImprovementReady, FoundCity, CityGrowth, CityDecline };
+    public enum NotificationType { None, ProducationReady, Science, ImprovementReady, FoundCity, CityGrowth, CityDecline, PolicyReady };
 
     public class ScreenNotification
     {

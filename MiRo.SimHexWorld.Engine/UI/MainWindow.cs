@@ -99,7 +99,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             _defaultbg = Manager.Content.Load<Texture2D>("Content\\Textures\\UI\\bg_body3");
 
             var application = Manager.Game as Application;
-            if (application != null) 
+            if (application != null)
                 application.BackgroundImage = _defaultbg;
 
             Icon = IconProvider.ApplicationIcon;
@@ -107,7 +107,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             _messageFont = Manager.Content.Load<SpriteFont>("Content\\Fonts\\ArialL");
 
             InitMainControls();
-            InitCityControls();          
+            InitCityControls();
             InitUnitControls();
             InitScienceControls();
             InitOverviewControls();
@@ -125,7 +125,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             CaptionVisible = true;
             BorderVisible = true;
 
-            Manager.Graphics.PreparingDeviceSettings += new EventHandler<PreparingDeviceSettingsEventArgs>(PrepareGraphicsDevice); 
+            Manager.Graphics.PreparingDeviceSettings += new EventHandler<PreparingDeviceSettingsEventArgs>(PrepareGraphicsDevice);
 
             // debugging
             //foreach (TextureAtlas at in Provider.Instance.Atlases.Values)
@@ -299,11 +299,11 @@ namespace MiRo.SimHexWorld.Engine.UI
             _lblCurrentTurn.Parent = _topBar;
             _lblCurrentTurn.Width = 110;
             _lblCurrentTurn.Alignment = Alignment.MiddleRight;
-            _lblCurrentTurn.Left = Manager.GraphicsDevice.Viewport.Width - lblSpacer2.Width - 5 - _btnTurn.Width - 5 - lblSpacer1.Width - 5 - _lblCurrentTurn.Width - 5 - _imgLocale.Width - 5;       
+            _lblCurrentTurn.Left = Manager.GraphicsDevice.Viewport.Width - lblSpacer2.Width - 5 - _btnTurn.Width - 5 - lblSpacer1.Width - 5 - _lblCurrentTurn.Width - 5 - _imgLocale.Width - 5;
 
             // side ////////////////////////////////////////////////
 
-            
+
 
             ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -370,9 +370,9 @@ namespace MiRo.SimHexWorld.Engine.UI
             _lblTerrainIcon.Image = IconProvider.DefaultTerrainIcon.GetThumbnail(64, 64);
             _lblTerrainIcon.Anchor = Anchors.Left | Anchors.Top;
             _lblTerrainIcon.Width = 64;
-            _lblTerrainIcon.Height = 64;           
+            _lblTerrainIcon.Height = 64;
             _lblTerrainIcon.Left = _pnlRes.Left;
-            _lblTerrainIcon.Top = _btnCheck.Top + _btnCheck.Height + 8;          
+            _lblTerrainIcon.Top = _btnCheck.Top + _btnCheck.Height + 8;
             _lblTerrainIcon.BackColor = Microsoft.Xna.Framework.Color.White;
             _lblTerrainIcon.Parent = _sidebar;
 
@@ -531,7 +531,7 @@ namespace MiRo.SimHexWorld.Engine.UI
                     tmp.Closed += SelectMapLoadDialogClosed;
                     tmp.Init();
                     Manager.Add(tmp);
-                    tmp.ShowModal(); 
+                    tmp.ShowModal();
                     break;
                 case MainOptionChoises.Check:
                     break;
@@ -541,7 +541,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             }
         }
 
-        
+
 
         void DrawOverview(object sender, DrawEventArgs e)
         {
@@ -554,7 +554,7 @@ namespace MiRo.SimHexWorld.Engine.UI
 
             base.Update(gameTime);
 
-            if(_needToUpdateOverview)
+            if (_needToUpdateOverview)
             {
                 UpdateOverviewControls();
                 _needToUpdateOverview = false;
@@ -581,7 +581,7 @@ namespace MiRo.SimHexWorld.Engine.UI
 
         private void UpdateHeadNotificationBar()
         {
-            _lblCulture.Text = string.Format("{0:0.0}/{0:0.0} ({0:0.0})", Game.Human.Culture, Game.Human.CultureNeededForChange, /*Game.Human.CultureSurplus*/ 0);
+            _lblCulture.Text = string.Format("{0:0}", ( Game.Human.CultureNeededForChange - Game.Human.Culture ) / Game.Human.CulturePerTurn);
             _lblHappiness.Text = Game.Human.HappyCities + "/" + Game.Human.UnhappyCities;
             _lblScience.Text = string.Format("{0:##.#}", Game.Human.ScienceSurplus);
         }
@@ -672,13 +672,13 @@ namespace MiRo.SimHexWorld.Engine.UI
 
                     _lblPosition.Text = "Pos: " + pt; // +" " + (cell.IsCoast ? _mapBox.Map.GetCoastalTileIndex(pt.X, pt.Y).ToString() : "");
                     _lblTerrainName.Text = cell.Terrain.Name;
-                    if( cell.Terrain.Image != null )
+                    if (cell.Terrain.Image != null)
                         _lblTerrainIcon.Image = cell.Terrain.Image.GetThumbnail(64, 64);
                     else
                         _lblTerrainIcon.Image = IconProvider.DefaultTerrainIcon.GetThumbnail(64, 64);
                     _lblFeatures.Text = "Feat: " + cell.FeatureStr;
                     _lblResource.Text = "Res:" + cell.RessourceStr + " " + (river == null ? "no river" : river.ToString());
-                    
+
                     _lblFood.Text = cell.Food.ToString();
                     _lblCommercial.Text = cell.Commerce.ToString();
                     _lblProduction.Text = cell.Production.ToString();
@@ -692,7 +692,7 @@ namespace MiRo.SimHexWorld.Engine.UI
                         foreach (Unit u in units)
                             sb.Append("Unit: " + u.Data.Title + " " + u.UnitAI + " " + u.Action + ",\n");
 
-                       if( city != null )
+                        if (city != null)
                             sb.Append("City: " + city.Name + ",\n");
 
                         _lblUnitName.Text = sb.ToString().TrimEnd(',');
@@ -708,7 +708,7 @@ namespace MiRo.SimHexWorld.Engine.UI
                     foreach (AbstractPlayerData pl in MainWindow.Game.Players)
                     {
                         // only AI Players:
-                        if( pl.CityLocationMap != null )
+                        if (pl.CityLocationMap != null)
                             _lblRegion.Text += "\n" + pl.Civilization.Name + "=>" + pl.CityLocationMap[pt] + "=>" + pl.CityLocationMap.IsLocalMaximum(pt);
                     }
                 }
@@ -811,8 +811,8 @@ namespace MiRo.SimHexWorld.Engine.UI
             tmp.Closed += SelectMapLoadDialogClosed;
             tmp.Init();
             Manager.Add(tmp);
-            tmp.ShowModal(); 
-            
+            tmp.ShowModal();
+
         }
 
         void SelectMapLoadDialogClosed(object sender, WindowClosedEventArgs e)
@@ -852,7 +852,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             tmp.Closed += SelectPlayerNumberDialogClosed;
             tmp.Init();
             Manager.Add(tmp);
-            tmp.ShowModal();   
+            tmp.ShowModal();
         }
 
         void SelectPlayerNumberDialogClosed(object sender, WindowClosedEventArgs e)
@@ -875,7 +875,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             tmp.Closed += SelectMapSizeDialogClosed;
             tmp.Init();
             Manager.Add(tmp);
-            tmp.ShowModal();   
+            tmp.ShowModal();
         }
 
         void SelectMapSizeDialogClosed(object sender, WindowClosedEventArgs e)
@@ -990,5 +990,60 @@ namespace MiRo.SimHexWorld.Engine.UI
             }
         }
         ////////////////////////////////////////////////////////////////////////////
+
+        public override void HandleNotification(INotification notification)
+        {
+            switch ((GameNotification)System.Enum.Parse(typeof(GameNotification), notification.Name))
+            {
+                case GameNotification.CreateMapSuccess:
+                    _game.Map = notification.Body as MapData;
+                    _mapBox.Map = _game.Map;
+
+                    _game.Initialize();
+
+                    break;
+                case GameNotification.LoadMapSuccess:
+                    _game.Map = notification.Body as MapData;
+                    _mapBox.Map = _game.Map;
+
+                    _game.Initialize();
+                    break;
+                case GameNotification.Message:
+                    {
+                        List<object> objs = notification.Body as List<object>;
+
+                        NotificationType type = (NotificationType)Enum.Parse(typeof(NotificationType), objs[0].ToString());
+                        string txt = objs[1] as string;
+                        Civilization civSender = objs[2] as Civilization;
+                        MessageFilter filter = (MessageFilter)objs[3];
+                        object obj = objs[4];
+
+                        if ((civSender.Name == Game.Human.Civilization.Name && (IsSet(filter, MessageFilter.Self))) ||
+                            IsValidMessage(Game.Human.DiplomaticStatusTo(civSender), filter))
+                            _messages.Add(new ScreenNotification(type, txt, DateTime.Now.AddSeconds(10), obj));
+                    }
+                    break;
+                case GameNotification.UpdateSpotting:
+                    _needToUpdateOverview = true;
+                    break;
+                case GameNotification.StartEra:
+                    {
+                        List<object> objs = notification.Body as List<object>;
+
+                        AbstractPlayerData player = objs[0] as AbstractPlayerData;
+                        Era era = objs[1] as Era;
+
+                        // show window if human
+                        if (player.IsHuman)
+                            NewEraWindow.Show(Manager, era, Strings.TXT_KEY_UI_NEWERA_TITLE);
+                    }
+                    break;
+                case GameNotification.ShowScoreHistory:
+
+                    break;
+                default:
+                    throw new System.Exception(notification.Name + " notification not handled");
+            }
+        }
     }
 }

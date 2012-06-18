@@ -29,7 +29,8 @@ namespace MiRo.SimHexWorld.Engine.UI
             _notificationiconsscience, 
             _notificationgenericglow,
             _notificationcitygrowthglow,
-            _notificationcitydeclineglow;
+            _notificationcitydeclineglow,
+            _notificationiconsculture;
 
         private void InitMessages()
         {
@@ -41,6 +42,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             _notificationgenericglow = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//NotificationView//notificationgenericglow");
             _notificationcitygrowthglow = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//NotificationView//notificationcitygrowthglow");
             _notificationcitydeclineglow = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//NotificationView//notificationcitydeclineglow");
+            _notificationiconsculture = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//NotificationView//notificationiconsculture");
 
             for (int i = 0; i < _msgLabels.Length; i++)
             {
@@ -79,31 +81,32 @@ namespace MiRo.SimHexWorld.Engine.UI
                     case NotificationType.FoundCity:
                         {
                             City city = not.Obj as City;
-                            _mapBox.CenterAt(city.Point);
-                            not.Obsolete = true;
+                            _mapBox.CenterAt(city.Point);                            
                         }
                         break;
                     case NotificationType.ImprovementReady:
                         {
                             List<object> objs = not.Obj as List<object>;
                             _mapBox.CenterAt(objs[1] as HexPoint);
-                            not.Obsolete = true;
                         }
                         break;
                     case NotificationType.Science:
                         ShowScienceDialog();
-                        not.Obsolete = true;
+                        break;
+                    case NotificationType.PolicyReady:
+                        ShowPolicyDialog();
                         break;
                     case NotificationType.ProducationReady:
                         {
                             City city = not.Obj as City;
                             _mapBox.CenterAt(city.Point);
                             _currentCity = city;
-                            not.Obsolete = true;
                         }
                         break;
                 }
-            }
+
+                not.Obsolete = true;
+            }      
         }
 
         private void UpdateMessages()
@@ -111,7 +114,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             #region messages
             _messages.RemoveAll(a => a.Obsolete);
 
-            for (int i = 0; i < _msgLabels.Length; i++)
+            for (int i = _messages.Count; i < _msgLabels.Length; i++)
                 _msgLabels[i].Visible = false;
 
             for (int i = 0; i < Math.Min(_msgLabels.Length, _messages.Count); i++)
@@ -120,61 +123,6 @@ namespace MiRo.SimHexWorld.Engine.UI
                 _msgLabels[i].Text = _messages[i].Text;
             }
             #endregion messages
-        }
-
-        public override void HandleNotification(INotification notification)
-        {
-            switch ((GameNotification)System.Enum.Parse(typeof(GameNotification), notification.Name))
-            {
-                case GameNotification.CreateMapSuccess:
-                    _game.Map = notification.Body as MapData;
-                    _mapBox.Map = _game.Map;
-
-                    _game.Initialize();
-
-                    break;
-                case GameNotification.LoadMapSuccess:
-                    _game.Map = notification.Body as MapData;
-                    _mapBox.Map = _game.Map;
-
-                    _game.Initialize();
-                    break;
-                case GameNotification.Message:
-                    {
-                        List<object> objs = notification.Body as List<object>;
-
-                        NotificationType type = (NotificationType)Enum.Parse(typeof(NotificationType), objs[0].ToString());
-                        string txt = objs[1] as string;
-                        Civilization civSender = objs[2] as Civilization;
-                        MessageFilter filter = (MessageFilter)objs[3];
-                        object obj = objs[4];
-
-                        if ((civSender.Name == Game.Human.Civilization.Name && (IsSet(filter, MessageFilter.Self))) ||
-                            IsValidMessage(Game.Human.DiplomaticStatusTo(civSender), filter))
-                            _messages.Add(new ScreenNotification(type, txt, DateTime.Now.AddSeconds(10), obj));
-                    }
-                    break;
-                case GameNotification.UpdateSpotting:
-                    _needToUpdateOverview = true;
-                    break;
-                case GameNotification.StartEra:
-                    {
-                        List<object> objs = notification.Body as List<object>;
-
-                        AbstractPlayerData player = objs[0] as AbstractPlayerData;
-                        Era era = objs[1] as Era;
-
-                        // show window if human
-                        if( player.IsHuman )
-                            NewEraWindow.Show(Manager, era, Strings.TXT_KEY_UI_NEWERA_TITLE);
-                    }
-                    break;
-                case GameNotification.ShowScoreHistory:
-
-                    break;
-                default:
-                    throw new System.Exception(notification.Name + " notification not handled");
-            }
         }
 
         private bool IsValidMessage(DiplomaticStatus diplomaticStatus, MessageFilter filter)
@@ -231,6 +179,9 @@ namespace MiRo.SimHexWorld.Engine.UI
                         break;
                     case NotificationType.Science:
                         e.Renderer.Draw(_notificationiconsscience, e.Rectangle, Microsoft.Xna.Framework.Color.White);
+                        break;
+                    case NotificationType.PolicyReady:
+                        e.Renderer.Draw(_notificationiconsculture, e.Rectangle, Microsoft.Xna.Framework.Color.White);
                         break;
                 }
                 //e.Renderer.DrawString(_notificationFont, _messages.ElementAt(num).Text, e.Rectangle, Microsoft.Xna.Framework.Color.White, Alignment.MiddleCenter);

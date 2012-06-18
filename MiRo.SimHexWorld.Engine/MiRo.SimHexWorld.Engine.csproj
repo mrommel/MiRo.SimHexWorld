@@ -142,15 +142,15 @@
     <Compile Include="Instance\IStatusCallback.cs" />
     <Compile Include="Instance\MapPace.cs" />
     <Compile Include="Instance\HumanPlayerData.cs" />
+    <Compile Include="Locales\Strings.de-DE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.de-DE.resx</DependentUpon>
+    </Compile>
     <Compile Include="Locales\Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Locales\Strings.en-US.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Strings.en-US.resx</DependentUpon>
     </Compile>
     <Compile Include="Misc\BoundingBoxRenderer.cs" />
     <Compile Include="Misc\ColorConversion.cs" />
@@ -317,14 +317,15 @@
     <Content Include="Lib\log4net.dll" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Locales\Strings.en-US.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.en-US.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Locales\Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locales\Strings.de-DE.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.de-DE.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

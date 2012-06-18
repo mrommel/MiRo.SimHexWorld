@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Policy">
+    <Name>Patronage</Name>
+    <Title>TXT_KEY_POLICY_PATRONAGE_TITLE</Title>
+    <Description>TXT_KEY_POLICY_PATRONAGE_DESCRIPTION</Description>
+    <ImageName>Patronage</ImageName>
+    <Historical></Historical>
+    <PolicyTypeName>Patronage</PolicyTypeName>
+    <RequiredPolicyNames></RequiredPolicyNames>
+
+    <!-- bonuses -->
+    <MinorFriendshipDecayMod>-25</MinorFriendshipDecayMod>
+    <!-- bonuses -->
+
+    <Flavours>
+      <Item>
+        <Name>Expansion</Name>
+        <Amount>20</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

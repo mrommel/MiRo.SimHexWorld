@@ -15,7 +15,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             LoadControls("Content//Controls//MainWindow.Right");
         }
 
-        public void BtnPolicies_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
+        public void ShowPolicyDialog()
         {
             PolicyChooseDialog pcd = new PolicyChooseDialog(Manager);
             pcd.Left = 100;
@@ -24,6 +24,11 @@ namespace MiRo.SimHexWorld.Engine.UI
             Manager.Add(pcd);
 
             pcd.ShowModal();
+        }
+
+        public void BtnPolicies_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
+        {
+            ShowPolicyDialog();
         }
 
         public void BtnDiplomacy_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)

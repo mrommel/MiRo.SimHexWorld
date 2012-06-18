@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.PolicyType">
+    <Name>Patronage</Name>
+    <Title>TXT_KEY_POLICY_TYPE_PATRONAGE_TITLE</Title>
+    <Description>TXT_KEY_POLICY_TYPE_PATRONAGE_DESCRIPTION</Description>
+    <ImageName>Patronage</ImageName>
+    <Historical></Historical>
+    <EraName>MedievalL</EraName>
+
+    <FreePolicyName>Patronage</FreePolicyName>
+  </Asset>
+</XnaContent>

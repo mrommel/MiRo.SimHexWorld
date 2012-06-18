@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Policy">
+    <Name>Tradition</Name>
+    <Title>TXT_KEY_POLICY_TRADITION_TITLE</Title>
+    <Description>TXT_KEY_POLICY_TRADITION_DESCRIPTION</Description>
+    <ImageName>Tradition</ImageName>
+    <Historical></Historical>
+    <PolicyTypeName>Tradition</PolicyTypeName>
+    <RequiredPolicyNames></RequiredPolicyNames>
+
+    <!-- bonuses -->
+    <Yields>
+      <Item>
+        <Type>Food</Type>
+        <Amount>1</Amount>
+        <CapitalOnly>true</CapitalOnly>
+      </Item>
+    </Yields>
+    <!-- bonuses -->
+
+    <Flavours>
+      <Item>
+        <Name>Growth</Name>
+        <Amount>1</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

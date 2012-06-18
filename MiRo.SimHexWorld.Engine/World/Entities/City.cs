@@ -53,7 +53,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
         public enum CitySize { Tiny, Small, Medium, Large }
 
         protected float _food = 10f;
-        private static float _foodPerCitizen = 1f;
+        private static float _foodPerCitizen = 2f;
         protected float _population = 1000f;
 
         protected float _science, _production, _gold, _culture;
@@ -335,7 +335,10 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                 // connected to capital (not sieged)
 
                 // social policies
-                _food += _player.Policies.Sum(a => a.YieldsHappiness);
+                happiness += _player.Policies.Sum(a => a.YieldsHappiness);
+
+                foreach (Policy p in Player.Policies)
+                    happiness += p.ExtraHappiness;
 
                 // buildings
                 foreach (Building b in _buildings)
@@ -557,9 +560,18 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                 _work.Add(new CitizenWork());
         }
 
+        CityPriority priority = CityPriority.Growth;
+        public enum CityPriority { Growth, Production, Culture, Science }
+
         private int SortWork(CitizenWork w1, CitizenWork w2)
         {
-            return (int)(GetGain(w2).Sum - GetGain(w1).Sum);
+            switch(priority)
+            {
+                case CityPriority.Growth:
+                    return (int)(GetGain(w2).Growth - GetGain(w1).Growth);
+                default:
+                    return (int)(GetGain(w2).Sum - GetGain(w1).Sum);
+            }
         }
 
         public struct Gain
@@ -574,6 +586,14 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                     return 2 * Food + Production + Gold + Science + Culture;
                 }
             }
+
+            public float Growth
+            {
+                get
+                {
+                    return Food;
+                }
+            }
         }
 
         public Gain GetGain(CitizenWork work)
@@ -584,7 +604,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             {
                 case WorkType.Unemployed:
                     gain.Food = 0;
-                    gain.Production = 0.3f; // ??? settings
+                    gain.Production = 1f; // ??? settings
                     gain.Gold = 0;
                     gain.Science = 0;
                     gain.Culture = 0;
@@ -603,6 +623,9 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                     gain.Gold = 0;
                     gain.Science = 2;
                     gain.Culture = 0;
+
+                    foreach (Policy p in Player.Policies)
+                        gain.Science += p.SciencePerScientist;
                     break;
                 default:
                     throw new Exception("Handler for " + work.Type + " not implemented");
@@ -655,6 +678,10 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             _gold += GoldSurplus;
             _science += ScienceSurplus;
             _culture += CultureSurplus;
+
+            // remove maintainance
+            foreach (Building b in _buildings)
+                _gold -= b.Maintenance;
 
             if (CurrentBuildingTarget != null && _currentProductionTarget.Cost <= _currentBuildingProgress)
             {
@@ -734,7 +761,6 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                     break;
                 default:
                     throw new Exception("No handle for: " + _specialization.Name);
-                    break;
             }
         }
 
@@ -836,6 +862,15 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                     {
                         production += Map[work.Point].Production;
                     }
+                }
+
+                foreach (Policy p in Player.Policies)
+                {
+                    if (_currentProductionTarget is Unit && ((Unit)_currentProductionTarget).Data.Name == "Settler")
+                        modifier *= p.SettlerProductionModifier;
+
+                    if (_currentProductionTarget is WonderData)
+                        modifier *= p.WonderProductionModifier;
                 }
 
                 // buildings

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Policy">
+    <Name>Meritocracy</Name>
+    <Title>TXT_KEY_POLICY_MERITOCRACY_TITLE</Title>
+    <Description>TXT_KEY_POLICY_MERITOCRACY_DESCRIPTION</Description>
+    <ImageName>Meritocracy</ImageName>
+    <Historical></Historical>
+    <PolicyTypeName>Liberty</PolicyTypeName>
+    <RequiredPolicyNames>
+      <Item>Citizenship</Item>
+    </RequiredPolicyNames>
+
+    <!-- bonuses -->
+    <HappinessPerTradeRoute>1</HappinessPerTradeRoute>
+    <!-- bonuses -->
+
+    <Flavours>
+      <Item>
+        <Name>Happiness</Name>
+        <Amount>20</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>

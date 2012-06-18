@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.UI.Controls.ControlSet">
+    <Item>
+      <Name>PietyBox</Name>
+      <Type>ImageBox</Type>
+      <Top>10</Top>
+      <Left>581</Left>
+      <Width>192</Width>
+      <Height>292</Height>
+      <StayOnBack>true</StayOnBack>
+      <StayOnTop>false</StayOnTop>
+      <ImageAsset>Content//Textures//UI//PolicyView//socialpoliciespiety</ImageAsset>
+      <ImageMode>Stretched</ImageMode>
+      <Draw>Box_Draw</Draw>
+    </Item>
+  </Asset>
+</XnaContent>

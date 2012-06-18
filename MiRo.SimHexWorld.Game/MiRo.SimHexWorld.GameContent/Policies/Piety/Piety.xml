@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.Policy">
+    <Name>Piety</Name>
+    <Title>TXT_KEY_POLICY_PIETY_TITLE</Title>
+    <Description>TXT_KEY_POLICY_PIETY_DESCRIPTION</Description>
+    <ImageName>Piety</ImageName>
+    <Historical></Historical>
+    <PolicyTypeName>Piety</PolicyTypeName>
+    <RequiredPolicyNames></RequiredPolicyNames>
+
+    <!-- bonuses -->
+    <ExtraHappiness>2</ExtraHappiness>
+    <!-- bonuses -->
+
+    <Flavours>
+      <Item>
+        <Name>Happiness</Name>
+        <Amount>0</Amount>
+      </Item>
+    </Flavours>
+  </Asset>
+</XnaContent>
