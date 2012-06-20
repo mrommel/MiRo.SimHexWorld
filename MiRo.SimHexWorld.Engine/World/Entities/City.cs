@@ -740,13 +740,17 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                         {
                             if (Map.IsValid(pt))
                             {
-                                foreach (Unit unit in MainWindow.Game.GetUnitsAt(pt))
+                                Unit unit = MainWindow.Game.GetUnitAt(pt);
+
+                                if( unit != null )
                                     unitFlavours += (unit.Data.Flavours / 2f);
                             }
                         }
 
-                        foreach (Unit unit in MainWindow.Game.GetUnitsAt(Point))
-                            unitFlavours += (unit.Data.Flavours);
+                        Unit unitAtCity = MainWindow.Game.GetUnitAt(Point);
+
+                        if (unitAtCity != null)
+                            unitFlavours += (unitAtCity.Data.Flavours);
 
                         foreach (UnitData u in possibleUnits)
                         {

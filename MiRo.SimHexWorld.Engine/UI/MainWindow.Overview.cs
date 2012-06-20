@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MiRo.SimHexWorld.Engine.Instance;
 using MiRo.SimHexWorld.Engine.World.Maps;
+using MiRo.SimHexWorld.Engine.UI.Dialogs;
 
 namespace MiRo.SimHexWorld.Engine.UI
 {
@@ -19,12 +20,17 @@ namespace MiRo.SimHexWorld.Engine.UI
         Rectangle overviewSideRect = new Rectangle(0, 0, 11, 224);
         Rectangle overviewInnerRect = new Rectangle(0, 0, 300, 224);
 
+        public MapOptionDialog MapOptions { get; set; }
+
         void InitOverviewControls()
         {
             _overviewSideTextureLeft = Manager.Content.Load<Texture2D>("Content\\Textures\\UI\\MainView\\sideleft");
             _overviewSideTextureRight = Manager.Content.Load<Texture2D>("Content\\Textures\\UI\\MainView\\sideright");
 
-            LoadControls("Content//Controls//MainWindow.Overview");
+            MapOptions = new MapOptionDialog(Manager);
+            MapOptions.Visible = false;
+
+            Manager.Add(MapOptions);
         }
 
         public void LblOverview_Draw(object sender, DrawEventArgs e)
@@ -61,7 +67,7 @@ namespace MiRo.SimHexWorld.Engine.UI
                 {
                     int i = x + y * Game.Map.Width;
 
-                    if (_mapBox.FogOfWarEnabled && !Game.Map[x, y].IsSpotted(Game.Human))
+                    if (MapBox.FogOfWarEnabled && !Game.Map[x, y].IsSpotted(Game.Human))
                         overviewColors[i] = Color.Transparent;
                     else if (Game.Map[x, y].IsOcean)
                         overviewColors[i] = Color.Aquamarine;

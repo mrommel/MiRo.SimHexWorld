@@ -2,6 +2,7 @@
 <XnaContent>
   <Asset Type="MiRo.SimHexWorld.Engine.UI.Controls.WindowSet">
     <Title>MapOptions</Title>
+    <Name>MapOptionDialog</Name>
     <Icon>Content\\Textures\\UI\\Globe_Icon_Small</Icon>
     <Width>150</Width>
     <Height>200</Height>

@@ -15,6 +15,7 @@ using MiRo.SimHexWorld.Engine.UI;
 using System.Xml;
 using Microsoft.Xna.Framework.Content.Pipeline.Serialization.Intermediate;
 using System.IO;
+using MiRo.SimHexWorld.Engine.World.Helper;
 
 namespace MiRo.SimHexWorld.Engine.Instance
 {
@@ -75,7 +76,17 @@ namespace MiRo.SimHexWorld.Engine.Instance
                     HexPoint loc = pl.StartLocation;
 
                     pl.AddUnit("Settler", loc.X, loc.Y);
-                    pl.AddUnit("Warrior", loc.X, loc.Y);
+
+                    foreach (HexDirection dir in HexDirection.All.Shuffle())
+                    {
+                        HexPoint pt = loc.Neighbor(dir);
+                        if (Map.IsValid(pt) && !Map[pt].IsOcean)
+                        {
+                            pl.AddUnit("Warrior", pt.X,pt.Y);
+                            break;
+                        }
+                    }
+                    
                 }
             }
             else 
@@ -111,14 +122,17 @@ namespace MiRo.SimHexWorld.Engine.Instance
             { return _handicap; }
         }
 
-        public List<Unit> GetUnitsAt(HexPoint pt)
+        public Unit GetUnitAt(HexPoint pt)
         {
-            List<Unit> units = new List<Unit>();
-
             foreach (AbstractPlayerData pl in _players)
-                units.AddRange(pl.GetUnitsAt(pt));
+            {
+                Unit u = pl.GetUnitAt(pt);
 
-            return units;
+                if (u != null)
+                    return u;
+            }
+
+            return null;
         }
 
         public City GetCityAt(HexPoint pt)

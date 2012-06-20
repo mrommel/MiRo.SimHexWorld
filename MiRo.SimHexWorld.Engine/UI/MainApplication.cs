@@ -77,7 +77,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             FullScreenBorder = false;
             ClearBackground = false;
             ExitConfirmation = false;
-            Manager.TargetFrames = 60;
+            Manager.TargetFrames = 30;
 
             _manager = Manager;
         }

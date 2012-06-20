@@ -45,6 +45,7 @@
       <StayOnBack>true</StayOnBack>
       <ImageAsset>Content\\Textures\\UI\\MainView\\Overview\\mainstrategicbutton</ImageAsset>
       <ImageMode>Stretched</ImageMode>
+      <Click>MapOptions_Click</Click>
     </Item>
     <Item>
       <Name>NoteOptions</Name>

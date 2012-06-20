@@ -40,7 +40,6 @@ namespace MiRo.SimHexWorld.Engine.AI
             _pyScope = _pyEngine.CreateScope();
             _pyScope.SetVariable("handler", _scriptHandler); // ([name], [value]) 
             _pyScope.SetVariable("game", MainWindow.Game);
-            //Console.WriteLine("initialized");
         }
 
         #region python method invocation
@@ -92,9 +91,16 @@ namespace MiRo.SimHexWorld.Engine.AI
 
         public void CompileSourceAndExecute(string code)
         {
-            ScriptSource source = _pyEngine.CreateScriptSourceFromString(code, SourceCodeKind.Statements);
-            CompiledCode compiled = source.Compile();
-            compiled.Execute(_pyScope);
+            try
+            {
+                ScriptSource source = _pyEngine.CreateScriptSourceFromString(code, SourceCodeKind.Statements);
+                CompiledCode compiled = source.Compile();
+                compiled.Execute(_pyScope);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
         }
 
         #endregion python script imports

@@ -74,35 +74,41 @@ namespace MiRo.SimHexWorld.Engine.UI
             {
                 ScreenNotification not = _messages.ElementAt(num);
 
-                switch (not.Type)
+                MouseEventArgs args = e as MouseEventArgs;
+
+                // handle only left clicks (right click will close the notification icon)
+                if (args.Button == MouseButton.Left)
                 {
-                    case NotificationType.CityGrowth:
-                    case NotificationType.CityDecline:
-                    case NotificationType.FoundCity:
-                        {
-                            City city = not.Obj as City;
-                            _mapBox.CenterAt(city.Point);                            
-                        }
-                        break;
-                    case NotificationType.ImprovementReady:
-                        {
-                            List<object> objs = not.Obj as List<object>;
-                            _mapBox.CenterAt(objs[1] as HexPoint);
-                        }
-                        break;
-                    case NotificationType.Science:
-                        ShowScienceDialog();
-                        break;
-                    case NotificationType.PolicyReady:
-                        ShowPolicyDialog();
-                        break;
-                    case NotificationType.ProducationReady:
-                        {
-                            City city = not.Obj as City;
-                            _mapBox.CenterAt(city.Point);
-                            _currentCity = city;
-                        }
-                        break;
+                    switch (not.Type)
+                    {
+                        case NotificationType.CityGrowth:
+                        case NotificationType.CityDecline:
+                        case NotificationType.FoundCity:
+                            {
+                                City city = not.Obj as City;
+                                MapBox.CenterAt(city.Point);
+                            }
+                            break;
+                        case NotificationType.ImprovementReady:
+                            {
+                                List<object> objs = not.Obj as List<object>;
+                                MapBox.CenterAt(objs[1] as HexPoint);
+                            }
+                            break;
+                        case NotificationType.Science:
+                            ShowScienceDialog();
+                            break;
+                        case NotificationType.PolicyReady:
+                            ShowPolicyDialog();
+                            break;
+                        case NotificationType.ProducationReady:
+                            {
+                                City city = not.Obj as City;
+                                MapBox.CenterAt(city.Point);
+                                _currentCity = city;
+                            }
+                            break;
+                    }
                 }
 
                 not.Obsolete = true;
@@ -111,7 +117,6 @@ namespace MiRo.SimHexWorld.Engine.UI
 
         private void UpdateMessages()
         {
-            #region messages
             _messages.RemoveAll(a => a.Obsolete);
 
             for (int i = _messages.Count; i < _msgLabels.Length; i++)
@@ -122,7 +127,6 @@ namespace MiRo.SimHexWorld.Engine.UI
                 _msgLabels[i].Visible = true;
                 _msgLabels[i].Text = _messages[i].Text;
             }
-            #endregion messages
         }
 
         private bool IsValidMessage(DiplomaticStatus diplomaticStatus, MessageFilter filter)

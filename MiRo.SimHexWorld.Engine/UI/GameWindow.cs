@@ -11,6 +11,11 @@ namespace MiRo.SimHexWorld.Engine.UI
 {
     public abstract class GameWindow : Window, IMediator
     {
+        public GameWindow(TomShane.Neoforce.Controls.Manager manager)
+            : base(manager)
+        {
+        }
+
         public abstract List<GameNotification> NotificationInterests { get; }
 
         public IList<string> ListNotificationInterests()
@@ -48,11 +53,6 @@ namespace MiRo.SimHexWorld.Engine.UI
             {
                 throw new System.NotImplementedException();
             }
-        }
-
-        public GameWindow(TomShane.Neoforce.Controls.Manager manager)
-            : base(manager)
-        {
         }
 
         public abstract void HandleNotification(INotification notification);

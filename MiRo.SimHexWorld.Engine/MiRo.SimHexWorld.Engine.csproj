@@ -129,6 +129,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Instance\AbstractPlayerData.cs" />
+    <Compile Include="Instance\AI\PythonScript.cs" />
     <Compile Include="Instance\Commands\ExceptionCommand.cs" />
     <Compile Include="Instance\Commands\MapLoadCommand.cs" />
     <Compile Include="Instance\Commands\MapCreateCommand.cs" />
@@ -172,6 +173,8 @@
     <Compile Include="Types\PromotionData.cs" />
     <Compile Include="Types\TechnologyBonus.cs" />
     <Compile Include="Types\WonderData.cs" />
+    <Compile Include="UI\AssetWindow.cs" />
+    <Compile Include="UI\ControlsSet.cs" />
     <Compile Include="UI\Controls\ControlSet.cs" />
     <Compile Include="UI\Controls\GameControl.cs" />
     <Compile Include="UI\Data\TeaserList.cs">
@@ -190,6 +193,7 @@
     <Compile Include="Types\Feature.cs" />
     <Compile Include="UI\Dialogs\ChooseEnumDialog.cs" />
     <Compile Include="UI\Dialogs\DiplomacyDialog.cs" />
+    <Compile Include="UI\Dialogs\MapOptionDialog.cs" />
     <Compile Include="UI\Dialogs\NewEraWindow.cs" />
     <Compile Include="UI\Dialogs\ScienceDialog.cs" />
     <Compile Include="UI\Dialogs\ScienceInfoDialog.cs" />

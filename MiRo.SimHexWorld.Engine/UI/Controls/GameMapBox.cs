@@ -38,8 +38,8 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         public event MapUpdateHandler FocusChanged;
         public event CityOpenHandler CityOpened;
         public event CityOpenHandler CitySelected;
-        public event UnitsSelectHandler HumanUnitsSelected;
-        public event UnitsSelectHandler EnemyUnitsSelected;
+        public event UnitSelectHandler HumanUnitsSelected;
+        public event UnitSelectHandler EnemyUnitsSelected;
         public event UnselectHandler UnitsUnselected;
 
         readonly HexPoint _mapCenter = new HexPoint(20, 20);
@@ -211,9 +211,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                 if (_dragStart != _mapRenderer.Cursor)
                 {
                     // drag action
-                    List<Unit> units = MainWindow.Game.GetUnitsAt(_dragStart);
-
-                    Unit unit = units.FirstOrDefault();
+                    Unit unit = MainWindow.Game.GetUnitAt(_dragStart);
 
                     if (unit != null)
                     {
@@ -224,7 +222,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                 else
                 {
                     //City city = MainWindow.Game.GetCityAt(_mapRenderer.Cursor);
-                    List<Unit> units = MainWindow.Game.GetUnitsAt(_mapRenderer.Cursor);
+                    Unit unit = MainWindow.Game.GetUnitAt(_mapRenderer.Cursor);
 
                     // select unit city
                     //if (city != null)
@@ -234,14 +232,12 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                     //}
 
                     // select unit
-                    if (units.Count > 0)
+                    if (unit != null)
                     {
-                        Unit first = units.First();
-
-                        if (first.Player.IsHuman && HumanUnitsSelected != null)
-                            HumanUnitsSelected(units);
-                        else if (!first.Player.IsHuman && EnemyUnitsSelected != null)
-                            EnemyUnitsSelected(units);
+                        if (unit.Player.IsHuman && HumanUnitsSelected != null)
+                            HumanUnitsSelected(unit);
+                        else if (!unit.Player.IsHuman && EnemyUnitsSelected != null)
+                            EnemyUnitsSelected(unit);
                     }
                     else if (UnitsUnselected != null)
                         UnitsUnselected();

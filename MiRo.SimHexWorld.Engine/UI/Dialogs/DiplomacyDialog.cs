@@ -9,17 +9,6 @@ using MiRo.SimHexWorld.Engine.Locales;
 
 namespace MiRo.SimHexWorld.Engine.UI.Dialogs
 {
-    public abstract class AssetWindow : GameWindow 
-    {
-        public AssetWindow(Manager manager, string assetName)
-            : base(manager)
-        {
-            LoadWindow(assetName);
-
-            Init(); // for the close button
-        }
-    }
-
     public class DiplomacyDialog : AssetWindow
     {
         public DiplomacyDialog(Manager manager)

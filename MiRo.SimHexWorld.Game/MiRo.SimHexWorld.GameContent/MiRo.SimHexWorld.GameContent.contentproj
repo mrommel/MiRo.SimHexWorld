@@ -1914,16 +1914,6 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Controls\MainWindow.Right.xml">
-      <Name>MainWindow.Right</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
-    <Compile Include="Controls\MainWindow.Overview.xml">
-      <Name>MainWindow.Overview</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
     <Compile Include="Controls\DiplomacyDialog.xml">
       <Name>DiplomacyDialog</Name>
       <Importer>XmlImporter</Importer>
@@ -1933,11 +1923,7 @@
       <Name>ScienceDialog</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
-    </Compile>
-    <Compile Include="Controls\MainWindow.Science.xml">
-      <Name>MainWindow.Science</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
+      <SubType>Designer</SubType>
     </Compile>
     <Compile Include="Policies\Honor\Honor.xml">
       <Name>Honor</Name>
@@ -2066,6 +2052,34 @@
     </Compile>
     <Compile Include="Policies\Tradition\Oligarchy.xml">
       <Name>Oligarchy</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\MainWindowActions.py">
+      <Name>MainWindowActions</Name>
+      <Importer>PythonScriptImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Controls\MapOptionDialogActions.py">
+      <Name>MapOptionDialogActions</Name>
+      <Importer>PythonScriptImporter</Importer>
+      <Processor>PythonScriptProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\DiplomacyDialogActions.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>DiplomacyDialogActions</Name>
+      <Importer>PythonScriptImporter</Importer>
+      <Processor>PythonScriptProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\ScienceDialogActions.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>ScienceDialogActions</Name>
+      <Importer>PythonScriptImporter</Importer>
+      <Processor>PythonScriptProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\MainWindow.xml">
+      <Name>MainWindow</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>

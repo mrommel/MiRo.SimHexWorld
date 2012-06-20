@@ -10,6 +10,31 @@
         <Name>Tradition</Name>
         <Index>0</Index>
       </Item>
+      <!-- Honor -->
+      <Item>
+        <Name>Honor</Name>
+        <Index>18</Index>
+      </Item>
+      <Item>
+        <Name>WarriorCode</Name>
+        <Index>19</Index>
+      </Item>
+      <Item>
+        <Name>Discipline</Name>
+        <Index>20</Index>
+      </Item>
+      <Item>
+        <Name>MilitaryTradition</Name>
+        <Index>21</Index>
+      </Item>
+      <Item>
+        <Name>MilitaryCaste</Name>
+        <Index>22</Index>
+      </Item>
+      <Item>
+        <Name>ProfessionalArmy</Name>
+        <Index>23</Index>
+      </Item>  
       <!-- Liberty -->
       <Item>
         <Name>CollectiveRule</Name>

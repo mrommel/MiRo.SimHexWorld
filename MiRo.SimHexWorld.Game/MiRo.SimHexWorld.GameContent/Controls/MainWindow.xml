@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.UI.Controls.WindowSet">
+    <Title>MapOptions</Title>
+    <Name>MainWindow</Name>
+    <Icon>Content\\Textures\\UI\\Globe_Icon_Small</Icon>
+    <Width>1600</Width>
+    <Height>850</Height>
+    <Controls>
+      <!-- MainView-->
+      <Item>
+        <Name>MapBox</Name>
+        <Type>GameMapBox</Type>
+        <Top>22</Top>
+        <Left>2</Left>
+        <Width>-4</Width>
+        <Height>-32</Height>
+        <StayOnBack>true</StayOnBack>
+        <StayOnTop>false</StayOnTop>
+        <FocusChanged>FocusChanged</FocusChanged>
+        <CityOpened>CityOpened</CityOpened>
+        <CitySelected>CitySelected</CitySelected>
+        <HumanUnitSelected>HumanUnitSelected</HumanUnitSelected>
+        <UnitUnselected>UnitUnselected</UnitUnselected>
+      </Item>
+      <!-- MainView -->
+      <!-- Overview -->
+      <Item>
+        <Name>OverviewTop</Name>
+        <Type>ImageBox</Type>
+        <Top>-388</Top>
+        <Left>-544</Left>
+        <Width>512</Width>
+        <Height>128</Height>
+        <StayOnBack>true</StayOnBack>
+        <ImageAsset>Content\\Textures\\UI\\MainView\\mapview</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+      </Item>
+      <Item>
+        <Name>OverviewBottomRight</Name>
+        <Type>ImageBox</Type>
+        <Top>-260</Top>
+        <Left>-566</Left>
+        <Width>128</Width>
+        <Height>224</Height>
+        <StayOnBack>true</StayOnBack>
+        <ImageAsset>Content\\Textures\\UI\\MainView\\bottomright128x224</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+      </Item>
+      <Item>
+        <Name>OverviewMap</Name>
+        <Type>ImageBox</Type>
+        <Top>-260</Top>
+        <Left>-438</Left>
+        <Width>406</Width>
+        <Height>224</Height>
+        <StayOnBack>true</StayOnBack>
+        <ImageAsset>Content\\Textures\\UI\\MainView\\overviewBackground</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+        <Draw>LblOverview_Draw</Draw>
+      </Item>
+      <Item>
+        <Name>MapOptions</Name>
+        <Type>ImageBox</Type>
+        <Top>-80</Top>
+        <Left>-480</Left>
+        <Width>42</Width>
+        <Height>42</Height>
+        <StayOnBack>true</StayOnBack>
+        <ImageAsset>Content\\Textures\\UI\\MainView\\Overview\\mainstrategicbutton</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+        <Click>MapOptions_Click</Click>
+      </Item>
+      <Item>
+        <Name>NoteOptions</Name>
+        <Type>ImageBox</Type>
+        <Top>-130</Top>
+        <Left>-480</Left>
+        <Width>42</Width>
+        <Height>42</Height>
+        <StayOnBack>true</StayOnBack>
+        <ImageAsset>Content\\Textures\\UI\\MainView\\Overview\\notificationnotes</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+      </Item>
+      <!-- Overview -->
+      <!-- Science -->
+      <Item>
+        <Name>LeftTopCorner</Name>
+        <Type>ImageBox</Type>
+        <Top>20</Top>
+        <Left>0</Left>
+        <Width>512</Width>
+        <Height>256</Height>
+        <StayOnBack>true</StayOnBack>
+        <ImageAsset>Content//Textures//UI//MainView//topleft022</ImageAsset>
+        <ImageMode>Normal</ImageMode>
+      </Item>
+      <Item>
+        <Name>ResearchProgress</Name>
+        <Type>ImageBox</Type>
+        <Top>20</Top>
+        <Left>0</Left>
+        <Width>128</Width>
+        <Height>128</Height>
+        <StayOnBack>true</StayOnBack>
+        <Click>LblResearch_Click</Click>
+        <Draw>LblResearch_Draw</Draw>
+      </Item>
+      <Item>
+        <Name>ScienceDetail</Name>
+        <Type>ImageBox</Type>
+        <Top>24</Top>
+        <Left>4</Left>
+        <Width>48</Width>
+        <Height>48</Height>
+        <StayOnBack>false</StayOnBack>
+        <ImageAsset>Content//Textures//UI//MainView//ScienceView//maintechbutton</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+        <Click>Science_Click</Click>
+      </Item>
+      <!-- Science -->
+      <!-- Right -->
+      <Item>
+        <Name>RightTopBg</Name>
+        <Type>ImageBox</Type>
+        <Top>20</Top>
+        <Left>-544</Left>
+        <Width>512</Width>
+        <Height>128</Height>
+        <ImageAsset>Content\\Textures\\UI\\MainView\\topright020</ImageAsset>
+      </Item>
+      <Item>
+        <Name>BtnPolicies</Name>
+        <Type>ImageBox</Type>
+        <Top>24</Top>
+        <Left>-220</Left>
+        <Width>64</Width>
+        <Height>64</Height>
+        <ImageAsset>Content\\Textures\\UI\\MainView\\socialpolicybase</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+        <Click>BtnPolicies_Click</Click>
+      </Item>
+      <Item>
+        <Name>BtnDiplomacy</Name>
+        <Type>ImageBox</Type>
+        <Top>24</Top>
+        <Left>-100</Left>
+        <Width>64</Width>
+        <Height>64</Height>
+        <ImageAsset>Content\\Textures\\UI\\MainView\\diplomacybase</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+        <Click>BtnDiplomacy_Click</Click>
+      </Item>
+      <Item>
+        <Name>BtnAdvisors</Name>
+        <Type>ImageBox</Type>
+        <Top>24</Top>
+        <Left>-160</Left>
+        <Width>64</Width>
+        <Height>64</Height>
+        <ImageAsset>Content\\Textures\\UI\\MainView\\notificationiconsadvisor</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+        <Click>BtnAdvisors_Click</Click>
+      </Item>
+      <!-- Right -->
+      <!-- Units -->
+      <Item>
+        <Name>UnitDetail</Name>
+        <Type>ImageBox</Type>
+        <Top>-292</Top>
+        <Left>0</Left>
+        <Width>256</Width>
+        <Height>256</Height>
+        <StayOnTop>true</StayOnTop>
+        <ImageAsset>Content//Textures//UI//MainView//unitpanel</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+        <Click>Unit_Click</Click>
+        <Draw>LblUnit_Draw</Draw>
+      </Item>
+      <Item>
+        <Name>UnitAction0</Name>
+        <Type>ImageBox</Type>
+        <Top>-128</Top>
+        <Left>272</Left>
+        <Width>48</Width>
+        <Height>48</Height>
+        <StayOnTop>true</StayOnTop>
+        <ImageAsset>Content//Textures//UI//UnitView//action</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+        <Click>ActionButton_Click</Click>
+        <Draw>ActionButton_Draw</Draw>
+      </Item>
+      <Item>
+        <Name>UnitAction1</Name>
+        <Type>ImageBox</Type>
+        <Top>-128</Top>
+        <Left>320</Left>
+        <Width>48</Width>
+        <Height>48</Height>
+        <StayOnTop>true</StayOnTop>
+        <ImageAsset>Content//Textures//UI//UnitView//action</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+        <Click>ActionButton_Click</Click>
+        <Draw>ActionButton_Draw</Draw>
+      </Item>
+      <!--_actionButtons[i] = new ImageBox(Manager);
+      _actionButtons[i].Init();
+      _actionButtons[i].Width = 48;
+      _actionButtons[i].Height = 48;
+      _actionButtons[i].Left = 256 + 16 + i * 48;
+      _actionButtons[i].Top = Manager.GraphicsDevice.Viewport.Height - 128;
+      _actionButtons[i].Tag = i;
+      _actionButtons[i].StayOnTop = true;
+      _actionButtons[i].Visible = false;
+      _actionButtons[i].Image = Manager.Content.Load<Texture2D>
+        ("Content//Textures//UI//UnitView//action");
+        _actionButtons[i].Draw += new DrawEventHandler(ActionButton_Draw);
+        _actionButtons[i].Click += new TomShane.Neoforce.Controls.EventHandler(ActionButton_Click);
+        _actionButtons[i].SizeMode = SizeMode.Stretched;-->
+        <!-- Units -->
+    </Controls>
+  </Asset>
+</XnaContent>

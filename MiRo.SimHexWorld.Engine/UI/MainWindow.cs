@@ -19,7 +19,7 @@ using MiRo.SimHexWorld.Engine.Types;
 
 namespace MiRo.SimHexWorld.Engine.UI
 {
-    public partial class MainWindow : GameWindow
+    public partial class MainWindow : AssetWindow
     {
         enum MapView { Main, City }
 
@@ -31,8 +31,8 @@ namespace MiRo.SimHexWorld.Engine.UI
         FpsCounter fpsCounter;
         SpriteFont _messageFont;
 
-        GameMapBox _mapBox;
-        ContextMenu _ctxUnitMenu;
+        //GameMapBox _mapBox;
+        //ContextMenu _ctxUnitMenu;
 
         MapView _view = MapView.Main;
 
@@ -53,31 +53,31 @@ namespace MiRo.SimHexWorld.Engine.UI
 
         ImageBox _imgLocale;
 
-        SideBar _sidebar;
-        SideBarPanel _pnlRes;
-        Button _btnCreate;
-        Button _btnLoad;
-        Button _btnCheck;
-        Button _btnExit;
+        //SideBar _sidebar;
+        //SideBarPanel _pnlRes;
+        //Button _btnCreate;
+        //Button _btnLoad;
+        //Button _btnCheck;
+        //Button _btnExit;
 
-        ImageBox _lblTerrainIcon;
-        Label _lblPosition;
-        Label _lblTerrainName;
-        Label _lblFeatures;
-        Label _lblResource;
+        //ImageBox _lblTerrainIcon;
+        //Label _lblPosition;
+        //Label _lblTerrainName;
+        //Label _lblFeatures;
+        //Label _lblResource;
 
-        ImageBox _imgFood, _imgCommercial, _imgProduction;
-        Label _lblFood, _lblCommercial, _lblProduction;
+        //ImageBox _imgFood, _imgCommercial, _imgProduction;
+        //Label _lblFood, _lblCommercial, _lblProduction;
 
-        Label _lblUnitName, _lblRegion;
+        //Label _lblUnitName, _lblRegion;
 
         // unit
-        ImageBox _lblUnit;
+        //ImageBox _lblUnit;
 
         // zoom
         //ImageBox _imgZoomIn, _imgZoomOut;
 
-        HexPoint focus;
+        public HexPoint Focus { get; set; }
 
         readonly GameStartupSettings _startupSettings = new GameStartupSettings();
 
@@ -91,7 +91,7 @@ namespace MiRo.SimHexWorld.Engine.UI
 
         ////////////////////////////////////////////////////////////////////////////
         public MainWindow(Manager manager)
-            : base(manager)
+            : base(manager, "Content//Controls//MainWindow")
         {
             // Tell the resource manager what language to use when loading strings.
             Strings.Culture = CultureInfo.CurrentCulture;
@@ -126,14 +126,6 @@ namespace MiRo.SimHexWorld.Engine.UI
             BorderVisible = true;
 
             Manager.Graphics.PreparingDeviceSettings += new EventHandler<PreparingDeviceSettingsEventArgs>(PrepareGraphicsDevice);
-
-            // debugging
-            //foreach (TextureAtlas at in Provider.Instance.Atlases.Values)
-            //{
-            //    at.SaveAsPNG(at.Name + ".png");
-            //}
-
-            //this.Draw += new DrawEventHandler(MainWindow_Draw);
         }
 
         protected void PrepareGraphicsDevice(object sender, PreparingDeviceSettingsEventArgs e)
@@ -148,26 +140,6 @@ namespace MiRo.SimHexWorld.Engine.UI
 
         private void InitMainControls()
         {
-            ////////////////////////////////////////////////
-            _ctxUnitMenu = new TomShane.Neoforce.Controls.ContextMenu(Manager);
-            _ctxUnitMenu.Init();
-
-            _mapBox = new GameMapBox(Manager);
-            _mapBox.Init();
-            _mapBox.StayOnBack = false;
-            _mapBox.Anchor = Anchors.All;
-            _mapBox.Top = 22;
-            _mapBox.Left = 2;
-            _mapBox.Width = Manager.GraphicsDevice.Viewport.Width - 4;
-            _mapBox.Height = Manager.GraphicsDevice.Viewport.Height - 32;
-            _mapBox.FocusChanged += MapBox_FocusChanged;
-            _mapBox.CityOpened += MapBox_CityOpened;
-            _mapBox.CitySelected += MapBox_CitySelected;
-            _mapBox.HumanUnitsSelected += MapBox_HumanUnitsSelected;
-            _mapBox.UnitsUnselected += new UnselectHandler(MapBox_UnitsUnselected);
-            _mapBox.ContextMenu = _ctxUnitMenu;
-            Add(_mapBox);
-
             // top ////////////////////////////////////////////////
 
             _topBar = new SideBar(Manager);
@@ -301,212 +273,6 @@ namespace MiRo.SimHexWorld.Engine.UI
             _lblCurrentTurn.Alignment = Alignment.MiddleRight;
             _lblCurrentTurn.Left = Manager.GraphicsDevice.Viewport.Width - lblSpacer2.Width - 5 - _btnTurn.Width - 5 - lblSpacer1.Width - 5 - _lblCurrentTurn.Width - 5 - _imgLocale.Width - 5;
 
-            // side ////////////////////////////////////////////////
-
-
-
-            ////////////////////////////////////////////////////////////////////////////////////////////
-
-            _sidebar = new SideBar(Manager);
-            _sidebar.Init();
-            _sidebar.StayOnBack = true;
-            _sidebar.Passive = true;
-            _sidebar.Top = _topBar.Height;
-            _sidebar.Width = 200;
-            _sidebar.Height = Manager.GraphicsDevice.Viewport.Height - _topBar.Height;
-            _sidebar.Anchor = Anchors.Left | Anchors.Top | Anchors.Bottom;
-            _sidebar.Visible = false;
-            Add(_sidebar);
-
-            _pnlRes = new SideBarPanel(Manager);
-            _pnlRes.Init();
-            _pnlRes.Passive = true;
-            _pnlRes.Parent = _sidebar;
-            _pnlRes.Left = 16;
-            _pnlRes.Top = 16;
-            _pnlRes.Width = _sidebar.Width - _pnlRes.Left * 2;
-            _pnlRes.Height = 150;
-            _pnlRes.CanFocus = false;
-            _pnlRes.Draw += DrawOverview;
-
-            _btnCreate = new Button(Manager);
-            _btnCreate.Init();
-            _btnCreate.Width = 80;
-            _btnCreate.Parent = _sidebar;
-            _btnCreate.Left = _pnlRes.Left;
-            _btnCreate.Top = _pnlRes.Top + _pnlRes.Height + 8;
-            _btnCreate.Text = Strings.TXT_KEY_UI_MAINAPPLICATION_START; // "Start";
-            _btnCreate.Click += BtnCreateClick;
-
-            _btnExit = new Button(Manager);
-            _btnExit.Init();
-            _btnExit.Width = 80;
-            _btnExit.Parent = _sidebar;
-            _btnExit.Left = _btnCreate.Left + _btnCreate.Width + 8;
-            _btnExit.Top = _pnlRes.Top + _pnlRes.Height + 8;
-            _btnExit.Text = Strings.TXT_KEY_UI_MAINAPPLICATION_EXIT;  // "Exit";
-            _btnExit.Click += BtnExitClick;
-
-            _btnCheck = new Button(Manager);
-            _btnCheck.Init();
-            _btnCheck.Width = 80;
-            _btnCheck.Parent = _sidebar;
-            _btnCheck.Left = _pnlRes.Left;
-            _btnCheck.Top = _pnlRes.Top + _pnlRes.Height + 8 + _btnCreate.Height + 8;
-            _btnCheck.Text = Strings.TXT_KEY_UI_MAINAPPLICATION_CHECK; // "Check";
-            _btnCheck.Click += BtnCheckClick;
-
-            _btnLoad = new Button(Manager);
-            _btnLoad.Init();
-            _btnLoad.Width = 80;
-            _btnLoad.Parent = _sidebar;
-            _btnLoad.Left = _pnlRes.Left + _btnCreate.Width + 8;
-            _btnLoad.Top = _pnlRes.Top + _pnlRes.Height + 8 + _btnCreate.Height + 8;
-            _btnLoad.Text = Strings.TXT_KEY_UI_MAINAPPLICATION_LOAD; // "Check";
-            _btnLoad.Click += BtnLoadClick;
-
-            _lblTerrainIcon = new ImageBox(Manager);
-            _lblTerrainIcon.Init();
-            _lblTerrainIcon.Image = IconProvider.DefaultTerrainIcon.GetThumbnail(64, 64);
-            _lblTerrainIcon.Anchor = Anchors.Left | Anchors.Top;
-            _lblTerrainIcon.Width = 64;
-            _lblTerrainIcon.Height = 64;
-            _lblTerrainIcon.Left = _pnlRes.Left;
-            _lblTerrainIcon.Top = _btnCheck.Top + _btnCheck.Height + 8;
-            _lblTerrainIcon.BackColor = Microsoft.Xna.Framework.Color.White;
-            _lblTerrainIcon.Parent = _sidebar;
-
-            _lblPosition = new Label(Manager);
-            _lblPosition.Init();
-            _lblPosition.Width = 90;
-            _lblPosition.Parent = _sidebar;
-            _lblPosition.Left = _pnlRes.Left + _lblTerrainIcon.Width + 16;
-            _lblPosition.Top = _btnCheck.Top + _btnCheck.Height + 8;
-            _lblPosition.Text = "Pos:";
-
-            _lblTerrainName = new Label(Manager);
-            _lblTerrainName.Init();
-            _lblTerrainName.Width = 90;
-            _lblTerrainName.Parent = _sidebar;
-            _lblTerrainName.Left = _pnlRes.Left + _lblTerrainIcon.Width + 16;
-            _lblTerrainName.Top = _btnCheck.Top + _btnCheck.Height + 8 + _lblPosition.Height;
-            _lblTerrainName.Text = "None";
-
-            _lblFeatures = new Label(Manager);
-            _lblFeatures.Init();
-            _lblFeatures.Width = 90;
-            _lblFeatures.Parent = _sidebar;
-            _lblFeatures.Left = _pnlRes.Left + _lblTerrainIcon.Width + 16;
-            _lblFeatures.Top = _btnCheck.Top + _btnCheck.Height + 8 + _lblPosition.Height + 8 + _lblTerrainName.Height;
-            _lblFeatures.Text = "Feat";
-
-            _lblResource = new Label(Manager);
-            _lblResource.Init();
-            _lblResource.Width = 90;
-            _lblResource.Parent = _sidebar;
-            _lblResource.Left = _pnlRes.Left + _lblTerrainIcon.Width + 16;
-            _lblResource.Top = _btnCheck.Top + _btnCheck.Height + 8 + _lblPosition.Height + 8 + _lblTerrainName.Height + 8 + _lblFeatures.Height;
-            _lblResource.Text = "Reso";
-
-            // Food Commercial Production
-            _imgFood = new ImageBox(Manager);
-            _imgFood.Init();
-            _imgFood.Image = IconProvider.FoodIcon.GetThumbnail(16, 16);
-            _imgFood.Anchor = Anchors.Left | Anchors.Top;
-            _imgFood.Width = 16;
-            _imgFood.Height = 16;
-            _imgFood.Left = _pnlRes.Left;
-            _imgFood.Top = _btnCheck.Top + _btnCheck.Height + 8 + _lblPosition.Height + 8 + _lblTerrainName.Height + 8 + _lblFeatures.Height + 8 + _lblResource.Height;
-            _imgFood.BackColor = Microsoft.Xna.Framework.Color.White;
-            _imgFood.Parent = _sidebar;
-
-            _lblFood = new Label(Manager);
-            _lblFood.Init();
-            _lblFood.Width = 12;
-            _lblFood.Parent = _sidebar;
-            _lblFood.Left = _pnlRes.Left + _imgFood.Width + 4;
-            _lblFood.Top = _btnCheck.Top + _btnCheck.Height + 8 + _lblPosition.Height + 8 + _lblTerrainName.Height + 8 + _lblFeatures.Height + 8 + _lblResource.Height;
-            _lblFood.Text = "0";
-
-            _imgCommercial = new ImageBox(Manager);
-            _imgCommercial.Init();
-            _imgCommercial.Image = IconProvider.GoldIcon.GetThumbnail(16, 16);
-            _imgCommercial.Anchor = Anchors.Left | Anchors.Top;
-            _imgCommercial.Width = 16;
-            _imgCommercial.Height = 16;
-            _imgCommercial.Left = _pnlRes.Left + _imgFood.Width + 4 + _lblFood.Width;
-            _imgCommercial.Top = _btnCheck.Top + _btnCheck.Height + 8 + _lblPosition.Height + 8 + _lblTerrainName.Height + 8 + _lblFeatures.Height + 8 + _lblResource.Height;
-            _imgCommercial.BackColor = Microsoft.Xna.Framework.Color.White;
-            _imgCommercial.Parent = _sidebar;
-
-            _lblCommercial = new Label(Manager);
-            _lblCommercial.Init();
-            _lblCommercial.Width = 12;
-            _lblCommercial.Parent = _sidebar;
-            _lblCommercial.Left = _pnlRes.Left + _imgFood.Width + 4 + _lblFood.Width + _imgCommercial.Width + 4;
-            _lblCommercial.Top = _btnCheck.Top + _btnCheck.Height + 8 + _lblPosition.Height + 8 + _lblTerrainName.Height + 8 + _lblFeatures.Height + 8 + _lblResource.Height;
-            _lblCommercial.Text = "0";
-
-            _imgProduction = new ImageBox(Manager);
-            _imgProduction.Init();
-            _imgProduction.Image = IconProvider.ProductionIcon.GetThumbnail(16, 16);
-            _imgProduction.Anchor = Anchors.Left | Anchors.Top;
-            _imgProduction.Width = 16;
-            _imgProduction.Height = 16;
-            _imgProduction.Left = _pnlRes.Left + _imgFood.Width + 4 + _lblFood.Width + _imgCommercial.Width + 4 + _lblCommercial.Width;
-            _imgProduction.Top = _btnCheck.Top + _btnCheck.Height + 8 + _lblPosition.Height + 8 + _lblTerrainName.Height + 8 + _lblFeatures.Height + 8 + _lblResource.Height;
-            _imgProduction.BackColor = Microsoft.Xna.Framework.Color.White;
-            _imgProduction.Parent = _sidebar;
-
-            _lblProduction = new Label(Manager);
-            _lblProduction.Init();
-            _lblProduction.Width = 12;
-            _lblProduction.Parent = _sidebar;
-            _lblProduction.Left = _pnlRes.Left + _imgFood.Width + 4 + _lblFood.Width + _imgCommercial.Width + 4 + _lblCommercial.Width + _imgProduction.Width + 4;
-            _lblProduction.Top = _btnCheck.Top + _btnCheck.Height + 8 + _lblPosition.Height + 8 + _lblTerrainName.Height + 8 + _lblFeatures.Height + 8 + _lblResource.Height;
-            _lblProduction.Text = "0";
-
-            _lblUnitName = new Label(Manager);
-            _lblUnitName.Init();
-            _lblUnitName.Width = 150;
-            _lblUnitName.Height = 100;
-            _lblUnitName.Parent = _sidebar;
-            _lblUnitName.Left = _pnlRes.Left;
-            _lblUnitName.Top = _btnCheck.Top + _btnCheck.Height + 8 + _lblPosition.Height + 8 + _lblTerrainName.Height + 8 + _lblFeatures.Height + 8 + _lblResource.Height + 8 + _lblFood.Height;
-            _lblUnitName.Text = "";
-
-            _lblRegion = new Label(Manager);
-            _lblRegion.Init();
-            _lblRegion.Width = 150;
-            _lblRegion.Height = 50;
-            _lblRegion.Parent = _sidebar;
-            _lblRegion.Left = _pnlRes.Left;
-            _lblRegion.Top = _lblUnitName.Top + _lblUnitName.Height + 8;
-            _lblRegion.Text = "";
-
-            //// /////////////////////
-            //// ui
-            //_imgZoomIn = new ImageBox(Manager);
-            //_imgZoomIn.Init();
-            //_imgZoomIn.Width = 50;
-            //_imgZoomIn.Left = Manager.GraphicsDevice.Viewport.Width - 90;
-            //_imgZoomIn.Top = Manager.GraphicsDevice.Viewport.Height - 120;
-            //_imgZoomIn.Image = IconProvider.ZoomInIcon.GetThumbnail(50,50);
-            //_imgZoomIn.Click += ImgZoomInClick;
-            //_imgZoomIn.ToolTip = new TomShane.Neoforce.Controls.ToolTip(Manager);
-            //_imgZoomIn.ToolTip.Text = "Zoom in";
-            //Add(_imgZoomIn);
-
-            //_imgZoomOut = new ImageBox(Manager);
-            //_imgZoomOut.Width = 50;
-            //_imgZoomOut.Left = Manager.GraphicsDevice.Viewport.Width - 90;
-            //_imgZoomOut.Top = Manager.GraphicsDevice.Viewport.Height - 180;
-            //_imgZoomOut.Image = IconProvider.ZoomOutIcon.GetThumbnail(50, 50);
-            //_imgZoomOut.Click += ImgZoomOutClick;
-            //_imgZoomOut.ToolTip = new TomShane.Neoforce.Controls.ToolTip(Manager);
-            //_imgZoomOut.ToolTip.Text = "Zoom out";
-            //Add(_imgZoomOut);
-
             Manager.Add(this);
 
             ShowMainDialog();
@@ -567,7 +333,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             if (lastFpsUpdate.TotalSeconds <= 0)
             {
                 this.Text = Strings.Title + ": " + fpsCounter.FrameRate + " FPS, mem: " + String.Format(new FileSizeFormatProvider(), "{0:fs}", GC.GetTotalMemory(false));
-                this.Text += ", Cursor: " + focus;
+                this.Text += ", Cursor: " + Focus;
                 lastFpsUpdate = TimeSpan.FromSeconds(3);
             }
 
@@ -586,17 +352,12 @@ namespace MiRo.SimHexWorld.Engine.UI
             _lblScience.Text = string.Format("{0:##.#}", Game.Human.ScienceSurplus);
         }
 
-        void ImgZoomOutClick(object sender, TomShane.Neoforce.Controls.EventArgs e)
+        public GameMapBox MapBox
         {
-            _mapBox.ZoomOut();
+            get { return GetControl("MapBox") as GameMapBox; }
         }
 
-        void ImgZoomInClick(object sender, TomShane.Neoforce.Controls.EventArgs e)
-        {
-            _mapBox.ZoomIn();
-        }
-
-        GameMapBox.ZoomState _oldState;
+        GameMapBox.ZoomState _oldZoomState;
         void ToogleView()
         {
             switch (_view)
@@ -607,8 +368,8 @@ namespace MiRo.SimHexWorld.Engine.UI
                     // city
                     ShowCityControls(true);
 
-                    _oldState = _mapBox.Zoom;
-                    _mapBox.Zoom = GameMapBox.ZoomState.VeryNear;
+                    _oldZoomState = MapBox.Zoom;
+                    MapBox.Zoom = GameMapBox.ZoomState.VeryNear;
                     _currentCity.InDetailView = true;
 
                     _view = MapView.City;
@@ -619,7 +380,7 @@ namespace MiRo.SimHexWorld.Engine.UI
                     // city
                     ShowCityControls(false);
 
-                    _mapBox.Zoom = _oldState;
+                    MapBox.Zoom = _oldZoomState;
 
                     _view = MapView.Main;
                     _currentCity.InDetailView = false;
@@ -635,15 +396,15 @@ namespace MiRo.SimHexWorld.Engine.UI
 
             //_sidebar.Visible = visible;
 
-            _lblUnit.Visible = visible;
+            //_lblUnit.Visible = visible;
 
             GetControl("OverviewTop").Visible = visible;
             GetControl("OverviewBottomRight").Visible = visible;
             GetControl("OverviewMap").Visible = visible;
 
-            _lblUnit.Visible = visible;
-            for (int i = 0; i < _actionButtons.Length; ++i)
-                _actionButtons[i].Visible = visible;
+            //_lblUnit.Visible = visible;
+            //for (int i = 0; i < _actionButtons.Length; ++i)
+            //    _actionButtons[i].Visible = visible;
 
             GetControl("LeftTopCorner").Visible = visible;
             GetControl("ResearchProgress").Visible = visible;
@@ -652,81 +413,81 @@ namespace MiRo.SimHexWorld.Engine.UI
 
         public bool FogOfWarEnabled
         {
-            get { return _mapBox.FogOfWarEnabled; }
+            get { return MapBox.FogOfWarEnabled; }
         }
 
-        void MapBox_FocusChanged(MapChangeArgs args)
-        {
-            if (args.Map == null)
-                return;
+        //void MapBox_FocusChanged(MapChangeArgs args)
+        //{
+        //    if (args.Map == null)
+        //        return;
 
-            if (_lblPosition != null)
-            {
-                HexPoint pt = args.UpdatedTiles.First();
-                focus = pt;
+        //    if (_lblPosition != null)
+        //    {
+        //        HexPoint pt = args.UpdatedTiles.First();
+        //        Focus = pt;
 
-                if (_mapBox.Map.IsValid(pt))
-                {
-                    MapCell cell = _mapBox.Map[pt];
-                    River river = _mapBox.Map.GetRiverAt(pt);
+        //        if (MapBox.Map.IsValid(pt))
+        //        {
+        //            MapCell cell = MapBox.Map[pt];
+        //            River river = MapBox.Map.GetRiverAt(pt);
 
-                    _lblPosition.Text = "Pos: " + pt; // +" " + (cell.IsCoast ? _mapBox.Map.GetCoastalTileIndex(pt.X, pt.Y).ToString() : "");
-                    _lblTerrainName.Text = cell.Terrain.Name;
-                    if (cell.Terrain.Image != null)
-                        _lblTerrainIcon.Image = cell.Terrain.Image.GetThumbnail(64, 64);
-                    else
-                        _lblTerrainIcon.Image = IconProvider.DefaultTerrainIcon.GetThumbnail(64, 64);
-                    _lblFeatures.Text = "Feat: " + cell.FeatureStr;
-                    _lblResource.Text = "Res:" + cell.RessourceStr + " " + (river == null ? "no river" : river.ToString());
+        //            _lblPosition.Text = "Pos: " + pt; // +" " + (cell.IsCoast ? _mapBox.Map.GetCoastalTileIndex(pt.X, pt.Y).ToString() : "");
+        //            _lblTerrainName.Text = cell.Terrain.Name;
+        //            if (cell.Terrain.Image != null)
+        //                _lblTerrainIcon.Image = cell.Terrain.Image.GetThumbnail(64, 64);
+        //            else
+        //                _lblTerrainIcon.Image = IconProvider.DefaultTerrainIcon.GetThumbnail(64, 64);
+        //            _lblFeatures.Text = "Feat: " + cell.FeatureStr;
+        //            _lblResource.Text = "Res:" + cell.RessourceStr + " " + (river == null ? "no river" : river.ToString());
 
-                    _lblFood.Text = cell.Food.ToString();
-                    _lblCommercial.Text = cell.Commerce.ToString();
-                    _lblProduction.Text = cell.Production.ToString();
+        //            _lblFood.Text = cell.Food.ToString();
+        //            _lblCommercial.Text = cell.Commerce.ToString();
+        //            _lblProduction.Text = cell.Production.ToString();
 
-                    List<Unit> units = MainWindow.Game.GetUnitsAt(pt);
-                    City city = MainWindow.Game.GetCityAt(pt);
-                    if (units.Count > 0 || city != null)
-                    {
-                        StringBuilder sb = new StringBuilder();
+        //            List<Unit> units = MainWindow.Game.GetUnitsAt(pt);
+        //            City city = MainWindow.Game.GetCityAt(pt);
+        //            if (units.Count > 0 || city != null)
+        //            {
+        //                StringBuilder sb = new StringBuilder();
 
-                        foreach (Unit u in units)
-                            sb.Append("Unit: " + u.Data.Title + " " + u.UnitAI + " " + u.Action + ",\n");
+        //                foreach (Unit u in units)
+        //                    sb.Append("Unit: " + u.Data.Title + " " + u.UnitAI + " " + u.Action + ",\n");
 
-                        if (city != null)
-                            sb.Append("City: " + city.Name + ",\n");
+        //                if (city != null)
+        //                    sb.Append("City: " + city.Name + ",\n");
 
-                        _lblUnitName.Text = sb.ToString().TrimEnd(',');
-                    }
-                    else
-                    {
-                        _lblUnitName.Text = "";
-                    }
+        //                _lblUnitName.Text = sb.ToString().TrimEnd(',');
+        //            }
+        //            else
+        //            {
+        //                _lblUnitName.Text = "";
+        //            }
 
-                    _lblRegion.Text = _mapBox.Map.GetRegionNames(pt);
+        //            _lblRegion.Text = MapBox.Map.GetRegionNames(pt);
 
-                    // influence
-                    foreach (AbstractPlayerData pl in MainWindow.Game.Players)
-                    {
-                        // only AI Players:
-                        if (pl.CityLocationMap != null)
-                            _lblRegion.Text += "\n" + pl.Civilization.Name + "=>" + pl.CityLocationMap[pt] + "=>" + pl.CityLocationMap.IsLocalMaximum(pt);
-                    }
-                }
-                else
-                {
-                    _lblPosition.Text = "Pos: " + pt;
-                    _lblTerrainName.Text = "(no terrain)";
-                    _lblTerrainIcon.Image = IconProvider.DefaultTerrainIcon.GetThumbnail(64, 64);
-                    _lblFeatures.Text = "(no feature)";
-                    _lblResource.Text = "(no resource)";
-                    _lblFood.Text = "-";
-                    _lblCommercial.Text = "-";
-                    _lblProduction.Text = "-";
-                    _lblUnitName.Text = "";
-                    _lblRegion.Text = "";
-                }
-            }
-        }
+        //            // influence
+        //            foreach (AbstractPlayerData pl in MainWindow.Game.Players)
+        //            {
+        //                // only AI Players:
+        //                if (pl.CityLocationMap != null)
+        //                    _lblRegion.Text += "\n" + pl.Civilization.Name + "=>" + pl.CityLocationMap[pt] + "=>" + pl.CityLocationMap.IsLocalMaximum(pt);
+        //            }
+        //        }
+        //        else
+        //        {
+        //            _lblPosition.Text = "Pos: " + pt;
+        //            _lblTerrainName.Text = "(no terrain)";
+        //            _lblTerrainIcon.Image = IconProvider.DefaultTerrainIcon.GetThumbnail(64, 64);
+        //            _lblFeatures.Text = "(no feature)";
+        //            _lblResource.Text = "(no resource)";
+        //            _lblFood.Text = "-";
+        //            _lblCommercial.Text = "-";
+        //            _lblProduction.Text = "-";
+        //            _lblUnitName.Text = "";
+        //            _lblRegion.Text = "";
+        //        }
+        //    }
+        //}
 
         void LblTurnClick(object sender, TomShane.Neoforce.Controls.EventArgs e)
         {
@@ -754,10 +515,10 @@ namespace MiRo.SimHexWorld.Engine.UI
                     break;
             }
 
-            _btnCreate.Text = Strings.TXT_KEY_UI_MAINAPPLICATION_START;
-            _btnCheck.Text = Strings.TXT_KEY_UI_MAINAPPLICATION_CHECK;
-            _btnLoad.Text = Strings.TXT_KEY_UI_MAINAPPLICATION_LOAD;
-            _btnExit.Text = Strings.TXT_KEY_UI_MAINAPPLICATION_EXIT;
+            //_btnCreate.Text = Strings.TXT_KEY_UI_MAINAPPLICATION_START;
+            //_btnCheck.Text = Strings.TXT_KEY_UI_MAINAPPLICATION_CHECK;
+            //_btnLoad.Text = Strings.TXT_KEY_UI_MAINAPPLICATION_LOAD;
+            //_btnExit.Text = Strings.TXT_KEY_UI_MAINAPPLICATION_EXIT;
             _lblCurrentTurn.Text = string.Format(Strings.TXT_KEY_UI_MAINAPPLICATION_TURN_PATTERN, _game.CurrentTurn, _game.Year);
             _btnTurn.Text = Strings.TXT_KEY_UI_MAINAPPLICATION_TURN;
         }
@@ -997,14 +758,14 @@ namespace MiRo.SimHexWorld.Engine.UI
             {
                 case GameNotification.CreateMapSuccess:
                     _game.Map = notification.Body as MapData;
-                    _mapBox.Map = _game.Map;
+                    MapBox.Map = _game.Map;
 
                     _game.Initialize();
 
                     break;
                 case GameNotification.LoadMapSuccess:
                     _game.Map = notification.Body as MapData;
-                    _mapBox.Map = _game.Map;
+                    MapBox.Map = _game.Map;
 
                     _game.Initialize();
                     break;

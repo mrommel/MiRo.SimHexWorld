@@ -14,5 +14,34 @@
       <ImageMode>Stretched</ImageMode>
       <Draw>Box_Draw</Draw>
     </Item>
+    <Item>
+      <Name>AdoptHonorButton</Name>
+      <Type>ImageBox</Type>
+      <Top>50</Top>
+      <Left>400</Left>
+      <Width>125</Width>
+      <Height>32</Height>
+      <StayOnBack>false</StayOnBack>
+      <StayOnTop>true</StayOnTop>
+      <ImageAsset>Content//Textures//UI//PolicyView//button</ImageAsset>
+      <ImageMode>Stretched</ImageMode>
+      <Click>Adopt_Click</Click>
+      <Draw>Adopt_Draw</Draw>
+    </Item>
+    <!-- icons -->
+    <Item>
+      <Name>WarriorCodeButton</Name>
+      <Type>ImageBox</Type>
+      <Top>50</Top>
+      <Left>35</Left>
+      <Width>44</Width>
+      <Height>44</Height>
+      <StayOnBack>false</StayOnBack>
+      <StayOnTop>true</StayOnTop>
+      <ImageAsset>Content//Textures//UI//PolicyView//button44</ImageAsset>
+      <ImageMode>Stretched</ImageMode>
+      <Click>Choose_Click</Click>
+      <Draw>Button_Draw</Draw>
+    </Item>
   </Asset>
 </XnaContent>

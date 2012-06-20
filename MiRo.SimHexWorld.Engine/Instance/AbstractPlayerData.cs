@@ -233,15 +233,13 @@ namespace MiRo.SimHexWorld.Engine.Instance
             }
         }
 
-        public List<Unit> GetUnitsAt(HexPoint pt)
+        public Unit GetUnitAt(HexPoint pt)
         {
-            List<Unit> units = new List<Unit>();
-
             foreach (Unit u in _units)
                 if (u.Point == pt)
-                    units.Add(u);
+                    return u;
 
-            return units;
+            return null;
         }
 
         public City GetCityAt(HexPoint pt)

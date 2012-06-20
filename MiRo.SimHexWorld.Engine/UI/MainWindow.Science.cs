@@ -14,7 +14,7 @@ namespace MiRo.SimHexWorld.Engine.UI
         Texture2D _scienceBackTexture, _scienceFrameTexture, _scienceTexture;
         float lastScience = -1;
         Texture2D _scienceMeterModTexture;
-        ScienceDialog sd;
+        public ScienceDialog ScienceDialog { get; set; }
 
         public void InitScienceControls()
         {
@@ -22,29 +22,14 @@ namespace MiRo.SimHexWorld.Engine.UI
             _scienceFrameTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//techpanelframe");
             _scienceTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//techpanelmeter");
 
-            LoadControls("Content//Controls//MainWindow.Science");    
-        }
-
-        public void LblResearch_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
-        {
-            if( Game.Human.CurrentResearch != null )
-                ScienceInfoDialog.Show(Manager, Game.Human.CurrentResearch, "Science");
+            ScienceDialog = new ScienceDialog(Manager);
+            ScienceDialog.Visible = false;
+            Manager.Add(ScienceDialog);
         }
 
         public void ShowScienceDialog()
         {
-            if (sd == null)
-            {
-                sd = new ScienceDialog(Manager);
-                Manager.Add(sd);
-            }
-
-            sd.ShowModal();
-        }
-
-        public void Science_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
-        {
-            ShowScienceDialog();
+            ScienceDialog.ShowModal();
         }
 
         public void LblResearch_Draw(object sender, DrawEventArgs e)

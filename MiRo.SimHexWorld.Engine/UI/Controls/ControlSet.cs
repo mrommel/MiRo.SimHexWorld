@@ -15,6 +15,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
     public class WindowSet
     {
         public string Title { get; set; }
+        public string Name { get; set; }
         public string Icon { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
@@ -24,6 +25,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         public void Init(GameWindow gameWindow, Manager manager)
         {
             gameWindow.Text = Title;
+            gameWindow.Name = Name;
             gameWindow.Icon = manager.Content.Load<Texture2D>(Icon);
             gameWindow.Width = Width;
             gameWindow.Height = Height;
@@ -37,8 +39,10 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         public void Init(Window parent, Manager manager)
         {
             foreach (ControlItem item in this)
+            {
                 item.Init(parent, manager);
-        }
+            }
+        } 
     }
 
     public class AtlasAsset
@@ -49,7 +53,6 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
     public class ControlItem
     {
-
         public string Name { get; set; }
         public string Type { get; set; }
 
@@ -118,11 +121,27 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         [ContentSerializer(Optional = true)]
         public string Text { get; set; }
 
+        #region events
+
         [ContentSerializer(Optional = true)]
         public string Click { get; set; }
 
-        [ContentSerializerIgnore]
-        MethodInfo EventFieldClick;
+        [ContentSerializer(Optional = true)]
+        public string FocusChanged { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public string CityOpened { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public string CitySelected { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public string HumanUnitSelected { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public string UnitUnselected { get; set; }
+
+        #endregion events
 
         [ContentSerializer(Optional = true)]
         public string Draw { get; set; }
@@ -196,20 +215,21 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
                     box.SizeMode = ImageMode;
 
-                    if (!string.IsNullOrEmpty(Click))
-                        box.Click += delegate(object sender, TomShane.Neoforce.Controls.EventArgs e)
-                        {
-                            if (EventFieldClick == null)
-                            {
-                                Type classType = parent.GetType();
-                                EventFieldClick = classType.GetMethod(Click);
-                            }
+                    box.Tag = this;
+                    //if (!string.IsNullOrEmpty(Click))
+                    //    box.Click += delegate(object sender, TomShane.Neoforce.Controls.EventArgs e)
+                    //    {
+                    //        //if (EventFieldClick == null)
+                    //        //{
+                    //        //    Type classType = parent.GetType();
+                    //        //    EventFieldClick = classType.GetMethod(Click);
+                    //        //}
 
-                            if (EventFieldClick == null)
-                                throw new Exception("Could not find: " + Draw + " method");
+                    //        //if (EventFieldClick == null)
+                    //        //    throw new Exception("Could not find: " + Draw + " method");
 
-                            EventFieldClick.Invoke(parent, new object[] { sender, e });
-                        };
+                    //        //EventFieldClick.Invoke(parent, new object[] { sender, e });
+                    //    };
 
                     if (!string.IsNullOrEmpty(Draw))
                         box.Draw += delegate(object sender, DrawEventArgs e)
@@ -260,6 +280,39 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
                     if (string.IsNullOrEmpty(Parent))
                         parent.Add(label);
+                    break;
+                case "GameMapBox":
+                    GameMapBox mapBox = new GameMapBox(manager);
+                    mapBox.Init();
+
+                    if (!string.IsNullOrEmpty(Parent))
+                        mapBox.Parent = parent.GetControl(Parent);
+
+                    mapBox.Name = Name;
+                    mapBox.Top = Top < 0 ? manager.GraphicsDevice.Viewport.Height + Top : Top;
+                    mapBox.Left = Left < 0 ? manager.GraphicsDevice.Viewport.Width + Left : Left;
+                    mapBox.Width = Width;
+                    mapBox.Height = Height;
+
+                    mapBox.StayOnBack = StayOnBack;
+                    mapBox.StayOnTop = StayOnTop;
+
+                    mapBox.Tag = this;
+
+                    if (BackColor != Color.Transparent)
+                        mapBox.BackColor = BackColor;
+
+                    if (Color != Color.Transparent)
+                        mapBox.Color = Color;
+
+                    if (TextColor != Color.Transparent)
+                        mapBox.TextColor = TextColor;
+                    else
+                        mapBox.TextColor = Color.Black;
+
+                    if (string.IsNullOrEmpty(Parent))
+                        parent.Add(mapBox);
+
                     break;
                 default:
                     throw new Exception("No handling for " + Type);

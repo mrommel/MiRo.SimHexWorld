@@ -2,6 +2,7 @@
 <XnaContent>
   <Asset Type="MiRo.SimHexWorld.Engine.UI.Controls.WindowSet">
     <Title>Science</Title>
+    <Name>ScienceDialog</Name>
     <Icon>Content\\Textures\\UI\\Globe_Icon_Small</Icon>
     <Width>600</Width>
     <Height>500</Height>
