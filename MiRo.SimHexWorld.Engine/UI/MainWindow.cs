@@ -21,7 +21,7 @@ namespace MiRo.SimHexWorld.Engine.UI
 {
     public partial class MainWindow : AssetWindow
     {
-        enum MapView { Main, City }
+        public enum MapView { Main, City }
 
         #region //// Fields ////////////
 
@@ -34,7 +34,7 @@ namespace MiRo.SimHexWorld.Engine.UI
         //GameMapBox _mapBox;
         //ContextMenu _ctxUnitMenu;
 
-        MapView _view = MapView.Main;
+        public MapView View { get; set; }
 
         SideBar _topBar;
         ImageBox _imgScience;
@@ -96,6 +96,8 @@ namespace MiRo.SimHexWorld.Engine.UI
             // Tell the resource manager what language to use when loading strings.
             Strings.Culture = CultureInfo.CurrentCulture;
 
+            View = MapView.Main;
+
             _defaultbg = Manager.Content.Load<Texture2D>("Content\\Textures\\UI\\bg_body3");
 
             var application = Manager.Game as Application;
@@ -133,10 +135,10 @@ namespace MiRo.SimHexWorld.Engine.UI
             e.GraphicsDeviceInformation.PresentationParameters.RenderTargetUsage = RenderTargetUsage.PreserveContents;
         }
 
-        void _btnCityExit_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
-        {
-            ToogleView();
-        }
+        //void _btnCityExit_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
+        //{
+        //    ToogleView();
+        //}
 
         private void InitMainControls()
         {
@@ -307,12 +309,6 @@ namespace MiRo.SimHexWorld.Engine.UI
             }
         }
 
-
-
-        void DrawOverview(object sender, DrawEventArgs e)
-        {
-        }
-
         TimeSpan lastFpsUpdate;
         protected override void Update(GameTime gameTime)
         {
@@ -337,8 +333,8 @@ namespace MiRo.SimHexWorld.Engine.UI
                 lastFpsUpdate = TimeSpan.FromSeconds(3);
             }
 
-            if (_view == MapView.City)
-                UpdateCityControls();
+            //if (View == MapView.City)
+            //    UpdateCityControls();
 
             UpdateMessages();
 
@@ -357,59 +353,59 @@ namespace MiRo.SimHexWorld.Engine.UI
             get { return GetControl("MapBox") as GameMapBox; }
         }
 
-        GameMapBox.ZoomState _oldZoomState;
-        void ToogleView()
-        {
-            switch (_view)
-            {
-                case MapView.Main:
-                    ShowMainControls(false);
+        //GameMapBox.ZoomState _oldZoomState;
+        //public void ToogleView()
+        //{
+        //    switch (View)
+        //    {
+        //        case MapView.Main:
+        //            ShowMainControls(false);
 
-                    // city
-                    ShowCityControls(true);
+        //            // city
+        //            ShowCityControls(true);
 
-                    _oldZoomState = MapBox.Zoom;
-                    MapBox.Zoom = GameMapBox.ZoomState.VeryNear;
-                    _currentCity.InDetailView = true;
+        //            _oldZoomState = MapBox.Zoom;
+        //            MapBox.Zoom = GameMapBox.ZoomState.VeryNear;
+        //            CurrentCity.InDetailView = true;
 
-                    _view = MapView.City;
-                    break;
-                case MapView.City:
-                    ShowMainControls(true);
+        //            View = MapView.City;
+        //            break;
+        //        case MapView.City:
+        //            ShowMainControls(true);
 
-                    // city
-                    ShowCityControls(false);
+        //            // city
+        //            ShowCityControls(false);
 
-                    MapBox.Zoom = _oldZoomState;
+        //            MapBox.Zoom = _oldZoomState;
 
-                    _view = MapView.Main;
-                    _currentCity.InDetailView = false;
-                    _currentCity = null;
-                    break;
-            }
-        }
+        //            View = MapView.Main;
+        //            CurrentCity.InDetailView = false;
+        //            CurrentCity = null;
+        //            break;
+        //    }
+        //}
 
-        private void ShowMainControls(bool visible)
-        {
-            //_imgZoomIn.Visible = visible;
-            //_imgZoomOut.Visible = visible;
+        //private void ShowMainControls(bool visible)
+        //{
+        //    //_imgZoomIn.Visible = visible;
+        //    //_imgZoomOut.Visible = visible;
 
-            //_sidebar.Visible = visible;
+        //    //_sidebar.Visible = visible;
 
-            //_lblUnit.Visible = visible;
+        //    //_lblUnit.Visible = visible;
 
-            GetControl("OverviewTop").Visible = visible;
-            GetControl("OverviewBottomRight").Visible = visible;
-            GetControl("OverviewMap").Visible = visible;
+        //    GetControl("OverviewTop").Visible = visible;
+        //    GetControl("OverviewBottomRight").Visible = visible;
+        //    GetControl("OverviewMap").Visible = visible;
 
-            //_lblUnit.Visible = visible;
-            //for (int i = 0; i < _actionButtons.Length; ++i)
-            //    _actionButtons[i].Visible = visible;
+        //    //_lblUnit.Visible = visible;
+        //    //for (int i = 0; i < _actionButtons.Length; ++i)
+        //    //    _actionButtons[i].Visible = visible;
 
-            GetControl("LeftTopCorner").Visible = visible;
-            GetControl("ResearchProgress").Visible = visible;
-            GetControl("ScienceDetail").Visible = visible;
-        }
+        //    GetControl("LeftTopCorner").Visible = visible;
+        //    GetControl("ResearchProgress").Visible = visible;
+        //    GetControl("ScienceDetail").Visible = visible;
+        //}
 
         public bool FogOfWarEnabled
         {

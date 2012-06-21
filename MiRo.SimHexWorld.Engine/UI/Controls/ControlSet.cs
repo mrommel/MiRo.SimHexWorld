@@ -51,6 +51,13 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         public string Name { get; set; }
     }
 
+    public class MenuItemEntry
+    {
+        public string Title { get; set; }
+        public string Click { get; set; }
+        public bool Enabled { get; set; }
+    }
+
     public class ControlItem
     {
         public string Name { get; set; }
@@ -59,9 +66,16 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         [ContentSerializer(Optional = true)]
         public string Parent { get; set; }
 
+        [ContentSerializer(Optional = true)]
         public int Top { get; set; }
+
+        [ContentSerializer(Optional = true)]
         public int Left { get; set; }
+
+        [ContentSerializer(Optional = true)]
         public int Width { get; set; }
+
+        [ContentSerializer(Optional = true)]
         public int Height { get; set; }
 
         [ContentSerializer(Optional = true)]
@@ -69,6 +83,15 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
         [ContentSerializer(Optional = true)]
         public bool StayOnTop { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public bool Passive { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public bool Visible { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public bool Enable { get; set; }
 
         private Color Color { get; set; }
 
@@ -149,6 +172,24 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         [ContentSerializerIgnore]
         MethodInfo EventFieldDraw;
 
+        [ContentSerializer(Optional = true)]
+        public List<MenuItemEntry> Items { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public bool HideSelection { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public string ContextMenu { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public string ItemIndexChanged { get; set; }
+
+        public ControlItem()
+        {
+            Visible = true;
+            Enable = true;
+        }
+
         public void Init(Window parent, Manager manager)
         {
             switch (Type)
@@ -168,6 +209,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
                     container.StayOnBack = StayOnBack;
                     container.StayOnTop = StayOnTop;
+                    container.Passive = Passive;
 
                     if (TextColor != Color.Transparent)
                         container.TextColor = TextColor;
@@ -177,6 +219,8 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
                     if (Color != Color.Transparent)
                         container.Color = Color;
+
+                    container.Visible = Visible;
 
                     container.AutoScroll = true;
 
@@ -198,6 +242,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
                     box.StayOnBack = StayOnBack;
                     box.StayOnTop = StayOnTop;
+                    box.Passive = Passive;
 
                     if (BackColor != Color.Transparent)
                         box.BackColor = BackColor;
@@ -215,21 +260,9 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
                     box.SizeMode = ImageMode;
 
+                    box.Visible = Visible;
+
                     box.Tag = this;
-                    //if (!string.IsNullOrEmpty(Click))
-                    //    box.Click += delegate(object sender, TomShane.Neoforce.Controls.EventArgs e)
-                    //    {
-                    //        //if (EventFieldClick == null)
-                    //        //{
-                    //        //    Type classType = parent.GetType();
-                    //        //    EventFieldClick = classType.GetMethod(Click);
-                    //        //}
-
-                    //        //if (EventFieldClick == null)
-                    //        //    throw new Exception("Could not find: " + Draw + " method");
-
-                    //        //EventFieldClick.Invoke(parent, new object[] { sender, e });
-                    //    };
 
                     if (!string.IsNullOrEmpty(Draw))
                         box.Draw += delegate(object sender, DrawEventArgs e)
@@ -264,6 +297,9 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
                     label.StayOnBack = StayOnBack;
                     label.StayOnTop = StayOnTop;
+                    label.Passive = Passive;
+
+                    label.Visible = Visible;
 
                     if (BackColor != Color.Transparent)
                         label.BackColor = BackColor;
@@ -296,8 +332,11 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
                     mapBox.StayOnBack = StayOnBack;
                     mapBox.StayOnTop = StayOnTop;
+                    mapBox.Passive = Passive;
 
                     mapBox.Tag = this;
+
+                    mapBox.Visible = Visible;
 
                     if (BackColor != Color.Transparent)
                         mapBox.BackColor = BackColor;
@@ -313,6 +352,118 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                     if (string.IsNullOrEmpty(Parent))
                         parent.Add(mapBox);
 
+                    break;
+                case "SideBar":
+                    SideBar sideBar = new SideBar(manager);
+                    sideBar.Init();
+
+                    sideBar.Name = Name;
+                    sideBar.Tag = this;
+                    sideBar.Enabled = Enable;
+
+                    sideBar.Top = Top < 0 ? manager.GraphicsDevice.Viewport.Height + Top : Top;
+                    sideBar.Left = Left < 0 ? manager.GraphicsDevice.Viewport.Width + Left : Left;
+                    sideBar.Width = Width;
+                    sideBar.Height = Height;
+
+                    sideBar.StayOnBack = StayOnBack;
+                    sideBar.StayOnTop = StayOnTop;
+                    sideBar.Passive = Passive;
+                    sideBar.Visible = Visible;
+
+                    if (BackColor != Color.Transparent)
+                        sideBar.BackColor = BackColor;
+
+                    if (Color != Color.Transparent)
+                        sideBar.Color = Color;
+
+                    if (TextColor != Color.Transparent)
+                        sideBar.TextColor = TextColor;
+                    else
+                        sideBar.TextColor = Color.Black;
+
+                    if (!string.IsNullOrEmpty(Draw))
+                        sideBar.Draw += delegate(object sender, DrawEventArgs e)
+                        {
+                            if (EventFieldDraw == null)
+                            {
+                                Type classType = parent.GetType();
+                                EventFieldDraw = classType.GetMethod(Draw);
+                            }
+
+                            if (EventFieldDraw == null)
+                                throw new Exception("Could not find: " + Draw + " method");
+
+                            EventFieldDraw.Invoke(parent, new object[] { sender, e });
+                        };
+
+                    if (!string.IsNullOrEmpty(Parent))
+                        sideBar.Parent = parent.GetControl(Parent);
+                    else
+                        parent.Add(sideBar);
+
+                    break;
+                case "ContextMenu":
+                    ContextMenu contextMenu = new ContextMenu(manager);
+                    contextMenu.Init();
+
+                    contextMenu.Name = Name;
+                    contextMenu.Tag = this;
+                    contextMenu.Passive = Passive;
+                    contextMenu.Enabled = Enable;
+
+                    foreach (MenuItemEntry entry in Items)
+                    {
+                        MenuItem menuItem = new MenuItem(entry.Title);
+                        menuItem.Enabled = entry.Enabled;
+
+                        contextMenu.Items.Add(menuItem);
+                    }
+
+                    if (!string.IsNullOrEmpty(Parent))
+                        contextMenu.Parent = parent.GetControl(Parent);
+                    else
+                        parent.Add(contextMenu);
+
+                    break;
+                case "ImageListBox":
+                    ImageListBox listBox = new ImageListBox(manager);
+                    listBox.Init();
+
+                    listBox.Name = Name;
+
+                    listBox.Top = Top < 0 ? manager.GraphicsDevice.Viewport.Height + Top : Top;
+                    listBox.Left = Left < 0 ? manager.GraphicsDevice.Viewport.Width + Left : Left;
+                    listBox.Width = Width;
+                    listBox.Height = Height;
+
+                    listBox.StayOnBack = StayOnBack;
+                    listBox.StayOnTop = StayOnTop;
+                    listBox.Passive = Passive;
+                    listBox.Enabled = Enable;
+                    listBox.Tag = this;
+
+                    listBox.Visible = Visible;
+
+                    if (BackColor != Color.Transparent)
+                        listBox.BackColor = BackColor;
+
+                    if (Color != Color.Transparent)
+                        listBox.Color = Color;
+
+                    if (TextColor != Color.Transparent)
+                        listBox.TextColor = TextColor;
+                    else
+                        listBox.TextColor = Color.Black;
+
+                    listBox.HideSelection = HideSelection;
+                    //listBox.ItemIndexChanged = ItemIndexChanged;
+                    listBox.ContextMenu = parent.GetControl(ContextMenu) as ContextMenu;
+
+                    if (!string.IsNullOrEmpty(Parent))
+                        listBox.Parent = parent.GetControl(Parent);
+                    else
+                        parent.Add(listBox);
                     break;
                 default:
                     throw new Exception("No handling for " + Type);

@@ -174,7 +174,6 @@
     <Compile Include="Types\TechnologyBonus.cs" />
     <Compile Include="Types\WonderData.cs" />
     <Compile Include="UI\AssetWindow.cs" />
-    <Compile Include="UI\ControlsSet.cs" />
     <Compile Include="UI\Controls\ControlSet.cs" />
     <Compile Include="UI\Controls\GameControl.cs" />
     <Compile Include="UI\Data\TeaserList.cs">

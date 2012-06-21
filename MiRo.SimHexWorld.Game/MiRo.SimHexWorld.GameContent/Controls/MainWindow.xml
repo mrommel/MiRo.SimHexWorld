@@ -182,6 +182,7 @@
         <Type>ImageBox</Type>
         <Top>-128</Top>
         <Left>272</Left>
+        <!-- 256 + 16 + i * 48-->
         <Width>48</Width>
         <Height>48</Height>
         <StayOnTop>true</StayOnTop>
@@ -195,6 +196,7 @@
         <Type>ImageBox</Type>
         <Top>-128</Top>
         <Left>320</Left>
+        <!-- 256 + 16 + i * 48-->
         <Width>48</Width>
         <Height>48</Height>
         <StayOnTop>true</StayOnTop>
@@ -203,21 +205,180 @@
         <Click>ActionButton_Click</Click>
         <Draw>ActionButton_Draw</Draw>
       </Item>
-      <!--_actionButtons[i] = new ImageBox(Manager);
-      _actionButtons[i].Init();
-      _actionButtons[i].Width = 48;
-      _actionButtons[i].Height = 48;
-      _actionButtons[i].Left = 256 + 16 + i * 48;
-      _actionButtons[i].Top = Manager.GraphicsDevice.Viewport.Height - 128;
-      _actionButtons[i].Tag = i;
-      _actionButtons[i].StayOnTop = true;
-      _actionButtons[i].Visible = false;
-      _actionButtons[i].Image = Manager.Content.Load<Texture2D>
-        ("Content//Textures//UI//UnitView//action");
-        _actionButtons[i].Draw += new DrawEventHandler(ActionButton_Draw);
-        _actionButtons[i].Click += new TomShane.Neoforce.Controls.EventHandler(ActionButton_Click);
-        _actionButtons[i].SizeMode = SizeMode.Stretched;-->
-        <!-- Units -->
+      <!-- Units -->
+      <!-- City -->
+      <Item>
+        <Name>LeftSide</Name>
+        <Type>ImageBox</Type>
+        <Top>20</Top>
+        <Left>0</Left>
+        <Width>100</Width>
+        <Height>795</Height>
+        <StayOnBack>true</StayOnBack>
+        <StayOnTop>false</StayOnTop>
+        <Visible>false</Visible>
+        <ImageAsset>Content//Textures//UI//CityView//leftside</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+      </Item>
+      <Item>
+        <Name>RightSide</Name>
+        <Type>ImageBox</Type>
+        <Top>20</Top>
+        <Left>-108</Left>
+        <Width>100</Width>
+        <Height>795</Height>
+        <StayOnBack>true</StayOnBack>
+        <StayOnTop>false</StayOnTop>
+        <Visible>false</Visible>
+        <ImageAsset>Content//Textures//UI//CityView//rightside</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+      </Item>
+      <Item>
+        <Name>CitynameTribe</Name>
+        <Type>ImageBox</Type>
+        <Top>20</Top>
+        <Left>672</Left>
+        <Width>256</Width>
+        <Height>64</Height>
+        <StayOnTop>true</StayOnTop>
+        <Visible>false</Visible>
+        <ImageAsset>Content//Textures//UI//CityView//tribeHeading</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+        <Draw>LblCitynameTribe_Draw</Draw>
+      </Item>
+      <Item>
+        <Name>Cityname</Name>
+        <Type>ImageBox</Type>
+        <Top>84</Top>
+        <Left>568</Left>
+        <Width>464</Width>
+        <Height>36</Height>
+        <StayOnTop>true</StayOnTop>
+        <Visible>false</Visible>
+        <ImageAsset>Content//Textures//UI//CityView//title</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+        <Draw>LblCityname_Draw</Draw>
+      </Item>
+      <!-- Cityview Sidebar -->
+      <Item>
+        <Name>CitySidebar</Name>
+        <Type>SideBar</Type>
+        <Top>20</Top>
+        <Left>-310</Left>
+        <Width>250</Width>
+        <Height>794</Height>
+        <StayOnBack>true</StayOnBack>
+        <StayOnTop>false</StayOnTop>
+        <Passive>true</Passive>
+        <Visible>false</Visible>
+        <ImageMode>Stretched</ImageMode>
+        <Draw>CitySidebar_Draw</Draw>
+      </Item>
+      <Item>
+        <Name>CityCitizen</Name>
+        <Type>Label</Type>
+        <Top>8</Top>
+        <Left>12</Left>
+        <Width>206</Width>
+        <Height>16</Height>
+        <StayOnBack>false</StayOnBack>
+        <StayOnTop>true</StayOnTop>
+        <Visible>false</Visible>
+        <ColorName>White</ColorName>
+        <TextColorName>White</TextColorName>
+        <Text>Citizen: 1</Text>
+      </Item>
+      <Item>
+        <Name>BuildingsToggle</Name>
+        <Type>ImageBox</Type>
+        <Top>84</Top>
+        <Left>-290</Left>
+        <!-- 10 -->
+        <Width>214</Width>
+        <Height>22</Height>
+        <StayOnBack>false</StayOnBack>
+        <StayOnTop>true</StayOnTop>
+        <Passive>false</Passive>
+        <Visible>false</Visible>
+        <ImageAsset>Content//Textures//UI//CityView//frametopbottom44</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+        <Click>BuildingsToggle_Click</Click>
+        <Draw>LblBuildings_Draw</Draw>
+      </Item>
+      <Item>
+        <Name>BuildingContextMenu</Name>
+        <Type>ContextMenu</Type>
+        <Items>
+          <Item>
+            <Title>Delete</Title>
+            <Click>BuildingDelete_Click</Click>
+            <Enabled>true</Enabled>
+          </Item>
+        </Items>
+      </Item>
+      <Item>
+        <Name>BuildingsList</Name>
+        <Type>ImageListBox</Type>
+        <!--<Parent>CitySidebar</Parent>-->
+        <Top>120</Top>
+        <Left>-290</Left>
+        <Width>206</Width>
+        <Height>200</Height>
+        <StayOnBack>false</StayOnBack>
+        <StayOnTop>true</StayOnTop>
+        <Visible>false</Visible>
+        <HideSelection>false</HideSelection>
+        <ContextMenu>BuildingContextMenu</ContextMenu>
+        <ItemIndexChanged>BuildingsList_ItemIndexChanged</ItemIndexChanged>
+      </Item>
+
+      <!-- CityView Production-->
+      <Item>
+        <Name>CurrentBuilding</Name>
+        <Type>Label</Type>
+        <Top>-302</Top>
+        <Left>0</Left>
+        <Width>256</Width>
+        <Height>24</Height>
+        <StayOnBack>false</StayOnBack>
+        <StayOnTop>true</StayOnTop>
+        <Visible>false</Visible>
+        <ColorName>White</ColorName>
+        <TextColorName>White</TextColorName>
+        <Text>None</Text>
+      </Item>
+      <Item>
+        <Name>CurrentProductionMeter</Name>
+        <Type>ImageBox</Type>
+        <Top>-326</Top>
+        <Left>0</Left>
+        <Width>256</Width>
+        <Height>256</Height>
+        <StayOnBack>false</StayOnBack>
+        <StayOnTop>true</StayOnTop>
+        <Visible>false</Visible>
+        <ImageAsset>Content//Textures//UI//CityView//productionpanelback</ImageAsset>
+        <ImageMode>Normal</ImageMode>
+        <Draw>LblProductionMeter_Draw</Draw>
+      </Item>
+      <!-- CityView Production-->
+
+      <Item>
+        <Name>CityExit</Name>
+        <Type>ImageBox</Type>
+        <Top>-160</Top>
+        <Left>675</Left>
+        <Width>250</Width>
+        <Height>44</Height>
+        <StayOnBack>false</StayOnBack>
+        <StayOnTop>true</StayOnTop>
+        <Visible>false</Visible>
+        <ImageAsset>Content//Textures//UI//CityView//button_background</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+        <Click>CityExit_Click</Click>
+        <Draw>BtnCityExit_Draw</Draw>
+      </Item>
+      <!-- City -->
     </Controls>
   </Asset>
 </XnaContent>

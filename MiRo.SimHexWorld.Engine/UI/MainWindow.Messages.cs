@@ -47,6 +47,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             for (int i = 0; i < _msgLabels.Length; i++)
             {
                 _msgLabels[i] = new ImageBox(Manager);
+                _msgLabels[i].Name = "Notification" + i;
                 _msgLabels[i].Init();
                 _msgLabels[i].Left = (Manager.GraphicsDevice.Viewport.Width - ( i == 0 ? 120 : 100 ));
                 _msgLabels[i].Width = i == 0 ? 64 : 48;
@@ -105,7 +106,7 @@ namespace MiRo.SimHexWorld.Engine.UI
                             {
                                 City city = not.Obj as City;
                                 MapBox.CenterAt(city.Point);
-                                _currentCity = city;
+                                CurrentCity = city;
                             }
                             break;
                     }
@@ -117,15 +118,18 @@ namespace MiRo.SimHexWorld.Engine.UI
 
         private void UpdateMessages()
         {
-            _messages.RemoveAll(a => a.Obsolete);
-
-            for (int i = _messages.Count; i < _msgLabels.Length; i++)
-                _msgLabels[i].Visible = false;
-
-            for (int i = 0; i < Math.Min(_msgLabels.Length, _messages.Count); i++)
+            if (View == MapView.Main)
             {
-                _msgLabels[i].Visible = true;
-                _msgLabels[i].Text = _messages[i].Text;
+                _messages.RemoveAll(a => a.Obsolete);
+
+                for (int i = _messages.Count; i < _msgLabels.Length; i++)
+                    _msgLabels[i].Visible = false;
+
+                for (int i = 0; i < Math.Min(_msgLabels.Length, _messages.Count); i++)
+                {
+                    _msgLabels[i].Visible = true;
+                    _msgLabels[i].Text = _messages[i].Text;
+                }
             }
         }
 

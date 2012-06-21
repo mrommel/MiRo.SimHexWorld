@@ -99,9 +99,39 @@ namespace MiRo.SimHexWorld.Engine.UI
                         {
                             _engine.Invoke("window", item.UnitUnselected, this);
                         };
+                    }          
+                }
+                else if (c is ImageListBox)
+                {
+                    ImageListBox list = c as ImageListBox;
+                    ControlItem item = c.Tag as ControlItem;
+
+                    if (item != null && !string.IsNullOrEmpty(item.ItemIndexChanged))
+                    {
+                        list.ItemIndexChanged += delegate(object sender, TomShane.Neoforce.Controls.EventArgs e)
+                        {
+                            _engine.Invoke("window", item.ItemIndexChanged, this, sender, e);
+                        };
                     }
-                    
-                } 
+                }
+                else if (c is ContextMenu)
+                {
+                    ContextMenu menu = c as ContextMenu;
+                    ControlItem item = c.Tag as ControlItem;
+
+                    for (int i = 0; i < item.Items.Count; i++)
+                    {
+                        MenuItemEntry entry = item.Items[i];
+
+                        if (!string.IsNullOrEmpty(entry.Click))
+                        {
+                            menu.Items[i].Click += delegate(object sender, TomShane.Neoforce.Controls.EventArgs e)
+                            {
+                                _engine.Invoke("window", entry.Click, this, sender, e);
+                            };
+                        }
+                    }
+                }
 
                 HookAction(c.Controls);
             }

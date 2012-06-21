@@ -85,9 +85,9 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
             // init control view
             controlViewport = new Viewport();
-            controlViewport.X = 7;
+            controlViewport.X = 4;
             controlViewport.Y = 27;
-            controlViewport.Width = Manager.GraphicsDevice.Viewport.Width - 14;
+            controlViewport.Width = Manager.GraphicsDevice.Viewport.Width - 8;
             controlViewport.Height = Manager.GraphicsDevice.Viewport.Height - 32;
         }
 

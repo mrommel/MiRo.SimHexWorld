@@ -50,10 +50,17 @@ namespace MiRo.SimHexWorld.Engine.AI
 
         public void Invoke(string varName, string methodName, params object[] param)
         {
-            var instance = _pyScope.GetVariable(varName);
+            try
+            {
+                var instance = _pyScope.GetVariable(varName);
 
-            // Invoke a method of the class
-            _pyEngine.Operations.InvokeMember(instance, methodName, param);
+                // Invoke a method of the class
+                _pyEngine.Operations.InvokeMember(instance, methodName, param);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
         }
         #endregion python method invocation
 
@@ -96,6 +103,10 @@ namespace MiRo.SimHexWorld.Engine.AI
                 ScriptSource source = _pyEngine.CreateScriptSourceFromString(code, SourceCodeKind.Statements);
                 CompiledCode compiled = source.Compile();
                 compiled.Execute(_pyScope);
+            }
+            catch (SyntaxErrorException ex)
+            {
+                MessageBox.Show("Syntax error in line: " + ex.Line + Environment.NewLine + "Error: " + ex.Message, "Error");
             }
             catch (Exception ex)
             {
