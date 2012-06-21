@@ -29,8 +29,8 @@
         <Name>OverviewTop</Name>
         <Type>ImageBox</Type>
         <Top>-388</Top>
-        <Left>-544</Left>
-        <Width>512</Width>
+        <Left>-554</Left>
+        <Width>540</Width>
         <Height>128</Height>
         <StayOnBack>true</StayOnBack>
         <ImageAsset>Content\\Textures\\UI\\MainView\\mapview</ImageAsset>
@@ -52,7 +52,7 @@
         <Type>ImageBox</Type>
         <Top>-260</Top>
         <Left>-438</Left>
-        <Width>406</Width>
+        <Width>424</Width>
         <Height>224</Height>
         <StayOnBack>true</StayOnBack>
         <ImageAsset>Content\\Textures\\UI\\MainView\\overviewBackground</ImageAsset>
@@ -96,10 +96,21 @@
         <ImageMode>Normal</ImageMode>
       </Item>
       <Item>
+        <Name>ResearchName</Name>
+        <Type>ImageBox</Type>
+        <Top>25</Top>
+        <Left>120</Left>
+        <Width>250</Width>
+        <Height>34</Height>
+        <StayOnBack>true</StayOnBack>
+        <ImageAsset>Content//Textures//UI//MainView//ScienceView//button_background</ImageAsset>
+        <ImageMode>Stretched</ImageMode>
+      </Item>
+      <Item>
         <Name>ResearchProgress</Name>
         <Type>ImageBox</Type>
         <Top>20</Top>
-        <Left>0</Left>
+        <Left>28</Left>
         <Width>128</Width>
         <Height>128</Height>
         <StayOnBack>true</StayOnBack>
