@@ -4,6 +4,8 @@
     <Title>MapOptions</Title>
     <Name>MapOptionDialog</Name>
     <Icon>Content\\Textures\\UI\\Globe_Icon_Small</Icon>
+    <Left>1000</Left>
+    <Top>700</Top>
     <Width>150</Width>
     <Height>200</Height>
     <Controls>
@@ -25,6 +27,7 @@
         <Left>20</Left>
         <Width>96</Width>
         <Height>24</Height>
+        <TextColorName>White</TextColorName>
         <Text>Hide Recommondations</Text>
       </Item>
       <Item>

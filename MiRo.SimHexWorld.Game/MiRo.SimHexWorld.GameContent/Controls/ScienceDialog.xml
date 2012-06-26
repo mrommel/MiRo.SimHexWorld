@@ -4,89 +4,132 @@
     <Title>Science</Title>
     <Name>ScienceDialog</Name>
     <Icon>Content\\Textures\\UI\\Globe_Icon_Small</Icon>
-    <Width>600</Width>
-    <Height>500</Height>
+    <Left>100</Left>
+    <Top>50</Top>
+    <Width>1100</Width>
+    <Height>700</Height>
     <Controls>
       <Item>
         <Name>Body</Name>
         <Type>Container</Type>
         <Top>5</Top>
         <Left>5</Left>
-        <Width>575</Width>
-        <Height>455</Height>
+        <Width>3500</Width>
+        <Height>650</Height>
         <ColorName>Black</ColorName>
       </Item>
       <!-- divider -->
       <Item>
-        <Name>AgricultureBackground</Name>
-        <Type>ImageBox</Type>
+        <Name>Agriculture</Name>
+        <Type>TechInfoButton</Type>
         <Parent>Body</Parent>
         <Top>350</Top>
         <Left>30</Left>
         <Width>273</Width>
         <Height>65</Height>
-        <ImageAsset>Content//Textures//UI//ScienceView//TechNoReach</ImageAsset>
-        <ImageMode>Stretched</ImageMode>
-      </Item>
-      <Item>
-        <Name>AgricultureIcon</Name>
-        <Type>ImageBox</Type>
-        <Parent>Body</Parent>
-        <Top>350</Top>
-        <Left>32</Left>
-        <Width>64</Width>
-        <Height>64</Height>
-        <AtlasAsset>
-          <Atlas>TechnologyAtlas</Atlas>
-          <Name>Agriculture</Name>
-        </AtlasAsset>
-        <ImageMode>Stretched</ImageMode>
-      </Item>
-      <Item>
-        <Name>AgricultureLabel</Name>
-        <Type>Label</Type>
-        <Parent>Body</Parent>
-        <Top>355</Top>
-        <Left>100</Left>
-        <Width>96</Width>
-        <Height>16</Height>
-        <Text>TXT_KEY_TECH_AGRICULTURE</Text>
+        <TechName>Agriculture</TechName>
       </Item>
       <!-- divider -->
       <Item>
-        <Name>PotteryBackground</Name>
-        <Type>ImageBox</Type>
+        <Name>Pottery</Name>
+        <Type>TechInfoButton</Type>
         <Parent>Body</Parent>
         <Top>50</Top>
         <Left>380</Left>
         <Width>273</Width>
         <Height>65</Height>
-        <ImageAsset>Content//Textures//UI//ScienceView//TechNoReach</ImageAsset>
-        <ImageMode>Stretched</ImageMode>
+        <Click>Tech_Click</Click>
+        <TechName>Pottery</TechName>
       </Item>
       <Item>
-        <Name>PotteryIcon</Name>
-        <Type>ImageBox</Type>
+        <Name>AnimalHusbandry</Name>
+        <Type>TechInfoButton</Type>
         <Parent>Body</Parent>
-        <Top>50</Top>
-        <Left>382</Left>
-        <Width>64</Width>
-        <Height>64</Height>
-        <AtlasAsset>
-          <Atlas>TechnologyAtlas</Atlas>
-          <Name>Pottery</Name>
-        </AtlasAsset>
-        <ImageMode>Stretched</ImageMode>
+        <Top>230</Top>
+        <Left>380</Left>
+        <Width>273</Width>
+        <Height>65</Height>
+        <Click>Tech_Click</Click>
+        <TechName>AnimalHusbandry</TechName>
       </Item>
       <Item>
-        <Name>PotteryLabel</Name>
-        <Type>Label</Type>
+        <Name>Archery</Name>
+        <Type>TechInfoButton</Type>
         <Parent>Body</Parent>
-        <Top>55</Top>
-        <Left>450</Left>
-        <Width>96</Width>
-        <Height>16</Height>
-        <Text>TXT_KEY_TECH_POTTERY</Text>
+        <Top>340</Top>
+        <Left>380</Left>
+        <Width>273</Width>
+        <Height>65</Height>
+        <Click>Tech_Click</Click>
+        <TechName>Archery</TechName>
+      </Item>
+      <Item>
+        <Name>Mining</Name>
+        <Type>TechInfoButton</Type>
+        <Parent>Body</Parent>
+        <Top>480</Top>
+        <Left>380</Left>
+        <Width>273</Width>
+        <Height>65</Height>
+        <Click>Tech_Click</Click>
+        <TechName>Mining</TechName>
+      </Item>
+      <!-- divider -->
+      <Item>
+        <Name>Sailing</Name>
+        <Type>TechInfoButton</Type>
+        <Parent>Body</Parent>
+        <Top>10</Top>
+        <Left>730</Left>
+        <Width>273</Width>
+        <Height>65</Height>
+        <Click>Tech_Click</Click>
+        <TechName>Sailing</TechName>
+      </Item>
+      <Item>
+        <Name>Calendar</Name>
+        <Type>TechInfoButton</Type>
+        <Parent>Body</Parent>
+        <Top>80</Top>
+        <Left>730</Left>
+        <Width>273</Width>
+        <Height>65</Height>
+        <Click>Tech_Click</Click>
+        <TechName>Calendar</TechName>
+      </Item>
+      <Item>
+        <Name>Writing</Name>
+        <Type>TechInfoButton</Type>
+        <Parent>Body</Parent>
+        <Top>150</Top>
+        <Left>730</Left>
+        <Width>273</Width>
+        <Height>65</Height>
+        <Click>Tech_Click</Click>
+        <TechName>Writing</TechName>
+      </Item>
+      <Item>
+        <Name>Trapping</Name>
+        <Type>TechInfoButton</Type>
+        <Parent>Body</Parent>
+        <Top>220</Top>
+        <Left>730</Left>
+        <Width>273</Width>
+        <Height>65</Height>
+        <Click>Tech_Click</Click>
+        <TechName>Trapping</TechName>
+      </Item>
+      <!-- Close -->
+      <Item>
+        <Name>Close</Name>
+        <Type>ImageButton</Type>
+        <Parent>Body</Parent>
+        <Top>600</Top>
+        <Left>10</Left>
+        <Width>180</Width>
+        <Height>32</Height>
+        <Text>Close</Text>
+        <Click>Close_Click</Click>
       </Item>
     </Controls>
   </Asset>

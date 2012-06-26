@@ -43,9 +43,9 @@ namespace MiRo.SimHexWorld.Engine.UI
         {
             foreach (Control c in controls)
             {
-                if (c is ImageBox)
+                if (c is ImageBox || c is ImageButton || c is TechInfoButton)
                 {
-                    ImageBox box = c as ImageBox;
+                    Control box = c as Control;
                     ControlItem item = c.Tag as ControlItem;
 
                     if (item != null && !string.IsNullOrEmpty(item.Click))
@@ -99,7 +99,7 @@ namespace MiRo.SimHexWorld.Engine.UI
                         {
                             _engine.Invoke("window", item.UnitUnselected, this);
                         };
-                    }          
+                    }
                 }
                 else if (c is ImageListBox)
                 {
@@ -135,6 +135,11 @@ namespace MiRo.SimHexWorld.Engine.UI
 
                 HookAction(c.Controls);
             }
+        }
+
+        public void Execute(string var, string method, Control c, object sender, TomShane.Neoforce.Controls.EventArgs args)
+        {
+            _engine.Invoke(var, method, c, sender, args);
         }
 
         protected class Callback : IScriptable

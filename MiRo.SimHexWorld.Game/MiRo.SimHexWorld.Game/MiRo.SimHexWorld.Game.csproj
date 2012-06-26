@@ -120,9 +120,6 @@
     <Reference Include="System.Net">
       <Private>False</Private>
     </Reference>
-    <Reference Include="TomShane.Neoforce.Controls">
-      <HintPath>..\..\MiRo.SimHexWorld.Engine\Lib\TomShane.Neoforce.Controls.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,6 +137,10 @@
     <ProjectReference Include="..\..\MiRo.SimHexWorld.Engine\MiRo.SimHexWorld.Engine.csproj">
       <Project>{9CF0F8A8-AAE6-41E2-A101-9BB678589BA7}</Project>
       <Name>MiRo.SimHexWorld.Engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TomShane.Neoforce.Controls\TomShane.Neoforce.Controls.csproj">
+      <Project>{9C8328B3-97FC-4F39-A1BC-6DC4A1730C26}</Project>
+      <Name>TomShane.Neoforce.Controls</Name>
     </ProjectReference>
     <ProjectReference Include="..\MiRo.SimHexWorld.GameContent\MiRo.SimHexWorld.GameContent.contentproj">
       <Name>MiRo.SimHexWorld.GameContent %28Content%29</Name>

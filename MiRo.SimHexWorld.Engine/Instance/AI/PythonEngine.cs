@@ -57,6 +57,10 @@ namespace MiRo.SimHexWorld.Engine.AI
                 // Invoke a method of the class
                 _pyEngine.Operations.InvokeMember(instance, methodName, param);
             }
+            catch (NotImplementedException ex)
+            {
+                MessageBox.Show("Method not implemented: " + methodName, "Error");
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error");

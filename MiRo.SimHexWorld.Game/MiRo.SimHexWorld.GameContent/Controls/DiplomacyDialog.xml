@@ -4,6 +4,8 @@
     <Title>Diplomacy</Title>
     <Name>DiplomacyDialog</Name>
     <Icon>Content\\Textures\\UI\\Globe_Icon_Small</Icon>
+    <Left>200</Left>
+    <Top>200</Top>
     <Width>300</Width>
     <Height>500</Height>
     <Controls>

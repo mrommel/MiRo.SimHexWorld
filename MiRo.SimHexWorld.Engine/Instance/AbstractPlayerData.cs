@@ -47,6 +47,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
         protected float _culture = 0L;
         private int adoptedPolicies = 0;
+        int _freePolicies = 0;
 
         // AI
         public InfluenceMap CityLocationMap;
@@ -216,13 +217,36 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
         public List<City> Cities
         {
-            get
-            { return _cities; }
+            get { return _cities; }
         }
 
         public List<Policy> Policies
         {
             get { return _policies; }
+        }
+
+        public List<Policy> PoliciesInReach
+        {
+            get
+            {
+                List<Policy> reach = new List<Policy>();
+
+                foreach (Policy p in Provider.Instance.Policies.Values)
+                {
+                    if( !HasEra( p.PolicyType.EraName ) )
+                        continue;
+
+                    bool inReach = true;
+                    foreach (string pName in p.RequiredPolicyNames)
+                        if (!_policies.Select( a => a.Name).Contains(pName))
+                            inReach = false;
+
+                    if (inReach)
+                        reach.Add(p);
+                }
+
+                return reach;
+            }
         }
 
         public List<Unit> Units
@@ -289,6 +313,11 @@ namespace MiRo.SimHexWorld.Engine.Instance
         public List<Era> Eras
         {
             get { return _eras; }
+        }
+
+        public bool HasEra(string eraName)
+        {
+            return _eras.Select(a => a.Name).Contains(eraName);
         }
 
         public void DiscoverTechnology(Tech tech)
@@ -513,7 +542,11 @@ namespace MiRo.SimHexWorld.Engine.Instance
             }
         }
 
-        int freePolicies = 0;
+        public int FreePolicies
+        {
+            get { return _freePolicies; }
+        }
+        
         protected void UpdateCulture()
         {
             _culture += CultureSuplus;
@@ -533,7 +566,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
                         this);
 
                     adoptedPolicies++;
-                    freePolicies++;
+                    _freePolicies++;
                     _culture -= neededCulture;
                 }
                 else
@@ -575,7 +608,6 @@ namespace MiRo.SimHexWorld.Engine.Instance
             {
                 PolicyType bestPolicyType = typeMap.Best;
 
-
                 if (policyMap.Items.Count == 0)
                 {
                     if (!AdoptPolicyType(bestPolicyType))
@@ -598,7 +630,8 @@ namespace MiRo.SimHexWorld.Engine.Instance
             }
             else
             {
-                Assert.Greater(policyMap.Items.Count, 0, "There must be at least one policy to select!");
+                if (policyMap.Items.Count == 0 )
+                    throw new Exception("There must be at least one policy to select!");
 
                 AdoptPolicy(policyMap.RandomOfBest3);
             }
@@ -802,13 +835,13 @@ namespace MiRo.SimHexWorld.Engine.Instance
                 float cultureNeededForChange = CultureNeededForChange;
 
                 // handle human policies
-                if (freePolicies > 0)
+                if (_freePolicies > 0)
                 {
                     // finally add it
                     _policyTypes.Add(type);
                     _policies.Add(type.FreePolicy);
 
-                    freePolicies--;
+                    _freePolicies--;
                     return true;
                 }
                 else if (_culture >= cultureNeededForChange)
@@ -836,11 +869,11 @@ namespace MiRo.SimHexWorld.Engine.Instance
                 // check if enough culture is there
                 float cultureNeededForChange = CultureNeededForChange;
 
-                if (freePolicies > 0)
+                if (_freePolicies > 0)
                 {
                     adoptedPolicies++;
                     _policies.Add(policy);
-                    freePolicies--;
+                    _freePolicies--;
                     return true;
                 }
                 else if (_culture >= cultureNeededForChange)

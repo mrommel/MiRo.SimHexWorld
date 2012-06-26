@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <XnaContent>
   <Asset Type="MiRo.SimHexWorld.Engine.UI.Controls.WindowSet">
-    <Title>MapOptions</Title>
+    <Title>MainWindow</Title>
     <Name>MainWindow</Name>
     <Icon>Content\\Textures\\UI\\Globe_Icon_Small</Icon>
+    <Left>0</Left>
+    <Top>0</Top>
     <Width>1600</Width>
     <Height>850</Height>
     <Controls>
@@ -70,6 +72,8 @@
         <ImageAsset>Content\\Textures\\UI\\MainView\\Overview\\mainstrategicbutton</ImageAsset>
         <ImageMode>Stretched</ImageMode>
         <Click>MapOptions_Click</Click>
+        <ToolTip>Open Map options dialog
+        You can toggle different options</ToolTip>
       </Item>
       <Item>
         <Name>NoteOptions</Name>
@@ -81,6 +85,11 @@
         <StayOnBack>true</StayOnBack>
         <ImageAsset>Content\\Textures\\UI\\MainView\\Overview\\notificationnotes</ImageAsset>
         <ImageMode>Stretched</ImageMode>
+        <ToolTip>
+          Open [link=noti] Notification [/link] options dialog
+          You can toggle different options
+          [Food] Capital [Happiness]
+        </ToolTip>
       </Item>
       <!-- Overview -->
       <!-- Science -->

@@ -984,8 +984,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Textures\Goods\Civ5icon_capital.png">
-      <Name>Civ5icon_capital</Name>
+    <Compile Include="Textures\Goods\capital.png">
+      <Name>capital</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -1918,6 +1918,7 @@
       <Name>DiplomacyDialog</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
+      <SubType>Designer</SubType>
     </Compile>
     <Compile Include="Controls\ScienceDialog.xml">
       <Name>ScienceDialog</Name>
@@ -1950,33 +1951,8 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
-    <Compile Include="Controls\PolicyChooseDialog\Tradition.xml">
-      <Name>Tradition</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
-    <Compile Include="Controls\PolicyChooseDialog\Liberty.xml">
-      <Name>Liberty</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
     <Compile Include="Policies\Liberty\CollectiveRule.xml">
       <Name>CollectiveRule</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
-    <Compile Include="Controls\PolicyChooseDialog\Honor.xml">
-      <Name>Honor</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
-    <Compile Include="Controls\PolicyChooseDialog\Piety.xml">
-      <Name>Piety</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
-    <Compile Include="Controls\PolicyChooseDialog\Patronage.xml">
-      <Name>Patronage</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
@@ -2010,18 +1986,8 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
-    <Compile Include="Controls\PolicyChooseDialog\Order.xml">
-      <Name>Order</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
     <Compile Include="PolicyTypes\Order.xml">
       <Name>Order</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
-    <Compile Include="Controls\PolicyChooseDialog\Autocracy.xml">
-      <Name>Autocracy</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
@@ -2082,6 +2048,19 @@
       <Name>MainWindow</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
+      <SubType>Designer</SubType>
+    </Compile>
+    <Compile Include="Controls\PolicyChooseDialog.xml">
+      <Name>PolicyChooseDialog</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <SubType>Designer</SubType>
+    </Compile>
+    <Compile Include="Controls\PolicyChooseDialogActions.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>PolicyChooseDialogActions</Name>
+      <Importer>PythonScriptImporter</Importer>
+      <Processor>PythonScriptProcessor</Processor>
     </Compile>
     <Content Include="Skins\Default.skin">
       <Name>Default</Name>
@@ -3455,6 +3434,16 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="Textures\UI\ScienceView\TechReached.png">
+      <Name>TechReached</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\ScienceView\button_backgroundDisabled.png">
+      <Name>button_backgroundDisabled</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fonts\Default.spritefont">
@@ -3471,6 +3460,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controls\PolicyChooseDialog\" />
     <Folder Include="Paces\" />
     <Folder Include="Textures\UI\DiplomacyView\" />
   </ItemGroup>

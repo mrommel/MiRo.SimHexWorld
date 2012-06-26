@@ -178,5 +178,17 @@ namespace MiRo.SimHexWorld.Engine.UI
                 return _zoomOutIcon;
             }
         }
+
+        static Texture2D _capitalIcon;
+        public static Texture2D CapitalIcon
+        {
+            get
+            {
+                if (_capitalIcon == null)
+                    _capitalIcon = MainApplication.ManagerInstance.Content.Load<Texture2D>("Content\\Textures\\Goods\\capital");
+
+                return _capitalIcon;
+            }
+        }
     }
 }

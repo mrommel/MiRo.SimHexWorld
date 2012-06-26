@@ -233,33 +233,6 @@ namespace MiRo.SimHexWorld.Engine.UI
                 e.Renderer.Draw(CurrentCity.CurrentBuildingTarget.Image, r, Color.White);
         }
 
-        //public void UpdateCityControls()
-        //{
-        //    if (CurrentCity == null)
-        //        return;
-
-        //    //_lblCitizen.Text = "Citizen: " + CurrentCity.Citizen + " (" + CurrentCity.Population + ")";
-
-        //    //if (CurrentCity.CurrentBuildingTarget != null)
-        //    //    _lblCurrentBuilding.Text = CurrentCity.CurrentBuildingTarget.Title + "(" + (int)(CurrentCity.ProductionReady * 100) + "%)";
-        //    //else
-        //    //    _lblCurrentBuilding.Text = "";
-
-        //    //_lstBuildings.Items.Clear();
-        //    //foreach (Building building in CurrentCity.Buildings)
-        //    //    _lstBuildings.Items.Add(building);
-        //}
-
-        //private void ShowCityControls(bool show)
-        //{
-        //    _lblCurrentBuilding.Visible = show;
-        //    //_btnCityExit.Visible = show;
-        //    //_citySidebar.Visible = show;
-        //    //_lblCityname.Visible = show;
-        //    //_lblCitynameTribe.Visible = show;
-        //    _lblProductionMeter.Visible = show;
-        //}
-
         public void CitySidebar_Draw(object sender, DrawEventArgs e)
         {
             e.Renderer.Draw(IconProvider.Pixel, e.Rectangle, Microsoft.Xna.Framework.Color.Black);
@@ -267,37 +240,6 @@ namespace MiRo.SimHexWorld.Engine.UI
             Rectangle r2 = new Rectangle(e.Rectangle.X, e.Rectangle.Y, 11, e.Rectangle.Height);
             e.Renderer.Draw(_overviewSideTextureLeft, r2, Color.White);
         }
-
-        //void _lstBuildings_ItemIndexChanged(object sender, TomShane.Neoforce.Controls.EventArgs e)
-        //{
-        //    _miBuildingDelete.Enabled = _lstBuildings.ItemIndex != -1;
-        //}
-
-        //public enum YesNoChoises { Yes, No };
-        //Building _buildingToDemolish;
-        //void ctxBuildingDelete_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
-        //{
-        //    string building = _lstBuildings.Items[_lstBuildings.ItemIndex].ToString();
-        //    _buildingToDemolish = _lstBuildings.Items[_lstBuildings.ItemIndex] as Building;
-        //    ChooseEnumDialog ced = new ChooseEnumDialog();
-        //    ced.ShowChooseEnumDialog(Manager, string.Format("Really delete {0}?", building), typeof(YesNoChoises), ctxBuildings_Delete_Click);
-        //}
-
-        //void ctxBuildings_Delete_Click(object sender, EnumChooseEventArgs e)
-        //{
-        //    if ((YesNoChoises)e.SelectedEnum == YesNoChoises.Yes)
-        //    {
-        //        CurrentCity.Demolish(_buildingToDemolish);
-        //    }
-        //}
-
-        //void _lblBuildings_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
-        //{
-        //    //_lstBuildings.Height = _lstBuildings.Height == 0 ? 200 : 0;
-        //    _lstBuildings.Visible = !_lstBuildings.Visible;
-
-        //    UpdateCityControlsHeight();
-        //}
 
         private void UpdateCityControlsHeight()
         {
