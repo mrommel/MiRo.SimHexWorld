@@ -584,5 +584,10 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
                 return HexDirection.SouthEast;
             return HexDirection.East;
         }
+
+        public static HexPoint operator +(HexPoint pt1, HexPoint pt2)
+        {
+            return new HexPoint(pt1.X + pt2.X, pt1.Y + pt2.Y);
+        }
     }
 }

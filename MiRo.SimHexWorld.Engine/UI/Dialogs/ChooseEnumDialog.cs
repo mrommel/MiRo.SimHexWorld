@@ -44,6 +44,8 @@ namespace MiRo.SimHexWorld.Engine.UI.Dialogs
             window.Init();
             window.Width = 175;
             window.Text = caption;
+            window.Icon = IconProvider.ApplicationIcon;
+            window.CaptionVisible = true;
             window.Closing += OnChooseEnumDialogClosing;
             window.Visible = true;
 

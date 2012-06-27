@@ -40,6 +40,7 @@ namespace MiRo.SimHexWorld.Engine.AI
             _pyScope = _pyEngine.CreateScope();
             _pyScope.SetVariable("handler", _scriptHandler); // ([name], [value]) 
             _pyScope.SetVariable("game", MainWindow.Game);
+            _pyScope.SetVariable("config", MainWindow.Config);
         }
 
         #region python method invocation

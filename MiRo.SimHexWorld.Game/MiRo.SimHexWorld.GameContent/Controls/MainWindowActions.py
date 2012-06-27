@@ -3,23 +3,69 @@
 import clr
 clr.AddReferenceToFileAndPath("MiRo.SimHexWorld.Engine.dll")
 clr.AddReferenceToFileAndPath("TomShane.Neoforce.Controls.dll")
+clr.AddReferenceToFileAndPath("Microsoft.Xna.Framework.dll")
 
 from MiRo.SimHexWorld.Engine.Types import UnitAction
 from MiRo.SimHexWorld.Engine.UI import MainWindow
-from TomShane.Neoforce.Controls import ImageBox
+from TomShane.Neoforce.Controls import ImageBox, MouseButton
 from MiRo.SimHexWorld.Engine.UI.Controls import GameMapBox
+from MiRo.SimHexWorld.Engine.UI import NotificationType
+from Microsoft.Xna.Framework.Input import Keys
 
+""" 
+	MainWindow class handlers 
+"""
 class Window:
-	""" MainWindow class handlers """
+	"""
+		init window
+	"""
 	def Initialize(self, parent):
 		self.parent = parent
 
+	"""
+		handle keys pressed
+	"""
+	def HandleKey( self, window, keyEventArgs ):
+		""" Main View """
+		if window.View == MainWindow.MapView.Main:
+			if keyEventArgs.Key == Keys.Left:
+				window.GetControl("MapBox").MoveCenter(-1,0)
+				keyEventArgs.Handled = True
+
+			if keyEventArgs.Key == Keys.Right:
+				window.GetControl("MapBox").MoveCenter(1,0)
+				keyEventArgs.Handled = True
+
+			if keyEventArgs.Key == Keys.Up:
+				window.GetControl("MapBox").MoveCenter(0,-1)
+				keyEventArgs.Handled = True
+
+			if keyEventArgs.Key == Keys.Down:
+				window.GetControl("MapBox").MoveCenter(0,1)
+				keyEventArgs.Handled = True
+
+		""" City View """
+		if window.View == MainWindow.MapView.City:
+			if keyEventArgs.Key == Keys.Left:
+				window.FocusPreviousCity()
+				keyEventArgs.Handled = True
+
+			if keyEventArgs.Key == Keys.Right:
+				window.FocusNextCity()
+				keyEventArgs.Handled = True
+
+	"""
+		focus changed handler
+	"""
 	def FocusChanged(self, window, mapChangeArgs):
 		if (mapChangeArgs.Map == None):
 			return
-		self.parent.Focus = mapChangeArgs.UpdatedTiles[0]
-		return
 
+		self.parent.Focus = mapChangeArgs.UpdatedTiles[0]
+
+	"""
+		update control values
+	"""
 	def ShowMainControls(self, show):
 		""" overview controls """
 		self.parent.GetControl("OverviewTop").Visible = show
@@ -129,6 +175,7 @@ class Window:
 
 		window.GetControl("UnitAction0").Visible = False
 		window.GetControl("UnitAction1").Visible = False
+		window.GetControl("UnitAction2").Visible = False
 
 	def HumanUnitSelected( self, window, unit):
 		window.CurrentUnit = unit
@@ -158,20 +205,30 @@ class Window:
 			window.CurrentUnit.Execute(action)
 			args.Handled = True
 
+	"""
+		open pedia after unit icon clicked
+	"""
 	def Unit_Click( self, window, sender, args ):
-		pass
+		if self.parent.CurrentUnit != None:
+			window.Pedia.Focus = self.parent.CurrentUnit.Data
+			window.Pedia.ShowModal()
 
 	def BtnAdvisors_Click( self, window, sender, args ):
 		pass
 
+	""" 
+		toggle map option view 
+	"""
 	def MapOptions_Click( self, window, sender, args ):
-		""" toggle map option view """
 		window.MapOptions.Visible = not window.MapOptions.Visible;
 
-	def LblResearch_Click( self, window, sender, args ):
-		""" if( Game.Human.CurrentResearch != None )
-			ScienceInfoDialog.Show(Manager, Game.Human.CurrentResearch, "Science");"""
-		pass
+	"""
+		open pedia after research icon clicked
+	"""
+	def Research_Click( self, window, sender, args ):
+		if game.Human.CurrentResearch != None:
+			window.Pedia.Focus = game.Human.CurrentResearch
+			window.Pedia.ShowModal()
 
 	def Science_Click( self, window, sender, args ):
 		window.ScienceDialog.ShowModal()
@@ -187,12 +244,6 @@ class Window:
 		if sender.ItemIndex != -1:
 			for item in self.parent.GetControl("BuildingsList").ContextMenu.Items:
 				item.Enabled = True
-				#handler.Callback(str(item.Text) + " " + str(item.Enabled), None)
-
-			#handler.Callback("enabled", None)
-		#else:
-			#for item in sender.ContextMenu.Items:
-			#	item.Enabled = False
 
 	def BuildingDelete_Click( self, window, sender, args ):
 		handler.Callback("delete", None)
@@ -202,6 +253,35 @@ class Window:
 
 	def BuildingsToggle_Click( self, window, sender, args ):
 		self.parent.GetControl("BuildingsList").Visible = not self.parent.GetControl("BuildingsList").Visible
-		#handler.Callback("toggle", None)
+
+	"""
+		notification clicked
+	"""
+	def Notification_Click( self, window, sender, args ):
+		num = int(sender.Name[-1])	
+		
+		if window.Messages.Count > num:
+
+			if args.Button == MouseButton.Left:
+
+				if window.Messages[num].Type == NotificationType.CityGrowth or window.Messages[num].Type == NotificationType.CityDecline or window.Messages[num].Type == NotificationType.FoundCity:
+					window.MapBox.CenterAt(window.Messages[num].Obj.Point)
+
+				elif window.Messages[num].Type == NotificationType.ImprovementReady:
+					window.MapBox.CenterAt(window.Messages[num].Obj[1])
+ 
+				elif window.Messages[num].Type == NotificationType.Science:
+					window.ScienceDialog.ShowModal()
+
+				elif window.Messages[num].Type == NotificationType.PolicyReady:
+					window.PolicyChooseDialog.ShowModal()
+
+				elif window.Messages[num].Type == NotificationType.ProducationReady:
+					MapBox.CenterAt(window.Messages[num].Obj.Point)
+					CurrentCity = window.Messages[num].Obj
+
+			""" event is handled """
+			window.Messages[num].Obsolete = True
+
 
 window = Window()

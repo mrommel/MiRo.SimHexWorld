@@ -94,6 +94,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         protected override void Update(GameTime gameTime)
         {
             HandleKeyboard();
+            HandleMouse();
 
             _mapRenderer.Update(gameTime);
 
@@ -111,32 +112,10 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         HexPoint _dragStart;
         private void HandleKeyboard()
         {
-            int dx = 0, dy = 0;
-
             KeyboardState keyState = Keyboard.GetState();
-            if ((keyState.IsKeyDown(Keys.Up) || keyState.IsKeyDown(Keys.W)) &&
-                !(_oldKeyState.IsKeyDown(Keys.Up) || _oldKeyState.IsKeyDown(Keys.W)))
-                dy = -1;
-            if ((keyState.IsKeyDown(Keys.Down) || keyState.IsKeyDown(Keys.S)) &&
-                !(_oldKeyState.IsKeyDown(Keys.Down) || _oldKeyState.IsKeyDown(Keys.S)))
-                dy = 1;
-            if ((keyState.IsKeyDown(Keys.Right) || keyState.IsKeyDown(Keys.D)) &&
-                !(_oldKeyState.IsKeyDown(Keys.Right) || _oldKeyState.IsKeyDown(Keys.D)))
-                dx = 1;
-            if ((keyState.IsKeyDown(Keys.Left) || keyState.IsKeyDown(Keys.A)) &&
-                !(_oldKeyState.IsKeyDown(Keys.Left) || _oldKeyState.IsKeyDown(Keys.A)))
-                dx = -1;
 
             if (keyState.IsKeyDown(Keys.F) && !_oldKeyState.IsKeyDown(Keys.F))
                 _mapRenderer.FogOfWarEnabled = !_mapRenderer.FogOfWarEnabled;
-
-            if (dx != 0 || dy != 0)
-            {
-                _mapCenter.X += dx;
-                _mapCenter.Y += dy;
-                _mapRenderer.Center = _mapCenter;
-                _camera.Target = MapData.GetWorldPosition(_mapCenter);
-            }
 
             if (keyState.IsKeyDown(Keys.K) && !_oldKeyState.IsKeyDown(Keys.K))
                 _camera.RotationX += 0.2f;
@@ -155,7 +134,6 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
             if (keyState.IsKeyDown(Keys.C) && !_oldKeyState.IsKeyDown(Keys.C))
             {
-
                 City capital = MainWindow.Game.Human.Capital;
 
                 if (capital != null)
@@ -184,6 +162,11 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                 ScoreWindow.Show(Manager, MainWindow.Game.Scores, "Scores");
             }
 
+            _oldKeyState = keyState;
+        }
+
+        private void HandleMouse()
+        {
             MouseState mouseState = Mouse.GetState();
 
             if (mouseState.ScrollWheelValue > _oldMouseState.ScrollWheelValue)
@@ -221,15 +204,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                 }
                 else
                 {
-                    //City city = MainWindow.Game.GetCityAt(_mapRenderer.Cursor);
                     Unit unit = MainWindow.Game.GetUnitAt(_mapRenderer.Cursor);
-
-                    // select unit city
-                    //if (city != null)
-                    //{
-                    //    if (CitySelected != null)
-                    //        CitySelected(city);
-                    //}
 
                     // select unit
                     if (unit != null)
@@ -243,17 +218,24 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                         UnitsUnselected();
                 }
             }
-
-            _oldKeyState = keyState;
+          
             _oldMouseState = mouseState;
         }
 
         public void CenterAt(HexPoint loc)
         {
-            _mapCenter.X = loc.X;
-            _mapCenter.Y = loc.Y;
-            _camera.Target = MapData.GetWorldPosition(_mapCenter);
-            _mapRenderer.Center = _mapCenter;
+            if (Map.IsValid(loc))
+            {
+                _mapCenter.X = loc.X;
+                _mapCenter.Y = loc.Y;
+                _camera.Target = MapData.GetWorldPosition(_mapCenter);
+                _mapRenderer.Center = _mapCenter;
+            }
+        }
+
+        public void MoveCenter(int dx, int dy)
+        {
+            CenterAt(_mapCenter + new HexPoint( dx, dy));
         }
 
         private void UpdateCursor()
@@ -261,7 +243,6 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
             // Get the new keyboard and mouse state
             MouseState mouseState = Mouse.GetState();
 
-            //Vector3 mousePos = Manager.GraphicsDevice.Viewport.Unproject(new Vector3(mouseState.X + Left, mouseState.Y + Top, 0), camera.Projection, camera.View, Matrix.Identity);
             Vector3 mousePos = Manager.GraphicsDevice.Viewport.Unproject(new Vector3(mouseState.X, mouseState.Y, 0), _camera.Projection, _camera.View, Matrix.Identity);
 
             // get views intersection with ground plane

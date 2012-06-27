@@ -304,4 +304,7 @@
   <data name="TXT_KEY_NOTIFICATION_SELECT_POLICY" xml:space="preserve">
     <value>Wähle eine Sozialpolitik</value>
   </data>
+  <data name="TXT_KEY_UI_CITY_EXIT" xml:space="preserve">
+    <value>Zurück zur Karte</value>
+  </data>
 </root>

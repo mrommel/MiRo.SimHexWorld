@@ -14,7 +14,7 @@ namespace MiRo.SimHexWorld.Engine.UI
         Texture2D _scienceBackTexture, _scienceFrameTexture, _scienceTexture;
         float lastScience = -1;
         Texture2D _scienceMeterModTexture;
-        public ScienceDialog ScienceDialog { get; set; }
+        public ScienceSelectDialog ScienceDialog { get; set; }
 
         public void InitScienceControls()
         {
@@ -22,7 +22,7 @@ namespace MiRo.SimHexWorld.Engine.UI
             _scienceFrameTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//techpanelframe");
             _scienceTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//techpanelmeter");
 
-            ScienceDialog = new ScienceDialog(Manager);
+            ScienceDialog = new ScienceSelectDialog(Manager);
             ScienceDialog.Visible = false;
             Manager.Add(ScienceDialog);
         }

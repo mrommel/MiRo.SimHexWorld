@@ -160,11 +160,15 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
         void EnhancedToolTip_MouseDown(object sender, MouseEventArgs e)
         {
+            Point pt = e.Position;
+            pt.X -= 5;
+            pt.Y -= 5;
+
             foreach (LineInfo li in lines)
             {
                 foreach (LinkPosition lp in li.Links)
                 {
-                    if (lp.Rect.Contains(e.Position))
+                    if (lp.Rect.Contains(pt))
                     {
                         MainWindow window = this.Manager.Controls.FirstOrDefault(a => a.Name == "MainWindow") as MainWindow;
                         window.Execute("window", lp.Target, this, sender, e);
@@ -291,7 +295,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                         renderer.Draw(_iconDict[icon.IconName], icon.Rect, Color.White);
 
                     foreach (LinkPosition link in line.Links)
-                        renderer.DrawString(Skin.Layers[0].Text.Font.Resource, link.Link, link.Rect.X + 5, link.Rect.Y + y, Color.Red);
+                        renderer.DrawString(Skin.Layers[0].Text.Font.Resource, link.Link, link.Rect.X + 2, link.Rect.Y + y - 3, Color.DarkRed);
 
                     y += line.LineHeight;
                 }

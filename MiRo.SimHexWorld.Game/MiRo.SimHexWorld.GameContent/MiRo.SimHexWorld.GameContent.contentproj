@@ -1920,8 +1920,8 @@
       <Processor>PassThroughProcessor</Processor>
       <SubType>Designer</SubType>
     </Compile>
-    <Compile Include="Controls\ScienceDialog.xml">
-      <Name>ScienceDialog</Name>
+    <Compile Include="Controls\ScienceSelectDialog.xml">
+      <Name>ScienceSelectDialog</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <SubType>Designer</SubType>
@@ -1980,6 +1980,7 @@
       <Name>MapOptionDialog</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
+      <SubType>Designer</SubType>
     </Compile>
     <Compile Include="Policies\Tradition\Legalism.xml">
       <Name>Legalism</Name>
@@ -2038,9 +2039,9 @@
       <Importer>PythonScriptImporter</Importer>
       <Processor>PythonScriptProcessor</Processor>
     </Compile>
-    <Compile Include="Controls\ScienceDialogActions.py">
+    <Compile Include="Controls\ScienceSelectDialogActions.py">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <Name>ScienceDialogActions</Name>
+      <Name>ScienceSelectDialogActions</Name>
       <Importer>PythonScriptImporter</Importer>
       <Processor>PythonScriptProcessor</Processor>
     </Compile>
@@ -2061,6 +2062,29 @@
       <Name>PolicyChooseDialogActions</Name>
       <Importer>PythonScriptImporter</Importer>
       <Processor>PythonScriptProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\InfoPediaDialog.xml">
+      <Name>InfoPediaDialog</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\Frames\PediaFrame.xml">
+      <SubType>Designer</SubType>
+      <Name>PediaFrame</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\MainWindow.City.xml">
+      <SubType>Designer</SubType>
+      <Name>MainWindow.City</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\MainWindow.Notifications.xml">
+      <SubType>Designer</SubType>
+      <Name>MainWindow.Notifications</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
     </Compile>
     <Content Include="Skins\Default.skin">
       <Name>Default</Name>
@@ -2921,6 +2945,7 @@
       <Name>PolicyAtlas</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
+      <SubType>Designer</SubType>
     </Compile>
     <Compile Include="Textures\Atlases\PolicyTiles.png">
       <Name>PolicyTiles</Name>
@@ -3444,6 +3469,51 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="Textures\UI\Frames\PediaFrame\sideleft.png">
+      <Name>sideleft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\Frames\PediaFrame\sideright.png">
+      <Name>sideright</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\Frames\PediaFrame\bottom.png">
+      <Name>bottom</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\Frames\PediaFrame\sideleftbottom.png">
+      <Name>sideleftbottom</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\Frames\PediaFrame\sidelefttop.png">
+      <Name>sidelefttop</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\Frames\PediaFrame\siderightbottom.png">
+      <Name>siderightbottom</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\Frames\PediaFrame\siderighttop.png">
+      <Name>siderighttop</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\Frames\PediaFrame\top.png">
+      <Name>top</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\Overview\overviewLine.png">
+      <Name>overviewLine</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fonts\Default.spritefont">
@@ -3460,7 +3530,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\PolicyChooseDialog\" />
     <Folder Include="Paces\" />
     <Folder Include="Textures\UI\DiplomacyView\" />
   </ItemGroup>
@@ -3643,6 +3712,14 @@
       <Name>Forest</Name>
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\InfoPediaDialogActions.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>InfoPediaDialogActions</Name>
+      <Importer>PythonScriptImporter</Importer>
+      <Processor>PythonScriptProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

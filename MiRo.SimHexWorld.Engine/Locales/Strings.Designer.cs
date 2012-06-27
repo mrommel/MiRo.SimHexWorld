@@ -322,6 +322,15 @@ namespace MiRo.SimHexWorld.Engine.Locales {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Return to Map ähnelt.
+        /// </summary>
+        internal static string TXT_KEY_UI_CITY_EXIT {
+            get {
+                return ResourceManager.GetString("TXT_KEY_UI_CITY_EXIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Buildings ähnelt.
         /// </summary>
         internal static string TXT_KEY_UI_CITYVIEW_BUILDINGS {

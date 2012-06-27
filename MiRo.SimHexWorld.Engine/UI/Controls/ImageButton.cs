@@ -5,12 +5,24 @@ using System.Text;
 using TomShane.Neoforce.Controls;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using MiRo.SimHexWorld.Engine.Misc;
 
 namespace MiRo.SimHexWorld.Engine.UI.Controls
 {
     public class ImageButton : ImageBox
     {
-        public string Text { get; set; }
+        private string _text;
+        public override string Text 
+        {
+            get 
+            {
+                if (_text.StartsWith("TXT_KEY_") && Provider.CanTranslate)
+                    return Provider.Instance.Translate(_text);
+
+                return _text;
+            }
+            set { _text = value; }
+        }
 
         private Texture2D _background;
         private Texture2D _backgroundDisabled;

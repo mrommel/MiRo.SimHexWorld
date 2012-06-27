@@ -39,6 +39,14 @@ namespace MiRo.SimHexWorld.Engine.UI
             HookAction(Controls);
         }
 
+        protected override void OnKeyUp(KeyEventArgs e)
+        {
+            _engine.Invoke("window", "HandleKey", this, e);
+
+            if( !e.Handled )
+                base.OnKeyUp(e);
+        }
+
         private void HookAction(IEnumerable<Control> controls)
         {
             foreach (Control c in controls)
@@ -53,6 +61,19 @@ namespace MiRo.SimHexWorld.Engine.UI
                         box.Click += delegate(object sender, TomShane.Neoforce.Controls.EventArgs e)
                         {
                             _engine.Invoke("window", item.Click, this, sender, e);
+                        };
+                    }
+                }
+                else if (c is CheckBox)
+                {
+                    CheckBox check = c as CheckBox;
+                    ControlItem item = c.Tag as ControlItem;
+
+                    if (item != null && !string.IsNullOrEmpty(item.CheckedChanged))
+                    {
+                        check.CheckedChanged += delegate(object sender, TomShane.Neoforce.Controls.EventArgs args)
+                        {
+                            _engine.Invoke("window", item.CheckedChanged, this, sender, args);
                         };
                     }
                 }

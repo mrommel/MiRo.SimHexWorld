@@ -136,6 +136,9 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
         [ContentSerializer(Optional = true)]
         public string ItemIndexChanged { get; set; }
+        
+        [ContentSerializer(Optional = true)]
+        public string CheckedChanged { get; set; }
 
         [ContentSerializer(Optional = true)]
         public string TechName { get; set; }
@@ -143,17 +146,31 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         [ContentSerializer(Optional = true)]
         public string ToolTip { get; set; }
 
+        [ContentSerializer(Optional = true)]
+        public string Import { get; set; }
+
         public ControlItem()
         {
             Visible = true;
             Enabled = true;
         }
 
-        private void SetProperties(Control c, Window parent, Manager manager)
+        private void SetProperties(Control c, Control parent, Manager manager)
         {
             c.Name = Name;
-            c.Top = Top < 0 ? manager.GraphicsDevice.Viewport.Height + Top : Top;
-            c.Left = Left < 0 ? manager.GraphicsDevice.Viewport.Width + Left : Left;
+            //c.Top = Top < 0 ? manager.GraphicsDevice.Viewport.Height + Top : Top;
+            //c.Left = Left < 0 ? manager.GraphicsDevice.Viewport.Width + Left : Left;
+            if (!string.IsNullOrEmpty(Parent))
+            {
+                c.Top = Top < 0 ? parent.GetControl(Parent).Height + Top : Top;
+                c.Left = Left < 0 ? parent.GetControl(Parent).Width + Left : Left;
+            }
+            else
+            {
+                c.Top = Top < 0 ? parent.Height + Top : Top;
+                c.Left = Left < 0 ? parent.Width + Left : Left;
+            }
+
             c.Width = Width;
             c.Height = Height;
 
@@ -192,7 +209,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                 parent.Add(c);
         }
 
-        public void Init(Window parent, Manager manager)
+        public void Init(Control parent, Manager manager)
         {
             switch (Type)
             {
@@ -328,6 +345,20 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                     progress.Init();
 
                     SetProperties(progress, parent, manager);
+                    break;
+                case "CheckBox":
+                    CheckBox check = new CheckBox(manager);
+                    check.Init();
+
+                    SetProperties(check, parent, manager);
+
+                    check.Text = Text;
+                    break;
+                case "Include":
+                    List<ControlItem> children = manager.Content.Load<List<ControlItem>>(Import);
+
+                    foreach (ControlItem item in children)
+                        item.Init(parent, manager);
                     break;
                 default:
                     throw new Exception("No handling for " + Type);

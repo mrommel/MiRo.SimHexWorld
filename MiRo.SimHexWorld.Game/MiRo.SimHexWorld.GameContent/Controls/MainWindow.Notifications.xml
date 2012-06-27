@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="System.Collections.Generic.List[MiRo.SimHexWorld.Engine.UI.Controls.ControlItem]">
+    <Item>
+      <Name>Notification0</Name>
+      <Type>ImageBox</Type>
+      <Top>-350</Top>
+      <!-- - i * 46 - 350-->
+      <Left>-120</Left>
+      <Width>64</Width>
+      <Height>64</Height>
+      <StayOnBack>false</StayOnBack>
+      <StayOnTop>true</StayOnTop>
+      <Visible>false</Visible>
+      <ImageAsset>Content//Textures//UI//MainView//NotificationView//notificationframebase</ImageAsset>
+      <ImageMode>Stretched</ImageMode>
+      <Click>Notification_Click</Click>
+      <Draw>Notification_Draw</Draw>
+    </Item>
+    <Item>
+      <Name>Notification1</Name>
+      <Type>ImageBox</Type>
+      <Top>-396</Top>
+      <!-- - i * 46 - 350-->
+      <Left>-100</Left>
+      <Width>48</Width>
+      <Height>48</Height>
+      <StayOnBack>false</StayOnBack>
+      <StayOnTop>true</StayOnTop>
+      <Visible>false</Visible>
+      <ImageAsset>Content//Textures//UI//MainView//NotificationView//notificationframebase</ImageAsset>
+      <ImageMode>Stretched</ImageMode>
+      <Click>Notification_Click</Click>
+      <Draw>Notification_Draw</Draw>
+    </Item>
+    <Item>
+      <Name>Notification2</Name>
+      <Type>ImageBox</Type>
+      <Top>-442</Top>
+      <!-- - i * 46 - 350-->
+      <Left>-100</Left>
+      <Width>48</Width>
+      <Height>48</Height>
+      <StayOnBack>false</StayOnBack>
+      <StayOnTop>true</StayOnTop>
+      <Visible>false</Visible>
+      <ImageAsset>Content//Textures//UI//MainView//NotificationView//notificationframebase</ImageAsset>
+      <ImageMode>Stretched</ImageMode>
+      <Click>Notification_Click</Click>
+      <Draw>Notification_Draw</Draw>
+    </Item>
+    <Item>
+      <Name>Notification3</Name>
+      <Type>ImageBox</Type>
+      <Top>-488</Top>
+      <!-- - i * 46 - 350-->
+      <Left>-100</Left>
+      <Width>48</Width>
+      <Height>48</Height>
+      <StayOnBack>false</StayOnBack>
+      <StayOnTop>true</StayOnTop>
+      <Visible>false</Visible>
+      <ImageAsset>Content//Textures//UI//MainView//NotificationView//notificationframebase</ImageAsset>
+      <ImageMode>Stretched</ImageMode>
+      <Click>Notification_Click</Click>
+      <Draw>Notification_Draw</Draw>
+    </Item>
+    <Item>
+      <Name>Notification4</Name>
+      <Type>ImageBox</Type>
+      <Top>-524</Top>
+      <!-- - i * 46 - 350-->
+      <Left>-100</Left>
+      <Width>48</Width>
+      <Height>48</Height>
+      <StayOnBack>false</StayOnBack>
+      <StayOnTop>true</StayOnTop>
+      <Visible>false</Visible>
+      <ImageAsset>Content//Textures//UI//MainView//NotificationView//notificationframebase</ImageAsset>
+      <ImageMode>Stretched</ImageMode>
+      <Click>Notification_Click</Click>
+      <Draw>Notification_Draw</Draw>
+    </Item>
+    <Item>
+      <Name>Notification5</Name>
+      <Type>ImageBox</Type>
+      <Top>-580</Top>
+      <!-- - i * 46 - 350-->
+      <Left>-100</Left>
+      <Width>48</Width>
+      <Height>48</Height>
+      <StayOnBack>false</StayOnBack>
+      <StayOnTop>true</StayOnTop>
+      <Visible>false</Visible>
+      <ImageAsset>Content//Textures//UI//MainView//NotificationView//notificationframebase</ImageAsset>
+      <ImageMode>Stretched</ImageMode>
+      <Click>Notification_Click</Click>
+      <Draw>Notification_Draw</Draw>
+    </Item>
+  </Asset>
+</XnaContent>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.UI.Controls.WindowSet">
+    <Title>InfoPedia</Title>
+    <Name>InfoPediaDialog</Name>
+    <Icon>Content\\Textures\\UI\\Globe_Icon_Small</Icon>
+    <Left>300</Left>
+    <Top>50</Top>
+    <Width>1000</Width>
+    <Height>700</Height>
+    <Controls>
+      <Item>
+        <Name>Body</Name>
+        <Type>Container</Type>
+        <Top>5</Top>
+        <Left>5</Left>
+        <Width>975</Width>
+        <Height>655</Height>
+        <ColorName>Black</ColorName>
+      </Item>
+      <!-- Frame -->
+      <Item>
+        <Name>PediaFrame</Name>
+        <Type>Include</Type>
+        <Parent>Body</Parent>
+        <Import>Content//Controls//Frames//PediaFrame</Import>
+      </Item>
+      <!-- Frame -->
+      <Item>
+        <Name>Title</Name>
+        <Type>Label</Type>
+        <Parent>Body</Parent>
+        <Top>10</Top>
+        <Left>300</Left>
+        <Width>200</Width>
+        <Height>16</Height>
+        <ColorName>White</ColorName>
+        <Text>Value</Text>
+      </Item>
+    </Controls>
+  </Asset>
+</XnaContent>

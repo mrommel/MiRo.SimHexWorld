@@ -71,10 +71,9 @@ namespace MiRo.SimHexWorld.Engine.World
 
             TextureManager.Instance.Device = manager.GraphicsDevice;
 
-            //_tiledMeshContainer = new TiledMeshContainer(manager);
             _hiddenMeshContainer = new TiledMeshContainer(manager);
 
-            FogOfWarEnabled = false;
+            FogOfWarEnabled = true;
 
             hMesh = new HexMesh(manager.GraphicsDevice);
 
@@ -574,7 +573,8 @@ namespace MiRo.SimHexWorld.Engine.World
                 _farmMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
                 _roadMesh.Draw(gameTime, camera.View, camera.Projection, Vector3.Zero);
 
-                _resourceBillboards.Draw(camera.View, camera.Projection, camera.Position, camera.Up, camera.Right);
+                if( MainWindow.Config.ResourceIcons )
+                    _resourceBillboards.Draw(camera.View, camera.Projection, camera.Position, camera.Up, camera.Right);
 
                 //foreach (ForestEntity forest in _forests)
                 //    if (forest.Point.DistanceTo(Center) < 15)

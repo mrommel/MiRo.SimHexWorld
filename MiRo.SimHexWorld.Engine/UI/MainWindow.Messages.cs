@@ -19,10 +19,8 @@ namespace MiRo.SimHexWorld.Engine.UI
 
     partial class MainWindow
     {
-        List<ScreenNotification> _messages = new List<ScreenNotification>();
-        ImageBox[] _msgLabels = new ImageBox[10];
+        public List<ScreenNotification> Messages = new List<ScreenNotification>();
 
-        Texture2D _notificationTexture;
         SpriteFont _notificationFont;
 
         Texture2D _notificationiconsproduction, 
@@ -34,7 +32,6 @@ namespace MiRo.SimHexWorld.Engine.UI
 
         private void InitMessages()
         {
-            _notificationTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//NotificationView//notificationframebase");
             _notificationFont = Manager.Content.Load<SpriteFont>("Content//Fonts//Default");
 
             _notificationiconsproduction = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//NotificationView//notificationiconsproduction");
@@ -43,92 +40,70 @@ namespace MiRo.SimHexWorld.Engine.UI
             _notificationcitygrowthglow = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//NotificationView//notificationcitygrowthglow");
             _notificationcitydeclineglow = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//NotificationView//notificationcitydeclineglow");
             _notificationiconsculture = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//NotificationView//notificationiconsculture");
-
-            for (int i = 0; i < _msgLabels.Length; i++)
-            {
-                _msgLabels[i] = new ImageBox(Manager);
-                _msgLabels[i].Name = "Notification" + i;
-                _msgLabels[i].Init();
-                _msgLabels[i].Left = (Manager.GraphicsDevice.Viewport.Width - ( i == 0 ? 120 : 100 ));
-                _msgLabels[i].Width = i == 0 ? 64 : 48;
-                _msgLabels[i].Height = i == 0 ? 64 : 48;
-                _msgLabels[i].Top = Manager.GraphicsDevice.Viewport.Height - i * 46 - 350;
-                _msgLabels[i].Tag = i;
-                _msgLabels[i].StayOnTop = true;
-                _msgLabels[i].StayOnBack = false;
-                _msgLabels[i].Image = _notificationTexture;
-                _msgLabels[i].SizeMode = SizeMode.Stretched;
-                _msgLabels[i].Draw += new DrawEventHandler(Notification_Draw);
-                _msgLabels[i].Click += new TomShane.Neoforce.Controls.EventHandler(Message_Click);
-                _msgLabels[i].ToolTip = new TomShane.Neoforce.Controls.ToolTip(Manager);
-                _msgLabels[i].Visible = true;
-                Add(_msgLabels[i]);
-            }
         }
 
-        void Message_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
-        {
-            ImageBox cnt = sender as ImageBox;
-            int num = int.Parse( cnt.Tag.ToString() );
+        //void Message_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
+        //{
+        //    ImageBox cnt = sender as ImageBox;
+        //    int num = int.Parse( cnt.Tag.ToString() );
 
-            if (_messages.Count > num)
-            {
-                ScreenNotification not = _messages.ElementAt(num);
+        //    if (Messages.Count > num)
+        //    {
+        //        ScreenNotification not = Messages.ElementAt(num);
 
-                MouseEventArgs args = e as MouseEventArgs;
+        //        MouseEventArgs args = e as MouseEventArgs;
 
-                // handle only left clicks (right click will close the notification icon)
-                if (args.Button == MouseButton.Left)
-                {
-                    switch (not.Type)
-                    {
-                        case NotificationType.CityGrowth:
-                        case NotificationType.CityDecline:
-                        case NotificationType.FoundCity:
-                            {
-                                City city = not.Obj as City;
-                                MapBox.CenterAt(city.Point);
-                            }
-                            break;
-                        case NotificationType.ImprovementReady:
-                            {
-                                List<object> objs = not.Obj as List<object>;
-                                MapBox.CenterAt(objs[1] as HexPoint);
-                            }
-                            break;
-                        case NotificationType.Science:
-                            ShowScienceDialog();
-                            break;
-                        case NotificationType.PolicyReady:
-                            ShowPolicyDialog();
-                            break;
-                        case NotificationType.ProducationReady:
-                            {
-                                City city = not.Obj as City;
-                                MapBox.CenterAt(city.Point);
-                                CurrentCity = city;
-                            }
-                            break;
-                    }
-                }
+        //        // handle only left clicks (right click will close the notification icon)
+        //        if (args.Button == MouseButton.Left)
+        //        {
+        //            switch (not.Type)
+        //            {
+        //                case NotificationType.CityGrowth:
+        //                case NotificationType.CityDecline:
+        //                case NotificationType.FoundCity:
+        //                    {
+        //                        City city = not.Obj as City;
+        //                        MapBox.CenterAt(city.Point);
+        //                    }
+        //                    break;
+        //                case NotificationType.ImprovementReady:
+        //                    {
+        //                        List<object> objs = not.Obj as List<object>;
+        //                        MapBox.CenterAt(objs[1] as HexPoint);
+        //                    }
+        //                    break;
+        //                case NotificationType.Science:
+        //                    ShowScienceDialog();
+        //                    break;
+        //                case NotificationType.PolicyReady:
+        //                    ShowPolicyDialog();
+        //                    break;
+        //                case NotificationType.ProducationReady:
+        //                    {
+        //                        City city = not.Obj as City;
+        //                        MapBox.CenterAt(city.Point);
+        //                        CurrentCity = city;
+        //                    }
+        //                    break;
+        //            }
+        //        }
 
-                not.Obsolete = true;
-            }      
-        }
+        //        not.Obsolete = true;
+        //    }      
+        //}
 
         private void UpdateMessages()
         {
             if (View == MapView.Main)
             {
-                _messages.RemoveAll(a => a.Obsolete);
+                Messages.RemoveAll(a => a.Obsolete);
 
-                for (int i = _messages.Count; i < _msgLabels.Length; i++)
-                    _msgLabels[i].Visible = false;
-
-                for (int i = 0; i < Math.Min(_msgLabels.Length, _messages.Count); i++)
+                for (int i = 0; i < 10; i++ )
                 {
-                    _msgLabels[i].Visible = true;
-                    _msgLabels[i].Text = _messages[i].Text;
+                    Control c = GetControl("Notification" + i);
+
+                    if( c != null )
+                        c.Visible = i < Messages.Count;
                 }
             }
         }
@@ -158,21 +133,22 @@ namespace MiRo.SimHexWorld.Engine.UI
             return (value & test) == test;
         }
 
-        void Notification_Draw(object sender, DrawEventArgs e)
+        public void Notification_Draw(object sender, DrawEventArgs e)
         {
             ImageBox cnt = sender as ImageBox;
-            int num = int.Parse( cnt.Tag.ToString() );
+            int num = int.Parse( "" + cnt.Name.Last() );
 
-            if (_messages.Count > num)
+            if (Messages.Count > num)
             {
-                ScreenNotification not = _messages.ElementAt(num);
+                ScreenNotification not = Messages.ElementAt(num);
 
-                _msgLabels[num].ToolTip.Text = not.Text;
+                cnt.ToolTip.Text = not.Text;
 
-                _msgLabels[num].ToolTip.Left = Manager.GraphicsDevice.Viewport.Width - (int)_msgLabels[num].ToolTip.Skin.Layers[0].Text.Font.Resource.MeasureString(not.Text).X - 10;
+                cnt.ToolTip.Left = Manager.GraphicsDevice.Viewport.Width - (int)cnt.ToolTip.Skin.Layers[0].Text.Font.Resource.MeasureString(not.Text).X - 10;
 
                 switch (not.Type)
                 {
+                    default:
                     case NotificationType.FoundCity:
                         e.Renderer.Draw(_notificationgenericglow, e.Rectangle, Microsoft.Xna.Framework.Color.White);
                         break;

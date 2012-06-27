@@ -24,6 +24,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
             gameWindow.Text = Title;
             gameWindow.Name = Name;
             gameWindow.Icon = manager.Content.Load<Texture2D>(Icon);
+
             gameWindow.Left = Left;
             gameWindow.Top = Top;
             gameWindow.Width = Width;

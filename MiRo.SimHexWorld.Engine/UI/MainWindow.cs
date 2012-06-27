@@ -31,9 +31,6 @@ namespace MiRo.SimHexWorld.Engine.UI
         FpsCounter fpsCounter;
         SpriteFont _messageFont;
 
-        //GameMapBox _mapBox;
-        //ContextMenu _ctxUnitMenu;
-
         public MapView View { get; set; }
 
         SideBar _topBar;
@@ -53,35 +50,15 @@ namespace MiRo.SimHexWorld.Engine.UI
 
         ImageBox _imgLocale;
 
-        //SideBar _sidebar;
-        //SideBarPanel _pnlRes;
-        //Button _btnCreate;
-        //Button _btnLoad;
-        //Button _btnCheck;
-        //Button _btnExit;
-
-        //ImageBox _lblTerrainIcon;
-        //Label _lblPosition;
-        //Label _lblTerrainName;
-        //Label _lblFeatures;
-        //Label _lblResource;
-
-        //ImageBox _imgFood, _imgCommercial, _imgProduction;
-        //Label _lblFood, _lblCommercial, _lblProduction;
-
-        //Label _lblUnitName, _lblRegion;
-
-        // unit
-        //ImageBox _lblUnit;
-
-        // zoom
-        //ImageBox _imgZoomIn, _imgZoomOut;
+        private static readonly GameOptions _config = new GameOptions();
 
         public HexPoint Focus { get; set; }
 
         readonly GameStartupSettings _startupSettings = new GameStartupSettings();
 
         private static readonly GameData _game = new GameData();
+
+        public static InfoPediaDialog Pedia;
 
         ////////////////////////////////////////////////////////////////////////////       
 
@@ -93,6 +70,8 @@ namespace MiRo.SimHexWorld.Engine.UI
         public MainWindow(Manager manager)
             : base(manager, "Content//Controls//MainWindow")
         {
+            _config.Load();
+
             // Tell the resource manager what language to use when loading strings.
             Strings.Culture = CultureInfo.CurrentCulture;
 
@@ -128,6 +107,10 @@ namespace MiRo.SimHexWorld.Engine.UI
             BorderVisible = true;
 
             Manager.Graphics.PreparingDeviceSettings += new EventHandler<PreparingDeviceSettingsEventArgs>(PrepareGraphicsDevice);
+
+            Pedia = new InfoPediaDialog(manager);
+            Pedia.Visible = false;
+            Manager.Add(Pedia);
         }
 
         protected void PrepareGraphicsDevice(object sender, PreparingDeviceSettingsEventArgs e)
@@ -135,10 +118,39 @@ namespace MiRo.SimHexWorld.Engine.UI
             e.GraphicsDeviceInformation.PresentationParameters.RenderTargetUsage = RenderTargetUsage.PreserveContents;
         }
 
-        //void _btnCityExit_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
-        //{
-        //    ToogleView();
-        //}
+        public void FocusPreviousCity()
+        {
+            if (CurrentCity != null)
+            {
+                int index = Game.Human.Cities.IndexOf(CurrentCity);
+
+                if (index != -1)
+                {
+                    index--;
+                    if (index < 0) 
+                        index = Game.Human.Cities.Count - 1;
+
+                    CurrentCity = Game.Human.Cities[index];
+                }
+            }
+        }
+
+        public void FocusNextCity()
+        {
+            if (CurrentCity != null)
+            {
+                int index = Game.Human.Cities.IndexOf(CurrentCity);
+
+                if (index != -1)
+                {
+                    index++;
+                    if (index >= Game.Human.Cities.Count - 1)
+                        index = 0;
+
+                    CurrentCity = Game.Human.Cities[index];
+                }
+            }
+        }
 
         private void InitMainControls()
         {
@@ -537,6 +549,14 @@ namespace MiRo.SimHexWorld.Engine.UI
             }
         }
 
+        public static GameOptions Config
+        {
+            get
+            {
+                return _config;
+            }
+        }
+
         public GameData GameInstance
         {
             get
@@ -777,7 +797,7 @@ namespace MiRo.SimHexWorld.Engine.UI
 
                         if ((civSender.Name == Game.Human.Civilization.Name && (IsSet(filter, MessageFilter.Self))) ||
                             IsValidMessage(Game.Human.DiplomaticStatusTo(civSender), filter))
-                            _messages.Add(new ScreenNotification(type, txt, DateTime.Now.AddSeconds(10), obj));
+                            Messages.Add(new ScreenNotification(type, txt, DateTime.Now.AddSeconds(10), obj));
                     }
                     break;
                 case GameNotification.UpdateSpotting:
