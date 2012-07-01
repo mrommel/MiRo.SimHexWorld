@@ -323,5 +323,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
         }
 
         public bool IsAutomated { get; set; }
+
+        public int Strength { get; set; }
     }
 }

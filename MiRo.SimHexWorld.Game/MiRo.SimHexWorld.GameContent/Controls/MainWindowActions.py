@@ -22,6 +22,9 @@ class Window:
 	def Initialize(self, parent):
 		self.parent = parent
 
+		""" init dialogs """
+		self.parent.CreateWindow("Pedia", "Content//Controls//InfoPediaDialog", False)
+
 	"""
 		handle keys pressed
 	"""
@@ -210,8 +213,8 @@ class Window:
 	"""
 	def Unit_Click( self, window, sender, args ):
 		if self.parent.CurrentUnit != None:
-			window.Pedia.Focus = self.parent.CurrentUnit.Data
-			window.Pedia.ShowModal()
+			window.GetWindow("Pedia").Invoke( "Focus", self.parent.CurrentUnit.Data )
+			window.GetWindow("Pedia").ShowModal()
 
 	def BtnAdvisors_Click( self, window, sender, args ):
 		pass
@@ -227,8 +230,8 @@ class Window:
 	"""
 	def Research_Click( self, window, sender, args ):
 		if game.Human.CurrentResearch != None:
-			window.Pedia.Focus = game.Human.CurrentResearch
-			window.Pedia.ShowModal()
+			window.GetWindow("Pedia").Invoke( "Focus",  game.Human.CurrentResearch )
+			window.GetWindow("Pedia").ShowModal()
 
 	def Science_Click( self, window, sender, args ):
 		window.ScienceDialog.ShowModal()

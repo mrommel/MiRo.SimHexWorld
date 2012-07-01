@@ -178,4 +178,24 @@ namespace MiRo.SimHexWorld.Engine.UI
             }
         }
     }
+
+    public class GenericWindow : AssetWindow
+    {
+        public GenericWindow(Manager manager, string asset) : base(manager, asset) { }
+
+        public void Invoke(string method, params object[] objs)
+        {
+            _engine.Invoke("window", method, objs);
+        }
+
+        public override List<Instance.GameNotification> NotificationInterests
+        {
+            get { return new List<Instance.GameNotification>(); }
+        }
+
+        public override void HandleNotification(PureMVC.Interfaces.INotification notification)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

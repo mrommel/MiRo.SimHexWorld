@@ -5,7 +5,7 @@
     <Name>MapOptionDialog</Name>
     <Icon>Content\\Textures\\UI\\Globe_Icon_Small</Icon>
     <Left>1000</Left>
-    <Top>700</Top>
+    <Top>650</Top>
     <Width>150</Width>
     <Height>200</Height>
     <Controls>
@@ -20,10 +20,22 @@
       </Item>
       <!-- divider -->
       <Item>
-        <Name>HideRecommondations</Name>
+        <Name>ShowRanking</Name>
         <Type>CheckBox</Type>
         <Parent>Body</Parent>
         <Top>20</Top>
+        <Left>20</Left>
+        <Width>96</Width>
+        <Height>24</Height>
+        <TextColorName>White</TextColorName>
+        <Text>Show Ranking</Text>
+        <CheckedChanged>ShowRanking_Checked</CheckedChanged>
+      </Item>
+      <Item>
+        <Name>HideRecommondations</Name>
+        <Type>CheckBox</Type>
+        <Parent>Body</Parent>
+        <Top>45</Top>
         <Left>20</Left>
         <Width>96</Width>
         <Height>24</Height>
@@ -35,7 +47,7 @@
         <Name>ResourceIcons</Name>
         <Type>CheckBox</Type>
         <Parent>Body</Parent>
-        <Top>45</Top>
+        <Top>70</Top>
         <Left>20</Left>
         <Width>96</Width>
         <Height>24</Height>
@@ -46,7 +58,7 @@
         <Name>YieldIcons</Name>
         <Type>CheckBox</Type>
         <Parent>Body</Parent>
-        <Top>65</Top>
+        <Top>95</Top>
         <Left>20</Left>
         <Width>96</Width>
         <Height>24</Height>
@@ -57,7 +69,7 @@
         <Name>HexGrid</Name>
         <Type>CheckBox</Type>
         <Parent>Body</Parent>
-        <Top>85</Top>
+        <Top>110</Top>
         <Left>20</Left>
         <Width>96</Width>
         <Height>24</Height>
@@ -68,7 +80,7 @@
         <Name>UnitIcons</Name>
         <Type>CheckBox</Type>
         <Parent>Body</Parent>
-        <Top>105</Top>
+        <Top>135</Top>
         <Left>20</Left>
         <Width>96</Width>
         <Height>24</Height>
@@ -79,7 +91,7 @@
         <Name>UnitPromotions</Name>
         <Type>CheckBox</Type>
         <Parent>Body</Parent>
-        <Top>125</Top>
+        <Top>140</Top>
         <Left>20</Left>
         <Width>96</Width>
         <Height>24</Height>

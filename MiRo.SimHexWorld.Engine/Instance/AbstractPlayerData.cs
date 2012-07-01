@@ -440,7 +440,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
 
         private void CalculateScience()
         {
-            _science += ScienceSurplus;
+            _science += ScienceSurplus / 10f;
         }
 
         public HexPoint StartLocation
@@ -549,7 +549,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
         
         protected void UpdateCulture()
         {
-            _culture += CultureSuplus;
+            _culture += CultureSuplus / 10f;
 
             float neededCulture = CultureNeededForChange;
 

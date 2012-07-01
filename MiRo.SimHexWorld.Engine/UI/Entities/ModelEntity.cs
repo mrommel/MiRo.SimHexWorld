@@ -13,13 +13,36 @@ using MiRo.SimHexWorld.Engine.World.Entities;
 
 namespace MiRo.SimHexWorld.Engine.UI.Entities
 {
-    public class ModelEntity : Entity
+    public class UnitItem
+    {
+        private static Random rnd = new Random();
+
+        public UnitItem(Vector3 position, Vector3 relativPosition, Vector3 rotation)
+        {
+            Position = position;
+            RelativPosition = relativPosition;
+
+            Rotation = rotation;
+
+            StartOffset = (float)rnd.NextDouble() * 0.5f - 0.25f;
+        }
+
+        public Vector3 Position { get; set; }
+        public Vector3 Rotation { get; set; }
+        public Vector3 RelativPosition { get; set; }
+        public ObjectAnimation Animation { get; set; }
+        public float StartOffset { get; set; }
+    }
+
+    public class UnitEntity : Entity
     {
         AbstractPlayerData _player;
-        ObjectAnimation anim;
+        //ObjectAnimation anim;
         public enum ModelStatus { Standing, Moving, Rotating }
 
-        Model model, box;
+        List<UnitItem> _items = new List<UnitItem>();
+        Model model;
+        Matrix scaleMatrix;
 
         /// <summary>Transforms being applied to this model instance only</summary>
         private Matrix[] boneTransforms;
@@ -33,17 +56,25 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
         /// </remarks>
         private Matrix[] absoluteBoneTransforms;
 
-        Unit _parent;
+        Unit _unit;
 
-        public ModelEntity(AbstractPlayerData player, Unit parent, string name)
+        public UnitEntity(AbstractPlayerData player, Unit unit, string name)
         {
-            Point = parent.Point;
-            _parent = parent;
+            Point = unit.Point;
+            _unit = unit;
             _player = player;
 
             model = MainApplication.ManagerInstance.Content.Load<Model>("Content\\Models\\" + name);
-            box = MainApplication.ManagerInstance.Content.Load<Model>("Content\\Models\\box");
             Status = ModelStatus.Standing;
+
+            for (int i = 0; i < unit.Formation.Positions; ++i)
+            {
+                Vector3 startOffset = unit.Formation.GetPosition(i);
+
+                _items.Add(new UnitItem(Position + startOffset, startOffset, Rotation));
+            }
+
+            scaleMatrix = Matrix.CreateScale(Scale * 0.3f);
 
             int boneCount = model.Bones.Count;
 
@@ -56,6 +87,20 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
             this.absoluteBoneTransforms = new Matrix[boneCount];
         }
 
+        public override Vector3 Scale
+        {
+            get
+            {
+                return base.Scale;
+            }
+            set
+            {
+                base.Scale = value;
+
+                scaleMatrix = Matrix.CreateScale(Scale * 0.3f);
+            }
+        }
+
         public ModelStatus Status
         {
             get;
@@ -66,11 +111,11 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
         {
             get
             {
-                if (_parent.Path == null || _parent.Path.Finished)
-                    return MapData.GetWorldPosition(_parent.Point);
+                if (_unit.Path == null || _unit.Path.Finished)
+                    return MapData.GetWorldPosition(_unit.Point);
 
-                return MapData.GetWorldPosition(_parent.Path.Peek);
-           }
+                return MapData.GetWorldPosition(_unit.Path.Peek);
+            }
         }
 
         public override void Update(GameTime gameTime)
@@ -78,167 +123,172 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
             if (MainWindow.Game.Map == null)
                 return;
 
-            switch (_parent.Action)
+            bool allItemsReady = true;
+
+            foreach (UnitItem item in _items)
+                allItemsReady &= item.Animation == null || item.Animation.Ready;
+
+            //// health check
+            //if (allItemsReady)
+            //{
+            //    // they should all have the same angle, right?
+            //    bool sameAngle = true;
+            //    float angle = _items[0].Rotation.Y;
+
+            //    foreach (UnitItem item in _items)
+            //        sameAngle &= angle == item.Rotation.Y;
+
+            //    Assert.IsTrue(sameAngle, "The Items should have the same angle after animation");
+            //}
+
+            switch (_unit.Action)
             {
                 case Types.UnitAction.Idle:
-                    if (anim == null || anim.Ready)
+
+                    if (allItemsReady)
                     {
-                        foreach (HexDirection dir in HexDirection.All.Shuffle())
-                        {
-                            HexPoint next = Point.Clone();
-                            next.MoveDir(dir);
+                        HexDirection dir = HexDirection.All.Shuffle().First();
 
-                            _parent.SetTarget( next );
-
-                            Assert.IsTrue(Point.IsNeighbor(next));
-
-                            if (!MainWindow.Game.Map.IsValid(next))
-                                continue;
-
-                            if (MainWindow.Game.Map[next].IsOcean && !MainWindow.Game.Map[Point].IsOcean)
-                                continue;
-
-                            anim = new ObjectAnimation(
-                                Position,
-                                Position,
-                                Rotation,
-                                new Vector3(0, dir.Angle + _parent.Data.ModelRotation, 0),
-                                TimeSpan.FromSeconds(0.5f), false);
-
-                            break;
-                        }
+                        foreach (UnitItem item in _items)
+                            StartIdle(item, dir);
                     }
-                    else
-                        anim.Update(gameTime);
+
+                    foreach (UnitItem item in _items)
+                        AnimateIdle(item, gameTime);
                     break;
                 case Types.UnitAction.Move:
-                    switch (Status)
-                    {
-                        case ModelStatus.Standing:
-                            if (_parent.Path == null || _parent.Path.Finished)
-                                return;
+                    //switch (Status)
+                    //{
+                    //    case ModelStatus.Standing:
+                    //        if (_unit.Path == null || _unit.Path.Finished)
+                    //            return;
 
-                            HexDirection dir = Point.GetDirection(_parent.Path.Peek);
+                    //        HexDirection dir = Point.GetDirection(_unit.Path.Peek);
 
-                            anim = new ObjectAnimation(
-                                Position,
-                                Position,
-                                Rotation,
-                                new Vector3(0, dir.Angle + _parent.Data.ModelRotation, 0),
-                                TimeSpan.FromSeconds(0.3f), false);
+                    //        anim = new ObjectAnimation(
+                    //            Position,
+                    //            Position,
+                    //            Rotation,
+                    //            new Vector3(0, dir.Angle + _unit.Data.ModelRotation, 0),
+                    //            TimeSpan.FromSeconds(0.3f), false);
 
-                            Status = ModelStatus.Rotating;
+                    //        Status = ModelStatus.Rotating;
 
-                            break;
-                        case ModelStatus.Rotating:
-                            if (anim != null)
-                            {
-                                anim.Update(gameTime);
-                                if (anim.Ready)
-                                {
-                                    Status = ModelStatus.Moving;
-                                    Rotation = anim.Rotation;
-                                    anim = new ObjectAnimation(
-                                        Position,
-                                        TargetPosition,
-                                        Rotation,
-                                        Rotation,
-                                        TimeSpan.FromSeconds(0.2f), false);
-                                }
-                            }
-                            break;
-                        case ModelStatus.Moving:
-                            if (anim != null)
-                            {
-                                anim.Update(gameTime);
-                                if (anim.Ready)
-                                {
-                                    HexPoint pt = _parent.Path.Peek;                                   
-                                    _parent.Path.Pop();
-                                    _parent.Move(pt);
-                                    Point = pt;
+                    //        break;
+                    //    case ModelStatus.Rotating:
+                    //        if (anim != null)
+                    //        {
+                    //            anim.Update(gameTime);
+                    //            if (anim.Ready)
+                    //            {
+                    //                Status = ModelStatus.Moving;
+                    //                Rotation = anim.Rotation;
+                    //                anim = new ObjectAnimation(
+                    //                    Position,
+                    //                    TargetPosition,
+                    //                    Rotation,
+                    //                    Rotation,
+                    //                    TimeSpan.FromSeconds(0.2f), false);
+                    //            }
+                    //        }
+                    //        break;
+                    //    case ModelStatus.Moving:
+                    //        if (anim != null)
+                    //        {
+                    //            anim.Update(gameTime);
+                    //            if (anim.Ready)
+                    //            {
+                    //                HexPoint pt = _unit.Path.Peek;                                   
+                    //                _unit.Path.Pop();
+                    //                _unit.Move(pt);
+                    //                Point = pt;
 
-                                    anim = null;
-                                    Status = ModelStatus.Standing;
-                                }
-                            }
-                            break;
-                    }
+                    //                anim = null;
+                    //                Status = ModelStatus.Standing;
+                    //            }
+                    //        }
+                    //        break;
+                    //}
                     break;
+            }
+        }
+
+        private void StartIdle(UnitItem item, HexDirection dir)
+        {
+            HexPoint next = Point.Clone();
+            next.MoveDir(dir);
+
+            //_unit.SetTarget(next);
+
+            float rotationY = (float)Point.AngleRad(next) + _unit.Data.ModelRotation;
+            rotationY %= (float)Math.PI * 2;
+            Vector3 newRotation = new Vector3(0, rotationY, 0);
+            Vector3 delta = Vector3.Transform(item.RelativPosition, Matrix.CreateRotationY(rotationY));
+            Vector3 newPosition = Position + delta;
+
+            item.Animation = new ObjectAnimation(
+                item.Position,
+                newPosition,
+                item.Rotation,
+                newRotation,
+                TimeSpan.FromSeconds(0.5f + item.StartOffset), false);
+        }
+
+        /// <summary>
+        /// idle animation (turning around)
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="gameTime"></param>
+        private void AnimateIdle(UnitItem item, GameTime gameTime)
+        {
+            if (item.Animation != null && item.Animation.Ready)
+            {
+                item.Position = item.Animation.Position;
+                item.Rotation = item.Animation.Rotation;
+
+                item.Animation = null;
+            }
+
+            if (item.Animation != null)
+                item.Animation.Update(gameTime);
+        }
+
+        public void DrawModel(Model model, Matrix world, Matrix view, Matrix projection)
+        {
+            // Set the world matrix as the root transform of the model.
+            model.Root.Transform = world;
+
+            // Look up combined bone matrices for the entire model.
+            model.CopyAbsoluteBoneTransformsTo(boneTransforms);
+
+            // Draw the model.
+            foreach (ModelMesh mesh in model.Meshes)
+            {
+                foreach (BasicEffect effect in mesh.Effects)
+                {
+                    effect.World = boneTransforms[mesh.ParentBone.Index];
+                    effect.View = view;
+                    effect.Projection = projection;
+
+                    effect.EnableDefaultLighting();
+                }
+
+                mesh.Draw();
             }
         }
 
         public override void Draw(GameTime time)
         {
-            calculateAbsoluteBoneTransforms();
-
-            Matrix wMatrix =
-                Matrix.CreateScale(Scale) *
-                Matrix.CreateRotationX(Rotation.X) *
-                Matrix.CreateRotationY(anim != null ? anim.Rotation.Y : Rotation.Y) *
-                Matrix.CreateRotationZ(Rotation.Z) *
-                Matrix.CreateTranslation(anim != null ? anim.Position : Position);
-
-            //model.Draw(wMatrix, GameMapBox.Camera.View, GameMapBox.Camera.Projection);
-            int meshCount = this.model.Meshes.Count;
-            for (int meshIndex = 0; meshIndex < meshCount; meshIndex++)
+            for (int i = 0; i < _items.Count; i++)
             {
-                ModelMesh mesh = this.model.Meshes[meshIndex];
-                int parentBoneIndex = mesh.ParentBone.Index;
+                UnitItem item = _items[i];
+                ObjectAnimation anim = item.Animation; 
 
-                int effectCount = mesh.Effects.Count;
-                for (int effectIndex = 0; effectIndex < effectCount; effectIndex++)
-                {
-                    Effect effect = mesh.Effects[effectIndex];
-                    if (effect == null)
-                    {
-                        continue; // Model.Draw() would throw an exception in this case
-                    }
+                Matrix tmpMatrix = scaleMatrix
+                    * Matrix.CreateRotationY(anim != null ? anim.Rotation.Y : item.Rotation.Y)
+                    * Matrix.CreateTranslation(anim != null ? anim.Position : item.Position);
 
-                    // Hand the mesh's transformation matrices to the effect
-                    IEffectMatrices matrices = effect as IEffectMatrices;
-                    if (matrices != null)
-                    {
-                        matrices.World = this.absoluteBoneTransforms[parentBoneIndex] * wMatrix;
-                        matrices.View = GameMapBox.Camera.View;
-                        matrices.Projection = GameMapBox.Camera.Projection;
-                    }
-                }
-
-                MainApplication.Instance.GraphicsDevice.RasterizerState = RasterizerState.CullNone;
-
-                mesh.Draw();
-            }
-
-            Matrix wMatrix2 = Matrix.CreateTranslation(TargetPosition);
-
-            //box.Draw(wMatrix2, GameMapBox.Camera.View, GameMapBox.Camera.Projection);
-        }
-
-        /// <summary>Calculates the absolute bone transformation matrices in model space</summary>
-        private void calculateAbsoluteBoneTransforms()
-        {
-            // Obtain the local transform for the bind pose of all bones
-            this.model.CopyBoneTransformsTo(this.absoluteBoneTransforms);
-
-            // Convert the relative bone transforms into absolute transforms
-            ModelBoneCollection bones = this.model.Bones;
-            for (int index = 0; index < bones.Count; ++index)
-            {
-                // Apply the bone's user-specified transform
-                this.absoluteBoneTransforms[index] =
-                  this.boneTransforms[index] * bones[index].Transform;
-
-                // Calculate the absolute transform of the bone in model space.
-                // Content processors sort bones so that parent bones always appear
-                // before their children, thus this works like a matrix stack,
-                // resolving the full bone hierarchy in minimal steps.
-                ModelBone bone = bones[index];
-                if (bone.Parent != null)
-                {
-                    int parentIndex = bone.Parent.Index;
-                    this.absoluteBoneTransforms[index] *= this.absoluteBoneTransforms[parentIndex];
-                }
+                DrawModel(model, tmpMatrix, GameMapBox.Camera.View, GameMapBox.Camera.Projection);
             }
         }
     }

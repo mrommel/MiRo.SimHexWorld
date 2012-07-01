@@ -28,6 +28,7 @@ namespace MiRo.SimHexWorld.Engine.UI
         ////////////////////////////////////////////////////////////////////////////       
         private readonly Texture2D _defaultbg;
 
+        TimeSpan lastFpsUpdate;
         FpsCounter fpsCounter;
         SpriteFont _messageFont;
 
@@ -58,6 +59,7 @@ namespace MiRo.SimHexWorld.Engine.UI
 
         private static readonly GameData _game = new GameData();
 
+        private Dictionary<string, AssetWindow> _windows = new Dictionary<string, AssetWindow>();
         public static InfoPediaDialog Pedia;
 
         ////////////////////////////////////////////////////////////////////////////       
@@ -116,6 +118,26 @@ namespace MiRo.SimHexWorld.Engine.UI
         protected void PrepareGraphicsDevice(object sender, PreparingDeviceSettingsEventArgs e)
         {
             e.GraphicsDeviceInformation.PresentationParameters.RenderTargetUsage = RenderTargetUsage.PreserveContents;
+        }
+
+        public void CreateWindow(string name, string asset, bool visible)
+        {
+            if( _windows.ContainsKey(name))
+                return;
+
+            GenericWindow win = new GenericWindow(Manager, asset);
+            win.Visible = visible;
+            Manager.Add(win);
+
+            _windows.Add(name, win);
+        }
+
+        public AssetWindow GetWindow(string name)
+        {
+            if( _windows.ContainsKey(name))
+                return _windows[name];
+
+            return null;
         }
 
         public void FocusPreviousCity()
@@ -307,11 +329,9 @@ namespace MiRo.SimHexWorld.Engine.UI
                     GameFacade.getInstance().SendNotification(GameNotification.CreateMap, _startupSettings);
                     break;
                 case MainOptionChoises.Load:
-                    SelectMapLoadDialog tmp = new SelectMapLoadDialog(Manager);
-                    tmp.Closed += SelectMapLoadDialogClosed;
-                    tmp.Init();
-                    Manager.Add(tmp);
+                    MapLoadDialog tmp = new MapLoadDialog(Manager);
                     tmp.ShowModal();
+                    Manager.Add(tmp);
                     break;
                 case MainOptionChoises.Check:
                     break;
@@ -321,7 +341,6 @@ namespace MiRo.SimHexWorld.Engine.UI
             }
         }
 
-        TimeSpan lastFpsUpdate;
         protected override void Update(GameTime gameTime)
         {
             fpsCounter.Update(gameTime);
@@ -343,14 +362,31 @@ namespace MiRo.SimHexWorld.Engine.UI
                 this.Text = Strings.Title + ": " + fpsCounter.FrameRate + " FPS, mem: " + String.Format(new FileSizeFormatProvider(), "{0:fs}", GC.GetTotalMemory(false));
                 this.Text += ", Cursor: " + Focus;
                 lastFpsUpdate = TimeSpan.FromSeconds(3);
+
+                UpdateHeadNotificationBar();
+                UpdateRanking();
             }
 
             //if (View == MapView.City)
             //    UpdateCityControls();
 
             UpdateMessages();
+        }
 
-            UpdateHeadNotificationBar();
+        private void UpdateRanking()
+        {
+            foreach (AbstractPlayerData player in Game.Players)
+            {
+                RankingRow row = GetControl("Ranking" + player.Id) as RankingRow;
+
+                if (row != null)
+                {
+                    row.Visible = _config.ShowRanking;
+
+                    if (_config.ShowRanking)
+                        row.Player = player;
+                }
+            }           
         }
 
         private void UpdateHeadNotificationBar()
@@ -584,27 +620,27 @@ namespace MiRo.SimHexWorld.Engine.UI
         //////////////////////////////////////////////////////////////////////////// 
         void BtnLoadClick(object sender, TomShane.Neoforce.Controls.EventArgs e)
         {
-            SelectMapLoadDialog tmp = new SelectMapLoadDialog(Manager);
-            tmp.Closed += SelectMapLoadDialogClosed;
+            MapLoadDialog tmp = new MapLoadDialog(Manager);
+            //tmp.Closed += SelectMapLoadDialogClosed;
             tmp.Init();
             Manager.Add(tmp);
             tmp.ShowModal();
 
         }
 
-        void SelectMapLoadDialogClosed(object sender, WindowClosedEventArgs e)
-        {
-            if (sender == null)
-                return;
+        //void SelectMapLoadDialogClosed(object sender, WindowClosedEventArgs e)
+        //{
+        //    if (sender == null)
+        //        return;
 
-            Dialog dialog = sender as Dialog;
-            if (dialog != null && dialog.ModalResult == TomShane.Neoforce.Controls.ModalResult.Ok)
-            {
-                GameFacade.getInstance().SendNotification(GameNotification.LoadMap, (sender as SelectMapLoadDialog).SelectedItem);
-            }
+        //    Dialog dialog = sender as Dialog;
+        //    if (dialog != null && dialog.ModalResult == TomShane.Neoforce.Controls.ModalResult.Ok)
+        //    {
+        //        //GameFacade.getInstance().SendNotification(GameNotification.LoadMap, (sender as MapLoadDialog).SelectedItem);
+        //    }
 
-            e.Dispose = true;
-        }
+        //    e.Dispose = true;
+        //}
         //////////////////////////////////////////////////////////////////////////// 
         void BtnCheckClick(object sender, TomShane.Neoforce.Controls.EventArgs e)
         {

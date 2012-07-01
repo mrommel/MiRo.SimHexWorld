@@ -1218,6 +1218,7 @@ namespace TomShane.Neoforce.Controls
         public event MouseEventHandler MouseMove;
         public event MouseEventHandler MouseOver;
         public event MouseEventHandler MouseOut;
+        public event MouseEventHandler MouseScroll;
         public event KeyEventHandler KeyDown;
         public event KeyEventHandler KeyPress;
         public event KeyEventHandler KeyUp;
@@ -2049,6 +2050,11 @@ namespace TomShane.Neoforce.Controls
                         MouseOutProcess(e as MouseEventArgs);
                         break;
                     }
+                case Message.MouseScroll:
+                    {
+                        MouseScrollProcess(e as MouseEventArgs);
+                        break;
+                    }
                 case Message.GamePadDown:
                     {
                         GamePadDownProcess(e as GamePadEventArgs);
@@ -2302,6 +2308,11 @@ namespace TomShane.Neoforce.Controls
             if (!Suspended) OnMouseOut(e);
         }
         ////////////////////////////////////////////////////////////////////////////
+
+        private void MouseScrollProcess(MouseEventArgs e)
+        {
+            if (!Suspended) OnMouseScroll(e);
+        }
 
         ////////////////////////////////////////////////////////////////////////////
         private void MouseMoveProcess(MouseEventArgs e)
@@ -2769,7 +2780,14 @@ namespace TomShane.Neoforce.Controls
         {
             if (MouseOut != null) MouseOut.Invoke(this, e);
         }
-        ////////////////////////////////////////////////////////////////////////////           
+        //////////////////////////////////////////////////////////////////////////// 
+
+        ////////////////////////////////////////////////////////////////////////////
+        protected virtual void OnMouseScroll(MouseEventArgs e)
+        {
+            if (MouseScroll != null) MouseScroll.Invoke(this, e);
+        }
+        //////////////////////////////////////////////////////////////////////////// 
 
         ////////////////////////////////////////////////////////////////////////////
         protected virtual void OnClick(EventArgs e)

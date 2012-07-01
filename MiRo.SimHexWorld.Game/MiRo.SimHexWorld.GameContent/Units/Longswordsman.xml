@@ -45,6 +45,7 @@
       </Item>
     </Flavours>
     <PromotionNames></PromotionNames>
+    <Formation>10er</Formation>
     <ModelName>PlayerMarine_mdla</ModelName>
     <ModelScale>0.2</ModelScale>
     <ModelScript>Longswordsman</ModelScript>

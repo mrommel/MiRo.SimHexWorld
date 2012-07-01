@@ -318,7 +318,9 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                     SetProperties(listBox, parent, manager);
 
                     listBox.HideSelection = HideSelection;
-                    listBox.ContextMenu = parent.GetControl(ContextMenu) as ContextMenu;
+
+                    if( !string.IsNullOrEmpty(ContextMenu))
+                        listBox.ContextMenu = parent.GetControl(ContextMenu) as ContextMenu;
 
                     break;
 
@@ -353,6 +355,19 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                     SetProperties(check, parent, manager);
 
                     check.Text = Text;
+                    break;
+                case "Graph":
+                    Graph graph = new Graph(manager);
+                    graph.Init();
+
+                    SetProperties(graph, parent, manager);
+
+                    break;
+                case "RankingRow":
+                    RankingRow rank = new RankingRow(manager);
+                    rank.Init();
+
+                    SetProperties(rank, parent, manager);
                     break;
                 case "Include":
                     List<ControlItem> children = manager.Content.Load<List<ControlItem>>(Import);

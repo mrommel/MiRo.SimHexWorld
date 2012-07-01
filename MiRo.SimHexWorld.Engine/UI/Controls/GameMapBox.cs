@@ -159,7 +159,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
             if (keyState.IsKeyDown(Keys.P) && !_oldKeyState.IsKeyDown(Keys.P))
             {
-                ScoreWindow.Show(Manager, MainWindow.Game.Scores, "Scores");
+                ScoreDialog.Show(Manager, MainWindow.Game.Scores, "Scores");
             }
 
             _oldKeyState = keyState;
@@ -224,7 +224,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
         public void CenterAt(HexPoint loc)
         {
-            if (Map.IsValid(loc))
+            if (Map != null && Map.IsValid(loc))
             {
                 _mapCenter.X = loc.X;
                 _mapCenter.Y = loc.Y;

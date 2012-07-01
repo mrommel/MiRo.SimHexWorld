@@ -44,6 +44,7 @@
     <PromotionNames>
       <Item>IgnoreTerrainCost</Item>
     </PromotionNames>
+    <Formation>10er</Formation>
     <ModelName>legion</ModelName>
     <ModelScale>0.04</ModelScale>
     <ModelScript>Scout</ModelScript>

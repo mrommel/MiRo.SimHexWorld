@@ -23,7 +23,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
         protected static Random rand = new Random();
         public Vector3 Position = Vector3.Zero;
         public Vector3 Rotation = Vector3.Zero;
-        public Vector3 Scale = Vector3.One;
+        public virtual Vector3 Scale { get; set; }
 
         HexPoint _point;
         public HexPoint Point
@@ -37,6 +37,11 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
                 _point = value;
                 Position = MapData.GetWorldPosition(value); 
             }
+        }
+
+        public Entity()
+        {
+            Scale = Vector3.One;
         }
 
         public abstract void Update(GameTime time);

@@ -283,6 +283,11 @@ namespace MiRo.SimHexWorld.Engine.World.Maps
             }
         }
 
+        public double AngleRad(HexPoint pt)
+        {
+            return Deg2Rad(Angle(pt));
+        }
+
         public override string ToString()
         {
             return string.Format("{0}, {1}", X, Y); ;

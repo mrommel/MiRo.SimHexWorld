@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace MiRo.SimHexWorld.Engine.UI.Entities
 {
-    class ObjectAnimation
+    public class ObjectAnimation
     {
         Vector3 startPosition, endPosition, startRotation, endRotation;
         TimeSpan duration;

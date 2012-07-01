@@ -48,4 +48,9 @@ class Window:
 
 		config.Save()
 
+	def ShowRanking_Checked( self, window, sender, args ):
+		config.ShowRanking = not config.ShowRanking
+
+		config.Save()
+
 window = Window()

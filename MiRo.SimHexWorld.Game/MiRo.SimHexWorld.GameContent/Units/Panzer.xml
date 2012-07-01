@@ -64,6 +64,7 @@
       <Item>SightPenalty</Item>
       <Item>CanMoveAfterAttacking</Item>
     </PromotionNames>
+    <Formation>3er</Formation>
     <ModelName>PlayerMarine_mdla</ModelName>
     <ModelScale>0.2</ModelScale>
     <ModelScript>Marine</ModelScript>

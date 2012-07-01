@@ -2086,6 +2086,24 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
+    <Compile Include="Controls\MapLoadDialog.xml">
+      <SubType>Designer</SubType>
+      <Name>MapLoadDialog</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\ScoreDialog.xml">
+      <SubType>Designer</SubType>
+      <Name>ScoreDialog</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Controls\MainWindow.Ranking.xml">
+      <SubType>Designer</SubType>
+      <Name>MainWindow.Ranking</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
     <Content Include="Skins\Default.skin">
       <Name>Default</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -3514,6 +3532,16 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+    <Compile Include="Textures\UI\MainView\ScienceView\button_backgroundGlow.png">
+      <Name>button_backgroundGlow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Textures\UI\MainView\bar340x2.png">
+      <Name>bar340x2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fonts\Default.spritefont">
@@ -3718,6 +3746,29 @@
     <Compile Include="Controls\InfoPediaDialogActions.py">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Name>InfoPediaDialogActions</Name>
+      <Importer>PythonScriptImporter</Importer>
+      <Processor>PythonScriptProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\MapLoadDialogActions.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>MapLoadDialogActions</Name>
+      <Importer>PythonScriptImporter</Importer>
+      <Processor>PythonScriptProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Effects\VectorEffect.fx">
+      <Name>VectorEffect</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\ScoreDialogActions.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Name>ScoreDialogActions</Name>
       <Importer>PythonScriptImporter</Importer>
       <Processor>PythonScriptProcessor</Processor>
     </Compile>

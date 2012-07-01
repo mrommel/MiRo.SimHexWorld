@@ -220,6 +220,8 @@ namespace MiRo.SimHexWorld.Engine.Types
 
         public List<string> PromotionNames { get; set; }
 
+        public string Formation { get; set; }
+
         public string ModelName { get; set; }
         public float ModelScale { get; set; }
         public string ModelScript { get; set; }

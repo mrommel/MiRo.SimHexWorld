@@ -155,7 +155,7 @@
         <Name>RightTopBg</Name>
         <Type>ImageBox</Type>
         <Top>20</Top>
-        <Left>-544</Left>
+        <Left>-526</Left>
         <Width>512</Width>
         <Height>128</Height>
         <ImageAsset>Content\\Textures\\UI\\MainView\\topright020</ImageAsset>
@@ -164,7 +164,7 @@
         <Name>BtnPolicies</Name>
         <Type>ImageBox</Type>
         <Top>24</Top>
-        <Left>-220</Left>
+        <Left>-212</Left>
         <Width>64</Width>
         <Height>64</Height>
         <ImageAsset>Content\\Textures\\UI\\MainView\\socialpolicybase</ImageAsset>
@@ -175,7 +175,7 @@
         <Name>BtnDiplomacy</Name>
         <Type>ImageBox</Type>
         <Top>24</Top>
-        <Left>-100</Left>
+        <Left>-92</Left>
         <Width>64</Width>
         <Height>64</Height>
         <ImageAsset>Content\\Textures\\UI\\MainView\\diplomacybase</ImageAsset>
@@ -186,7 +186,7 @@
         <Name>BtnAdvisors</Name>
         <Type>ImageBox</Type>
         <Top>24</Top>
-        <Left>-160</Left>
+        <Left>-152</Left>
         <Width>64</Width>
         <Height>64</Height>
         <ImageAsset>Content\\Textures\\UI\\MainView\\notificationiconsadvisor</ImageAsset>
@@ -270,6 +270,14 @@
         <Import>Content//Controls//MainWindow.Notifications</Import>
       </Item>
       <!-- Notifications -->
+      <!-- Ranking -->
+      <Item>
+        <Name>Ranking</Name>
+        <Type>Include</Type>
+        <Parent>Body</Parent>
+        <Import>Content//Controls//MainWindow.Ranking</Import>
+      </Item>
+      <!-- Ranking -->
     </Controls>
   </Asset>
 </XnaContent>

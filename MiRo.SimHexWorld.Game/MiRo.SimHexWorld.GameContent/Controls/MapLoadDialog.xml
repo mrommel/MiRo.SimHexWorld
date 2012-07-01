@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.UI.Controls.WindowSet">
+    <Title>Load Map</Title>
+    <Name>MapLoadDialog</Name>
+    <Icon>Content\\Textures\\UI\\Globe_Icon_Small</Icon>
+    <Left>200</Left>
+    <Top>200</Top>
+    <Width>300</Width>
+    <Height>300</Height>
+    <Controls>
+      <Item>
+        <Name>Maps</Name>
+        <Type>ImageListBox</Type>
+        <Top>8</Top>
+        <Left>8</Left>
+        <Width>270</Width>
+        <Height>220</Height>
+        <HideSelection>false</HideSelection>
+      </Item>
+
+      <!-- Okay -->
+      <Item>
+        <Name>Select</Name>
+        <Type>ImageButton</Type>
+        <Top>235</Top>
+        <Left>10</Left>
+        <Width>100</Width>
+        <Height>24</Height>
+        <Text>Select</Text>
+        <Click>Select_Click</Click>
+      </Item>
+      <!-- Close -->
+      <Item>
+        <Name>Close</Name>
+        <Type>ImageButton</Type>
+        <Top>235</Top>
+        <Left>130</Left>
+        <Width>100</Width>
+        <Height>24</Height>
+        <Text>Close</Text>
+        <Click>Close_Click</Click>
+      </Item>
+      
+    </Controls>
+  </Asset>
+</XnaContent>

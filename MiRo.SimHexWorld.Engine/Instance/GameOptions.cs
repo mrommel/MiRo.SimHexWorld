@@ -14,6 +14,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
         public bool HexGrid { get; set; }
         public bool UnitIcons { get; set; }
         public bool UnitPromotions { get; set; }
+        public bool ShowRanking { get; set; }
 
         private XmlSerializerHelper<GameOptions> serializer = new XmlSerializerHelper<GameOptions>();
 
@@ -29,6 +30,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
                 HexGrid = opt.HexGrid;
                 UnitIcons = opt.UnitIcons;
                 UnitPromotions = opt.UnitPromotions;
+                ShowRanking = opt.ShowRanking;
             }
             catch { }
         }

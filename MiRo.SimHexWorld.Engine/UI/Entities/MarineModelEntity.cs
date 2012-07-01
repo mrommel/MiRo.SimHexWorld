@@ -9,7 +9,7 @@ using MiRo.SimHexWorld.Engine.World.Entities;
 
 namespace MiRo.SimHexWorld.Engine.UI.Entities
 {
-    public class MarineModelEntity : ModelEntity
+    public class MarineModelEntity : UnitEntity
     {
         public MarineModelEntity(AbstractPlayerData player, Unit unit)
             : base(player, unit, "PlayerMarine_mdla")

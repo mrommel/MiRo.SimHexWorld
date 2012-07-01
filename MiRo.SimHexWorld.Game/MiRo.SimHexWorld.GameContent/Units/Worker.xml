@@ -78,6 +78,7 @@
       <!-- scrub fallout -->
     </Actions>
     <PromotionNames></PromotionNames>
+    <Formation>10er</Formation>
     <ModelName>Worker</ModelName>
     <ModelScale>0.05</ModelScale>
     <ModelScript>Worker</ModelScript>

@@ -49,6 +49,7 @@
       </Item>
     </Flavours>
     <PromotionNames></PromotionNames>
+    <Formation>10er</Formation>
     <ModelName>Warrior</ModelName>
     <ModelScale>1.5</ModelScale>
     <ModelScript>Warrior</ModelScript>

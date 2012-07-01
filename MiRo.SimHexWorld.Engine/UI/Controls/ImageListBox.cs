@@ -56,7 +56,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         ////////////////////////////////////////////////////////////////////////////
 
         ////////////////////////////////////////////////////////////////////////////
-        public int ItemHeight
+        public override int ItemHeight
         {
             get
             {
@@ -162,18 +162,6 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
             catch (Exception ex)
             {
                 return;
-            }
-        }
-        ////////////////////////////////////////////////////////////////////////////
-
-        ////////////////////////////////////////////////////////////////////////////
-        protected override void OnMouseDown(MouseEventArgs e)
-        {
-            base.OnMouseDown(e);
-
-            if (e.Button == MouseButton.Left || e.Button == MouseButton.Right)
-            {
-                TrackItem(e.Position.X, e.Position.Y);
             }
         }
         ////////////////////////////////////////////////////////////////////////////

@@ -30,8 +30,9 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
 
         //PythonEngine _behaviour;
         UnitData _data;
+        IFormation _formation;
 
-        ModelEntity _entity;
+        UnitEntity _entity;
 
         private UnitAI _unitAI;
         private UnitAction _action = UnitAction.Idle;
@@ -52,15 +53,18 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
             _player = player;
             _data = data;
 
-            _unitAI = _data.DefaultUnitAI;
+            Strength = 10;
 
-            _entity = new ModelEntity(player, this, _data.ModelName);
-            _entity.Point = point;
-            _entity.Scale = new Vector3(_data.ModelScale);
+            _unitAI = _data.DefaultUnitAI;
 
             UpdateSpotting();
 
             InitTransitions();
+            InitFormation();
+
+            _entity = new UnitEntity(player, this, _data.ModelName);
+            _entity.Point = point;
+            _entity.Scale = new Vector3(_data.ModelScale);
 
             _unitActionBillboard = new BillboardSystem<UnitAction>(MainApplication.Instance.GraphicsDevice, MainApplication.Instance.Content);
             _unitActionBillboard.AddEntity(UnitAction.Idle, Provider.GetAtlas("UnitActionAtlas").GetTexture("Idle"), new Vector2(2, 2));
@@ -79,6 +83,26 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
 
             TextureManager.Instance.Add("paths", MainApplication.Instance.Content.Load<Texture2D>("Content/Textures/Ground/paths"));
             _pathMesh.LoadContent(MainApplication.Instance.Content);
+        }
+
+        private void InitFormation()
+        {
+ 	        switch( _data.Formation )
+            {
+                case "3er":
+                    _formation = new Formation3();
+                    break;
+                case "10er":
+                    _formation = new Formation3();
+                    break;
+                default:
+                    throw new Exception("No formation named " + _data.Formation + " defined");
+            }
+        }
+
+        public IFormation Formation
+        {
+            get { return _formation; }
         }
 
         public WayPoints Path

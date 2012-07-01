@@ -177,8 +177,12 @@
     <Compile Include="UI\Controls\ControlSet.cs" />
     <Compile Include="UI\Controls\EnhancedToolTip.cs" />
     <Compile Include="UI\Controls\GameControl.cs" />
+    <Compile Include="UI\Controls\Graph.cs" />
+    <Compile Include="UI\Controls\Helper\VectorPolygon.cs" />
+    <Compile Include="UI\Controls\Helper\VectorRenderer.cs" />
     <Compile Include="UI\Controls\ImageButton.cs" />
     <Compile Include="UI\Controls\MenuItemEntry.cs" />
+    <Compile Include="UI\Controls\RankingRow.cs" />
     <Compile Include="UI\Controls\TechInfoButton.cs" />
     <Compile Include="UI\Controls\WindowSet.cs" />
     <Compile Include="UI\Data\TeaserList.cs">
@@ -205,7 +209,7 @@
     <Compile Include="UI\Dialogs\MessageBox.cs" />
     <Compile Include="UI\Dialogs\PolicyChooseDialog.cs" />
     <Compile Include="UI\Dialogs\ScoreWindow.cs" />
-    <Compile Include="UI\Dialogs\SelectMapLoadDialog.cs" />
+    <Compile Include="UI\Dialogs\MapLoadDialog.cs" />
     <Compile Include="UI\Dialogs\SimpleInputDialog.cs" />
     <Compile Include="UI\Dialogs\UnitInfoDialog.cs" />
     <Compile Include="UI\Entities\CityEntity.cs" />
@@ -229,6 +233,9 @@
     <Compile Include="UI\TextureAtlas.cs" />
     <Compile Include="World\BillBoardSystem.cs" />
     <Compile Include="World\Entities\City.cs" />
+    <Compile Include="World\Entities\Formation10.cs" />
+    <Compile Include="World\Entities\IFormation.cs" />
+    <Compile Include="World\Entities\Formation3.cs" />
     <Compile Include="World\Entities\Path.cs" />
     <Compile Include="World\Entities\Pathfinder.cs" />
     <Compile Include="World\Entities\PathNode.cs" />

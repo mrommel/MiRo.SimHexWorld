@@ -92,9 +92,14 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
 
             int meshCount = this.model.Meshes.Count;
 
+            int meshDrawed = 0;
+
             // first draw the shadows
             for (int meshIndex = 0; meshIndex < meshCount; meshIndex++)
             {
+                if (meshDrawed > _city.Citizen)
+                    break;
+
                 // hide models which ought not be seen
                 if (!boneVisible[meshIndex])
                     continue;
@@ -129,11 +134,18 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
                 MainApplication.Instance.GraphicsDevice.RasterizerState = RasterizerState.CullNone;
 
                 mesh.Draw();
+
+                meshDrawed++;
             }
+
+            meshDrawed = 0;
 
             // now the buldings
             for (int meshIndex = 0; meshIndex < meshCount; meshIndex++)
             {
+                if (meshDrawed > _city.Citizen)
+                    break;
+
                 // hide models which ought not be seen
                 if (!boneVisible[meshIndex])
                     continue;
@@ -168,6 +180,8 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
                 MainApplication.Instance.GraphicsDevice.RasterizerState = RasterizerState.CullNone;
 
                 mesh.Draw();
+
+                meshDrawed++;
             }
         }
     }
