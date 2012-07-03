@@ -19,6 +19,7 @@ using MiRo.SimHexWorld.Engine.World.Entities;
 using MiRo.SimHexWorld.Engine.Misc;
 using System;
 using MiRo.SimHexWorld.Engine.UI.Dialogs;
+using MiRo.SimHexWorld.Engine.UI.Controls.Helper;
 
 namespace MiRo.SimHexWorld.Engine.UI.Controls
 {
@@ -32,6 +33,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         MapData _map;
         readonly MapRenderer _mapRenderer;
 
+        private Zooming zooming;
         public static ArcBallCamera _camera;
         const float CameraDistance = 50;
 
@@ -63,6 +65,10 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         {
             // create Camera
             _camera = new ArcBallCamera(MapData.GetWorldPosition(20, 20), 0, MathHelper.PiOver2 * 0.5f * 0.8f * 0.8f, 0, MathHelper.PiOver2, CameraDistance, 30, 100, Manager.GraphicsDevice);
+
+            // zooming
+            zooming = new Zooming("Middle", "VeryFar", 2f, "Far", 1.3f, "Middle", 1.0f, "Near", 0.7f, "VeryNear", 0.5f, "Detail", 0.2f);
+            zooming.ZoomChanged += delegate(float zoom) { _camera.Distance = CameraDistance * zoom; };
 
             _effect = Manager.Content.Load<Effect>("Content/Effects/Series4Effects");
 
@@ -270,93 +276,14 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         }
 
         #region zoom handling
-        public enum ZoomState { VeryNear, Near, Middle, Far, VeryFar, Detail }
-
-        ZoomState _zoom = ZoomState.Middle;
-
-        private float ZoomFactor
-        {
-            get
-            {
-                switch (_zoom)
-                {                    
-                    case ZoomState.VeryFar:
-                        return 2.0f;
-                    case ZoomState.Far:
-                        return 1.3f;
-                    case ZoomState.Middle:
-                        return 1.0f;
-                    case ZoomState.Near:
-                        return 0.7f;
-                    case ZoomState.VeryNear:
-                        return 0.5f;
-                    case ZoomState.Detail:
-                        return 0.2f;
-                }
-
-                return 1.0f;
-            }
-        }
-
-        public ZoomState Zoom
-        {
-            get
-            {
-                return _zoom;
-            }
-            set
-            {
-                _zoom = value;
-                _camera.Distance = CameraDistance * ZoomFactor;
-            }
-        }
-
         public void ZoomOut()
         {
-            switch (_zoom)
-            {
-                case ZoomState.Detail:
-                    _zoom = ZoomState.VeryNear;
-                    break;
-                case ZoomState.VeryNear:
-                    _zoom = ZoomState.Near;
-                    break;
-                case ZoomState.Near:
-                    _zoom = ZoomState.Middle;
-                    break;
-                case ZoomState.Middle:
-                    _zoom = ZoomState.Far;
-                    break;
-                case ZoomState.Far:
-                    _zoom = ZoomState.VeryFar;
-                    break;
-            }
-
-            _camera.Distance = CameraDistance * ZoomFactor;
+            zooming.ZoomOut();
         }
 
         public void ZoomIn()
         {
-            switch (_zoom)
-            {
-                case ZoomState.VeryNear:
-                    _zoom = ZoomState.Detail;
-                    break;
-                case ZoomState.Near:
-                    _zoom = ZoomState.VeryNear;
-                    break;
-                case ZoomState.Middle:
-                    _zoom = ZoomState.Near;
-                    break;
-                case ZoomState.Far:
-                    _zoom = ZoomState.Middle;
-                    break;
-                case ZoomState.VeryFar:
-                    _zoom = ZoomState.Far;
-                    break;
-            }
-
-            _camera.Distance = CameraDistance * ZoomFactor;
+            zooming.ZoomIn();
         }
         #endregion zoom handling
 

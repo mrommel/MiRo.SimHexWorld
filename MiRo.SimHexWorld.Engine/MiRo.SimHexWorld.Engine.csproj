@@ -180,6 +180,7 @@
     <Compile Include="UI\Controls\Graph.cs" />
     <Compile Include="UI\Controls\Helper\VectorPolygon.cs" />
     <Compile Include="UI\Controls\Helper\VectorRenderer.cs" />
+    <Compile Include="UI\Controls\Helper\Zooming.cs" />
     <Compile Include="UI\Controls\ImageButton.cs" />
     <Compile Include="UI\Controls\MenuItemEntry.cs" />
     <Compile Include="UI\Controls\RankingRow.cs" />
