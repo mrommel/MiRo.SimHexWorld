@@ -67,6 +67,12 @@ class Window:
 		self.parent.Focus = mapChangeArgs.UpdatedTiles[0]
 
 	"""
+		update function / called every 3 seconds
+	"""
+	def Update(self, window, gametime ):
+		pass
+
+	"""
 		update control values
 	"""
 	def ShowMainControls(self, show):

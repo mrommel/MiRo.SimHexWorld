@@ -26,6 +26,14 @@
         <UnitUnselected>UnitUnselected</UnitUnselected>
       </Item>
       <!-- MainView -->
+      <!-- Top -->
+      <Item>
+        <Name>Top</Name>
+        <Type>Include</Type>
+        <Parent>Body</Parent>
+        <Import>Content//Controls//MainWindow.Top</Import>
+      </Item>
+      <!-- Top -->
       <!-- Overview -->
       <Item>
         <Name>OverviewTop</Name>

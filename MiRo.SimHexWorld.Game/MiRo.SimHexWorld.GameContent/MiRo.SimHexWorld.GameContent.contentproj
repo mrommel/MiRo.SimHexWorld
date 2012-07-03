@@ -2124,6 +2124,12 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
+    <Compile Include="Controls\MainWindow.Top.xml">
+      <SubType>Designer</SubType>
+      <Name>MainWindow.Top</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
     <Content Include="Skins\Default.skin">
       <Name>Default</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

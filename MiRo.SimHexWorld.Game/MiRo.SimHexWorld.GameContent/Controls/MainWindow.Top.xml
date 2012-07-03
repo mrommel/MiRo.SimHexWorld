@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="System.Collections.Generic.List[MiRo.SimHexWorld.Engine.UI.Controls.ControlItem]">
+    <Item>
+      <Name>Heading</Name>
+      <Type>SideBar</Type>
+      <Top>0</Top>
+      <Left>0</Left>
+      <Width>1570</Width>
+      <Height>20</Height>
+      <StayOnBack>true</StayOnBack>
+      <StayOnTop>false</StayOnTop>
+      <Visible>true</Visible>
+    </Item>
+    <Item>
+      <Name>ScienceIcon</Name>
+      <Type>ImageBox</Type>
+      <Parent>Heading</Parent>
+      <Top>0</Top>
+      <Left>5</Left>
+      <Width>18</Width>
+      <Height>18</Height>
+      <StayOnBack>true</StayOnBack>
+      <StayOnTop>false</StayOnTop>
+      <Visible>true</Visible>
+      <AtlasAsset>
+        <Atlas>IconProvider</Atlas>
+        <Name>ScienceIcon</Name>
+      </AtlasAsset>
+      <ImageMode>Stretched</ImageMode>
+    </Item>
+    <Item>
+      <Name>ScienceLabel</Name>
+      <Type>Label</Type>
+      <Parent>Heading</Parent>
+      <Top>0</Top>
+      <Left>30</Left>
+      <Width>40</Width>
+      <Height>18</Height>
+      <StayOnBack>true</StayOnBack>
+      <StayOnTop>false</StayOnTop>
+      <Visible>true</Visible>
+      <Text>+0</Text>
+    </Item>
+    <!--
+
+            _imgGold = new ImageBox(Manager);
+            _imgGold.Init();
+            _imgGold.Image = IconProvider.GoldIcon;
+            _imgGold.Parent = _topBar;
+            _imgGold.Left = 5 + _imgScience.Width + 5 + _lblScience.Width;
+            _imgGold.Width = 20;
+
+            _lblGold = new Label(Manager);
+            _lblGold.Init();
+            _lblGold.Text = "100 (+0)";
+            _lblGold.Left = 5 + _imgScience.Width + 5 + _lblScience.Width + 5 + _imgGold.Width;
+            _lblGold.Width = 70;
+            _lblGold.Top = 2;
+            _lblGold.Parent = _topBar;
+
+            _imgHappiness = new ImageBox(Manager);
+            _imgHappiness.Init();
+            _imgHappiness.Image = IconProvider.HappinessIcon;
+            _imgHappiness.Parent = _topBar;
+            _imgHappiness.Left = 5 + _imgScience.Width + 5 + _lblScience.Width + 5 + _imgGold.Width + 5 + _lblGold.Width;
+            _imgHappiness.Width = 20;
+            _imgHappiness.DoubleClick += lblHappiness_Click;
+
+            _lblHappiness = new Label(Manager);
+            _lblHappiness.Init();
+            _lblHappiness.Text = "0";
+            _lblHappiness.Left = 5 + _imgScience.Width + 5 + _lblScience.Width + 5 + _imgGold.Width + 5 + _lblGold.Width + 5 + _imgHappiness.Width;
+            _lblHappiness.Width = 20;
+            _lblHappiness.Top = 2;
+            _lblHappiness.Parent = _topBar;
+            _lblHappiness.DoubleClick += lblHappiness_Click;
+
+            _imgGreatPeople = new ImageBox(Manager);
+            _imgGreatPeople.Init();
+            _imgGreatPeople.Image = IconProvider.GreatPeopleIcon;
+            _imgGreatPeople.Parent = _topBar;
+            _imgGreatPeople.Left = 5 + _imgScience.Width + 5 + _lblScience.Width + 5 + _imgGold.Width + 5 + _lblGold.Width + 5 + _imgHappiness.Width + 5 + _lblHappiness.Width;
+            _imgGreatPeople.Width = 20;
+
+            _lblGreatPeople = new Label(Manager);
+            _lblGreatPeople.Init();
+            _lblGreatPeople.Text = "0/0";
+            _lblGreatPeople.Left = 5 + _imgScience.Width + 5 + _lblScience.Width + 5 + _imgGold.Width + 5 + _lblGold.Width + 5 + _imgHappiness.Width + 5 + _lblHappiness.Width + 5 + _imgGreatPeople.Width;
+            _lblGreatPeople.Width = 50;
+            _lblGreatPeople.Top = 2;
+            _lblGreatPeople.Parent = _topBar;
+
+            _imgCulture = new ImageBox(Manager);
+            _imgCulture.Init();
+            _imgCulture.Image = IconProvider.CultureIcon;
+            _imgCulture.Parent = _topBar;
+            _imgCulture.Left = 5 + _imgScience.Width + 5 + _lblScience.Width + 5 + _imgGold.Width + 5 + _lblGold.Width + 5 + _imgHappiness.Width + 5 + _lblHappiness.Width + 5 + _imgGreatPeople.Width + 5 + _lblGreatPeople.Width;
+            _imgCulture.Width = 20;
+
+            _lblCulture = new Label(Manager);
+            _lblCulture.Init();
+            _lblCulture.Text = "0/0 (+0)";
+            _lblCulture.Left = 5 + _imgScience.Width + 5 + _lblScience.Width + 5 + _imgGold.Width + 5 + _lblGold.Width + 5 + _imgHappiness.Width + 5 + _lblHappiness.Width + 5 + _imgGreatPeople.Width + 5 + _lblGreatPeople.Width + 5 + _imgCulture.Width;
+            _lblCulture.Width = 70;
+            _lblCulture.Top = 2;
+            _lblCulture.Parent = _topBar;
+
+            // from the right ///////////////////////////////////////////////
+
+            _imgLocale = new ImageBox(Manager);
+            _imgLocale.Init();
+            _imgLocale.Anchor = Anchors.Right;
+            _imgLocale.Image = IconProvider.GetLocaleIcon("de-de");
+            _imgLocale.Parent = _topBar;
+            _imgLocale.Left = Manager.GraphicsDevice.Viewport.Width - 25;
+            _imgLocale.Width = 20;
+            _imgLocale.DoubleClick += ImgLocaleDoubleClick;
+
+            Label lblSpacer1 = new Label(Manager);
+            lblSpacer1.Init();
+            lblSpacer1.Text = "|";
+            lblSpacer1.Anchor = Anchors.Right;
+            lblSpacer1.Parent = _topBar;
+            lblSpacer1.Width = 5;
+            lblSpacer1.Left = Manager.GraphicsDevice.Viewport.Width - lblSpacer1.Width - 5 - _imgLocale.Width - 5;
+
+            _btnTurn = new Button(Manager);
+            _btnTurn.Init();
+            _btnTurn.Text = Strings.TXT_KEY_UI_MAINAPPLICATION_TURN;
+            _btnTurn.Anchor = Anchors.Right;
+            _btnTurn.Parent = _topBar;
+            _btnTurn.Width = 45;
+            _btnTurn.Left = Manager.GraphicsDevice.Viewport.Width - _btnTurn.Width - 5 - lblSpacer1.Width - 5 - _imgLocale.Width - 5;
+            _btnTurn.Click += LblTurnClick;
+
+            Label lblSpacer2 = new Label(Manager);
+            lblSpacer2.Init();
+            lblSpacer2.Text = "|";
+            lblSpacer2.Anchor = Anchors.Right;
+            lblSpacer2.Parent = _topBar;
+            lblSpacer2.Width = 5;
+            lblSpacer2.Left = Manager.GraphicsDevice.Viewport.Width - lblSpacer2.Width - 5 - _btnTurn.Width - 5 - lblSpacer1.Width - 5 - _imgLocale.Width - 5;
+
+            _lblCurrentTurn = new Label(Manager);
+            _lblCurrentTurn.Init();
+            _lblCurrentTurn.Text = string.Format(Strings.TXT_KEY_UI_MAINAPPLICATION_TURN_PATTERN, _game.CurrentTurn, _game.Year);
+            _lblCurrentTurn.Anchor = Anchors.Right;
+            _lblCurrentTurn.Parent = _topBar;
+            _lblCurrentTurn.Width = 110;
+            _lblCurrentTurn.Alignment = Alignment.MiddleRight;
+            _lblCurrentTurn.Left = Manager.GraphicsDevice.Viewport.Width - lblSpacer2.Width - 5 - _btnTurn.Width - 5 - lblSpacer1.Width - 5 - _lblCurrentTurn.Width - 5 - _imgLocale.Width - 5;
+
+            Manager.Add(this);
+    
+    -->
+  </Asset>
+</XnaContent>

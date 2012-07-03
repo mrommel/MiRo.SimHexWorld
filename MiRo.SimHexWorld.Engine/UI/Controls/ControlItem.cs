@@ -232,7 +232,12 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                     if (!string.IsNullOrEmpty(ImageAsset))
                         box.Image = manager.Content.Load<Texture2D>(ImageAsset);
                     else if (AtlasAsset != null)
-                        box.Image = Provider.GetAtlas(AtlasAsset.Atlas).GetTexture(AtlasAsset.Name);
+                    {
+                        if (AtlasAsset.Atlas == "IconProvider")
+                            box.Image = IconProvider.GetByName(AtlasAsset.Name);
+                        else
+                            box.Image = Provider.GetAtlas(AtlasAsset.Atlas).GetTexture(AtlasAsset.Name);
+                    }
 
                     if (!string.IsNullOrEmpty(Draw))
                         box.Draw += delegate(object sender, DrawEventArgs e)
