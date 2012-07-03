@@ -41,8 +41,11 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
         public enum ModelStatus { Standing, Moving, Rotating }
 
         List<UnitItem> _items = new List<UnitItem>();
-        Model model;
-        Matrix scaleMatrix;
+        Model _model;
+        Matrix _scaleMatrix;
+
+        private Dictionary<string, ModelAnimation> _animations = new Dictionary<string, ModelAnimation>();
+        private ModelAnimation _currentAnimation;
 
         /// <summary>Transforms being applied to this model instance only</summary>
         private Matrix[] boneTransforms;
@@ -64,7 +67,9 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
             _unit = unit;
             _player = player;
 
-            model = MainApplication.ManagerInstance.Content.Load<Model>("Content\\Models\\" + name);
+            _model = MainApplication.ManagerInstance.Content.Load<Model>("Content\\Models\\" + name);
+            _animations.Add("Idle", new ModelAnimation("Content\\Animations\\" + name + "\\Idle"));
+
             Status = ModelStatus.Standing;
 
             for (int i = 0; i < unit.Formation.Positions; ++i)
@@ -74,17 +79,24 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
                 _items.Add(new UnitItem(Position + startOffset, startOffset, Rotation));
             }
 
-            scaleMatrix = Matrix.CreateScale(Scale * 0.3f);
+            _scaleMatrix = Matrix.CreateScale(Scale * 0.3f);
 
-            int boneCount = model.Bones.Count;
+            int boneCount = _model.Bones.Count;
 
             this.boneTransforms = new Matrix[boneCount];
-            model.CopyBoneTransformsTo(this.boneTransforms);
+            _model.CopyBoneTransformsTo(this.boneTransforms);
 
             this.boneTransformsOriginal = new Matrix[boneCount];
-            model.CopyBoneTransformsTo(this.boneTransformsOriginal);
+            _model.CopyBoneTransformsTo(this.boneTransformsOriginal);
 
             this.absoluteBoneTransforms = new Matrix[boneCount];
+
+            SetAnimation("Idle");
+        }
+
+        public void SetAnimation(string name)
+        {
+            _currentAnimation = _animations[name];
         }
 
         public override Vector3 Scale
@@ -97,7 +109,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
             {
                 base.Scale = value;
 
-                scaleMatrix = Matrix.CreateScale(Scale * 0.3f);
+                _scaleMatrix = Matrix.CreateScale(Scale * 0.6f);
             }
         }
 
@@ -122,6 +134,9 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
         {
             if (MainWindow.Game.Map == null)
                 return;
+
+            if (_currentAnimation != null)
+                _currentAnimation.Update(gameTime);
 
             bool allItemsReady = true;
 
@@ -264,9 +279,11 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
             // Draw the model.
             foreach (ModelMesh mesh in model.Meshes)
             {
+                Matrix meshAnimation = _currentAnimation != null ? _currentAnimation.GetRotation(mesh.ParentBone.Name) : Matrix.Identity;
+
                 foreach (BasicEffect effect in mesh.Effects)
                 {
-                    effect.World = boneTransforms[mesh.ParentBone.Index];
+                    effect.World = boneTransforms[mesh.ParentBone.Index] * meshAnimation;
                     effect.View = view;
                     effect.Projection = projection;
 
@@ -284,11 +301,11 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
                 UnitItem item = _items[i];
                 ObjectAnimation anim = item.Animation; 
 
-                Matrix tmpMatrix = scaleMatrix
+                Matrix tmpMatrix = _scaleMatrix
                     * Matrix.CreateRotationY(anim != null ? anim.Rotation.Y : item.Rotation.Y)
                     * Matrix.CreateTranslation(anim != null ? anim.Position : item.Position);
 
-                DrawModel(model, tmpMatrix, GameMapBox.Camera.View, GameMapBox.Camera.Projection);
+                DrawModel(_model, tmpMatrix, GameMapBox.Camera.View, GameMapBox.Camera.Projection);
             }
         }
     }

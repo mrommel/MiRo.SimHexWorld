@@ -270,7 +270,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         }
 
         #region zoom handling
-        public enum ZoomState { VeryNear, Near, Middle, Far, VeryFar }
+        public enum ZoomState { VeryNear, Near, Middle, Far, VeryFar, Detail }
 
         ZoomState _zoom = ZoomState.Middle;
 
@@ -279,7 +279,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
             get
             {
                 switch (_zoom)
-                {
+                {                    
                     case ZoomState.VeryFar:
                         return 2.0f;
                     case ZoomState.Far:
@@ -290,6 +290,8 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                         return 0.7f;
                     case ZoomState.VeryNear:
                         return 0.5f;
+                    case ZoomState.Detail:
+                        return 0.2f;
                 }
 
                 return 1.0f;
@@ -313,6 +315,9 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         {
             switch (_zoom)
             {
+                case ZoomState.Detail:
+                    _zoom = ZoomState.VeryNear;
+                    break;
                 case ZoomState.VeryNear:
                     _zoom = ZoomState.Near;
                     break;
@@ -334,6 +339,9 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         {
             switch (_zoom)
             {
+                case ZoomState.VeryNear:
+                    _zoom = ZoomState.Detail;
+                    break;
                 case ZoomState.Near:
                     _zoom = ZoomState.VeryNear;
                     break;

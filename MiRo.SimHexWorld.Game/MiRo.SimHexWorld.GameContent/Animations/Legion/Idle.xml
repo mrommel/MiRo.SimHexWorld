@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="System.Collections.Generic.List[MiRo.SimHexWorld.Engine.UI.Entities.AnimationAsset]">
+    <Item>
+      <Bone>PADLOCK1</Bone>
+      <Animation>
+        <StartPosition>0 0 0</StartPosition>
+        <EndPosition>0 0 0</EndPosition>
+        <StartRotation>0 0 0</StartRotation>
+        <EndRotation>0 3.1415 0</EndRotation>
+        <Duration>1.20</Duration>
+        <Loop>true</Loop>
+      </Animation>
+    </Item>
+  </Asset>
+</XnaContent>

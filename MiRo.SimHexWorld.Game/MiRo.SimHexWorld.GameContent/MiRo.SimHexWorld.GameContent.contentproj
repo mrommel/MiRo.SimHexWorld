@@ -2104,6 +2104,26 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
+    <Compile Include="Animations\Settler\Idle.xml">
+      <Name>Idle</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Animations\Warrior\Idle.xml">
+      <Name>Idle</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Animations\Legion\Idle.xml">
+      <Name>Idle</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+    <Compile Include="Animations\Worker\Idle.xml">
+      <Name>Idle</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
     <Content Include="Skins\Default.skin">
       <Name>Default</Name>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
