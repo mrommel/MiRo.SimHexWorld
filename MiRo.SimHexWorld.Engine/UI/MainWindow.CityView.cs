@@ -17,26 +17,9 @@ namespace MiRo.SimHexWorld.Engine.UI
     {
         public City CurrentCity { get; set; }
 
-        // city view
-        //SideBar _citySidebar;
-        //Label _lblCitizen;
-        //ImageBox _lblBuildings;
-        //ImageListBox _lstBuildings;
-        //MenuItem _miBuildingDelete;
-        //Label _lblCurrentBuilding;
-        //ImageBox _btnCityExit;
-
-        //ImageBox _lblCitynameTribe;
-        //ImageBox _lblCityname;
-
-        //ImageBox _lblProductionMeter;
-
-        Texture2D _citySideBarTexture;
-
         Texture2D _cityProductionBackTexture;
         Texture2D _cityProductionFrameTexture;
         Texture2D _cityProductionMeterTexture;
-        Texture2D _citySeperatorTexture;
 
         SpriteFont _cityTitleFont, _cityMenu;
 
@@ -44,130 +27,12 @@ namespace MiRo.SimHexWorld.Engine.UI
 
         private void InitCityControls()
         {
-            _citySideBarTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//sidebar");
-
             _cityProductionBackTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//CityView//productionpanelback");
             _cityProductionFrameTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//CityView//productionpanelframe");
             _cityProductionMeterTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//CityView//productionpanelmeter");
 
-            _citySeperatorTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//CityView//frametopbottom44");
-
             _cityTitleFont = Manager.Content.Load<SpriteFont>("Content//Fonts//ArialS");
             _cityMenu = Manager.Content.Load<SpriteFont>("Content//Fonts//Default");
-
-            //_lblCitynameTribe = new ImageBox(Manager);
-            //_lblCitynameTribe.Init();
-            //_lblCitynameTribe.Visible = false;
-            //_lblCitynameTribe.Anchor = Anchors.All;
-            //_lblCitynameTribe.Top = 20;
-            //_lblCitynameTribe.Left = ( Manager.GraphicsDevice.Viewport.Width - 256 ) / 2;
-            //_lblCitynameTribe.Width = 256;
-            //_lblCitynameTribe.Height = 64;
-            //_lblCitynameTribe.Image = Manager.Content.Load<Texture2D>("Content//Textures//UI//CityView//tribeHeading");
-            //_lblCitynameTribe.Draw += new DrawEventHandler(LblCitynameTribe_Draw);
-            //Add(_lblCitynameTribe);
-
-            //_lblCityname = new ImageBox(Manager);
-            //_lblCityname.Init();
-            //_lblCityname.Visible = false;
-            //_lblCityname.Anchor = Anchors.All;
-            //_lblCityname.Top = 20 + _lblCitynameTribe.Height;
-            //_lblCityname.Left = ( Manager.GraphicsDevice.Viewport.Width - 464 ) / 2;
-            //_lblCityname.Width = 464;
-            //_lblCityname.Height = 36;
-            //_lblCityname.Image = Manager.Content.Load<Texture2D>("Content//Textures//UI//CityView//title");
-            //_lblCityname.Draw += new DrawEventHandler(LblCityname_Draw);
-            //Add(_lblCityname);
-
-            //_citySidebar = new SideBar(Manager);
-            //_citySidebar.Init();
-            //_citySidebar.StayOnBack = true;
-            //_citySidebar.Passive = true;
-            //_citySidebar.Left = Manager.GraphicsDevice.Viewport.Width - 260;
-            //_citySidebar.Top = _topBar.Height;
-            //_citySidebar.Width = 230;
-            //_citySidebar.Height = Manager.GraphicsDevice.Viewport.Height - _topBar.Height;
-            //_citySidebar.Anchor = Anchors.Right | Anchors.Top | Anchors.Bottom;
-            //_citySidebar.Visible = false;
-            //_citySidebar.Draw += new DrawEventHandler(CitySidebar_Draw);
-            //Add(_citySidebar);
-
-            //_lblCitizen = new Label(Manager);
-            //_lblCitizen.Init();
-            //_lblCitizen.Passive = false;
-            //_lblCitizen.Parent = _citySidebar;
-            //_lblCitizen.Top = 8;
-            //_lblCitizen.Left = 12;
-            //_lblCitizen.Width = _citySidebar.Width - 16 - 8;
-            //_lblCitizen.Height = 16;
-            //_lblCitizen.Text = "Citizen: 1";
-
-            //_lblBuildings = new ImageBox(Manager);
-            //_lblBuildings.Init();
-            //_lblBuildings.Passive = false;
-            //_lblBuildings.Parent = _citySidebar;
-            //_lblBuildings.Top = _lblCitizen.Top + _lblCitizen.Height + 8;
-            //_lblBuildings.Left = 10;
-            //_lblBuildings.Width = _citySidebar.Width - 16;
-            //_lblBuildings.Height = 22;
-            //_lblBuildings.Image = _citySeperatorTexture;
-            //_lblBuildings.SizeMode = SizeMode.Stretched;
-            //_lblBuildings.Draw += new DrawEventHandler(LblBuildings_Draw);
-            //_lblBuildings.Click += new TomShane.Neoforce.Controls.EventHandler(_lblBuildings_Click);
-
-            //ContextMenu ctxBuildings = new ContextMenu(Manager);
-            //_miBuildingDelete = new MenuItem("Delete");
-            //_miBuildingDelete.Click += new TomShane.Neoforce.Controls.EventHandler(ctxBuildingDelete_Click);
-            //_miBuildingDelete.Enabled = false;
-            //ctxBuildings.Items.Add(_miBuildingDelete);
-
-            //_lstBuildings = new ImageListBox(Manager);
-            //_lstBuildings.Init();
-            //_lstBuildings.Parent = _citySidebar;
-            //_lstBuildings.Top = _lblBuildings.Top + _lblBuildings.Height + 8;
-            //_lstBuildings.Left = 10;
-            //_lstBuildings.Width = _citySidebar.Width - 24;
-            //_lstBuildings.Height = 200;
-            //_lstBuildings.Anchor = Anchors.Top | Anchors.Right | Anchors.Bottom;
-            //_lstBuildings.HideSelection = false;
-            //_lstBuildings.ItemIndexChanged += new TomShane.Neoforce.Controls.EventHandler(_lstBuildings_ItemIndexChanged);
-            //_lstBuildings.ContextMenu = ctxBuildings;
-
-            //// left
-            //_lblCurrentBuilding = new Label(Manager);
-            //_lblCurrentBuilding.Visible = false;
-            //_lblCurrentBuilding.Anchor = Anchors.All;
-            //_lblCurrentBuilding.Top = Manager.GraphicsDevice.Viewport.Height - 256 - 22 - 24;
-            //_lblCurrentBuilding.Left = 0;
-            //_lblCurrentBuilding.Width = 256;
-            //_lblCurrentBuilding.Height = 24;
-            //Add(_lblCurrentBuilding);
-
-            //_lblProductionMeter = new ImageBox(Manager);
-            //_lblProductionMeter.Init();
-            //_lblProductionMeter.Visible = false;
-            //_lblProductionMeter.Anchor = Anchors.All;
-            //_lblProductionMeter.Top = Manager.GraphicsDevice.Viewport.Height - 256 - 70;
-            //_lblProductionMeter.Left = 0;
-            //_lblProductionMeter.Image = _cityProductionBackTexture;
-            //_lblProductionMeter.Width = 256;
-            //_lblProductionMeter.Height = 256;
-            //_lblProductionMeter.SizeMode = SizeMode.Normal;
-            //_lblProductionMeter.Draw += new DrawEventHandler(LblProductionMeter_Draw);
-            //Add(_lblProductionMeter);
-
-            //_btnCityExit = new ImageBox(Manager);
-            //_btnCityExit.Init();
-            //_btnCityExit.Width = 250;
-            //_btnCityExit.Height = 44;
-            //_btnCityExit.Visible = false;
-            //_btnCityExit.Left = (Manager.GraphicsDevice.Viewport.Width - _btnCityExit.Width) / 2;
-            //_btnCityExit.Top = Manager.GraphicsDevice.Viewport.Height - 120;
-            //_btnCityExit.Image = Manager.Content.Load<Texture2D>("Content//Textures//UI//CityView//grid9blueframe");
-            //_btnCityExit.SizeMode = SizeMode.Stretched;
-            //_btnCityExit.Draw += new DrawEventHandler(BtnCityExit_Draw);
-            //_btnCityExit.Click += new TomShane.Neoforce.Controls.EventHandler(_btnCityExit_Click);
-            //Add(_btnCityExit);
         }
 
         public void LblBuildings_Draw(object sender, DrawEventArgs e)
@@ -239,11 +104,6 @@ namespace MiRo.SimHexWorld.Engine.UI
 
             Rectangle r2 = new Rectangle(e.Rectangle.X, e.Rectangle.Y, 11, e.Rectangle.Height);
             e.Renderer.Draw(_overviewSideTextureLeft, r2, Color.White);
-        }
-
-        private void UpdateCityControlsHeight()
-        {
-            
         }
     }
 }

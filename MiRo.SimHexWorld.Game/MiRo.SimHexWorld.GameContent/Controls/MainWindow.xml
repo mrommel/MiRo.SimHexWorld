@@ -81,7 +81,7 @@
         <Draw>LblOverview_Draw</Draw>
       </Item>
       <Item>
-        <Name>MapOptions</Name>
+        <Name>MapOptionsToogle</Name>
         <Type>ImageBox</Type>
         <Top>-80</Top>
         <Left>-480</Left>

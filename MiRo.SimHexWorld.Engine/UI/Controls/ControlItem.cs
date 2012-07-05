@@ -144,6 +144,12 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         public string TechName { get; set; }
 
         [ContentSerializer(Optional = true)]
+        public string PolicyName { get; set; }
+        
+        [ContentSerializer(Optional = true)]
+        public string PolicyTypeName { get; set; }
+
+        [ContentSerializer(Optional = true)]
         public string ToolTip { get; set; }
 
         [ContentSerializer(Optional = true)]
@@ -337,6 +343,36 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
                     if( !string.IsNullOrEmpty(TechName))
                         techInfo.Tech = Provider.GetTech(TechName);
+
+                    break;
+                case "PolicyButton":
+                    PolicyButton policyButton = new PolicyButton(manager);
+                    policyButton.Init();
+
+                    SetProperties(policyButton, parent, manager);
+
+                    if (!string.IsNullOrEmpty(PolicyName))
+                        policyButton.Policy = Provider.GetPolicy(PolicyName);
+
+                    break;
+                case "PolicyTypeBox":
+                    PolicyTypeBox policyTypeBox = new PolicyTypeBox(manager);
+                    policyTypeBox.Init();
+
+                    SetProperties(policyTypeBox, parent, manager);
+
+                    if (!string.IsNullOrEmpty(PolicyTypeName))
+                        policyTypeBox.PolicyType = Provider.GetPolicyType(PolicyTypeName);
+
+                    if (!string.IsNullOrEmpty(ImageAsset))
+                        policyTypeBox.Image = manager.Content.Load<Texture2D>(ImageAsset);
+                    else if (AtlasAsset != null)
+                    {
+                        if (AtlasAsset.Atlas == "IconProvider")
+                            policyTypeBox.Image = IconProvider.GetByName(AtlasAsset.Name);
+                        else
+                            policyTypeBox.Image = Provider.GetAtlas(AtlasAsset.Atlas).GetTexture(AtlasAsset.Name);
+                    }
 
                     break;
                 case "ImageButton":

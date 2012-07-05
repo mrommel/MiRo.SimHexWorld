@@ -12,7 +12,7 @@
       <!-- Tradition -->
       <Item>
         <Name>TraditionBox</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyTypeBox</Type>
         <Top>10</Top>
         <Left>5</Left>
         <Width>192</Width>
@@ -21,7 +21,7 @@
         <StayOnTop>false</StayOnTop>
         <ImageAsset>Content//Textures//UI//PolicyView//socialpoliciestradition</ImageAsset>
         <ImageMode>Stretched</ImageMode>
-        <Draw>Box_Draw</Draw>
+        <PolicyTypeName>Tradition</PolicyTypeName>
       </Item>
       <Item>
         <Name>AdoptTraditionButton</Name>
@@ -38,79 +38,69 @@
       <!-- icons -->
       <Item>
         <Name>AristocracyButton</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyButton</Type>
         <Top>50</Top>
         <Left>35</Left>
         <Width>44</Width>
         <Height>44</Height>
         <StayOnBack>false</StayOnBack>
         <StayOnTop>true</StayOnTop>
-        <ImageAsset>Content//Textures//UI//PolicyView//button44</ImageAsset>
-        <ImageMode>Stretched</ImageMode>
         <Click>Choose_Click</Click>
-        <Draw>Button_Draw</Draw>
+        <PolicyName>Aristocracy</PolicyName>
       </Item>
       <Item>
         <Name>OligarchyButton</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyButton</Type>
         <Top>50</Top>
         <Left>80</Left>
         <Width>44</Width>
         <Height>44</Height>
         <StayOnBack>false</StayOnBack>
         <StayOnTop>true</StayOnTop>
-        <ImageAsset>Content//Textures//UI//PolicyView//button44</ImageAsset>
-        <ImageMode>Stretched</ImageMode>
         <Click>Choose_Click</Click>
-        <Draw>Button_Draw</Draw>
+        <PolicyName>Oligarchy</PolicyName>
       </Item>
       <Item>
         <Name>LegalismButton</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyButton</Type>
         <Top>50</Top>
         <Left>125</Left>
         <Width>44</Width>
         <Height>44</Height>
         <StayOnBack>false</StayOnBack>
         <StayOnTop>true</StayOnTop>
-        <ImageAsset>Content//Textures//UI//PolicyView//button44</ImageAsset>
-        <ImageMode>Stretched</ImageMode>
         <Click>Choose_Click</Click>
-        <Draw>Button_Draw</Draw>
+        <PolicyName>Legalism</PolicyName>
       </Item>
       <Item>
         <Name>LandedEliteButton</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyButton</Type>
         <Top>90</Top>
         <Left>75</Left>
         <Width>44</Width>
         <Height>44</Height>
         <StayOnBack>false</StayOnBack>
         <StayOnTop>true</StayOnTop>
-        <ImageAsset>Content//Textures//UI//PolicyView//button44</ImageAsset>
-        <ImageMode>Stretched</ImageMode>
         <Click>Choose_Click</Click>
-        <Draw>Button_Draw</Draw>
+        <PolicyName>LandedElite</PolicyName>
       </Item>
       <Item>
         <Name>MonarchyButton</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyButton</Type>
         <Top>90</Top>
         <Left>115</Left>
         <Width>44</Width>
         <Height>44</Height>
         <StayOnBack>false</StayOnBack>
         <StayOnTop>true</StayOnTop>
-        <ImageAsset>Content//Textures//UI//PolicyView//button44</ImageAsset>
-        <ImageMode>Stretched</ImageMode>
         <Click>Choose_Click</Click>
-        <Draw>Button_Draw</Draw>
+        <PolicyName>Monarchy</PolicyName>
       </Item>
       <!-- Tradition -->
       <!-- Liberty -->
       <Item>
         <Name>LibertyBox</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyTypeBox</Type>
         <Top>10</Top>
         <Left>197</Left>
         <Width>192</Width>
@@ -119,7 +109,7 @@
         <StayOnTop>false</StayOnTop>
         <ImageAsset>Content//Textures//UI//PolicyView//socialpoliciesliberty</ImageAsset>
         <ImageMode>Stretched</ImageMode>
-        <Draw>Box_Draw</Draw>
+        <PolicyTypeName>Liberty</PolicyTypeName>
       </Item>
       <Item>
         <Name>AdoptLibertyButton</Name>
@@ -136,79 +126,69 @@
       <!-- icons -->
       <Item>
         <Name>CollectiveRuleButton</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyButton</Type>
         <Top>80</Top>
         <Left>227</Left>
         <Width>44</Width>
         <Height>44</Height>
         <StayOnBack>false</StayOnBack>
         <StayOnTop>true</StayOnTop>
-        <ImageAsset>Content//Textures//UI//PolicyView//button44</ImageAsset>
-        <ImageMode>Stretched</ImageMode>
         <Click>Choose_Click</Click>
-        <Draw>Button_Draw</Draw>
+        <PolicyName>CollectiveRule</PolicyName>
       </Item>
       <Item>
         <Name>CitizenshipButton</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyButton</Type>
         <Top>80</Top>
         <Left>287</Left>
         <Width>44</Width>
         <Height>44</Height>
         <StayOnBack>false</StayOnBack>
         <StayOnTop>true</StayOnTop>
-        <ImageAsset>Content//Textures//UI//PolicyView//button44</ImageAsset>
-        <ImageMode>Stretched</ImageMode>
         <Click>Choose_Click</Click>
-        <Draw>Button_Draw</Draw>
+        <PolicyName>Citizenship</PolicyName>
       </Item>
       <Item>
         <Name>MeritocracyButton</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyButton</Type>
         <Top>140</Top>
         <Left>325</Left>
         <Width>44</Width>
         <Height>44</Height>
         <StayOnBack>false</StayOnBack>
         <StayOnTop>true</StayOnTop>
-        <ImageAsset>Content//Textures//UI//PolicyView//button44</ImageAsset>
-        <ImageMode>Stretched</ImageMode>
         <Click>Choose_Click</Click>
-        <Draw>Button_Draw</Draw>
+        <PolicyName>Meritocracy</PolicyName>
       </Item>
       <Item>
         <Name>RepresentationButton</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyButton</Type>
         <Top>140</Top>
         <Left>275</Left>
         <Width>44</Width>
         <Height>44</Height>
         <StayOnBack>false</StayOnBack>
         <StayOnTop>true</StayOnTop>
-        <ImageAsset>Content//Textures//UI//PolicyView//button44</ImageAsset>
-        <ImageMode>Stretched</ImageMode>
         <Click>Choose_Click</Click>
-        <Draw>Button_Draw</Draw>
+        <PolicyName>Representation</PolicyName>
       </Item>
       <Item>
         <Name>RepublicButton</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyButton</Type>
         <Top>140</Top>
         <Left>227</Left>
         <Width>44</Width>
         <Height>44</Height>
         <StayOnBack>false</StayOnBack>
         <StayOnTop>true</StayOnTop>
-        <ImageAsset>Content//Textures//UI//PolicyView//button44</ImageAsset>
-        <ImageMode>Stretched</ImageMode>
         <Click>Choose_Click</Click>
-        <Draw>Button_Draw</Draw>
+        <PolicyName>Republic</PolicyName>
       </Item>
       <!-- Liberty -->
       <!-- Honor -->
       <Item>
         <Name>HonorBox</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyTypeBox</Type>
         <Top>10</Top>
         <Left>389</Left>
         <Width>192</Width>
@@ -217,7 +197,7 @@
         <StayOnTop>false</StayOnTop>
         <ImageAsset>Content//Textures//UI//PolicyView//socialpolicieshonor</ImageAsset>
         <ImageMode>Stretched</ImageMode>
-        <Draw>Box_Draw</Draw>
+        <PolicyTypeName>Honor</PolicyTypeName>
       </Item>
       <Item>
         <Name>AdoptHonorButton</Name>
@@ -234,79 +214,69 @@
       <!-- icons -->
       <Item>
         <Name>WarriorCodeButton</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyButton</Type>
         <Top>70</Top>
         <Left>420</Left>
         <Width>44</Width>
         <Height>44</Height>
         <StayOnBack>false</StayOnBack>
         <StayOnTop>true</StayOnTop>
-        <ImageAsset>Content//Textures//UI//PolicyView//button44</ImageAsset>
-        <ImageMode>Stretched</ImageMode>
         <Click>Choose_Click</Click>
-        <Draw>Button_Draw</Draw>
+        <PolicyName>WarriorCode</PolicyName>
       </Item>
       <Item>
         <Name>DisciplineButton</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyButton</Type>
         <Top>70</Top>
         <Left>480</Left>
         <Width>44</Width>
         <Height>44</Height>
         <StayOnBack>false</StayOnBack>
         <StayOnTop>true</StayOnTop>
-        <ImageAsset>Content//Textures//UI//PolicyView//button44</ImageAsset>
-        <ImageMode>Stretched</ImageMode>
         <Click>Choose_Click</Click>
-        <Draw>Button_Draw</Draw>
+        <PolicyName>Discipline</PolicyName>
       </Item>
       <Item>
         <Name>MilitaryTraditionButton</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyButton</Type>
         <Top>120</Top>
         <Left>420</Left>
         <Width>44</Width>
         <Height>44</Height>
         <StayOnBack>false</StayOnBack>
         <StayOnTop>true</StayOnTop>
-        <ImageAsset>Content//Textures//UI//PolicyView//button44</ImageAsset>
-        <ImageMode>Stretched</ImageMode>
         <Click>Choose_Click</Click>
-        <Draw>Button_Draw</Draw>
+        <PolicyName>MilitaryTradition</PolicyName>
       </Item>
       <Item>
         <Name>MilitaryCasteButton</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyButton</Type>
         <Top>120</Top>
         <Left>480</Left>
         <Width>44</Width>
         <Height>44</Height>
         <StayOnBack>false</StayOnBack>
         <StayOnTop>true</StayOnTop>
-        <ImageAsset>Content//Textures//UI//PolicyView//button44</ImageAsset>
-        <ImageMode>Stretched</ImageMode>
         <Click>Choose_Click</Click>
-        <Draw>Button_Draw</Draw>
+        <PolicyName>MilitaryCaste</PolicyName>
       </Item>
       <Item>
         <Name>ProfessionalArmyButton</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyButton</Type>
         <Top>170</Top>
         <Left>480</Left>
         <Width>44</Width>
         <Height>44</Height>
         <StayOnBack>false</StayOnBack>
         <StayOnTop>true</StayOnTop>
-        <ImageAsset>Content//Textures//UI//PolicyView//button44</ImageAsset>
-        <ImageMode>Stretched</ImageMode>
         <Click>Choose_Click</Click>
-        <Draw>Button_Draw</Draw>
+        <PolicyName>ProfessionalArmy</PolicyName>
       </Item>
       <!-- Honor -->
       <!-- Piety -->
       <Item>
         <Name>PietyBox</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyTypeBox</Type>
         <Top>10</Top>
         <Left>581</Left>
         <Width>192</Width>
@@ -315,7 +285,7 @@
         <StayOnTop>false</StayOnTop>
         <ImageAsset>Content//Textures//UI//PolicyView//socialpoliciespiety</ImageAsset>
         <ImageMode>Stretched</ImageMode>
-        <Draw>Box_Draw</Draw>
+        <PolicyTypeName>Piety</PolicyTypeName>
       </Item>
       <Item>
         <Name>AdoptPietyButton</Name>
@@ -333,7 +303,7 @@
       <!-- Patronage -->
       <Item>
         <Name>PatronageBox</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyTypeBox</Type>
         <Top>10</Top>
         <Left>773</Left>
         <Width>192</Width>
@@ -342,7 +312,7 @@
         <StayOnTop>false</StayOnTop>
         <ImageAsset>Content//Textures//UI//PolicyView//socialpoliciespatronage</ImageAsset>
         <ImageMode>Stretched</ImageMode>
-        <Draw>Box_Draw</Draw>
+        <PolicyTypeName>Patronage</PolicyTypeName>
       </Item>
       <Item>
         <Name>AdoptPatronageButton</Name>
@@ -360,7 +330,7 @@
       <!-- Order -->
       <Item>
         <Name>OrderBox</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyTypeBox</Type>
         <Top>307</Top>
         <Left>5</Left>
         <Width>192</Width>
@@ -369,7 +339,7 @@
         <StayOnTop>false</StayOnTop>
         <ImageAsset>Content//Textures//UI//PolicyView//socialpoliciesorder</ImageAsset>
         <ImageMode>Stretched</ImageMode>
-        <Draw>Box_Draw</Draw>
+        <PolicyTypeName>Order</PolicyTypeName>
       </Item>
       <Item>
         <Name>AdoptOrderButton</Name>
@@ -388,7 +358,7 @@
       <!-- Autocracy-->
       <Item>
         <Name>AutocracyBox</Name>
-        <Type>ImageBox</Type>
+        <Type>PolicyTypeBox</Type>
         <Top>307</Top>
         <Left>197</Left>
         <Width>192</Width>
@@ -397,7 +367,7 @@
         <StayOnTop>false</StayOnTop>
         <ImageAsset>Content//Textures//UI//PolicyView//socialpoliciesautocracy</ImageAsset>
         <ImageMode>Stretched</ImageMode>
-        <Draw>Box_Draw</Draw>
+        <PolicyTypeName>Autocracy</PolicyTypeName>
       </Item>
       <Item>
         <Name>AdoptAutocracyButton</Name>
@@ -419,7 +389,7 @@
         <Top>654</Top>
         <Left>205</Left>
         <Width>160</Width>
-        <Height>34</Height>
+        <Height>16</Height>
         <StayOnBack>false</StayOnBack>
         <StayOnTop>true</StayOnTop>
         <Text>Progress</Text>

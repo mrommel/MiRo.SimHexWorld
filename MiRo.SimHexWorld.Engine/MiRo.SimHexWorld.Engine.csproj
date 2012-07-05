@@ -182,7 +182,9 @@
     <Compile Include="UI\Controls\Helper\VectorRenderer.cs" />
     <Compile Include="UI\Controls\Helper\Zooming.cs" />
     <Compile Include="UI\Controls\ImageButton.cs" />
+    <Compile Include="UI\Controls\PolicyTypeBox.cs" />
     <Compile Include="UI\Controls\MenuItemEntry.cs" />
+    <Compile Include="UI\Controls\PolicyButton.cs" />
     <Compile Include="UI\Controls\RankingRow.cs" />
     <Compile Include="UI\Controls\TechInfoButton.cs" />
     <Compile Include="UI\Controls\WindowSet.cs" />
@@ -201,14 +203,9 @@
     <Compile Include="Types\Era.cs" />
     <Compile Include="Types\Feature.cs" />
     <Compile Include="UI\Dialogs\ChooseEnumDialog.cs" />
-    <Compile Include="UI\Dialogs\DiplomacyDialog.cs" />
-    <Compile Include="UI\Dialogs\InfoPediaDialog.cs" />
     <Compile Include="UI\Dialogs\ScienceReadyDialog.cs" />
-    <Compile Include="UI\Dialogs\MapOptionDialog.cs" />
     <Compile Include="UI\Dialogs\NewEraWindow.cs" />
-    <Compile Include="UI\Dialogs\ScienceSelectDialog.cs" />
     <Compile Include="UI\Dialogs\MessageBox.cs" />
-    <Compile Include="UI\Dialogs\PolicyChooseDialog.cs" />
     <Compile Include="UI\Dialogs\ScoreWindow.cs" />
     <Compile Include="UI\Dialogs\MapLoadDialog.cs" />
     <Compile Include="UI\Dialogs\SimpleInputDialog.cs" />
@@ -227,7 +224,6 @@
     <Compile Include="UI\MainWindow.CityView.cs" />
     <Compile Include="UI\MainWindow.Messages.cs" />
     <Compile Include="UI\MainWindow.Overview.cs" />
-    <Compile Include="UI\MainWindow.Right.cs" />
     <Compile Include="UI\MainWindow.Science.cs" />
     <Compile Include="UI\MainWindow.Units.cs" />
     <Compile Include="UI\ScreenNotification.cs" />

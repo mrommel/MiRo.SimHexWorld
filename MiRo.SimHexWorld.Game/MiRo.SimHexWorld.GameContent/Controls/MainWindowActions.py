@@ -24,6 +24,10 @@ class Window:
 
 		""" init dialogs """
 		self.parent.CreateWindow("Pedia", "Content//Controls//InfoPediaDialog", False)
+		self.parent.CreateWindow("ScienceSelect", "Content//Controls//ScienceSelectDialog", False)
+		self.parent.CreateWindow("MapOptions", "Content//Controls//MapOptionDialog", False)
+		self.parent.CreateWindow("PolicyChoose", "Content//Controls//PolicyChooseDialog", False)
+		self.parent.CreateWindow("Diplomacy", "Content//Controls//DiplomacyDialog", False)
 
 	"""
 		handle keys pressed
@@ -80,7 +84,7 @@ class Window:
 		self.parent.GetControl("OverviewTop").Visible = show
 		self.parent.GetControl("OverviewBottomRight").Visible = show
 		self.parent.GetControl("OverviewMap").Visible = show
-		self.parent.GetControl("MapOptions").Visible = show
+		self.parent.GetControl("MapOptionsToggle").Visible = show
 		self.parent.GetControl("NoteOptions").Visible = show
 
 		""" science controls """
@@ -229,7 +233,7 @@ class Window:
 		toggle map option view 
 	"""
 	def MapOptions_Click( self, window, sender, args ):
-		window.MapOptions.Visible = not window.MapOptions.Visible;
+		window.GetWindow("MapOptions").Visible = not window.GetWindow("MapOptions").Visible;
 
 	"""
 		open pedia after research icon clicked
@@ -240,13 +244,13 @@ class Window:
 			window.GetWindow("Pedia").ShowModal()
 
 	def Science_Click( self, window, sender, args ):
-		window.ScienceDialog.ShowModal()
+		window.GetWindow("ScienceSelect").ShowModal()
 
 	def BtnPolicies_Click( self, window, sender, args ):
-		window.PolicyChooseDialog.ShowModal()
+		window.GetWindow("PolicyChoose").ShowModal()
 
 	def BtnDiplomacy_Click( self, window, sender, args ):
-		window.DiplomacyDialog.ShowModal()
+		window.GetWindow("Diplomacy").ShowModal()
 
 	def BuildingsList_ItemIndexChanged( self, window, sender, args ):
 		
@@ -280,10 +284,10 @@ class Window:
 					window.MapBox.CenterAt(window.Messages[num].Obj[1])
  
 				elif window.Messages[num].Type == NotificationType.Science:
-					window.ScienceDialog.ShowModal()
+					window.GetWindow("ScienceSelect").ShowModal()
 
 				elif window.Messages[num].Type == NotificationType.PolicyReady:
-					window.PolicyChooseDialog.ShowModal()
+					window.GetWindow("PolicyChoose").ShowModal()
 
 				elif window.Messages[num].Type == NotificationType.ProducationReady:
 					MapBox.CenterAt(window.Messages[num].Obj.Point)

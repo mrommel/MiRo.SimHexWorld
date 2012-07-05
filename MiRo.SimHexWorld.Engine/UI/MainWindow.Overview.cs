@@ -20,17 +20,10 @@ namespace MiRo.SimHexWorld.Engine.UI
         Rectangle overviewSideRect = new Rectangle(0, 0, 11, 224);
         Rectangle overviewInnerRect = new Rectangle(0, 0, 300, 224);
 
-        public MapOptionDialog MapOptions { get; set; }
-
         void InitOverviewControls()
         {
             _overviewSideTextureLeft = Manager.Content.Load<Texture2D>("Content\\Textures\\UI\\MainView\\sideleft");
             _overviewSideTextureRight = Manager.Content.Load<Texture2D>("Content\\Textures\\UI\\MainView\\sideright");
-
-            MapOptions = new MapOptionDialog(Manager);
-            MapOptions.Visible = false;
-
-            Manager.Add(MapOptions);
         }
 
         public void LblOverview_Draw(object sender, DrawEventArgs e)

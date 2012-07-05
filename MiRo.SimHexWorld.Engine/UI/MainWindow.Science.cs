@@ -14,22 +14,12 @@ namespace MiRo.SimHexWorld.Engine.UI
         Texture2D _scienceBackTexture, _scienceFrameTexture, _scienceTexture;
         float lastScience = -1;
         Texture2D _scienceMeterModTexture;
-        public ScienceSelectDialog ScienceDialog { get; set; }
 
         public void InitScienceControls()
         {
             _scienceBackTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//techpanelback");
             _scienceFrameTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//techpanelframe");
             _scienceTexture = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//techpanelmeter");
-
-            ScienceDialog = new ScienceSelectDialog(Manager);
-            ScienceDialog.Visible = false;
-            Manager.Add(ScienceDialog);
-        }
-
-        public void ShowScienceDialog()
-        {
-            ScienceDialog.ShowModal();
         }
 
         public void LblResearch_Draw(object sender, DrawEventArgs e)

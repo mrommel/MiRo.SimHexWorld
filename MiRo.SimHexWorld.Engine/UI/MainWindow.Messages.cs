@@ -42,56 +42,6 @@ namespace MiRo.SimHexWorld.Engine.UI
             _notificationiconsculture = Manager.Content.Load<Texture2D>("Content//Textures//UI//MainView//NotificationView//notificationiconsculture");
         }
 
-        //void Message_Click(object sender, TomShane.Neoforce.Controls.EventArgs e)
-        //{
-        //    ImageBox cnt = sender as ImageBox;
-        //    int num = int.Parse( cnt.Tag.ToString() );
-
-        //    if (Messages.Count > num)
-        //    {
-        //        ScreenNotification not = Messages.ElementAt(num);
-
-        //        MouseEventArgs args = e as MouseEventArgs;
-
-        //        // handle only left clicks (right click will close the notification icon)
-        //        if (args.Button == MouseButton.Left)
-        //        {
-        //            switch (not.Type)
-        //            {
-        //                case NotificationType.CityGrowth:
-        //                case NotificationType.CityDecline:
-        //                case NotificationType.FoundCity:
-        //                    {
-        //                        City city = not.Obj as City;
-        //                        MapBox.CenterAt(city.Point);
-        //                    }
-        //                    break;
-        //                case NotificationType.ImprovementReady:
-        //                    {
-        //                        List<object> objs = not.Obj as List<object>;
-        //                        MapBox.CenterAt(objs[1] as HexPoint);
-        //                    }
-        //                    break;
-        //                case NotificationType.Science:
-        //                    ShowScienceDialog();
-        //                    break;
-        //                case NotificationType.PolicyReady:
-        //                    ShowPolicyDialog();
-        //                    break;
-        //                case NotificationType.ProducationReady:
-        //                    {
-        //                        City city = not.Obj as City;
-        //                        MapBox.CenterAt(city.Point);
-        //                        CurrentCity = city;
-        //                    }
-        //                    break;
-        //            }
-        //        }
-
-        //        not.Obsolete = true;
-        //    }      
-        //}
-
         private void UpdateMessages()
         {
             if (View == MapView.Main)

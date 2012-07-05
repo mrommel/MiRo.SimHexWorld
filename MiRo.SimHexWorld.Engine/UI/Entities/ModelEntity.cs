@@ -143,19 +143,6 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
             foreach (UnitItem item in _items)
                 allItemsReady &= item.Animation == null || item.Animation.Ready;
 
-            //// health check
-            //if (allItemsReady)
-            //{
-            //    // they should all have the same angle, right?
-            //    bool sameAngle = true;
-            //    float angle = _items[0].Rotation.Y;
-
-            //    foreach (UnitItem item in _items)
-            //        sameAngle &= angle == item.Rotation.Y;
-
-            //    Assert.IsTrue(sameAngle, "The Items should have the same angle after animation");
-            //}
-
             switch (_unit.Action)
             {
                 case Types.UnitAction.Idle:
@@ -169,63 +156,103 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
                     }
 
                     foreach (UnitItem item in _items)
-                        AnimateIdle(item, gameTime);
+                        AnimateUpdate(item, gameTime);
                     break;
                 case Types.UnitAction.Move:
-                    //switch (Status)
-                    //{
-                    //    case ModelStatus.Standing:
-                    //        if (_unit.Path == null || _unit.Path.Finished)
-                    //            return;
+                    switch (Status)
+                    {
+                        case ModelStatus.Standing:
+                            if (_unit.Path == null || _unit.Path.Finished)
+                                return;
 
-                    //        HexDirection dir = Point.GetDirection(_unit.Path.Peek);
+                            if (allItemsReady)
+                            {
+                                HexDirection dir = Point.GetDirection(_unit.Path.Peek);
 
-                    //        anim = new ObjectAnimation(
-                    //            Position,
-                    //            Position,
-                    //            Rotation,
-                    //            new Vector3(0, dir.Angle + _unit.Data.ModelRotation, 0),
-                    //            TimeSpan.FromSeconds(0.3f), false);
+                                foreach (UnitItem item in _items)
+                                    StartMoveRotate(item, dir);
 
-                    //        Status = ModelStatus.Rotating;
+                                Status = ModelStatus.Rotating;
+                            }
+                            else
+                                foreach (UnitItem item in _items)
+                                    AnimateUpdate(item, gameTime);
 
-                    //        break;
-                    //    case ModelStatus.Rotating:
-                    //        if (anim != null)
-                    //        {
-                    //            anim.Update(gameTime);
-                    //            if (anim.Ready)
-                    //            {
-                    //                Status = ModelStatus.Moving;
-                    //                Rotation = anim.Rotation;
-                    //                anim = new ObjectAnimation(
-                    //                    Position,
-                    //                    TargetPosition,
-                    //                    Rotation,
-                    //                    Rotation,
-                    //                    TimeSpan.FromSeconds(0.2f), false);
-                    //            }
-                    //        }
-                    //        break;
-                    //    case ModelStatus.Moving:
-                    //        if (anim != null)
-                    //        {
-                    //            anim.Update(gameTime);
-                    //            if (anim.Ready)
-                    //            {
-                    //                HexPoint pt = _unit.Path.Peek;                                   
-                    //                _unit.Path.Pop();
-                    //                _unit.Move(pt);
-                    //                Point = pt;
+                            break;
+                        case ModelStatus.Rotating:
 
-                    //                anim = null;
-                    //                Status = ModelStatus.Standing;
-                    //            }
-                    //        }
-                    //        break;
-                    //}
+                            if (allItemsReady)
+                            {
+                                foreach (UnitItem item in _items)
+                                    StartMoveMove(item, TargetPosition);
+
+                                Status = ModelStatus.Moving;
+                            }
+
+                            foreach (UnitItem item in _items)
+                                AnimateUpdate(item, gameTime);
+                            break;
+                        case ModelStatus.Moving:
+                            if (allItemsReady)
+                            {
+                                HexPoint pt = _unit.Path.Peek;
+                                _unit.Path.Pop();
+                                _unit.Move(pt);
+                                Point = pt;
+
+                                Status = ModelStatus.Standing;
+                            }
+
+                            foreach (UnitItem item in _items)
+                                AnimateUpdate(item, gameTime);
+
+                            break;
+                    }
                     break;
             }
+        }
+
+        private void StartMoveMove(UnitItem item, Vector3 TargetPosition)
+        {
+            item.Animation = new ObjectAnimation(
+                item.Position,
+                TargetPosition,
+                item.Rotation,
+                item.Rotation,
+                TimeSpan.FromSeconds(0.5f + item.StartOffset), false);
+        }
+
+        private void AnimateUpdate(UnitItem item, GameTime gameTime)
+        {
+            if (item.Animation != null && item.Animation.Ready)
+            {
+                item.Position = item.Animation.Position;
+                item.Rotation = item.Animation.Rotation;
+
+                item.Animation = null;
+            }
+
+            if (item.Animation != null)
+                item.Animation.Update(gameTime);
+        }
+
+        private void StartMoveRotate(UnitItem item, HexDirection dir)
+        {
+            HexPoint next = Point.Clone();
+            next.MoveDir(dir);
+
+            float rotationY = (float)Point.AngleRad(next) + _unit.Data.ModelRotation;
+            rotationY %= (float)Math.PI * 2;
+            Vector3 newRotation = new Vector3(0, rotationY, 0);
+            Vector3 delta = Vector3.Transform(item.RelativPosition, Matrix.CreateRotationY(rotationY));
+            Vector3 newPosition = Position + delta;
+
+            item.Animation = new ObjectAnimation(
+                item.Position,
+                newPosition,
+                item.Rotation,
+                newRotation,
+                TimeSpan.FromSeconds(0.5f + item.StartOffset), false);
         }
 
         private void StartIdle(UnitItem item, HexDirection dir)
@@ -247,25 +274,6 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
                 item.Rotation,
                 newRotation,
                 TimeSpan.FromSeconds(0.5f + item.StartOffset), false);
-        }
-
-        /// <summary>
-        /// idle animation (turning around)
-        /// </summary>
-        /// <param name="item"></param>
-        /// <param name="gameTime"></param>
-        private void AnimateIdle(UnitItem item, GameTime gameTime)
-        {
-            if (item.Animation != null && item.Animation.Ready)
-            {
-                item.Position = item.Animation.Position;
-                item.Rotation = item.Animation.Rotation;
-
-                item.Animation = null;
-            }
-
-            if (item.Animation != null)
-                item.Animation.Update(gameTime);
         }
 
         public void DrawModel(Model model, Matrix world, Matrix view, Matrix projection)
@@ -299,7 +307,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Entities
             for (int i = 0; i < _items.Count; i++)
             {
                 UnitItem item = _items[i];
-                ObjectAnimation anim = item.Animation; 
+                ObjectAnimation anim = item.Animation;
 
                 Matrix tmpMatrix = _scaleMatrix
                     * Matrix.CreateRotationY(anim != null ? anim.Rotation.Y : item.Rotation.Y)

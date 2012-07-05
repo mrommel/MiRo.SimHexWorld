@@ -69,11 +69,9 @@ namespace MiRo.SimHexWorld.Engine.UI
                 application.BackgroundImage = _defaultbg;
 
             InitCityControls();
-            InitUnitControls();
             InitScienceControls();
             InitOverviewControls();
             InitMessages();
-            InitRightTop();
 
             Manager.SetSkin("Default");
 
