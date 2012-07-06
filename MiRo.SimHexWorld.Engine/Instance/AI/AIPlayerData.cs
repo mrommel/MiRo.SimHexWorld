@@ -85,16 +85,22 @@ namespace MiRo.SimHexWorld.Engine.Instance.AI
 
         GrandStrategyData _grandStrategy;
         Dictionary<GrandStrategyData, bool> _everHadStrategy = new Dictionary<GrandStrategyData, bool>();
+        Flavours _grandStrategyFlavours;
 
-        MilitayStrategyData _militaryStrategy;
-        Flavours _flavours;
+        //EconomicStratedyData _economicStategy;
+        List<MilitaryStrategyData> _militaryStrategies = new List<MilitaryStrategyData>();
+        Flavours _militaryStrategyFlavours = new Flavours();
 
         public AIPlayerData(int id, Civilization tribe)
             : base(id, tribe, false)
         {
             // determine grand strategy
             DetermineGrandStragegy();
-            _flavours = Flavours.FromGrandStrategy(_grandStrategy);
+            _grandStrategyFlavours = Flavours.FromGrandStrategy(_grandStrategy);
+
+            // add all military strategies to propability map
+            foreach (MilitaryStrategyData mStrategy in Provider.Instance.MilitayStrategies.Values)
+                _militaryStrategies.Add(mStrategy);
         }
 
         public void DetermineGrandStragegy()
@@ -205,9 +211,8 @@ namespace MiRo.SimHexWorld.Engine.Instance.AI
 
             if (newStrategy != _grandStrategy)
             {
-                if( _grandStrategy == null )
-                    ChangeGrandStrategy(newStrategy);
-                else if (rand.Next(100) < 40)
+                // grand stragety is set on first run or by 40% chance
+                if( _grandStrategy == null || rand.Next(100) < 40)
                     ChangeGrandStrategy(newStrategy);
             }
         }
@@ -220,6 +225,15 @@ namespace MiRo.SimHexWorld.Engine.Instance.AI
                 _everHadStrategy.Add(newStrategy, true);
 
             _grandStrategy = newStrategy;
+            _grandStrategyFlavours = Flavours.FromGrandStrategy(_grandStrategy);
+        }
+
+        public virtual Flavours Flavours
+        {
+            get 
+            {
+                return base.Flavours + _grandStrategyFlavours + _militaryStrategyFlavours;
+            }
         }
 
         public float MilitaryPowerValue
@@ -269,11 +283,93 @@ namespace MiRo.SimHexWorld.Engine.Instance.AI
             if( turned)
             {
                 DetermineGrandStragegy();
+                UpdateMilitaryStragetyFlavourWeights();
             }
             //string playerStr = _flavours.ToString();
             //string unitStr = unitFlavours.ToString();
 
             return turned;
+        }
+
+        private static float AI_MILITARY_THREAT_WEIGHT_MINOR = 1;
+        private static float AI_MILITARY_THREAT_WEIGHT_MAJOR = 3;
+        private static float AI_STRATEGY_DEFEND_MY_LANDS_UNITS_PER_CITY = 1;
+        private static float AI_STRATEGY_DEFEND_MY_LANDS_BASE_UNITS = 3;
+
+        private void UpdateMilitaryStragetyFlavourWeights()
+        {
+            _militaryStrategyFlavours.Clear();
+            float sum = 0;
+
+            // helper values
+            int defenseUnits = _units.Count(a => a.Data.UnitType == UnitClass.Melee || a.Data.UnitType == UnitClass.Archery);
+            float targetDefenseUnit = AI_STRATEGY_DEFEND_MY_LANDS_BASE_UNITS + AI_STRATEGY_DEFEND_MY_LANDS_UNITS_PER_CITY * _cities.Count;
+
+            foreach (MilitaryStrategyData strategy in _militaryStrategies)
+            {
+                float weight = 0f;
+
+                switch (strategy.Name)
+                {
+                    case "AtWar":
+                        weight = _diplomaticStatuses.Count(a => a.Status == BilateralStatus.AtWar && a.IsMinor) > 0 ? AI_MILITARY_THREAT_WEIGHT_MINOR : 0;
+                        weight = Math.Max(weight, _diplomaticStatuses.Count(a => a.Status == BilateralStatus.AtWar && !a.IsMinor) > 0 ? AI_MILITARY_THREAT_WEIGHT_MAJOR : 0);
+                        break;
+                    case "EmpireDefense":
+                        weight = Math.Max(0, targetDefenseUnit / defenseUnits - 1);
+                        weight = MathHelper.Clamp(weight, 0f, 1f);
+                        break;
+                    case "EmpireDefenseCritical":
+                        weight = 0f;
+                        break;
+                    case "EnoughMilitaryUnits":
+                        weight = Math.Max(0, targetDefenseUnit / defenseUnits - 1);
+                        weight = 1f - MathHelper.Clamp(weight, 0f, 1f);
+                        break;
+                    case "EnoughNavalUnits":
+                        weight = 0f;
+                        break;
+                    case "EnoughRanged":
+                        weight = 0f;
+                        break;
+                    case "EradicateBarbarians":
+                        // distance of next barbarian camp / num of units
+                        weight = 0.2f;
+                        break;
+                    case "LoosingWars":
+                        weight = 0f;
+                        break;
+                    case "MinorCivGeneralDefense":
+                        weight = 0f;
+                        break;
+                    case "MinorCivThreatCritical":
+                        weight = 0f;
+                        break;
+                    case "MinorCivThreatElevated":
+                        weight = 0f;
+                        break;
+                    case "NeedNavalUnits":
+                        weight = 0f;
+                        break;
+                    case "NeedRanged":
+                        weight = 0f;
+                        break;
+                    case "WarMobilization":
+                        weight = 0f;
+                        break;
+                    case "WinningWars":
+                        weight = 0f;
+                        break;
+                    default:
+                        throw new Exception("No Weight handler for Military Strategy: " + strategy.Name);
+                }
+
+                _militaryStrategyFlavours += strategy.Flavours * weight;
+                sum += weight;
+            }
+
+            if (sum != 0)
+                _militaryStrategyFlavours /= sum;
         }
 
         public Flavours UnitFlavours

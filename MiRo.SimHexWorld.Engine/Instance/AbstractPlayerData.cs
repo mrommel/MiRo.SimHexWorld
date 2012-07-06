@@ -165,6 +165,11 @@ namespace MiRo.SimHexWorld.Engine.Instance
             }
         }
 
+        public virtual Flavours Flavours
+        {
+            get { return _leader != null ? _leader.Flavours : new Flavours(); }
+        }
+
         public DiplomaticStatus DiplomaticStatusTo(Civilization civ)
         {
             foreach (DiplomaticStatus ds in _diplomaticStatuses)
@@ -414,7 +419,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
                 List<Tech> possibleTechnologies = PossibleTechnologies;
 
                 // calculate flavours of city
-                List<Flavour> flavours = _leader.Flavours;
+                List<Flavour> flavours = Flavours;
 
                 Tech best = null;
                 float min = float.MaxValue;
@@ -592,7 +597,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
             {
                 // add only to evaluation if not already adopted
                 if (!_policyTypes.Contains(type))
-                    typeMap.AddItem(type, 1f / Flavours.Distance(type.Flavours, Leader.Flavours));
+                    typeMap.AddItem(type, 1f / Flavours.Distance(type.Flavours, Flavours));
                 else
                     policies.AddRange(type.Policies);
             }
@@ -602,7 +607,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
             PropabilityMap<Policy> policyMap = new PropabilityMap<Policy>();
 
             foreach (Policy p in policies)
-                policyMap.AddItem(p, 1f / Flavours.Distance(p.Flavours, Leader.Flavours));
+                policyMap.AddItem(p, 1f / Flavours.Distance(p.Flavours, Flavours));
 
             if (typeMap.Items.Count > 0)
             {
@@ -616,7 +621,7 @@ namespace MiRo.SimHexWorld.Engine.Instance
                 else
                 {
                     Policy bestPolicy = policyMap.RandomOfBest3;
-                    if (Flavours.Distance(bestPolicyType.Flavours, Leader.Flavours) < Flavours.Distance(bestPolicy.Flavours, Leader.Flavours))
+                    if (Flavours.Distance(bestPolicyType.Flavours, Flavours) < Flavours.Distance(bestPolicy.Flavours, Flavours))
                     {
                         if (!AdoptPolicyType(bestPolicyType))
                             throw new Exception("There was an error while adopting " + bestPolicyType);

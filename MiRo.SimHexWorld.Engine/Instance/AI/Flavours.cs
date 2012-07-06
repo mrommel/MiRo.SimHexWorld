@@ -106,7 +106,6 @@ namespace MiRo.SimHexWorld.Engine.Instance.AI
             return (float)Math.Sqrt(sum);
         }
 
-        // Overloading '+' operator:
         public static Flavours operator /(Flavours a, float f)
         {
             Flavours result = new Flavours();
@@ -115,7 +114,22 @@ namespace MiRo.SimHexWorld.Engine.Instance.AI
             {
                 Flavour n = new Flavour();
                 n.Name = flavour.Name;
-                n.Amount /= f;
+                n.Amount = flavour.Amount / f;
+                result.Add(n);
+            }
+
+            return result;
+        }
+
+        public static Flavours operator *(Flavours a, float f)
+        {
+            Flavours result = new Flavours();
+
+            foreach (Flavour flavour in a)
+            {
+                Flavour n = new Flavour();
+                n.Name = flavour.Name;
+                n.Amount = flavour.Amount * f;
                 result.Add(n);
             }
 

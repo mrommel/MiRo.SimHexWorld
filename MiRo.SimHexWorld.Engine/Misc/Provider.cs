@@ -35,7 +35,7 @@ namespace MiRo.SimHexWorld.Engine.Misc
         public readonly Dictionary<string, LeaderData> Leaders;
         public readonly Dictionary<string, LeaderAbility> LeaderAbilities;
         public readonly Dictionary<string, GrandStrategyData> GrandStrategies;
-        public readonly Dictionary<string, MilitayStrategyData> MilitayStrategies;
+        public readonly Dictionary<string, MilitaryStrategyData> MilitayStrategies;
         public readonly Dictionary<string, CitySpecialization> CitySpecializations;
         public readonly Dictionary<string, PromotionData> Promotions;
 
@@ -65,7 +65,7 @@ namespace MiRo.SimHexWorld.Engine.Misc
             Flavours = MainApplication.ManagerInstance.Content.LoadContent<FlavourData>("Content\\Types\\Flavours");
             Leaders = MainApplication.ManagerInstance.Content.LoadContent<LeaderData>("Content\\Types\\Leaders");
             LeaderAbilities = MainApplication.ManagerInstance.Content.LoadContent<LeaderAbility>("Content\\Types\\LeaderAbilities");
-            MilitayStrategies = MainApplication.ManagerInstance.Content.LoadContent<MilitayStrategyData>("Content\\Types\\MilitayStrategies");
+            MilitayStrategies = MainApplication.ManagerInstance.Content.LoadContent<MilitaryStrategyData>("Content\\Types\\MilitayStrategies");
             GrandStrategies = MainApplication.ManagerInstance.Content.LoadContent<GrandStrategyData>("Content\\Types\\GrandStrategies");
             CitySpecializations = MainApplication.ManagerInstance.Content.LoadContent<CitySpecialization>("Content\\Types\\CitySpecializations");
             Promotions = MainApplication.ManagerInstance.Content.LoadContent<PromotionData>("Content\\Types\\Promotions");

@@ -718,7 +718,7 @@ namespace MiRo.SimHexWorld.Engine.World.Entities
                         List<UnitData> possibleUnits = PossibleUnits;
 
                         // calculate flavours of city
-                        List<Flavour> leaderFlavours = _player.Leader.Flavours;
+                        List<Flavour> leaderFlavours = _player.Flavours;
 
                         Flavours buildingFlavours = new Flavours();
                         foreach (Building b in _buildings)

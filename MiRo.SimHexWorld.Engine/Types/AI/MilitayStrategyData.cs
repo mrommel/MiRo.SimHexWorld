@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Content;
 using MiRo.SimHexWorld.Engine.Misc;
+using MiRo.SimHexWorld.Engine.Instance.AI;
 
 namespace MiRo.SimHexWorld.Engine.Types
 {
-    public class MilitayStrategyData : AbstractNamedEntity
+    public class MilitaryStrategyData : AbstractNamedEntity
     {
         public override string ImagePath
         {
@@ -51,7 +52,7 @@ namespace MiRo.SimHexWorld.Engine.Types
         public bool UpdateCitySpecializations = false;
 
         [ContentSerializer(Optional = true)]
-        public bool DontUpdateCityFlavors = false;
+        public bool DontUpdateCityFlavours = false;
 
         [ContentSerializer(Optional = true)]
         public bool NoMinorCivs = false;
@@ -60,6 +61,6 @@ namespace MiRo.SimHexWorld.Engine.Types
         public bool OnlyMinorCivs = false;
 
         [ContentSerializer(Optional = true)]
-        public List<Flavour> Flavours;
+        public Flavours Flavours;
     }
 }

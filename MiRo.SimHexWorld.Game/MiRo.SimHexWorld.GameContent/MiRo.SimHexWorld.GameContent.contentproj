@@ -2499,8 +2499,8 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
-    <Compile Include="Types\MilitayStrategies\WinningsWars.xml">
-      <Name>WinningsWars</Name>
+    <Compile Include="Types\MilitayStrategies\WinningWars.xml">
+      <Name>WinningWars</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>

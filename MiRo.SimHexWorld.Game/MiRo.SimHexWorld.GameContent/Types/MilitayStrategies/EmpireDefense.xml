@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <XnaContent>
-  <Asset Type="MiRo.SimHexWorld.Engine.Types.MilitayStrategyData">
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.MilitaryStrategyData">
     <Name>EmpireDefense</Name>
     <Description></Description>
     <ImageName></ImageName>
@@ -8,6 +8,31 @@
     <FirstTurnExecuted>25</FirstTurnExecuted>
     <MinimumNumTurnsExecuted>2</MinimumNumTurnsExecuted>
     <NoMinorCivs>true</NoMinorCivs>
-    <Flavours></Flavours>
+    <Flavours>
+      <Item>
+        <Name>Defense</Name>
+        <Amount>25</Amount>
+      </Item>
+      <Item>
+        <Name>Offense</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>CityDefense</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>MilitaryTraining</Name>
+        <Amount>10</Amount>
+      </Item>
+      <Item>
+        <Name>Expansion</Name>
+        <Amount>-10</Amount>
+      </Item>
+      <Item>
+        <Name>TileImprovement</Name>
+        <Amount>-5</Amount>
+      </Item>
+    </Flavours>
   </Asset>
 </XnaContent>

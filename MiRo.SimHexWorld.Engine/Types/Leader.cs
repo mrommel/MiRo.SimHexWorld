@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Content;
 using MiRo.SimHexWorld.Engine.Misc;
+using MiRo.SimHexWorld.Engine.Instance.AI;
 
 namespace MiRo.SimHexWorld.Engine.Types
 {
@@ -25,7 +26,7 @@ namespace MiRo.SimHexWorld.Engine.Types
         public List<string> Titles { get; set; }
 
         [ContentSerializer(Optional = true)]
-        public List<Flavour> Flavours;
+        public Flavours Flavours;
 
         public override string ImagePath
         {

@@ -9,8 +9,7 @@ namespace MiRo.SimHexWorld.Engine.Instance.AI
     public class PropabilityMap<T> 
     {
         private static Random rnd = new Random();
-        protected List<T> _items = new List<T>();
-        protected List<float> _propabilities = new List<float>();
+        protected List<KeyValuePair<T, float>> _items = new List<KeyValuePair<T, float>>();
 
         public PropabilityMap()
         {
@@ -18,34 +17,33 @@ namespace MiRo.SimHexWorld.Engine.Instance.AI
 
         public void AddItem(T item, float propability)
         {
-            _items.Add(item);
-
             // limit propability
             if (propability < 0f)
                 propability = 0f;
 
-            _propabilities.Add(propability);
+            _items.Add(new KeyValuePair<T, float>(item, propability));
         }
 
-        public List<T> Items
+        public List<KeyValuePair<T, float>> Items
         {
             get { return _items; }
+            set { _items = value; }
         }
 
         public T Random
         {
             get
             {
-                float sum = _propabilities.Sum();
+                float sum = _items.Select( a => a.Value ).Sum();
 
                 float rndVal = (float)rnd.NextDouble() * sum;
 
                 for (int i = 0; i < _items.Count; ++i)
                 {
-                    if (rndVal <= _propabilities[i])
-                        return _items[i];
+                    if (rndVal <= _items[i].Value)
+                        return _items[i].Key;
 
-                    rndVal -= _propabilities[i];
+                    rndVal -= _items[i].Value;
                 }
 
                 return default(T);
@@ -57,7 +55,7 @@ namespace MiRo.SimHexWorld.Engine.Instance.AI
             get
             {
                 Sort();
-                return _items.First();
+                return _items.First().Key;
             }
         }
 
@@ -69,7 +67,7 @@ namespace MiRo.SimHexWorld.Engine.Instance.AI
 
                 int index = rnd.Next(Math.Min(_items.Count, 3));
 
-                return _items[index];
+                return _items[index].Key;
             }
         }
 
@@ -79,15 +77,11 @@ namespace MiRo.SimHexWorld.Engine.Instance.AI
             {
                 for (int j = i; j < _items.Count; ++j)
                 {
-                    if (_propabilities[i] > _propabilities[j])
+                    if (_items[i].Value > _items[j].Value)
                     {
-                        float tmpF = _propabilities[i];
-                        _propabilities[i] = _propabilities[j];
-                        _propabilities[j] = tmpF;
-
-                        T tmpI = _items[i];
+                        KeyValuePair<T, float> tmpF = _items[i];
                         _items[i] = _items[j];
-                        _items[j] = tmpI;
+                        _items[j] = tmpF;
                     }
                 }
             }

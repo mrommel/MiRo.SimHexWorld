@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <XnaContent>
-  <Asset Type="MiRo.SimHexWorld.Engine.Types.MilitayStrategyData">
-    <Name>WinningsWars</Name>
+  <Asset Type="MiRo.SimHexWorld.Engine.Types.MilitaryStrategyData">
+    <Name>WinningWars</Name>
     <Description></Description>
     <ImageName></ImageName>
     <CheckTriggerTurnCount>2</CheckTriggerTurnCount>
