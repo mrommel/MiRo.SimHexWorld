@@ -16,16 +16,19 @@ Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 A) Download http://go.microsoft.com/?linkid=9782374
 B) follow the instructions of the web installer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 2) XNA 4.0
 ~~~~~~~~~~
 A) Download http://www.microsoft.com/en-us/download/details.aspx?id=23714
 B) follow the instructions of the web installer
+~~~~~~~~~~
 
 3) Project
 ~~~~~~~~~~
 A) checkout the project using git client
 B) open in visual studio and start it
+~~~~~~~~~~
 
 If you have any problems during the installation, please let me know.
 
