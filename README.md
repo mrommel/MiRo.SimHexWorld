@@ -11,24 +11,28 @@ I'll post a video soon.
 Enjoy.
 
 Installation
-------------
+============
+
 1) Visual Studio Express C# (German)
+------------------------------------
 
-A) Download http://go.microsoft.com/?linkid=9782374
+1.1) Download http://go.microsoft.com/?linkid=9782374
 
-B) follow the instructions of the web installer
+1.2) follow the instructions of the web installer
 
 2) XNA 4.0
+----------
 
-A) Download http://www.microsoft.com/en-us/download/details.aspx?id=23714
+2.1) Download http://www.microsoft.com/en-us/download/details.aspx?id=23714
 
-B) follow the instructions of the web installer
+2.2) follow the instructions of the web installer
 
 3) Project
+----------
 
-A) checkout the project using git client
+3.1) checkout the project using git client
 
-B) open in visual studio and start it
+3.2) open in visual studio and start it
 
 If you have any problems during the installation, please let me know.
 
