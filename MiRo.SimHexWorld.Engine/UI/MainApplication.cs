@@ -65,7 +65,7 @@ namespace MiRo.SimHexWorld.Engine.UI
         ////////////////////////////////////////////////////////////////////////////
         private void Initilaize()
         {
-            Graphics.PreferredBackBufferWidth = 1600;
+            Graphics.PreferredBackBufferWidth = 1200;
             Graphics.PreferredBackBufferHeight = 850;
             Graphics.PreparingDeviceSettings += new EventHandler<PreparingDeviceSettingsEventArgs>(Graphics_PreparingDeviceSettings);
 
