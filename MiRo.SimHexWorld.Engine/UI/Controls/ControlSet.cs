@@ -8,7 +8,6 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Reflection;
 using MiRo.SimHexWorld.Engine.Misc;
 using Microsoft.Xna.Framework;
-using MiRo.SimHexWorld.Engine.Locales;
 
 namespace MiRo.SimHexWorld.Engine.UI.Controls
 {

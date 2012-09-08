@@ -276,6 +276,18 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
         }
 
         #region zoom handling
+        public string Zoom
+        {
+            get 
+            {
+                return zooming.CurrentZoomName;
+            }
+            set
+            {
+                zooming.CurrentZoomName = value;
+            }
+        }
+
         public void ZoomOut()
         {
             zooming.ZoomOut();

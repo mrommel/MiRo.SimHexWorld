@@ -81,57 +81,63 @@ class Window:
 	"""
 	def ShowMainControls(self, show):
 		""" overview controls """
-		self.parent.GetControl("OverviewTop").Visible = show
-		self.parent.GetControl("OverviewBottomRight").Visible = show
-		self.parent.GetControl("OverviewMap").Visible = show
-		self.parent.GetControl("MapOptionsToggle").Visible = show
-		self.parent.GetControl("NoteOptions").Visible = show
+		self.ShowIfExists("OverviewTop", show )
+		self.ShowIfExists("OverviewBottomRight", show )
+		self.ShowIfExists("OverviewMap", show )
+		self.ShowIfExists("MapOptionsToggle", show )
+		self.ShowIfExists("NoteOptions", show )
 
 		""" science controls """
-		self.parent.GetControl("LeftTopCorner").Visible = show
-		self.parent.GetControl("ResearchProgress").Visible = show
-		self.parent.GetControl("ScienceDetail").Visible = show
+		self.ShowIfExists("LeftTopCorner", show )
+		self.ShowIfExists("ResearchProgress", show )
+		self.ShowIfExists("ScienceDetail", show )
 
 		""" units controls """
-		self.parent.GetControl("UnitDetail").Visible = show
-		self.parent.GetControl("UnitAction0").Visible = show
-		self.parent.GetControl("UnitAction1").Visible = show
+		self.ShowIfExists("UnitDetail", show )
+		self.ShowIfExists("UnitAction0", show )
+		self.ShowIfExists("UnitAction1", show )
 
 		""" right top controls """
-		self.parent.GetControl("RightTopBg").Visible = show
-		self.parent.GetControl("BtnPolicies").Visible = show
-		self.parent.GetControl("BtnDiplomacy").Visible = show
-		self.parent.GetControl("BtnAdvisors").Visible = show
+		self.ShowIfExists("RightTopBg", show )
+		self.ShowIfExists("BtnPolicies", show )
+		self.ShowIfExists("BtnDiplomacy", show )
+		self.ShowIfExists("BtnAdvisors", show )
 
 		""" notifcations """
-		self.parent.GetControl("Notification0").Visible = show
-		self.parent.GetControl("Notification1").Visible = show
-		self.parent.GetControl("Notification2").Visible = show
-		self.parent.GetControl("Notification3").Visible = show
-		self.parent.GetControl("Notification4").Visible = show
-		self.parent.GetControl("Notification5").Visible = show
-		self.parent.GetControl("Notification6").Visible = show
-		self.parent.GetControl("Notification7").Visible = show
-		self.parent.GetControl("Notification8").Visible = show
-		self.parent.GetControl("Notification9").Visible = show
+		self.ShowIfExists("Notification0", show )
+		self.ShowIfExists("Notification1", show )
+		self.ShowIfExists("Notification2", show )
+		self.ShowIfExists("Notification3", show )
+		self.ShowIfExists("Notification4", show )
+		self.ShowIfExists("Notification5", show )
+		self.ShowIfExists("Notification6", show )
+		self.ShowIfExists("Notification7", show )
+		self.ShowIfExists("Notification8", show )
+		self.ShowIfExists("Notification9", show )
 
 	def ShowCityControls(self, show):
 		""" background """
-		self.parent.GetControl("LeftSide").Visible = show
-		self.parent.GetControl("RightSide").Visible = show
+		self.ShowIfExists("LeftSide", show )
+		self.ShowIfExists("RightSide", show )
 
 		""" city controls """
-		self.parent.GetControl("CitySidebar").Visible = show
-		self.parent.GetControl("CityExit").Visible = show
-		self.parent.GetControl("CityCitizen").Visible = show
-		self.parent.GetControl("BuildingsToggle").Visible = show
-		self.parent.GetControl("BuildingsList").Visible = show
+		self.ShowIfExists("CitySidebar", show )
+		self.ShowIfExists("CityExit", show )
+		self.ShowIfExists("CityCitizen", show )
+		self.ShowIfExists("BuildingsToggle", show )
+		self.ShowIfExists("BuildingsList", show )
 
 		""" production """
-		self.parent.GetControl("CurrentBuilding").Visible = show
-		self.parent.GetControl("CurrentProductionMeter").Visible = show
+		self.ShowIfExists("CurrentBuilding", show )
+		self.ShowIfExists("CurrentProductionMeter", show )
 
 		#handler.Callback("show city: " + str(show),None)
+
+	def ShowIfExists(self, name, show):
+		control = self.parent.GetControl(name)
+
+		if not(control is None):
+			control.Visible = show
 
 	def ToggleView(self, window):
 		if window.View == MainWindow.MapView.Main:
@@ -140,7 +146,7 @@ class Window:
 			self.ShowCityControls(True)
 
 			self.oldZoomState = window.MapBox.Zoom
-			window.MapBox.Zoom = GameMapBox.ZoomState.VeryNear
+			window.MapBox.Zoom = "Near"
 
 			window.CurrentCity.InDetailView = True
 			window.View = MainWindow.MapView.City
@@ -290,7 +296,7 @@ class Window:
 					window.GetWindow("PolicyChoose").ShowModal()
 
 				elif window.Messages[num].Type == NotificationType.ProducationReady:
-					MapBox.CenterAt(window.Messages[num].Obj.Point)
+					window.MapBox.CenterAt(window.Messages[num].Obj.Point)
 					CurrentCity = window.Messages[num].Obj
 
 			""" event is handled """

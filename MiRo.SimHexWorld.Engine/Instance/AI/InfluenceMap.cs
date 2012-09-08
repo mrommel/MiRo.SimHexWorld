@@ -64,5 +64,17 @@ namespace MiRo.SimHexWorld.Engine.Instance.AI
                 _data[pt.X, pt.Y] = value;
             }
         }
+
+        public void Apply(HexPoint hexPoint, int value)
+        {
+            for (int x = 0; x < _width; ++x)
+            {
+                for (int y = 0; y < _height; ++y)
+                {
+                    int dist = HexPoint.GetDistance(hexPoint.X, hexPoint.Y, x, y);
+                    this[x, y] += value / (float)Math.Pow(2, dist);
+                }
+            }
+        }
     }
 }

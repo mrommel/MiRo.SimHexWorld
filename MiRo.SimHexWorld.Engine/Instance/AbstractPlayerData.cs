@@ -52,6 +52,8 @@ namespace MiRo.SimHexWorld.Engine.Instance
         // AI
         public InfluenceMap CityLocationMap;
         public InfluenceMap ImprovementLocationMap;
+        private InfluenceMap FriendsInfluence;
+        private InfluenceMap EnemyInfluence;
 
         // turn
         double _secondsToNextUpdate = 0f;
@@ -473,6 +475,8 @@ namespace MiRo.SimHexWorld.Engine.Instance
             {
                 CityLocationMap = new InfluenceMap(Map.Width, Map.Height);
                 ImprovementLocationMap = new InfluenceMap(Map.Width, Map.Height);
+                FriendsInfluence = new InfluenceMap(Map.Width, Map.Height);
+                EnemyInfluence = new InfluenceMap(Map.Width, Map.Height);
             }
 
             for (int x = 0; x < Map.Width; ++x)
@@ -520,7 +524,30 @@ namespace MiRo.SimHexWorld.Engine.Instance
                 }
             }
 
+            foreach(Unit unit in _units)
+                FriendsInfluence.Apply(unit.Point, unit.Strength);
+
+            //foreach(Unit enemyUnit in _unitsInSight)
+            //{
+
+            //}
+
             _needToUpdateInfluenceMaps = false;
+        }
+
+        public float GetInfluence(int x, int y)
+        {
+            return FriendsInfluence[x, y] - EnemyInfluence[x, y];
+        }
+
+        public float GetTension(int x, int y)
+        {
+            return FriendsInfluence[x, y] + EnemyInfluence[x, y];
+        }
+
+        public float GetVulnability(int x, int y)
+        {
+            return GetTension(x, y) - Math.Abs(GetInfluence(x, y));
         }
 
         public bool IsFirstRun

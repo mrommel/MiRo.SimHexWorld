@@ -155,6 +155,29 @@
     <Compile Include="Instance\IStatusCallback.cs" />
     <Compile Include="Instance\MapPace.cs" />
     <Compile Include="Instance\HumanPlayerData.cs" />
+    <Compile Include="Instance\Modelling\AbstractRuleSystem.cs" />
+    <Compile Include="Instance\Modelling\AgricultureSystem.cs" />
+    <Compile Include="Instance\Modelling\CitizenRuleSystem.cs" />
+    <Compile Include="Instance\Modelling\CorporateTaxRateSystem.cs" />
+    <Compile Include="Instance\Modelling\CrimeSystem.cs" />
+    <Compile Include="Instance\Modelling\EnergyCostSystem.cs" />
+    <Compile Include="Instance\Modelling\FoodSystem.cs" />
+    <Compile Include="Instance\Modelling\GrossDomesticProduct.cs" />
+    <Compile Include="Instance\Modelling\GrowthRateRuleSystem.cs" />
+    <Compile Include="Instance\Modelling\HappinessSystem.cs" />
+    <Compile Include="Instance\Modelling\HighIncomePeopleRuleSystem.cs" />
+    <Compile Include="Instance\Modelling\HighIncomeRuleSystem.cs" />
+    <Compile Include="Instance\Modelling\ImmigrationSystem.cs" />
+    <Compile Include="Instance\Modelling\Infrastructure.cs" />
+    <Compile Include="Instance\Modelling\LowIncomePeopleRuleSystem.cs" />
+    <Compile Include="Instance\Modelling\LowIncomeRuleSystem.cs" />
+    <Compile Include="Instance\Modelling\MidIncomePeopleRuleSystem.cs" />
+    <Compile Include="Instance\Modelling\MidIncomeRuleSystem.cs" />
+    <Compile Include="Instance\Modelling\ModellingTile.cs" />
+    <Compile Include="Instance\Modelling\PollutionRuleSystem.cs" />
+    <Compile Include="Instance\Modelling\PovertyRuleSystem.cs" />
+    <Compile Include="Instance\Modelling\ProductivitySystem.cs" />
+    <Compile Include="Instance\Modelling\RuleType.cs" />
     <Compile Include="Locales\Strings.de-DE.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -196,8 +219,8 @@
     <Compile Include="UI\Controls\Helper\VectorRenderer.cs" />
     <Compile Include="UI\Controls\Helper\Zooming.cs" />
     <Compile Include="UI\Controls\ImageButton.cs" />
-    <Compile Include="UI\Controls\PolicyTypeBox.cs" />
     <Compile Include="UI\Controls\MenuItemEntry.cs" />
+    <Compile Include="UI\Controls\PolicyTypeBox.cs" />
     <Compile Include="UI\Controls\PolicyButton.cs" />
     <Compile Include="UI\Controls\RankingRow.cs" />
     <Compile Include="UI\Controls\TechInfoButton.cs" />
