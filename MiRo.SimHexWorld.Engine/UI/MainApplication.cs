@@ -57,13 +57,13 @@ namespace MiRo.SimHexWorld.Engine.UI
         private MainApplication()
             : base("Default", true)
         {
-            Initilaize();
+            Init();
         }
 
         #region //// Methods ///////////
 
         ////////////////////////////////////////////////////////////////////////////
-        private void Initilaize()
+        protected void Init()
         {
             Graphics.PreferredBackBufferWidth = 1200;
             Graphics.PreferredBackBufferHeight = 850;
@@ -86,22 +86,6 @@ namespace MiRo.SimHexWorld.Engine.UI
         {
             e.GraphicsDeviceInformation.PresentationParameters.RenderTargetUsage = RenderTargetUsage.PreserveContents; 
         }
-        ////////////////////////////////////////////////////////////////////////////
-        //protected override void Draw(GameTime gameTime)
-        //{
-        //    //if (renderer != null)
-        //    //    renderer.Draw(gameTime, _camera);
-
-        //    base.Draw(gameTime);
-        //}
-
-        //protected override void Update(GameTime gameTime)
-        //{
-        //    if (renderer != null)
-        //        renderer.Update(gameTime);
-
-        //    base.Update(gameTime);
-        //}
 
         ////////////////////////////////////////////////////////////////////////////
         protected override Window CreateMainWindow()

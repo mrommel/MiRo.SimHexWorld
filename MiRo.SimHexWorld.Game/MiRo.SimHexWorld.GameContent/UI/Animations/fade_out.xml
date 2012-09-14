@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.UI.Animations.Animation">
+    <duration>3000</duration>
+    <startOffset>1000</startOffset>
+    <fromAlpha>1.0</fromAlpha>
+    <toAlpha>0.0</toAlpha>
+  </Asset>
+</XnaContent>

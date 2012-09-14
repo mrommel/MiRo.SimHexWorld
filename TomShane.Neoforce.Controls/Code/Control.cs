@@ -32,6 +32,7 @@ using System.Media;
 using System.Windows.Forms;
 using System.Collections;
 using System.ComponentModel;
+using System.IO;
 #endif
 ////////////////////////////////////////////////////////////////////////////
 
@@ -1467,7 +1468,7 @@ namespace TomShane.Neoforce.Controls
         ////////////////////////////////////////////////////////////////////////////
 
         ////////////////////////////////////////////////////////////////////////////
-        internal virtual void PrepareTexture(Renderer renderer, GameTime gameTime)
+        public virtual void PrepareTexture(Renderer renderer, GameTime gameTime)
         {
             if (visible)
             {
@@ -1601,7 +1602,7 @@ namespace TomShane.Neoforce.Controls
         ////////////////////////////////////////////////////////////////////////////              
 
         ////////////////////////////////////////////////////////////////////////////   
-        internal virtual void Render(Renderer renderer, GameTime gameTime)
+        public virtual void Render(Renderer renderer, GameTime gameTime)
         {
             if (visible && target != null)
             {

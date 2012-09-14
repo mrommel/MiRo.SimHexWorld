@@ -7,7 +7,7 @@
     <Left>200</Left>
     <Top>200</Top>
     <Width>300</Width>
-    <Height>300</Height>
+    <Height>400</Height>
     <Controls>
       <Item>
         <Name>Maps</Name>
@@ -23,23 +23,27 @@
       <Item>
         <Name>Select</Name>
         <Type>ImageButton</Type>
+        <StyleName>button</StyleName>
         <Top>235</Top>
         <Left>10</Left>
         <Width>100</Width>
-        <Height>24</Height>
+        <Height>32</Height>
         <Text>Select</Text>
         <Click>Select_Click</Click>
+        <AnimationName>fade_out</AnimationName>
       </Item>
       <!-- Close -->
       <Item>
         <Name>Close</Name>
         <Type>ImageButton</Type>
+        <StyleName>button</StyleName>
         <Top>235</Top>
         <Left>130</Left>
         <Width>100</Width>
-        <Height>24</Height>
+        <Height>32</Height>
         <Text>Close</Text>
         <Click>Close_Click</Click>
+
       </Item>
       
     </Controls>

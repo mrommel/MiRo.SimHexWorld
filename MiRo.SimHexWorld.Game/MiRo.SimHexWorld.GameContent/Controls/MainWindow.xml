@@ -6,8 +6,8 @@
     <Icon>Content\\Textures\\UI\\Globe_Icon_Small</Icon>
     <Left>0</Left>
     <Top>0</Top>
-    <Width>1200</Width>
-    <Height>850</Height>
+    <Width>-1</Width>
+    <Height>-1</Height>
     <Controls>
       <!-- MainView-->
       <Item>

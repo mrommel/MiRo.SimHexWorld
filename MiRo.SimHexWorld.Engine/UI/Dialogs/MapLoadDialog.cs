@@ -9,7 +9,7 @@ using MiRo.SimHexWorld.Engine.Misc;
 
 namespace MiRo.SimHexWorld.Engine.UI.Dialogs
 {
-    public class MapLoadDialog : AssetWindow
+    public class MapLoadDialog : Grid9Window
     {
         ////////////////////////////////////////////////////////////////////////////    
         public MapLoadDialog(Manager manager)

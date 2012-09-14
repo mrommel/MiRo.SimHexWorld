@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 using MiRo.SimHexWorld.Engine.Misc;
 using System.Reflection;
 using Microsoft.Xna.Framework.Content;
+using MiRo.SimHexWorld.Engine.UI.Animations;
 
 namespace MiRo.SimHexWorld.Engine.UI.Controls
 {
@@ -15,6 +16,25 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
     {
         public string Name { get; set; }
         public string Type { get; set; }
+
+        private string _styleName;
+
+        [ContentSerializer(Optional = true)]
+        public string StyleName
+        {
+            get
+            {
+                return _styleName;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    _styleName = value;
+                    
+                }
+            }
+        }
 
         [ContentSerializer(Optional = true)]
         public string Parent { get; set; }
@@ -136,7 +156,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
         [ContentSerializer(Optional = true)]
         public string ItemIndexChanged { get; set; }
-        
+
         [ContentSerializer(Optional = true)]
         public string CheckedChanged { get; set; }
 
@@ -145,7 +165,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
         [ContentSerializer(Optional = true)]
         public string PolicyName { get; set; }
-        
+
         [ContentSerializer(Optional = true)]
         public string PolicyTypeName { get; set; }
 
@@ -154,6 +174,9 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
         [ContentSerializer(Optional = true)]
         public string Import { get; set; }
+
+        [ContentSerializer(Optional = true)]
+        public string AnimationName { get; set; }
 
         public ControlItem()
         {
@@ -330,7 +353,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
                     listBox.HideSelection = HideSelection;
 
-                    if( !string.IsNullOrEmpty(ContextMenu))
+                    if (!string.IsNullOrEmpty(ContextMenu))
                         listBox.ContextMenu = parent.GetControl(ContextMenu) as ContextMenu;
 
                     break;
@@ -341,7 +364,7 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
                     SetProperties(techInfo, parent, manager);
 
-                    if( !string.IsNullOrEmpty(TechName))
+                    if (!string.IsNullOrEmpty(TechName))
                         techInfo.Tech = Provider.GetTech(TechName);
 
                     break;
@@ -379,7 +402,9 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                     ImageButton button = new ImageButton(manager);
                     button.Init();
 
+                    ApplyStyle(button, manager);
                     SetProperties(button, parent, manager);
+                    SetAnimation(button, manager);
 
                     button.Text = Text;
                     break;
@@ -418,6 +443,41 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
                     break;
                 default:
                     throw new Exception("No handling for " + Type);
+            }
+        }
+
+        Style _style = null;
+        private Style Style
+        {
+            get
+            {
+                if (_style == null && !string.IsNullOrEmpty(_styleName))
+                    _style = MainApplication.Instance.Content.Load<Style>("Content\\UI\\Styles\\" + _styleName);
+
+                return _style;
+            }
+        }
+
+        private void ApplyStyle(Grid9Control control, Manager manager)
+        {
+            if (Style == null)
+                return;
+
+            if (Style.Grid9 != null && !string.IsNullOrEmpty(Style.Grid9))
+                control.Background = manager.Content.Load<Texture2D>(Style.Grid9);
+
+            if (Style.Grid9Hover != null && !string.IsNullOrEmpty(Style.Grid9Hover))
+                control.BackgroundGlow = manager.Content.Load<Texture2D>(Style.Grid9Hover);
+
+            if (Style.Grid9Disabled != null && !string.IsNullOrEmpty(Style.Grid9Disabled))
+                control.BackgroundDisabled = manager.Content.Load<Texture2D>(Style.Grid9Disabled);
+        }
+
+        private void SetAnimation(ImageButton button, Manager manager)
+        {
+            if (!string.IsNullOrEmpty(AnimationName))
+            {
+                button.startAnimation(manager.Content.Load<Animation>("Content\\UI\\Animations\\" + AnimationName));              
             }
         }
     }

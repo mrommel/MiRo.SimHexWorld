@@ -208,6 +208,9 @@
     <Compile Include="Types\PromotionData.cs" />
     <Compile Include="Types\TechnologyBonus.cs" />
     <Compile Include="Types\WonderData.cs" />
+    <Compile Include="UI\Animations\Animation.cs" />
+    <Compile Include="UI\Animations\Interpolator.cs" />
+    <Compile Include="UI\Animations\LinearInterpolator.cs" />
     <Compile Include="UI\AssetWindow.cs" />
     <Compile Include="UI\Controls\AtlasAsset.cs" />
     <Compile Include="UI\Controls\ControlItem.cs" />
@@ -215,6 +218,9 @@
     <Compile Include="UI\Controls\EnhancedToolTip.cs" />
     <Compile Include="UI\Controls\GameControl.cs" />
     <Compile Include="UI\Controls\Graph.cs" />
+    <Compile Include="UI\Controls\Grid9Control.cs" />
+    <Compile Include="UI\Controls\Grid9Window.cs" />
+    <Compile Include="UI\Controls\Helper\Grid9Helper.cs" />
     <Compile Include="UI\Controls\Helper\VectorPolygon.cs" />
     <Compile Include="UI\Controls\Helper\VectorRenderer.cs" />
     <Compile Include="UI\Controls\Helper\Zooming.cs" />
@@ -223,6 +229,7 @@
     <Compile Include="UI\Controls\PolicyTypeBox.cs" />
     <Compile Include="UI\Controls\PolicyButton.cs" />
     <Compile Include="UI\Controls\RankingRow.cs" />
+    <Compile Include="UI\Controls\Style.cs" />
     <Compile Include="UI\Controls\TechInfoButton.cs" />
     <Compile Include="UI\Controls\WindowSet.cs" />
     <Compile Include="UI\Data\TeaserList.cs">

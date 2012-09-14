@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="MiRo.SimHexWorld.Engine.UI.Controls.Style">
+    <Id>button</Id>
+    <Grid9>Content//Textures//UI//Grid9//grid9blueframe</Grid9>
+    <Grid9Hover>Content//Textures//UI//Grid9//grid9blueframe_glow</Grid9Hover>
+    <Grid9Disabled>Content//Textures//UI//Grid9//grid9blueframe_disabled</Grid9Disabled>
+  </Asset>
+</XnaContent>

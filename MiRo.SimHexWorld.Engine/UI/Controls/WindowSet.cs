@@ -27,8 +27,8 @@ namespace MiRo.SimHexWorld.Engine.UI.Controls
 
             gameWindow.Left = Left;
             gameWindow.Top = Top;
-            gameWindow.Width = Width;
-            gameWindow.Height = Height;
+            gameWindow.Width = Width > 0 ? Width : GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+            gameWindow.Height = Height > 0 ? Height : GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
 
             Controls.Init(gameWindow, manager);
         }
